@@ -6,7 +6,7 @@ import { Container } from '../Container/Container';
 import { Tabs } from '../../../constants';
 
 type Props = {
-	background: string | undefined;
+	background?: string | undefined;
 };
 
 const Footer: FC<Props> = ({ background }) => {
