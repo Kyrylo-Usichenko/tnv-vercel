@@ -3,8 +3,6 @@ import React from 'react';
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-
-
 import Header from '../components/common/Header/Header';
 import Footer from '../components/common/Footer';
 import Greetings from '../components/company/Greetings/Greetings';
