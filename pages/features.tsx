@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { NextPage } from 'next/types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import { Main } from '../components/main/Styles/Styles';
 import Header from '../components/common/Header/Header';
 import Preview from '../components/Features/Preview';
 import Supercharge from '../components/Features/Supercharge';
@@ -17,6 +16,7 @@ import Ready from '../components/Features/Ready';
 import Faq from '../components/Features/Faq';
 import Gallery from '../components/Features/Gallery';
 import Modal from '../components/Features/Modal';
+import styled from 'styled-components';
 
 export async function getStaticProps({ locale }: any) {
 	return {
@@ -57,5 +57,11 @@ const Features: NextPage<Props> = ({ locale }) => {
 		</Main>
 	);
 };
+
+export const Main = styled.main`
+	position: relative;
+	z-index: 2;
+	overflow: hidden;
+`;
 
 export default Features;
