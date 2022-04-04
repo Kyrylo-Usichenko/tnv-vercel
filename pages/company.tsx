@@ -12,7 +12,7 @@ import Teamvio from '../components/company/Teamvio/Teamvio';
 import Commitments from '../components/company/Commitments/Commitments';
 import Role from '../components/company/Role/Role';
 import Contact from '../components/company/Contact/Contact';
-import { Main } from '../components/main/Styles';
+import styled from 'styled-components';
 
 export async function getStaticProps({ locale }: any) {
 	return {
@@ -51,5 +51,11 @@ const Company: NextPage<ReactPropTypes> = (props) => {
 		</>
 	);
 };
+
+export const Main = styled.main`
+	position: relative;
+	z-index: 2;
+	overflow: hidden;
+`;
 
 export default Company;
