@@ -4,18 +4,18 @@ import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import Header from '../components/common/Header/Header';
-import RedTopSquare from '../components/Main/RedTopSquare/RedTopSquare';
-import { Container } from '../components/common/Container/Container';
-import { Main } from '../components/Main/styles';
-import { GreySquare, GreySquareDots } from '../components/Main/GreyTopSquare/GreyTopSquare';
-import Preview from '../components/Main/Preview/Preview';
-import HowItWorks from '../components/Main/HowItWorks/HowItWorks';
-import MoreMoney from '../components/Main/MoreMoney/MoreMoney';
-import FeaturedOn from '../components/Main/FeaturedOn/FeaturedOn';
-import WhyChoose from '../components/Main/WhyChoose/WhyChoose';
-import Smile from '../components/Main/Smile/Smile';
-import FormFilling from '../components/Main/FormFilling/FormFilling';
+import RedTopSquare from '../components/main/RedTopSquare/RedTopSquare';
+import Preview from '../components/main/Preview/Preview';
+import HowItWorks from '../components/main/HowItWorks/HowItWorks';
+import MoreMoney from '../components/main/MoreMoney/MoreMoney';
+import FeaturedOn from '../components/main/FeaturedOn/FeaturedOn';
+import WhyChoose from '../components/main/WhyChoose/WhyChoose';
+import Smile from '../components/main/Smile/Smile';
+import FormFilling from '../components/main/FormFilling/FormFilling';
 import Footer from '../components/common/Footer';
+import { Container } from '../components/common/Container/Container';
+import { Main } from '../components/main/styles';
+import { GreySquare, GreySquareDots } from '../components/main/GreyTopSquare/GreyTopSquare';
 
 export async function getStaticProps({ locale }: any) {
 	return {
@@ -26,7 +26,7 @@ export async function getStaticProps({ locale }: any) {
 	};
 }
 
-const Home: NextPage<ReactPropTypes | any> = (props) => {
+const Home: NextPage<ReactPropTypes> = (props) => {
 	const locale = props.locale;
 	return (
 		<>

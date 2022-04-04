@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import styled from 'styled-components';
+
 import Button from '../Buttons/Button';
+import styled from 'styled-components';
 
 export const HeaderStyled = styled.header<{ isHeaderScrolled: boolean; isMenuOpend: boolean }>`
 	height: ${({ isMenuOpend }) => (isMenuOpend ? '100vh' : '88px')};
@@ -31,13 +32,17 @@ export const HeaderStyled = styled.header<{ isHeaderScrolled: boolean; isMenuOpe
 		z-index: -1;
 	}
 
-	@media (max-width: 375px) {
+	&::after {
+		content: url('images/header/mobile-dots-right-375.svg');
+		display: ${({ isMenuOpend }) => (isMenuOpend ? 'block' : 'none')};
+		position: absolute;
+		bottom: 20px;
+		right: -5px;
+	}
+
+	@media (min-width: 768px) {
 		&::after {
-			content: url('images/header/mobile-dots-right-375.svg');
-			display: ${({ isMenuOpend }) => (isMenuOpend ? 'block' : 'none')};
-			position: absolute;
-			bottom: 20px;
-			right: -5px;
+			display: none;
 		}
 	}
 `;
@@ -46,23 +51,23 @@ export const MobileContainer = styled.div<{ isMenuOpend: boolean }>`
 	height: inherit;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: flex-start;
 	position: relative;
 
 	&::before {
 		content: '';
 		display: ${({ isMenuOpend }) => (isMenuOpend ? 'block' : 'none')};
 		position: absolute;
-		top: -180px;
-		right: -330px;
-		width: 537.11px;
-		height: 537.11px;
+		width: 256.08px;
+		height: 256.08px;
+		top: -50px;
+		right: -140px;
+		border-radius: 44.8865px;
 		background: radial-gradient(
 			95.51% 95.51% at 50% 50%,
 			rgba(218, 218, 218, 0.15) 0%,
 			rgba(250, 250, 250, 0.15) 100%
 		);
-		border-radius: 94.1447px;
 		transform: rotate(-45deg);
 		z-index: -2;
 	}
@@ -71,37 +76,38 @@ export const MobileContainer = styled.div<{ isMenuOpend: boolean }>`
 		content: '';
 		position: absolute;
 		display: ${({ isMenuOpend }) => (isMenuOpend ? 'block' : 'none')};
-		width: 456.27px;
-		height: 456.27px;
-		left: -230px;
-		bottom: 20px;
+		width: 238.75px;
+		height: 238.75px;
+		left: -110px;
+		bottom: 90px;
+		border-radius: 22.2239px;
 		background: radial-gradient(
 			95.51% 95.51% at 50% 50%,
 			rgba(218, 218, 218, 0.15) 0%,
 			rgba(250, 250, 250, 0.15) 100%
 		);
-		border-radius: 42.4708px;
+
 		transform: rotate(-45deg);
 		z-index: -2;
 	}
 
-	@media (max-width: 375px) {
-		justify-content: flex-start;
+	@media (min-width: 768px) {
+		justify-content: space-between;
 
 		&::before {
-			width: 256.08px;
-			height: 256.08px;
-			top: -50px;
-			right: -140px;
-			border-radius: 44.8865px;
+			top: -180px;
+			right: -330px;
+			width: 537.11px;
+			height: 537.11px;
+			border-radius: 94.1447px;
 		}
 
 		&::after {
-			width: 238.75px;
-			height: 238.75px;
-			left: -120px;
-			bottom: -20px;
-			border-radius: 22.2239px;
+			width: 456.27px;
+			height: 456.27px;
+			left: -230px;
+			bottom: 20px;
+			border-radius: 42.4708px;
 		}
 	}
 `;
@@ -128,13 +134,13 @@ export const LeftWrapper = styled.div`
 
 export const LanguageWrapper = styled.div<{ isMenuOpend: boolean }>`
 	margin-left: 24px;
-	display: flex;
+	display: ${({ isMenuOpend }) => (isMenuOpend ? 'flex' : 'none')};
 	align-items: center;
 	cursor: pointer;
 	position: relative;
 
-	@media (max-width: 768px) {
-		display: ${({ isMenuOpend }) => (isMenuOpend ? 'flex' : 'none')};
+	@media (min-width: 768px) {
+		display: flex;
 	}
 `;
 
@@ -143,13 +149,13 @@ export const CurrentLanguage = styled.div`
 	text-transform: uppercase;
 	font-family: 'Gilroy';
 	font-weight: 400;
-	font-size: 18px;
-	line-height: 27px;
+	font-size: 16px;
+	line-height: 26px;
 	color: var(--main-text);
 
-	@media (max-width: 1440px) {
-		font-size: 16px;
-		line-height: 26px;
+	@media (min-width: 1920px) {
+		font-size: 18px;
+		line-height: 27px;
 	}
 `;
 
@@ -181,6 +187,7 @@ export const FlagWrapper = styled.div`
 	width: 24px;
 	height: 24px;
 	cursor: pointer;
+
 	&:last-child {
 		border-bottom: none;
 		margin-bottom: 0;
@@ -189,7 +196,7 @@ export const FlagWrapper = styled.div`
 `;
 
 export const Nav = styled.ul`
-	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: flex-start;
 	color: var(--text-main);
@@ -197,8 +204,8 @@ export const Nav = styled.ul`
 	padding: 0;
 	list-style-type: none;
 
-	@media (max-width: 768px) {
-		display: none;
+	@media (min-width: 1024px) {
+		display: flex;
 	}
 `;
 
@@ -213,14 +220,15 @@ export const NavItem = styled.li<{ isActive: boolean }>`
 		color: ${({ isActive }) => (isActive ? 'var(--text-primary)' : 'var(--text-main)')};
 		text-decoration: none;
 		font-family: 'Gilroy', sans-serif;
-		font-size: 18px;
-		line-height: 22px;
+
+		font-size: 16px;
+		line-height: 18.83px;
 		font-weight: 400;
 		transition: color 0.3s ease;
 
-		@media (max-width: 1440px) {
-			font-size: 16px;
-			line-height: 18.83px;
+		@media (min-width: 1920px) {
+			font-size: 18px;
+			line-height: 22px;
 		}
 	}
 
@@ -238,11 +246,12 @@ export const MobileNav = styled.ul<{ isMenuOpend: boolean }>`
 	color: var(--text-main);
 	padding: 0;
 	margin: 0;
+	margin-top: 231px;
 	list-style-type: none;
 	position: relative;
 
-	@media (max-width: 375px) {
-		margin-top: 231px;
+	@media (min-width: 768px) {
+		margin-top: 0;
 	}
 `;
 
@@ -251,14 +260,14 @@ export const MobileNavItem = styled.li<{ isActive: boolean }>`
 		color: ${({ isActive }) => (isActive ? 'var(--text-primary)' : 'var(--text-main)')};
 		text-decoration: none;
 		font-family: 'Gilroy', sans-serif;
-		font-size: 20px;
-		line-height: 27px;
+		font-size: 18px;
+		line-height: 22px;
 		font-weight: 400;
 		transition: color 0.3s ease;
 
-		@media (max-width: 375px) {
-			font-size: 18px;
-			line-height: 22px;
+		@media (min-width: 768px) {
+			font-size: 20px;
+			line-height: 27px;
 		}
 	}
 
@@ -268,15 +277,17 @@ export const MobileNavItem = styled.li<{ isActive: boolean }>`
 `;
 
 export const ButtonWrapper = styled.div`
-	@media (max-width: 768px) {
-		display: none;
+	display: none;
+
+	@media (min-width: 1024px) {
+		display: block;
 	}
 `;
 
 export const HeaderButton = styled.button<{ isHeaderScrolled: boolean; Tab: string }>`
-	padding: 12px 0;
-	width: 156px;
-	height: 48px;
+	padding: 10px 0;
+	width: 130px;
+	height: 40px;
 	font-family: 'Gilroy', sans-serif;
 	font-weight: 700;
 	font-size: 14px;
@@ -311,24 +322,24 @@ export const HeaderButton = styled.button<{ isHeaderScrolled: boolean; Tab: stri
 				: '8px 4px 20px 0 var(--shadow-color)'};
 	}
 
-	@media (max-width: 1440px) {
-		padding: 10px 0;
-		width: 130px;
-		height: 40px;
+	@media (min-width: 1920px) {
+		padding: 12px 0;
+		width: 156px;
+		height: 48px;
 	}
 `;
 
 export const Burger = styled.img`
-	display: none;
+	display: block;
 	cursor: pointer;
 
-	@media (max-width: 768px) {
-		display: block;
+	@media (min-width: 1024px) {
+		display: none;
 	}
 `;
 
 export const MobileLinks = styled.div<{ isMenuOpend: boolean }>`
-	display: ${({ isMenuOpend }) => (isMenuOpend ? 'flex' : 'none')};
+	display: none;
 	flex-direction: column;
 	align-items: center;
 	gap: 32px;
@@ -344,13 +355,13 @@ export const MobileLinks = styled.div<{ isMenuOpend: boolean }>`
 	&::after {
 		content: url('images/header/mobile-dots-right.svg');
 		position: absolute;
-		right: -16px;
+		right: -30px;
 		bottom: 75px;
 		z-index: -1;
 	}
 
-	@media (max-width: 375px) {
-		display: none;
+	@media (min-width: 768px) {
+		display: ${({ isMenuOpend }) => (isMenuOpend ? 'flex' : 'none')};
 	}
 `;
 

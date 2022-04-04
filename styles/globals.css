@@ -3,6 +3,11 @@
 *::after {
 	box-sizing: border-box;
 }
+h1,h2,h3,h4,h5{
+	margin: 0;
+	padding: 0;
+}
+
 
 :root {
 	--text-main: #212121;
@@ -76,7 +81,7 @@ body {
 	font-size: 16px;
 	font-weight: 400;
 	position: relative;
-	overflow-x: hidden;
+	background-color: #ffffff;
 }
 
 .accent {

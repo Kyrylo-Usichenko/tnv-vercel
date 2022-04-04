@@ -98,6 +98,10 @@ const InfoTitle = styled.h2`
 	color: #212121;
 	padding: 0;
 	margin: 0 0 16px 0;
+	@media (max-width: 1440px) {
+		font-size: 36px;
+		line-height: 42px;
+	}
 `;
 const InfoText = styled.p`
 	font-family: 'Inter';
@@ -108,6 +112,10 @@ const InfoText = styled.p`
 	color: #5c5c5c;
 	padding: 0;
 	margin: 0 0 32px 0;
+	@media (max-width: 1440px) {
+		font-size: 16px;
+		line-height: 23px;
+	}
 `;
 
 const Button = styled.button`

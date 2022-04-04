@@ -93,47 +93,51 @@ const Footer: FC<Props> = ({ background }) => {
 
 const StyledFooter = styled.footer<{ background?: string }>`
 	background-color: ${({ background }) => (background ? `${background}` : '#fafafa')};
-	padding: 48px 0 16px 0;
+	padding: 32px 0 16px 0;
+	position: relative;
+	z-index: 5;
 
-	@media (max-width: 900px) {
-		padding: 32px 0 16px 0;
+	@media (min-width: 1024px) {
+		padding: 48px 0 18px 0;
 	}
 `;
 
 const FirstLine = styled.div`
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 40px;
+	margin-bottom: 16px;
 
-	@media (max-width: 900px) {
-		flex-direction: column;
+	@media (min-width: 768px) {
 		margin-bottom: 25px;
 	}
 
-	@media (max-width: 460px) {
-		margin-bottom: 16px;
+	@media (min-width: 1024px) {
+		flex-direction: row;
+		margin-bottom: 40px;
 	}
 `;
 
 const FirstLineSeparate = styled.span`
-	display: inline-block;
 	width: 1px;
 	height: 32px;
 	background-color: #c4c4c4;
 	margin: 0 24px 0 0;
+	display: none;
 
-	@media (max-width: 900px) {
-		display: none;
+	@media (min-width: 1024px) {
+		display: inline-block;
 	}
 `;
 
 const FirstLineHalf = styled.div`
 	display: flex;
 	align-items: center;
+	flex-direction: column;
 
-	@media (max-width: 900px) {
-		flex-direction: column;
+	@media (min-width: 1024px) {
+		flex-direction: row;
 	}
 `;
 
@@ -145,9 +149,10 @@ const SecondLineHalf = styled.div`
 const FooterFullLogo = styled.div`
 	display: flex;
 	align-items: center;
+	margin-bottom: 25px;
 
-	@media (max-width: 900px) {
-		margin-bottom: 25px;
+	@media (min-width: 1024px) {
+		margin-bottom: 0;
 	}
 `;
 
@@ -166,54 +171,44 @@ const FooterLogoText = styled.img`
 const FooterUl = styled.ul`
 	display: flex;
 	align-items: center;
+	flex-direction: column;
 	color: var(--text-main);
 	margin: 0;
 	padding: 0;
+	margin-bottom: 48px;
 	list-style-type: none;
+	gap: 16px;
 
-	@media (max-width: 900px) {
+	@media (min-width: 768px) {
+		flex-direction: row;
+		gap: 56px;
 		margin-bottom: 32px;
 	}
 
-	@media (max-width: 460px) {
-		flex-direction: column;
-		gap: 16px;
-		margin-bottom: 48px;
+	@media (min-width: 1024px) {
+		margin-bottom: 0;
+		gap: 24px;
+	}
+
+	@media (min-width: 1280px) {
+		gap: 32px;
 	}
 `;
 
 const FooterLi = styled.li`
-	margin-right: 32px;
-
-	@media (max-width: 1024px) {
-		margin-right: 24px;
-	}
-
-	@media (max-width: 900px) {
-		margin-right: 56px;
-	}
-
-	@media (max-width: 460px) {
-		margin: 0;
-		font-size: 14px;
-		line-height: 27px;
-	}
-
-	&:last-child {
-		margin-right: 0;
-	}
+	margin: 0;
 
 	& > a {
 		color: var(--text-main);
 		text-decoration: none;
 		font-family: 'Gilroy', sans-serif;
-		font-size: 16px;
+		font-size: 14px;
 		line-height: 27px;
 		font-weight: 400;
 		transition: color 0.3s ease;
 
-		@media (max-width: 460px) {
-			font-size: 14px;
+		@media (min-width: 768px) {
+			font-size: 16px;
 			line-height: 27px;
 		}
 	}
@@ -226,18 +221,20 @@ const FooterLi = styled.li`
 const Links = styled.div`
 	display: flex;
 	align-items: center;
+	flex-direction: column;
 
-	@media (max-width: 460px) {
-		flex-direction: column;
+	@media (min-width: 768px) {
+		flex-direction: row;
 	}
 `;
 
 const Socials = styled.div`
 	display: flex;
 	align-items: center;
+	margin-bottom: 16px;
 
-	@media (max-width: 460px) {
-		margin-bottom: 16px;
+	@media (min-width: 768px) {
+		margin-bottom: 0;
 	}
 `;
 
@@ -246,18 +243,12 @@ const Social = styled.img`
 	margin-right: 16px;
 
 	&:last-of-type {
-		margin-right: 24px;
+		margin-right: 0;
 	}
 
-	@media (max-width: 900px) {
+	@media (min-width: 768px) {
 		&:last-of-type {
 			margin-right: 32px;
-		}
-	}
-
-	@media (max-width: 460px) {
-		&:last-of-type {
-			margin-right: 0;
 		}
 	}
 `;
@@ -307,15 +298,17 @@ const StoreTextSecond = styled.p`
 
 const SecondLine = styled.div`
 	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
 
-	@media (max-width: 900px) {
+	@media (min-width: 768px) {
+		flex-direction: row;
 		justify-content: center;
 	}
 
-	@media (max-width: 460px) {
-		flex-direction: column;
-		align-items: center;
-		gap: 8px;
+	@media (min-width: 1024px) {
+		justify-content: flex-start;
 	}
 `;
 
@@ -343,14 +336,14 @@ const SecondLineText = styled.p`
 `;
 
 const SecondLineSeparate1 = styled.span`
-	display: inline-block;
+	display: none;
 	width: 1px;
 	height: 14px;
 	background-color: #c4c4c4;
 	margin: 0 8px 0 0;
 
-	@media (max-width: 460px) {
-		display: none;
+	@media (min-width: 768px) {
+		display: inline-block;
 	}
 `;
 
