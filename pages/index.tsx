@@ -26,7 +26,7 @@ export async function getStaticProps({ locale }: any) {
 	};
 }
 
-const Home: NextPage<ReactPropTypes> = (props) => {
+const Home: NextPage<any> = (props) => {
 	const locale = props.locale;
 	return (
 		<>
