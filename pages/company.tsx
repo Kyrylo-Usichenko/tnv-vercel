@@ -4,16 +4,15 @@ import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import Header from '../components/common/Header/Header';
-import { Main } from '../components/main/styles';
 import Footer from '../components/common/Footer';
 import Greetings from '../components/company/Greetings/Greetings';
 import Done from '../components/company/Done/Done';
 import Counts from '../components/company/Counts/Counts';
 import Teamvio from '../components/company/Teamvio/Teamvio';
 import Commitments from '../components/company/Commitments/Commitments';
-import { Container } from '../components/common/Container/Container';
 import Role from '../components/company/Role/Role';
 import Contact from '../components/company/Contact/Contact';
+import { Main } from '../components/main/styles';
 
 export async function getStaticProps({ locale }: any) {
 	return {
