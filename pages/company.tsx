@@ -1,5 +1,5 @@
 import { NextPage } from 'next/types';
-import React, { ReactPropTypes } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -23,8 +23,8 @@ export async function getStaticProps({ locale }: any) {
 	};
 }
 
-const Company: NextPage<ReactPropTypes> = (props) => {
-	const locale = props.locale;
+const Company: NextPage<any> = (props) => {
+	const locale: any = props.locale;
 	return (
 		<>
 			<Main>
