@@ -12,7 +12,7 @@ import Teamvio from '../components/company/Teamvio/Teamvio';
 import Commitments from '../components/company/Commitments/Commitments';
 import Role from '../components/company/Role/Role';
 import Contact from '../components/company/Contact/Contact';
-import { Main } from '../components/main/styles';
+import { Main } from '../components/main/Styles';
 
 export async function getStaticProps({ locale }: any) {
 	return {

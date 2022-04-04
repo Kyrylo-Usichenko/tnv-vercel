@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NextPage } from 'next/types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import { Main } from '../components/main/styles';
+import { Main } from '../components/main/Styles';
 import Header from '../components/common/Header/Header';
 import Preview from '../components/Features/Preview';
 import Supercharge from '../components/Features/Supercharge';
