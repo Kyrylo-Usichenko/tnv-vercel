@@ -1,7 +1,5 @@
 import React, { FunctionComponent } from 'react';
 
-
-
 const ArrowDown: FunctionComponent<any> = () => {
 	return (
 		<>
