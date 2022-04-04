@@ -4,7 +4,7 @@ import { NextPage } from 'next/types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import Header from '../components/common/Header/Header';
-import { Main } from '../components/main/Styles/Styles';
+import { Main } from '../components/Main/Styles/Styles';
 import Footer from '../components/common/Footer';
 import Privacy from '../components/Legal/Privacy';
 import { CurrentTabCon, CurrentTabName, TabContainer, TabTitle } from '../components/Legal/styles';
