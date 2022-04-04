@@ -1,5 +1,5 @@
 import { NextPage } from 'next/types';
-import React, { ReactPropTypes } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 

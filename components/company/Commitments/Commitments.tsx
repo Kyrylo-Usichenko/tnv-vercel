@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { Container } from '../../common/Container/Container';
 
 const Commitments: FC = () => {
 	return (
