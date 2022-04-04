@@ -15,7 +15,7 @@ import FormFilling from '../components/main/FormFilling/FormFilling';
 import Footer from '../components/common/Footer';
 import { Container } from '../components/common/Container/Container';
 import { Main } from '../components/main/Styles/Styles';
-import { GreySquare, GreySquareDots } from '../components/main/GreyTopSquare/GreyTopSquare';
+import { GreySquare, GreySquareDots } from 'components/main/GreyTopSquare/GreyTopSquare';
 
 export async function getStaticProps({ locale }: any) {
 	return {
