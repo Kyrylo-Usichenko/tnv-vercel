@@ -1,61 +1,68 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
+import { Container } from '../../common/Container/Container';
 
 const Smile: FC = () => {
 	return (
 		<Wrapper>
-			<Title>We’ll put a smile on your supply chain </Title>
+			<Container>
+				<Title>We’ll put a smile on your supply chain </Title>
+			</Container>
+
 			<MainBox>
-				<GreyBox top='-90' left='-106'>
+				<GreyBox1>
 					<GreyBoxInner>
 						<BoxImg src='images/main/smile/chicken.png' alt='' />
 					</GreyBoxInner>
-				</GreyBox>
-				<GreyBox top='356' left='-106'>
-					<GreyBoxInner>
-						<BoxImg src='images/main/smile/simply.png' alt='' />
-					</GreyBoxInner>
-				</GreyBox>
-				<GreyBox top='141' left='-237'>
-					<GreyBoxInner>
-						<BoxImg src='images/main/smile/itacho.png' alt='' />
-					</GreyBoxInner>
-				</GreyBox>
-				<GreyBox top='6' left='-381'>
+				</GreyBox1>
+				<GreyBox2>
 					<GreyBoxInner>
 						<BoxImg src='images/main/smile/Joliebean.png' alt='' />
 					</GreyBoxInner>
-				</GreyBox>
-				<GreyBox top='284' left='-381'>
+				</GreyBox2>
+				<GreyBox3>
+					<GreyBoxInner>
+						<BoxImg src='images/main/smile/itacho.png' alt='' />
+					</GreyBoxInner>
+				</GreyBox3>
+				<GreyBox4>
 					<GreyBoxInner>
 						<BoxImg src='images/main/smile/gongcha.png' alt='' />
 					</GreyBoxInner>
-				</GreyBox>
-				<GreyBox top='-90' right='-106'>
+				</GreyBox4>
+				<GreyBox5>
+					<GreyBoxInner>
+						<BoxImg src='images/main/smile/simply.png' alt='' />
+					</GreyBoxInner>
+				</GreyBox5>
+
+				<GreyBox6>
 					<GreyBoxInner>
 						<BoxImg src='images/main/smile/chicken.png' alt='' />
 					</GreyBoxInner>
-				</GreyBox>
-				<GreyBox top='356' right='-106'>
-					<GreyBoxInner>
-						<BoxImg src='images/main/smile/simply.png' alt='' />
-					</GreyBoxInner>
-				</GreyBox>
-				<GreyBox top='141' right='-237'>
-					<GreyBoxInner>
-						<BoxImg src='images/main/smile/itacho.png' alt='' />
-					</GreyBoxInner>
-				</GreyBox>
-				<GreyBox top='6' right='-381'>
+				</GreyBox6>
+				<GreyBox7>
 					<GreyBoxInner>
 						<BoxImg src='images/main/smile/Joliebean.png' alt='' />
 					</GreyBoxInner>
-				</GreyBox>
-				<GreyBox top='284' right='-381'>
+				</GreyBox7>
+				<GreyBox8>
+					<GreyBoxInner>
+						<BoxImg src='images/main/smile/itacho.png' alt='' />
+					</GreyBoxInner>
+				</GreyBox8>
+
+				<GreyBox9>
 					<GreyBoxInner>
 						<BoxImg src='images/main/smile/gongcha.png' alt='' />
 					</GreyBoxInner>
-				</GreyBox>
+				</GreyBox9>
+				<GreyBox10>
+					<GreyBoxInner>
+						<BoxImg src='images/main/smile/simply.png' alt='' />
+					</GreyBoxInner>
+				</GreyBox10>
+
 				<Dots top='-512' left='647' src='images/main/smile/rightDots.svg' alt='' />
 
 				<RightTopGrey top='-329' left='714' size='457.92' radius='42.6248' />
@@ -71,7 +78,7 @@ const Smile: FC = () => {
 									<Text>5000+</Text>
 									<Text>happy businesses</Text>
 								</TextWrapper>
-								<Line src='images/main/smile/line.svg' alt='' />
+								<Line />
 							</Content>
 						</B3>
 					</B2>
@@ -85,6 +92,9 @@ const Wrapper = styled.div`
 	width: 100%;
 	height: 100%;
 	margin-top: 340px;
+	@media (max-width: 1024px) {
+		margin-top: 200px;
+	}
 `;
 
 const Title = styled.p`
@@ -97,6 +107,18 @@ const Title = styled.p`
 	text-align: center;
 	margin: 0;
 	padding: 0;
+	@media (max-width: 1440px) {
+		font-size: 36px;
+		line-height: 42px;
+	}
+	@media (max-width: 1024px) {
+		font-size: 32px;
+		line-height: 39px;
+	}
+	@media (max-width: 425px) {
+		font-size: 28px;
+		line-height: 33px;
+	}
 `;
 
 const Box = styled.div`
@@ -115,12 +137,26 @@ const B1 = styled(Box)`
 	margin-top: 147px;
 	position: relative;
 	z-index: 1;
+	@media (max-width: 1023px) {
+		margin-top: 255px;
+	}
+	@media (max-width: 650px) {
+		width: 242.54px;
+		height: 242.54px;
+	}
+	@media (max-width: 650px) {
+		margin-top: 188px;
+	}
 `;
 
 const B2 = styled(Box)`
 	background: rgba(251, 36, 43, 0.4);
 	height: 309px;
 	width: 309px;
+	@media (max-width: 650px) {
+		width: 215px;
+		height: 215px;
+	}
 `;
 
 const B3 = styled(Box)`
@@ -128,6 +164,10 @@ const B3 = styled(Box)`
 	height: 260.62px;
 	width: 260.62px;
 	position: relative;
+	@media (max-width: 650px) {
+		width: 181.35px;
+		height: 181.35px;
+	}
 `;
 
 const Content = styled.div`
@@ -161,13 +201,44 @@ const Text = styled.p`
 	margin: 0;
 	padding: 0;
 	white-space: nowrap;
+	@media (max-width: 1440px) {
+		font-size: 30px;
+		line-height: 37px;
+	}
+	@media (max-width: 1440px) {
+		font-size: 30px;
+		line-height: 37px;
+	}
+	@media (max-width: 1024px) {
+		font-size: 28px;
+		line-height: 34px;
+	}
+	@media (max-width: 758px) {
+		font-size: 29.5682px;
+		line-height: 36px;
+	}
+	@media (max-width: 650px) {
+		font-size: 20.6988px;
+		line-height: 25px;
+		&:first-child {
+			margin-top: 20px;
+		}
+	}
 `;
-const Line = styled.img`
+const Line = styled.div`
 	position: absolute;
 	top: 13px;
+	background: url('images/main/smile/line.svg') no-repeat;
+	width: 202px;
+	height: 77px;
+	background-size: contain;
+	@media (max-width: 650px) {
+		width: 150px;
+		height: 60px;
+	}
 `;
 
-const GreyBox = styled.div<{ top: string; left?: string; right?: string }>`
+const GreyBox1 = styled.div`
 	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(246, 245, 245, 0.5) 0%, rgba(250, 250, 250, 0.5) 100%);
 	border-radius: 14.8359px;
 	position: absolute;
@@ -178,9 +249,390 @@ const GreyBox = styled.div<{ top: string; left?: string; right?: string }>`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	top: ${({ top }) => `${top}px`};
-	${({ left }) => (left ? `left: ${left}px` : '')};
-	${({ right }) => (right ? `right: ${right}px` : '')};
+	top: -90px;
+	left: -106px;
+	@media (max-width: 1440px) {
+		width: 120.45px;
+		height: 120.45px;
+	}
+	@media (max-width: 1279px) {
+		top: -90px;
+		left: -68px;
+	}
+	@media (max-width: 1023px) {
+		top: -222px;
+		left: 176px;
+	}
+	@media (max-width: 768px) {
+		width: 110.41px;
+		height: 107.38px;
+	}
+	@media (max-width: 650px) {
+		width: 67.07px;
+		height: 65.23px;
+		top: -144px;
+		left: 202px;
+	}
+	@media (max-width: 480px) {
+		top: -144px;
+		left: 150px;
+	}
+`;
+const GreyBox2 = styled.div`
+	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(246, 245, 245, 0.5) 0%, rgba(250, 250, 250, 0.5) 100%);
+	border-radius: 14.8359px;
+	position: absolute;
+	width: 134.79px;
+	height: 134.79px;
+	z-index: 0;
+	transform: rotate(45deg);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 6px;
+	left: -381px;
+	@media (max-width: 1440px) {
+		width: 120.45px;
+		height: 120.45px;
+	}
+	@media (max-width: 1279px) {
+		left: -240px;
+	}
+	@media (max-width: 1023px) {
+		top: -114px;
+		left: 45px;
+	}
+	@media (max-width: 768px) {
+		width: 110.41px;
+		height: 107.38px;
+	}
+	@media (max-width: 650px) {
+		width: 67.07px;
+		height: 65.23px;
+		top: -86px;
+		left: 119px;
+	}
+	@media (max-width: 480px) {
+		top: -86px;
+		left: 87px;
+	}
+`;
+const GreyBox3 = styled.div`
+	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(246, 245, 245, 0.5) 0%, rgba(250, 250, 250, 0.5) 100%);
+	border-radius: 14.8359px;
+	position: absolute;
+	width: 134.79px;
+	height: 134.79px;
+	z-index: 0;
+	transform: rotate(45deg);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 141px;
+	left: -236px;
+	@media (max-width: 1440px) {
+		width: 120.45px;
+		height: 120.45px;
+	}
+	@media (max-width: 1279px) {
+		left: -150px;
+	}
+	@media (max-width: 1023px) {
+		top: -5px;
+		left: -64px;
+	}
+	@media (max-width: 768px) {
+		width: 110.41px;
+		height: 107.38px;
+	}
+	@media (max-width: 650px) {
+		width: 67.07px;
+		height: 65.23px;
+		top: -19px;
+		left: 49px;
+	}
+	@media (max-width: 480px) {
+		top: -28px;
+		left: 19px;
+	}
+`;
+const GreyBox4 = styled.div`
+	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(246, 245, 245, 0.5) 0%, rgba(250, 250, 250, 0.5) 100%);
+	border-radius: 14.8359px;
+	position: absolute;
+	width: 134.79px;
+	height: 134.79px;
+	z-index: 0;
+	transform: rotate(45deg);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 284px;
+	left: -381px;
+	@media (max-width: 1440px) {
+		width: 120.45px;
+		height: 120.45px;
+	}
+	@media (max-width: 1279px) {
+		left: -240px;
+	}
+	@media (max-width: 1023px) {
+		top: 225px;
+		left: -64px;
+	}
+	@media (max-width: 768px) {
+		width: 110.41px;
+		height: 107.38px;
+	}
+	@media (max-width: 650px) {
+		width: 67.07px;
+		height: 65.23px;
+		top: 186px;
+		left: 49px;
+	}
+	@media (max-width: 480px) {
+		top: 186px;
+		left: 19px;
+	}
+`;
+const GreyBox5 = styled.div`
+	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(246, 245, 245, 0.5) 0%, rgba(250, 250, 250, 0.5) 100%);
+	border-radius: 14.8359px;
+	position: absolute;
+	width: 134.79px;
+	height: 134.79px;
+	z-index: 0;
+	transform: rotate(45deg);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 356px;
+	left: -106px;
+	@media (max-width: 1440px) {
+		width: 120.45px;
+		height: 120.45px;
+	}
+	@media (max-width: 1279px) {
+		left: -68px;
+	}
+	@media (max-width: 1023px) {
+		top: 345px;
+		left: 45px;
+	}
+	@media (max-width: 768px) {
+		width: 110.41px;
+		height: 107.38px;
+	}
+	@media (max-width: 650px) {
+		width: 67.07px;
+		height: 65.23px;
+		top: 253px;
+		left: 119px;
+	}
+	@media (max-width: 480px) {
+		top: 253px;
+		left: 76px;
+	}
+`;
+
+const GreyBox6 = styled.div`
+	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(246, 245, 245, 0.5) 0%, rgba(250, 250, 250, 0.5) 100%);
+	border-radius: 14.8359px;
+	position: absolute;
+	width: 134.79px;
+	height: 134.79px;
+	z-index: 0;
+	transform: rotate(45deg);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: -90px;
+	right: -106px;
+	@media (max-width: 1440px) {
+		width: 120.45px;
+		height: 120.45px;
+	}
+	@media (max-width: 1279px) {
+		right: -68px;
+	}
+	@media (max-width: 1023px) {
+		top: -114px;
+		right: 45px;
+	}
+	@media (max-width: 768px) {
+		width: 110.41px;
+		height: 107.38px;
+	}
+	@media (max-width: 650px) {
+		width: 67.07px;
+		height: 65.23px;
+		top: -86px;
+		right: 119px;
+	}
+	@media (max-width: 480px) {
+		top: -86px;
+		right: 87px;
+	}
+`;
+
+const GreyBox7 = styled.div`
+	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(246, 245, 245, 0.5) 0%, rgba(250, 250, 250, 0.5) 100%);
+	border-radius: 14.8359px;
+	position: absolute;
+	width: 134.79px;
+	height: 134.79px;
+	z-index: 0;
+	transform: rotate(45deg);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 6px;
+	right: -381px;
+	@media (max-width: 1440px) {
+		width: 120.45px;
+		height: 120.45px;
+	}
+	@media (max-width: 1279px) {
+		right: -240px;
+	}
+	@media (max-width: 1023px) {
+		top: -5px;
+		right: -64px;
+	}
+	@media (max-width: 768px) {
+		width: 110.41px;
+		height: 107.38px;
+	}
+	@media (max-width: 650px) {
+		width: 67.07px;
+		height: 65.23px;
+		top: -19px;
+		right: 49px;
+	}
+	@media (max-width: 480px) {
+		top: -28px;
+		right: 19px;
+	}
+`;
+
+const GreyBox8 = styled.div`
+	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(246, 245, 245, 0.5) 0%, rgba(250, 250, 250, 0.5) 100%);
+	border-radius: 14.8359px;
+	position: absolute;
+	width: 134.79px;
+	height: 134.79px;
+	z-index: 0;
+	transform: rotate(45deg);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 141px;
+	right: -236px;
+	@media (max-width: 1440px) {
+		width: 120.45px;
+		height: 120.45px;
+	}
+	@media (max-width: 1279px) {
+		right: -150px;
+	}
+	@media (max-width: 1023px) {
+		top: 225px;
+		right: -64px;
+	}
+	@media (max-width: 768px) {
+		width: 110.41px;
+		height: 107.38px;
+	}
+	@media (max-width: 650px) {
+		width: 67.07px;
+		height: 65.23px;
+		top: 186px;
+		right: 49px;
+	}
+	@media (max-width: 480px) {
+		top: 186px;
+		right: 19px;
+	}
+`;
+
+const GreyBox9 = styled.div`
+	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(246, 245, 245, 0.5) 0%, rgba(250, 250, 250, 0.5) 100%);
+	border-radius: 14.8359px;
+	position: absolute;
+	width: 134.79px;
+	height: 134.79px;
+	z-index: 0;
+	transform: rotate(45deg);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 284px;
+	right: -381px;
+	@media (max-width: 1440px) {
+		width: 120.45px;
+		height: 120.45px;
+	}
+	@media (max-width: 1279px) {
+		right: -240px;
+	}
+	@media (max-width: 1023px) {
+		top: 345px;
+		right: 45px;
+	}
+	@media (max-width: 768px) {
+		width: 110.41px;
+		height: 107.38px;
+	}
+	@media (max-width: 650px) {
+		width: 67.07px;
+		height: 65.23px;
+		top: 253px;
+		right: 119px;
+	}
+	@media (max-width: 480px) {
+		top: 253px;
+		right: 76px;
+	}
+`;
+
+const GreyBox10 = styled.div`
+	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(246, 245, 245, 0.5) 0%, rgba(250, 250, 250, 0.5) 100%);
+	border-radius: 14.8359px;
+	position: absolute;
+	width: 134.79px;
+	height: 134.79px;
+	z-index: 0;
+	transform: rotate(45deg);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 356px;
+	right: -106px;
+	@media (max-width: 1440px) {
+		width: 120.45px;
+		height: 120.45px;
+	}
+	@media (max-width: 1279px) {
+		right: -68px;
+	}
+	@media (max-width: 1023px) {
+		top: 460px;
+		right: 176px;
+	}
+	@media (max-width: 768px) {
+		width: 110.41px;
+		height: 107.38px;
+	}
+	@media (max-width: 650px) {
+		width: 67.07px;
+		height: 65.23px;
+		top: 322px;
+		right: 202px;
+	}
+	@media (max-width: 480px) {
+		top: 316px;
+		right: 157px;
+	}
 `;
 
 const GreyBoxInner = styled.div`
@@ -191,12 +643,27 @@ const GreyBoxInner = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	@media (max-width: 1440px) {
+		width: 89.61px;
+		height: 89.61px;
+	}
+	@media (max-width: 768px) {
+		width: 82.15px;
+		height: 82.15px;
+	}
+	@media (max-width: 650px) {
+		width: 49.92px;
+		height: 49.92px;
+	}
 `;
 
 const MainBox = styled.div`
-	width: 480px;
+	max-width: 480px;
 	margin: 0 auto;
 	position: relative;
+	@media (max-width: 480px) {
+		max-width: 375px;
+	}
 `;
 
 const BoxImg = styled.img`

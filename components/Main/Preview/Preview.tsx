@@ -24,18 +24,23 @@ const Preview: FC = () => {
 
 const PreviewInfo = styled.div`
 	padding: 260px 0 0;
-	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 	@media (max-width: 1440px) {
 		padding: 252px 0 0;
 	}
 	@media (max-width: 1280px) {
 		padding: 252px 0 0;
+		margin-left: 40px;
 	}
 	@media (max-width: 1024px) {
 		padding: 257px 0 0;
 	}
 	@media (max-width: 768px) {
 		padding: 126px 0 0;
+		align-items: center;
+		margin-left: 0;
 	}
 	@media (max-width: 370px) {
 		padding: 140px 0 0;
@@ -49,12 +54,47 @@ const PreviewTitle = styled.h2`
 	font-weight: 600;
 	font-size: 48px;
 	line-height: 59px;
+	position: relative;
+
 	&:before {
-		content: url('/images/main/preview/decorations.png');
+		content: '';
+		width: 87px;
+		height: 80px;
+		background: url('images/main/preview/decorations.png');
 		position: absolute;
 		z-index: 1;
-		left: -46px;
-		top: 215px;
+		left: -42px;
+		top: -44px;
+		background-size: contain;
+		@media (max-width: 1024px) {
+			transform: rotate(27deg);
+		}
+		@media (max-width: 768px) {
+			left: -31px;
+			top: -55px;
+		}
+		@media (max-width: 425px) {
+			left: -18px;
+			top: -43px;
+		}
+		@media (max-width: 375px) {
+			width: 75px;
+			left: -15px;
+			top: -45px;
+		}
+	}
+	&:after {
+		content: '';
+		width: 59px;
+		height: 56px;
+		background: url('images/main/preview/decorations768.svg');
+		position: absolute;
+		z-index: 1;
+		right: -44px;
+		top: 25px;
+		@media (max-width: 425px) {
+			right: 0;
+		}
 	}
 	@media (max-width: 1440px) {
 		font-size: 44px;
@@ -101,6 +141,31 @@ const PreviewText = styled.p`
 		font-size: 18px;
 		line-height: 24px;
 		max-width: 369px;
+	}
+	@media (max-width: 1440px) {
+		font-size: 18px;
+		line-height: 24px;
+		max-width: 369px;
+	}
+	@media (max-width: 1280px) {
+		font-size: 18px;
+		line-height: 24px;
+	}
+	@media (max-width: 1024px) {
+		font-size: 16px;
+		line-height: 24px;
+		max-width: 334px;
+	}
+	@media (max-width: 768px) {
+		font-size: 16px;
+		line-height: 24px;
+		max-width: 477px;
+		text-align: center;
+	}
+	@media (max-width: 375px) {
+		font-size: 14px;
+		line-height: 22px;
+		max-width: 333px;
 	}
 `;
 const PreviewAction = styled.div`

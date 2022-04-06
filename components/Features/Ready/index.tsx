@@ -126,14 +126,14 @@ const FullConDec = styled.div`
 	height: 100%;
 
 	&::before {
-		content: url('images/features/ready/ready-dots-l.svg');
+		content: url('images/features/ready/ready-dots-l.webp');
 		position: absolute;
 		bottom: -80px;
 		left: -160px;
 	}
 
 	&::after {
-		content: url('images/features/ready/ready-dots-r.svg');
+		content: url('images/features/ready/ready-dots-r.webp');
 		position: absolute;
 		top: -10px;
 		right: -210px;

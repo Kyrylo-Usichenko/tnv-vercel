@@ -12,7 +12,11 @@ const Supercharge: FC = () => {
 			<FlexCon>
 				<FullCon>
 					<FullConDec1>
-						<FullConApp src='images/features/supercharge/app.png' alt='app' />
+						<FullConApp
+							src='images/features/supercharge/app.jpg'
+							srcSet='images/features/supercharge/app@2x.jpg 2x'
+							alt='app'
+						/>
 					</FullConDec1>
 				</FullCon>
 				<FlexConInfo>

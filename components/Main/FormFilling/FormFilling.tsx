@@ -50,6 +50,17 @@ const Wrapper = styled.div`
 	overflow: hidden;
 	border-radius: 0 0 50px 0;
 	margin-right: 54px;
+
+	@media (max-width: 1024px) {
+		margin-top: 250px;
+		margin-right: 0;
+	}
+	@media (max-width: 768px) {
+		height: 1320px;
+	}
+	@media (max-width: 580px) {
+		height: 1215px;
+	}
 `;
 
 const WrapperRotated = styled.div`
@@ -64,6 +75,8 @@ const WrapperRotated = styled.div`
 	bottom: 0;
 
 	border-radius: 0 50px 0 0;
+	@media (max-width: 1024px) {
+	}
 `;
 const Null = styled.div`
 	transform: skewY(-8deg);
@@ -73,6 +86,11 @@ const Inner = styled.div`
 	display: flex;
 	justify-content: space-between;
 	margin-top: 127px;
+	@media (max-width: 768px) {
+		flex-direction: column;
+		align-items: center;
+		margin-top: 95px;
+	}
 `;
 
 const Title = styled.h5`
@@ -85,6 +103,26 @@ const Title = styled.h5`
 	padding: 0;
 	color: #212121;
 	max-width: 580px;
+	@media (max-width: 1280px) {
+		font-size: 36px;
+		line-height: 42px;
+	}
+	@media (max-width: 1024px) {
+		font-size: 32px;
+		line-height: 38px;
+	}
+	@media (max-width: 768px) {
+		font-size: 32px;
+		line-height: 39px;
+		text-align: center;
+	}
+	@media (max-width: 580px) {
+		font-size: 28px;
+		line-height: 33px;
+	}
+	@media (max-width: 425px) {
+		max-width: 310px;
+	}
 `;
 
 const TitleWrapper = styled.div`
@@ -95,6 +133,13 @@ const Map = styled.img`
 	left: -243px;
 	top: -87px;
 	z-index: -1;
+	@media (max-width: 768px) {
+		top: 401px;
+	}
+	@media (max-width: 425px) {
+		width: 620px;
+		top: 572px;
+	}
 `;
 
 const FormWrapper = styled.div`
@@ -104,6 +149,16 @@ const FormWrapper = styled.div`
 	width: 504px;
 	height: 597px;
 	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@media (max-width: 768px) {
+		width: 489px;
+	}
+	@media (max-width: 580px) {
+		width: 375px;
+	}
 `;
 const Form = styled.form`
 	width: 440px;
@@ -111,6 +166,10 @@ const Form = styled.form`
 	background: #ffffff;
 	border-radius: 32px;
 	padding: 48px;
+	@media (max-width: 580px) {
+		width: 343px;
+		padding: 40px 24px 0;
+	}
 `;
 
 const FormTitle = styled.p`
@@ -122,6 +181,15 @@ const FormTitle = styled.p`
 	color: #212121;
 	padding: 0;
 	margin: 0 0 32px 0;
+	@media (max-width: 768px) {
+		font-size: 24px;
+		line-height: 29px;
+		text-align: center;
+	}
+	@media (max-width: 580px) {
+		font-size: 20px;
+		line-height: 25px;
+	}
 `;
 const FormTitleSpan = styled.span`
 	margin: 0;
@@ -166,6 +234,9 @@ const Input = styled.input`
 	&:focus {
 		border: 1px solid #d2d2d2;
 	}
+	@media (max-width: 580px) {
+		width: 295px;
+	}
 `;
 
 const Button = styled.input`
@@ -209,6 +280,10 @@ const Dots = styled.img`
 	right: -2px;
 	bottom: -37px;
 	z-index: -1;
+	@media (max-width: 768px) {
+		right: 129px;
+		bottom: 429px;
+	}
 `;
 
 export default Smile;

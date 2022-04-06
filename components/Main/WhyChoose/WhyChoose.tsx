@@ -6,13 +6,13 @@ import Slider from '../Slider/Slider';
 const WhyChoose: FC = () => {
 	return (
 		<Styled>
-			<Dots left='246' top='-36' rotate='0' src='images/main/whyChoose/leftTopDots.svg' />
+			<LeftTopDots />
 
 			<Wrapper>
 				<Null>
 					<GreySquare />
-					<Dots left='48' top='585' rotate='0' src='images/main/whyChoose/leftBotDots.svg' />
-					<Dots left='1199' top='112' rotate='0' src='images/main/whyChoose/rightDots.svg' />
+					<DotsLeftBot />
+					<DotsRight />
 					<RightSquare src='images/main/whyChoose/rightSquare.svg' />
 					<LeftSquare src='images/main/whyChoose/leftSquare.svg' />
 
@@ -29,7 +29,7 @@ const WhyChoose: FC = () => {
 };
 
 const Wrapper = styled.section`
-	height: 677px;
+	padding: 0 0 90px;
 	margin: 78px 0 0 53.66px;
 	z-index: 1;
 	transform: skewY(-8deg);
@@ -38,6 +38,9 @@ const Wrapper = styled.section`
 	background: #363636;
 	overflow: hidden;
 	position: relative;
+	@media (max-width: 1024px) {
+		margin: 78px 0 0 0;
+	}
 `;
 
 const Styled = styled.div`
@@ -48,10 +51,37 @@ const Null = styled.div`
 	transform: skewY(8deg);
 `;
 
-const Dots = styled.img<{ top: string; left: string; rotate: string }>`
+const DotsLeftBot = styled.div`
 	position: absolute;
-	left: ${({ left }) => `${left}px`};
-	top: ${({ top }) => `${top}px`};
+	left: 48px;
+	top: 585px;
+	background: url('images/main/whyChoose/leftBotDots.svg') no-repeat;
+	width: 465px;
+	height: 219px;
+	@media (max-width: 1024px) {
+		top: 861px;
+		left: -164px;
+	}
+	@media (max-width: 425px) {
+		top: 762px;
+		right: -177px;
+	}
+`;
+const LeftTopDots = styled.div`
+	position: absolute;
+	left: 246px;
+	top: -36px;
+	background: url('images/main/whyChoose/leftTopDots.svg') no-repeat;
+	width: 427px;
+	height: 323px;
+`;
+const DotsRight = styled.div`
+	position: absolute;
+	left: 1199px;
+	top: 112px;
+	background: url('images/main/whyChoose/rightDots.svg') no-repeat;
+	width: 465px;
+	height: 219px;
 `;
 
 const Inner = styled.div`
@@ -70,6 +100,18 @@ const Title = styled.h4`
 	padding: 77px 0 0 0;
 	color: #ffffff;
 	margin: 0;
+
+	@media (max-width: 1024px) {
+		font-size: 32px;
+		line-height: 38px;
+	}
+	@media (max-width: 768px) {
+		line-height: 39px;
+	}
+	@media (max-width: 325px) {
+		font-size: 28px;
+		line-height: 33px;
+	}
 `;
 
 const GreySquare = styled.div`
@@ -88,14 +130,27 @@ const LeftSquare = styled.img`
 	position: absolute;
 	top: -160px;
 	left: -4px;
+	@media (max-width: 425px) {
+		left: -140px;
+		top: -230px;
+	}
 `;
 
 const RightSquare = styled.img`
 	position: absolute;
 	top: 124px;
-	right: 25px;
-	width: 698.85px;
-	height: 698.85px;
+	right: 0px;
+	width: 759px;
+	height: 658px;
+
+	@media (max-width: 1024px) {
+		top: 300px;
+		right: -48px;
+	}
+	@media (max-width: 425px) {
+		top: 167px;
+		right: -573px;
+	}
 `;
 
 export default WhyChoose;

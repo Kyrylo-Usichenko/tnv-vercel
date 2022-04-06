@@ -141,11 +141,7 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 						</ButtonWrapper>
 
 						<Burger
-							src={`${
-								isMenuOpend
-									? 'icons/common/logo/header-close.svg'
-									: 'icons/common/logo/header-burger.svg'
-							}`}
+							src={`${isMenuOpend ? 'images/header/close.svg' : 'images/header/burger.svg'}`}
 							alt='open/close menu'
 							onClick={menuToggle}
 						/>

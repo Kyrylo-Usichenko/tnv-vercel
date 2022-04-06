@@ -76,7 +76,7 @@ const StyledFaq = styled.section`
 	position: relative;
 
 	&::before {
-		content: url('images/features/faq/faq-dots-l-min.svg');
+		content: url('images/features/faq/faq-dots-l-min.webp');
 		position: absolute;
 		top: 90px;
 		left: 0;
@@ -84,7 +84,7 @@ const StyledFaq = styled.section`
 
 	@media (min-width: 768px) {
 		&::before {
-			content: url('images/features/faq/faq-dots-l.svg');
+			content: url('images/features/faq/faq-dots-l.webp');
 			top: 220px;
 			left: -150px;
 		}
@@ -99,7 +99,7 @@ const StyledFaq = styled.section`
 
 	@media (min-width: 1280px) {
 		&::after {
-			content: url('images/features/faq/faq-dots-r.svg');
+			content: url('images/features/faq/faq-dots-r.webp');
 			position: absolute;
 			right: -100px;
 			top: 486px;

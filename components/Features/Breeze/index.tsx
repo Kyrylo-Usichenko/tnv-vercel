@@ -105,7 +105,7 @@ const BreezeText = styled.p`
 		max-width: 340px;
 
 		&::before {
-			content: url('images/features/breeze/breeze-dots-l.svg');
+			content: url('images/features/breeze/breeze-dots-l.webp');
 			position: absolute;
 			left: -250px;
 			bottom: -215px;
@@ -207,6 +207,7 @@ const BreezeBlock2 = styled.div`
 		top: 219px;
 		right: 43px;
 		transform: rotate(45deg);
+		z-index: 1;
 	}
 
 	@media (min-width: 768px) {
@@ -228,7 +229,7 @@ const BreezeBlock2Dec0 = styled.div`
 	z-index: -1;
 
 	&::after {
-		content: url('images/features/breeze/breeze-dots-m.svg');
+		content: url('images/features/breeze/breeze-dots-m.webp');
 		position: absolute;
 		left: -9px;
 		bottom: -54px;
@@ -237,7 +238,7 @@ const BreezeBlock2Dec0 = styled.div`
 
 	@media (min-width: 768px) {
 		&::before {
-			content: url('images/features/breeze/breeze-dots-r.svg');
+			content: url('images/features/breeze/breeze-dots-r.webp');
 			position: absolute;
 			right: -290px;
 			top: -130px;
@@ -272,7 +273,7 @@ const BreezeBlock2Dec1 = styled.div`
 	}
 
 	&::after {
-		content: url('images/features/breeze/add-line.svg');
+		content: url('images/features/breeze/add-line.webp');
 		position: absolute;
 		left: 108px;
 		top: 56px;
@@ -291,7 +292,7 @@ const BreezeBlock2Dec2 = styled.div`
 	z-index: 1;
 
 	&::before {
-		content: url('images/features/breeze/women-line.svg');
+		content: url('images/features/breeze/women-line.webp');
 		position: absolute;
 		right: 62px;
 		top: 52px;
@@ -324,7 +325,7 @@ const BreezeBlock2Dec3 = styled.div`
 	}
 
 	&::after {
-		content: url('images/features/breeze/man-line.svg');
+		content: url('images/features/breeze/man-line.webp');
 		position: absolute;
 		left: 93px;
 		bottom: 92px;

@@ -18,8 +18,8 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 		<StyledModal modalActive={modalActive}>
 			<FormWrapper modalActive={modalActive}>
 				<ModalContent modalActive={modalActive}>
-					<ModalClose type='button' onClick={closeModal}>
-						<img src='images/features/modal/modal-close.svg' alt='close' className='modal-btn' />
+					<ModalClose type='button' onClick={closeModal} className='modal-btn'>
+						<img src='images/features/modal/close.svg' alt='close' className='modal-btn' />
 					</ModalClose>
 					<ModalTitle>
 						Hi, we're <span className='accent'>Tinvio!</span> And you?

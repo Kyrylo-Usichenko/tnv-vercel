@@ -15,7 +15,7 @@ import FormFilling from '../components/Main/FormFilling/FormFilling';
 import Footer from '../components/common/Footer';
 import { Container } from '../components/common/Container/Container';
 import { Main } from '../components/Main/Styles/Styles';
-import { GreySquare, GreySquareDots } from '../components/Main/GreyTopSquare/GreyTopSquare';
+import styled from 'styled-components';
 
 export async function getStaticProps({ locale }: any) {
 	return {
@@ -29,12 +29,12 @@ export async function getStaticProps({ locale }: any) {
 const Home: NextPage<any> = (props) => {
 	const locale = props.locale;
 	return (
-		<>
-			<RedTopSquare />
-			<GreySquare top='-182px' left='642px' size='256.75px' />
-			<GreySquare top='410px' left='212px' size='343.78px'>
+		<Styled>
+			<GreySquare2>
 				<GreySquareDots src='/images/main/preview/dots-under-text.png' alt='' />
-			</GreySquare>
+			</GreySquare2>
+			<RedTopSquare />
+			<GreySquare />
 
 			<Main>
 				<Head>
@@ -58,8 +58,94 @@ const Home: NextPage<any> = (props) => {
 					<Footer background='#ffffff' />
 				</section>
 			</Main>
-		</>
+		</Styled>
 	);
 };
+
+export const GreySquare = styled.div`
+	top: -182px;
+	left: 642px;
+	width: 256.75px;
+	height: 256.75px;
+	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(218, 218, 218, 0.15) 0%, rgba(250, 250, 250, 0.15) 100%);
+	border-radius: 45.0024px;
+	transform: rotate(-45deg);
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+	overflow: hidden;
+	@media (max-width: 1440px) {
+		left: 415px;
+	}
+	@media (max-width: 1280px) {
+		left: 350px;
+	}
+	@media (max-width: 1024px) {
+		left: 215px;
+	}
+	@media (max-width: 768px) {
+		width: 327.73px;
+		height: 327.73px;
+		left: 600px;
+		top: -153px;
+	}
+	@media (max-width: 425px) {
+		width: 248.41px;
+		height: 248.41px;
+		left: 303px;
+		top: -111px;
+	}
+	@media (max-width: 375px) {
+		width: 248.41px;
+		height: 248.41px;
+		left: 300px;
+		top: -115px;
+	}
+`;
+export const GreySquare2 = styled.div`
+	top: 410px;
+	left: 212px;
+	width: 343.78px;
+	height: 343.78px;
+	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(218, 218, 218, 0.15) 0%, rgba(250, 250, 250, 0.15) 100%);
+	border-radius: 45.0024px;
+	transform: rotate(-45deg);
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 0;
+	overflow: hidden;
+	@media (max-width: 1440px) {
+		left: -46px;
+		top: 415px;
+	}
+	@media (max-width: 768px) {
+		left: -65px;
+		top: 220px;
+	}
+	@media (max-width: 375px) {
+		left: -200px;
+		top: 164px;
+	}
+`;
+
+export const GreySquareDots = styled.img`
+	transform: rotate(45deg);
+	position: absolute;
+	left: 5px;
+	bottom: 120px;
+	z-index: 0;
+	@media (max-width: 768px) {
+		display: none;
+	}
+`;
+
+export const Styled = styled.div`
+	position: relative;
+	overflow: hidden;
+`;
 
 export default Home;

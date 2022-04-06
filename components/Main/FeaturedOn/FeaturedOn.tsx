@@ -8,7 +8,7 @@ const MoreMoney: FC = () => {
 			<Stars src='images/main/featuredOn/stars.svg' alt='' />
 
 			<Wrapper>
-				<GreySquare top='-90' left='234' />
+				<GreySquare />
 				<GreySquareRight top='-279' right='88' />
 				<Dots src='images/main/featuredOn/dots.svg' alt='' />
 
@@ -16,10 +16,10 @@ const MoreMoney: FC = () => {
 					<Inner>
 						<Title>Featured On</Title>
 						<Companies>
-							<img src='images/main/featuredOn/techCrunch.svg' alt='' />
-							<img src='images/main/featuredOn/techInAsia.svg' alt='' />
-							<img src='images/main/featuredOn/pymnts.svg' alt='' />
-							<img src='images/main/featuredOn/ventureBeat.svg' alt='' />
+							<Company src='images/main/featuredOn/techCrunch.svg' alt='' />
+							<Company src='images/main/featuredOn/techInAsia.svg' alt='' />
+							<Company src='images/main/featuredOn/pymnts.svg' alt='' />
+							<Company src='images/main/featuredOn/ventureBeat.svg' alt='' />
 						</Companies>
 					</Inner>
 				</Container>
@@ -31,14 +31,32 @@ const MoreMoney: FC = () => {
 const Wrapper = styled.div`
 	background: radial-gradient(129.72% 141.01% at 50% 50%, #f7f7f7 0%, #fafafa 100%);
 	border-radius: 40px;
-	height: 244px;
 	margin-right: 54px;
 	position: relative;
 	overflow: hidden;
+	padding-bottom: 48px;
+
+	@media (max-width: 1280px) {
+		margin-top: 560px;
+	}
+	@media (max-width: 1024px) {
+		margin-right: 0;
+	}
+	@media (max-width: 950px) {
+		padding-bottom: 0;
+	}
+	@media (max-width: 768px) {
+		margin-top: 500px;
+	}
 `;
 
 const Styled = styled.div`
 	position: relative;
+`;
+const Company = styled.img`
+	@media (max-width: 950px) {
+		margin-bottom: 60px;
+	}
 `;
 
 const Inner = styled.div`
@@ -59,28 +77,49 @@ const Title = styled.h4`
 	width: 666px;
 	border-bottom: 1px solid #d2d2d2;
 	text-align: center;
+	@media (max-width: 768px) {
+		max-width: 336px;
+	}
+	@media (max-width: 425px) {
+		max-width: 253px;
+		font-size: 28px;
+		line-height: 33px;
+	}
 `;
 
 const Companies = styled.div`
 	display: flex;
 	justify-content: space-between;
-	width: 1132px;
+	max-width: 1132px;
+	width: 100%;
+	flex-wrap: wrap;
+	@media (max-width: 950px) {
+		max-width: 600px;
+	}
+	@media (max-width: 490px) {
+		max-width: 190px;
+		justify-content: center;
+	}
 `;
 
-export const GreySquare = styled.div<{ top: string; left: string }>`
+export const GreySquare = styled.div`
 	width: 505.8px;
 	height: 505.8px;
 	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(250, 250, 250, 0.2) 100%);
 	border-radius: 94.9017px;
 	transform: rotate(-45deg);
 	position: absolute;
-	top: ${({ top }) => `${top}px`};
-	left: ${({ left }) => `${left}px`};
+	top: -90px;
+	left: 234px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	z-index: 0;
 	overflow: hidden;
+	@media (max-width: 425px) {
+		top: 119px;
+		left: 334px;
+	}
 `;
 
 export const GreySquareRight = styled.div<{ top: string; right: string }>`

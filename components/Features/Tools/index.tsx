@@ -8,7 +8,11 @@ const Tools: FC = () => {
 				<Manage>
 					<ManageTitle>Manage orders</ManageTitle>
 					<ManageText>Yay, you've got a new order! Check and confirm the order in lightning speed</ManageText>
-					<ManageImg src='images/features/tools/manage.png' alt='app' />
+					<ManageImg
+						src='images/features/tools/manage.png'
+						srcSet='images/features/tools/manage@2x.png 2x'
+						alt='app'
+					/>
 					<ManageDec></ManageDec>
 				</Manage>
 				<Wrapper>
@@ -16,10 +20,10 @@ const Tools: FC = () => {
 						<MessageeDec></MessageeDec>
 						<MessageButtons>
 							<MessageButton>
-								<img src='images/features/tools/message-pin.svg' alt='pin' />
+								<img src='images/features/tools/pin.svg' alt='pin' />
 							</MessageButton>
 							<MessageButton>
-								<img src='images/features/tools/message-file.svg' alt='file' />
+								<img src='images/features/tools/file.svg' alt='file' />
 							</MessageButton>
 							<label>
 								<MessageInput placeholder='Type something...' />
@@ -31,14 +35,14 @@ const Tools: FC = () => {
 						<Share>
 							<ShareDec></ShareDec>
 							<ShareBlock1>
-								<img src='images/features/tools/share-ico.svg' alt='share' />
+								<img src='images/features/tools/share.svg' alt='share' />
 							</ShareBlock1>
 							<ShareTitle>Share payment links</ShareTitle>
 						</Share>
 						<Invoices>
 							<InvoiceBlock1>
 								<InvoiceBlock2>
-									<img src='images/features/tools/invoice-ico.svg' alt='dollar' />
+									<img src='images/features/tools/dollar.svg' alt='dollar' />
 								</InvoiceBlock2>
 							</InvoiceBlock1>
 							<InvoiceTitle>Create invoices</InvoiceTitle>
@@ -187,7 +191,7 @@ const ManageDec = styled.div`
 	width: 100%;
 
 	&::before {
-		content: url('images/features/tools/manage-dots.svg');
+		content: url('images/features/tools/manage-dots.webp');
 		position: absolute;
 		bottom: 0;
 		right: -190px;
@@ -256,7 +260,7 @@ const Message = styled.div`
 	margin-bottom: 16px;
 
 	&::before {
-		content: url('images/features/tools/message-rec-l.png');
+		content: url('images/features/tools/message-rec-l.webp');
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -268,7 +272,7 @@ const Message = styled.div`
 		}
 
 		&::after {
-			content: url('images/features/tools/message-rec-b.png');
+			content: url('images/features/tools/message-rec-b.webp');
 			position: absolute;
 			right: -150px;
 			bottom: 0;
@@ -434,14 +438,14 @@ const Invoices = styled.div`
 	padding: 46px 0;
 
 	&::before {
-		content: url('images/features/tools/invoice-rec-l.png');
+		content: url('images/features/tools/invoice-rec-l.webp');
 		position: absolute;
 		top: 0;
 		left: -14px;
 	}
 
 	&::after {
-		content: url('images/features/tools/invoice-rec-r.png');
+		content: url('images/features/tools/invoice-rec-r.webp');
 		position: absolute;
 		right: -26px;
 		bottom: -2px;
@@ -639,7 +643,7 @@ const ShareDec = styled.div`
 	width: 100%;
 
 	&::before {
-		content: url('images/features/tools/share-dots.svg');
+		content: url('images/features/tools/share-dots.webp');
 		position: absolute;
 		left: 183px;
 		top: 0;

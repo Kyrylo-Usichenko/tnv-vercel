@@ -20,12 +20,31 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 					</PreviewButton>
 					<PreviewImg>
 						<picture>
-							<source srcSet='images/features/preview/man-1920.png' media='(min-width: 1920px)' />
-							<source srcSet='images/features/preview/man-1440.png' media='(min-width: 1440px)' />
-							<source srcSet='images/features/preview/man-1280.png' media='(min-width: 1280px)' />
-							<source srcSet='images/features/preview/man-1024.png' media='(min-width: 1024px)' />
-							<source srcSet='images/features/preview/man-768.png' media='(min-width: 768px)' />
-							<img src='images/features/preview/man-375.png' alt='Man holding smartphone' />
+							<source
+								srcSet='images/features/preview/man-1920.png 1x, images/features/preview/man-1920@2x.png 2x'
+								media='(min-width: 1920px)'
+							/>
+							<source
+								srcSet='images/features/preview/man-1440.png 1x, images/features/preview/man-1440@2x.png 2x'
+								media='(min-width: 1440px)'
+							/>
+							<source
+								srcSet='images/features/preview/man-1280.png 1x, images/features/preview/man-1280@2x.png 2x'
+								media='(min-width: 1280px)'
+							/>
+							<source
+								srcSet='images/features/preview/man-1024.png 1x, images/features/preview/man-1024@2x.png 2x'
+								media='(min-width: 1024px)'
+							/>
+							<source
+								srcSet='images/features/preview/man-768.png 1x, images/features/preview/man-768@2x.png 2x'
+								media='(min-width: 768px)'
+							/>
+							<img
+								src='images/features/preview/man-375.jpg'
+								srcSet='images/features/preview/man-375@2x.jpg 2x'
+								alt='Man holding smartphone'
+							/>
 						</picture>
 						<PreviewImgDeco1 />
 						<PreviewImgDeco2 />
@@ -65,14 +84,14 @@ const PreviewTitle = styled.h2`
 	position: relative;
 
 	&::before {
-		content: url('/images/features/preview/decoration1-768.svg');
+		content: url('/images/features/preview/dec1-768.svg');
 		position: absolute;
 		top: -22px;
 		left: -8px;
 	}
 
 	&::after {
-		content: url('/images/features/preview/decoration2-768.svg');
+		content: url('/images/features/preview/dec2-768.svg');
 		position: absolute;
 		right: -43px;
 		bottom: -15px;
@@ -91,14 +110,14 @@ const PreviewTitle = styled.h2`
 		max-width: 535px;
 
 		&::before {
-			content: url('/images/features/preview/decoration1-1920.svg');
+			content: url('/images/features/preview/dec1-1920.svg');
 			position: absolute;
 			top: -30px;
 			left: -7px;
 		}
 
 		&::after {
-			content: url('/images/features/preview/decoration2-1920.svg');
+			content: url('/images/features/preview/dec2-1920.svg');
 			position: absolute;
 			right: -60px;
 			bottom: -25px;
@@ -243,24 +262,48 @@ const PreviewImgDeco1 = styled.div`
 		position: absolute;
 		right: -15px;
 		bottom: -125px;
+		z-index: 1;
 	}
 
 	@media (min-width: 768px) {
 		&::before {
-			display: none;
+			content: '';
+			width: 253px;
+			height: 273px;
+			background: rgba(0, 0, 0, 0.1);
+			filter: blur(16.91px);
+			border-radius: 8.93674px;
+			top: initial;
+			right: -15px;
+			bottom: -40px;
 		}
 
 		&::after {
 			content: url('images/features/preview/app.png');
-			right: -67px;
-			bottom: -95px;
+			right: -9px;
+			bottom: -30px;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		&::before {
+			right: -33px;
+		}
+
+		&::after {
+			right: -24px;
 		}
 	}
 
 	@media (min-width: 1280px) {
+		&::before {
+			right: -28px;
+			bottom: 4px;
+		}
+
 		&::after {
-			right: -80px;
-			bottom: -55px;
+			right: -21px;
+			bottom: 16px;
 		}
 	}
 `;
@@ -270,7 +313,7 @@ const PreviewImgDeco2 = styled.div`
 	width: inherit;
 
 	&::before {
-		content: url('images/features/preview/line-375.svg');
+		content: url('images/features/preview/line-375.webp');
 		position: absolute;
 		top: 168px;
 		left: 170px;
@@ -278,7 +321,7 @@ const PreviewImgDeco2 = styled.div`
 
 	@media (min-width: 768px) {
 		&::before {
-			content: url('images/features/preview/line-l-768.svg');
+			content: url('images/features/preview/line-l-768.webp');
 			top: 210px;
 			left: 340px;
 		}
@@ -286,7 +329,7 @@ const PreviewImgDeco2 = styled.div`
 
 	@media (min-width: 1024px) {
 		&::before {
-			content: url('images/features/preview/line-l-1024.svg');
+			content: url('images/features/preview/line-l-1024.webp');
 			top: 212px;
 			left: 473px;
 		}
@@ -299,7 +342,7 @@ const PreviewImgDeco2 = styled.div`
 		}
 
 		&::after {
-			content: url('images/features/preview/line-r-1280.svg');
+			content: url('images/features/preview/line-r-1280.webp');
 			position: absolute;
 			top: 245px;
 			left: 659px;
@@ -317,7 +360,7 @@ const PreviewImgDeco2 = styled.div`
 		}
 	}
 
-	@media (min-width: 1440px) {
+	@media (min-width: 1920px) {
 		&::before {
 			top: 292px;
 			left: 657px;
@@ -330,7 +373,7 @@ const PreviewImgDeco3 = styled.div`
 	width: inherit;
 
 	&::before {
-		content: url('images/features/preview/dots-b.svg');
+		content: url('images/features/preview/dots-b.webp');
 		position: absolute;
 		left: -130px;
 		bottom: -140px;
@@ -349,7 +392,7 @@ const PreviewImgDeco3 = styled.div`
 		}
 
 		&::after {
-			content: url('images/features/preview/dots-t.svg');
+			content: url('images/features/preview/dots-t.webp');
 			position: absolute;
 			top: -75px;
 			right: -270px;

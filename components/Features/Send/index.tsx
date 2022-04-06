@@ -15,12 +15,31 @@ const Send: FC = () => {
 					</SendText>
 				</SendInfo>
 				<picture>
-					<source srcSet='images/features/send/send-img-1920.png' media='(min-width: 1920px)' />
-					<source srcSet='images/features/send/send-img-1440.png' media='(min-width: 1440px)' />
-					<source srcSet='images/features/send/send-img-1280.png' media='(min-width: 1280px)' />
-					<source srcSet='images/features/send/send-img-1024.png' media='(min-width: 1024px)' />
-					<source srcSet='images/features/send/send-img-768.png' media='(min-width: 768px)' />
-					<SendImg src='images/features/send/send-img-375.png' alt='women' />
+					<source
+						srcSet='images/features/send/send-img-1920.png 1x, images/features/send/send-img-1920@2x.png 2x'
+						media='(min-width: 1920px)'
+					/>
+					<source
+						srcSet='images/features/send/send-img-1440.png 1x, images/features/send/send-img-1440@2x.png 2x'
+						media='(min-width: 1440px)'
+					/>
+					<source
+						srcSet='images/features/send/send-img-1280.png 1x, images/features/send/send-img-1280@2x.png 2x'
+						media='(min-width: 1280px)'
+					/>
+					<source
+						srcSet='images/features/send/send-img-1024.png 1x, images/features/send/send-img-1024@2x.png 2x'
+						media='(min-width: 1024px)'
+					/>
+					<source
+						srcSet='images/features/send/send-img-768.png 1x, images/features/send/send-img-768@2x.png 2x'
+						media='(min-width: 768px)'
+					/>
+					<SendImg
+						src='images/features/send/send-img-375.png'
+						srcSet='images/features/send/send-img-375@2x.png 2x'
+						alt='women'
+					/>
 				</picture>
 				<Dec1></Dec1>
 				<Dec2></Dec2>
@@ -97,7 +116,9 @@ const SendText = styled.p`
 	margin: 0;
 `;
 
-const SendImg = styled.img``;
+const SendImg = styled.img`
+	border-radius: 43px;
+`;
 
 const Dec1 = styled.div`
 	position: absolute;
@@ -107,14 +128,14 @@ const Dec1 = styled.div`
 	bottom: 0;
 
 	&::before {
-		content: url(images/features/send/invoice.png);
+		content: url('images/features/send/invoice.png');
 		position: absolute;
 		bottom: 360px;
 		right: -5px;
 	}
 
 	&::after {
-		content: url(images/features/send/remind.png);
+		content: url('images/features/send/remind.png');
 		position: absolute;
 		bottom: 265px;
 		right: 0;
@@ -133,14 +154,14 @@ const Dec2 = styled.div`
 	bottom: 0;
 
 	&::before {
-		content: url(images/features/send/line-l.svg);
+		content: url('images/features/send/line-l.webp');
 		position: absolute;
 		bottom: 229px;
 		right: 140px;
 	}
 
 	&::after {
-		content: url(images/features/send/line-s.svg);
+		content: url('images/features/send/line-s.webp');
 		position: absolute;
 		bottom: 319px;
 		right: 70px;

@@ -13,10 +13,11 @@ const Get = () => {
 						Monitor your transaction activity on one dashboard. Generate customized order, invoice, and
 						payments reports. Prevent fraud, improve operations, and grow grow grow!
 					</GetText>
-					<picture>
-						<source srcSet='images/features/get/get-img-1920.png' media='(min-width: 768px)' />
-						<GetImg src='images/features/get/get-img-375.png' alt='app' />
-					</picture>
+					<GetImg
+						src='images/features/get/get-img-1920.png'
+						srcSet='images/features/get/get-img-1920@2x.png 2x'
+						alt='app'
+					/>
 				</GetCon>
 			</FeaturesCon>
 		</SyledGet>
@@ -150,6 +151,13 @@ const GetText = styled.p`
 
 const GetImg = styled.img`
 	position: static;
+	width: 573.5px;
+	height: 573.5px;
+
+	@media (min-width: 768px) {
+		width: 792px;
+		height: 792px;
+	}
 
 	@media (min-width: 1024px) {
 		position: absolute;
