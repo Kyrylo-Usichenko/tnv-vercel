@@ -94,7 +94,7 @@ const AppImage = styled.div`
 	right: 149px;
 	width: 829px;
 	height: 634px;
-	background: url('images/main/preview/app.svg') no-repeat;
+	background: url('images/main/preview/app.png') no-repeat;
 	@media (max-width: 768px) {
 		top: -328px;
 		right: -574px;
@@ -113,7 +113,7 @@ const Phone = styled.div`
 	z-index: 1;
 	top: 144px;
 	left: -183px;
-	background: url('images/main/preview/phone.svg') no-repeat;
+	background: url('images/main/preview/phone.png') no-repeat;
 	width: 253px;
 	height: 414px;
 	background-size: contain;

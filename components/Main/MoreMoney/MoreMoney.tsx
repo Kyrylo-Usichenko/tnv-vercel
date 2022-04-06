@@ -134,7 +134,7 @@ const PaymentsActivity = styled.div`
 	position: absolute;
 	left: -139px;
 	top: -102px;
-	background: url('images/main/moreMoney/paymentsActivity.svg') no-repeat;
+	background: url('images/main/moreMoney/paymentsActivity.png') no-repeat;
 	background-size: contain;
 	width: 299px;
 	height: 488px;
@@ -159,7 +159,7 @@ const FruitPlanet = styled.div`
 	position: absolute;
 	left: 116px;
 	top: 42px;
-	background: url('images/main/moreMoney/fruitPlanet.svg') no-repeat;
+	background: url('images/main/moreMoney/fruitPlanet.png') no-repeat;
 	background-size: contain;
 	width: 300px;
 	height: 488px;

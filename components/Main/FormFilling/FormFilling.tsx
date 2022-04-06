@@ -11,7 +11,7 @@ const Smile: FC = () => {
 						<Inner>
 							<TitleWrapper>
 								<Title>Fill up the form and we’ll get in touch within a few hours</Title>
-								<Map src='images/main/formFilling/map.svg' alt='' />
+								<Map src='images/main/formFilling/map.png' alt='' />
 							</TitleWrapper>
 
 							<FormWrapper>
