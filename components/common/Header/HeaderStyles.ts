@@ -139,7 +139,7 @@ export const LanguageWrapper = styled.div<{ isMenuOpend: boolean }>`
 	cursor: pointer;
 	position: relative;
 
-	@media (min-width: 768px) {
+	@media (min-width: 1024px) {
 		display: flex;
 	}
 `;

@@ -1,129 +1,228 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { Container } from '../../common/Container/Container';
+import { FeaturesCon } from '../../common/Container/Container';
 
 const Greetings: FC = () => {
 	return (
 		<Wrapper>
-			<Container>
+			<FeaturesCon>
 				<Title>
-					Hi, we’re <TitleSpan>Tinvio</TitleSpan>!
+					Hi, we're <span className='accent'>Tinvio</span>!
 				</Title>
-				<SubTitle>We’re reimaging how merchants and suppliers transact.</SubTitle>
+				<SubTitle>We're reimaging how merchants and suppliers transact.</SubTitle>
 				<Main>
-					<div>
+					<Info>
 						<Text>
-							<p>
-								[For Ajay to draft] Quisque dictum, leo in tincidunt ornare, elit ante facilisis dui,
-								porta pellentesque leo arcu in massa. Praesent mattis faucibus placerat. Vestibulum
-								neque mauris, rhoncus non bibendum a, posuere sed metus. Vestibulum ligula urna,
-								fermentum non diam molestie, bibendum vestibulum nulla. Nulla facilisi. Fusce commodo
-								odio at libero vulputate porta vitae quis nulla. Curabitur feugiat vitae diam in
-								eleifend. In diam eros, dapibus sit amet mi a, sodales fringilla purus.
-							</p>
-
-							<p>
-								Vivamus a risus vulputate, tempus ligula a, ornare nibh. Sed ac leo quis erat ultricies
-								tincidunt. Aenean sit amet dolor fringilla ex lobortis pulvinar quis ac purus. Cras
-								sodales, quam at lacinia auctor, felis nisl volutpat diam, et varius lorem lorem ut
-								massa. Ut non iaculis diam. Vivamus malesuada in nisi ut rutrum. Aliquam ac posuere
-								nibh. Pellentesque tristique tristique lectus, vel eleifend magna egestas condimentum.
-							</p>
+							Tinvio is built for B2B transactions. It's an app, it's a dashboard, it's a checkout link,
+							it's a digital wallet, it's a credit line, it's money in (and out) of your bank, and so much
+							more. Tradition meets modern in a delightful chat-led user experience. The best part? We
+							make it fast, flexible, and fun. Try it out – we'd love to hear your feedback too!
+						</Text>
+						<Text>
+							Why do we do it? It's painfully frustrating for businesses to transact. It shouldn't be so
+							hard. We're minting NFTs on a new blockchain everyday and we're about to colonize Mars, but
+							in our supply chains, businesses are still exchanging cold hard cash, writing checks, and
+							keying manual bank transfers. We're going to reimagine the status quo, we're going to
+							digitize the zillions of these offline receivables and payables. One transaction at a time.
 						</Text>
 						<Contact>Contact Us</Contact>
-					</div>
+					</Info>
 					<PhoneWrapper>
-						<Phone src='images/company/Greetings/phone.svg' alt='' />
-						<Stars src='images/company/Greetings/stars.svg' alt='' />
+						<picture>
+							<source
+								srcSet='images/company/Greetings/ph-1024.png 1x, images/company/Greetings/ph-1024@2x.png 2x'
+								media='(min-width: 1024px)'
+							/>
+							<source
+								srcSet='images/company/Greetings/ph-768.png 1x, images/company/Greetings/ph-768@2x.png 2x'
+								media='(min-width: 768px)'
+							/>
+							<Phone
+								src='images/company/Greetings/ph-375.png'
+								srcSet='images/company/Greetings/ph-375@2x.png 2x'
+								alt='app'
+							/>
+						</picture>
+						{/* <Stars src='images/company/Greetings/stars.svg' alt='' />
 						<PhoneTopDots src='images/company/Greetings/phoneTopDots.svg' alt='' />
 						<PhoneBotDots src='images/company/Greetings/phoneBotDots.svg' alt='' />
 						<PhoneLeftDots src='images/company/Greetings/leftDots.svg' alt='asd' />
 						<LeftTopSquare />
 						<LeftBotSquare />
-						<Square />
+						<Square /> */}
 					</PhoneWrapper>
 				</Main>
-			</Container>
+			</FeaturesCon>
 		</Wrapper>
 	);
 };
 
-const Wrapper = styled.div`
-	margin: 152px 0 0 0;
-	padding: 0;
+const Wrapper = styled.section`
+	margin: 142px 0 140px 0;
+
+	@media (min-width: 1920px) {
+		margin: 152px 0 140px 0;
+	}
 `;
 
 const Title = styled.h1`
 	font-family: 'Gilroy';
-	font-style: normal;
 	font-weight: 600;
-	font-size: 60px;
-	line-height: 74px;
+	font-size: 44px;
+	line-height: 54px;
 	color: #212121;
 	text-align: center;
-`;
+	margin: 0 0 16px 0;
+	position: relative;
 
-const TitleSpan = styled.span`
-	color: #ff474d;
-`;
-const SubTitle = styled.h2`
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 20px;
-	line-height: 26px;
-	color: #5c5c5c;
-	text-align: center;
-	margin: 16px 0 0;
-	padding: 0;
-`;
+	&::before {
+		content: url('images/company/Greetings/dec-375.svg');
+		position: absolute;
+		top: -16px;
+		left: -12px;
+	}
 
-const Main = styled.div`
-	display: flex;
-	justify-content: space-between;
-`;
+	@media (min-width: 768px) {
+		&::before {
+			content: url('images/company/Greetings/dec-768.svg');
+			top: -25px;
+			left: 150px;
+		}
+	}
 
-const Text = styled.p`
-	padding: 0;
-	margin: 181px 0 0;
-	max-width: 769px;
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 18px;
-	line-height: 24px;
-	color: #5c5c5c;
-	& p {
-		padding: 0;
-		margin: 0;
-		&:first-child {
-			margin-bottom: 50px;
+	@media (min-width: 1024px) {
+		font-size: 48px;
+		line-height: 59px;
+
+		&::before {
+			left: 235px;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		font-size: 56px;
+		line-height: 66px;
+
+		&::before {
+			left: 250px;
+		}
+	}
+
+	@media (min-width: 1440px) {
+		&::before {
+			left: 335px;
+		}
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 60px;
+		line-height: 74px;
+
+		&::before {
+			left: 380px;
 		}
 	}
 `;
 
-const Contact = styled.button`
-	margin: 56.33px 0 0;
-	border: 1.16667px solid #d2d2d2;
-	border-radius: 18px;
-	text-decoration: none;
-	font-family: 'Gilroy';
-	font-style: normal;
-	font-weight: 700;
-	font-size: 18.6667px;
-	line-height: 23px;
-	color: #212121;
-	padding: 16.33px 55.85px;
-	background: #fff;
-	cursor: pointer;
+const SubTitle = styled.h2`
+	font-family: 'Inter';
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 24px;
+	color: #5c5c5c;
+	text-align: center;
+	margin: 0 0 28px 0;
+
+	@media (min-width: 768px) {
+		margin: 0 0 40px 0;
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 20px;
+		line-height: 26px;
+	}
 `;
 
-const Phone = styled.img`
-	margin: 40px 0 0 144px;
+const Main = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	@media (min-width: 1024px) {
+		justify-content: space-between;
+		flex-direction: row;
+		gap: 58px;
+	}
+`;
+
+const Info = styled.div`
+	@media (min-width: 1024px) {
+		flex: 0 0 455px;
+	}
+
+	@media (min-width: 1280px) {
+		flex: 0 0 554px;
+	}
+
+	@media (min-width: 1440px) {
+		flex: 0 0 684px;
+	}
+
+	@media (min-width: 1920px) {
+		flex: 0 0 745px;
+	}
+`;
+
+const Text = styled.p`
+	font-family: 'Inter';
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 23px;
+	color: #5c5c5c;
+	margin: 0 0 30px 0;
+
+	&:last-of-type {
+		margin-bottom: 32px;
+	}
+`;
+
+const Contact = styled.button`
+	border: 1px solid #d2d2d2;
+	border-radius: 16px;
+	font-family: 'Gilroy';
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+	color: #212121;
+	padding: 14px 50px;
+	display: block;
+	margin: 0 auto 50px auto;
+	background: #ffffff;
+	cursor: pointer;
+
+	@media (min-width: 1024px) {
+		margin: 0;
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 18.6667px;
+		line-height: 23px;
+		padding: 16px 55px;
+	}
 `;
 
 const PhoneWrapper = styled.div`
 	position: relative;
+`;
+
+const Phone = styled.img`
+	@media (min-width: 768px) {
+		margin-left: 130px;
+	}
+
+	@media (min-width: 1024px) {
+		margin-left: 0;
+	}
 `;
 
 const Stars = styled.img`

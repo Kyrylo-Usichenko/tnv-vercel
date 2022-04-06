@@ -3,45 +3,45 @@ import styled from 'styled-components';
 
 const Counts: FC = () => {
 	return (
-		<Wrapper>
-			<Block1>
+		<Wrapper className='counts'>
+			<Block1 className='block1'>
 				<Block1Dots />
 				<Block1SquareRight />
 				<Block1SquareBottom />
 				<Content>
 					<Count>
-						250<Span>+</Span>
+						250<span className='accent'>+</span>
 					</Count>
 					<Title>Team Members</Title>
 				</Content>
 			</Block1>
-			<Block2>
+			<Block2 className='block2'>
 				<Block2Dots />
 				<Block2SquareLeft />
 				<Block2SquareBottom />
 				<Content>
 					<Count>
-						10<Span>+</Span>
+						10<span className='accent'>+</span>
 					</Count>
 					<Title>Nationalities</Title>
 				</Content>
 			</Block2>
-			<Block3>
+			<Block3 className='block3'>
 				<Block3Dots />
 				<Block3Square />
 				<Content>
 					<Count>
-						5000<Span>+</Span>
+						5000<span className='accent'>+</span>
 					</Count>
-					<Title>Active Businesses</Title>
+					<Title>Businesses</Title>
 				</Content>
 			</Block3>
-			<Block4>
+			<Block4 className='block4'>
 				<Block4Square />
 				<Block4Dots />
 				<Content>
 					<Count>
-						$500<Span>M</Span>
+						$500<span className='accent'>M</span>
 					</Count>
 					<Title>Transactions</Title>
 				</Content>
@@ -50,96 +50,186 @@ const Counts: FC = () => {
 	);
 };
 
-const Wrapper = styled.div`
-	margin-top: 180px;
-	display: flex;
-	justify-content: space-between;
+const Wrapper = styled.section`
+	@media (min-width: 768px) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 16px;
+	}
+
+	@media (min-width: 1024px) {
+		grid-template-columns: 1fr 224px 224px 1fr;
+		grid-template-rows: repeat(5, 45px);
+	}
+
+	@media (min-width: 1280px) {
+		grid-template-columns: 1fr 246px 246px 1fr;
+	}
+
+	@media (min-width: 1440px) {
+		grid-template-columns: 1fr 286px 286px 1fr;
+	}
+
+	@media (min-width: 1920px) {
+		grid-template-columns: 1fr 316px 316px 1fr;
+	}
 `;
 
-const Block1 = styled.div`
-	background: #f7f7f7;
-	margin-top: 66px;
-	border-radius: 0 32px 32px 0;
+const Block = styled.div`
 	display: flex;
-	justify-content: flex-end;
-	width: 100%;
-	height: 188px;
-	margin-right: 16px;
-	padding: 48px 75px 48px 0;
-	position: relative;
-	overflow: hidden;
-	z-index: 0;
-`;
-
-const Block2 = styled.div`
+	justify-content: center;
 	background: #f7f7f7;
-	border-radius: 32px;
-	height: 188px;
-	width: 100%;
-	max-width: 316px;
-	margin-right: 16px;
-	text-align: center;
-	padding: 48px 0 48px;
-	position: relative;
-	overflow: hidden;
-	z-index: 0;
-`;
-const Block3 = styled.div`
-	background: #f7f7f7;
-	height: 188px;
-	width: 100%;
-	max-width: 316px;
-	border-radius: 32px;
-	margin-top: 66px;
 	padding: 48px 0;
+	border-radius: 32px;
+	margin: 0 16px 16px 16px;
+
+	&:last-of-type {
+		margin: 0 0 0 16px;
+	}
+
+	@media (min-width: 768px) {
+		margin: 0;
+
+		&:last-of-type {
+			margin: 0;
+		}
+	}
+
+	@media (min-width: 1024px) {
+	}
+`;
+
+const Block1 = styled(Block)`
+	border-radius: 0 32px 32px 0;
 	position: relative;
 	overflow: hidden;
 	z-index: 0;
+	margin-left: 0;
+
+	@media (min-width: 768px) {
+		grid-row: 2 / 6;
+		margin-bottom: 16px;
+	}
+
+	@media (min-width: 1024px) {
+		grid-row: 2 / 6;
+		margin: 0;
+		padding-right: 42px;
+		justify-content: flex-end;
+	}
+
+	@media (min-width: 1280px) {
+		padding-right: 53px;
+	}
+
+	@media (min-width: 1440px) {
+		padding-right: 73px;
+	}
 `;
-const Block4 = styled.div`
-	background: #f7f7f7;
-	height: 188px;
+
+const Block2 = styled(Block)`
+	position: relative;
+	overflow: hidden;
+	z-index: 0;
+
+	@media (min-width: 768px) {
+		margin-right: 16px;
+		margin-bottom: 16px;
+		grid-row: 1/5;
+	}
+
+	@media (min-width: 1024px) {
+		grid-row: 1/5;
+		margin: 0;
+	}
+`;
+
+const Block3 = styled(Block)`
+	position: relative;
+	overflow: hidden;
+	z-index: 0;
+
+	@media (min-width: 768px) {
+		margin-left: 16px;
+		grid-row: 6 / 10;
+	}
+
+	@media (min-width: 1024px) {
+		grid-row: 2 / 6;
+		margin: 0;
+	}
+`;
+
+const Block4 = styled(Block)`
 	border-radius: 32px 0 0 32px;
-	width: 100%;
-	margin-left: 16px;
-	display: flex;
-	padding: 48px 0 48px 81px;
 	position: relative;
 	overflow: hidden;
 	z-index: 0;
+	align-self: flex-end;
+	margin-left: 16px;
+
+	@media (min-width: 768px) {
+		grid-row: 5 / 9;
+	}
+
+	@media (min-width: 1024px) {
+		grid-row: 1/5;
+		margin: 0;
+		padding-left: 42px;
+		justify-content: flex-start;
+	}
+
+	@media (min-width: 1280px) {
+		padding-left: 53px;
+	}
+
+	@media (min-width: 1440px) {
+		padding-left: 73px;
+	}
 `;
+
 const Content = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	display: inline-block;
 `;
-const Count = styled.div`
+
+const Count = styled.p`
 	font-family: 'Gilroy';
-	font-style: normal;
 	font-weight: 600;
-	font-size: 48px;
-	line-height: 59px;
+	font-size: 36px;
+	line-height: 44px;
 	color: #212121;
 	text-align: center;
-	padding: 0;
-	margin: 0;
-	display: flex;
+	margin: 0 0 4px 0;
+
+	@media (min-width: 768px) {
+		font-size: 44px;
+		line-height: 54px;
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 48px;
+		line-height: 59px;
+	}
 `;
+
 const Title = styled.p`
 	font-family: 'Gilroy';
-	font-style: normal;
 	font-weight: 600;
-	font-size: 24px;
-	line-height: 29px;
+	font-size: 18px;
+	line-height: 22px;
 	color: #212121;
 	text-align: center;
-	padding: 0;
-	margin: 4px 0 0;
-`;
-const Span = styled.div`
-	padding: 0;
 	margin: 0;
-	color: #ff474d;
+
+	@media (min-width: 768px) {
+		font-size: 20px;
+		line-height: 25px;
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 24px;
+		line-height: 29px;
+	}
 `;
 
 const Block4Square = styled.div`

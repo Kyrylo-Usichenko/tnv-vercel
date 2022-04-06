@@ -35,17 +35,13 @@ const Company: NextPage<any> = (props) => {
 				</Head>
 
 				<Header locale={locale} Tab='Company' />
-
-				<section>
-					<Greetings />
-					<Done />
-					<Counts />
-					<Teamvio />
-					<Commitments />
-					<Role />
-					<Contact />
-				</section>
-
+				<Greetings />
+				<Done />
+				<Counts />
+				<Teamvio />
+				<Commitments />
+				<Role />
+				<Contact />
 				<Footer background='#ffffff' />
 			</Main>
 		</>

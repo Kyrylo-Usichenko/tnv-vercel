@@ -46,6 +46,16 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 								alt='Man holding smartphone'
 							/>
 						</picture>
+						<AppImg
+							src='images/features/preview/app.png'
+							srcSet='images/features/preview/app@2x.png 2x'
+							alt='message'
+						/>
+						<MsgImg
+							src='images/features/preview/msg-375.png'
+							srcSet='images/features/preview/msg-375@2x.png 2x'
+							alt='message'
+						/>
 						<PreviewImgDeco1 />
 						<PreviewImgDeco2 />
 						<PreviewImgDeco3 />
@@ -216,7 +226,7 @@ const PreviewImg = styled.div`
 	position: relative;
 	width: 100%;
 
-	& > picture > img {
+	& > picture:nth-child(1) > img {
 		border-radius: 48px;
 		width: 100%;
 	}
@@ -241,6 +251,42 @@ const PreviewImg = styled.div`
 	}
 `;
 
+const AppImg = styled.img`
+	position: absolute;
+	right: -10px;
+	bottom: -84px;
+	z-index: 1;
+	border-radius: 0;
+	width: 177px;
+	height: auto;
+
+	@media (min-width: 768px) {
+		width: 288px;
+		height: auto;
+		right: -9px;
+		bottom: -30px;
+	}
+
+	@media (min-width: 1024px) {
+		right: -24px;
+	}
+
+	@media (min-width: 1280px) {
+		right: -21px;
+		bottom: 16px;
+	}
+`;
+
+const MsgImg = styled.img`
+	position: absolute;
+	top: 123px;
+	right: 8px;
+
+	@media (min-width: 768px) {
+		display: none;
+	}
+`;
+
 const PreviewImgDeco1 = styled.div`
 	position: absolute;
 	top: 0;
@@ -251,37 +297,24 @@ const PreviewImgDeco1 = styled.div`
 	width: 100%;
 
 	&::before {
-		content: url('images/features/preview/msg-375.png');
+		content: '';
 		position: absolute;
-		top: 123px;
-		right: 8px;
-	}
-
-	&::after {
-		content: url('images/features/preview/app-375.png');
-		position: absolute;
+		width: 156px;
+		height: 169px;
+		background: rgba(0, 0, 0, 0.1);
+		filter: blur(16.91px);
+		border-radius: 8.93674px;
+		top: initial;
 		right: -15px;
-		bottom: -125px;
-		z-index: 1;
+		bottom: -91px;
 	}
 
 	@media (min-width: 768px) {
 		&::before {
-			content: '';
 			width: 253px;
 			height: 273px;
-			background: rgba(0, 0, 0, 0.1);
-			filter: blur(16.91px);
-			border-radius: 8.93674px;
-			top: initial;
 			right: -15px;
 			bottom: -40px;
-		}
-
-		&::after {
-			content: url('images/features/preview/app.png');
-			right: -9px;
-			bottom: -30px;
 		}
 	}
 
@@ -289,21 +322,12 @@ const PreviewImgDeco1 = styled.div`
 		&::before {
 			right: -33px;
 		}
-
-		&::after {
-			right: -24px;
-		}
 	}
 
 	@media (min-width: 1280px) {
 		&::before {
 			right: -28px;
 			bottom: 4px;
-		}
-
-		&::after {
-			right: -21px;
-			bottom: 16px;
 		}
 	}
 `;

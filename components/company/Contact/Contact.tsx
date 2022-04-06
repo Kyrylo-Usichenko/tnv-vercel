@@ -1,209 +1,197 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { Container } from '../../common/Container/Container';
+import { FeaturesCon } from '../../common/Container/Container';
 
 const Contact: FC = () => {
 	return (
-		<Container>
-			<Wrapper>
+		<Wrapper className='contact'>
+			<FeaturesCon>
 				<SquareRight />
 				<SquareLeft />
 				<DotsLeft />
 				<Title>Contact us</Title>
 				<Inner>
-					<Left>
+					<Block>
 						<LeftSquareLeft />
 						<LeftSquareBottom />
 						<LeftDots />
-						<Heading>Contact Support</Heading>
-						<Content>Porta pellentesque leo arcu in massa. Praesent mattis faucibus placerat.</Content>
+						<Heading>Product Support</Heading>
+						<Content>Need help? Live chat with “Team Tinvio” in the app or dashboard</Content>
 						<ContactUs>Contact Us</ContactUs>
-					</Left>
-					<Middle>
+					</Block>
+					<DarkBlock>
 						<MiddleSquareLeft />
 						<MiddleSquareBottom />
 						<MiddleDots />
-						<MiddleHeading>Business & Partnerships</MiddleHeading>
-						<MiddleContent>
-							Porta pellentesque leo arcu in massa. Praesent mattis faucibus placerat.
-						</MiddleContent>
-						<MiddleContactUs>Contact Us</MiddleContactUs>
-					</Middle>
-					<Right>
+						<LightHeading>Business & Partnerships</LightHeading>
+						<LightContent>Interested in collaborating or partnering with Tinvio?</LightContent>
+						<LightContactUs>Contact Us</LightContactUs>
+					</DarkBlock>
+					<Block>
 						<RightSquareLeft />
 						<RightSquareBottom />
 						<RightDots />
 						<Heading>Media Relations</Heading>
-						<Content>Porta pellentesque leo arcu in massa. Praesent mattis faucibus placerat.</Content>
+						<Content>Working on a story? We're happy to share more about Tinvio</Content>
 						<ContactUs>Contact Us</ContactUs>
-					</Right>
+					</Block>
 				</Inner>
-			</Wrapper>
-		</Container>
+			</FeaturesCon>
+		</Wrapper>
 	);
 };
 
-const Wrapper = styled.div`
-	margin-top: 180px;
+const Wrapper = styled.section`
 	position: relative;
 	z-index: 1;
 	margin-bottom: 80px;
 `;
 
-const Left = styled.div`
-	border-radius: 48px;
-	background: #f7f7f7;
-	width: 100%;
-	max-width: 422px;
-	height: 390px;
-	margin-right: 23px;
-	padding: 80px 0;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	position: relative;
-	z-index: 0;
-	overflow: hidden;
-`;
-
-const Middle = styled.div`
-	border-radius: 48px;
-	background: #363636;
-	width: 100%;
-	max-width: 422px;
-	height: 390px;
-	margin-right: 23px;
-	padding: 80px 0;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	position: relative;
-	z-index: 0;
-	overflow: hidden;
-`;
-
-const Right = styled.div`
-	background: #f7f7f7;
-	border-radius: 48px;
-	width: 100%;
-	max-width: 422px;
-	height: 390px;
-	padding: 80px 0;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	position: relative;
-	z-index: 0;
-	overflow: hidden;
-`;
-
 const Title = styled.p`
-	margin: 0 0 48px 0;
-	padding: 0;
 	font-family: 'Gilroy';
-	font-style: normal;
 	font-weight: 600;
-	font-size: 48px;
-	line-height: 59px;
+	font-size: 32px;
+	line-height: 39px;
 	color: #212121;
 	text-align: center;
+	margin: 0 0 40px 0;
+
+	@media (min-width: 768px) {
+		font-size: 36px;
+		line-height: 44px;
+	}
+
+	@media (min-width: 1024px) {
+		margin: 0 0 48px 0;
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 48px;
+		line-height: 59px;
+	}
 `;
 
 const Inner = styled.div`
-	margin: 0 auto;
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
+	gap: 16px;
+
+	@media (min-width: 1024px) {
+		flex-direction: row;
+		justify-content: space-between;
+		gap: 24px;
+	}
+`;
+
+const Block = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 48px;
+	background-color: #f7f7f7;
+	position: relative;
+	z-index: 0;
+	overflow: hidden;
+	padding: 48px 0;
+
+	@media (min-width: 1024px) {
+		padding: 80px 0;
+		flex: 1;
+	}
+`;
+
+const DarkBlock = styled(Block)`
+	background-color: #363636;
 `;
 
 const Heading = styled.p`
-	margin: 0;
 	font-family: 'Gilroy';
-	font-style: normal;
 	font-weight: 600;
-	font-size: 32px;
-	line-height: 39px;
+	font-size: 28px;
+	line-height: 34px;
 	text-align: center;
 	color: #212121;
-	max-width: 184px;
+	max-width: 270px;
+	margin: 0 0 16px 0;
+
+	@media (min-width: 768px) {
+		max-width: 100%;
+	}
+
+	@media (min-width: 1024px) {
+		max-width: 200px;
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 32px;
+		line-height: 39px;
+	}
+`;
+
+const LightHeading = styled(Heading)`
+	color: #ffffff;
 `;
 
 const Content = styled.p`
-	margin: 16px 0 32px;
-	font-style: normal;
-	text-align: center;
 	max-width: 326px;
 	font-family: 'Inter';
-	font-style: normal;
 	font-weight: 400;
-	font-size: 18px;
-	line-height: 24px;
-
+	font-size: 14px;
+	line-height: 21px;
 	color: #5c5c5c;
+	text-align: center;
+	max-width: 247px;
+	margin: 0 0 32px 0;
+
+	@media (min-width: 768px) {
+		max-width: 100%;
+	}
+
+	@media (min-width: 1024px) {
+		max-width: 230px;
+	}
+
+	@media (min-width: 1280px) {
+		font-size: 16px;
+		line-height: 23px;
+		max-width: 260px;
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 18px;
+		line-height: 24px;
+		max-width: 285px;
+	}
 `;
 
-const ContactUs = styled.a`
+const LightContent = styled(Content)`
+	color: #ffffff;
+`;
+
+const ContactUs = styled.button`
 	text-decoration: none;
-	width: 210px;
-	height: 56px;
-	border: 1.16667px solid #d2d2d2;
-	border-radius: 18px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	border: 1px solid #d2d2d2;
+	background-color: transparent;
+	border-radius: 16px;
 	font-family: 'Gilroy';
-	font-style: normal;
 	font-weight: 700;
-	font-size: 18.6667px;
-	line-height: 23px;
+	font-size: 16px;
+	line-height: 20px;
 	text-align: center;
 	color: #212121;
+	padding: 14px 50px;
 	cursor: pointer;
+
+	@media (min-width: 1920px) {
+		font-size: 18px;
+		line-height: 23px;
+		padding: 16px 55px;
+	}
 `;
 
-const MiddleContactUs = styled.a`
-	text-decoration: none;
-	width: 210px;
-	height: 56px;
-	border: 1.16667px solid #d2d2d2;
-	border-radius: 18px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-family: 'Gilroy';
-	font-style: normal;
-	font-weight: 700;
-	font-size: 18.6667px;
-	line-height: 23px;
-	text-align: center;
-	background: #ffffff;
+const LightContactUs = styled(ContactUs)`
+	background-color: #ffffff;
 	color: #212121;
-	cursor: pointer;
-`;
-
-const MiddleHeading = styled.p`
-	margin: 0;
-	font-family: 'Gilroy';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 32px;
-	line-height: 39px;
-	text-align: center;
-	color: #ffffff;
-	max-width: 184px;
-`;
-
-const MiddleContent = styled.p`
-	margin: 16px 0 32px;
-	font-style: normal;
-	text-align: center;
-	max-width: 326px;
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 18px;
-	line-height: 24px;
-
-	color: #ffffff;
 `;
 
 const SquareRight = styled.div`
@@ -251,6 +239,7 @@ const LeftSquareLeft = styled.div`
 	background: url('images/company/Contact/leftSquareLeft.svg') no-repeat;
 	z-index: -1;
 `;
+
 const LeftSquareBottom = styled.div`
 	position: absolute;
 	left: 117px;
@@ -260,6 +249,7 @@ const LeftSquareBottom = styled.div`
 	background: url('images/company/Contact/leftSquareBot.svg') no-repeat;
 	z-index: -1;
 `;
+
 const LeftDots = styled.div`
 	position: absolute;
 	left: 0px;
@@ -279,6 +269,7 @@ const MiddleSquareLeft = styled.div`
 	background: url('images/company/Contact/midSquareLeft.svg') no-repeat;
 	z-index: -1;
 `;
+
 const MiddleSquareBottom = styled.div`
 	position: absolute;
 	right: -38px;
@@ -288,6 +279,7 @@ const MiddleSquareBottom = styled.div`
 	background: url('images/company/Contact/midSquareRight.svg') no-repeat;
 	z-index: -1;
 `;
+
 const MiddleDots = styled.div`
 	position: absolute;
 	right: 0px;
@@ -317,6 +309,7 @@ const RightSquareBottom = styled.div`
 	background: url('images/company/Contact/rightSquareRight.svg') no-repeat;
 	z-index: -1;
 `;
+
 const RightDots = styled.div`
 	position: absolute;
 	left: 0px;
@@ -326,4 +319,5 @@ const RightDots = styled.div`
 	background: url('images/company/Contact/rightDots.svg') no-repeat;
 	z-index: -1;
 `;
+
 export default Contact;

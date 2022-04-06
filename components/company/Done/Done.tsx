@@ -5,10 +5,10 @@ import DoneBottom from './DoneBottom';
 
 const Done: FC = () => {
 	return (
-		<section>
+		<>
 			<DoneTop />
 			<DoneBottom />
-		</section>
+		</>
 	);
 };
 

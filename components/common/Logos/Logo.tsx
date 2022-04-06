@@ -11,7 +11,7 @@ const Img = styled.img`
 
 	@media (max-width: 1440px) {
 		width: 43.55px;
-		height: 38x;
+		height: 38px;
 	}
 `;
 
