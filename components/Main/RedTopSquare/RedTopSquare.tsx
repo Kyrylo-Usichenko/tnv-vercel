@@ -16,8 +16,6 @@ const RedTopSquare: FC = () => {
 	);
 };
 
-const hey123 = styled.div``;
-
 const Null = styled.div`
 	transform: rotate(45deg);
 	position: relative;

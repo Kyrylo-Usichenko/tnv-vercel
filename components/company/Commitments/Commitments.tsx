@@ -196,43 +196,43 @@ const SubTitle = styled.p`
 	}
 `;
 
-const SquareRight = styled.div`
-	position: absolute;
-	right: 20px;
-	top: 0;
-	width: 770px;
-	height: 356px;
-	background: url('images/company/Commitments/squareRight.svg') no-repeat;
-	z-index: -1;
-`;
-
-const SquareLeft = styled.div`
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 338px;
-	height: 289px;
-	background: url('images/company/Commitments/squareLeft.svg') no-repeat;
-	z-index: -1;
-`;
-
-const DotsRight = styled.div`
-	position: absolute;
-	right: 340px;
-	top: 0;
-	width: 338px;
-	height: 289px;
-	background: url('images/company/Commitments/dotsRight.svg') no-repeat;
-	z-index: -1;
-`;
-
-const DotsLeft = styled.div`
-	position: absolute;
-	left: 0px;
-	bottom: 0;
-	width: 215px;
-	height: 162.7px;
-	background: url('images/company/Commitments/dotsLeft.svg') no-repeat;
-	z-index: -1;
-`;
+// const SquareRight = styled.div`
+// 	position: absolute;
+// 	right: 20px;
+// 	top: 0;
+// 	width: 770px;
+// 	height: 356px;
+// 	background: url('images/company/Commitments/squareRight.svg') no-repeat;
+// 	z-index: -1;
+// `;
+//
+// const SquareLeft = styled.div`
+// 	position: absolute;
+// 	left: 0;
+// 	top: 0;
+// 	width: 338px;
+// 	height: 289px;
+// 	background: url('images/company/Commitments/squareLeft.svg') no-repeat;
+// 	z-index: -1;
+// `;
+//
+// const DotsRight = styled.div`
+// 	position: absolute;
+// 	right: 340px;
+// 	top: 0;
+// 	width: 338px;
+// 	height: 289px;
+// 	background: url('images/company/Commitments/dotsRight.svg') no-repeat;
+// 	z-index: -1;
+// `;
+//
+// const DotsLeft = styled.div`
+// 	position: absolute;
+// 	left: 0px;
+// 	bottom: 0;
+// 	width: 215px;
+// 	height: 162.7px;
+// 	background: url('images/company/Commitments/dotsLeft.svg') no-repeat;
+// 	z-index: -1;
+// `;
 export default Commitments;

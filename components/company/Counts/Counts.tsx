@@ -234,104 +234,104 @@ const Title = styled.p`
 	}
 `;
 
-const Block4Square = styled.div`
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 166.67px;
-	height: 166.67px;
-	background: url('images/company/Counts/block4Square.svg') no-repeat;
-	z-index: -1;
-`;
-
-const Block4Dots = styled.div`
-	position: absolute;
-	left: 204px;
-	bottom: -9px;
-	width: 196.9px;
-	height: 149px;
-	background: url('images/company/Counts/block4Dots.svg') no-repeat;
-	z-index: -1;
-`;
-
-const Block3Square = styled.div`
-	position: absolute;
-	left: 0px;
-	bottom: -34px;
-	width: 136.99px;
-	height: 136.99px;
-	background: url('images/company/Counts/block3Square.svg') no-repeat;
-	z-index: -1;
-`;
-
-const Block3Dots = styled.div`
-	position: absolute;
-	right: -50px;
-	top: 0px;
-	width: 196.9px;
-	height: 149px;
-	background: url('images/company/Counts/block3Dots.svg') no-repeat;
-	z-index: -1;
-`;
-const Block2SquareBottom = styled.div`
-	position: absolute;
-	left: 102px;
-	bottom: 0px;
-	width: 266px;
-	height: 108px;
-	background: url('images/company/Counts/block2SquareBottom.svg') no-repeat;
-	z-index: -1;
-`;
-
-const Block2SquareLeft = styled.div`
-	position: absolute;
-	left: 0;
-	bottom: 0;
-
-	width: 186.41px;
-	height: 186.41px;
-	background: url('images/company/Counts/block2SquareLeft.svg') no-repeat;
-	z-index: -1;
-`;
-
-const Block2Dots = styled.div`
-	position: absolute;
-	left: 204px;
-	bottom: -9px;
-	width: 196.9px;
-	height: 149px;
-	background: url('images/company/Counts/block2Dots.svg') no-repeat;
-	z-index: -1;
-`;
-
-const Block1Dots = styled.div`
-	position: absolute;
-	right: -226px;
-	bottom: -67px;
-	width: 325px;
-	height: 245.94px;
-	background: url('images/company/Counts/block1Dots.svg') no-repeat;
-	z-index: -1;
-`;
-
-const Block1SquareRight = styled.div`
-	position: absolute;
-	right: -139px;
-	top: 0px;
-	width: 312.56px;
-	height: 312.56px;
-	background: url('images/company/Counts/block1SquareRight.svg') no-repeat;
-	z-index: -1;
-`;
-
-const Block1SquareBottom = styled.div`
-	position: absolute;
-	right: 155px;
-	bottom: 0px;
-	width: 378px;
-	height: 121px;
-	background: url('images/company/Counts/block1SquareBottom.svg') no-repeat;
-	z-index: -1;
-`;
+// const Block4Square = styled.div`
+// 	position: absolute;
+// 	left: 0px;
+// 	top: 0px;
+// 	width: 166.67px;
+// 	height: 166.67px;
+// 	background: url('images/company/Counts/block4Square.svg') no-repeat;
+// 	z-index: -1;
+// `;
+//
+// const Block4Dots = styled.div`
+// 	position: absolute;
+// 	left: 204px;
+// 	bottom: -9px;
+// 	width: 196.9px;
+// 	height: 149px;
+// 	background: url('images/company/Counts/block4Dots.svg') no-repeat;
+// 	z-index: -1;
+// `;
+//
+// const Block3Square = styled.div`
+// 	position: absolute;
+// 	left: 0px;
+// 	bottom: -34px;
+// 	width: 136.99px;
+// 	height: 136.99px;
+// 	background: url('images/company/Counts/block3Square.svg') no-repeat;
+// 	z-index: -1;
+// `;
+//
+// const Block3Dots = styled.div`
+// 	position: absolute;
+// 	right: -50px;
+// 	top: 0px;
+// 	width: 196.9px;
+// 	height: 149px;
+// 	background: url('images/company/Counts/block3Dots.svg') no-repeat;
+// 	z-index: -1;
+// `;
+// const Block2SquareBottom = styled.div`
+// 	position: absolute;
+// 	left: 102px;
+// 	bottom: 0px;
+// 	width: 266px;
+// 	height: 108px;
+// 	background: url('images/company/Counts/block2SquareBottom.svg') no-repeat;
+// 	z-index: -1;
+// `;
+//
+// const Block2SquareLeft = styled.div`
+// 	position: absolute;
+// 	left: 0;
+// 	bottom: 0;
+//
+// 	width: 186.41px;
+// 	height: 186.41px;
+// 	background: url('images/company/Counts/block2SquareLeft.svg') no-repeat;
+// 	z-index: -1;
+// `;
+//
+// const Block2Dots = styled.div`
+// 	position: absolute;
+// 	left: 204px;
+// 	bottom: -9px;
+// 	width: 196.9px;
+// 	height: 149px;
+// 	background: url('images/company/Counts/block2Dots.svg') no-repeat;
+// 	z-index: -1;
+// `;
+//
+// const Block1Dots = styled.div`
+// 	position: absolute;
+// 	right: -226px;
+// 	bottom: -67px;
+// 	width: 325px;
+// 	height: 245.94px;
+// 	background: url('images/company/Counts/block1Dots.svg') no-repeat;
+// 	z-index: -1;
+// `;
+//
+// const Block1SquareRight = styled.div`
+// 	position: absolute;
+// 	right: -139px;
+// 	top: 0px;
+// 	width: 312.56px;
+// 	height: 312.56px;
+// 	background: url('images/company/Counts/block1SquareRight.svg') no-repeat;
+// 	z-index: -1;
+// `;
+//
+// const Block1SquareBottom = styled.div`
+// 	position: absolute;
+// 	right: 155px;
+// 	bottom: 0px;
+// 	width: 378px;
+// 	height: 121px;
+// 	background: url('images/company/Counts/block1SquareBottom.svg') no-repeat;
+// 	z-index: -1;
+// `;
 
 export default Counts;

@@ -277,93 +277,93 @@ const Button = styled.button`
 	}
 `;
 
-const SquareLeft = styled.div`
-	position: absolute;
-	left: -450px;
-	top: -220px;
-	z-index: 0;
-	width: 724.91px;
-	height: 724.91px;
-	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
-
-	opacity: 0.15;
-	border-radius: 67.4765px;
-	transform: rotate(-45deg);
-`;
-
-const SquareRightTop = styled.div`
-	position: absolute;
-	right: -26px;
-	top: 50px;
-	z-index: -1;
-	width: 412.76px;
-	height: 412.76px;
-	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
-	opacity: 0.15;
-	border-radius: 38.4214px;
-	transform: rotate(-45deg);
-`;
-
-const SquareRightBot = styled.div`
-	position: absolute;
-	right: -300px;
-	bottom: -193px;
-	z-index: -1;
-	width: 724.91px;
-	height: 724.91px;
-	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
-	opacity: 0.15;
-	border-radius: 67.4765px;
-	transform: rotate(-45deg);
-`;
-
-const RightDots = styled.div`
-	position: absolute;
-	right: -105px;
-	bottom: 413px;
-	z-index: -1;
-	width: 389.43px;
-	height: 294.7px;
-	background: url('images/company/Teamvio/rightDots.svg');
-`;
-
-const LeftDots = styled.div`
-	position: absolute;
-	left: -221px;
-	top: 294px;
-	z-index: 0;
-	width: 389.43px;
-	height: 294.7px;
-	background: url('images/company/Teamvio/leftDots.svg');
-`;
-
-const JoinSquareLeft = styled.div`
-	position: absolute;
-	left: 0px;
-	bottom: 0px;
-	width: 267px;
-	height: 102px;
-	background: url('images/company/Teamvio/joinSquareLeft.svg') no-repeat;
-	z-index: -1;
-`;
-
-const JoinSquareRight = styled.div`
-	position: absolute;
-	right: 0px;
-	top: 0px;
-	width: 258px;
-	height: 122px;
-	background: url('images/company/Teamvio/joinSquareRight.svg') no-repeat;
-	z-index: -1;
-`;
-
-const JoinDots = styled.div`
-	position: absolute;
-	right: 227px;
-	bottom: 0px;
-	width: 208px;
-	height: 35px;
-	background: url('images/company/Teamvio/joinDots.svg') no-repeat;
-	z-index: -1;
-`;
+// const SquareLeft = styled.div`
+// 	position: absolute;
+// 	left: -450px;
+// 	top: -220px;
+// 	z-index: 0;
+// 	width: 724.91px;
+// 	height: 724.91px;
+// 	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
+//
+// 	opacity: 0.15;
+// 	border-radius: 67.4765px;
+// 	transform: rotate(-45deg);
+// `;
+//
+// const SquareRightTop = styled.div`
+// 	position: absolute;
+// 	right: -26px;
+// 	top: 50px;
+// 	z-index: -1;
+// 	width: 412.76px;
+// 	height: 412.76px;
+// 	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
+// 	opacity: 0.15;
+// 	border-radius: 38.4214px;
+// 	transform: rotate(-45deg);
+// `;
+//
+// const SquareRightBot = styled.div`
+// 	position: absolute;
+// 	right: -300px;
+// 	bottom: -193px;
+// 	z-index: -1;
+// 	width: 724.91px;
+// 	height: 724.91px;
+// 	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
+// 	opacity: 0.15;
+// 	border-radius: 67.4765px;
+// 	transform: rotate(-45deg);
+// `;
+//
+// const RightDots = styled.div`
+// 	position: absolute;
+// 	right: -105px;
+// 	bottom: 413px;
+// 	z-index: -1;
+// 	width: 389.43px;
+// 	height: 294.7px;
+// 	background: url('images/company/Teamvio/rightDots.svg');
+// `;
+//
+// const LeftDots = styled.div`
+// 	position: absolute;
+// 	left: -221px;
+// 	top: 294px;
+// 	z-index: 0;
+// 	width: 389.43px;
+// 	height: 294.7px;
+// 	background: url('images/company/Teamvio/leftDots.svg');
+// `;
+//
+// const JoinSquareLeft = styled.div`
+// 	position: absolute;
+// 	left: 0px;
+// 	bottom: 0px;
+// 	width: 267px;
+// 	height: 102px;
+// 	background: url('images/company/Teamvio/joinSquareLeft.svg') no-repeat;
+// 	z-index: -1;
+// `;
+//
+// const JoinSquareRight = styled.div`
+// 	position: absolute;
+// 	right: 0px;
+// 	top: 0px;
+// 	width: 258px;
+// 	height: 122px;
+// 	background: url('images/company/Teamvio/joinSquareRight.svg') no-repeat;
+// 	z-index: -1;
+// `;
+//
+// const JoinDots = styled.div`
+// 	position: absolute;
+// 	right: 227px;
+// 	bottom: 0px;
+// 	width: 208px;
+// 	height: 35px;
+// 	background: url('images/company/Teamvio/joinDots.svg') no-repeat;
+// 	z-index: -1;
+// `;
 export default Teamvio;

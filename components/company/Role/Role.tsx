@@ -249,27 +249,27 @@ const Explore = styled.button`
 	}
 `;
 
-const Dots = styled.div`
-	position: absolute;
-	right: 25px;
-	top: -177px;
-	width: 338px;
-	height: 256px;
-	background: url('images/company/Role/dots.svg') no-repeat;
-	z-index: -1;
-`;
-
-const Square = styled.div`
-	position: absolute;
-	left: -513px;
-	top: -274px;
-	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
-	width: 724.91px;
-	height: 724.91px;
-	opacity: 0.15;
-	border-radius: 67.4765px;
-	transform: rotate(-45deg);
-	z-index: -1;
-`;
+// const Dots = styled.div`
+// 	position: absolute;
+// 	right: 25px;
+// 	top: -177px;
+// 	width: 338px;
+// 	height: 256px;
+// 	background: url('images/company/Role/dots.svg') no-repeat;
+// 	z-index: -1;
+// `;
+//
+// const Square = styled.div`
+// 	position: absolute;
+// 	left: -513px;
+// 	top: -274px;
+// 	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
+// 	width: 724.91px;
+// 	height: 724.91px;
+// 	opacity: 0.15;
+// 	border-radius: 67.4765px;
+// 	transform: rotate(-45deg);
+// 	z-index: -1;
+// `;
 
 export default Role;
