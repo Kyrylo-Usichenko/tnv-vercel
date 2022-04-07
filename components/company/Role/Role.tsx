@@ -5,8 +5,8 @@ import { FeaturesCon } from '../../common/Container/Container';
 const Role: FC = () => {
 	return (
 		<Wrapper>
-			{/* <Square /> */}
-			{/* <Dots /> */}
+			<Square />
+			<Dots />
 			<FeaturesCon>
 				<GalleryCon>
 					<GalleryGrid>
@@ -40,18 +40,6 @@ const Role: FC = () => {
 						<Explore>Explore roles</Explore>
 					</Content>
 				</GalleryCon>
-				{/* <Photos>
-					<TopLeft src='images/company/Role/1.jpg' srcSet='images/company/Role/1@2x.jpg 2x' alt='' />
-					<TopRight src='images/company/Role/2.jpg' srcSet='images/company/Role/2@2x.jpg 2x' alt='' />
-					<BotLeft src='images/company/Role/3.jpg' srcSet='images/company/Role/3@2x.jpg 2x' alt='' />
-					<BotRight src='images/company/Role/4.jpg' srcSet='images/company/Role/4@2x.jpg 2x' alt='' />
-				</Photos>
-				<Right>
-					<Title>
-						Find the perfect role at any of our offices near you
-					</Title>
-					<Explore>Explore roles</Explore>
-				</Right> */}
 			</FeaturesCon>
 		</Wrapper>
 	);
@@ -84,7 +72,8 @@ const GalleryGrid = styled.div`
 	flex-direction: column;
 	gap: 16px;
 	width: 100%;
-
+	z-index: 1;
+	position: relative;
 	@media (min-width: 768px) {
 		flex-direction: row;
 	}
@@ -249,27 +238,27 @@ const Explore = styled.button`
 	}
 `;
 
-// const Dots = styled.div`
-// 	position: absolute;
-// 	right: 25px;
-// 	top: -177px;
-// 	width: 338px;
-// 	height: 256px;
-// 	background: url('images/company/Role/dots.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const Square = styled.div`
-// 	position: absolute;
-// 	left: -513px;
-// 	top: -274px;
-// 	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
-// 	width: 724.91px;
-// 	height: 724.91px;
-// 	opacity: 0.15;
-// 	border-radius: 67.4765px;
-// 	transform: rotate(-45deg);
-// 	z-index: -1;
-// `;
+const Dots = styled.div`
+	position: absolute;
+	right: 134px;
+	top: 13px;
+	width: 338px;
+	height: 256px;
+	background: url('images/company/Role/dots.svg') no-repeat;
+	z-index: -1;
+`;
+
+const Square = styled.div`
+	position: absolute;
+	left: -513px;
+	top: -274px;
+	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
+	width: 724.91px;
+	height: 724.91px;
+	opacity: 0.15;
+	border-radius: 67.4765px;
+	transform: rotate(-45deg);
+	z-index: -1;
+`;
 
 export default Role;

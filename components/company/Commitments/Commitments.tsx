@@ -5,36 +5,38 @@ import { FeaturesCon } from '../../common/Container/Container';
 const Commitments: FC = () => {
 	return (
 		<Wrapper>
-			{/* <SquareRight />
-			<SquareLeft />
-			<DotsRight />
-			<DotsLeft /> */}
 			<FlexCon>
-				<FullCon></FullCon>
-				<FlexConInfo>
-					<FeaturesCon className='h-100'>
-						<Content>
-							<Heading>Our Core Commitments</Heading>
-							<List>
-								<Item>
-									<Img src='images/company/Commitments/pen.svg' alt='' />
-									<Title>Every pixel matters</Title>
-									<SubTitle>Biased towards perfection</SubTitle>
-								</Item>
-								<Item>
-									<Img src='images/company/Commitments/message.svg' alt='' />
-									<Title>Shut the fluff</Title>
-									<SubTitle>Clear and direct communication</SubTitle>
-								</Item>
-								<Item>
-									<Img src='images/company/Commitments/rocket.svg' alt='' />
-									<Title>Break things fast</Title>
-									<SubTitle>Ownership with ruthless agility</SubTitle>
-								</Item>
-							</List>
-						</Content>
-					</FeaturesCon>
-				</FlexConInfo>
+				<FullCon>
+					<SquareRight />
+					<SquareLeft />
+					<DotsRight />
+					<DotsLeft />
+
+					<FlexConInfo>
+						<FeaturesCon className='h-100'>
+							<Content>
+								<Heading>Our Core Commitments</Heading>
+								<List>
+									<Item>
+										<Img src='images/company/Commitments/pen.svg' alt='' />
+										<Title>Every pixel matters</Title>
+										<SubTitle>Biased towards perfection</SubTitle>
+									</Item>
+									<Item>
+										<Img src='images/company/Commitments/message.svg' alt='' />
+										<Title>Shut the fluff</Title>
+										<SubTitle>Clear and direct communication</SubTitle>
+									</Item>
+									<Item>
+										<Img src='images/company/Commitments/rocket.svg' alt='' />
+										<Title>Break things fast</Title>
+										<SubTitle>Ownership with ruthless agility</SubTitle>
+									</Item>
+								</List>
+							</Content>
+						</FeaturesCon>
+					</FlexConInfo>
+				</FullCon>
 			</FlexCon>
 		</Wrapper>
 	);
@@ -42,8 +44,9 @@ const Commitments: FC = () => {
 
 const Wrapper = styled.section`
 	position: relative;
-	z-index: 2;
+	z-index: 3;
 	margin-bottom: 180px;
+	overflow: hidden;
 `;
 
 const FlexCon = styled.div`
@@ -53,11 +56,11 @@ const FlexCon = styled.div`
 const FullCon = styled.div`
 	position: relative;
 	height: 737px;
-	max-width: 1686px;
 	border-top-right-radius: 48px;
 	border-bottom-right-radius: 48px;
 	background-color: var(--bg-black);
-
+	overflow: hidden;
+	z-index: 0;
 	@media (min-width: 768px) {
 		height: 326px;
 	}
@@ -127,7 +130,7 @@ const List = styled.ul`
 	list-style: none;
 	margin: 0;
 	padding: 0;
-
+	z-index: 2;
 	@media (min-width: 768px) {
 		width: 100%;
 		flex-direction: row;
@@ -196,43 +199,57 @@ const SubTitle = styled.p`
 	}
 `;
 
-// const SquareRight = styled.div`
-// 	position: absolute;
-// 	right: 20px;
-// 	top: 0;
-// 	width: 770px;
-// 	height: 356px;
-// 	background: url('images/company/Commitments/squareRight.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const SquareLeft = styled.div`
-// 	position: absolute;
-// 	left: 0;
-// 	top: 0;
-// 	width: 338px;
-// 	height: 289px;
-// 	background: url('images/company/Commitments/squareLeft.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const DotsRight = styled.div`
-// 	position: absolute;
-// 	right: 340px;
-// 	top: 0;
-// 	width: 338px;
-// 	height: 289px;
-// 	background: url('images/company/Commitments/dotsRight.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const DotsLeft = styled.div`
-// 	position: absolute;
-// 	left: 0px;
-// 	bottom: 0;
-// 	width: 215px;
-// 	height: 162.7px;
-// 	background: url('images/company/Commitments/dotsLeft.svg') no-repeat;
-// 	z-index: -1;
-// `;
+const SquareRight = styled.div`
+	position: absolute;
+	right: 20px;
+	top: 0;
+	width: 770px;
+	height: 356px;
+	background: url('images/company/Commitments/squareRight.svg') no-repeat;
+	z-index: 0;
+	@media (max-width: 1440px) {
+		right: -407px;
+	}
+	@media (max-width: 768px) {
+		display: none;
+	}
+`;
+
+const SquareLeft = styled.div`
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 338px;
+	height: 289px;
+	background: url('images/company/Commitments/squareLeft.svg') no-repeat;
+	z-index: 0;
+`;
+
+const DotsRight = styled.div`
+	position: absolute;
+	right: 340px;
+	top: 0;
+	width: 338px;
+	height: 289px;
+	background: url('images/company/Commitments/dotsRight.svg') no-repeat;
+	z-index: 0;
+	@media (max-width: 768px) {
+		display: none;
+	}
+`;
+
+const DotsLeft = styled.div`
+	position: absolute;
+	left: 0px;
+	bottom: 0;
+	width: 215px;
+	height: 162.7px;
+	background: url('images/company/Commitments/dotsLeft.svg') no-repeat;
+	z-index: 0;
+	@media (max-width: 768px) {
+		bottom: 129px;
+		transform: rotate(90deg);
+		margin-left: -30px;
+	}
+`;
 export default Commitments;

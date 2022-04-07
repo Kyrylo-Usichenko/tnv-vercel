@@ -6,31 +6,31 @@ const Contact: FC = () => {
 	return (
 		<Wrapper className='contact'>
 			<FeaturesCon>
-				{/* <SquareRight />
+				<SquareRight />
 				<SquareLeft />
-				<DotsLeft /> */}
+				<DotsLeft />
 				<Title>Contact us</Title>
 				<Inner>
 					<Block>
-						{/* <LeftSquareLeft />
+						<LeftSquareLeft />
 						<LeftSquareBottom />
-						<LeftDots /> */}
+						<LeftDots />
 						<Heading>Product Support</Heading>
 						<Content>Need help? Live chat with “Team Tinvio” in the app or dashboard</Content>
 						<ContactUs>Contact Us</ContactUs>
 					</Block>
 					<DarkBlock>
-						{/* <MiddleSquareLeft />
+						<MiddleSquareLeft />
 						<MiddleSquareBottom />
-						<MiddleDots /> */}
+						<MiddleDots />
 						<LightHeading>Business & Partnerships</LightHeading>
 						<LightContent>Interested in collaborating or partnering with Tinvio?</LightContent>
 						<LightContactUs>Contact Us</LightContactUs>
 					</DarkBlock>
 					<Block>
-						{/* <RightSquareLeft />
+						<RightSquareLeft />
 						<RightSquareBottom />
-						<RightDots /> */}
+						<RightDots />
 						<Heading>Media Relations</Heading>
 						<Content>Working on a story? We're happy to share more about Tinvio</Content>
 						<ContactUs>Contact Us</ContactUs>
@@ -43,7 +43,7 @@ const Contact: FC = () => {
 
 const Wrapper = styled.section`
 	position: relative;
-	z-index: 1;
+	z-index: -1;
 	margin-bottom: 80px;
 `;
 
@@ -205,130 +205,156 @@ const LightContactUs = styled(ContactUs)`
 	}
 `;
 
-// const SquareRight = styled.div`
-// 	position: absolute;
-// 	right: -187px;
-// 	top: -92px;
-// 	width: 646.76px;
-// 	height: 646.76px;
-// 	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
-// 	opacity: 0.15;
-// 	border-radius: 60.2025px;
-// 	transform: rotate(-45deg);
-// 	z-index: -1;
-// `;
-//
-// const SquareLeft = styled.div`
-// 	position: absolute;
-// 	left: -265px;
-// 	top: 15px;
-// 	width: 377.64px;
-// 	height: 377.64px;
-// 	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
-// 	opacity: 0.15;
-// 	border-radius: 35.1517px;
-// 	transform: rotate(-45deg);
-// 	z-index: -1;
-// `;
-//
-// const DotsLeft = styled.div`
-// 	position: absolute;
-// 	left: -178px;
-// 	bottom: -143px;
-// 	width: 377.43px;
-// 	height: 255.35px;
-// 	background: url('images/company/Contact/dotsLeft.svg');
-// 	z-index: -1;
-// `;
-//
-// const LeftSquareLeft = styled.div`
-// 	position: absolute;
-// 	left: 0px;
-// 	top: 0px;
-// 	width: 195px;
-// 	height: 280px;
-// 	background: url('images/company/Contact/leftSquareLeft.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const LeftSquareBottom = styled.div`
-// 	position: absolute;
-// 	left: 117px;
-// 	bottom: 0px;
-// 	width: 276px;
-// 	height: 98px;
-// 	background: url('images/company/Contact/leftSquareBot.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const LeftDots = styled.div`
-// 	position: absolute;
-// 	left: 0px;
-// 	top: 0px;
-// 	width: 218px;
-// 	height: 164.97px;
-// 	background: url('images/company/Contact/leftDots.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const MiddleSquareLeft = styled.div`
-// 	position: absolute;
-// 	left: 0px;
-// 	top: 0px;
-// 	width: 181px;
-// 	height: 220px;
-// 	background: url('images/company/Contact/midSquareLeft.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const MiddleSquareBottom = styled.div`
-// 	position: absolute;
-// 	right: -38px;
-// 	bottom: 0px;
-// 	width: 276px;
-// 	height: 98px;
-// 	background: url('images/company/Contact/midSquareRight.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const MiddleDots = styled.div`
-// 	position: absolute;
-// 	right: 0px;
-// 	top: 0px;
-// 	width: 158px;
-// 	height: 149px;
-// 	background: url('images/company/Contact/midDots.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const RightSquareLeft = styled.div`
-// 	position: absolute;
-// 	left: 0px;
-// 	bottom: 0px;
-// 	width: 151px;
-// 	height: 196px;
-// 	background: url('images/company/Contact/rightSquareLeft.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const RightSquareBottom = styled.div`
-// 	position: absolute;
-// 	right: 0;
-// 	top: 0px;
-// 	width: 220px;
-// 	height: 247px;
-// 	background: url('images/company/Contact/rightSquareRight.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const RightDots = styled.div`
-// 	position: absolute;
-// 	left: 0px;
-// 	top: 0px;
-// 	width: 218px;
-// 	height: 164.97px;
-// 	background: url('images/company/Contact/rightDots.svg') no-repeat;
-// 	z-index: -1;
-// `;
+const SquareRight = styled.div`
+	position: absolute;
+	right: -187px;
+	top: -92px;
+	width: 646.76px;
+	height: 646.76px;
+	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
+	opacity: 0.15;
+	border-radius: 60.2025px;
+	transform: rotate(-45deg);
+	z-index: -2;
+`;
+
+const SquareLeft = styled.div`
+	position: absolute;
+	left: -265px;
+	top: 15px;
+	width: 377.64px;
+	height: 377.64px;
+	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
+	opacity: 0.15;
+	border-radius: 35.1517px;
+	transform: rotate(-45deg);
+	z-index: -1;
+	@media (min-width: 375px) {
+		top: -67px;
+	}
+`;
+
+const DotsLeft = styled.div`
+	position: absolute;
+	left: -178px;
+	bottom: -143px;
+	width: 377.43px;
+	height: 255.35px;
+	background: url('images/company/Contact/dotsLeft.svg');
+	z-index: -1;
+`;
+
+const LeftSquareLeft = styled.div`
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 195px;
+	height: 280px;
+	background: url('images/company/Contact/leftSquareLeft.svg') no-repeat;
+	z-index: -1;
+	@media (min-width: 375px) {
+		display: none;
+	}
+`;
+
+const LeftSquareBottom = styled.div`
+	position: absolute;
+	left: 117px;
+	bottom: 0px;
+	width: 276px;
+	height: 98px;
+	background: url('images/company/Contact/leftSquareBot.svg') no-repeat;
+	z-index: -1;
+	@media (min-width: 375px) {
+		left: 215px;
+		transform: rotate(-90deg);
+		bottom: 20px;
+	}
+	@media (min-width: 768px) {
+		left: 552px;
+	}
+`;
+
+const LeftDots = styled.div`
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 218px;
+	height: 164.97px;
+	background: url('images/company/Contact/leftDots.svg') no-repeat;
+	z-index: -1;
+	@media (min-width: 375px) {
+		left: -166px;
+	}
+`;
+
+const MiddleSquareLeft = styled.div`
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 181px;
+	height: 220px;
+	background: url('images/company/Contact/midSquareLeft.svg') no-repeat;
+	z-index: -1;
+	@media (min-width: 375px) {
+		left: -108px;
+	}
+`;
+
+const MiddleSquareBottom = styled.div`
+	position: absolute;
+	right: -38px;
+	bottom: 0px;
+	width: 276px;
+	height: 98px;
+	background: url('images/company/Contact/midSquareRight.svg') no-repeat;
+	z-index: -1;
+`;
+
+const MiddleDots = styled.div`
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 158px;
+	height: 149px;
+	background: url('images/company/Contact/midDots.svg') no-repeat;
+	z-index: -1;
+	@media (min-width: 375px) {
+		display: none;
+	}
+`;
+
+const RightSquareLeft = styled.div`
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	width: 151px;
+	height: 196px;
+	background: url('images/company/Contact/rightSquareLeft.svg') no-repeat;
+	z-index: -1;
+`;
+
+const RightSquareBottom = styled.div`
+	position: absolute;
+	right: 0;
+	top: 0px;
+	width: 220px;
+	height: 247px;
+	background: url('images/company/Contact/rightSquareRight.svg') no-repeat;
+	z-index: -1;
+`;
+
+const RightDots = styled.div`
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 218px;
+	height: 164.97px;
+	background: url('images/company/Contact/rightDots.svg') no-repeat;
+	z-index: -1;
+	@media (min-width: 375px) {
+		display: none;
+	}
+`;
 
 export default Contact;

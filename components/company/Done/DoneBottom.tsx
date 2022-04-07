@@ -343,142 +343,142 @@ const RedWrapperDots = styled.div`
 	z-index: -1;
 `;
 
-// const RedLeftSquare = styled.div`
-// 	position: absolute;
-// 	bottom: 47px;
-// 	left: -70px;
-// 	width: 300px;
-// 	height: 300px;
-// 	border-radius: 23.5541px;
-// 	transform: rotate(45deg);
-// 	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(250, 250, 250, 0.2) 100%);
-// 	z-index: -1;
-// `;
-//
-// const RedRightSquare = styled.div`
-// 	position: absolute;
-// 	top: 12px;
-// 	right: -174px;
-// 	width: 205.99px;
-// 	height: 205.99px;
-// 	border-radius: 27.9415px;
-// 	transform: rotate(45deg);
-// 	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(250, 250, 250, 0.2) 100%);
-// 	z-index: -1;
-// `;
-//
-// const RedDots = styled.div`
-// 	position: absolute;
-// 	bottom: -50px;
-// 	right: -80px;
-// 	width: 209.06px;
-// 	height: 158.2px;
-// 	background: url('images/company/Done/redDots.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const BlackLeftSquare = styled.div`
-// 	position: absolute;
-// 	top: 0px;
-// 	left: 0px;
-// 	width: 229.4px;
-// 	height: 229.4px;
-// 	background: url('images/company/Done/blackSquareLeft.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const BlackRightSquare = styled.div`
-// 	position: absolute;
-// 	bottom: -116px;
-// 	right: -10px;
-// 	width: 235.91px;
-// 	height: 235.91px;
-// 	background: url('images/company/Done/blackSquareRight.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const BlackDots = styled.div`
-// 	position: absolute;
-// 	bottom: -6px;
-// 	right: -80px;
-// 	width: 209.06px;
-// 	height: 158.2px;
-// 	background: url('images/company/Done/blackDots.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const GreyLeftSquare = styled.div`
-// 	position: absolute;
-// 	bottom: -141px;
-// 	left: 0px;
-// 	width: 280.2px;
-// 	height: 280.2px;
-// 	background: url('images/company/Done/greySquareLeft.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const GreyRightSquare = styled.div`
-// 	position: absolute;
-// 	left: 189px;
-// 	top: 0px;
-// 	width: 426px;
-// 	height: 254px;
-// 	background: url('images/company/Done/greySquareRight.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const GreyDots = styled.div`
-// 	position: absolute;
-// 	bottom: -4px;
-// 	left: 368px;
-// 	width: 325px;
-// 	height: 245.94px;
-// 	background: url('images/company/Done/greyDots.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const LeftDots = styled.div`
-// 	position: absolute;
-// 	bottom: -72px;
-// 	left: 0px;
-// 	width: 286.6px;
-// 	height: 203.26px;
-// 	background: url('images/company/Done/leftDots.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const RightDots = styled.div`
-// 	position: absolute;
-// 	top: 1px;
-// 	right: -205px;
-// 	width: 297.33px;
-// 	height: 225px;
-// 	background: url('images/company/Done/rightDots.svg') no-repeat;
-// 	z-index: -1;
-// `;
-//
-// const RedSideSquare = styled.div`
-// 	position: absolute;
-// 	top: -76px;
-// 	left: -104px;
-// 	width: 319.62px;
-// 	height: 319.62px;
-// 	transform: rotate(45deg);
-// 	border-radius: 32.8178px;
-// 	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(250, 250, 250, 0.2) 100%);
-// 	z-index: -1;
-// `;
-//
-// const RedSideSquareRight = styled.div`
-// 	position: absolute;
-// 	bottom: -219px;
-// 	right: -136px;
-// 	width: 354.31px;
-// 	height: 354.31px;
-// 	transform: rotate(45deg);
-// 	border-radius: 35.3757px;
-// 	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(250, 250, 250, 0.2) 100%);
-// 	z-index: -1;
-// `;
+const RedLeftSquare = styled.div`
+	position: absolute;
+	bottom: 47px;
+	left: -70px;
+	width: 300px;
+	height: 300px;
+	border-radius: 23.5541px;
+	transform: rotate(45deg);
+	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(250, 250, 250, 0.2) 100%);
+	z-index: -1;
+`;
+
+const RedRightSquare = styled.div`
+	position: absolute;
+	top: 12px;
+	right: -174px;
+	width: 205.99px;
+	height: 205.99px;
+	border-radius: 27.9415px;
+	transform: rotate(45deg);
+	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(250, 250, 250, 0.2) 100%);
+	z-index: -1;
+`;
+
+const RedDots = styled.div`
+	position: absolute;
+	bottom: -50px;
+	right: -80px;
+	width: 209.06px;
+	height: 158.2px;
+	background: url('images/company/Done/redDots.svg') no-repeat;
+	z-index: -1;
+`;
+
+const BlackLeftSquare = styled.div`
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 229.4px;
+	height: 229.4px;
+	background: url('images/company/Done/blackSquareLeft.svg') no-repeat;
+	z-index: -1;
+`;
+
+const BlackRightSquare = styled.div`
+	position: absolute;
+	bottom: -116px;
+	right: -10px;
+	width: 235.91px;
+	height: 235.91px;
+	background: url('images/company/Done/blackSquareRight.svg') no-repeat;
+	z-index: -1;
+`;
+
+const BlackDots = styled.div`
+	position: absolute;
+	bottom: -6px;
+	right: -80px;
+	width: 209.06px;
+	height: 158.2px;
+	background: url('images/company/Done/blackDots.svg') no-repeat;
+	z-index: -1;
+`;
+
+const GreyLeftSquare = styled.div`
+	position: absolute;
+	bottom: -141px;
+	left: 0px;
+	width: 280.2px;
+	height: 280.2px;
+	background: url('images/company/Done/greySquareLeft.svg') no-repeat;
+	z-index: -1;
+`;
+
+const GreyRightSquare = styled.div`
+	position: absolute;
+	left: 189px;
+	top: 0px;
+	width: 426px;
+	height: 254px;
+	background: url('images/company/Done/greySquareRight.svg') no-repeat;
+	z-index: -1;
+`;
+
+const GreyDots = styled.div`
+	position: absolute;
+	bottom: -4px;
+	left: 368px;
+	width: 325px;
+	height: 245.94px;
+	background: url('images/company/Done/greyDots.svg') no-repeat;
+	z-index: -1;
+`;
+
+const LeftDots = styled.div`
+	position: absolute;
+	bottom: -72px;
+	left: 0px;
+	width: 286.6px;
+	height: 203.26px;
+	background: url('images/company/Done/leftDots.svg') no-repeat;
+	z-index: -1;
+`;
+
+const RightDots = styled.div`
+	position: absolute;
+	top: 1px;
+	right: -205px;
+	width: 297.33px;
+	height: 225px;
+	background: url('images/company/Done/rightDots.svg') no-repeat;
+	z-index: -1;
+`;
+
+const RedSideSquare = styled.div`
+	position: absolute;
+	top: -76px;
+	left: -104px;
+	width: 319.62px;
+	height: 319.62px;
+	transform: rotate(45deg);
+	border-radius: 32.8178px;
+	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(250, 250, 250, 0.2) 100%);
+	z-index: -1;
+`;
+
+const RedSideSquareRight = styled.div`
+	position: absolute;
+	bottom: -219px;
+	right: -136px;
+	width: 354.31px;
+	height: 354.31px;
+	transform: rotate(45deg);
+	border-radius: 35.3757px;
+	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(250, 250, 250, 0.2) 100%);
+	z-index: -1;
+`;
 
 export default DoneBottom;
