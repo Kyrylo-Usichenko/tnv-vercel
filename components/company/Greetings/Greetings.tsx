@@ -225,71 +225,71 @@ const Phone = styled.img`
 	}
 `;
 
-const Stars = styled.img`
-	position: absolute;
-	right: -84px;
-	top: 140px;
-	z-index: -1;
-`;
-
-const Square = styled.div`
-	width: 678.98px;
-	height: 678.98px;
-	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
-	transform: rotate(45deg);
-	border-radius: 63.2013px;
-	opacity: 0.15;
-	position: absolute;
-	right: -478px;
-	top: -115px;
-	z-index: -1;
-`;
-
-const LeftTopSquare = styled.div`
-	width: 251.35px;
-	height: 251.35px;
-	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
-	transform: rotate(45deg);
-	border-radius: 23.3968px;
-	opacity: 0.15;
-	position: absolute;
-	left: -1021px;
-	bottom: 570px;
-	z-index: -1;
-`;
-
-const LeftBotSquare = styled.div`
-	width: 460.84px;
-	height: 460.84px;
-	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
-	transform: rotate(45deg);
-	border-radius: 42.8967px;
-	opacity: 0.15;
-	position: absolute;
-	left: -1134px;
-	bottom: 87px;
-	z-index: -2;
-`;
-
-const PhoneTopDots = styled.img`
-	position: absolute;
-	right: 88px;
-	top: 24px;
-	z-index: -1;
-`;
-
-const PhoneBotDots = styled.img`
-	position: absolute;
-	right: -24px;
-	bottom: -57px;
-	z-index: -1;
-`;
-
-const PhoneLeftDots = styled.img`
-	position: absolute;
-	left: -978px;
-	bottom: 132px;
-	z-index: -1;
-`;
+// const Stars = styled.img`
+// 	position: absolute;
+// 	right: -84px;
+// 	top: 140px;
+// 	z-index: -1;
+// `;
+//
+// const Square = styled.div`
+// 	width: 678.98px;
+// 	height: 678.98px;
+// 	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
+// 	transform: rotate(45deg);
+// 	border-radius: 63.2013px;
+// 	opacity: 0.15;
+// 	position: absolute;
+// 	right: -478px;
+// 	top: -115px;
+// 	z-index: -1;
+// `;
+//
+// const LeftTopSquare = styled.div`
+// 	width: 251.35px;
+// 	height: 251.35px;
+// 	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
+// 	transform: rotate(45deg);
+// 	border-radius: 23.3968px;
+// 	opacity: 0.15;
+// 	position: absolute;
+// 	left: -1021px;
+// 	bottom: 570px;
+// 	z-index: -1;
+// `;
+//
+// const LeftBotSquare = styled.div`
+// 	width: 460.84px;
+// 	height: 460.84px;
+// 	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
+// 	transform: rotate(45deg);
+// 	border-radius: 42.8967px;
+// 	opacity: 0.15;
+// 	position: absolute;
+// 	left: -1134px;
+// 	bottom: 87px;
+// 	z-index: -2;
+// `;
+//
+// const PhoneTopDots = styled.img`
+// 	position: absolute;
+// 	right: 88px;
+// 	top: 24px;
+// 	z-index: -1;
+// `;
+//
+// const PhoneBotDots = styled.img`
+// 	position: absolute;
+// 	right: -24px;
+// 	bottom: -57px;
+// 	z-index: -1;
+// `;
+//
+// const PhoneLeftDots = styled.img`
+// 	position: absolute;
+// 	left: -978px;
+// 	bottom: 132px;
+// 	z-index: -1;
+// `;
 
 export default Greetings;
