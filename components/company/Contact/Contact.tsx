@@ -6,31 +6,31 @@ const Contact: FC = () => {
 	return (
 		<Wrapper className='contact'>
 			<FeaturesCon>
-				<SquareRight />
+				{/* <SquareRight />
 				<SquareLeft />
-				<DotsLeft />
+				<DotsLeft /> */}
 				<Title>Contact us</Title>
 				<Inner>
 					<Block>
-						<LeftSquareLeft />
+						{/* <LeftSquareLeft />
 						<LeftSquareBottom />
-						<LeftDots />
+						<LeftDots /> */}
 						<Heading>Product Support</Heading>
 						<Content>Need help? Live chat with “Team Tinvio” in the app or dashboard</Content>
 						<ContactUs>Contact Us</ContactUs>
 					</Block>
 					<DarkBlock>
-						<MiddleSquareLeft />
+						{/* <MiddleSquareLeft />
 						<MiddleSquareBottom />
-						<MiddleDots />
+						<MiddleDots /> */}
 						<LightHeading>Business & Partnerships</LightHeading>
 						<LightContent>Interested in collaborating or partnering with Tinvio?</LightContent>
 						<LightContactUs>Contact Us</LightContactUs>
 					</DarkBlock>
 					<Block>
-						<RightSquareLeft />
+						{/* <RightSquareLeft />
 						<RightSquareBottom />
-						<RightDots />
+						<RightDots /> */}
 						<Heading>Media Relations</Heading>
 						<Content>Working on a story? We're happy to share more about Tinvio</Content>
 						<ContactUs>Contact Us</ContactUs>
@@ -181,6 +181,7 @@ const ContactUs = styled.button`
 	color: #212121;
 	padding: 14px 50px;
 	cursor: pointer;
+	transition: all 0.3s ease;
 
 	@media (min-width: 1920px) {
 		font-size: 18px;
@@ -192,6 +193,16 @@ const ContactUs = styled.button`
 const LightContactUs = styled(ContactUs)`
 	background-color: #ffffff;
 	color: #212121;
+
+	&:hover {
+		background-color: #ffffffcc;
+		box-shadow: 14px 4px 20px 0 var(--shadow-color);
+	}
+
+	&:focus {
+		background-color: var(--text-white);
+		box-shadow: 12px 2px 20px 0 var(--shadow-color);
+	}
 `;
 
 const SquareRight = styled.div`

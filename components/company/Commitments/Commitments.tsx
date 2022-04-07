@@ -1,105 +1,199 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
+import { FeaturesCon } from '../../common/Container/Container';
 
 const Commitments: FC = () => {
 	return (
 		<Wrapper>
-			<SquareRight />
+			{/* <SquareRight />
 			<SquareLeft />
 			<DotsRight />
-			<DotsLeft />
-			<Content>
-				<Heading>Our Core Commitments</Heading>
-				<List>
-					<Item>
-						<img src='images/company/Commitments/pen.svg' alt='' />
-						<Title>Every pixel matters</Title>
-						<SubTitle>lorem ipsum some sub text here</SubTitle>
-					</Item>
-					<Item>
-						<img src='images/company/Commitments/message.svg' alt='' />
-						<Title>Shut the fluff</Title>
-						<SubTitle>lorem ipsum some sub text here</SubTitle>
-					</Item>
-					<Item>
-						<img src='images/company/Commitments/rocket.svg' alt='' />
-						<Title>Break things fast</Title>
-						<SubTitle>lorem ipsum some sub text here</SubTitle>
-					</Item>
-				</List>
-			</Content>
+			<DotsLeft /> */}
+			<FlexCon>
+				<FullCon></FullCon>
+				<FlexConInfo>
+					<FeaturesCon className='h-100'>
+						<Content>
+							<Heading>Our Core Commitments</Heading>
+							<List>
+								<Item>
+									<Img src='images/company/Commitments/pen.svg' alt='' />
+									<Title>Every pixel matters</Title>
+									<SubTitle>Biased towards perfection</SubTitle>
+								</Item>
+								<Item>
+									<Img src='images/company/Commitments/message.svg' alt='' />
+									<Title>Shut the fluff</Title>
+									<SubTitle>Clear and direct communication</SubTitle>
+								</Item>
+								<Item>
+									<Img src='images/company/Commitments/rocket.svg' alt='' />
+									<Title>Break things fast</Title>
+									<SubTitle>Ownership with ruthless agility</SubTitle>
+								</Item>
+							</List>
+						</Content>
+					</FeaturesCon>
+				</FlexConInfo>
+			</FlexCon>
 		</Wrapper>
 	);
 };
 
-const Wrapper = styled.div`
-	margin-top: 180px;
-	display: flex;
-	justify-content: flex-end;
-	height: 356px;
-	margin-right: 234px;
-	border-radius: 0 48px 48px 0;
-	background: #363636;
+const Wrapper = styled.section`
 	position: relative;
 	z-index: 2;
-	padding: 48px 181px 48px 0;
+	margin-bottom: 180px;
 `;
 
-const Content = styled.div``;
-const List = styled.ul`
-	list-style: none;
-	margin: 32px 0 0 0;
-	padding: 0;
-	display: flex;
+const FlexCon = styled.div`
+	position: relative;
 `;
 
-const Item = styled.li`
-	margin: 0 168px 0 0;
-	padding: 0;
-	display: flex;
-	max-width: 260px;
-	flex-direction: column;
-	align-items: center;
-	&:last-child {
-		margin: 0;
+const FullCon = styled.div`
+	position: relative;
+	height: 737px;
+	max-width: 1686px;
+	border-top-right-radius: 48px;
+	border-bottom-right-radius: 48px;
+	background-color: var(--bg-black);
+
+	@media (min-width: 768px) {
+		height: 326px;
+	}
+
+	@media (min-width: 1024px) {
+		height: 339px;
+	}
+
+	@media (min-width: 1280px) {
+		margin-right: 54px;
+	}
+
+	@media (min-width: 1920px) {
+		height: 356px;
 	}
 `;
 
-const Title = styled.p`
-	font-family: 'Gilroy';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 28px;
-	line-height: 34px;
-	text-align: center;
-	color: #ffffff;
-	margin: 24px 0 0;
-	padding: 0;
-	text-align: center;
+const FlexConInfo = styled.div`
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 `;
-const SubTitle = styled.p`
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 18px;
-	line-height: 24px;
-	color: #d2d2d2;
-	margin: 4px 0 0 0;
-	padding: 0;
-	max-width: 162px;
-	text-align: center;
+
+const Content = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 48px 0;
 `;
 
 const Heading = styled.p`
 	font-family: 'Gilroy';
-	font-style: normal;
 	font-weight: 600;
-	font-size: 44px;
-	line-height: 54px;
+	font-size: 28px;
+	line-height: 34px;
 	color: #ffffff;
+	margin: 0 0 40px 0;
+	text-align: center;
+	max-width: 200px;
+
+	@media (min-width: 768px) {
+		font-size: 32px;
+		line-height: 39px;
+		margin: 0 0 32px 0;
+		max-width: 350px;
+	}
+
+	@media (min-width: 1024px) {
+		font-size: 36px;
+		line-height: 44px;
+		max-width: 400px;
+	}
+
+	@media (min-width: 1024px) {
+		font-size: 44px;
+		line-height: 54px;
+		max-width: 500px;
+	}
+`;
+
+const List = styled.ul`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	list-style: none;
 	margin: 0;
 	padding: 0;
+
+	@media (min-width: 768px) {
+		width: 100%;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+`;
+
+const Item = styled.li`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 32px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	@media (min-width: 768px) {
+		margin: 0;
+	}
+`;
+
+const Img = styled.img`
+	margin-bottom: 24px;
+`;
+
+const Title = styled.p`
+	font-family: 'Gilroy';
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 25px;
 	text-align: center;
+	color: #ffffff;
+	text-align: center;
+	margin: 0 0 4px 0;
+
+	@media (min-width: 1024px) {
+		font-size: 24px;
+		line-height: 29px;
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 28px;
+		line-height: 34px;
+	}
+`;
+
+const SubTitle = styled.p`
+	font-family: 'Inter';
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 21px;
+	color: #d2d2d2;
+	text-align: center;
+	margin: 0;
+	max-width: 150px;
+
+	@media (min-width: 1024px) {
+		font-size: 16px;
+		line-height: 23px;
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 18px;
+		line-height: 24px;
+	}
 `;
 
 const SquareRight = styled.div`

@@ -6,9 +6,9 @@ const DoneBottom: FC = () => {
 		<Wrapper>
 			<WrapperCon>
 				<Black>
-					<BlackLeftSquare />
+					{/* <BlackLeftSquare />
 					<BlackRightSquare />
-					<BlackDots />
+					<BlackDots /> */}
 					<Content>
 						<Title>2020</Title>
 						<List>
@@ -19,18 +19,18 @@ const DoneBottom: FC = () => {
 					</Content>
 				</Black>
 				<RedSide>
-					<RedSideSquare />
+					{/* <RedSideSquare />
 					<RedSideSquareRight />
 					<LeftDots />
-					<RightDots />
+					<RightDots /> */}
 					<img src='images/company/Done/ipad.png' srcSet='images/company/Done/ipad@2x.png 2x' alt='ipad' />
 				</RedSide>
 				<RedWrapper>
 					<RedWrapperDots />
 					<Red>
-						<RedLeftSquare />
+						{/* <RedLeftSquare />
 						<RedRightSquare />
-						<RedDots />
+						<RedDots /> */}
 						<RedTitle>Dark mode too!</RedTitle>
 						<picture>
 							<source
@@ -50,9 +50,9 @@ const DoneBottom: FC = () => {
 					</Red>
 				</RedWrapper>
 				<Grey>
-					<GreyLeftSquare />
+					{/* <GreyLeftSquare />
 					<GreyRightSquare />
-					<GreyDots />
+					<GreyDots /> */}
 					<Content>
 						<DarkTitle>Q3 2019</DarkTitle>
 						<List>

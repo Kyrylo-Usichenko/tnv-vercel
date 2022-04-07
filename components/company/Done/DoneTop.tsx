@@ -11,9 +11,9 @@ const DoneTop: FC = () => {
 			<Wrapper>
 				<TopWrapper>
 					<GreyTopBlock>
-						<GreySquare />
+						{/* <GreySquare />
 						<GreySquareBottom />
-						<Dots />
+						<Dots /> */}
 						<Content1>
 							<Year>2021</Year>
 							<List>
@@ -31,10 +31,10 @@ const DoneTop: FC = () => {
 						</Content1>
 					</GreyTopBlock>
 					<RedSide>
-						<RedSideSquare />
+						{/* <RedSideSquare />
 						<RedSideSquareRight />
 						<LeftDots />
-						<RightDots />
+						<RightDots /> */}
 						<img
 							src='images/company/Done/ipad.png'
 							srcSet='images/company/Done/ipad@2x.png 2x'

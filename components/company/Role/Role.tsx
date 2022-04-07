@@ -1,114 +1,252 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { Container } from '../../common/Container/Container';
+import { FeaturesCon } from '../../common/Container/Container';
 
 const Role: FC = () => {
 	return (
-		<Container>
-			<Wrapper>
-				<Square />
-				<Photos>
-					<TopLeft src='images/company/Role/topLeft.png' alt='' />
-					<TopRight src='images/company/Role/topRight.png' alt='' />
-
-					<BotLeft src='images/company/Role/botLeft.png' alt='' />
-					<BotRight src='images/company/Role/botRight.png' alt='' />
+		<Wrapper>
+			{/* <Square /> */}
+			{/* <Dots /> */}
+			<FeaturesCon>
+				<GalleryCon>
+					<GalleryGrid>
+						<GalleryColumn>
+							<Img1
+								src='images/company/Role/1.jpg'
+								srcSet='images/company/Role/1@2x.jpg 2x'
+								alt='Big city'
+							/>
+							<Img3
+								src='images/company/Role/3.jpg'
+								srcSet='images/company/Role/3@2x.jpg 2x'
+								alt='Big city'
+							/>
+						</GalleryColumn>
+						<GalleryColumn>
+							<Img2
+								src='images/company/Role/2.jpg'
+								srcSet='images/company/Role/2@2x.jpg 2x'
+								alt='Big city'
+							/>
+							<Img4
+								src='images/company/Role/4.jpg'
+								srcSet='images/company/Role/4@2x.jpg 2x'
+								alt='Big city'
+							/>
+						</GalleryColumn>
+					</GalleryGrid>
+					<Content>
+						<GalleryTitle>Find the perfect role at any of our offices near you</GalleryTitle>
+						<Explore>Explore roles</Explore>
+					</Content>
+				</GalleryCon>
+				{/* <Photos>
+					<TopLeft src='images/company/Role/1.jpg' srcSet='images/company/Role/1@2x.jpg 2x' alt='' />
+					<TopRight src='images/company/Role/2.jpg' srcSet='images/company/Role/2@2x.jpg 2x' alt='' />
+					<BotLeft src='images/company/Role/3.jpg' srcSet='images/company/Role/3@2x.jpg 2x' alt='' />
+					<BotRight src='images/company/Role/4.jpg' srcSet='images/company/Role/4@2x.jpg 2x' alt='' />
 				</Photos>
 				<Right>
 					<Title>
-						<Dots />
 						Find the perfect role at any of our offices near you
 					</Title>
-					<Explore href='/'>Explore roles</Explore>
-				</Right>
-			</Wrapper>
-		</Container>
+					<Explore>Explore roles</Explore>
+				</Right> */}
+			</FeaturesCon>
+		</Wrapper>
 	);
 };
 
-const Wrapper = styled.div`
-	margin-top: 180px;
-	display: flex;
+const Wrapper = styled.section`
+	margin-bottom: 180px;
 	position: relative;
 	z-index: 1;
-`;
 
-const Photos = styled.div`
-	display: flex;
-	min-width: 806px;
-	height: 702px;
-	flex-wrap: wrap;
-	width: 100%;
-`;
-
-const Title = styled.p`
-	margin: 0;
-	padding: 0;
-	font-family: 'Gilroy';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 56px;
-	line-height: 69px;
-	color: #212121;
-	width: 442px;
-	position: relative;
-	z-index: 0;
-	&:before {
-		content: '';
-		position: absolute;
-		left: -30px;
-		top: -37px;
-		width: 66px;
-		height: 62px;
-		background: url('images/company/Role/stars.svg');
+	@media (min-width: 1024px) {
+		margin-bottom: 140px;
 	}
 `;
 
-const Explore = styled.a`
-	margin: 32px 0 0;
-	padding: 0;
-	border: 1.16667px solid #d2d2d2;
-	border-radius: 18px;
-	background: #fff;
-	font-family: 'Gilroy';
-	font-style: normal;
-	font-weight: 700;
-	font-size: 18.6667px;
-	line-height: 23px;
+const GalleryCon = styled.div`
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	width: 210px;
-	height: 56px;
-	color: #212121;
-	text-decoration: none;
-`;
-const Right = styled.a`
-	margin: 207px 0 32px 64px;
-	padding: 0;
+	position: relative;
+
+	@media (min-width: 1024px) {
+		flex-direction: row;
+		gap: 64px;
+	}
 `;
 
-const TopLeft = styled.img`
-	width: 389px;
-	height: 346px;
-	margin: 0 24px 24px 0;
-	border-radius: 32px;
+const GalleryGrid = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	width: 100%;
+
+	@media (min-width: 768px) {
+		flex-direction: row;
+	}
+
+	@media (min-width: 1280px) {
+		gap: 24px;
+	}
 `;
-const TopRight = styled.img`
-	width: 393px;
-	height: 376px;
-	border-radius: 32px;
+
+const GalleryColumn = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	width: 100%;
+
+	@media (min-width: 1280px) {
+		gap: 24px;
+	}
 `;
-const BotLeft = styled.img`
-	width: 389px;
-	height: 330px;
+
+const GalleryImg = styled.img`
 	border-radius: 32px;
+	width: 100%;
+	object-fit: cover;
+
+	@media (min-width: 768px) {
+		width: 360px;
+	}
+
+	@media (min-width: 1024px) {
+		width: 310px;
+	}
+
+	@media (min-width: 1280px) {
+		width: 335px;
+	}
+
+	@media (min-width: 1440px) {
+		width: 374px;
+	}
+
+	@media (min-width: 1920px) {
+		width: 390px;
+	}
 `;
-const BotRight = styled.img`
-	width: 393px;
-	height: 300px;
-	margin: 30px 0 0 24px;
-	border-radius: 32px;
+
+const Img1 = styled(GalleryImg)`
+	height: 260px;
+
+	@media (min-width: 768px) {
+		height: 346px;
+	}
+`;
+
+const Img2 = styled(GalleryImg)`
+	height: 260px;
+
+	@media (min-width: 768px) {
+		height: 376px;
+	}
+`;
+
+const Img3 = styled(GalleryImg)`
+	height: 260px;
+
+	@media (min-width: 768px) {
+		height: 338px;
+	}
+
+	@media (min-width: 1024px) {
+		height: 330px;
+	}
+`;
+
+const Img4 = styled(GalleryImg)`
+	height: 260px;
+
+	@media (min-width: 768px) {
+		height: 308px;
+	}
+
+	@media (min-width: 1024px) {
+		height: 300px;
+	}
+`;
+
+const Content = styled.div`
+	order: -2;
+
+	@media (min-width: 1024px) {
+		order: 1;
+	}
+`;
+
+const GalleryTitle = styled.h2`
+	font-family: 'Gilroy';
+	font-weight: 600;
+	font-size: 32px;
+	line-height: 39px;
+	color: #212121;
+	text-align: center;
+	margin: 0 0 32px 0;
+	position: relative;
+	max-width: 315px;
+
+	@media (min-width: 768px) {
+		font-size: 44px;
+		line-height: 54px;
+		max-width: 540px;
+	}
+
+	@media (min-width: 1024px) {
+		text-align: left;
+		max-width: 400px;
+	}
+
+	@media (min-width: 1280px) {
+		font-size: 48px;
+		line-height: 59px;
+	}
+
+	@media (min-width: 1440px) {
+		max-width: 600px;
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 56px;
+		line-height: 69px;
+		max-width: 750px;
+	}
+`;
+
+const Explore = styled.button`
+	display: block;
+	border: 1px solid #d2d2d2;
+	border-radius: 18px;
+	background-color: #ffffff;
+	font-family: 'Gilroy';
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+	padding: 0;
+	width: 188px;
+	height: 48px;
+	color: #212121;
+	margin: 0 auto 48px auto;
+	cursor: pointer;
+
+	@media (min-width: 768px) {
+		margin: 0 auto 64px auto;
+	}
+
+	@media (min-width: 1024px) {
+		margin: 0;
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 18px;
+		line-height: 23px;
+		width: 210px;
+		height: 56px;
+	}
 `;
 
 const Dots = styled.div`

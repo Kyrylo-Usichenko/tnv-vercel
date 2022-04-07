@@ -1,66 +1,113 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { Container } from '../../common/Container/Container';
+import { FeaturesCon } from '../../common/Container/Container';
 
 const Teamvio: FC = () => {
 	return (
-		<Container>
-			<Inner>
-				<SquareLeft />
-				<SquareRightTop />
-				<SquareRightBot />
-				<RightDots />
-				<LeftDots />
+		<StyledTeamvio>
+			<FeaturesCon>
 				<Title>
-					Powered by <Span>Teamvio</Span>
+					Powered by <span className='accent'>Teamvio</span>
 				</Title>
-				<Content>
-					<Line>
-						<LeftTop src='images/company/Teamvio/leftTop.png' alt='' />
-						<div>
-							<RightTop src='images/company/Teamvio/rightTop.png' alt='' />
-							<Join>
-								<JoinSquareLeft />
+				<Inner1>
+					{/* <SquareLeft />
+					<SquareRightTop />
+					<SquareRightBot />
+					<RightDots />
+					<LeftDots /> */}
+					<Img1 src='images/company/Teamvio/1.jpg' srcSet='images/company/Teamvio/1@2x.jpg 2x' alt='' />
+					<Img2 src='images/company/Teamvio/2.jpg' srcSet='images/company/Teamvio/2@2x.jpg 2x' alt='' />
+					<Join>
+						{/* <JoinSquareLeft />
 								<JoinSquareRight />
-								<JoinDots />
-								<div>
-									<p>Up for a challenge?</p>
-									<p>We're always looking for the best.</p>
-								</div>
-								<Button>Join Us</Button>
-							</Join>
-						</div>
-					</Line>
-					<Line>
-						<LeftBot src='images/company/Teamvio/leftBot.png' alt='' />
-						<RightBot src='images/company/Teamvio/rightBot.png' alt='' />
-					</Line>
-				</Content>
-			</Inner>
-		</Container>
+								<JoinDots /> */}
+						<Text>
+							Up for a challenge? <Br /> We're always looking for the best
+						</Text>
+						<Button>Join Us</Button>
+					</Join>
+				</Inner1>
+				<Inner2>
+					<Img3 src='images/company/Teamvio/3.jpg' srcSet='images/company/Teamvio/3@2x.jpg 2x' alt='' />
+					<Img4 src='images/company/Teamvio/4.jpg' srcSet='images/company/Teamvio/4@2x.jpg 2x' alt='' />
+				</Inner2>
+			</FeaturesCon>
+		</StyledTeamvio>
 	);
 };
 
-const Inner = styled.div`
-	margin-top: 178px;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	position: relative;
-	z-index: 1;
+const StyledTeamvio = styled.section`
+	margin-bottom: 180px;
+
+	@media (min-width: 768px) {
+		margin-bottom: 140px;
+	}
+
+	@media (min-width: 1024px) {
+		margin-bottom: 180px;
+	}
 `;
 
-const Title = styled.p`
-	font-family: 'Gilroy';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 48px;
-	line-height: 59px;
-	color: #212121;
-	padding: 0;
+const Inner1 = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
 	position: relative;
-	margin: 0;
-	&:before {
+	z-index: 1;
+	margin-bottom: 16px;
+
+	@media (min-width: 768px) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@media (min-width: 1024px) {
+		grid-template-columns: 396px 1fr;
+		margin-bottom: 24px;
+		gap: 24px;
+	}
+
+	@media (min-width: 1280px) {
+		grid-template-columns: 451px 1fr;
+	}
+
+	@media (min-width: 1440px) {
+		grid-template-columns: 520px 1fr;
+	}
+
+	@media (min-width: 1920px) {
+		grid-template-columns: 580px 1fr;
+	}
+`;
+
+const Inner2 = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	position: relative;
+	z-index: 1;
+
+	@media (min-width: 768px) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@media (min-width: 1024px) {
+		gap: 24px;
+	}
+`;
+
+const Title = styled.h3`
+	font-family: 'Gilroy';
+	font-weight: 600;
+	font-size: 32px;
+	line-height: 39px;
+	color: #212121;
+	position: relative;
+	margin: 0 0 40px 0;
+	text-align: center;
+
+	/* &:before {
 		content: '';
 		position: absolute;
 		left: -39px;
@@ -68,97 +115,166 @@ const Title = styled.p`
 		width: 64px;
 		height: 64px;
 		background: url('images/company/Teamvio/stars.svg');
+	} */
+
+	@media (min-width: 768px) {
+		font-size: 36px;
+		line-height: 44px;
+	}
+
+	@media (min-width: 1024px) {
+		font-size: 44px;
+		line-height: 54px;
+		margin: 0 0 48px 0;
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 48px;
+		line-height: 59px;
 	}
 `;
 
-const Span = styled.span`
-	color: #ff474d;
-	margin: 0;
-	padding: 0;
-`;
-
-const LeftTop = styled.img`
-	width: 580px;
-	height: 493px;
-	background-repeat: no-repeat;
-	margin: 0 24px 0 0;
-	border-radius: 32px;
-`;
-
-const RightTop = styled.img`
-	width: 709px;
-	height: 347px;
-	background-repeat: no-repeat;
+const Img = styled.img`
+	display: block;
+	width: 100%;
 	object-fit: cover;
 	border-radius: 32px;
 `;
-const LeftBot = styled.img`
-	width: 644px;
-	height: 469px;
-	background-repeat: no-repeat;
-	object-fit: cover;
-	border-radius: 32px;
-`;
-const RightBot = styled.img`
-	width: 644px;
-	height: 469px;
-	background-repeat: no-repeat;
 
-	border-radius: 32px;
+const Img1 = styled(Img)`
+	height: 391px;
+
+	@media (min-width: 768px) {
+		grid-row: 1 / 3;
+		height: 507px;
+	}
+
+	@media (min-width: 1024px) {
+		height: 485px;
+	}
 `;
 
-const Line = styled.div`
-	display: flex;
-	justify-content: space-between;
-	margin: 0;
-	padding: 0;
-	&:first-child {
-		margin: 0 0 24px;
+const Img2 = styled(Img)`
+	height: 313px;
+
+	@media (min-width: 768px) {
+		grid-row: 1 / 2;
+	}
+
+	@media (min-width: 1024px) {
+		height: 347px;
+	}
+`;
+
+const Img3 = styled(Img)`
+	height: 344px;
+
+	@media (min-width: 1024px) {
+		height: 469px;
+	}
+`;
+
+const Img4 = styled(Img)`
+	height: 344px;
+
+	@media (min-width: 1024px) {
+		height: 469px;
 	}
 `;
 
 const Join = styled.div`
-	display: flex;
-	justify-content: space-between;
-	margin: 24px 0 0;
-	padding: 32px;
-	background: #363636;
+	padding: 40px 0;
+	background-color: #363636;
+	text-align: center;
 	border-radius: 32px;
-	height: 122px;
 	position: relative;
 	z-index: 0;
-	p {
-		padding: 0;
-		margin: 0;
-		font-family: 'Gilroy';
-		font-style: normal;
-		font-weight: 600;
-		font-size: 24px;
-		line-height: 29px;
-		color: #ffffff;
+
+	@media (min-width: 768px) {
+		grid-row: 2 / 3;
+		padding: 32px 0;
+	}
+
+	@media (min-width: 1024px) {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 32px 24px;
 	}
 `;
 
-const Content = styled.div`
-	margin-top: 48px;
-	z-index: 0;
+const Text = styled.p`
+	font-family: 'Gilroy';
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 22px;
+	color: #ffffff;
+	text-align: center;
+	margin: 0 0 24px 0;
+
+	@media (min-width: 768px) {
+		max-width: 250px;
+		margin: 0 auto 16px auto;
+		font-size: 20px;
+		line-height: 25px;
+		text-align: left;
+	}
+
+	@media (min-width: 1024px) {
+		margin: 0;
+	}
+
+	@media (min-width: 1440px) {
+		max-width: 310px;
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 24px;
+		line-height: 29px;
+		max-width: 390px;
+	}
 `;
 
-const Button = styled.a`
-	width: 210px;
-	height: 56px;
+const Br = styled.br`
+	@media (min-width: 768px) {
+		display: none;
+	}
+
+	@media (min-width: 1440px) {
+		display: block;
+	}
+`;
+
+const Button = styled.button`
 	border-radius: 18px;
 	background-color: #ffffff;
+	border: none;
 	font-family: 'Gilroy';
-	font-style: normal;
 	font-weight: 700;
-	font-size: 20px;
-	line-height: 25px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	font-size: 16px;
+	line-height: 20px;
+	padding: 14px 0;
+	width: 188px;
 	color: #212121;
 	cursor: pointer;
+	transition: all 0.3s ease;
+
+	&:hover {
+		background-color: #ffffffcc;
+		box-shadow: 14px 4px 20px 0 var(--shadow-color);
+	}
+
+	&:focus {
+		background-color: var(--text-white);
+		box-shadow: 12px 2px 20px 0 var(--shadow-color);
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 20px;
+		line-height: 25px;
+		padding: 16px 0;
+		width: 210px;
+	}
 `;
 
 const SquareLeft = styled.div`

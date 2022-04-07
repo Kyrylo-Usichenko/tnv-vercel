@@ -5,9 +5,9 @@ const Counts: FC = () => {
 	return (
 		<Wrapper className='counts'>
 			<Block1 className='block1'>
-				<Block1Dots />
+				{/* <Block1Dots />
 				<Block1SquareRight />
-				<Block1SquareBottom />
+				<Block1SquareBottom /> */}
 				<Content>
 					<Count>
 						250<span className='accent'>+</span>
@@ -16,9 +16,9 @@ const Counts: FC = () => {
 				</Content>
 			</Block1>
 			<Block2 className='block2'>
-				<Block2Dots />
+				{/* <Block2Dots />
 				<Block2SquareLeft />
-				<Block2SquareBottom />
+				<Block2SquareBottom /> */}
 				<Content>
 					<Count>
 						10<span className='accent'>+</span>
@@ -27,8 +27,8 @@ const Counts: FC = () => {
 				</Content>
 			</Block2>
 			<Block3 className='block3'>
-				<Block3Dots />
-				<Block3Square />
+				{/* <Block3Dots />
+				<Block3Square /> */}
 				<Content>
 					<Count>
 						5000<span className='accent'>+</span>
@@ -37,8 +37,8 @@ const Counts: FC = () => {
 				</Content>
 			</Block3>
 			<Block4 className='block4'>
-				<Block4Square />
-				<Block4Dots />
+				{/* <Block4Square />
+				<Block4Dots /> */}
 				<Content>
 					<Count>
 						$500<span className='accent'>M</span>
@@ -51,6 +51,8 @@ const Counts: FC = () => {
 };
 
 const Wrapper = styled.section`
+	margin-bottom: 180px;
+
 	@media (min-width: 768px) {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
