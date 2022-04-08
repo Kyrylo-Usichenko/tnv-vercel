@@ -15,11 +15,13 @@ const Role: FC = () => {
 								src='images/company/Role/1.jpg'
 								srcSet='images/company/Role/1@2x.jpg 2x'
 								alt='Big city'
+								loading='lazy'
 							/>
 							<Img3
 								src='images/company/Role/3.jpg'
 								srcSet='images/company/Role/3@2x.jpg 2x'
 								alt='Big city'
+								loading='lazy'
 							/>
 						</GalleryColumn>
 						<GalleryColumn>
@@ -27,11 +29,13 @@ const Role: FC = () => {
 								src='images/company/Role/2.jpg'
 								srcSet='images/company/Role/2@2x.jpg 2x'
 								alt='Big city'
+								loading='lazy'
 							/>
 							<Img4
 								src='images/company/Role/4.jpg'
 								srcSet='images/company/Role/4@2x.jpg 2x'
 								alt='Big city'
+								loading='lazy'
 							/>
 						</GalleryColumn>
 					</GalleryGrid>

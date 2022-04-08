@@ -16,8 +16,8 @@ const Footer: FC<Props> = ({ background }) => {
 				<FirstLine>
 					<FirstLineHalf>
 						<FooterFullLogo>
-							<FooterLogo src='icons/common/logo/logo.svg' alt='octopus' />
-							<FooterLogoText src='icons/common/logo/logo-text.svg' alt='tinvio' />
+							<FooterLogo src='icons/common/logo/logo.svg' alt='octopus' loading='lazy' />
+							<FooterLogoText src='icons/common/logo/logo-text.svg' alt='tinvio' loading='lazy' />
 						</FooterFullLogo>
 						<FirstLineSeparate />
 						<FooterUl>
@@ -39,17 +39,17 @@ const Footer: FC<Props> = ({ background }) => {
 						<Links>
 							<Socials>
 								<Link href={'/'}>
-									<Social src='images/footer/linkedin.svg' alt='linkedin' />
+									<Social src='images/footer/linkedin.svg' alt='linkedin' loading='lazy' />
 								</Link>
 								<Link href={'/'}>
-									<Social src='images/footer/inst.svg' alt='instagram' />
+									<Social src='images/footer/inst.svg' alt='instagram' loading='lazy' />
 								</Link>
 							</Socials>
 							<FirstLineSeparate />
 							<Stores>
 								<Link href={'/'}>
 									<Store>
-										<img src='images/footer/gplay.svg' alt='google play' />
+										<img src='images/footer/gplay.svg' alt='google play' loading='lazy' />
 										<StoreText>
 											<StoreTextFirst>Available on the</StoreTextFirst>
 											<StoreTextSecond>Google Play</StoreTextSecond>
@@ -58,7 +58,7 @@ const Footer: FC<Props> = ({ background }) => {
 								</Link>
 								<Link href={'/'}>
 									<Store>
-										<img src='images/footer/astore.svg' alt='apple store' />
+										<img src='images/footer/astore.svg' alt='apple store' loading='lazy' />
 										<StoreText>
 											<StoreTextFirst>Available on the</StoreTextFirst>
 											<StoreTextSecond>App Store</StoreTextSecond>

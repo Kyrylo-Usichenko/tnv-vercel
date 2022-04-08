@@ -337,7 +337,7 @@ const PreviewImgDeco2 = styled.div`
 	width: inherit;
 
 	&::before {
-		content: url('images/features/preview/line-375.webp');
+		content: url('images/features/preview/line-375.svg');
 		position: absolute;
 		top: 168px;
 		left: 170px;
@@ -345,7 +345,7 @@ const PreviewImgDeco2 = styled.div`
 
 	@media (min-width: 768px) {
 		&::before {
-			content: url('images/features/preview/line-l-768.webp');
+			content: url('images/features/preview/line-l-768.svg');
 			top: 210px;
 			left: 340px;
 		}
@@ -353,7 +353,7 @@ const PreviewImgDeco2 = styled.div`
 
 	@media (min-width: 1024px) {
 		&::before {
-			content: url('images/features/preview/line-l-1024.webp');
+			content: url('images/features/preview/line-l-1024.svg');
 			top: 212px;
 			left: 473px;
 		}
@@ -366,7 +366,7 @@ const PreviewImgDeco2 = styled.div`
 		}
 
 		&::after {
-			content: url('images/features/preview/line-r-1280.webp');
+			content: url('images/features/preview/line-r-1024.svg');
 			position: absolute;
 			top: 245px;
 			left: 659px;

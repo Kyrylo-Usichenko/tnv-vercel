@@ -26,6 +26,9 @@ const Greetings: FC = () => {
 							digitize the zillions of these offline receivables and payables. One transaction at a time.
 						</Text>
 						<Contact>Contact Us</Contact>
+						<LeftTopSquare />
+						<LeftBotSquare />
+						<LeftBotSquare2 />
 					</Info>
 					<PhoneWrapper>
 						<picture>
@@ -38,18 +41,15 @@ const Greetings: FC = () => {
 								media='(min-width: 768px)'
 							/>
 							<Phone
+								width='318'
+								height='526'
 								src='images/company/Greetings/ph-375.png'
 								srcSet='images/company/Greetings/ph-375@2x.png 2x'
 								alt='app'
 							/>
 						</picture>
-						{/* <Stars src='images/company/Greetings/stars.svg' alt='' />
-						<PhoneTopDots src='images/company/Greetings/phoneTopDots.svg' alt='' />
-						<PhoneBotDots src='images/company/Greetings/phoneBotDots.svg' alt='' />
-						<PhoneLeftDots src='images/company/Greetings/leftDots.svg' alt='asd' />
-						<LeftTopSquare />
-						<LeftBotSquare />
-						<Square /> */}
+						<Dec1></Dec1>
+						<RSquare />
 					</PhoneWrapper>
 				</Main>
 			</FeaturesCon>
@@ -156,8 +156,30 @@ const Main = styled.div`
 `;
 
 const Info = styled.div`
+	position: relative;
+
+	&:before {
+		content: url('images/company/Greetings/text-dots.svg');
+		position: absolute;
+		top: 220px;
+		left: -60px;
+		z-index: -1;
+	}
+
+	@media (min-width: 768px) {
+		&:before {
+			top: 170px;
+			left: -100px;
+		}
+	}
+
 	@media (min-width: 1024px) {
 		flex: 0 0 455px;
+
+		&:before {
+			top: 90px;
+			left: -200px;
+		}
 	}
 
 	@media (min-width: 1280px) {
@@ -166,6 +188,10 @@ const Info = styled.div`
 
 	@media (min-width: 1440px) {
 		flex: 0 0 684px;
+
+		&:before {
+			top: 40px;
+		}
 	}
 
 	@media (min-width: 1920px) {
@@ -213,83 +239,179 @@ const Contact = styled.button`
 
 const PhoneWrapper = styled.div`
 	position: relative;
+
+	&::before {
+		content: url('images/company/Greetings/ph-dots-b-375.svg');
+		position: absolute;
+		bottom: -120px;
+		right: -30px;
+		z-index: -1;
+	}
+
+	&::after {
+		content: url('images/company/Greetings/ph-dec-375.svg');
+		position: absolute;
+		top: 186px;
+		right: -33px;
+		z-index: -1;
+	}
+
+	@media (min-width: 768px) {
+		&::before {
+			content: url('images/company/Greetings/ph-dots-b-768.svg');
+			bottom: -22px;
+			right: 67px;
+		}
+
+		&::after {
+			display: none;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		&:before {
+			bottom: -61px;
+			right: -45px;
+		}
+
+		&::after {
+			display: block;
+			content: url('images/company/Greetings/ph-dec-1280.svg');
+			top: 110px;
+			right: -80px;
+		}
+	}
 `;
 
 const Phone = styled.img`
 	@media (min-width: 768px) {
 		margin-left: 130px;
+		width: 572px;
+		height: 760.5px;
 	}
 
 	@media (min-width: 1024px) {
+		display: block;
+		width: 100%;
+		height: auto;
 		margin-left: 0;
 	}
 `;
 
-// const Stars = styled.img`
-// 	position: absolute;
-// 	right: -84px;
-// 	top: 140px;
-// 	z-index: -1;
-// `;
-//
-// const Square = styled.div`
-// 	width: 678.98px;
-// 	height: 678.98px;
-// 	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
-// 	transform: rotate(45deg);
-// 	border-radius: 63.2013px;
-// 	opacity: 0.15;
-// 	position: absolute;
-// 	right: -478px;
-// 	top: -115px;
-// 	z-index: -1;
-// `;
-//
-// const LeftTopSquare = styled.div`
-// 	width: 251.35px;
-// 	height: 251.35px;
-// 	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
-// 	transform: rotate(45deg);
-// 	border-radius: 23.3968px;
-// 	opacity: 0.15;
-// 	position: absolute;
-// 	left: -1021px;
-// 	bottom: 570px;
-// 	z-index: -1;
-// `;
-//
-// const LeftBotSquare = styled.div`
-// 	width: 460.84px;
-// 	height: 460.84px;
-// 	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
-// 	transform: rotate(45deg);
-// 	border-radius: 42.8967px;
-// 	opacity: 0.15;
-// 	position: absolute;
-// 	left: -1134px;
-// 	bottom: 87px;
-// 	z-index: -2;
-// `;
-//
-// const PhoneTopDots = styled.img`
-// 	position: absolute;
-// 	right: 88px;
-// 	top: 24px;
-// 	z-index: -1;
-// `;
-//
-// const PhoneBotDots = styled.img`
-// 	position: absolute;
-// 	right: -24px;
-// 	bottom: -57px;
-// 	z-index: -1;
-// `;
-//
-// const PhoneLeftDots = styled.img`
-// 	position: absolute;
-// 	left: -978px;
-// 	bottom: 132px;
-// 	z-index: -1;
-// `;
+const Dec1 = styled.div`
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	&::before {
+		content: url('images/company/Greetings/ph-dots-t.svg');
+		position: absolute;
+		top: 60px;
+		left: -209px;
+		z-index: -1;
+	}
+
+	@media (min-width: 768px) {
+		&::before {
+			top: -10px;
+			left: 55px;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		&::before {
+			top: -4px;
+			left: -35px;
+		}
+	}
+`;
+
+const RSquare = styled.div`
+	width: 678.98px;
+	height: 678.98px;
+	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
+	transform: rotate(45deg);
+	border-radius: 63.2013px;
+	opacity: 0.15;
+	position: absolute;
+	top: -60px;
+	right: -547px;
+	z-index: -1;
+
+	@media (min-width: 768px) {
+		right: -347px;
+	}
+
+	@media (min-width: 768px) {
+		top: -120px;
+		right: -459px;
+	}
+`;
+
+const LeftTopSquare = styled.div`
+	position: absolute;
+	left: -118px;
+	top: -173px;
+	width: 251.35px;
+	height: 251.35px;
+	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
+	transform: rotate(45deg);
+	border-radius: 23.3968px;
+	opacity: 0.15;
+	z-index: -1;
+
+	@media (min-width: 768px) {
+		left: -200px;
+		top: -149px;
+	}
+
+	@media (min-width: 1024px) {
+		left: -240px;
+		top: -280px;
+	}
+`;
+
+const LeftBotSquare = styled.div`
+	position: absolute;
+	left: -240px;
+	top: 100px;
+	width: 460.84px;
+	height: 460.84px;
+	background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
+	transform: rotate(45deg);
+	border-radius: 42.8967px;
+	opacity: 0.15;
+	z-index: -2;
+
+	@media (min-width: 768px) {
+		left: -336px;
+		top: 42px;
+	}
+
+	@media (min-width: 1024px) {
+		top: -25px;
+	}
+`;
+
+const LeftBotSquare2 = styled.div`
+	@media (min-width: 768px) {
+		position: absolute;
+		width: 399.51px;
+		height: 399.51px;
+		background: radial-gradient(95.51% 95.51% at 50% 50%, #dadada 0%, #fafafa 100%);
+		opacity: 0.15;
+		border-radius: 37.1876px;
+		transform: rotate(-45deg);
+		z-index: -1;
+		left: -200px;
+		top: 550px;
+	}
+
+	@media (min-width: 1024px) {
+		display: none;
+	}
+`;
 
 export default Greetings;

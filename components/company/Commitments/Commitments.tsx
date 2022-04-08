@@ -18,17 +18,21 @@ const Commitments: FC = () => {
 								<Heading>Our Core Commitments</Heading>
 								<List>
 									<Item>
-										<Img src='images/company/Commitments/pen.svg' alt='' />
+										<Img src='images/company/Commitments/pen.svg' loading='lazy' alt='pen' />
 										<Title>Every pixel matters</Title>
 										<SubTitle>Biased towards perfection</SubTitle>
 									</Item>
 									<Item>
-										<Img src='images/company/Commitments/message.svg' alt='' />
+										<Img
+											src='images/company/Commitments/message.svg'
+											loading='lazy'
+											alt='message'
+										/>
 										<Title>Shut the fluff</Title>
 										<SubTitle>Clear and direct communication</SubTitle>
 									</Item>
 									<Item>
-										<Img src='images/company/Commitments/rocket.svg' alt='' />
+										<Img src='images/company/Commitments/rocket.svg' loading='lazy' alt='rocket' />
 										<Title>Break things fast</Title>
 										<SubTitle>Ownership with ruthless agility</SubTitle>
 									</Item>

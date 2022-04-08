@@ -15,8 +15,18 @@ const Teamvio: FC = () => {
 					<SquareRightBot />
 					<RightDots />
 					<LeftDots />
-					<Img1 src='images/company/Teamvio/1.jpg' srcSet='images/company/Teamvio/1@2x.jpg 2x' alt='' />
-					<Img2 src='images/company/Teamvio/2.jpg' srcSet='images/company/Teamvio/2@2x.jpg 2x' alt='' />
+					<Img1
+						src='images/company/Teamvio/1.jpg'
+						srcSet='images/company/Teamvio/1@2x.jpg 2x'
+						alt='people'
+						loading='lazy'
+					/>
+					<Img2
+						src='images/company/Teamvio/2.jpg'
+						srcSet='images/company/Teamvio/2@2x.jpg 2x'
+						alt='people'
+						loading='lazy'
+					/>
 					<Join>
 						<JoinSquareLeft />
 						<JoinSquareRight />
@@ -28,8 +38,18 @@ const Teamvio: FC = () => {
 					</Join>
 				</Inner1>
 				<Inner2>
-					<Img3 src='images/company/Teamvio/3.jpg' srcSet='images/company/Teamvio/3@2x.jpg 2x' alt='' />
-					<Img4 src='images/company/Teamvio/4.jpg' srcSet='images/company/Teamvio/4@2x.jpg 2x' alt='' />
+					<Img3
+						src='images/company/Teamvio/3.jpg'
+						srcSet='images/company/Teamvio/3@2x.jpg 2x'
+						alt='people'
+						loading='lazy'
+					/>
+					<Img4
+						src='images/company/Teamvio/4.jpg'
+						srcSet='images/company/Teamvio/4@2x.jpg 2x'
+						alt='people'
+						loading='lazy'
+					/>
 				</Inner2>
 			</FeaturesCon>
 		</StyledTeamvio>
@@ -107,30 +127,52 @@ const Title = styled.h3`
 	margin: 0 0 40px 0;
 	text-align: center;
 
-	/* &:before {
-		content: '';
+	&:before {
+		content: url('images/company/Teamvio/stars.svg');
 		position: absolute;
-		left: -39px;
-		top: -25px;
-		width: 64px;
-		height: 64px;
-		background: url('images/company/Teamvio/stars.svg');
-	} */
+		left: -10px;
+		top: -21px;
+	}
 
 	@media (min-width: 768px) {
 		font-size: 36px;
 		line-height: 44px;
+
+		&:before {
+			left: 160px;
+		}
 	}
 
 	@media (min-width: 1024px) {
 		font-size: 44px;
 		line-height: 54px;
 		margin: 0 0 48px 0;
+
+		&:before {
+			left: 220px;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		&:before {
+			left: 270px;
+			top: -26px;
+		}
+	}
+
+	@media (min-width: 1440px) {
+		&:before {
+			left: 340px;
+		}
 	}
 
 	@media (min-width: 1920px) {
 		font-size: 48px;
 		line-height: 59px;
+
+		&:before {
+			left: 380px;
+		}
 	}
 `;
 
