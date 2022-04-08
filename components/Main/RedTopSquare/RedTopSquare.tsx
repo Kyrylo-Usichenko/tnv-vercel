@@ -30,24 +30,12 @@ const BigRed = styled.div`
 	transform: rotate(-45deg);
 	position: absolute;
 	top: -20px;
-	left: 1012px;
+	//left: 1012px;
+	left: 50%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	z-index: 0;
-	@media (max-width: 1536px) {
-		left: 850px;
-	}
-	@media (max-width: 1440px) {
-		left: 750px;
-	}
-	@media (max-width: 1280px) {
-		left: 680px;
-	}
-
-	@media (max-width: 1100px) {
-		left: 530px;
-	}
 	@media (max-width: 1024px) {
 		left: 530px;
 	}
