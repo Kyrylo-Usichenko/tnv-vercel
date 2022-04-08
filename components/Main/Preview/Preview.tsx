@@ -95,6 +95,9 @@ const PreviewTitle = styled.h2`
 		@media (max-width: 425px) {
 			right: 0;
 		}
+		@media (min-width: 1024px) {
+			display: none;
+		}
 	}
 	@media (max-width: 1440px) {
 		font-size: 44px;

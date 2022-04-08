@@ -29,7 +29,7 @@ const WhyChoose: FC = () => {
 };
 
 const Wrapper = styled.section`
-	padding: 0 0 90px;
+	padding: 0 0 145px;
 	margin: 78px 0 0 53.66px;
 	z-index: 1;
 	transform: skewY(-8deg);
@@ -58,6 +58,10 @@ const DotsLeftBot = styled.div`
 	background: url('images/main/whyChoose/leftBotDots.svg') no-repeat;
 	width: 465px;
 	height: 219px;
+	@media (max-width: 1280px) {
+		left: -288px;
+		top: 626px;
+	}
 	@media (max-width: 1024px) {
 		top: 861px;
 		left: -164px;
@@ -144,12 +148,14 @@ const RightSquare = styled.img`
 	height: 658px;
 
 	@media (max-width: 1024px) {
-		top: 300px;
-		right: -48px;
+		top: 356px;
+		right: -388px;
+	}
+	@media (max-width: 768px) {
+		right: -348px;
 	}
 	@media (max-width: 425px) {
-		top: 167px;
-		right: -573px;
+		display: none;
 	}
 `;
 

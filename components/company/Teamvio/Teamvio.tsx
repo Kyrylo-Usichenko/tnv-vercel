@@ -349,7 +349,7 @@ const SquareRightTop = styled.div`
 const SquareRightBot = styled.div`
 	position: absolute;
 	right: -300px;
-	bottom: -193px;
+	bottom: -686px;
 	z-index: -1;
 	width: 724.91px;
 	height: 724.91px;
@@ -361,8 +361,8 @@ const SquareRightBot = styled.div`
 
 const RightDots = styled.div`
 	position: absolute;
-	right: -105px;
-	bottom: 413px;
+	right: -102px;
+	bottom: -81px;
 	z-index: -1;
 	width: 389.43px;
 	height: 294.7px;

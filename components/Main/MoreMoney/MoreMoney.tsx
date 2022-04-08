@@ -317,6 +317,12 @@ const Item = styled.li`
 			margin: 0 0 0 -20px;
 		}
 	}
+	@media (max-width: 470px) {
+		margin: 0 0 12px -5px;
+		&:last-child {
+			margin: 0 0 0 -5px;
+		}
+	}
 	@media (max-width: 425px) {
 		font-size: 14px;
 		line-height: 20px;
