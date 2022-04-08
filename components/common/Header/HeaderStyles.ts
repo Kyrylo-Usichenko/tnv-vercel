@@ -4,7 +4,7 @@ import Button from '../Buttons/Button';
 import styled from 'styled-components';
 
 export const HeaderStyled = styled.header<{ isHeaderScrolled: boolean; isMenuOpend: boolean }>`
-	height: ${({ isMenuOpend }) => (isMenuOpend ? '100vh' : '88px')};
+	height: ${({ isMenuOpend }) => (isMenuOpend ? '100vh' : 'auto')};
 	position: fixed;
 	top: 0;
 	left: 0;
