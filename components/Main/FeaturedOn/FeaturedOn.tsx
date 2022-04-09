@@ -146,6 +146,9 @@ export const Stars = styled.img`
 	top: 60px;
 	right: 1px;
 	z-index: -1;
+	@media (max-width: 950px) {
+		display: none;
+	}
 `;
 
 export default MoreMoney;

@@ -167,7 +167,7 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 					</MobileNav>
 
 					<MobileLinks isMenuOpend={isMenuOpend}>
-						<Link href={'/'}>
+						<Link href='/'>
 							<MobileButton>{t('home:GetStarted')}</MobileButton>
 						</Link>
 						<Socials>

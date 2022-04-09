@@ -31,7 +31,7 @@ const Home: NextPage<any> = (props) => {
 	return (
 		<Styled>
 			<GreySquare2>
-				<GreySquareDots src='/images/main/preview/dots-under-text.png' alt='' />
+				<GreySquareDots src='/images/main/preview/dots-under-text.png' alt='grey dimonds' />
 			</GreySquare2>
 			<RedTopSquare />
 			<GreySquare />
