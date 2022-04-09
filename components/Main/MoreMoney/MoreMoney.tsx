@@ -1,6 +1,8 @@
-import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
+import React, { FC, RefObject, useRef, useState } from 'react';
 import Link from 'next/link';
 import styled, { keyframes, css } from 'styled-components';
+
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 import { Container } from '../../common/Container/Container';
 
@@ -9,16 +11,9 @@ const TYPE_WRITER_CHARACTERS = 10; // max words width
 
 const MoreMoney: FC = () => {
 	const [slide, setSlide] = useState('Payments');
-	const [isVisible, setVisible] = useState(false);
 	const typeRef = useRef() as RefObject<HTMLSpanElement>;
-
-	useEffect(() => {
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach((entry) => setVisible(entry.isIntersecting));
-		});
-		observer.observe(typeRef.current!);
-		return () => observer.unobserve(typeRef.current!); // clean up
-	}, []);
+	const entry = useIntersectionObserver(typeRef, {});
+	const isVisible = !!entry?.isIntersecting;
 
 	return (
 		<Wrapper>
