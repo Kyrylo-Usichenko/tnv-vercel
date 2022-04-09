@@ -1,10 +1,25 @@
+import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import React, { FC, useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
+
 import { Container } from '../../common/Container/Container';
+
+const TYPE_WRITE_SPEED = 1.5;
+const TYPE_WRITER_CHARACTERS = 10; // max words width
 
 const MoreMoney: FC = () => {
 	const [slide, setSlide] = useState('Payments');
+	const [isVisible, setVisible] = useState(false);
+	const typeRef = useRef() as RefObject<HTMLSpanElement>;
+
+	useEffect(() => {
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => setVisible(entry.isIntersecting));
+		});
+		observer.observe(typeRef.current!);
+		return () => observer.unobserve(typeRef.current!); // clean up
+	}, []);
+
 	return (
 		<Wrapper>
 			<GreySquare />
@@ -21,7 +36,10 @@ const MoreMoney: FC = () => {
 			<Container>
 				<Inner>
 					<Title>
-						Smarter supply chain transactions. <TitleSpan>More money</TitleSpan>
+						Smarter supply chain transactions.{' '}
+						<TitleSpan ref={typeRef} isVisible={isVisible}>
+							More money
+						</TitleSpan>
 					</Title>
 					<ButtonsWrapper>
 						<Button width='134' onClick={() => setSlide('Payments')} isActive={slide === 'Payments'}>
@@ -196,7 +214,18 @@ const Title = styled.h3`
 		line-height: 34px;
 	}
 `;
-const TitleSpan = styled.span`
+const typewriter = keyframes`
+	to {
+		left: 100%;
+	}
+`;
+const blink = keyframes`
+	to {
+		background: transparent;
+	}
+`;
+
+const TitleSpan = styled.span<{ isVisible: boolean }>`
 	color: #ff474d;
 	margin: 0;
 	padding: 0;
@@ -210,6 +239,35 @@ const TitleSpan = styled.span`
 		bottom: 0;
 		right: -5px;
 	}
+
+	position: relative;
+	width: max-content;
+
+	${({ isVisible }) =>
+		isVisible &&
+		css`
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			}
+
+			&::before {
+				background: #ffffff;
+				animation: ${typewriter} ${TYPE_WRITE_SPEED}s steps(${TYPE_WRITER_CHARACTERS}) 1s forwards;
+			}
+
+			&::after {
+				width: 0.125em;
+				background: black;
+				animation: ${typewriter} ${TYPE_WRITE_SPEED}s steps(${TYPE_WRITER_CHARACTERS}) 1s forwards,
+					${blink} 750ms steps(${TYPE_WRITER_CHARACTERS}) infinite;
+			}
+		`}
 `;
 
 const ButtonsWrapper = styled.div`
