@@ -47,8 +47,8 @@ const SLIDERS = [
 ];
 
 const Slider: FC = () => {
-	const [controlledSwiper, setControlledSwiper] = useState(undefined);
 	SwiperCore.use([Autoplay]);
+	const [controlledSwiper, setControlledSwiper] = useState<SwiperCore | null>(null);
 
 	const pagination = {
 		clickable: true,
@@ -63,7 +63,7 @@ const Slider: FC = () => {
 				<Swiper
 					className='swiper'
 					modules={[Controller, Navigation, Pagination, Autoplay]}
-					controller={{ control: controlledSwiper }}
+					controller={{ control: controlledSwiper! }}
 					spaceBetween={0}
 					slidesPerView={1}
 					// autoplay
@@ -93,7 +93,7 @@ const Slider: FC = () => {
 					slidesPerView={1}
 					// autoplay
 					loop={true}
-					onSwiper={() => setControlledSwiper}
+					onSwiper={(swiper) => setControlledSwiper(swiper)}
 					// onSlideChange={() => console.log('slide 2 change')}
 					effect='fade'
 					allowTouchMove={false}
@@ -250,39 +250,5 @@ const RightSliderWrap = styled.div`
 		margin: 0 0 30px;
 	}
 `;
-// const Buttons = styled.div`
-// 	position: absolute;
-// 	top: 50px;
-// 	left: 50px;
-// 	display: flex;
-// 	justify-content: space-between;
-// 	width: 104px;
-// 	margin-top: 50px;
-// 	@media (max-width: 1024px) {
-// 		display: none;
-// 	}
-// `;
-
-// const Button = styled.button`
-// 	background: #ff474d;
-// 	border-radius: 8px;
-// 	border: none;
-// 	margin: 0;
-// 	display: flex;
-// 	padding: 10px 15px 10px 13.33px;
-// 	cursor: pointer;
-// 	&:last-child {
-// 		transform: rotate(180deg);
-// 		padding: 10px 13.33px 10px 15px;
-// 	}
-// 	&:hover {
-// 		background: rgba(255, 71, 77, 0.8);
-// 	}
-// `;
-
-// const Dot = styled.span`
-// 	width: 17px;
-// 	height: 17px;
-// `;
 
 export default Slider;
