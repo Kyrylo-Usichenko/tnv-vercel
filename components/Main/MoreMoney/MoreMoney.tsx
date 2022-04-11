@@ -1,5 +1,6 @@
-import React, { FC, RefObject, useRef, useState } from 'react';
+import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styled, { keyframes, css } from 'styled-components';
 
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
@@ -9,11 +10,57 @@ import { Container } from '../../common/Container/Container';
 const TYPE_WRITE_SPEED = 1.5;
 const TYPE_WRITER_CHARACTERS = 10; // max words width
 
-const MoreMoney: FC = () => {
-	const [slide, setSlide] = useState('Payments');
+const payLeft = '/images/main/moreMoney/pay-left.png';
+const payRight = '/images/main/moreMoney/pay-right.png';
+const orderLeft = '/images/main/moreMoney/order-left.png';
+const orderRight = '/images/main/moreMoney/order-right.png';
+const chatLeft = '/images/main/moreMoney/chat-left.png';
+const chatRight = '/images/main/moreMoney/chat-right.png';
+
+const tabsImages = [
+	{
+		name: 'Payments',
+		leftImg: payLeft,
+		rightImg: payRight,
+		typedText: 'More money',
+	},
+	{
+		name: 'Orders',
+		leftImg: orderLeft,
+		rightImg: orderRight,
+		typedText: 'More money',
+	},
+	{
+		name: 'Chats',
+		leftImg: chatLeft,
+		rightImg: chatRight,
+		typedText: 'More money',
+	},
+];
+
+interface IMoreMoneyItem {
+	name: string;
+	leftImg: string;
+	rightImg: string;
+	typedText: string;
+}
+
+const MoreMoney: FC<IMoreMoneyItem[]> = () => {
+	const [tab, setTab] = useState(tabsImages[0]);
+	const [isClicked, setIsClicked] = useState(false);
+
 	const typeRef = useRef() as RefObject<HTMLSpanElement>;
 	const entry = useIntersectionObserver(typeRef, {});
 	const isVisible = !!entry?.isIntersecting;
+
+	useEffect(() => {
+		if (isVisible) setIsClicked(true);
+	}, [tab.name, isVisible]);
+
+	const onBtnClick = (tabItem: IMoreMoneyItem) => {
+		setIsClicked(false);
+		setTab(tabItem);
+	};
 
 	return (
 		<Wrapper>
@@ -21,10 +68,14 @@ const MoreMoney: FC = () => {
 			<PurpleSquare>
 				<RedSquare>
 					<Null>
-						<PaymentsActivity />
-						<FruitPlanet />
-						<Stars src='images/main/moreMoney/stars.svg' alt='' />
-						<Dots src='images/main/moreMoney/dots.svg' alt='' />
+						<LeftMock>
+							<Image src={tab.leftImg} alt={tab.name} layout='fill' objectFit='contain' />
+						</LeftMock>
+						<RightMock>
+							<Image src={tab.rightImg} alt={tab.name} layout='fill' objectFit='contain' />
+						</RightMock>
+						<Stars src='images/main/moreMoney/stars.svg' alt='stars' />
+						<Dots src='images/main/moreMoney/dots.svg' alt='dots' />
 					</Null>
 				</RedSquare>
 			</PurpleSquare>
@@ -32,24 +83,24 @@ const MoreMoney: FC = () => {
 				<Inner>
 					<Title>
 						Smarter supply chain transactions.{' '}
-						<TitleSpan ref={typeRef} isVisible={isVisible}>
-							More money
+						<TitleSpan ref={typeRef} isVisible={isClicked}>
+							{tab.typedText}
 						</TitleSpan>
 					</Title>
 					<ButtonsWrapper>
-						<Button width='134' onClick={() => setSlide('Payments')} isActive={slide === 'Payments'}>
+						<Button width='134' onClick={() => onBtnClick(tabsImages[0])} isActive={tab === tabsImages[0]}>
 							Payments
 						</Button>
-						<Button width='114' onClick={() => setSlide('Orders')} isActive={slide === 'Orders'}>
+						<Button width='114' onClick={() => onBtnClick(tabsImages[1])} isActive={tab === tabsImages[1]}>
 							Orders
 						</Button>
-						<Button width='107' onClick={() => setSlide('Chats')} isActive={slide === 'Chats'}>
+						<Button width='107' onClick={() => onBtnClick(tabsImages[2])} isActive={tab === tabsImages[2]}>
 							Chats
 						</Button>
 					</ButtonsWrapper>
 					<List>
-						<Item>Send invoices and easily track them until they’re paid</Item>
-						<Item>Real-time payments settlement and reconciliation</Item>
+						<Item>{`Send invoices and easily track them until they’re paid`}</Item>
+						<Item>Real-time payments settlement and reconciliation</Item>	
 						<Item>Safe, secure, and compliant</Item>
 					</List>
 					<Link href='/features'>
@@ -145,14 +196,15 @@ const Null = styled.div`
 	position: relative;
 `;
 
-const PaymentsActivity = styled.div`
+const LeftMock = styled.div`
 	position: absolute;
 	left: -139px;
 	top: -102px;
-	background: url('images/main/moreMoney/paymentsActivity.png') no-repeat;
-	background-size: contain;
+	// background: url('images/main/moreMoney/paymentsActivity.png') no-repeat;
+	// background-size: contain;
 	width: 299px;
 	height: 488px;
+	transition: all 0.3s ease;
 	@media (max-width: 425px) {
 		width: 250px;
 		left: -10px;
@@ -170,7 +222,7 @@ const Dots = styled.img`
 	}
 `;
 
-const FruitPlanet = styled.div`
+const RightMock = styled.div`
 	position: absolute;
 	left: 116px;
 	top: 42px;
