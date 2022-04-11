@@ -16,6 +16,7 @@ const Supercharge: FC = () => {
 							src='images/features/supercharge/app.jpg'
 							srcSet='images/features/supercharge/app@2x.jpg 2x'
 							alt='app'
+							loading='lazy'
 						/>
 					</FullConDec1>
 				</FullCon>
@@ -93,7 +94,6 @@ const FlexCon = styled.div`
 const FullCon = styled.div`
 	position: relative;
 	height: 889px;
-	max-width: 1686px;
 	border-top-right-radius: 48px;
 	border-bottom-right-radius: 48px;
 	background-color: var(--bg-black);
@@ -168,6 +168,8 @@ const FullCon = styled.div`
 	}
 
 	@media (min-width: 1920px) {
+		margin-right: 234px;
+
 		&::before {
 			right: 660px;
 		}
