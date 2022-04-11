@@ -14,11 +14,13 @@ const Gallery: FC = () => {
 								src='images/features/gallery/1.jpg'
 								srcSet='images/features/gallery/1@2x.jpg 2x'
 								alt='man with pancil'
+								loading='lazy'
 							/>
 							<Img3
 								src='images/features/gallery/3.jpg'
 								srcSet='images/features/gallery/3@2x.jpg 2x'
 								alt='happy man on kitchen'
+								loading='lazy'
 							/>
 						</GalleryColumn>
 						<GalleryColumn>
@@ -26,11 +28,13 @@ const Gallery: FC = () => {
 								src='images/features/gallery/2.jpg'
 								srcSet='images/features/gallery/2@2x.jpg 2x'
 								alt='happy old man with phone'
+								loading='lazy'
 							/>
 							<Img4
 								src='images/features/gallery/4.jpg'
 								srcSet='images/features/gallery/4@2x.jpg 2x'
 								alt='happy women with laptop'
+								loading='lazy'
 							/>
 						</GalleryColumn>
 					</GalleryGrid>
