@@ -609,7 +609,7 @@ const PreviewImgDeco3 = styled.div`
 	width: inherit;
 
 	&::before {
-		content: url('images/features/preview/dots-b.jpg');
+		content: url('images/features/preview/dots-b.webp');
 		position: absolute;
 		left: -130px;
 		bottom: -140px;
@@ -628,7 +628,7 @@ const PreviewImgDeco3 = styled.div`
 		}
 
 		&::after {
-			content: url('images/features/preview/dots-t.jpg');
+			content: url('images/features/preview/dots-t.webp');
 			position: absolute;
 			top: -75px;
 			right: -270px;

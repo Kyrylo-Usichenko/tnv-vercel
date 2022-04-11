@@ -21,7 +21,6 @@ const Make = () => {
 							<LeftImg
 								src='images/features/make/left.png'
 								srcSet='images/features/make/left@2x.png 2x'
-								loading='lazy'
 								alt='app'
 							/>
 							<RightImg

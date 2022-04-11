@@ -16,7 +16,6 @@ const Supercharge: FC = () => {
 							src='images/features/supercharge/app.jpg'
 							srcSet='images/features/supercharge/app@2x.jpg 2x'
 							alt='app'
-							loading='lazy'
 						/>
 					</FullConDec1>
 				</FullCon>
