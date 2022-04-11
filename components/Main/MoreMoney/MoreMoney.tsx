@@ -1,5 +1,6 @@
-import React, { FC, RefObject, useRef, useState } from 'react';
+import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styled, { keyframes, css } from 'styled-components';
 
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
@@ -9,46 +10,81 @@ import { Container } from '../../common/Container/Container';
 const TYPE_WRITE_SPEED = 1.5;
 const TYPE_WRITER_CHARACTERS = 10; // max words width
 
+const payLeft = '/images/main/moreMoney/pay-left.png';
+const payRight = '/images/main/moreMoney/pay-right.png';
+const orderLeft = '/images/main/moreMoney/order-left.png';
+const orderRight = '/images/main/moreMoney/order-right.png';
+const chatLeft = '/images/main/moreMoney/chat-left.png';
+const chatRight = '/images/main/moreMoney/chat-right.png';
+
+const tabsImages = [
+	{
+		name: 'Payments',
+		leftImg: payLeft,
+		rightImg: payRight,
+		typedText: 'More money',
+	},
+	{
+		name: 'Orders',
+		leftImg: orderLeft,
+		rightImg: orderRight,
+		typedText: 'More money',
+	},
+	{
+		name: 'Chats',
+		leftImg: chatLeft,
+		rightImg: chatRight,
+		typedText: 'More money',
+	},
+];
+
+interface IMoreMoneyItem {
+	name: string;
+	leftImg: string;
+	rightImg: string;
+	typedText: string;
+}
+
 const MoreMoney: FC = () => {
-	const [slide, setSlide] = useState('Payments');
+	const [tab, setTab] = useState(tabsImages[0]);
+	const [isClicked, setIsClicked] = useState(false);
+
 	const typeRef = useRef() as RefObject<HTMLSpanElement>;
 	const entry = useIntersectionObserver(typeRef, {});
 	const isVisible = !!entry?.isIntersecting;
 
+	useEffect(() => {
+		if (isVisible) setIsClicked(true);
+	}, [tab.name, isVisible]);
+
+	const onBtnClick = (tabItem: IMoreMoneyItem) => {
+		setIsClicked(false);
+		setTab(tabItem);
+	};
+
 	return (
 		<Wrapper>
-			<GreySquare />
-			<PurpleSquare>
-				<RedSquare>
-					<Null>
-						<PaymentsActivity />
-						<FruitPlanet />
-						<Stars src='images/main/moreMoney/stars.svg' alt='' />
-						<Dots src='images/main/moreMoney/dots.svg' alt='' />
-					</Null>
-				</RedSquare>
-			</PurpleSquare>
 			<Container>
 				<Inner>
 					<Title>
 						Smarter supply chain transactions.{' '}
-						<TitleSpan ref={typeRef} isVisible={isVisible}>
-							More money
+						<TitleSpan ref={typeRef} isVisible={isClicked}>
+							{tab.typedText}
 						</TitleSpan>
 					</Title>
 					<ButtonsWrapper>
-						<Button width='134' onClick={() => setSlide('Payments')} isActive={slide === 'Payments'}>
+						<Button width='134' onClick={() => onBtnClick(tabsImages[0])} isActive={tab === tabsImages[0]}>
 							Payments
 						</Button>
-						<Button width='114' onClick={() => setSlide('Orders')} isActive={slide === 'Orders'}>
+						<Button width='114' onClick={() => onBtnClick(tabsImages[1])} isActive={tab === tabsImages[1]}>
 							Orders
 						</Button>
-						<Button width='107' onClick={() => setSlide('Chats')} isActive={slide === 'Chats'}>
+						<Button width='107' onClick={() => onBtnClick(tabsImages[2])} isActive={tab === tabsImages[2]}>
 							Chats
 						</Button>
 					</ButtonsWrapper>
 					<List>
-						<Item>Send invoices and easily track them until they’re paid</Item>
+						<Item>{`Send invoices and easily track them until they’re paid`}</Item>
 						<Item>Real-time payments settlement and reconciliation</Item>
 						<Item>Safe, secure, and compliant</Item>
 					</List>
@@ -57,6 +93,22 @@ const MoreMoney: FC = () => {
 					</Link>
 				</Inner>
 			</Container>
+			<GreySquare />
+			<PurpleSquare>
+				<RedSquare>
+					<Null>
+						<LeftMock>
+							<Image src={tab.leftImg} alt={tab.name} layout='fill' objectFit='contain' />
+						</LeftMock>
+						<RightMock>
+							<Image src={tab.rightImg} alt={tab.name} layout='fill' objectFit='contain' />
+						</RightMock>
+						<Stars src='images/main/moreMoney/stars.svg' alt='stars' />
+						<Dots src='images/main/moreMoney/dots.svg' alt='dots' />
+					</Null>
+				</RedSquare>
+			</PurpleSquare>
+			<MobRightDots />
 		</Wrapper>
 	);
 };
@@ -67,7 +119,17 @@ const Wrapper = styled.div`
 	height: 826px;
 	margin-top: 299px;
 	@media (max-width: 1280px) {
+		margin-bottom: auto;
+		height: 295px;
+		// margin-top: 0px;
+	}
+	@media (max-width: 1023px) {
+		// margin-bottom: auto;
+		height: 896px;
 		margin-top: 0px;
+	}
+	@media (max-width: 425px) {
+		height: 765px;
 	}
 `;
 
@@ -79,14 +141,17 @@ const GreySquare = styled.div`
 	transform: rotate(-45deg);
 	position: absolute;
 	top: 108px;
-	left: 71px;
+	// left: 71px;
+	right: calc(50% + 400px);
 	@media (max-width: 1280px) {
+		right: auto;
 		top: 221px;
 		left: -277px;
 	}
 `;
 
 const PurpleSquare = styled.div`
+	position: absolute;
 	width: 559.25px;
 	height: 559.25px;
 	background: rgba(251, 36, 43, 0.6);
@@ -95,30 +160,25 @@ const PurpleSquare = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	position: absolute;
-	right: 0;
+	left: 57%;
 	top: 55px;
-	@media (max-width: 1280px) {
-		top: 660px;
-		left: 247px;
-	}
-	@media (max-width: 1280px) {
-		top: 660px;
-		left: 247px;
-	}
-	@media (max-width: 1280px) {
-		left: 240px;
+
+	@media (max-width: 1023px) {
+		position: relative;
+		top: -120px;
+		left: 50%;
+		transform: rotate(-45deg) translateX(-71%);
 	}
 	@media (max-width: 768px) {
-		left: 105px;
+		// left: 105px;
 	}
 	@media (max-width: 425px) {
-		left: -10px;
+		// left: -10px;
 		width: 451px;
 		height: 451px;
 	}
 	@media (max-width: 375px) {
-		left: -36px;
+		// left: -36px;
 	}
 `;
 
@@ -143,18 +203,26 @@ const Null = styled.div`
 	position: relative;
 `;
 
-const PaymentsActivity = styled.div`
+const LeftMock = styled.div`
 	position: absolute;
 	left: -139px;
 	top: -102px;
-	background: url('images/main/moreMoney/paymentsActivity.png') no-repeat;
-	background-size: contain;
-	width: 299px;
+
+	width: 300px;
 	height: 488px;
+	transition: all 0.3s ease;
+	@media (max-width: 1023px) {
+		right: 39%;
+		left: auto;
+		top: -95px;
+		width: 330px;
+		height: 536px;
+	}
 	@media (max-width: 425px) {
-		width: 250px;
-		left: -10px;
-		top: -38px;
+		width: 225px;
+		height: 520px;
+		right: 45%;
+		top: -75px;
 	}
 `;
 
@@ -168,7 +236,7 @@ const Dots = styled.img`
 	}
 `;
 
-const FruitPlanet = styled.div`
+const RightMock = styled.div`
 	position: absolute;
 	left: 116px;
 	top: 42px;
@@ -176,10 +244,17 @@ const FruitPlanet = styled.div`
 	background-size: contain;
 	width: 300px;
 	height: 488px;
-	@media (max-width: 425px) {
-		left: 204px;
+
+	@media (max-width: 1023px) {
 		top: 0;
-		width: 250px;
+		left: 47%;
+		width: 330px;
+		height: 536px;
+	}
+	@media (max-width: 425px) {
+		// left: 204px;
+		// top: 0;
+		width: 225px;
 	}
 `;
 
@@ -187,6 +262,11 @@ const Stars = styled.img`
 	position: absolute;
 	left: -251px;
 	top: -57px;
+
+	@media (max-width: 1023px) {
+		left: -202px;
+		top: -107px;
+	}
 `;
 
 const Title = styled.h3`
@@ -199,9 +279,12 @@ const Title = styled.h3`
 	margin: 90px 0 24px 0;
 	padding: 190px 0 0 0;
 	@media (max-width: 1280px) {
-		text-align: center;
 		font-size: 32px;
 		line-height: 39px;
+		// margin: 0 0 24px 0;
+	}
+	@media (max-width: 1023px) {
+		text-align: center;
 		margin: 0 0 24px 0;
 	}
 	@media (max-width: 425px) {
@@ -233,6 +316,9 @@ const TitleSpan = styled.span<{ isVisible: boolean }>`
 		position: absolute;
 		bottom: 0;
 		right: -5px;
+		@media (max-width: 1280px) {
+			height: 30px;
+		}
 	}
 
 	position: relative;
@@ -245,10 +331,13 @@ const TitleSpan = styled.span<{ isVisible: boolean }>`
 			&::after {
 				content: '';
 				position: absolute;
-				top: 0;
+				top: 10px;
 				right: 0;
 				bottom: 0;
 				left: 0;
+				@media (max-width: 1280px) {
+					top: 6px;
+				}
 			}
 
 			&::before {
@@ -257,10 +346,11 @@ const TitleSpan = styled.span<{ isVisible: boolean }>`
 			}
 
 			&::after {
-				width: 0.125em;
-				background: black;
+				width: 2px;
+				background: #212121;
 				animation: ${typewriter} ${TYPE_WRITE_SPEED}s steps(${TYPE_WRITER_CHARACTERS}) 1s forwards,
 					${blink} 750ms steps(${TYPE_WRITER_CHARACTERS}) infinite;
+				margin: 0 0 0 2px;
 			}
 		`}
 `;
@@ -272,16 +362,22 @@ const ButtonsWrapper = styled.div`
 	margin: 0 0 24px 0;
 	width: 100%;
 	padding: 0;
-	@media (max-width: 1280px) {
+	@media (max-width: 1023px) {
 		margin: 0 auto 24px;
 	}
 `;
 const Inner = styled.div`
+	position: relative;
 	max-width: 528px;
 	width: 100%;
+	z-index: 1;
 	@media (max-width: 1280px) {
-		margin: 0 auto;
+		// margin: 0 auto;
 		max-width: 408px;
+	}
+	@media (max-width: 1023px) {
+		margin: 0 auto;
+		// max-width: 408px;
 	}
 	@media (max-width: 425px) {
 		max-width: 335px;
@@ -363,9 +459,11 @@ const Item = styled.li`
 		top: 4px;
 	}
 	@media (max-width: 1280px) {
-		margin: 0 0 12px -20px;
 		font-size: 16px;
 		line-height: 23px;
+	}
+	@media (max-width: 1023px) {
+		margin: 0 0 12px -20px;
 		&:last-child {
 			margin: 0 0 0 -20px;
 		}
@@ -379,6 +477,23 @@ const Item = styled.li`
 	@media (max-width: 425px) {
 		font-size: 14px;
 		line-height: 20px;
+	}
+`;
+
+const MobRightDots = styled.div`
+	display: none;
+	@media (max-width: 768px) {
+		display: block;
+		position: absolute;
+		width: 243.1px;
+		height: 183.97px;
+		top: 60%;
+		right: 0;
+		transform: translateX(50%);
+		background: url('images/main/moreMoney/mob-right-dots.svg') 0 0 / contain no-repeat;
+	}
+	@media (max-width: 600px) {
+		top: 58%;
 	}
 `;
 
