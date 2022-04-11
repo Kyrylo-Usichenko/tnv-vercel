@@ -280,9 +280,9 @@ const RightSliderWrap = styled.div`
 // 	}
 // `;
 
-const Dot = styled.span`
-	width: 17px;
-	height: 17px;
-`;
+// const Dot = styled.span`
+// 	width: 17px;
+// 	height: 17px;
+// `;
 
 export default Slider;
