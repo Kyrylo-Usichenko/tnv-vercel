@@ -1,178 +1,288 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
+import SwiperCore, { Controller, Navigation, Pagination, Autoplay, EffectFade } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from 'styled-components';
 
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
+
+import SlideLeft from './SlideLeft';
+import SlideImage from './SlideRight';
+
+const SLIDERS = [
+	{
+		sliderText:
+			"Tinvio helps our business run smoother. We can manage our customer's orders, receivables, and most importantly, trace and reconcile their payments without checking banking apps or statements.",
+		logo: '/images/main/whyChoose/itacho-logo.png',
+		name: 'Hafidz & Indah',
+		text: 'Owners (Sejadah Grocery)',
+		image: '/images/main/whyChoose/itacho.webp',
+	},
+	{
+		sliderText:
+			'Tinvio has been a foundational partner and solution. We now have faster and more efficient communication with our clients, which makes order processing and deliveries smoother than ever before.',
+		logo: '/images/main/whyChoose/moonleaf-logo.svg',
+		name: 'Pauline Limgenco',
+		text: 'Director (Moonleaf)',
+		image: '/images/main/whyChoose/moonleaf.webp',
+	},
+	{
+		sliderText:
+			'Tinvio definitely helps to reduce the time and errors in order management between customers and suppliers. It’s super easy to use and available on mobile and web, and the team are friendly and always helpful.',
+		logo: '/images/main/whyChoose/phaitong-logo.svg',
+		name: 'Punnasiri Chaipatikul',
+		text: 'Business Development Manager (Phaitong Station)',
+		image: '/images/main/whyChoose/phaitong.webp',
+	},
+	{
+		sliderText:
+			"With Tinvio, it's easier for my customers to make payments across various methods. Every payment is also collected in one business account where funds can be withdrawn instantly at any time.",
+		logo: '/images/main/whyChoose/baker-logo.svg',
+		name: 'Fathira Dida',
+		text: 'Owner (Baker Old)',
+		image: '/images/main/whyChoose/baker.webp',
+	},
+];
+
 const Slider: FC = () => {
+	const [controlledSwiper, setControlledSwiper] = useState(undefined);
+	SwiperCore.use([Autoplay]);
+
+	const pagination = {
+		clickable: true,
+		renderBullet: function (index: number, className: string) {
+			return '<span class="' + className + '"/><span></span></span>';
+		},
+	};
+
 	return (
 		<Wrapper>
-			<SliderLeft>
-				<SliderText>
-					Tinvio has been a foundational partner and solution. We now have faster and more efficient
-					communication with our clients, which makes order processing and deliveries smoother than ever
-					before.
-				</SliderText>
-				<SliderBottom>
-					<Content>
-						<img width='68px' height='64px' src='images/main/whyChoose/qrCode.png' alt='' />
-						<ContentText>
-							<Name>David Wang</Name>
-							<Text>Supply Chain Manager (Itacho Sushi)</Text>
-						</ContentText>
-					</Content>
-
-					<Buttons>
-						<Button>
-							<img height='20px' width='11.67px' src='images/main/whyChoose/arrow.svg' alt='' />
-						</Button>
-						<Button>
-							<img height='20px' width='11.67px' src='images/main/whyChoose/arrow.svg' alt='' />
-						</Button>
-					</Buttons>
-				</SliderBottom>
-			</SliderLeft>
-			<Img src='images/main/whyChoose/drinkCoffee.png' alt='' />
+			<LeftSliderWrap>
+				<Swiper
+					className='swiper'
+					modules={[Controller, Navigation, Pagination, Autoplay]}
+					controller={{ control: controlledSwiper }}
+					spaceBetween={0}
+					slidesPerView={1}
+					// autoplay
+					navigation
+					loop={true}
+					pagination={pagination}
+					// onSwiper={(swiper) => console.log(swiper)}
+					// onSlideChange={() => console.log('slide 1 change')}
+				>
+					{SLIDERS.map((slide, index) => (
+						<SwiperSlide key={`${slide.sliderText}${index}`} className='swiper-slide'>
+							<SlideLeft
+								sliderText={slide.sliderText}
+								logo={slide.logo}
+								name={slide.name}
+								text={slide.text}
+							/>
+						</SwiperSlide>
+					))}
+				</Swiper>
+			</LeftSliderWrap>
+			<RightSliderWrap>
+				<Swiper
+					className='swiper'
+					modules={[EffectFade]}
+					spaceBetween={0}
+					slidesPerView={1}
+					// autoplay
+					loop={true}
+					onSwiper={() => setControlledSwiper}
+					// onSlideChange={() => console.log('slide 2 change')}
+					effect='fade'
+					allowTouchMove={false}
+				>
+					{SLIDERS.map((slide, index) => (
+						<SwiperSlide key={`${slide.sliderText}${index}`} className='swiper-slide'>
+							<SlideImage image={slide.image} />
+						</SwiperSlide>
+					))}
+				</Swiper>
+			</RightSliderWrap>
 		</Wrapper>
 	);
 };
 
 const Wrapper = styled.div`
+	position: relative;
 	max-width: 1132px;
 	width: 100%;
-	margin: 40px 0 0 0;
+	margin: 40px 40px 0;
 	background: radial-gradient(136.24% 142.18% at 50% 50%, #ffffff 0%, rgba(250, 250, 250, 0.8) 100%);
 	border-radius: 32px;
-	padding: 32px;
 	display: flex;
 	justify-content: space-between;
 	position: relative;
-	@media (max-width: 1024px) {
+
+	@media (max-width: 1140px) {
+		max-width: calc(100vw - 80px);
+	}
+
+	@media (max-width: 768px) {
 		flex-direction: column;
 		max-width: 490px;
 		align-items: center;
+		padding: 32px;
 	}
 	@media (max-width: 425px) {
-		max-width: 343px;
+		padding: 24px;
+	}
+
+	.swiper-pagination {
+		display: block;
+		position: fixed;
+		bottom: -53px;
+		@media (max-width: 375px) {
+			bottom: -44px;
+		}
+	}
+	.swiper-pagination-bullet {
+		display: inline-flex;
+		width: 17px;
+		height: 17px;
+		margin: 0 8px;
+		background: none;
+		border-radius: none;
+		& span {
+			flex: 0 0 12px;
+			height: 12px;
+			border-radius: 2px;
+			transform: rotate(45deg);
+			background-color: #e1e1e1;
+		}
+	}
+	.swiper-pagination-bullet.swiper-pagination-bullet-active {
+		& span {
+			background-color: white;
+		}
 	}
 `;
 
-const SliderText = styled.p`
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 20px;
-	line-height: 25px;
-	color: #212121;
-	padding: 0 0 0 0;
-	margin: 0 0 24px 0;
-	@media (max-width: 1024px) {
-		font-size: 18px;
-		line-height: 24px;
+const LeftSliderWrap = styled.div`
+	flex: 0 1 46%;
+	width: 46%;
+	margin: 48px;
+	border-radius: 32px;
+	position: relative;
+
+	@media (max-width: 1220px) {
+		flex: 0 1 47%;
+		width: 47%;
+	}
+	@media (max-width: 1023px) {
+		flex: 0 1 calc(46% - 76px);
+		width: calc(46% - 76px);
 	}
 	@media (max-width: 768px) {
-		font-size: 16px;
-		line-height: 23px;
-	}
-`;
-
-const SliderLeft = styled.div`
-	max-width: 588px;
-	padding: 12px 0 12px 12px;
-	margin-right: 48px;
-
-	@media (max-width: 1280px) {
-		margin-right: 48px;
-		max-width: 454px;
-	}
-
-	@media (max-width: 1024px) {
-		padding: 0;
-		margin: 32px 0 24px 0;
-	}
-`;
-
-const SliderBottom = styled.div`
-	width: 488px;
-
-	border-top: 1px solid #d2d2d2;
-	padding-top: 24px;
-	@media (max-width: 1280px) {
-		width: 454px;
-	}
-	@media (max-width: 1024px) {
+		flex: 0 0 100%;
 		width: 100%;
+		order: 2;
+		margin: 0;
 	}
-`;
-
-const Buttons = styled.div`
-	display: flex;
-	justify-content: space-between;
-	width: 104px;
-	margin-top: 50px;
-	@media (max-width: 1024px) {
+	.swiper {
+		height: 100%;
+	}
+	.swiper-button-prev,
+	.swiper-button-next {
 		display: none;
+		@media (min-width: 769px) {
+			top: auto;
+			bottom: 0%;
+			width: 40px;
+			height: 40px;
+			background: #ff474d;
+			border-radius: 8px;
+			margin: 0;
+			display: flex;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			&:hover {
+				background: rgba(255, 71, 77, 0.8);
+			}
+		}
 	}
-`;
-
-const Button = styled.button`
-	background: #ff474d;
-	border-radius: 8px;
-	border: none;
-	margin: 0;
-	display: flex;
-	padding: 10px 15px 10px 13.33px;
-	cursor: pointer;
-	&:last-child {
-		transform: rotate(180deg);
+	.swiper-button-prev {
+		left: 0px;
+		padding: 10px 15px 10px 13.33px;
+		&:after {
+			content: '';
+			width: 11.67px;
+			height: 20px;
+			background: url('images/main/whyChoose/arrow.svg');
+		}
+	}
+	.swiper-button-next {
+		left: 65px;
 		padding: 10px 13.33px 10px 15px;
-	}
-	&:hover {
-		background: rgba(255, 71, 77, 0.8);
+		&:after {
+			content: '';
+			transform: rotate(180deg);
+			width: 11.67px;
+			height: 20px;
+			background: url('images/main/whyChoose/arrow.svg');
+		}
 	}
 `;
+const RightSliderWrap = styled.div`
+	flex: 0 0 40.3%;
+	width: 40.3%;
+	margin: 32px 32px 32px 0;
 
-const Img = styled.img`
-	background: #ededed;
-	border-radius: 24px;
-
-	object-fit: cover;
-	@media (max-width: 1280px) {
-		width: 362px;
+	& div {
+		height: 100%;
 	}
-	@media (max-width: 1024px) {
-		order: -1;
+
+	@media (max-width: 1220px) {
+		flex: 0 1 39%;
+		width: 39%;
+	}
+
+	@media (max-width: 768px) {
+		flex: 0 0 100%;
 		width: 100%;
+		order: 1;
+		margin: 0 0 30px;
 	}
 `;
-const Name = styled.p`
-	padding: 0 0 4px 0;
-	margin: 0;
-	font-family: 'Gilroy';
-	font-style: normal;
-	font-weight: 700;
-	font-size: 18px;
-	line-height: 22px;
-	color: #212121;
-`;
-const Text = styled.p`
-	padding: 0;
-	margin: 0;
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 12px;
-	line-height: 15px;
-	display: flex;
-	align-items: center;
-	text-transform: uppercase;
-	color: #5c5c5c;
-`;
+// const Buttons = styled.div`
+// 	position: absolute;
+// 	top: 50px;
+// 	left: 50px;
+// 	display: flex;
+// 	justify-content: space-between;
+// 	width: 104px;
+// 	margin-top: 50px;
+// 	@media (max-width: 1024px) {
+// 		display: none;
+// 	}
+// `;
 
-const Content = styled.div`
-	display: flex;
-	align-items: center;
-`;
+// const Button = styled.button`
+// 	background: #ff474d;
+// 	border-radius: 8px;
+// 	border: none;
+// 	margin: 0;
+// 	display: flex;
+// 	padding: 10px 15px 10px 13.33px;
+// 	cursor: pointer;
+// 	&:last-child {
+// 		transform: rotate(180deg);
+// 		padding: 10px 13.33px 10px 15px;
+// 	}
+// 	&:hover {
+// 		background: rgba(255, 71, 77, 0.8);
+// 	}
+// `;
 
-const ContentText = styled.div`
-	margin-left: 16px;
-`;
+// const Dot = styled.span`
+// 	width: 17px;
+// 	height: 17px;
+// `;
 
 export default Slider;

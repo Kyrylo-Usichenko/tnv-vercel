@@ -11,12 +11,12 @@ const WhyChoose: FC = () => {
 			<Wrapper>
 				<Null>
 					<GreySquare />
-					<DotsLeftBot />
-					<DotsRight />
 					<RightSquare src='images/main/whyChoose/rightSquare.svg' />
 					<LeftSquare src='images/main/whyChoose/leftSquare.svg' />
 
 					<Container>
+						<DotsLeftBot />
+						<DotsRight />
 						<Inner>
 							<Title>Why choose Tinvio?</Title>
 							<Slider />
@@ -28,6 +28,10 @@ const WhyChoose: FC = () => {
 	);
 };
 
+const Styled = styled.div`
+	position: relative;
+`;
+
 const Wrapper = styled.section`
 	padding: 0 0 145px;
 	margin: 78px 0 0 53.66px;
@@ -38,13 +42,12 @@ const Wrapper = styled.section`
 	background: #363636;
 	overflow: hidden;
 	position: relative;
-	@media (max-width: 1024px) {
+	@media (max-width: 1210px) {
 		margin: 78px 0 0 0;
 	}
-`;
-
-const Styled = styled.div`
-	position: relative;
+	@media (max-width: 767px) {
+		padding: 55px 0 215px;
+	}
 `;
 
 const Null = styled.div`
@@ -53,22 +56,24 @@ const Null = styled.div`
 
 const DotsLeftBot = styled.div`
 	position: absolute;
-	left: 48px;
-	top: 585px;
-	background: url('images/main/whyChoose/leftBotDots.svg') no-repeat;
+	left: 50%;
+	transform: translateX(-910px);
+	bottom: -255px;
+	background: url('images/main/whyChoose/leftBotDots.svg') top right no-repeat;
 	width: 465px;
 	height: 219px;
-	@media (max-width: 1280px) {
-		left: -288px;
-		top: 626px;
+	@media (max-width: 1279px) {
+		transform: translateX(0);
+		left: -175px;
+		bottom: -245px;
 	}
-	@media (max-width: 1024px) {
-		top: 861px;
-		left: -164px;
+	@media (max-width: 1023px) {
 	}
-	@media (max-width: 425px) {
-		top: 762px;
-		right: -177px;
+	@media (max-width: 767px) {
+		width: 411px;
+		height: 193px;
+		left: -140px;
+		bottom: -290px;
 	}
 `;
 const LeftTopDots = styled.div`
@@ -81,11 +86,14 @@ const LeftTopDots = styled.div`
 `;
 const DotsRight = styled.div`
 	position: absolute;
-	left: 1199px;
+	left: 990px;
 	top: 112px;
 	background: url('images/main/whyChoose/rightDots.svg') no-repeat;
 	width: 465px;
 	height: 219px;
+	@media (max-width: 1440px) {
+		left: 930px;
+	}
 `;
 
 const Inner = styled.div`
