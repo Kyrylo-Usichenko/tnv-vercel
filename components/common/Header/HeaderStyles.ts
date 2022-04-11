@@ -211,7 +211,6 @@ export const Nav = styled.ul`
 
 export const NavItem = styled.li<{ isActive: boolean }>`
 	margin-right: 72px;
-
 	&:last-child {
 		margin-right: 0;
 	}

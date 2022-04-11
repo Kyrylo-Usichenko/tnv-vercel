@@ -35,11 +35,11 @@ h5 {
 
 	--shadow-color: #2121211a;
 
-	cursor: url('/icons/common/cursor.svg'), auto;
+	/*cursor: url('/icons/common/cursor.svg'), auto;*/
 }
 
 a {
-	cursor: url('/icons/common/cursor-onclick.svg'), pointer;
+	/*cursor: url('/icons/common/cursor-onclick.svg'), pointer;*/
 }
 
 /* Medium */
