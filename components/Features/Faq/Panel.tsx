@@ -83,6 +83,10 @@ const PanelButton = styled.button`
 	border: none;
 	padding: 0;
 	cursor: pointer;
+	height: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 `;
 
 const PanelContent = styled.div`
