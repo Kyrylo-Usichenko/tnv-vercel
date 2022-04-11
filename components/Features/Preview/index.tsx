@@ -44,6 +44,8 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 								src='images/features/preview/man-375.jpg'
 								srcSet='images/features/preview/man-375@2x.jpg 2x'
 								alt='Man holding smartphone'
+								width={1190}
+								height={600}
 							/>
 						</picture>
 						<AppImg
@@ -240,6 +242,7 @@ const PreviewImg = styled.div`
 	& > picture:nth-child(1) > img {
 		border-radius: 48px;
 		width: 100%;
+		height: auto;
 	}
 
 	&::before {
