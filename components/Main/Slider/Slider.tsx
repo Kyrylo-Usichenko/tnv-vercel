@@ -93,7 +93,7 @@ const Slider: FC = () => {
 					slidesPerView={1}
 					// autoplay
 					loop={true}
-					onSwiper={setControlledSwiper}
+					onSwiper={() => setControlledSwiper}
 					// onSlideChange={() => console.log('slide 2 change')}
 					effect='fade'
 					allowTouchMove={false}
