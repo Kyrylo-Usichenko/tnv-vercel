@@ -12,6 +12,7 @@ const Tools: FC = () => {
 						src='images/features/tools/manage.png'
 						srcSet='images/features/tools/manage@2x.png 2x'
 						alt='app'
+						loading='lazy'
 					/>
 					<ManageDec></ManageDec>
 				</Manage>
@@ -20,10 +21,10 @@ const Tools: FC = () => {
 						<MessageeDec></MessageeDec>
 						<MessageButtons>
 							<MessageButton>
-								<img src='images/features/tools/pin.svg' alt='pin' />
+								<img src='images/features/tools/pin.svg' alt='pin' loading='lazy' />
 							</MessageButton>
 							<MessageButton>
-								<img src='images/features/tools/file.svg' alt='file' />
+								<img src='images/features/tools/file.svg' alt='file' loading='lazy' />
 							</MessageButton>
 							<label>
 								<MessageInput placeholder='Type something...' />
@@ -35,14 +36,14 @@ const Tools: FC = () => {
 						<Share>
 							<ShareDec></ShareDec>
 							<ShareBlock1>
-								<img src='images/features/tools/share.svg' alt='share' />
+								<img src='images/features/tools/share.svg' alt='share' loading='lazy' />
 							</ShareBlock1>
 							<ShareTitle>Share payment links</ShareTitle>
 						</Share>
 						<Invoices>
 							<InvoiceBlock1>
 								<InvoiceBlock2>
-									<img src='images/features/tools/dollar.svg' alt='dollar' />
+									<img src='images/features/tools/dollar.svg' alt='dollar' loading='lazy' />
 								</InvoiceBlock2>
 							</InvoiceBlock1>
 							<InvoiceTitle>Create invoices</InvoiceTitle>
@@ -80,7 +81,7 @@ const FullCon = styled.div`
 	}
 
 	@media (min-width: 1920px) {
-		max-width: 1688px;
+		margin-left: 234px;
 		width: 100%;
 	}
 `;

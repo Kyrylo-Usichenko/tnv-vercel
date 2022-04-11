@@ -39,7 +39,6 @@ const FlexCon = styled.div`
 const FullCon = styled.div`
 	position: relative;
 	height: 255px;
-	max-width: 1686px;
 	border-top-right-radius: 48px;
 	border-bottom-right-radius: 48px;
 	background-color: var(--bg-black);
@@ -85,6 +84,7 @@ const FullCon = styled.div`
 	}
 
 	@media (min-width: 1920px) {
+		margin-right: 234px;
 		height: 216px;
 	}
 `;

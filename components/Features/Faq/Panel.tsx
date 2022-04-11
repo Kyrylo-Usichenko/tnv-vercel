@@ -21,7 +21,11 @@ const Panel: FC<PanelProps> = ({ name, children }) => {
 			<PanelName isclose={isclose}>
 				<PanelTitle>{name}</PanelTitle>
 				<PanelButton type='button' onClick={panelBtnHandler}>
-					<img src={`images/features/faq/${isclose ? 'open.svg' : 'close.svg'}`} alt='open/close' />
+					<img
+						src={`images/features/faq/${isclose ? 'open.svg' : 'close.svg'}`}
+						alt='open/close'
+						loading='lazy'
+					/>
 				</PanelButton>
 			</PanelName>
 			<PanelContent ref={content} style={{ maxHeight: `${height}` }}>
@@ -79,7 +83,11 @@ const PanelTitle = styled.div`
 `;
 
 const PanelButton = styled.button`
+	display: flex;
+	justify-content: center;
 	background-color: transparent;
+	height: 20px;
+	width: 20px;
 	border: none;
 	padding: 0;
 	cursor: pointer;

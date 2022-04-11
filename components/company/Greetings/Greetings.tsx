@@ -41,8 +41,8 @@ const Greetings: FC = () => {
 								media='(min-width: 768px)'
 							/>
 							<Phone
-								width='318'
-								height='526'
+								width='398'
+								height='658'
 								src='images/company/Greetings/ph-375.png'
 								srcSet='images/company/Greetings/ph-375@2x.png 2x'
 								alt='app'
