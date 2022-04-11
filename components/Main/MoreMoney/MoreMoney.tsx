@@ -79,8 +79,10 @@ const GreySquare = styled.div`
 	transform: rotate(-45deg);
 	position: absolute;
 	top: 108px;
-	left: 71px;
+	// left: 71px;
+	right: calc(50% + 400px);
 	@media (max-width: 1280px) {
+		right: auto;
 		top: 221px;
 		left: -277px;
 	}
@@ -245,7 +247,7 @@ const TitleSpan = styled.span<{ isVisible: boolean }>`
 			&::after {
 				content: '';
 				position: absolute;
-				top: 0;
+				top: 10px;
 				right: 0;
 				bottom: 0;
 				left: 0;
@@ -257,10 +259,11 @@ const TitleSpan = styled.span<{ isVisible: boolean }>`
 			}
 
 			&::after {
-				width: 0.125em;
-				background: black;
+				width: 2px;
+				background: #212121;
 				animation: ${typewriter} ${TYPE_WRITE_SPEED}s steps(${TYPE_WRITER_CHARACTERS}) 1s forwards,
 					${blink} 750ms steps(${TYPE_WRITER_CHARACTERS}) infinite;
+				margin: 0 0 0 2px;
 			}
 		`}
 `;
