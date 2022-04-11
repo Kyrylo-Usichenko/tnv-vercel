@@ -166,7 +166,7 @@ const RedSide = styled.div`
 		align-items: center;
 		padding: 16px 0 16px 26px;
 
-		& > img {
+		& > img:nth-child(3) {
 			height: 279px;
 			width: auto;
 		}
@@ -431,7 +431,10 @@ const SquareRB = styled.div`
 `;
 
 const DotsRT = styled.img`
+	display: none;
+
 	@media (min-width: 768px) {
+		display: block;
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -444,7 +447,10 @@ const DotsRT = styled.img`
 `;
 
 const DotsRB = styled.img`
+	display: none;
+
 	@media (min-width: 768px) {
+		display: block;
 		position: absolute;
 		left: 0;
 		bottom: 0;
@@ -528,12 +534,22 @@ const GreySB = styled.div`
 `;
 
 const GreyDots = styled.img`
-	position: absolute;
-	left: 367px;
-	bottom: 0;
-	z-index: -1;
-	@media (max-width: 1280px) {
-		left: 339px;
+	display: none;
+
+	@media (min-width: 1280px) {
+		display: block;
+		position: absolute;
+		right: -240px;
+		bottom: 0;
+		z-index: -1;
+	}
+
+	@media (min-width: 1440px) {
+		right: -140px;
+	}
+
+	@media (min-width: 1920px) {
+		right: 20px;
 	}
 `;
 

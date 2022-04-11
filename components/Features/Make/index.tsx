@@ -16,11 +16,21 @@ const Make = () => {
 							and you'll get cash in your bank so much faster!
 						</MakeText>
 					</MakeInfo>
-					<MakeImg
-						src='images/features/make/make-app-1920.png'
-						srcSet='images/features/make/make-app-1920@2x.png 2x'
-						alt='app'
-					/>
+					<First>
+						<Second>
+							<LeftImg
+								src='images/features/make/left.png'
+								srcSet='images/features/make/left@2x.png 2x'
+								alt='app'
+							/>
+							<RightImg
+								src='images/features/make/right.png'
+								srcSet='images/features/make/right@2x.png 2x'
+								loading='lazy'
+								alt='app'
+							/>
+						</Second>
+					</First>
 				</MakeCon>
 			</FeaturesCon>
 		</SyledMake>
@@ -29,7 +39,11 @@ const Make = () => {
 
 const SyledMake = styled.section`
 	position: relative;
-	margin-bottom: 120px;
+	margin-bottom: 200px;
+
+	@media (min-width: 768px) {
+		margin-bottom: 250px;
+	}
 
 	@media (min-width: 1024px) {
 		padding: 288px 0;
@@ -62,7 +76,7 @@ const MakeTitle = styled.h2`
 	@media (min-width: 768px) {
 		font-size: 36px;
 		line-height: 44px;
-		max-width: 380px;
+		max-width: 384px;
 		margin: 0 auto 12px auto;
 
 		&::before {
@@ -85,6 +99,7 @@ const MakeTitle = styled.h2`
 		line-height: 49px;
 		margin: 0 0 16px 0;
 		text-align: left;
+		max-width: 344px;
 
 		&::before {
 			right: -350px;
@@ -147,32 +162,129 @@ const MakeText = styled.p`
 	}
 `;
 
-const MakeImg = styled.img`
+const First = styled.div`
 	position: static;
-	width: 573.5px;
-	height: 573.5px;
+	width: 405.53px;
+	height: 405.53px;
+	background: rgba(251, 36, 43, 0.6);
+	border-radius: 52.1364px;
+	transform: rotate(-45deg);
+	padding: 25px;
+	margin-top: 80px;
 
 	@media (min-width: 768px) {
-		width: 792px;
-		height: 792px;
+		width: 560.03px;
+		height: 560.03px;
+		padding: 35px;
+		margin-top: 150px;
 	}
 
 	@media (min-width: 1024px) {
 		position: absolute;
-		top: -270px;
-		left: -200px;
+		top: -156px;
+		left: -145px;
+		margin: 0;
 	}
 
-	@media (min-width: 1280px) {
-		left: -248px;
-	}
-
-	@media (min-width: 1440px) {
-		left: -190px;
-	}
-
-	@media (min-width: 1920px) {
+	@media (min-width: 1024px) {
 		left: -100px;
+	}
+`;
+
+const Second = styled.div`
+	width: 355.09px;
+	height: 355.09px;
+	background: #fb242b;
+	border-radius: 52.1364px;
+	position: relative;
+
+	&::before {
+		content: url('images/features/make/dec-375.svg');
+		position: absolute;
+		top: -130px;
+		left: 205px;
+		transform: rotate(45deg);
+		z-index: 1;
+	}
+
+	&::after {
+		content: url('images/features/make/dots-375.svg');
+		position: absolute;
+		bottom: 33px;
+		left: -20px;
+	}
+
+	@media (min-width: 768px) {
+		width: 490.37px;
+		height: 490.37px;
+
+		&::before {
+			content: url('images/features/make/dec.svg');
+			top: -185px;
+			left: 289px;
+		}
+
+		&::after {
+			content: url('images/features/make/dots.svg');
+			bottom: 33px;
+			left: -20px;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		&::before {
+			top: -137px;
+			left: 325px;
+		}
+
+		&::after {
+			left: 30px;
+			transform: rotate(45deg);
+		}
+	}
+`;
+
+const LeftImg = styled.img`
+	position: absolute;
+	transform: rotate(45deg);
+	top: -109px;
+	left: 12px;
+	width: auto;
+	height: 410px;
+	z-index: 2;
+
+	@media (min-width: 768px) {
+		top: -152px;
+		left: 33px;
+		height: 550px;
+	}
+
+	@media (min-width: 1024px) {
+		top: -107px;
+		left: 98px;
+		height: auto;
+	}
+`;
+
+const RightImg = styled.img`
+	position: absolute;
+	transform: rotate(45deg);
+	top: 94px;
+	right: 43px;
+	width: auto;
+	height: 410px;
+	z-index: 2;
+
+	@media (min-width: 768px) {
+		top: 149px;
+		right: 64px;
+		height: 550px;
+	}
+
+	@media (min-width: 1024px) {
+		top: 157px;
+		right: 53px;
+		height: auto;
 	}
 `;
 

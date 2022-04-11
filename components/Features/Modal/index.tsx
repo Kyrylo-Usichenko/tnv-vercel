@@ -19,7 +19,7 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 			<FormWrapper modalActive={modalActive}>
 				<ModalContent modalActive={modalActive}>
 					<ModalClose type='button' onClick={closeModal} className='modal-btn'>
-						<img src='images/features/modal/close.svg' alt='close' className='modal-btn' />
+						<img src='images/features/modal/close.svg' alt='close' className='modal-btn' loading='lazy' />
 					</ModalClose>
 					<ModalTitle>
 						Hi, we're <span className='accent'>Tinvio!</span> And you?
@@ -39,7 +39,7 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 						</ModlaLabel>
 						<ModalButton type='submit'>Submit</ModalButton>
 						<ModalSpam>
-							No spam, promise <img src='images/main/formFilling/hands.svg' alt='hands' />
+							No spam, promise <img src='images/main/formFilling/hands.svg' alt='hands' loading='lazy' />
 						</ModalSpam>
 					</ModalForm>
 				</ModalContent>

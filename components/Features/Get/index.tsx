@@ -13,11 +13,22 @@ const Get = () => {
 						Monitor your transaction activity on one dashboard. Generate customized order, invoice, and
 						payments reports. Prevent fraud, improve operations, and grow grow grow!
 					</GetText>
-					<GetImg
-						src='images/features/get/get-img-1920.png'
-						srcSet='images/features/get/get-img-1920@2x.png 2x'
-						alt='app'
-					/>
+					<First>
+						<Second>
+							<LeftImg
+								src='images/features/get/left.png'
+								srcSet='images/features/get/left@2x.png 2x'
+								alt='app'
+								loading='lazy'
+							/>
+							<RightImg
+								src='images/features/get/right.png'
+								srcSet='images/features/get/right@2x.png 2x'
+								alt='app'
+								loading='lazy'
+							/>
+						</Second>
+					</First>
 				</GetCon>
 			</FeaturesCon>
 		</SyledGet>
@@ -26,8 +37,12 @@ const Get = () => {
 
 const SyledGet = styled.section`
 	padding: 0;
-	margin-bottom: 120px;
+	margin-bottom: 200px;
 	position: relative;
+
+	@media (min-width: 768px) {
+		margin-bottom: 300px;
+	}
 
 	@media (min-width: 1024px) {
 		padding: 288px 0;
@@ -149,32 +164,121 @@ const GetText = styled.p`
 	}
 `;
 
-const GetImg = styled.img`
+const First = styled.div`
 	position: static;
-	width: 573.5px;
-	height: 573.5px;
+	width: 405.53px;
+	height: 405.53px;
+	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(218, 218, 218, 0.3) 0%, rgba(250, 250, 250, 0.3) 100%);
+	border-radius: 52.1364px;
+	transform: rotate(-45deg);
+	padding: 25px;
+	margin-top: 80px;
 
 	@media (min-width: 768px) {
-		width: 792px;
-		height: 792px;
+		width: 560.03px;
+		height: 560.03px;
+		padding: 35px;
+		margin-top: 150px;
 	}
 
 	@media (min-width: 1024px) {
 		position: absolute;
-		top: -290px;
-		right: -187px;
+		top: -156px;
+		right: -107px;
+		margin: 0;
 	}
 
 	@media (min-width: 1280px) {
-		right: -247px;
+		right: -85px;
+	}
+`;
+
+const Second = styled.div`
+	width: 355.09px;
+	height: 355.09px;
+	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(218, 218, 218, 0.6) 0%, rgba(250, 250, 250, 0.6) 100%);
+	border-radius: 52.1364px;
+	position: relative;
+
+	&::after {
+		content: url('images/features/get/dots-375.svg');
+		position: absolute;
+		top: 29px;
+		right: -104px;
+		transform: rotate(45deg);
 	}
 
-	@media (min-width: 1440px) {
-		right: -212px;
+	@media (min-width: 768px) {
+		width: 490.37px;
+		height: 490.37px;
+
+		&::before {
+			content: url('images/features/get/dec.svg');
+			position: absolute;
+			top: -67px;
+			left: 28px;
+			transform: rotate(45deg);
+		}
+
+		&::after {
+			content: url('images/features/get/dots.svg');
+			top: 66px;
+			right: -200px;
+		}
 	}
 
-	@media (min-width: 1920px) {
-		right: -112px;
+	@media (min-width: 1024px) {
+		&::before {
+			top: -83px;
+			left: 57px;
+		}
+
+		&::after {
+		}
+	}
+`;
+
+const LeftImg = styled.img`
+	position: absolute;
+	transform: rotate(45deg);
+	top: -9px;
+	left: -31px;
+	width: auto;
+	height: 320px;
+	z-index: 2;
+
+	@media (min-width: 768px) {
+		top: -9px;
+		left: -109px;
+		height: 430px;
+	}
+
+	@media (min-width: 1024px) {
+		top: -25px;
+		left: -93px;
+		height: auto;
+	}
+`;
+
+const RightImg = styled.img`
+	position: absolute;
+	transform: rotate(45deg);
+	top: 28px;
+	right: -78px;
+	width: auto;
+	height: 410px;
+	z-index: 2;
+
+	@media (min-width: 768px) {
+		top: -37px;
+		right: -122px;
+		height: 650px;
+	}
+
+	@media (min-width: 1024px) {
+		top: -4px;
+		right: -131px;
+		height: auto;
 	}
 `;
 
