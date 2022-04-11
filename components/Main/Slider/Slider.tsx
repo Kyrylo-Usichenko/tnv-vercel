@@ -47,7 +47,7 @@ const SLIDERS = [
 ];
 
 const Slider: FC = () => {
-	const [controlledSwiper, setControlledSwiper] = useState(null);
+	const [controlledSwiper, setControlledSwiper] = useState(undefined);
 	SwiperCore.use([Autoplay]);
 
 	const pagination = {
@@ -56,6 +56,7 @@ const Slider: FC = () => {
 			return '<span class="' + className + '"/><span></span></span>';
 		},
 	};
+
 	return (
 		<Wrapper>
 			<LeftSliderWrap>
