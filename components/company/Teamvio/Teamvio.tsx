@@ -387,6 +387,9 @@ const JoinSquareLeft = styled.div`
 	height: 102px;
 	background: url('images/company/Teamvio/joinSquareLeft.svg') no-repeat;
 	z-index: -1;
+	@media (max-width: 1280px) {
+		left: -50px;
+	}
 `;
 
 const JoinSquareRight = styled.div`
@@ -397,6 +400,15 @@ const JoinSquareRight = styled.div`
 	height: 122px;
 	background: url('images/company/Teamvio/joinSquareRight.svg') no-repeat;
 	z-index: -1;
+	@media (min-width: 1920px) {
+		font-size: 20px;
+		line-height: 25px;
+		padding: 16px 0;
+		width: 210px;
+	}
+	@media (max-width: 1024px) {
+		right: -129px;
+	}
 `;
 
 const JoinDots = styled.div`

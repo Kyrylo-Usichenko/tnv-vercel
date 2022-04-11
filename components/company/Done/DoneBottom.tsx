@@ -528,19 +528,12 @@ const GreySB = styled.div`
 `;
 
 const GreyDots = styled.img`
-	@media (min-width: 1280px) {
-		position: absolute;
-		right: -240px;
-		bottom: 0;
-		z-index: -1;
-	}
-
-	@media (min-width: 1440px) {
-		right: -140px;
-	}
-
-	@media (min-width: 1920px) {
-		right: 20px;
+	position: absolute;
+	left: 367px;
+	bottom: 0;
+	z-index: -1;
+	@media (max-width: 1280px) {
+		left: 339px;
 	}
 `;
 

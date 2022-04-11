@@ -272,6 +272,10 @@ const Block3Dots = styled.div`
 	height: 149px;
 	background: url('images/company/Counts/block3Dots.svg') no-repeat;
 	z-index: -1;
+	@media (max-width: 1280px) {
+		right: -115px;
+		top: 0px;
+	}
 `;
 const Block2SquareBottom = styled.div`
 	position: absolute;
@@ -281,6 +285,10 @@ const Block2SquareBottom = styled.div`
 	height: 108px;
 	background: url('images/company/Counts/block2SquareBottom.svg') no-repeat;
 	z-index: -1;
+	@media (max-width: 425px) {
+		left: 37px;
+		bottom: -35px;
+	}
 `;
 
 const Block2SquareLeft = styled.div`
@@ -302,8 +310,12 @@ const Block2Dots = styled.div`
 	height: 149px;
 	background: url('images/company/Counts/block2Dots.svg') no-repeat;
 	z-index: -1;
+	@media (max-width: 1280px) {
+		left: 176px;
+		bottom: 31px;
+	}
 	@media (max-width: 768px) {
-		left: 287px;
+		left: 173px;
 	}
 `;
 
