@@ -216,6 +216,29 @@ const SquareRight = styled.div`
 	border-radius: 60.2025px;
 	transform: rotate(-45deg);
 	z-index: -2;
+	@media (min-width: 375px) {
+		right: 94%;
+		top: -200px;
+	}
+	@media (min-width: 768px) {
+		top: -133px;
+	}
+	@media (min-width: 1024px) {
+		top: -115px;
+		right: 83%;
+	}
+	@media (min-width: 1280px) {
+		top: -100px;
+		right: -36%;
+	}
+	@media (min-width: 1440px) {
+		top: -100px;
+		right: -27%;
+	}
+	@media (min-width: 1920px) {
+		top: -115px;
+		right: -20%;
+	}
 `;
 
 const SquareLeft = styled.div`
@@ -242,6 +265,25 @@ const DotsLeft = styled.div`
 	height: 255.35px;
 	background: url('images/company/Contact/dotsLeft.svg');
 	z-index: -1;
+	@media (min-width: 375px) {
+		bottom: -169px;
+	}
+	@media (min-width: 768px) {
+		bottom: -169px;
+		left: -155px;
+	}
+	@media (min-width: 1024px) {
+		bottom: -169px;
+		left: -28px;
+	}
+	@media (min-width: 1440px) {
+		bottom: -169px;
+		left: -88px;
+	}
+	@media (min-width: 1920px) {
+		bottom: -169px;
+		left: -10%;
+	}
 `;
 
 const LeftSquareLeft = styled.div`
@@ -255,23 +297,53 @@ const LeftSquareLeft = styled.div`
 	@media (min-width: 375px) {
 		display: none;
 	}
+	@media (min-width: 768px) {
+		display: block;
+	}
+	@media (min-width: 1024px) {
+		display: block;
+	}
+	@media (min-width: 1440px) {
+		left: 0px;
+		top: 0px;
+	}
 `;
 
 const LeftSquareBottom = styled.div`
 	position: absolute;
-	left: 117px;
+	right: 0px;
 	bottom: 0px;
 	width: 276px;
 	height: 98px;
 	background: url('images/company/Contact/leftSquareBot.svg') no-repeat;
 	z-index: -1;
 	@media (min-width: 375px) {
-		left: 215px;
+		right: -131px;
 		transform: rotate(-90deg);
 		bottom: 20px;
 	}
 	@media (min-width: 768px) {
-		left: 552px;
+		background: url('images/company/Contact/leftSquareBot768.svg') no-repeat;
+		width: 219px;
+		height: 221px;
+		transform: rotate(0deg);
+		right: 0;
+		bottom: 0;
+	}
+	@media (min-width: 1024px) {
+		bottom: -129px;
+	}
+	@media (min-width: 1440px) {
+		background: url('images/company/Contact/leftSquareBot1440.svg') no-repeat;
+
+		bottom: -145px;
+		right: 44px;
+	}
+	@media (min-width: 1920px) {
+		background: url('images/company/Contact/leftSquareBot1440.svg') no-repeat;
+
+		bottom: -149px;
+		right: 74px;
 	}
 `;
 
@@ -286,6 +358,9 @@ const LeftDots = styled.div`
 	@media (min-width: 375px) {
 		left: -166px;
 	}
+	@media (min-width: 768px) {
+		left: 31px;
+	}
 `;
 
 const MiddleSquareLeft = styled.div`
@@ -297,7 +372,14 @@ const MiddleSquareLeft = styled.div`
 	background: url('images/company/Contact/midSquareLeft.svg') no-repeat;
 	z-index: -1;
 	@media (min-width: 375px) {
-		left: -108px;
+		left: -138px;
+		top: 19px;
+	}
+	@media (min-width: 768px) {
+		left: 0;
+		top: 0;
+		width: 243px;
+		height: 247px;
 	}
 `;
 
@@ -309,6 +391,31 @@ const MiddleSquareBottom = styled.div`
 	height: 98px;
 	background: url('images/company/Contact/midSquareRight.svg') no-repeat;
 	z-index: -1;
+	@media (min-width: 375px) {
+		background: url('images/company/Contact/midSquareRight375.svg') no-repeat;
+		right: 0;
+		bottom: 0;
+		width: 185px;
+		height: 194px;
+		@media (min-width: 768px) {
+			right: -11px;
+			bottom: 0px;
+			width: 384px;
+			height: 118px;
+			background: url('images/company/Contact/midSquareRight768.svg') no-repeat;
+		}
+		@media (min-width: 1024px) {
+			right: -124px;
+			bottom: 0;
+			width: 238px;
+			height: 213px;
+			background: url('images/company/Contact/midSquareRight1024.svg') no-repeat;
+		}
+		@media (min-width: 1440px) {
+			right: 0;
+			bottom: 0;
+			background: url('images/company/Contact/midSquareRight1920.svg') no-repeat;
+		}
 `;
 
 const MiddleDots = styled.div`
@@ -322,6 +429,19 @@ const MiddleDots = styled.div`
 	@media (min-width: 375px) {
 		display: none;
 	}
+	@media (min-width: 768px) {
+		display: block;
+		right: 5px;
+		top: -54px;
+	}
+	@media (min-width: 1024px) {
+		right: -127px;
+		top: 0px;
+	}
+	@media (min-width: 1440px) {
+		right: -33px;
+		top: 0px;
+	}
 `;
 
 const RightSquareLeft = styled.div`
@@ -332,6 +452,22 @@ const RightSquareLeft = styled.div`
 	height: 196px;
 	background: url('images/company/Contact/rightSquareLeft.svg') no-repeat;
 	z-index: -1;
+	@media (min-width: 768px) {
+		background: url('images/company/Contact/rightSquareLeft768.svg') no-repeat;
+		left: 0;
+		bottom: 0;
+		width: 289px;
+		height: 151px;
+	}
+	@media (min-width: 1024px) {
+		position: absolute;
+		left: 0px;
+		bottom: 0px;
+		width: 151px;
+		height: 196px;
+		background: url('images/company/Contact/rightSquareLeft.svg') no-repeat;
+		z-index: -1;
+	}
 `;
 
 const RightSquareBottom = styled.div`
@@ -342,6 +478,28 @@ const RightSquareBottom = styled.div`
 	height: 247px;
 	background: url('images/company/Contact/rightSquareRight.svg') no-repeat;
 	z-index: -1;
+	@media (min-width: 375px) {
+		display: block;
+		right: 0px;
+		bottom: 0;
+	}
+	@media (min-width: 768px) {
+		background: url('images/company/Contact/rightSquareRight768.svg') no-repeat;
+
+		display: block;
+		right: 0px;
+		bottom: 0;
+	}
+	@media (min-width: 1024px) {
+		background: url('images/company/Contact/rightSquareRight.svg') no-repeat;
+		right: -94px;
+		bottom: 0;
+	}
+	@media (min-width: 1440px) {
+		background: url('images/company/Contact/rightSquareRight.svg') no-repeat;
+		right: -41px;
+		bottom: 0;
+	}
 `;
 
 const RightDots = styled.div`
@@ -354,6 +512,9 @@ const RightDots = styled.div`
 	z-index: -1;
 	@media (min-width: 375px) {
 		display: none;
+	}
+	@media (min-width: 768px) {
+		display: block;
 	}
 `;
 

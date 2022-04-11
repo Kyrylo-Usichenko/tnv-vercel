@@ -250,6 +250,30 @@ const Dots = styled.div`
 	height: 256px;
 	background: url('images/company/Role/dots.svg') no-repeat;
 	z-index: -1;
+	@media (min-width: 375px) {
+		right: -238px;
+		top: -237px;
+	}
+	@media (min-width: 768px) {
+		right: 605px;
+		top: 756px;
+	}
+	@media (min-width: 1024px) {
+		right: -284px;
+		top: 28px;
+	}
+	@media (min-width: 1280px) {
+		right: -11%;
+		top: 28px;
+	}
+	@media (min-width: 1440px) {
+		right: 2%;
+		top: 28px;
+	}
+	@media (min-width: 1440px) {
+		right: 17%;
+		top: -24px;
+	}
 `;
 
 const Square = styled.div`
@@ -263,6 +287,23 @@ const Square = styled.div`
 	border-radius: 67.4765px;
 	transform: rotate(-45deg);
 	z-index: -1;
+	@media (min-width: 375px) {
+		left: -82%;
+		top: 187px;
+	}
+	@media (min-width: 768px) {
+		left: -26%;
+		top: -276px;
+	}
+	@media (min-width: 1024px) {
+		left: -21%;
+	}
+	@media (min-width: 1440px) {
+		left: -15%;
+	}
+	@media (min-width: 1920px) {
+		left: -28%;
+	}
 `;
 
 export default Role;

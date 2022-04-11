@@ -211,11 +211,22 @@ const SquareRight = styled.div`
 	height: 356px;
 	background: url('images/company/Commitments/squareRight.svg') no-repeat;
 	z-index: 0;
-	@media (max-width: 1440px) {
-		right: -407px;
-	}
-	@media (max-width: 768px) {
+	@media (min-width: 375px) {
 		display: none;
+	}
+	@media (min-width: 1024px) {
+		display: block;
+		right: -637px;
+	}
+	@media (min-width: 1024px) {
+		right: -403px;
+	}
+	@media (min-width: 1440px) {
+		right: -299px;
+	}
+	@media (min-width: 1920px) {
+		right: 20px;
+		top: 0;
 	}
 `;
 
@@ -227,6 +238,15 @@ const SquareLeft = styled.div`
 	height: 289px;
 	background: url('images/company/Commitments/squareLeft.svg') no-repeat;
 	z-index: 0;
+	@media (min-width: 768px) {
+		left: 0;
+	}
+	@media (min-width: 1024px) {
+		left: -46px;
+	}
+	@media (min-width: 1440px) {
+		left: 0px;
+	}
 `;
 
 const DotsRight = styled.div`
@@ -237,8 +257,18 @@ const DotsRight = styled.div`
 	height: 289px;
 	background: url('images/company/Commitments/dotsRight.svg') no-repeat;
 	z-index: 0;
-	@media (max-width: 768px) {
+	@media (min-width: 375px) {
 		display: none;
+	}
+	@media (min-width: 1024px) {
+		display: block;
+		right: -140px;
+	}
+	@media (min-width: 1440px) {
+		right: 217px;
+	}
+	@media (min-width: 1920px) {
+		right: 38%;
 	}
 `;
 
@@ -250,10 +280,20 @@ const DotsLeft = styled.div`
 	height: 162.7px;
 	background: url('images/company/Commitments/dotsLeft.svg') no-repeat;
 	z-index: 0;
-	@media (max-width: 768px) {
-		bottom: 129px;
-		transform: rotate(90deg);
-		margin-left: -30px;
+	@media (min-width: 375px) {
+		bottom: 170px;
+		background: url('images/company/Commitments/dotsLeft375.svg') no-repeat;
+		left: 0;
+	}
+	@media (min-width: 768px) {
+		background: url('images/company/Commitments/dotsLeft.svg') no-repeat;
+		bottom: -34px;
+		left: 0;
+	}
+	@media (min-width: 1920px) {
+		background: url('images/company/Commitments/dotsLeft.svg') no-repeat;
+		bottom: 0px;
+		left: 0;
 	}
 `;
 export default Commitments;
