@@ -233,7 +233,7 @@ const Join = styled.div`
 	z-index: 0;
 	overflow: hidden;
 	@media (min-width: 768px) {
-		grid-row: 2 / 3;
+		grid-column: 2 / 3;
 		padding: 32px 0;
 	}
 
