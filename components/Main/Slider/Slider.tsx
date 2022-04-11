@@ -56,6 +56,7 @@ const Slider: FC = () => {
 			return '<span class="' + className + '"/><span></span></span>';
 		},
 	};
+
 	return (
 		<Wrapper>
 			<LeftSliderWrap>
