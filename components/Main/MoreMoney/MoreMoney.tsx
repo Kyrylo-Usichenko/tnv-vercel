@@ -45,7 +45,7 @@ interface IMoreMoneyItem {
 	typedText: string;
 }
 
-const MoreMoney: FC<IMoreMoneyItem[]> = () => {
+const MoreMoney: FC = () => {
 	const [tab, setTab] = useState(tabsImages[0]);
 	const [isClicked, setIsClicked] = useState(false);
 
