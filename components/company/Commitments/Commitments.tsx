@@ -78,7 +78,7 @@ const FullCon = styled.div`
 	}
 
 	@media (min-width: 1920px) {
-		height: 356px;
+		height: 360px;
 	}
 `;
 
@@ -94,7 +94,8 @@ const Content = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 48px 0;
+	justify-content: center;
+	height: 100%;
 `;
 
 const Heading = styled.p`
@@ -135,10 +136,12 @@ const List = styled.ul`
 	margin: 0;
 	padding: 0;
 	z-index: 2;
+
 	@media (min-width: 768px) {
 		width: 100%;
 		flex-direction: row;
 		justify-content: space-around;
+		align-items: baseline;
 	}
 `;
 
