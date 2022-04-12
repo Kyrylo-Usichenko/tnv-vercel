@@ -73,13 +73,13 @@ const Footer: FC<Props> = ({ background }) => {
 					<SecondLineSeparate1 />
 					<SecondLineCon>
 						<SecondLineText>
-							<Link href={'/legal'} as='privacy'>
+							<Link href={'/legal'} as='/privacy'>
 								Privacy Policy
 							</Link>
 						</SecondLineText>
 						<SecondLineSeparate2 />
 						<SecondLineText>
-							<Link href={'/legal'} as='terms'>
+							<Link href={'/legal'} as='/terms'>
 								Terms of Service
 							</Link>
 						</SecondLineText>
