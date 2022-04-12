@@ -1,6 +1,4 @@
 import Link from 'next/link';
-
-import Button from '../Buttons/Button';
 import styled from 'styled-components';
 
 export const HeaderStyled = styled.header<{ isHeaderScrolled: boolean; isMenuOpend: boolean }>`
