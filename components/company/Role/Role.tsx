@@ -183,15 +183,31 @@ const GalleryTitle = styled.h2`
 	position: relative;
 	max-width: 315px;
 
+	&::before {
+		content: url('images/company/Role/dec.svg');
+		position: absolute;
+		top: -42px;
+		left: -24px;
+	}
+
 	@media (min-width: 768px) {
 		font-size: 44px;
 		line-height: 54px;
 		max-width: 540px;
+
+		&::before {
+			left: 0;
+		}
 	}
 
 	@media (min-width: 1024px) {
 		text-align: left;
 		max-width: 400px;
+
+		&::before {
+			left: -33px;
+			top: -40px;
+		}
 	}
 
 	@media (min-width: 1280px) {
