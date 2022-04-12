@@ -3,7 +3,6 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 
 import { Container } from '../Container/Container';
-import { Tabs } from '../../../constants';
 
 type Props = {
 	background?: string | undefined;
@@ -74,13 +73,13 @@ const Footer: FC<Props> = ({ background }) => {
 					<SecondLineSeparate1 />
 					<SecondLineCon>
 						<SecondLineText>
-							<Link href={'/legal'} as={Tabs.privacy}>
+							<Link href={'/legal'} as='privacy'>
 								Privacy Policy
 							</Link>
 						</SecondLineText>
 						<SecondLineSeparate2 />
 						<SecondLineText>
-							<Link href={'/legal'} as={Tabs.terms}>
+							<Link href={'/legal'} as='terms'>
 								Terms of Service
 							</Link>
 						</SecondLineText>
