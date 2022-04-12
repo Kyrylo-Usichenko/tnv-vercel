@@ -16,10 +16,40 @@ const Breeze: FC = () => {
 					</BreezeText>
 					<BreezeBlock1>
 						<BreezeBlock2>
+							<Block>
+								<Add>
+									<AddCon>
+										<AddFile src='images/features/breeze/file.svg' alt='file' />
+										<AddText>Add Catalog to Order List</AddText>
+									</AddCon>
+									<AddArrow src='images/features/breeze/arrow.svg' alt='arrow' />
+								</Add>
+								<Del>
+									<DelCon>
+										<DelCal src='images/features/breeze/calendar.svg' alt='calendar' />
+										<DelText>Delivery on</DelText>
+									</DelCon>
+									<DelDate>Tue, 27 Oct</DelDate>
+								</Del>
+								<Man
+									src='images/features/breeze/man.jpg'
+									srcSet='images/features/breeze/man@2x.jpg 2x'
+									alt='man'
+								/>
+								<Women
+									src='images/features/breeze/women.jpg'
+									srcSet='images/features/breeze/women@2x.jpg 2x'
+									alt='women'
+								/>
+								<Order>
+									<OrderInfo>
+										<OrderText>Total Amount</OrderText>
+										<OrderPrice>$ 1340.00</OrderPrice>
+									</OrderInfo>
+									<OrderButton>Confirm Order (9 Items)</OrderButton>
+								</Order>
+							</Block>
 							<BreezeBlock2Dec0></BreezeBlock2Dec0>
-							<BreezeBlock2Dec1></BreezeBlock2Dec1>
-							<BreezeBlock2Dec2></BreezeBlock2Dec2>
-							<BreezeBlock2Dec3></BreezeBlock2Dec3>
 						</BreezeBlock2>
 					</BreezeBlock1>
 				</BreezeCon>
@@ -144,25 +174,10 @@ const BreezeBlock1 = styled.div`
 	border-radius: 55.2257px;
 	transform: rotate(-45deg);
 
-	&::before {
-		content: url('images/features/breeze/add.png');
-		position: absolute;
-		top: 87px;
-		right: 0;
-		z-index: 1;
-		transform: rotate(45deg);
-	}
-
 	@media (min-width: 768px) {
 		width: 560.03px;
 		height: 560.03px;
 		padding: 35px;
-
-		&::before {
-			content: url('images/features/breeze/breeze-img.png');
-			top: 35px;
-			right: 17px;
-		}
 	}
 
 	@media (min-width: 1024px) {
@@ -174,11 +189,6 @@ const BreezeBlock1 = styled.div`
 
 	@media (min-width: 1280px) {
 		right: -132px;
-
-		&::before {
-			top: 54px;
-			right: -11px;
-		}
 	}
 
 	@media (min-width: 1440px) {
@@ -193,31 +203,365 @@ const BreezeBlock2 = styled.div`
 	border-radius: 55.2257px;
 	position: relative;
 
-	&::before {
-		content: url('images/features/breeze/man.png');
-		position: absolute;
-		left: 0px;
-		top: 80px;
-		transform: rotate(45deg);
-	}
-
-	&::after {
-		content: url('images/features/breeze/women.png');
-		position: absolute;
-		top: 219px;
-		right: 43px;
-		transform: rotate(45deg);
-		z-index: 1;
-	}
-
 	@media (min-width: 768px) {
 		width: 490.37px;
 		height: 490.37px;
+	}
+`;
 
-		&::before,
-		&::after {
-			display: none;
+const Block = styled.div`
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transform: rotate(45deg);
+
+	&::before {
+		content: url('images/features/breeze/women-dec.svg');
+		position: absolute;
+		top: 94px;
+		right: -21px;
+	}
+
+	@media (min-width: 768px) {
+		&::before {
+			top: 120px;
+			right: -8px;
 		}
+
+		&::after {
+			content: url('images/features/breeze/man-dec.svg');
+			position: absolute;
+			top: 204px;
+			left: -58px;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		&::before {
+			top: 113px;
+			right: -25px;
+		}
+
+		&::after {
+			left: -23px;
+		}
+	}
+`;
+
+const Img = styled.img`
+	position: absolute;
+	height: 91px;
+	width: 91px;
+	border-radius: 50%;
+
+	@media (min-width: 768px) {
+		width: 124px;
+		height: 124px;
+
+		&::before {
+			top: 114px;
+			right: -6px;
+		}
+	}
+`;
+
+const Man = styled(Img)`
+	left: 6px;
+	bottom: 75px;
+
+	@media (min-width: 768px) {
+		left: -28px;
+		bottom: 121px;
+	}
+
+	@media (min-width: 1280px) {
+		left: 5px;
+	}
+`;
+
+const Women = styled(Img)`
+	top: 118px;
+	right: 17px;
+
+	@media (min-width: 768px) {
+		top: 162px;
+		right: 22px;
+	}
+
+	@media (min-width: 1280px) {
+		right: 5px;
+	}
+`;
+
+const Add = styled.div`
+	position: absolute;
+	top: 35px;
+	left: 70px;
+	width: 196.71px;
+	height: 33.03px;
+	background-color: #ffffff;
+	border-radius: 8.52371px;
+	padding: 9.5px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	box-shadow: 5px 8px 17px 0 rgba(33, 33, 33, 0.1);
+
+	&::before {
+		content: url('images/features/breeze/con-l-375.svg');
+		position: absolute;
+		left: 33px;
+		bottom: -64px;
+	}
+
+	&::after {
+		content: url('images/features/breeze/women-l-375.svg');
+		position: absolute;
+		right: -13px;
+		bottom: -90px;
+	}
+
+	@media (min-width: 768px) {
+		width: 268px;
+		height: 45px;
+		border-radius: 11px;
+		padding: 13px;
+		top: 31px;
+
+		&::before {
+			content: url('images/features/breeze/con-l-768.svg');
+			bottom: -85px;
+		}
+
+		&::after {
+			content: url('images/features/breeze/women-l-768.svg');
+			right: -55px;
+			bottom: -119px;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		left: 120px;
+
+		&::before {
+			left: 47px;
+		}
+
+		&::after {
+			right: -21px;
+		}
+	}
+`;
+
+const AddCon = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 5.8px;
+
+	@media (min-width: 768px) {
+		gap: 8px;
+	}
+`;
+
+const AddFile = styled.img`
+	width: 13.21px;
+	height: 13.21px;
+
+	@media (min-width: 768px) {
+		width: 18px;
+		height: 18px;
+	}
+`;
+
+const AddArrow = styled.img`
+	height: 6px;
+	width: auto;
+
+	@media (min-width: 768px) {
+		height: 9px;
+	}
+`;
+
+const AddText = styled.p`
+	font-family: 'Gilroy';
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 12px;
+	color: #5c5c5c;
+	margin: 0;
+
+	@media (min-width: 768px) {
+		font-size: 14px;
+		line-height: 17px;
+	}
+`;
+
+const Del = styled.div`
+	position: absolute;
+	top: 118px;
+	left: 7px;
+	width: 192.34px;
+	height: 32.86px;
+	background-color: #ffffff;
+	border-radius: 10px;
+	padding: 9.5px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	box-shadow: 5px 8px 17px 0 rgba(33, 33, 33, 0.1);
+
+	@media (min-width: 768px) {
+		width: 262.05px;
+		height: 44.77px;
+		border-radius: 14px;
+		padding: 13px;
+		top: 145px;
+		left: -7px;
+	}
+
+	@media (min-width: 1280px) {
+		top: 144px;
+		left: 46px;
+	}
+`;
+
+const DelCon = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 5.8px;
+
+	@media (min-width: 768px) {
+		gap: 8px;
+	}
+`;
+
+const DelCal = styled.img`
+	width: 11.74px;
+	height: 13.21px;
+
+	@media (min-width: 768px) {
+		width: 16px;
+		height: 18px;
+	}
+`;
+
+const DelText = styled.p`
+	font-family: 'Gilroy';
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 12px;
+	color: #5c5c5c;
+	margin: 0;
+
+	@media (min-width: 768px) {
+		font-size: 14px;
+		line-height: 17px;
+	}
+`;
+
+const DelDate = styled.p`
+	font-family: 'Gilroy';
+	font-weight: 400;
+	font-size: 10.2758px;
+	line-height: 12px;
+	color: #212121;
+	margin: 0;
+
+	@media (min-width: 768px) {
+		font-size: 14px;
+		line-height: 17px;
+	}
+`;
+
+const Order = styled.div`
+	position: absolute;
+	right: 9px;
+	bottom: 35px;
+	background-color: #ffffff;
+	border-radius: 9px;
+	box-shadow: 5px 8px 17px 0 rgba(33, 33, 33, 0.1);
+
+	&::before {
+		content: url('images/features/breeze/man-l-375.svg');
+		position: absolute;
+		top: -51px;
+		left: -44px;
+	}
+
+	@media (min-width: 768px) {
+		border-radius: 14px;
+		right: 43px;
+		bottom: 72px;
+
+		&::before {
+			content: url('images/features/breeze/man-l-768.svg');
+			top: -69px;
+			left: -74px;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		right: 8px;
+	}
+`;
+
+const OrderInfo = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 9.5px 7.5px;
+
+	@media (min-width: 768px) {
+		padding: 13px 9px;
+	}
+`;
+
+const OrderText = styled.p`
+	font-family: 'Gilroy';
+	font-weight: 400;
+	font-size: 8px;
+	line-height: 11px;
+	color: #212121;
+	margin: 0;
+
+	@media (min-width: 768px) {
+		font-size: 12px;
+		line-height: 15px;
+	}
+`;
+
+const OrderPrice = styled.p`
+	font-family: 'Gilroy';
+	font-weight: 700;
+	font-size: 8px;
+	line-height: 11px;
+	color: #212121;
+	margin: 0;
+
+	@media (min-width: 768px) {
+		font-size: 12px;
+		line-height: 15px;
+	}
+`;
+
+const OrderButton = styled.button`
+	background-color: #ff474d;
+	border-style: none;
+	border-radius: 9.81273px;
+	font-family: 'Gilroy';
+	font-weight: 700;
+	font-size: 10px;
+	line-height: 13px;
+	color: #ffffff;
+	padding: 10.5px 50px;
+
+	@media (min-width: 768px) {
+		font-size: 14px;
+		line-height: 17px;
+		padding: 15px 67px;
+		border-radius: 13px;
 	}
 `;
 
@@ -250,89 +594,10 @@ const BreezeBlock2Dec0 = styled.div`
 		}
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 1024px) {
 		&::before {
 			right: -260px;
 		}
-	}
-`;
-
-const BreezeBlock2Dec1 = styled.div`
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	transform: rotate(45deg);
-	z-index: 1;
-
-	&::before {
-		content: url('images/features/breeze/del.png');
-		position: absolute;
-		left: 0;
-		top: 103px;
-		z-index: 2;
-	}
-
-	&::after {
-		content: url('images/features/breeze/add-line.webp');
-		position: absolute;
-		left: 108px;
-		top: 56px;
-	}
-
-	@media (min-width: 768px) {
-		display: none;
-	}
-`;
-
-const BreezeBlock2Dec2 = styled.div`
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	transform: rotate(45deg);
-	z-index: 1;
-
-	&::before {
-		content: url('images/features/breeze/women-line.webp');
-		position: absolute;
-		right: 62px;
-		top: 52px;
-	}
-
-	&::after {
-		content: url('images/features/breeze/dec.svg');
-		position: absolute;
-		right: -15px;
-		top: 109px;
-	}
-
-	@media (min-width: 768px) {
-		display: none;
-	}
-`;
-
-const BreezeBlock2Dec3 = styled.div`
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	transform: rotate(45deg);
-	z-index: 1;
-
-	&::before {
-		content: url('images/features/breeze/conf.png');
-		position: absolute;
-		right: -18px;
-		bottom: 1px;
-	}
-
-	&::after {
-		content: url('images/features/breeze/man-line.webp');
-		position: absolute;
-		left: 93px;
-		bottom: 92px;
-	}
-
-	@media (min-width: 768px) {
-		display: none;
 	}
 `;
 
