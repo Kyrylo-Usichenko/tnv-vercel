@@ -34,7 +34,7 @@ import {
 	Social,
 } from './HeaderStyles';
 import ArrowDown from '../Arrow/ArrowDown';
-import useOnClickOutside from '../../hooks/useOnClickOutside';
+import useOnClickOutside from '../../../hooks/useOnClickOutside';
 
 type PropsType = {
 	Tab: string;
