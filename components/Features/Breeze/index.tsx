@@ -19,14 +19,18 @@ const Breeze: FC = () => {
 							<Block>
 								<Add>
 									<AddCon>
-										<AddFile src='images/features/breeze/file.svg' alt='file' />
+										<AddFile src='images/features/breeze/file.svg' alt='file' loading='lazy' />
 										<AddText>Add Catalog to Order List</AddText>
 									</AddCon>
-									<AddArrow src='images/features/breeze/arrow.svg' alt='arrow' />
+									<AddArrow src='images/features/breeze/arrow.svg' alt='arrow' loading='lazy' />
 								</Add>
 								<Del>
 									<DelCon>
-										<DelCal src='images/features/breeze/calendar.svg' alt='calendar' />
+										<DelCal
+											src='images/features/breeze/calendar.svg'
+											alt='calendar'
+											loading='lazy'
+										/>
 										<DelText>Delivery on</DelText>
 									</DelCon>
 									<DelDate>Tue, 27 Oct</DelDate>
@@ -35,11 +39,13 @@ const Breeze: FC = () => {
 									src='images/features/breeze/man.jpg'
 									srcSet='images/features/breeze/man@2x.jpg 2x'
 									alt='man'
+									loading='lazy'
 								/>
 								<Women
 									src='images/features/breeze/women.jpg'
 									srcSet='images/features/breeze/women@2x.jpg 2x'
 									alt='women'
+									loading='lazy'
 								/>
 								<Order>
 									<OrderInfo>
