@@ -98,10 +98,14 @@ const MoreMoney: FC = () => {
 				<RedSquare>
 					<Null>
 						<LeftMock>
-							<Image src={tab.leftImg} alt={tab.name} layout='fill' objectFit='contain' />
+							<ImageInner>
+								<Image src={tab.leftImg} alt={tab.name} layout='fill' objectFit='contain' priority />
+							</ImageInner>
 						</LeftMock>
 						<RightMock>
-							<Image src={tab.rightImg} alt={tab.name} layout='fill' objectFit='contain' />
+							<ImageInner>
+								<Image src={tab.rightImg} alt={tab.name} layout='fill' objectFit='contain' priority />
+							</ImageInner>
 						</RightMock>
 						<Stars src='images/main/moreMoney/stars.svg' alt='stars' />
 						<Dots src='images/main/moreMoney/dots.svg' alt='dots' />
@@ -202,12 +206,16 @@ const Null = styled.div`
 	height: 400px;
 	position: relative;
 `;
+const ImageInner = styled.div`
+	width: 100%;
+	height: 100%;
+	position: relative;
+`;
 
 const LeftMock = styled.div`
 	position: absolute;
 	left: -139px;
 	top: -102px;
-
 	width: 300px;
 	height: 488px;
 	transition: all 0.3s ease;

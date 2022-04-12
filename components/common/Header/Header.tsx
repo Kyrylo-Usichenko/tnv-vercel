@@ -34,7 +34,7 @@ import {
 	Social,
 } from './HeaderStyles';
 import ArrowDown from '../Arrow/ArrowDown';
-import useOnClickOutside from '../../hooks/useOnClickOutside';
+import useOnClickOutside from '../../../hooks/useOnClickOutside';
 
 type PropsType = {
 	Tab: string;
@@ -52,9 +52,11 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 
 	const { t } = useTranslation();
 	useEffect(() => {
-		if (typeof window !== 'undefined') {
-			window.addEventListener('scroll', () => setHeaderScrolled(window.pageYOffset > 50));
+		function handleScroll() {
+			setHeaderScrolled(window.pageYOffset > 50);
 		}
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
 	const modalRef = useOnClickOutside(() => {
 		setDropDawn(false);
