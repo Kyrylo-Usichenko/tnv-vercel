@@ -183,13 +183,21 @@ const First = styled.div`
 
 	@media (min-width: 1024px) {
 		position: absolute;
-		top: -156px;
-		right: -107px;
+		top: -175px;
+		right: -44px;
 		margin: 0;
 	}
 
 	@media (min-width: 1280px) {
-		right: -85px;
+		right: -112px;
+	}
+
+	@media (min-width: 1440px) {
+		right: -40px;
+	}
+
+	@media (min-width: 1920px) {
+		right: 20px;
 	}
 `;
 
