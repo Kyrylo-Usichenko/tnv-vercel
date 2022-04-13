@@ -170,6 +170,7 @@ const SoundsCon = styled.div`
 		justify-content: space-between;
 		align-items: center;
 		text-align: left;
+		padding: 54px 0;
 	}
 `;
 
