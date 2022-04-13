@@ -6,8 +6,8 @@ const RedTopSquare: FC = () => {
 		<BigRed>
 			<SmallRed>
 				<Null>
-					<AppImage />
-					<Phone />
+					<AppImage src='images/main/preview/app.png' />
+					<Phone src='images/main/preview/phone.png' />
 					<DotsLeft />
 					<DotsBottom />
 				</Null>
@@ -76,14 +76,13 @@ const SmallRed = styled.div`
 	}
 `;
 
-const AppImage = styled.div`
+const AppImage = styled.img`
 	position: absolute;
-	z-index: 1;
+	z-index: 2;
 	top: -154px;
 	right: 149px;
 	width: 829px;
 	height: 634px;
-	background: url('images/main/preview/app.png') no-repeat;
 	@media (max-width: 768px) {
 		top: -328px;
 		right: -574px;
@@ -97,12 +96,11 @@ const AppImage = styled.div`
 	}
 `;
 
-const Phone = styled.div`
+const Phone = styled.img`
 	position: absolute;
 	z-index: 1;
 	top: 144px;
 	left: -183px;
-	background: url('images/main/preview/phone.png') no-repeat;
 	width: 253px;
 	height: 414px;
 	background-size: contain;

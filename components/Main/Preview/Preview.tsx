@@ -15,7 +15,7 @@ const Preview: FC = () => {
 				<Button>Get Started Now</Button>
 				<PreviewFootnote>
 					It's free to try!
-					<PreviewSmile src='/images/main/preview/smile.svg' alt='smile in glasses' />
+					<PreviewSmile />
 				</PreviewFootnote>
 			</PreviewAction>
 		</PreviewInfo>
@@ -221,8 +221,11 @@ const PreviewFootnote = styled.span`
 	}
 `;
 
-const PreviewSmile = styled.img`
+const PreviewSmile = styled.div`
 	margin-left: 8px;
+	background: url('/images/main/preview/smile.svg') no-repeat;
+	width: 16px;
+	height: 16px;
 `;
 
 export default Preview;
