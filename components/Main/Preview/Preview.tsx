@@ -60,7 +60,7 @@ const PreviewTitle = styled.h2`
 		content: '';
 		width: 87px;
 		height: 80px;
-		background: url('images/main/preview/decorations.png');
+		background: url('images/main/preview/decorations.svg');
 		position: absolute;
 		z-index: 1;
 		left: -42px;
