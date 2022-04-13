@@ -173,7 +173,7 @@ const Invoice = styled.div`
 		height: 73px;
 		border-radius: 17.1765px;
 		padding: 16px;
-		top: 183px;
+		top: 192px;
 		right: 33px;
 	}
 
@@ -313,7 +313,7 @@ const Remind = styled.div`
 	@media (min-width: 1280px) {
 		width: 205px;
 		height: 45px;
-		top: 306px;
+		top: 316px;
 		right: -23px;
 	}
 
@@ -434,20 +434,21 @@ const Dec1 = styled.div`
 	@media (min-width: 1280px) {
 		&::before {
 			content: url('images/features/send/line-l-1280.svg');
-			bottom: 341px;
+			bottom: 332px;
 			right: 296px;
 		}
 
 		&::after {
 			content: url('images/features/send/line-r-1280.svg');
 			right: 111px;
-			bottom: 395px;
+			bottom: 387px;
 		}
 	}
 
 	@media (min-width: 1440px) {
 		&::before {
 			bottom: 270px;
+			right: 346px;
 		}
 
 		&::after {
@@ -458,6 +459,7 @@ const Dec1 = styled.div`
 	@media (min-width: 1920px) {
 		&::before {
 			bottom: 242px;
+			right: 380px;
 		}
 
 		&::after {

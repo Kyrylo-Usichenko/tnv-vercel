@@ -37,33 +37,29 @@ const Footer: FC<Props> = ({ background }) => {
 					<SecondLineHalf>
 						<Links>
 							<Socials>
-								<Link href={'/'}>
-									<Social src='images/footer/linkedin.svg' alt='linkedin' loading='lazy' />
-								</Link>
-								<Link href={'/'}>
-									<Social src='images/footer/inst.svg' alt='instagram' loading='lazy' />
-								</Link>
+								<Social href={'/'}>
+									<img src='images/footer/linkedin.svg' alt='linkedin' loading='lazy' />
+								</Social>
+								<Social href={'/'}>
+									<img src='images/footer/inst.svg' alt='instagram' loading='lazy' />
+								</Social>
 							</Socials>
 							<FirstLineSeparate />
 							<Stores>
-								<Link href={'/'}>
-									<Store>
-										<img src='images/footer/gplay.svg' alt='google play' loading='lazy' />
-										<StoreText>
-											<StoreTextFirst>Available on the</StoreTextFirst>
-											<StoreTextSecond>Google Play</StoreTextSecond>
-										</StoreText>
-									</Store>
-								</Link>
-								<Link href={'/'}>
-									<Store>
-										<img src='images/footer/astore.svg' alt='apple store' loading='lazy' />
-										<StoreText>
-											<StoreTextFirst>Available on the</StoreTextFirst>
-											<StoreTextSecond>App Store</StoreTextSecond>
-										</StoreText>
-									</Store>
-								</Link>
+								<Store href={'/'}>
+									<img
+										src='images/footer/gp.png'
+										srcSet='images/footer/gp@2x.png 2x'
+										alt='google play'
+									/>
+								</Store>
+								<Store href={'/'}>
+									<img
+										src='images/footer/as.png'
+										srcSet='images/footer/as@2x.png 2x'
+										alt='google play'
+									/>
+								</Store>
 							</Stores>
 						</Links>
 					</SecondLineHalf>
@@ -237,9 +233,10 @@ const Socials = styled.div`
 	}
 `;
 
-const Social = styled.img`
+const Social = styled.a`
 	cursor: pointer;
 	margin-right: 16px;
+	height: 32px;
 
 	&:last-of-type {
 		margin-right: 0;
@@ -256,43 +253,12 @@ const Stores = styled.div`
 	display: flex;
 `;
 
-const Store = styled.div`
-	display: flex;
-	align-items: center;
+const Store = styled.a`
 	height: 40px;
-	width: 113px;
-	background: radial-gradient(95.51% 95.51% at 50% 50%, #c1c1c1 0%, #ededed 100%);
-	opacity: 0.88;
-	border-radius: 8px;
-	padding: 8.3px;
 	margin-right: 16px;
-	cursor: pointer;
-
 	&:last-child {
 		margin-right: 0;
 	}
-`;
-
-const StoreText = styled.div`
-	margin-left: 7.15px;
-`;
-
-const StoreTextFirst = styled.p`
-	font-family: 'Inter';
-	font-weight: 400;
-	font-size: 7.15567px;
-	line-height: 9px;
-	color: #ffffff;
-	margin: 0 0 1.43px 0;
-`;
-
-const StoreTextSecond = styled.p`
-	font-family: 'Inter';
-	font-weight: 600;
-	font-size: 10.7335px;
-	line-height: 13px;
-	color: #ffffff;
-	margin: 0;
 `;
 
 const SecondLine = styled.div`

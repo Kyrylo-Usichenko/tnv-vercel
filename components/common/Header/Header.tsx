@@ -28,9 +28,6 @@ import {
 	Socials,
 	MobileButton,
 	Store,
-	StoreText,
-	StoreTextFirst,
-	StoreTextSecond,
 	Social,
 } from './HeaderStyles';
 import ArrowDown from '../Arrow/ArrowDown';
@@ -173,30 +170,28 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 							<MobileButton>{t('home:GetStarted')}</MobileButton>
 						</Link>
 						<Socials>
-							<Link href={'/'}>
-								<Social src='images/footer/linkedin.svg' alt='linkedin' />
-							</Link>
-							<Link href={'/'}>
-								<Social src='images/footer/inst.svg' alt='instagram' />
-							</Link>
-							<Link href={'/'}>
-								<Store>
-									<img src='images/footer/gplay.svg' alt='google play' />
-									<StoreText>
-										<StoreTextFirst>Available on the</StoreTextFirst>
-										<StoreTextSecond>Google Play</StoreTextSecond>
-									</StoreText>
-								</Store>
-							</Link>
-							<Link href={'/'}>
-								<Store>
-									<img src='images/footer/astore.svg' alt='apple store' />
-									<StoreText>
-										<StoreTextFirst>Available on the</StoreTextFirst>
-										<StoreTextSecond>App Store</StoreTextSecond>
-									</StoreText>
-								</Store>
-							</Link>
+							<Social href={'/'}>
+								<img src='images/footer/linkedin.svg' alt='linkedin' loading='lazy' />
+							</Social>
+							<Social href={'/'}>
+								<img src='images/footer/inst.svg' alt='instagram' loading='lazy' />
+							</Social>
+							<Store href={'/'}>
+								<img
+									src='images/footer/gp.png'
+									srcSet='images/footer/gp@2x.png 2x'
+									alt='google play'
+									loading='lazy'
+								/>
+							</Store>
+							<Store href={'/'}>
+								<img
+									src='images/footer/as.png'
+									srcSet='images/footer/as@2x.png 2x'
+									alt='google play'
+									loading='lazy'
+								/>
+							</Store>
 						</Socials>
 					</MobileLinks>
 				</MobileContainer>

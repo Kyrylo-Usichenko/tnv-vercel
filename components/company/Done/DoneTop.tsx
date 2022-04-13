@@ -140,8 +140,7 @@ const TopWrapper = styled.div`
 	}
 
 	@media (min-width: 1920px) {
-		max-width: 1688px;
-		width: 100%;
+		margin-right: 234px;
 	}
 `;
 
@@ -219,6 +218,8 @@ const Content1 = styled.div`
 	padding: 42px 16px 40px 31px;
 	max-width: 375px;
 	margin: 0 auto;
+	position: relative;
+	z-index: 9;
 
 	@media (min-width: 768px) {
 		padding: 40px;

@@ -394,50 +394,19 @@ export const Socials = styled.div`
 	align-items: center;
 `;
 
-export const Social = styled.img`
-	cursor: pointer;
+export const Social = styled.a`
 	margin-right: 16px;
+	height: 32px;
 
 	&:last-of-type {
 		margin-right: 32px;
 	}
 `;
 
-export const Store = styled.div`
-	display: flex;
-	align-items: center;
+export const Store = styled.a`
 	height: 40px;
-	width: 113px;
-	background: radial-gradient(95.51% 95.51% at 50% 50%, #c1c1c1 0%, #ededed 100%);
-	opacity: 0.88;
-	border-radius: 8px;
-	padding: 8.3px;
 	margin-right: 16px;
-	cursor: pointer;
-
 	&:last-child {
 		margin-right: 0;
 	}
-`;
-
-export const StoreText = styled.div`
-	margin-left: 7.15px;
-`;
-
-export const StoreTextFirst = styled.p`
-	font-family: 'Inter';
-	font-weight: 400;
-	font-size: 7.15567px;
-	line-height: 9px;
-	color: #ffffff;
-	margin: 0 0 1.43px 0;
-`;
-
-export const StoreTextSecond = styled.p`
-	font-family: 'Inter';
-	font-weight: 600;
-	font-size: 10.7335px;
-	line-height: 13px;
-	color: #ffffff;
-	margin: 0;
 `;
