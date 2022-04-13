@@ -133,8 +133,8 @@ const FullCon = styled.div`
 		&::before {
 			display: block;
 			transform: rotate(0);
-			right: 320px;
-			bottom: 0;
+			right: 360px;
+			bottom: -6px;
 		}
 
 		&::after {
@@ -162,7 +162,7 @@ const FullCon = styled.div`
 
 	@media (min-width: 1440px) {
 		&::before {
-			right: 560px;
+			right: 550px;
 		}
 	}
 
@@ -188,7 +188,7 @@ const FlexConGrid = styled.div`
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr;
 	row-gap: 53px;
-	padding-top: 61px;
+	padding-top: 48px;
 	margin-bottom: 36px;
 
 	@media (min-width: 768px) {
@@ -197,6 +197,8 @@ const FlexConGrid = styled.div`
 		grid-column-gap: 131px;
 		grid-row-gap: 101px;
 		margin-bottom: 0;
+		padding-top: 80px;
+		padding-left: 27px;
 	}
 
 	@media (min-width: 1024px) {
@@ -204,10 +206,13 @@ const FlexConGrid = styled.div`
 		grid-template-rows: repeat(2, 1fr);
 		grid-column-gap: 75px;
 		grid-row-gap: 56px;
+		padding-left: 0;
+		padding-top: 96px;
 	}
 
 	@media (min-width: 1920px) {
 		grid-template-columns: repeat(2, 237px);
+		padding-top: 87px;
 	}
 `;
 
@@ -348,7 +353,7 @@ const FullConDec1 = styled.div`
 		align-items: center;
 
 		&::after {
-			left: 50px;
+			left: 13px;
 			bottom: -330px;
 		}
 	}
@@ -359,7 +364,7 @@ const FullConDec1 = styled.div`
 		}
 
 		&::after {
-			left: 150px;
+			left: 97px;
 		}
 	}
 
@@ -369,7 +374,7 @@ const FullConDec1 = styled.div`
 		}
 
 		&::after {
-			left: 280px;
+			left: 166px;
 		}
 	}
 
