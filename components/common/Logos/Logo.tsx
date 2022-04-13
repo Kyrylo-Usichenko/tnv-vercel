@@ -6,12 +6,12 @@ const Logo: FC = () => {
 };
 
 const Img = styled.img`
-	width: 50.43px;
-	height: 44px;
+	width: 43.55px;
+	height: 38px;
 
-	@media (max-width: 1440px) {
-		width: 43.55px;
-		height: 38px;
+	@media (min-width: 1920px) {
+		width: 50.43px;
+		height: 44px;
 	}
 `;
 

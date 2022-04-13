@@ -11,12 +11,12 @@ const LogoText: FC = () => {
 
 const Img = styled.img`
 	margin-left: 7.4px;
-	width: 69.71px;
-	height: 22px;
+	width: 60.2px;
+	height: 19px;
 
-	@media (max-width: 1440px) {
-		width: 60.2px;
-		height: 19x;
+	@media (min-width: 1920px) {
+		width: 69.71px;
+		height: 22px;
 	}
 `;
 
