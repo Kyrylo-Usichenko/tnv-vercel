@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React, { FC } from 'react';
 import styled from 'styled-components';
 
-import { Container } from '../Container/Container';
+import { FeaturesCon } from '../Container/Container';
 
 type Props = {
 	background?: string | undefined;
@@ -11,7 +11,7 @@ type Props = {
 const Footer: FC<Props> = ({ background }) => {
 	return (
 		<StyledFooter background={background}>
-			<Container>
+			<FeaturesCon>
 				<FirstLine>
 					<FirstLineHalf>
 						<FooterFullLogo>
@@ -85,7 +85,7 @@ const Footer: FC<Props> = ({ background }) => {
 						</SecondLineText>
 					</SecondLineCon>
 				</SecondLine>
-			</Container>
+			</FeaturesCon>
 		</StyledFooter>
 	);
 };
