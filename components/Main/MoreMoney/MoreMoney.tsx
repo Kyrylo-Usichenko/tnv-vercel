@@ -381,7 +381,7 @@ const Inner = styled.div`
 	z-index: 1;
 	@media (max-width: 1280px) {
 		// margin: 0 auto;
-		max-width: 408px;
+		max-width: 435px;
 	}
 	@media (max-width: 1023px) {
 		margin: 0 auto;
@@ -433,7 +433,7 @@ const BottomButton = styled.button`
 	&:hover {
 		opacity: 0.8;
 	}
-	@media (max-width: 1280px) {
+	@media (max-width: 1023px) {
 		margin: 32px auto 0;
 	}
 `;
