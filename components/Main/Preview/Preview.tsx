@@ -15,7 +15,7 @@ const Preview: FC = () => {
 				<Button>Get Started Now</Button>
 				<PreviewFootnote>
 					It's free to try!
-					<PreviewSmile src='/images/main/preview/smile.svg' alt='smile in glasses' />
+					<PreviewSmile />
 				</PreviewFootnote>
 			</PreviewAction>
 		</PreviewInfo>
@@ -60,7 +60,7 @@ const PreviewTitle = styled.h2`
 		content: '';
 		width: 87px;
 		height: 80px;
-		background: url('images/main/preview/decorations.png');
+		background: url('images/main/preview/decorations.svg');
 		position: absolute;
 		z-index: 1;
 		left: -42px;
@@ -221,8 +221,11 @@ const PreviewFootnote = styled.span`
 	}
 `;
 
-const PreviewSmile = styled.img`
+const PreviewSmile = styled.div`
 	margin-left: 8px;
+	background: url('/images/main/preview/smile.svg') no-repeat;
+	width: 16px;
+	height: 16px;
 `;
 
 export default Preview;

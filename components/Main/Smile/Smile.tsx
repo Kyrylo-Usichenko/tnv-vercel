@@ -12,54 +12,54 @@ const Smile: FC = () => {
 			<MainBox>
 				<GreyBox1>
 					<GreyBoxInner>
-						<BoxImg src='images/main/smile/chicken.png' alt='' />
+						<BoxImg src='images/main/smile/toko-kita.svg' alt='' />
 					</GreyBoxInner>
 				</GreyBox1>
 				<GreyBox2>
 					<GreyBoxInner>
-						<BoxImg src='images/main/smile/Joliebean.png' alt='' />
+						<BoxImg src='images/main/smile/bbs.svg' alt='' />
 					</GreyBoxInner>
 				</GreyBox2>
 				<GreyBox3>
 					<GreyBoxInner>
-						<BoxImg src='images/main/smile/itacho.png' alt='' />
+						<BoxImg src='images/main/smile/pet-shop.png' alt='' />
 					</GreyBoxInner>
 				</GreyBox3>
 				<GreyBox4>
 					<GreyBoxInner>
-						<BoxImg src='images/main/smile/gongcha.png' alt='' />
+						<BoxImg src='images/main/smile/nex.svg' alt='' />
 					</GreyBoxInner>
 				</GreyBox4>
 				<GreyBox5>
 					<GreyBoxInner>
-						<BoxImg src='images/main/smile/simply.png' alt='' />
+						<BoxImg src='images/main/smile/nayla.svg' alt='' />
 					</GreyBoxInner>
 				</GreyBox5>
 
 				<GreyBox6>
 					<GreyBoxInner>
-						<BoxImg src='images/main/smile/chicken.png' alt='' />
+						<BoxImg src='images/main/smile/group-of-companies.svg' alt='' />
 					</GreyBoxInner>
 				</GreyBox6>
 				<GreyBox7>
 					<GreyBoxInner>
-						<BoxImg src='images/main/smile/Joliebean.png' alt='' />
+						<BoxImg src='images/main/smile/gong-cha.png' alt='' />
 					</GreyBoxInner>
 				</GreyBox7>
 				<GreyBox8>
 					<GreyBoxInner>
-						<BoxImg src='images/main/smile/itacho.png' alt='' />
+						<BoxImg src='images/main/smile/kho-pa-ka.png' alt='' />
 					</GreyBoxInner>
 				</GreyBox8>
 
 				<GreyBox9>
 					<GreyBoxInner>
-						<BoxImg src='images/main/smile/gongcha.png' alt='' />
+						<BoxImg src='images/main/smile/es-teh.svg' alt='' />
 					</GreyBoxInner>
 				</GreyBox9>
 				<GreyBox10>
 					<GreyBoxInner>
-						<BoxImg src='images/main/smile/simply.png' alt='' />
+						<BoxImg src='images/main/smile/burger-lobster.png' alt='' />
 					</GreyBoxInner>
 				</GreyBox10>
 
@@ -668,6 +668,15 @@ const MainBox = styled.div`
 
 const BoxImg = styled.img`
 	transform: rotate(-45deg);
+	@media (min-width: 320px) {
+		width: 35px;
+	}
+	@media (min-width: 768px) {
+		width: 55px;
+	}
+	@media (min-width: 1024px) {
+		width: 68px;
+	}
 `;
 
 const Dots = styled.img<{ top: string; left: string }>`
@@ -684,6 +693,7 @@ const BigGrey = styled.div<{ top: string; left: string; size: string; radius: st
 	top: ${({ top }) => `${top}px`};
 	border-radius: ${({ radius }) => `${radius}px`};
 	transform: rotate(-45deg);
+	z-index: -1;
 `;
 
 const RightTopGrey = styled(BigGrey)`

@@ -7,15 +7,17 @@ interface ISlide {
 	logo: string;
 	name: string;
 	text: string;
+	width: string;
+	height: string;
 }
 
-const SlideLeft: FC<ISlide> = ({ sliderText, logo, name, text }) => {
+const SlideLeft: FC<ISlide> = ({ sliderText, logo, name, text, width, height }) => {
 	return (
 		<Wrapper>
 			<SliderText>{sliderText}</SliderText>
 			<SliderBottom>
 				<Content>
-					<Image src={logo} width={68} height={64} alt='logo' />
+					<Image src={logo} width={width} height={height} alt='logo' />
 					<ContentText>
 						<Name>{name}</Name>
 						<Text>{text}</Text>
