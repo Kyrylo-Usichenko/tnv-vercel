@@ -19,13 +19,11 @@ const Get = () => {
 								src='images/features/get/left.png'
 								srcSet='images/features/get/left@2x.png 2x'
 								alt='app'
-								loading='lazy'
 							/>
 							<RightImg
 								src='images/features/get/right.png'
 								srcSet='images/features/get/right@2x.png 2x'
 								alt='app'
-								loading='lazy'
 							/>
 						</Second>
 					</First>
