@@ -252,7 +252,7 @@ const RedTitle = styled.p`
 	font-family: 'Inter';
 	font-weight: 500;
 	font-size: 16px;
-	line-height: 24зч;
+	line-height: 24px;
 	text-align: center;
 	color: #ffffff;
 	margin: 0 0 16px 0;
