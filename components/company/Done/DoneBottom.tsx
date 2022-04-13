@@ -250,9 +250,9 @@ const Content = styled.div`
 
 const RedTitle = styled.p`
 	font-family: 'Inter';
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 21px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 24зч;
 	text-align: center;
 	color: #ffffff;
 	margin: 0 0 16px 0;
