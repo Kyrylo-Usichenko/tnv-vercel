@@ -140,8 +140,7 @@ const TopWrapper = styled.div`
 	}
 
 	@media (min-width: 1920px) {
-		max-width: 1688px;
-		width: 100%;
+		margin-right: 234px;
 	}
 `;
 
