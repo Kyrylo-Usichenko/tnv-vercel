@@ -11,60 +11,30 @@ const Faq: FC = () => {
 			<StyledFaqDec2></StyledFaqDec2>
 			<FeaturesCon>
 				<FaqTitle>FAQ</FaqTitle>
-				<Panel name='Massa tincidunt dui ut ornare lectus sit.'>
-					Egestas erat imperdiet sed euismod nisi porta lorem mollis. Ac orci phasellus egestas tellus rutrum
-					tellus pellentesque eu tincidunt. Sagittis purus sit amet volutpat consequat. Sed sed risus pretium
-					quam vulputate dignissim suspendisse. Pellentesque massa placerat duis ultricies lacus. Varius vel
-					pharetra vel turpis nunc eget lorem dolor. Donec enim diam vulputate ut pharetra sit amet. In hac
-					habitasse platea dictumst vestibulum rhoncus. Est sit amet facilisis magna etiam tempor orci. Tortor
-					condimentum lacinia quis vel eros donec ac odio tempor. Eget magna fermentum iaculis eu. Elementum
-					facilisis leo vel fringilla est ullamcorper eget. In pellentesque massa placerat duis ultricies
-					lacus sed. Senectus et netus et malesuada fames ac turpis egestas integer. Felis eget velit aliquet
-					sagittis id. Aenean et tortor at risus viverra. Nibh tortor id aliquet lectus proin.
+				<Panel name='How to get started with Tinvio?'>
+					You can create an account on Tinvio (dashboard or mobile app) within a minute to start managing
+					chats, orders, and invoices. For payments, our Customer Success team will reach out for account
+					verification and onboarding. Once verified, you'll be good to go!
 				</Panel>
-				<Panel name='Ultrices eros in cursus turpis massa tincidunt dui ut ornare. In mollis nunc sed id.'>
-					Egestas erat imperdiet sed euismod nisi porta lorem mollis. Ac orci phasellus egestas tellus rutrum
-					tellus pellentesque eu tincidunt. Sagittis purus sit amet volutpat consequat. Sed sed risus pretium
-					quam vulputate dignissim suspendisse. Pellentesque massa placerat duis ultricies lacus. Varius vel
-					pharetra vel turpis nunc eget lorem dolor. Donec enim diam vulputate ut pharetra sit amet. In hac
-					habitasse platea dictumst vestibulum rhoncus. Est sit amet facilisis magna etiam tempor orci. Tortor
-					condimentum lacinia quis vel eros donec ac odio tempor. Eget magna fermentum iaculis eu. Elementum
-					facilisis leo vel fringilla est ullamcorper eget. In pellentesque massa placerat duis ultricies
-					lacus sed. Senectus et netus et malesuada fames ac turpis egestas integer. Felis eget velit aliquet
-					sagittis id. Aenean et tortor at risus viverra. Nibh tortor id aliquet lectus proin.
+				<Panel name='How does Tinvio work?'>
+					This dashboard is an easy all-in-one interface for you to manage chats, orders, invoices, and
+					payments with your merchants. Merchants just need to download the free Tinvio mobile app to exchange
+					messages, place orders, and make payments. It's zero friction for them!
 				</Panel>
-				<Panel name='Elementum pulvinar etiam non quam lacus.'>
-					Egestas erat imperdiet sed euismod nisi porta lorem mollis. Ac orci phasellus egestas tellus rutrum
-					tellus pellentesque eu tincidunt. Sagittis purus sit amet volutpat consequat. Sed sed risus pretium
-					quam vulputate dignissim suspendisse. Pellentesque massa placerat duis ultricies lacus. Varius vel
-					pharetra vel turpis nunc eget lorem dolor. Donec enim diam vulputate ut pharetra sit amet. In hac
-					habitasse platea dictumst vestibulum rhoncus. Est sit amet facilisis magna etiam tempor orci. Tortor
-					condimentum lacinia quis vel eros donec ac odio tempor. Eget magna fermentum iaculis eu. Elementum
-					facilisis leo vel fringilla est ullamcorper eget. In pellentesque massa placerat duis ultricies
-					lacus sed. Senectus et netus et malesuada fames ac turpis egestas integer. Felis eget velit aliquet
-					sagittis id. Aenean et tortor at risus viverra. Nibh tortor id aliquet lectus proin.
+				<Panel name='How to collect payments on Tinvio?'>
+					Once your account is verified, you'll be able to request and reconcile payments for all your orders
+					and invoices on Tinvio. Your merchants will receive notifications for each payment request in their
+					favorite channels (e.g. Tinvio app, WhatsApp), and they'll be able to complete payment in a fast and
+					flexible checkout experience. You'll receive real-time updates and reports for all your payments!
 				</Panel>
-				<Panel name='Erat imperdiet sed euismod nisi porta.'>
-					Egestas erat imperdiet sed euismod nisi porta lorem mollis. Ac orci phasellus egestas tellus rutrum
-					tellus pellentesque eu tincidunt. Sagittis purus sit amet volutpat consequat. Sed sed risus pretium
-					quam vulputate dignissim suspendisse. Pellentesque massa placerat duis ultricies lacus. Varius vel
-					pharetra vel turpis nunc eget lorem dolor. Donec enim diam vulputate ut pharetra sit amet. In hac
-					habitasse platea dictumst vestibulum rhoncus. Est sit amet facilisis magna etiam tempor orci. Tortor
-					condimentum lacinia quis vel eros donec ac odio tempor. Eget magna fermentum iaculis eu. Elementum
-					facilisis leo vel fringilla est ullamcorper eget. In pellentesque massa placerat duis ultricies
-					lacus sed. Senectus et netus et malesuada fames ac turpis egestas integer. Felis eget velit aliquet
-					sagittis id. Aenean et tortor at risus viverra. Nibh tortor id aliquet lectus proin.
+				<Panel name='What are the supported payment methods?'>
+					We’re always enabling new payment methods. Our Customer Success teams will advise on the available
+					methods in your market (including transaction fees for that method). In general, we support bank
+					transfers, credit cards, and B2B BNPL options!
 				</Panel>
-				<Panel name='Posuere lorem ipsum dolor sit amet consectetur adipiscing elit duis.'>
-					Egestas erat imperdiet sed euismod nisi porta lorem mollis. Ac orci phasellus egestas tellus rutrum
-					tellus pellentesque eu tincidunt. Sagittis purus sit amet volutpat consequat. Sed sed risus pretium
-					quam vulputate dignissim suspendisse. Pellentesque massa placerat duis ultricies lacus. Varius vel
-					pharetra vel turpis nunc eget lorem dolor. Donec enim diam vulputate ut pharetra sit amet. In hac
-					habitasse platea dictumst vestibulum rhoncus. Est sit amet facilisis magna etiam tempor orci. Tortor
-					condimentum lacinia quis vel eros donec ac odio tempor. Eget magna fermentum iaculis eu. Elementum
-					facilisis leo vel fringilla est ullamcorper eget. In pellentesque massa placerat duis ultricies
-					lacus sed. Senectus et netus et malesuada fames ac turpis egestas integer. Felis eget velit aliquet
-					sagittis id. Aenean et tortor at risus viverra. Nibh tortor id aliquet lectus proin.
+				<Panel name='I have more product questions! Who do I contact?'>
+					If you're already signed up, you can live chat with "Team Tinvio" in the dashboard or mobile app.
+					Otherwise, you can contact us at support@tinvio.com for more information!
 				</Panel>
 			</FeaturesCon>
 		</StyledFaq>
