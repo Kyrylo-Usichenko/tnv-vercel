@@ -259,6 +259,7 @@ const RedTitle = styled.p`
 `;
 
 const Phone = styled.img`
+	display: block;
 	margin-left: 25px;
 	height: 100%;
 `;
