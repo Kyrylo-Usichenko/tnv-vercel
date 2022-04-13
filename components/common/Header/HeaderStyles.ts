@@ -9,7 +9,6 @@ export const HeaderStyled = styled.header<{ isHeaderScrolled: boolean; isMenuOpe
 	width: 100%;
 	padding: ${({ isMenuOpend }) => (isMenuOpend ? '24px 0 16px 0' : '24px 0')};
 	z-index: 999;
-	color: ${({ isHeaderScrolled }) => (isHeaderScrolled ? '#FF474D' : '#212121')};
 	background-color: ${({ isHeaderScrolled, isMenuOpend }) =>
 		isHeaderScrolled && !isMenuOpend
 			? 'rgba(255, 255, 255, 0.9)'
@@ -132,6 +131,7 @@ export const LeftWrapper = styled.div`
 
 export const LanguageWrapper = styled.div<{ isMenuOpend: boolean }>`
 	margin-left: 24px;
+	margin-top: 4px;
 	display: ${({ isMenuOpend }) => (isMenuOpend ? 'flex' : 'none')};
 	align-items: center;
 	cursor: pointer;
