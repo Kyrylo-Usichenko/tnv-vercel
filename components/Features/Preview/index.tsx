@@ -1,17 +1,74 @@
-import React, { FC } from 'react';
+import React, { FC, RefObject, useRef } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
+// import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 type PreviewProps = {
 	openModal: () => void;
 };
 
+// let state: string;
+
 const Preview: FC<PreviewProps> = ({ openModal }) => {
+	const heading = useRef() as RefObject<HTMLHeadingElement>;
+	const pic1 = useRef() as RefObject<HTMLPictureElement>;
+	const pic2 = useRef() as RefObject<HTMLPictureElement>;
+	// const entry = useIntersectionObserver(heading, {});
+
+	// const title = heading?.current;
+	// const titleOffsetTop = title?.offsetTop;
+	// const titleHeight = title?.getBoundingClientRect().height;
+	// const endOfTitle = titleOffsetTop! + titleHeight!;
+
+	// const dec1 = pic1?.current;
+	// const dec2 = pic2?.current;
+
+	// React.useEffect(() => {
+	// 	const size = 1;
+	// 	const opacity = 1;
+	// 	const startPos = window.pageYOffset;
+
+	// 	if (entry?.isIntersecting) {
+	// 		state = 'start';
+	// 	}
+
+	// 	if (!entry?.isIntersecting) {
+	// 		state = 'end';
+	// 	}
+
+	// 	if (entry) {
+	// 		window.addEventListener('scroll', () => {
+	// 			const pageY = window.pageYOffset;
+
+	// 			if (pageY > 0 && pageY < endOfTitle) {
+	// 				size += 0.05;
+	// 				opacity -= 0.02;
+
+	// 				dec1!.style.transform = `scale(${size})`;
+	// 				dec2!.style.transform = `scale(${size})`;
+	// 				dec1!.style.opacity = `${opacity}`;
+	// 				dec2!.style.opacity = `${opacity}`;
+	// 			}
+
+	// 		});
+	// 	}
+	// }, [entry]);
+
 	return (
 		<StyledPreview>
 			<FeaturesCon>
 				<PreviewInfo>
-					<PreviewTitle>One dashboard, all your supply chain transactions</PreviewTitle>
+					<PreviewTitle ref={heading}>
+						<PreviewDec1 ref={pic1}>
+							<source srcSet='images/features/preview/dec1-1920.svg' media='(min-width: 1024px)' />
+							<img src='images/features/preview/dec1-768.svg' alt='decoration' />
+						</PreviewDec1>
+						One dashboard, all your supply chain transactions
+						<PreviewDec2 ref={pic2}>
+							<source srcSet='images/features/preview/dec2-1920.svg' media='(min-width: 1024px)' />
+							<img src='images/features/preview/dec2-768.svg' alt='decoration' />
+						</PreviewDec2>
+					</PreviewTitle>
 					<PreviewText>
 						From orders to real-time cash in your bank. Run your business like a rockstar.
 					</PreviewText>
@@ -106,21 +163,6 @@ const PreviewTitle = styled.h2`
 	margin: 0 0 16px 0;
 	position: relative;
 
-	&::before {
-		content: url('/images/features/preview/dec1-768.svg');
-		position: absolute;
-		top: -22px;
-		left: -8px;
-	}
-
-	&::after {
-		content: url('/images/features/preview/dec2-768.svg');
-		position: absolute;
-		right: -43px;
-		bottom: -15px;
-		z-index: -1;
-	}
-
 	@media (min-width: 768px) {
 		font-size: 36px;
 		line-height: 44px;
@@ -131,21 +173,6 @@ const PreviewTitle = styled.h2`
 		font-size: 44px;
 		line-height: 52px;
 		max-width: 535px;
-
-		&::before {
-			content: url('/images/features/preview/dec1-1920.svg');
-			position: absolute;
-			top: -30px;
-			left: -7px;
-		}
-
-		&::after {
-			content: url('/images/features/preview/dec2-1920.svg');
-			position: absolute;
-			right: -60px;
-			bottom: -25px;
-			z-index: 1;
-		}
 	}
 
 	@media (min-width: 1280px) {
@@ -153,17 +180,42 @@ const PreviewTitle = styled.h2`
 		line-height: 59px;
 		margin: 0 0 16px 0;
 		max-width: 600px;
-
-		&::after {
-			right: -60px;
-			bottom: -25px;
-		}
 	}
 
 	@media (min-width: 1920px) {
 		font-size: 56px;
 		line-height: 69px;
 		max-width: 685px;
+	}
+`;
+
+const PreviewDec1 = styled.picture`
+	position: absolute;
+	top: -22px;
+	left: -8px;
+
+	@media (min-width: 1024px) {
+		top: -30px;
+		left: -7px;
+	}
+`;
+
+const PreviewDec2 = styled.picture`
+	position: absolute;
+	right: -43px;
+	bottom: -15px;
+	z-index: -1;
+
+	@media (min-width: 1024px) {
+		right: -60px;
+		bottom: -25px;
+	}
+
+	@media (min-width: 1280px) {
+		&::after {
+			right: -60px;
+			bottom: -25px;
+		}
 	}
 `;
 
