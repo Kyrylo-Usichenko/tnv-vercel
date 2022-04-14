@@ -6,8 +6,10 @@ import styled, { keyframes, css } from 'styled-components';
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 import { Container } from '../../common/Container/Container';
+// import { t } from 'i18next';
 
-const TYPE_WRITE_SPEED = 1.5;
+const TYPE_WRITE_SPEED = 0.35;
+const TYPE_WRITE_DELAY = 700;
 const TYPE_WRITER_CHARACTERS = 10; // max words width
 
 const payLeft = '/images/main/moreMoney/pay-left.png';
@@ -22,19 +24,22 @@ const tabsImages = [
 		name: 'Payments',
 		leftImg: payLeft,
 		rightImg: payRight,
-		typedText: 'More money',
+		typedText: ['More money'],
+		isActive: true,
 	},
 	{
 		name: 'Orders',
 		leftImg: orderLeft,
 		rightImg: orderRight,
-		typedText: 'More money',
+		typedText: ['More speedy', 'More money'],
+		isActive: false,
 	},
 	{
 		name: 'Chats',
 		leftImg: chatLeft,
 		rightImg: chatRight,
-		typedText: 'More money',
+		typedText: ['More speedy', 'More buddy'],
+		isActive: false,
 	},
 ];
 
@@ -42,11 +47,15 @@ interface IMoreMoneyItem {
 	name: string;
 	leftImg: string;
 	rightImg: string;
-	typedText: string;
+	typedText: string[];
+	isActive: boolean;
 }
 
 const MoreMoney: FC = () => {
+	const [tabs, setTabs] = useState(tabsImages);
 	const [tab, setTab] = useState(tabsImages[0]);
+	const [text, setText] = useState(tabsImages[0].typedText[0]);
+	const [isBackwards, setIsBackwards] = useState(false);
 	const [isClicked, setIsClicked] = useState(false);
 
 	const typeRef = useRef() as RefObject<HTMLSpanElement>;
@@ -54,11 +63,49 @@ const MoreMoney: FC = () => {
 	const isVisible = !!entry?.isIntersecting;
 
 	useEffect(() => {
-		if (isVisible) setIsClicked(true);
-	}, [tab.name, isVisible]);
+		if (isVisible && isClicked) {
+			setIsBackwards(true);
+
+			const interval = setTimeout(() => {
+				setIsBackwards(false);
+				setIsClicked(false);
+				setText(tab.typedText[0]);
+			}, TYPE_WRITE_SPEED * 1000);
+
+			if (tab.typedText.length > 1) {
+				const intervalNext = setTimeout(() => {
+					setIsBackwards(true);
+
+					const intervalSecond = setTimeout(() => {
+						setIsBackwards(false);
+						setIsClicked(false);
+						setText(tab.typedText[1]);
+					}, TYPE_WRITE_SPEED * 1000);
+					return () => clearTimeout(intervalSecond);
+				}, TYPE_WRITE_SPEED * 1000 * 2 + TYPE_WRITE_DELAY);
+				return () => clearTimeout(intervalNext);
+			}
+			return () => clearTimeout(interval);
+		}
+
+		if (!isVisible) setIsBackwards(false);
+	}, [tab.name]);
 
 	const onBtnClick = (tabItem: IMoreMoneyItem) => {
-		setIsClicked(false);
+		if (tabItem.isActive) return;
+
+		const updatedTabs = tabs.map((tabUpdated) => {
+			if (tabUpdated.name === tabItem.name) {
+				tabUpdated.isActive = true;
+				return tabUpdated;
+			}
+			tabUpdated.isActive = false;
+			return tabUpdated;
+		});
+
+		setTabs(updatedTabs);
+		setIsBackwards(true);
+		setIsClicked(true);
 		setTab(tabItem);
 	};
 
@@ -68,18 +115,20 @@ const MoreMoney: FC = () => {
 				<Inner>
 					<Title>
 						Smarter supply chain transactions.{' '}
-						<TitleSpan ref={typeRef} isVisible={isClicked}>
-							{tab.typedText}
-						</TitleSpan>
+						<TitleWrap>
+							<TitleSpan ref={typeRef} isVisible={isVisible} isBackwards={isBackwards}>
+								{text}
+							</TitleSpan>
+						</TitleWrap>
 					</Title>
 					<ButtonsWrapper>
-						<Button width='134' onClick={() => onBtnClick(tabsImages[0])} isActive={tab === tabsImages[0]}>
+						<Button width='134' onClick={() => onBtnClick(tabs[0])} isActive={tab === tabs[0]}>
 							Payments
 						</Button>
-						<Button width='114' onClick={() => onBtnClick(tabsImages[1])} isActive={tab === tabsImages[1]}>
+						<Button width='114' onClick={() => onBtnClick(tabs[1])} isActive={tab === tabs[1]}>
 							Orders
 						</Button>
-						<Button width='107' onClick={() => onBtnClick(tabsImages[2])} isActive={tab === tabsImages[2]}>
+						<Button width='107' onClick={() => onBtnClick(tabs[2])} isActive={tab === tabs[2]}>
 							Chats
 						</Button>
 					</ButtonsWrapper>
@@ -301,8 +350,19 @@ const Title = styled.h3`
 	}
 `;
 const typewriter = keyframes`
+	from {
+		left: 0;
+	}
 	to {
 		left: 100%;
+	}
+`;
+const typewriterBack = keyframes`
+	from {
+		left: 100%;
+	}
+	to {
+		left: 0%;
 	}
 `;
 const blink = keyframes`
@@ -311,11 +371,20 @@ const blink = keyframes`
 	}
 `;
 
-const TitleSpan = styled.span<{ isVisible: boolean }>`
+const TitleWrap = styled.div`
+	display: inline-block;
+	min-width: 192px;
+	text-align: left;
+	@media (max-width: 425px) {
+		min-width: 170px;
+	}
+`;
+const TitleSpan = styled.span<{ isVisible: boolean; isBackwards: boolean }>`
 	color: #ff474d;
 	margin: 0;
 	padding: 0;
 	position: relative;
+	white-space: nowrap;
 	&:after {
 		background: #212121;
 		height: 40px;
@@ -327,19 +396,22 @@ const TitleSpan = styled.span<{ isVisible: boolean }>`
 		@media (max-width: 1280px) {
 			height: 30px;
 		}
+		@media (max-width: 425px) {
+			height: 27px;
+		}
 	}
 
 	position: relative;
 	width: max-content;
 
-	${({ isVisible }) =>
+	${({ isVisible, isBackwards }) =>
 		isVisible &&
 		css`
 			&::before,
 			&::after {
 				content: '';
 				position: absolute;
-				top: 10px;
+				top: 9px;
 				right: 0;
 				bottom: 0;
 				left: 0;
@@ -350,13 +422,15 @@ const TitleSpan = styled.span<{ isVisible: boolean }>`
 
 			&::before {
 				background: #ffffff;
-				animation: ${typewriter} ${TYPE_WRITE_SPEED}s steps(${TYPE_WRITER_CHARACTERS}) 1s forwards;
+				animation: ${isBackwards ? typewriterBack : typewriter} ${TYPE_WRITE_SPEED}s
+					steps(${TYPE_WRITER_CHARACTERS}) 0s ${isBackwards ? 'backwards' : 'forwards'};
 			}
 
 			&::after {
 				width: 2px;
 				background: #212121;
-				animation: ${typewriter} ${TYPE_WRITE_SPEED}s steps(${TYPE_WRITER_CHARACTERS}) 1s forwards,
+				animation: ${isBackwards ? typewriterBack : typewriter} ${TYPE_WRITE_SPEED}s
+						steps(${TYPE_WRITER_CHARACTERS}) 0s ${isBackwards ? 'backwards' : 'forwards'},
 					${blink} 750ms steps(${TYPE_WRITER_CHARACTERS}) infinite;
 				margin: 0 0 0 2px;
 			}
@@ -376,7 +450,7 @@ const ButtonsWrapper = styled.div`
 `;
 const Inner = styled.div`
 	position: relative;
-	max-width: 528px;
+	max-width: 540px;
 	width: 100%;
 	z-index: 1;
 	@media (max-width: 1280px) {
