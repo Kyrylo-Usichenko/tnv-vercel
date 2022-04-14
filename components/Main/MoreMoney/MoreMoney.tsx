@@ -6,7 +6,6 @@ import styled, { keyframes, css } from 'styled-components';
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 import { Container } from '../../common/Container/Container';
-// import { t } from 'i18next';
 
 const TYPE_WRITE_SPEED = 0.35;
 const TYPE_WRITE_DELAY = 700;
