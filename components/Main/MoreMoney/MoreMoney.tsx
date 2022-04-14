@@ -212,7 +212,7 @@ const PurpleSquare = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	left: 57%;
+	left: 62%;
 	top: 55px;
 
 	@media (max-width: 1023px) {
@@ -221,16 +221,10 @@ const PurpleSquare = styled.div`
 		left: 50%;
 		transform: rotate(-45deg) translateX(-71%);
 	}
-	@media (max-width: 768px) {
-		// left: 105px;
-	}
+
 	@media (max-width: 425px) {
-		// left: -10px;
 		width: 451px;
 		height: 451px;
-	}
-	@media (max-width: 375px) {
-		// left: -36px;
 	}
 `;
 
