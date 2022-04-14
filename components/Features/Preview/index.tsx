@@ -1,58 +1,81 @@
 import React, { FC, RefObject, useRef } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
-// import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 type PreviewProps = {
 	openModal: () => void;
 };
 
-// let state: string;
-
 const Preview: FC<PreviewProps> = ({ openModal }) => {
 	const heading = useRef() as RefObject<HTMLHeadingElement>;
 	const pic1 = useRef() as RefObject<HTMLPictureElement>;
 	const pic2 = useRef() as RefObject<HTMLPictureElement>;
-	// const entry = useIntersectionObserver(heading, {});
+	const entry = useIntersectionObserver(heading, {});
 
-	// const title = heading?.current;
-	// const titleOffsetTop = title?.offsetTop;
-	// const titleHeight = title?.getBoundingClientRect().height;
-	// const endOfTitle = titleOffsetTop! + titleHeight!;
+	const title = heading?.current;
+	const titleOffsetTop = title?.offsetTop;
+	const titleHeight = title?.getBoundingClientRect().height;
+	const endOfTitle = titleOffsetTop! + titleHeight!;
 
-	// const dec1 = pic1?.current;
-	// const dec2 = pic2?.current;
+	const dec1 = pic1?.current;
+	const dec2 = pic2?.current;
 
-	// React.useEffect(() => {
-	// 	const size = 1;
-	// 	const opacity = 1;
-	// 	const startPos = window.pageYOffset;
+	const pos = useRef<number>();
+	const size = useRef<number>(1);
+	const opacity = useRef<number>(1);
 
-	// 	if (entry?.isIntersecting) {
-	// 		state = 'start';
-	// 	}
+	React.useEffect(() => {
+		pos.current = window.pageYOffset;
 
-	// 	if (!entry?.isIntersecting) {
-	// 		state = 'end';
-	// 	}
+		if (entry) {
+			window.addEventListener('scroll', () => {
+				if (window.pageYOffset === 0) {
+					pos.current = 0;
+					size.current = 1;
+					opacity.current = 1;
+				}
 
-	// 	if (entry) {
-	// 		window.addEventListener('scroll', () => {
-	// 			const pageY = window.pageYOffset;
+				if (pos.current === 0) {
+					if (size.current >= 2) {
+						size.current = 2;
+					} else {
+						size.current += 0.024;
+					}
 
-	// 			if (pageY > 0 && pageY < endOfTitle) {
-	// 				size += 0.05;
-	// 				opacity -= 0.02;
+					if (opacity.current <= 0) {
+						opacity.current = 0;
+					} else {
+						opacity.current -= 0.02;
+					}
 
-	// 				dec1!.style.transform = `scale(${size})`;
-	// 				dec2!.style.transform = `scale(${size})`;
-	// 				dec1!.style.opacity = `${opacity}`;
-	// 				dec2!.style.opacity = `${opacity}`;
-	// 			}
+					dec1!.style.transform = `scale(${size.current})`;
+					dec2!.style.transform = `scale(${size.current})`;
+					dec1!.style.opacity = `${opacity.current}`;
+					dec2!.style.opacity = `${opacity.current}`;
+				}
 
-	// 		});
-	// 	}
-	// }, [entry]);
+				if (pos.current! < endOfTitle && pos.current! > 0) {
+					if (size.current <= 1) {
+						size.current = 1;
+					} else {
+						size.current -= 0.024;
+					}
+
+					if (opacity.current <= 1) {
+						opacity.current = 1;
+					} else {
+						opacity.current += 0.03;
+					}
+
+					dec1!.style.transform = `scale(${size.current})`;
+					dec2!.style.transform = `scale(${size.current})`;
+					dec1!.style.opacity = `${opacity.current}`;
+					dec2!.style.opacity = `${opacity.current}`;
+				}
+			});
+		}
+	}, [entry]);
 
 	return (
 		<StyledPreview>
