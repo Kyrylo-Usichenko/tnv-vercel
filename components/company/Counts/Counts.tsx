@@ -1,7 +1,18 @@
-import React, { FC } from 'react';
-import styled from 'styled-components';
+import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
+import styled, { css } from 'styled-components';
+
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 const Counts: FC = () => {
+	const [isShown, setIsShown] = useState(false);
+	const ref = useRef() as RefObject<HTMLParagraphElement>;
+	const entry = useIntersectionObserver(ref, {});
+	const isVisible = !!entry?.isIntersecting;
+
+	useEffect(() => {
+		if (isVisible && !isShown) setIsShown(true);
+	}, [isVisible]);
+
 	return (
 		<Wrapper className='counts'>
 			<Block1 className='block1'>
@@ -9,8 +20,9 @@ const Counts: FC = () => {
 				<Block1SquareRight />
 				<Block1SquareBottom />
 				<Content>
-					<Count>
-						250<span className='accent'>+</span>
+					<Count ref={ref}>
+						<CountNumber isAnimated={isVisible} isShown={isShown} num={250} />
+						<span className='accent'>+</span>
 					</Count>
 					<Title>Team Members</Title>
 				</Content>
@@ -21,7 +33,8 @@ const Counts: FC = () => {
 				<Block2SquareBottom />
 				<Content>
 					<Count>
-						10<span className='accent'>+</span>
+						<CountNumber isAnimated={isVisible} isShown={isShown} num={10} />
+						<span className='accent'>+</span>
 					</Count>
 					<Title>Nationalities</Title>
 				</Content>
@@ -31,7 +44,8 @@ const Counts: FC = () => {
 				<Block3Square />
 				<Content>
 					<Count>
-						5000<span className='accent'>+</span>
+						<CountNumber isAnimated={isVisible} isShown={isShown} num={5000} />
+						<span className='accent'>+</span>
 					</Count>
 					<Title>Businesses</Title>
 				</Content>
@@ -41,7 +55,8 @@ const Counts: FC = () => {
 				<Block4Dots />
 				<Content>
 					<Count>
-						$500<span className='accent'>M</span>
+						<CountNumber isAnimated={isVisible} isShown={isShown} num={500} />
+						<span className='accent'>M</span>
 					</Count>
 					<Title>Transactions</Title>
 				</Content>
@@ -212,6 +227,25 @@ const Count = styled.p`
 		font-size: 48px;
 		line-height: 59px;
 	}
+`;
+const CountNumber = styled.span<{ isAnimated: boolean; num: number; isShown?: boolean }>`
+	@property --num${({ num }) => num} {
+		syntax: '<integer>';
+		initial-value: ${({ isShown, num }) => (isShown ? num : 0)};
+		inherits: false;
+	}
+
+	${({ isAnimated, num }) =>
+		isAnimated &&
+		css`
+			transition: ${`--num${num}`} 2.5s;
+			counter-set: num var(${`--num${num}`});
+
+			&:after {
+				content: counter(num);
+			}
+			${`--num${num}`}: ${num};
+		`}
 `;
 
 const Title = styled.p`
