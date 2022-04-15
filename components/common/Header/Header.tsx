@@ -7,7 +7,6 @@ import Logo from '../Logos/Logo';
 import LogoText from '../Logos/LogoText';
 import {
 	ArrowWrapper,
-	Burger,
 	ButtonWrapper,
 	CurrentLanguage,
 	FlagWrapper,
@@ -29,6 +28,10 @@ import {
 	MobileButton,
 	Store,
 	Social,
+	Burger,
+	BurgerSpan1,
+	BurgerSpan2,
+	BurgerSpan3,
 } from './HeaderStyles';
 import ArrowDown from '../Arrow/ArrowDown';
 import useOnClickOutside from '../../../hooks/useOnClickOutside';
@@ -146,11 +149,11 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 							</Link>
 						</ButtonWrapper>
 
-						<Burger
-							src={`${isMenuOpend ? 'images/header/close.svg' : 'images/header/burger.svg'}`}
-							alt='open/close menu'
-							onClick={menuToggle}
-						/>
+						<Burger onClick={menuToggle}>
+							<BurgerSpan1 isMenuOpend={isMenuOpend}></BurgerSpan1>
+							<BurgerSpan2 isMenuOpend={isMenuOpend}></BurgerSpan2>
+							<BurgerSpan3 isMenuOpend={isMenuOpend}></BurgerSpan3>
+						</Burger>
 					</HeaderContainer>
 
 					<MobileNav isMenuOpend={isMenuOpend}>
