@@ -5,7 +5,7 @@ import { Container } from '../../common/Container/Container';
 const HowItWorks: FC = () => {
 	return (
 		<Wrapper>
-			<Container>
+			<ContainerHow>
 				<Inner>
 					<Null>
 						<div>
@@ -48,13 +48,13 @@ const HowItWorks: FC = () => {
 						<DotsRight />
 					</Info>
 				</Inner>
-			</Container>
+			</ContainerHow>
 		</Wrapper>
 	);
 };
 
 const Wrapper = styled.section`
-	height: 662px;
+	height: 685px;
 	margin: 159px 0 0 58px;
 	background: #f7f7f7;
 	z-index: 1;
@@ -78,6 +78,9 @@ const Wrapper = styled.section`
 	@media (max-width: 375px) {
 		margin: 395px 0 0 0;
 	}
+`;
+const ContainerHow = styled(Container)`
+	top: 7%;
 `;
 const Inner = styled.div`
 	display: flex;
