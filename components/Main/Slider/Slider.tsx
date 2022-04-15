@@ -134,7 +134,7 @@ const Wrapper = styled.div`
 		max-width: calc(100vw - 80px);
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 950px) {
 		flex-direction: column;
 		max-width: 490px;
 		align-items: center;
@@ -156,7 +156,7 @@ const Wrapper = styled.div`
 		display: inline-flex;
 		width: 17px;
 		height: 17px;
-		margin: 0 8px;
+		margin: 0 8px !important;
 		background: none;
 		border-radius: none;
 		& span {
@@ -189,7 +189,7 @@ const LeftSliderWrap = styled.div`
 		flex: 0 1 calc(46% - 76px);
 		width: calc(46% - 76px);
 	}
-	@media (max-width: 768px) {
+	@media (max-width: 950px) {
 		flex: 0 0 100%;
 		width: 100%;
 		order: 2;
@@ -253,7 +253,7 @@ const RightSliderWrap = styled.div`
 		width: 39%;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 950px) {
 		flex: 0 0 100%;
 		width: 100%;
 		order: 1;
