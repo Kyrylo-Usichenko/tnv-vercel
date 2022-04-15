@@ -1,8 +1,100 @@
-import React, { FC } from 'react';
+import React, { ChangeEvent, FC, useEffect, useState } from 'react';
 import styled from 'styled-components';
+import Circle from '../../common/Circle/Circle';
 import { Container } from '../../common/Container/Container';
 
 const Smile: FC = () => {
+	const [loading, setLoading] = useState<'idle' | 'loading' | 'error' | 'success'>('idle');
+
+	const initialValues = {
+		name: '',
+		business: '',
+		phone: '',
+	};
+
+	const [form, setForm] = useState(initialValues);
+
+	const [nameError, setNameError] = useState(true);
+	const [businessError, setBusinessError] = useState(true);
+	const [phoneError, setPhoneError] = useState(true);
+
+	const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+		const { name, value } = event.target;
+
+		setForm((prevState) => ({
+			...prevState,
+			[name]: value,
+		}));
+
+		setLoading('idle');
+	};
+
+	const addSpaceToPhone = (event: any) => {
+		if ((form.phone.length === 12 || event.code === 'Space') && event.code !== 'Backspace') event.preventDefault();
+
+		if ((form.phone.length === 2 || form.phone.length === 7) && event.code !== 'Backspace') {
+			setForm((prevState) => ({
+				...prevState,
+				phone: prevState.phone + ' ',
+			}));
+		}
+	};
+
+	const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+
+		setLoading('loading');
+
+		if (!nameError && !businessError && !phoneError) {
+			console.log('Send data to server');
+		}
+
+		setTimeout(() => {
+			if (nameError || businessError || phoneError) {
+				setLoading('error');
+			} else {
+				setLoading('success');
+				setForm(initialValues);
+			}
+		}, 2000);
+	};
+
+	const validateForm = () => {
+		const data = Object.entries(form);
+
+		for (let i = 0; i < data.length; i++) {
+			switch (data[i][0]) {
+				case 'name':
+					if (data[i][1].length < 1) {
+						setNameError(true);
+					} else {
+						setNameError(false);
+					}
+					break;
+				case 'business':
+					if (data[i][1].length < 1) {
+						setBusinessError(true);
+					} else {
+						setBusinessError(false);
+					}
+					break;
+				case 'phone':
+					const string = data[i][1];
+					const stringTest = /\d{2}\s\d{4}\s\d{4}/.test(string);
+					if (data[i][1].length < 12 || !stringTest) {
+						setPhoneError(true);
+					} else {
+						setPhoneError(false);
+					}
+					break;
+			}
+		}
+	};
+
+	useEffect(() => {
+		validateForm();
+	}, [form]);
+
 	return (
 		<Wrapper>
 			<WrapperRotated>
@@ -15,17 +107,60 @@ const Smile: FC = () => {
 							</TitleWrapper>
 
 							<FormWrapper>
-								<Form action=''>
+								<Form onSubmit={handleFormSubmit}>
 									<FormTitle>
 										Hi, we’re <FormTitleSpan>Tinvio!</FormTitleSpan> And you?
 									</FormTitle>
 									<Label>Name</Label>
-									<Input required placeholder='John Appleseed' type='text' />
+									<Input
+										placeholder='John Appleseed'
+										type='text'
+										value={form.name}
+										name='name'
+										onChange={handleInputChange}
+										error={loading === 'error' && nameError}
+									/>
+									{loading === 'error' && nameError ? (
+										<ModalInputError>Invalid Name</ModalInputError>
+									) : null}
 									<Label>Business Name</Label>
-									<Input required placeholder='Burgers & Boba (Singapore)' type='text' />
+									<Input
+										placeholder='Burgers & Boba (Singapore)'
+										type='text'
+										value={form.business}
+										name='business'
+										onChange={handleInputChange}
+										error={loading === 'error' && businessError}
+									/>
+									{loading === 'error' && businessError ? (
+										<ModalInputError>Invalid Business Name</ModalInputError>
+									) : null}
 									<Label>Phone</Label>
-									<Input required placeholder='65 9123 4567' type='text' />
-									<Button type='submit' />
+									<Input
+										placeholder='65 9123 4567'
+										type='tel'
+										value={form.phone}
+										name='phone'
+										onChange={handleInputChange}
+										onKeyDown={addSpaceToPhone}
+										error={loading === 'error' && phoneError}
+									/>
+									{loading === 'error' && phoneError ? (
+										<ModalInputError>Invalid phone number</ModalInputError>
+									) : null}
+									{loading === 'loading' ? (
+										<Circle />
+									) : loading === 'error' ? (
+										<Indicate>
+											<img src='images/features/modal/error.svg' alt='error' />
+										</Indicate>
+									) : loading === 'success' ? (
+										<Indicate>
+											<img src='images/features/modal/success.svg' alt='success' />
+										</Indicate>
+									) : (
+										<Button type='submit' />
+									)}
 									<Spam>
 										No spam, promise
 										<Img src='images/main/formFilling/hands.svg' alt='' />
@@ -208,14 +343,14 @@ const Label = styled.p`
 	padding: 0;
 `;
 
-const Input = styled.input`
+const Input = styled.input<{ error: boolean }>`
 	background: #f3f4f5;
 	border-radius: 8px;
 	padding: 14px 16px 15px;
 	width: 342px;
 	height: 46px;
 	margin: 0 0 16px 0;
-	border: 1px solid #f3f4f5;
+	border: ${({ error }) => (error ? '1px solid #FA656A' : '1px solid #f3f4f5')};
 	outline: none;
 	font-family: 'Inter';
 	font-style: normal;
@@ -284,6 +419,25 @@ const Dots = styled.img`
 		right: 129px;
 		bottom: 429px;
 	}
+`;
+
+const Indicate = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #ff474d;
+	height: 56px;
+	width: 56px;
+	border-radius: 50%;
+	margin: 0 auto 12px auto;
+`;
+
+const ModalInputError = styled.p`
+	font-size: 12px;
+	line-height: 15px;
+	text-align: right;
+	color: #ff474d;
+	margin: -13px 0 0 0;
 `;
 
 export default Smile;
