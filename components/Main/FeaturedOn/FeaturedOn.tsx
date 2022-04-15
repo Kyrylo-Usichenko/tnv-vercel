@@ -1,8 +1,36 @@
-import React, { FC } from 'react';
+import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 import { Container } from '../../common/Container/Container';
 
+const TOP_OFFSET = 30;
+
 const MoreMoney: FC = () => {
+	const [offset, setOffset] = useState(TOP_OFFSET);
+	const typeRef = useRef() as RefObject<HTMLDivElement>;
+	const entry = useIntersectionObserver(typeRef, {});
+	const isVisible = !!entry?.isIntersecting;
+
+	useEffect(() => {
+		const updateOffset = () => {
+			const screenHeight = window.innerHeight;
+
+			if (isVisible) {
+				const pos = typeRef.current!.getBoundingClientRect().top;
+				const offsetPos = (pos / screenHeight) * 100;
+				setOffset(offsetPos - TOP_OFFSET >= 0 ? offsetPos : TOP_OFFSET);
+			}
+		};
+
+		const onScroll = () => {
+			window.requestAnimationFrame(updateOffset);
+		};
+
+		window.addEventListener('scroll', onScroll);
+
+		return () => window.removeEventListener('scroll', onScroll);
+	}, [isVisible]);
+
 	return (
 		<Styled>
 			<Stars src='images/main/featuredOn/stars.svg' alt='' />
@@ -13,9 +41,9 @@ const MoreMoney: FC = () => {
 				<Dots src='images/main/featuredOn/dots.svg' alt='' />
 
 				<Container>
-					<Inner>
-						<Title>Featured On</Title>
-						<Companies>
+					<Inner ref={typeRef}>
+						<Title offset={offset - TOP_OFFSET}>Featured On</Title>
+						<Companies offset={offset - TOP_OFFSET}>
 							<Company src='images/main/featuredOn/techCrunch.svg' alt='' />
 							<Company src='images/main/featuredOn/techInAsia.svg' alt='' />
 							<Company src='images/main/featuredOn/pymnts.svg' alt='' />
@@ -65,7 +93,7 @@ const Inner = styled.div`
 	align-items: center;
 `;
 
-const Title = styled.h4`
+const Title = styled.h4<{ offset: number }>`
 	font-family: 'Gilroy';
 	font-style: normal;
 	font-weight: 600;
@@ -74,9 +102,13 @@ const Title = styled.h4`
 	color: #212121;
 	margin: 0 0 32px 0;
 	padding: 48px 0 16px 0;
-	width: 666px;
+	// width: 666px;
 	border-bottom: 1px solid #d2d2d2;
 	text-align: center;
+	position: relative;
+	right: ${({ offset }) => offset}vw;
+	scroll-behavior: smooth;
+
 	@media (max-width: 768px) {
 		max-width: 336px;
 	}
@@ -87,12 +119,14 @@ const Title = styled.h4`
 	}
 `;
 
-const Companies = styled.div`
+const Companies = styled.div<{ offset: number }>`
 	display: flex;
 	justify-content: space-between;
 	max-width: 1132px;
 	width: 100%;
 	flex-wrap: wrap;
+	position: relative;
+	left: ${({ offset }) => offset}vw;
 	@media (max-width: 950px) {
 		max-width: 600px;
 	}
