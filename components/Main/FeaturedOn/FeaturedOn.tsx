@@ -39,6 +39,7 @@ const MoreMoney: FC = () => {
 				<GreySquare />
 				<GreySquareRight top='-279' right='88' />
 				<Dots src='images/main/featuredOn/dots.svg' alt='' />
+				<DivideLine />
 
 				<Container>
 					<Inner ref={typeRef}>
@@ -69,6 +70,9 @@ const Wrapper = styled.div`
 	}
 	@media (max-width: 1024px) {
 		margin-right: 0;
+		border-top-left-radius: 0px;
+		border-bottom-left-radius: 0px;
+
 	}
 	@media (max-width: 950px) {
 		padding-bottom: 0;
@@ -102,13 +106,17 @@ const Title = styled.h4<{ offset: number }>`
 	color: #212121;
 	margin: 0 0 32px 0;
 	padding: 48px 0 16px 0;
-	// width: 666px;
-	border-bottom: 1px solid #d2d2d2;
+	// width: 660px;
+	// border-bottom: 1px solid #d2d2d2;
 	text-align: center;
 	position: relative;
 	right: ${({ offset }) => offset}vw;
 	scroll-behavior: smooth;
 
+	@media (max-width: 1024px) {
+		font-size: 32px;
+		line-height: 38px;
+	}
 	@media (max-width: 768px) {
 		max-width: 336px;
 	}
@@ -122,11 +130,22 @@ const Title = styled.h4<{ offset: number }>`
 const Companies = styled.div<{ offset: number }>`
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	max-width: 1132px;
 	width: 100%;
 	flex-wrap: wrap;
 	position: relative;
 	left: ${({ offset }) => offset}vw;
+
+	@media (max-width: 1024px) {
+		height: 22px;
+		& img {
+			max-height: 100%;
+		}
+		& img:nth-child(2) {
+			min-height: 40px;
+		}
+	}
 	@media (max-width: 950px) {
 		max-width: 600px;
 	}
@@ -183,6 +202,19 @@ export const Stars = styled.img`
 	@media (max-width: 950px) {
 		display: none;
 	}
+`;
+const DivideLine = styled.div`
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 665px;
+	height: 1px;
+	transform: translateX(-50%);
+	background-color: #d2d2d2;
+	// z-index: -1;
+	// @media (max-width: 950px) {
+	// 	display: none;
+	// }
 `;
 
 export default MoreMoney;
