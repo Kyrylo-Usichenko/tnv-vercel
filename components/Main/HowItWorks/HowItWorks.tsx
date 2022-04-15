@@ -326,7 +326,7 @@ const CardMiddleIcon = styled.div`
 	height: 93px;
 	left: -19px;
 	bottom: -50px;
-	background: url('images/main/howItWorks/iconSecondCard.png');
+	background: url('images/main/howItWorks/iconSecondCard.svg');
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
 	background-size: contain;
 
@@ -360,7 +360,7 @@ const CardTopStars = styled.div`
 	top: -53px;
 	width: 56px;
 	height: 42px;
-	background: url('images/main/howItWorks/starsFirstCard.png');
+	background: url('images/main/howItWorks/starsFirstCard.svg');
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
 	@media (max-width: 970px) {
 		left: 75px;
@@ -373,7 +373,7 @@ const CardMiddleStars = styled.div`
 	top: -71px;
 	width: 80px;
 	height: 44px;
-	background: url('images/main/howItWorks/starsSecondCard.png') no-repeat;
+	background: url('images/main/howItWorks/starsSecondCard.svg') no-repeat;
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
 	background-size: contain;
 	@media (max-width: 970px) {
@@ -390,7 +390,7 @@ const CardBotStars = styled.div`
 	top: -28px;
 	width: 50px;
 	height: 59px;
-	background: url('images/main/howItWorks/starsThirdCard.png') no-repeat;
+	background: url('images/main/howItWorks/starsThirdCard.svg') no-repeat;
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
 	background-size: contain;
 	@media (max-width: 970px) {
@@ -406,7 +406,7 @@ const CardBotStars2 = styled.div`
 	top: -68px;
 	width: 51px;
 	height: 36px;
-	background: url('images/main/howItWorks/sideStars.png') no-repeat;
+	background: url('images/main/howItWorks/sideStars.svg') no-repeat;
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
 	background-size: contain;
 	@media (max-width: 970px) {
@@ -460,7 +460,7 @@ const RedLine = styled.div`
 	height: 91px;
 	left: 267px;
 	top: 42px;
-	background: url('images/main/howItWorks/redLineFirst.png') no-repeat;
+	background: url('images/main/howItWorks/redLineFirst.svg') no-repeat;
 	transform: rotate(-8deg);
 	background-size: contain;
 	@media (max-width: 970px) {

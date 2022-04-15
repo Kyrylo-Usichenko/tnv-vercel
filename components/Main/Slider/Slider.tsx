@@ -19,6 +19,8 @@ const SLIDERS = [
 		name: 'Hafidz & Indah',
 		text: 'Owners (Sejadah Grocery)',
 		image: '/images/main/whyChoose/itacho.webp',
+		width: '96px',
+		height: '49px',
 	},
 	{
 		sliderText:
@@ -27,6 +29,8 @@ const SLIDERS = [
 		name: 'Pauline Limgenco',
 		text: 'Director (Moonleaf)',
 		image: '/images/main/whyChoose/moonleaf.webp',
+		width: '102px',
+		height: '48px',
 	},
 	{
 		sliderText:
@@ -35,6 +39,8 @@ const SLIDERS = [
 		name: 'Punnasiri Chaipatikul',
 		text: 'Business Development Manager (Phaitong Station)',
 		image: '/images/main/whyChoose/phaitong.webp',
+		width: '70px',
+		height: '52px',
 	},
 	{
 		sliderText:
@@ -43,6 +49,8 @@ const SLIDERS = [
 		name: 'Fathira Dida',
 		text: 'Owner (Baker Old)',
 		image: '/images/main/whyChoose/baker.webp',
+		width: '54px',
+		height: '64px',
 	},
 ];
 
@@ -80,6 +88,8 @@ const Slider: FC = () => {
 								logo={slide.logo}
 								name={slide.name}
 								text={slide.text}
+								width={slide.width}
+								height={slide.height}
 							/>
 						</SwiperSlide>
 					))}
