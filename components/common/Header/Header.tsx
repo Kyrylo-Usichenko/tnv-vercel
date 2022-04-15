@@ -2,7 +2,7 @@ import React, { FunctionComponent, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 
-import { FeaturesCon } from '../Container/Container';
+import { FeaturesCon, Container } from '../Container/Container';
 import Logo from '../Logos/Logo';
 import LogoText from '../Logos/LogoText';
 import {
@@ -61,7 +61,7 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 
 	return (
 		<HeaderStyled isHeaderScrolled={isHeaderScrolled} isMenuOpend={isMenuOpend}>
-			<FeaturesCon className='h-100'>
+			<Container className='h-100'>
 				<MobileContainer isMenuOpend={isMenuOpend}>
 					<HeaderContainer>
 						<LeftWrapper>
@@ -195,7 +195,7 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 						</Socials>
 					</MobileLinks>
 				</MobileContainer>
-			</FeaturesCon>
+			</Container>
 		</HeaderStyled>
 	);
 };
