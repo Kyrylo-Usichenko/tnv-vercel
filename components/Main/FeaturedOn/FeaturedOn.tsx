@@ -1,8 +1,36 @@
-import React, { FC } from 'react';
+import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 import { Container } from '../../common/Container/Container';
 
+const TOP_OFFSET = 30;
+
 const MoreMoney: FC = () => {
+	const [offset, setOffset] = useState(TOP_OFFSET);
+	const typeRef = useRef() as RefObject<HTMLDivElement>;
+	const entry = useIntersectionObserver(typeRef, {});
+	const isVisible = !!entry?.isIntersecting;
+
+	useEffect(() => {
+		const updateOffset = () => {
+			const screenHeight = window.innerHeight;
+
+			if (isVisible) {
+				const pos = typeRef.current!.getBoundingClientRect().top;
+				const offsetPos = (pos / screenHeight) * 100;
+				setOffset(offsetPos - TOP_OFFSET >= 0 ? offsetPos : TOP_OFFSET);
+			}
+		};
+
+		const onScroll = () => {
+			window.requestAnimationFrame(updateOffset);
+		};
+
+		window.addEventListener('scroll', onScroll);
+
+		return () => window.removeEventListener('scroll', onScroll);
+	}, [isVisible]);
+
 	return (
 		<Styled>
 			<Stars src='images/main/featuredOn/stars.svg' alt='' />
@@ -11,11 +39,12 @@ const MoreMoney: FC = () => {
 				<GreySquare />
 				<GreySquareRight top='-279' right='88' />
 				<Dots src='images/main/featuredOn/dots.svg' alt='' />
+				<DivideLine />
 
 				<Container>
-					<Inner>
-						<Title>Featured On</Title>
-						<Companies>
+					<Inner ref={typeRef}>
+						<Title offset={offset - TOP_OFFSET}>Featured On</Title>
+						<Companies offset={offset - TOP_OFFSET}>
 							<Company src='images/main/featuredOn/techCrunch.svg' alt='' />
 							<Company src='images/main/featuredOn/techInAsia.svg' alt='' />
 							<Company src='images/main/featuredOn/pymnts.svg' alt='' />
@@ -41,8 +70,10 @@ const Wrapper = styled.div`
 	}
 	@media (max-width: 1024px) {
 		margin-right: 0;
+		border-top-left-radius: 0px;
+		border-bottom-left-radius: 0px;
 	}
-	@media (max-width: 950px) {
+	@media (max-width: 975px) {
 		padding-bottom: 0;
 	}
 	@media (max-width: 768px) {
@@ -65,7 +96,7 @@ const Inner = styled.div`
 	align-items: center;
 `;
 
-const Title = styled.h4`
+const Title = styled.h4<{ offset: number }>`
 	font-family: 'Gilroy';
 	font-style: normal;
 	font-weight: 600;
@@ -74,31 +105,68 @@ const Title = styled.h4`
 	color: #212121;
 	margin: 0 0 32px 0;
 	padding: 48px 0 16px 0;
-	width: 666px;
-	border-bottom: 1px solid #d2d2d2;
+	// width: 660px;
+	// border-bottom: 1px solid #d2d2d2;
 	text-align: center;
+	position: relative;
+	right: ${({ offset }) => offset}vw;
+	scroll-behavior: smooth;
+
+	@media (max-width: 1024px) {
+		font-size: 32px;
+		line-height: 38px;
+	}
 	@media (max-width: 768px) {
 		max-width: 336px;
 	}
-	@media (max-width: 425px) {
+	@media (max-width: 440px) {
 		max-width: 253px;
 		font-size: 28px;
 		line-height: 33px;
+		padding-bottom: 24px;
 	}
 `;
 
-const Companies = styled.div`
+const Companies = styled.div<{ offset: number }>`
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	max-width: 1132px;
 	width: 100%;
 	flex-wrap: wrap;
-	@media (max-width: 950px) {
-		max-width: 600px;
+	position: relative;
+	left: ${({ offset }) => offset}vw;
+
+	@media (max-width: 1024px) {
+		padding-left: 40px;
+		padding-right: 40px;
+		& img {
+			height: 22px;
+			max-height: 100%;
+		}
+		& img:nth-child(2) {
+			min-height: 40px;
+		}
 	}
-	@media (max-width: 490px) {
-		max-width: 190px;
+	@media (max-width: 975px) {
+		flex-wrap: wrap;
+		max-width: 570px;
+		& img {
+			flex: 0 0 50%;
+			margin-bottom: 48px;
+		}
+	}
+
+	@media (max-width: 575px) {
 		justify-content: center;
+		padding-left: 20px;
+		padding-right: 20px;
+		& img {
+			flex: 0 0 100%;
+		}
+		& img:nth-child(1) {
+			min-height: 28px;
+		}
 	}
 `;
 
@@ -140,6 +208,10 @@ export const Dots = styled.img`
 	top: -3px;
 	right: 382px;
 	z-index: 0;
+
+	@media (max-width: 1024px) {
+		right: -15%;
+	}
 `;
 export const Stars = styled.img`
 	position: absolute;
@@ -148,6 +220,23 @@ export const Stars = styled.img`
 	z-index: -1;
 	@media (max-width: 950px) {
 		display: none;
+	}
+`;
+const DivideLine = styled.div`
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 665px;
+	height: 1px;
+	transform: translateX(-50%);
+	background-color: #d2d2d2;
+	@media (max-width: 975px) {
+		width: 336px;
+		top: 108px;
+	}
+	@media (max-width: 440px) {
+		width: 253px;
+		top: 104px;
 	}
 `;
 
