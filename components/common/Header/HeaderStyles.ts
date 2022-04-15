@@ -326,13 +326,44 @@ export const HeaderButton = styled.button<{ isHeaderScrolled: boolean; Tab: stri
 	}
 `;
 
-export const Burger = styled.img`
-	display: block;
+export const Burger = styled.button`
+	position: relative;
+	width: 24px;
+	height: 18px;
 	cursor: pointer;
+	background-color: transparent;
+	border-style: none;
+	padding: 0;
+	margin: 0;
 
 	@media (min-width: 1024px) {
 		display: none;
 	}
+`;
+
+export const BurgerSpan = styled.span`
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 100%;
+	height: 3px;
+	background-color: #5c5c5c;
+	border-radius: 5px;
+	transform: translate(-50%, -50%);
+	transition: transform 0.5s ease, width 0.5s ease;
+`;
+
+export const BurgerSpan1 = styled(BurgerSpan)<{ isMenuOpend: boolean }>`
+	transform: ${({ isMenuOpend }) => (isMenuOpend ? 'translate(-50%, -50%) rotate(-45deg)' : 'translate(-50%, -9px)')};
+`;
+
+export const BurgerSpan2 = styled(BurgerSpan)<{ isMenuOpend: boolean }>`
+	width: ${({ isMenuOpend }) => (isMenuOpend ? '0' : '100%')};
+`;
+
+export const BurgerSpan3 = styled(BurgerSpan)<{ isMenuOpend: boolean }>`
+	transform: ${({ isMenuOpend }) => (isMenuOpend ? 'translate(-50%, -50%) rotate(45deg)' : 'translate(-50%, 6px)')};
 `;
 
 export const MobileLinks = styled.div<{ isMenuOpend: boolean }>`
