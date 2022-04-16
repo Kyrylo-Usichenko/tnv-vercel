@@ -264,8 +264,8 @@ const GreyBox1 = styled.div`
 	@media (max-width: 1023px) {
 		top: -222px;
 		left: 176px;
-	}
-	@media (max-width: 768px) {
+		// }
+		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
 	}
@@ -303,8 +303,8 @@ const GreyBox2 = styled.div`
 	@media (max-width: 1023px) {
 		top: -114px;
 		left: 45px;
-	}
-	@media (max-width: 768px) {
+		// }
+		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
 	}
@@ -342,8 +342,8 @@ const GreyBox3 = styled.div`
 	@media (max-width: 1023px) {
 		top: -5px;
 		left: -64px;
-	}
-	@media (max-width: 768px) {
+		// }
+		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
 	}
@@ -381,8 +381,8 @@ const GreyBox4 = styled.div`
 	@media (max-width: 1023px) {
 		top: 225px;
 		left: -64px;
-	}
-	@media (max-width: 768px) {
+		// }
+		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
 	}
@@ -420,8 +420,8 @@ const GreyBox5 = styled.div`
 	@media (max-width: 1023px) {
 		top: 345px;
 		left: 45px;
-	}
-	@media (max-width: 768px) {
+		// }
+		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
 	}
@@ -460,8 +460,8 @@ const GreyBox6 = styled.div`
 	@media (max-width: 1023px) {
 		top: -114px;
 		right: 45px;
-	}
-	@media (max-width: 768px) {
+		// }
+		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
 	}
@@ -500,8 +500,8 @@ const GreyBox7 = styled.div`
 	@media (max-width: 1023px) {
 		top: -5px;
 		right: -64px;
-	}
-	@media (max-width: 768px) {
+		// }
+		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
 	}
@@ -540,8 +540,8 @@ const GreyBox8 = styled.div`
 	@media (max-width: 1023px) {
 		top: 225px;
 		right: -64px;
-	}
-	@media (max-width: 768px) {
+		// }
+		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
 	}
@@ -580,8 +580,8 @@ const GreyBox9 = styled.div`
 	@media (max-width: 1023px) {
 		top: 345px;
 		right: 45px;
-	}
-	@media (max-width: 768px) {
+		// }
+		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
 	}
@@ -620,8 +620,8 @@ const GreyBox10 = styled.div`
 	@media (max-width: 1023px) {
 		top: 460px;
 		right: 176px;
-	}
-	@media (max-width: 768px) {
+		// }
+		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
 	}
