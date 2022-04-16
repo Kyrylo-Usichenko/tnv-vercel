@@ -10,28 +10,43 @@ const HowItWorks: FC = () => {
 					<Null>
 						<div>
 							<CardTop>
+								<Box />
 								<CardTopIcon />
 								<CardTopStars />
 								<RedLine />
-								<Title>Chats</Title>
+								<img
+									src='./images/main/howItWorks/text-chat.svg'
+									alt='Connect to anyone in your supply chain and exchange messages'
+								/>
+								{/* <Title>Chats</Title>
 								<Text width='191.27'>
 									Connect to anyone in your supply chain and exchange messages{' '}
-								</Text>
+								</Text> */}
 							</CardTop>
 							<CardMiddle>
+								<Box />
 								<CardMiddleIcon />
 								<CardMiddleStars />
-								<Title>Orders</Title>
+								{/* <Title>Orders</Title> */}
 								<RedLine2 />
-								<Text width='175.11'>Create or confirm purchase orders with tap of a button</Text>
+								{/* <Text width='175.11'>Create or confirm purchase orders with tap of a button</Text> */}
+								<img
+									src='./images/main/howItWorks/text-order.svg'
+									alt='Create or confirm purchase orders with tap of a button'
+								/>
 							</CardMiddle>
 							<CardBot>
+								<Box />
 								<CardBotIcon />
 								<CardBotStars />
 								<CardBotStars2 />
 								<DotsLeft />
-								<Title>Payments</Title>
-								<Text width='175.11'>Send invoices and reconcile payments in one dashboard</Text>
+								{/* <Title>Payments</Title>
+								<Text width='175.11'>Send invoices and reconcile payments in one dashboard</Text> */}
+								<img
+									src='./images/main/howItWorks/text-pay.svg'
+									alt='Send invoices and reconcile payments in one dashboard'
+								/>
 							</CardBot>
 						</div>
 					</Null>
@@ -204,20 +219,42 @@ const ButtonText = styled.p`
 	}
 `;
 
+const Box = styled.div`
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: white;
+	border-radius: 19.0256px;
+	box-shadow: 4px 7px 20px 0px rgba(33, 33, 33, 0.1);
+	transform: rotate(8deg);
+`;
+
 const CardTop = styled.div`
 	position: relative;
 	top: 33.99px;
 	left: 25px;
 	height: 109.36px;
 	width: 271.77px;
-	background: white;
-	border-radius: 19.0256px;
-	box-shadow: 4px 7px 20px 0px rgba(33, 33, 33, 0.1);
-	transform: matrix(0.99, 0.14, -0.14, 0.99, 0, 0);
+	// background: white;
+	// border-radius: 19.0256px;
+	// box-shadow: 4px 7px 20px 0px rgba(33, 33, 33, 0.1);
+	// transform: matrix(0.99, 0.14, -0.14, 0.99, 0, 0);
 	z-index: 2;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	// display: flex;
+	// flex-direction: column;
+	// align-items: center;
+
+	& img {
+		position: absolute;
+		width: 100%;
+		height: 80%;
+		top: 10px;
+		left: 0;
+		object-fit: contain;
+		z-index: 1;
+	}
 	@media (max-width: 970px) {
 		width: 166.16px;
 		height: 66.86px;
@@ -231,14 +268,25 @@ const CardMiddle = styled.div`
 	left: 269.44px;
 	height: 109.36px;
 	width: 271.77px;
-	background: white;
-	border-radius: 19.0256px;
-	box-shadow: 4px 7px 20px 0px rgba(33, 33, 33, 0.1);
-	transform: matrix(0.99, 0.14, -0.14, 0.99, 0, 0);
+	// background: white;
+	// border-radius: 19.0256px;
+	// box-shadow: 4px 7px 20px 0px rgba(33, 33, 33, 0.1);
+	// transform: matrix(0.99, 0.14, -0.14, 0.99, 0, 0);
 	z-index: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	// display: flex;
+	// flex-direction: column;
+	// align-items: center;
+
+	& img {
+		position: absolute;
+		width: 100%;
+		height: 80%;
+		top: 10px;
+		left: 0;
+		object-fit: contain;
+		z-index: 1;
+	}
+
 	@media (max-width: 970px) {
 		width: 166.16px;
 		height: 66.86px;
@@ -253,14 +301,25 @@ const CardBot = styled.div`
 	left: 0.87px;
 	height: 109.36px;
 	width: 271.77px;
-	background: white;
-	border-radius: 19.0256px;
-	box-shadow: 4px 7px 20px 0px rgba(33, 33, 33, 0.1);
-	transform: matrix(0.99, 0.14, -0.14, 0.99, 0, 0);
-	z-index: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	// background: white;
+	// border-radius: 19.0256px;
+	// box-shadow: 4px 7px 20px 0px rgba(33, 33, 33, 0.1);
+	// transform: matrix(0.99, 0.14, -0.14, 0.99, 0, 0);
+	z-index: -1;
+	// display: flex;
+	// flex-direction: column;
+	// align-items: center;
+
+	& img {
+		position: absolute;
+		width: 100%;
+		height: 80%;
+		top: 10px;
+		left: 0;
+		object-fit: contain;
+		z-index: 1;
+	}
+
 	@media (max-width: 970px) {
 		width: 166.16px;
 		height: 66.86px;
@@ -277,43 +336,43 @@ const CardBot = styled.div`
 	}
 `;
 
-const Title = styled.div`
-	font-family: 'Gilroy';
-	font-style: normal;
-	font-weight: 700;
-	font-size: 20.6111px;
-	line-height: 26px;
-	display: flex;
-	align-items: center;
-	color: #212121;
-	margin-top: 24px;
-	padding: 0;
-	@media (max-width: 970px) {
-		font-size: 12.6018px;
-		line-height: 16px;
-		margin-top: 15px;
-	}
-`;
+// const Title = styled.div`
+// 	font-family: 'Gilroy';
+// 	font-style: normal;
+// 	font-weight: 700;
+// 	font-size: 20.6111px;
+// 	line-height: 26px;
+// 	display: flex;
+// 	align-items: center;
+// 	color: #212121;
+// 	margin-top: 24px;
+// 	padding: 0;
+// 	@media (max-width: 970px) {
+// 		font-size: 12.6018px;
+// 		line-height: 16px;
+// 		margin-top: 15px;
+// 	}
+// `;
 
-const Text = styled.p<{ width: string }>`
-	max-width: ${({ width }) => `${width}px`};
-	padding: 0;
-	margin: 10px 0 0 0;
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 12px;
-	line-height: 15px;
-	display: flex;
-	align-items: center;
-	text-align: center;
-	color: #5c5c5c;
-	@media (max-width: 970px) {
-		margin: 0;
-		font-weight: 400;
-		font-size: 7.33688px;
-	}
-`;
+// const Text = styled.p<{ width: string }>`
+// 	max-width: ${({ width }) => `${width}px`};
+// 	padding: 0;
+// 	margin: 10px 0 0 0;
+// 	font-family: 'Inter';
+// 	font-style: normal;
+// 	font-weight: 400;
+// 	font-size: 12px;
+// 	line-height: 15px;
+// 	display: flex;
+// 	align-items: center;
+// 	text-align: center;
+// 	color: #5c5c5c;
+// 	@media (max-width: 970px) {
+// 		margin: 0;
+// 		font-weight: 400;
+// 		font-size: 7.33688px;
+// 	}
+// `;
 
 const CardTopIcon = styled.div`
 	background: url('images/main/howItWorks/iconFirstCard.png');
@@ -469,10 +528,12 @@ const RedLine = styled.div`
 	position: absolute;
 	width: 141px;
 	height: 91px;
-	left: 267px;
-	top: 42px;
+	// left: 267px;
+	left: 265px;
+	// top: 42px;
+	top: 55px;
 	background: url('images/main/howItWorks/redLineFirst.svg') no-repeat;
-	transform: rotate(-8deg);
+	// transform: rotate(-8deg);
 	background-size: contain;
 	@media (max-width: 970px) {
 		width: 100px;
@@ -483,11 +544,13 @@ const RedLine = styled.div`
 const RedLine2 = styled.div`
 	position: absolute;
 	width: 141px;
-	height: 91px;
+	// height: 91px;
+	height: 85px;
 	left: -122px;
-	top: 55px;
+	// top: 55px;
+	top: 35px;
 	background: url('images/main/howItWorks/redLineSecond.svg') no-repeat;
-	transform: rotate(-8deg);
+	// transform: rotate(-8deg);
 	background-size: contain;
 	@media (max-width: 970px) {
 		width: 100px;
