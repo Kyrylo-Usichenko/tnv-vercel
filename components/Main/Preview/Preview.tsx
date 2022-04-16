@@ -124,7 +124,7 @@ const PreviewTitle = styled.h2`
 		max-width: 333px;
 		text-align: center;
 	}
-	@media (max-width: 375px) {
+	@media (max-width: 767px) {
 		font-size: 28px;
 		line-height: 34px;
 		margin: 0 0 16px 0;
@@ -165,7 +165,7 @@ const PreviewText = styled.p`
 		max-width: 477px;
 		text-align: center;
 	}
-	@media (max-width: 375px) {
+	@media (max-width: 767px) {
 		font-size: 14px;
 		line-height: 22px;
 		max-width: 333px;
