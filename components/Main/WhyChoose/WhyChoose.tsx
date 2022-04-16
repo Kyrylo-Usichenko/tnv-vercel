@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { Container } from '../../common/Container/Container';
@@ -10,14 +11,18 @@ const WhyChoose: FC = () => {
 
 			<Wrapper>
 				<Null>
-					<GreySquare />
-					<RightSquare src='images/main/whyChoose/rightSquare.svg' />
-					<LeftSquare src='images/main/whyChoose/leftSquare.svg' />
+					{/* <GreySquare /> */}
 
 					<Container>
-						<DotsLeftBot />
-						<DotsRight />
+						<DotsLeftBot>
+							<Image src='/images/main/whyChoose/big-rombs.png' layout='fill' objectFit='contain' />
+						</DotsLeftBot>
+						<DotsRight>
+							<Image src='/images/main/whyChoose/small-rombs.png' layout='fill' objectFit='contain' />
+						</DotsRight>
 						<Inner>
+							<RightSquare />
+							<LeftSquare />
 							<Title>Why choose Tinvio?</Title>
 							<Slider />
 						</Inner>
@@ -59,7 +64,6 @@ const DotsLeftBot = styled.div`
 	left: 50%;
 	transform: translateX(-910px);
 	bottom: -255px;
-	background: url('images/main/whyChoose/leftBotDots.svg') top right no-repeat;
 	width: 465px;
 	height: 219px;
 	@media (max-width: 1279px) {
@@ -88,7 +92,6 @@ const DotsRight = styled.div`
 	position: absolute;
 	left: 990px;
 	top: 112px;
-	background: url('images/main/whyChoose/rightDots.svg') no-repeat;
 	width: 465px;
 	height: 219px;
 	@media (max-width: 1440px) {
@@ -126,44 +129,66 @@ const Title = styled.h4`
 	}
 `;
 
-const GreySquare = styled.div`
-	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(55, 55, 55, 0.3) 0%, rgba(250, 250, 250, 0) 100%)
-		/* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+const LeftSquare = styled.div`
+	position: absolute;
+	top: -130px;
+	left: calc(50% - 581px);
+	width: 640px;
+	height: 640px;
+	transform: translateX(-83%);
+	z-index: -1;
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(62, 62, 62, 255);
+		border-radius: 67.6132px;
+		transform: rotate(-45deg);
+	}
+
+	@media (max-width: 950px) {
+		top: -190px;
+		left: 50%;
+		width: 626px;
+		height: 626px;
+		transform: translateX(-100%);
+	}
+
+	@media (max-width: 375px) {
+		left: 70%;
+	}
+`;
+
+const RightSquare = styled.div`
+	position: absolute;
+	top: 47%;
+	right: calc(50% - 581px);
+	width: 700px;
+	height: 700px;
 	border-radius: 67.6132px;
-	transform: rotate(-45deg);
-	width: 639.27px;
-	height: 639.27px;
-	position: absolute;
-	left: 0;
-`;
-
-const LeftSquare = styled.img`
-	position: absolute;
-	position: absolute;
-	top: -160px;
-	left: -4px;
-	@media (max-width: 425px) {
-		left: -140px;
-		top: -230px;
+	transform: translateX(62%);
+	z-index: -1;
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(62, 62, 62, 255);
+		border-radius: 67.6132px;
+		transform: rotate(-45deg);
 	}
-`;
 
-const RightSquare = styled.img`
-	position: absolute;
-	top: 124px;
-	right: 0px;
-	width: 759px;
-	height: 658px;
-
-	@media (max-width: 1024px) {
-		top: 356px;
-		right: -388px;
-	}
-	@media (max-width: 768px) {
-		right: -348px;
-	}
-	@media (max-width: 425px) {
-		display: none;
+	@media (max-width: 950px) {
+		top: 20%;
+		right: 50%;
+		width: 840px;
+		height: 840px;
+		transform: translateX(112%);
 	}
 `;
 
