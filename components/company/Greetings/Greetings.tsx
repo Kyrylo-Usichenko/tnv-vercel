@@ -1,16 +1,18 @@
+import Image from 'next/image';
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { FeaturesCon } from '../../common/Container/Container';
+import { Container } from '../../common/Container/Container';
 
 const Greetings: FC = () => {
 	return (
 		<Wrapper>
-			<FeaturesCon>
+			<Container>
 				<Title>
 					Hi, we're <span className='accent'>Tinvio</span>!
 				</Title>
 				<SubTitle>We're reimaging how merchants and suppliers transact.</SubTitle>
 				<Main>
+					{/* <Bg /> */}
 					<Info>
 						<Text>
 							Tinvio is built for B2B transactions. It's an app, it's a dashboard, it's a checkout link,
@@ -25,13 +27,22 @@ const Greetings: FC = () => {
 							keying manual bank transfers. We're going to reimagine the status quo, we're going to
 							digitize the zillions of these offline receivables and payables. One transaction at a time.
 						</Text>
-						<Contact>Contact Us</Contact>
+						<Contact>
+							<img src='./images/company/Greetings/chat-icon.svg' alt='chat' /> Contact Us
+						</Contact>
 						<LeftTopSquare />
 						<LeftBotSquare />
 						<LeftBotSquare2 />
 					</Info>
 					<PhoneWrapper>
-						<picture>
+						<Image
+							src='/images/company/Greetings/ph-1024.png'
+							width={300}
+							height={480}
+							// layout='responsive'
+							objectFit='cover'
+						/>
+						{/* <picture>
 							<source
 								srcSet='images/company/Greetings/ph-1024.png 1x, images/company/Greetings/ph-1024@2x.png 2x'
 								media='(min-width: 1024px)'
@@ -47,12 +58,12 @@ const Greetings: FC = () => {
 								srcSet='images/company/Greetings/ph-375@2x.png 2x'
 								alt='app'
 							/>
-						</picture>
+						</picture> */}
 						<Dec1></Dec1>
 						<RSquare />
 					</PhoneWrapper>
 				</Main>
-			</FeaturesCon>
+			</Container>
 		</Wrapper>
 	);
 };
@@ -147,6 +158,7 @@ const Main = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	position: relative;
 
 	@media (min-width: 1024px) {
 		justify-content: space-between;
@@ -157,12 +169,30 @@ const Main = styled.div`
 
 const Info = styled.div`
 	position: relative;
+	padding: 48px 0;
+	// background: #f7f7f7;
+	// border-top-right-radius: 48px;
+	// border-bottom-right-radius: 48px;
+	// width: 100%;
+	flex: 0 0 735px;
 
 	&:before {
 		content: url('images/company/Greetings/text-dots.svg');
 		position: absolute;
 		top: 220px;
 		left: -60px;
+		z-index: -1;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: -25vw;
+		width: 100vw;
+		height: 100%;
+		background: #f7f7f7;
+		border-top-right-radius: 48px;
+		border-bottom-right-radius: 48px;
 		z-index: -1;
 	}
 
@@ -172,22 +202,32 @@ const Info = styled.div`
 			left: -100px;
 		}
 	}
-
 	@media (min-width: 1024px) {
-		flex: 0 0 455px;
+		// flex: 0 0 455px;
 
 		&:before {
 			top: 90px;
 			left: -200px;
 		}
 	}
+	@media (max-width: 1280px) {
+		flex: 0 0 495px;
+		&:after {
+			right: -34vw;
+		}
+	}
+	@media (max-width: 1023px) {
+		order: 2;
+		margin-top: 58px;
 
-	@media (min-width: 1280px) {
-		flex: 0 0 554px;
+		&:after {
+			left: 0;
+			right: -16px;
+		}
 	}
 
 	@media (min-width: 1440px) {
-		flex: 0 0 684px;
+		// flex: 0 0 684px;
 
 		&:before {
 			top: 40px;
@@ -195,7 +235,7 @@ const Info = styled.div`
 	}
 
 	@media (min-width: 1920px) {
-		flex: 0 0 745px;
+		// flex: 0 0 735px;
 	}
 `;
 
@@ -218,13 +258,21 @@ const Contact = styled.button`
 	font-family: 'Gilroy';
 	font-weight: 700;
 	font-size: 16px;
-	line-height: 20px;
+	// line-height: 20px;
 	color: #212121;
 	padding: 14px 50px;
 	display: block;
 	margin: 0 auto 50px auto;
 	background: #ffffff;
 	cursor: pointer;
+	display: flex;
+	alifn-items: center;
+
+	& img {
+		display: inline-flex;
+		margin-right: 8px;
+		max-width: 16px;
+	}
 
 	@media (min-width: 1024px) {
 		margin: 0;
@@ -239,6 +287,7 @@ const Contact = styled.button`
 
 const PhoneWrapper = styled.div`
 	position: relative;
+	right: 5%;
 
 	&::before {
 		content: url('images/company/Greetings/ph-dots-b-375.svg');
@@ -268,7 +317,13 @@ const PhoneWrapper = styled.div`
 		}
 	}
 
+	@media (max-width: 1023px) {
+		position: static;
+		order: 1;
+	}
+
 	@media (min-width: 1024px) {
+		position: static;
 		&:before {
 			bottom: -61px;
 			right: -45px;
@@ -281,22 +336,28 @@ const PhoneWrapper = styled.div`
 			right: -80px;
 		}
 	}
-`;
-
-const Phone = styled.img`
-	@media (min-width: 768px) {
-		margin-left: 130px;
-		width: 572px;
-		height: 760.5px;
-	}
-
-	@media (min-width: 1024px) {
-		display: block;
-		width: 100%;
-		height: auto;
-		margin-left: 0;
+	@media (min-width: 1280px) {
+		& img {
+			width: 300px;
+			height: 560px;
+		}
 	}
 `;
+
+// const Phone = styled.img`
+// 	@media (min-width: 768px) {
+// 		margin-left: 130px;
+// 		width: 572px;
+// 		height: 760.5px;
+// 	}
+
+// 	@media (min-width: 1024px) {
+// 		display: block;
+// 		width: 100%;
+// 		height: auto;
+// 		margin-left: 0;
+// 	}
+// `;
 
 const Dec1 = styled.div`
 	position: absolute;
