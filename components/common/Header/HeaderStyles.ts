@@ -37,7 +37,16 @@ export const HeaderStyled = styled.header<{ isHeaderScrolled: boolean; isMenuOpe
 		right: -5px;
 	}
 
-	@media (min-width: 768px) {
+	& > div {
+		max-width: 1392px;
+		padding: 0 40px;
+		padding-right: 40px;
+
+		@media (max-width: 439px) {
+			padding: 0 16px;
+		}
+	}
+	@media (min-width: 440px) {
 		&::after {
 			display: none;
 		}
@@ -88,7 +97,7 @@ export const MobileContainer = styled.div<{ isMenuOpend: boolean }>`
 		z-index: -2;
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 440px) {
 		justify-content: space-between;
 
 		&::before {
@@ -247,8 +256,9 @@ export const MobileNav = styled.ul<{ isMenuOpend: boolean }>`
 	list-style-type: none;
 	position: relative;
 
-	@media (min-width: 768px) {
-		margin-top: 0;
+	@media (min-width: 440px) {
+		margin: auto;
+		padding: 0 0 30%;
 	}
 `;
 
@@ -262,7 +272,7 @@ export const MobileNavItem = styled.li<{ isActive: boolean }>`
 		font-weight: 400;
 		transition: color 0.3s ease;
 
-		@media (min-width: 768px) {
+		@media (min-width: 440px) {
 			font-size: 20px;
 			line-height: 27px;
 		}
@@ -388,7 +398,7 @@ export const MobileLinks = styled.div<{ isMenuOpend: boolean }>`
 		z-index: -1;
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 440px) {
 		display: ${({ isMenuOpend }) => (isMenuOpend ? 'flex' : 'none')};
 	}
 `;
