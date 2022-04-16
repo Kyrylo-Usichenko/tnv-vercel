@@ -2,7 +2,10 @@ import React, { FunctionComponent, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 
-import { FeaturesCon, Container } from '../Container/Container';
+import {
+	// FeaturesCon,
+	Container,
+} from '../Container/Container';
 import Logo from '../Logos/Logo';
 import LogoText from '../Logos/LogoText';
 import {
