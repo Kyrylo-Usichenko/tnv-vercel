@@ -337,7 +337,7 @@ const Title = styled.h3`
 		text-align: center;
 		margin: 0 0 24px 0;
 	}
-	@media (max-width: 425px) {
+	@media (max-width: 767px) {
 		font-size: 28px;
 		line-height: 34px;
 	}
@@ -470,6 +470,9 @@ const Button = styled.a<{ width: string; isActive: boolean }>`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
 	&:hover {
 		box-shadow: ${({ isActive }) => (isActive ? 'none' : '4px 4px 20px 0px rgba(33, 33, 33, 0.1)')};
 	}
@@ -499,6 +502,12 @@ const BottomButton = styled.button`
 	border: none;
 	&:hover {
 		opacity: 0.8;
+	}
+	@media (max-width: 1440px) {
+		height: 48px;
+		font-size: 16px;
+		line-height: 20px;
+		border-radius: 16px;
 	}
 	@media (max-width: 1023px) {
 		margin: 32px auto 0;
@@ -549,7 +558,7 @@ const Item = styled.li`
 			margin: 0 0 0 -5px;
 		}
 	}
-	@media (max-width: 425px) {
+	@media (max-width: 767px) {
 		font-size: 14px;
 		line-height: 20px;
 	}

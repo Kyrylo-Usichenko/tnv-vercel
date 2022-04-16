@@ -136,7 +136,7 @@ const InfoTitle = styled.h2`
 		font-size: 32px;
 		line-height: 38px;
 	}
-	@media (max-width: 768px) {
+	@media (max-width: 767px) {
 		font-size: 28px;
 		line-height: 34px;
 	}
@@ -163,6 +163,10 @@ const InfoText = styled.p`
 	}
 	@media (max-width: 970px) {
 		max-width: 429px;
+	}
+	@media (max-width: 767px) {
+		font-size: 14px;
+		line-height: 23px;
 	}
 `;
 
@@ -194,6 +198,10 @@ const ButtonText = styled.p`
 	color: #212121;
 	margin: 0 0 0 8px;
 	padding: 0;
+	@media (max-width: 767px) {
+		font-size: 14px;
+		line-height: 17px;
+	}
 `;
 
 const CardTop = styled.div`
