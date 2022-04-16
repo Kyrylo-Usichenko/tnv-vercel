@@ -148,6 +148,7 @@ const Wrapper = styled.div`
 		display: block;
 		position: fixed;
 		bottom: -53px;
+		z-index: 1;
 		@media (max-width: 375px) {
 			bottom: -44px;
 		}

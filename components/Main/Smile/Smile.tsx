@@ -106,7 +106,7 @@ const Title = styled.p`
 	color: #212121;
 	text-align: center;
 	margin: 0;
-	padding: 0;
+	padding: 0 0 40px;
 	@media (max-width: 1440px) {
 		font-size: 36px;
 		line-height: 42px;
@@ -114,6 +114,9 @@ const Title = styled.p`
 	@media (max-width: 1024px) {
 		font-size: 32px;
 		line-height: 39px;
+	}
+	@media (max-width: 1023px) {
+		padding: 0;
 	}
 	@media (max-width: 425px) {
 		font-size: 28px;
@@ -249,21 +252,20 @@ const GreyBox1 = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	top: -90px;
+	top: -117px;
 	left: -106px;
 	@media (max-width: 1440px) {
 		width: 120.45px;
 		height: 120.45px;
 	}
-	@media (max-width: 1279px) {
-		top: -90px;
+	@media (max-width: 1330px) {
 		left: -68px;
 	}
 	@media (max-width: 1023px) {
 		top: -222px;
 		left: 176px;
-	}
-	@media (max-width: 768px) {
+		// }
+		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
 	}
@@ -289,20 +291,20 @@ const GreyBox2 = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	top: 6px;
+	top: -23px;
 	left: -381px;
 	@media (max-width: 1440px) {
 		width: 120.45px;
 		height: 120.45px;
 	}
-	@media (max-width: 1279px) {
+	@media (max-width: 1330px) {
 		left: -240px;
 	}
 	@media (max-width: 1023px) {
 		top: -114px;
 		left: 45px;
-	}
-	@media (max-width: 768px) {
+		// }
+		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
 	}
@@ -328,20 +330,20 @@ const GreyBox3 = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	top: 141px;
+	top: 114px;
 	left: -236px;
 	@media (max-width: 1440px) {
 		width: 120.45px;
 		height: 120.45px;
 	}
-	@media (max-width: 1279px) {
+	@media (max-width: 1330px) {
 		left: -150px;
 	}
 	@media (max-width: 1023px) {
 		top: -5px;
 		left: -64px;
-	}
-	@media (max-width: 768px) {
+		// }
+		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
 	}
@@ -367,20 +369,20 @@ const GreyBox4 = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	top: 284px;
+	top: 257px;
 	left: -381px;
 	@media (max-width: 1440px) {
 		width: 120.45px;
 		height: 120.45px;
 	}
-	@media (max-width: 1279px) {
+	@media (max-width: 1330px) {
 		left: -240px;
 	}
 	@media (max-width: 1023px) {
 		top: 225px;
 		left: -64px;
-	}
-	@media (max-width: 768px) {
+		// }
+		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
 	}
@@ -406,20 +408,20 @@ const GreyBox5 = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	top: 356px;
+	top: 329px;
 	left: -106px;
 	@media (max-width: 1440px) {
 		width: 120.45px;
 		height: 120.45px;
 	}
-	@media (max-width: 1279px) {
+	@media (max-width: 1330px) {
 		left: -68px;
 	}
 	@media (max-width: 1023px) {
 		top: 345px;
 		left: 45px;
-	}
-	@media (max-width: 768px) {
+		// }
+		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
 	}
@@ -446,20 +448,20 @@ const GreyBox6 = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	top: -90px;
+	top: -117px;
 	right: -106px;
 	@media (max-width: 1440px) {
 		width: 120.45px;
 		height: 120.45px;
 	}
-	@media (max-width: 1279px) {
+	@media (max-width: 1330px) {
 		right: -68px;
 	}
 	@media (max-width: 1023px) {
 		top: -114px;
 		right: 45px;
-	}
-	@media (max-width: 768px) {
+		// }
+		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
 	}
@@ -486,20 +488,20 @@ const GreyBox7 = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	top: 6px;
+	top: -23px;
 	right: -381px;
 	@media (max-width: 1440px) {
 		width: 120.45px;
 		height: 120.45px;
 	}
-	@media (max-width: 1279px) {
+	@media (max-width: 1330px) {
 		right: -240px;
 	}
 	@media (max-width: 1023px) {
 		top: -5px;
 		right: -64px;
-	}
-	@media (max-width: 768px) {
+		// }
+		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
 	}
@@ -526,20 +528,20 @@ const GreyBox8 = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	top: 141px;
+	top: 114px;
 	right: -236px;
 	@media (max-width: 1440px) {
 		width: 120.45px;
 		height: 120.45px;
 	}
-	@media (max-width: 1279px) {
+	@media (max-width: 1330px) {
 		right: -150px;
 	}
 	@media (max-width: 1023px) {
 		top: 225px;
 		right: -64px;
-	}
-	@media (max-width: 768px) {
+		// }
+		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
 	}
@@ -566,20 +568,20 @@ const GreyBox9 = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	top: 284px;
+	top: 257px;
 	right: -381px;
 	@media (max-width: 1440px) {
 		width: 120.45px;
 		height: 120.45px;
 	}
-	@media (max-width: 1279px) {
+	@media (max-width: 1330px) {
 		right: -240px;
 	}
 	@media (max-width: 1023px) {
 		top: 345px;
 		right: 45px;
-	}
-	@media (max-width: 768px) {
+		// }
+		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
 	}
@@ -606,20 +608,20 @@ const GreyBox10 = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	top: 356px;
+	top: 329px;
 	right: -106px;
 	@media (max-width: 1440px) {
 		width: 120.45px;
 		height: 120.45px;
 	}
-	@media (max-width: 1279px) {
+	@media (max-width: 1330px) {
 		right: -68px;
 	}
 	@media (max-width: 1023px) {
 		top: 460px;
 		right: 176px;
-	}
-	@media (max-width: 768px) {
+		// }
+		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
 	}

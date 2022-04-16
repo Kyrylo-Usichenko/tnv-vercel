@@ -45,6 +45,13 @@ const Wrapper = styled.section`
 	position: relative;
 	z-index: -1;
 	margin-bottom: 80px;
+
+	& > div {
+		@media (max-width: 1023px) {
+			max-width: 100%;
+			width: 100%;
+		}
+	}
 `;
 
 const Title = styled.p`
