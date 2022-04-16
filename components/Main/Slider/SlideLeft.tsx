@@ -56,23 +56,6 @@ const SliderText = styled.p`
 	}
 `;
 
-// const SliderLeft = styled.div`
-// 	flex: 0 1 auto;
-// 	max-width: 588px;
-// 	padding: 12px 0 12px 12px;
-// 	margin-right: 48px;
-
-// 	@media (max-width: 1280px) {
-// 		margin-right: 48px;
-// 		max-width: 454px;
-// 	}
-
-// 	@media (max-width: 1024px) {
-// 		padding: 0;
-// 		margin: 32px 0 24px 0;
-// 	}
-// `;
-
 const SliderBottom = styled.div`
 	// width: 488px;
 	border-top: 1px solid #d2d2d2;
@@ -112,6 +95,10 @@ const Text = styled.p`
 const Content = styled.div`
 	display: flex;
 	align-items: center;
+	max-height: 52px;
+	& img {
+		max-height: 100%;
+	}
 `;
 
 const ContentText = styled.div`
