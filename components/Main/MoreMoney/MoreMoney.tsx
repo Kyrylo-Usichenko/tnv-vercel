@@ -212,9 +212,12 @@ const PurpleSquare = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	left: 57%;
+	left: 62%;
 	top: 55px;
 
+	@media (max-width: 1279px) {
+		left: 57%;
+	}
 	@media (max-width: 1023px) {
 		position: relative;
 		top: -120px;
