@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FC, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Circle from '../../common/Circle/Circle';
-import { Container } from '../../common/Container/Container';
+import { FeaturesCon } from '../../common/Container/Container';
 
 const Smile: FC = () => {
 	const [loading, setLoading] = useState<'idle' | 'loading' | 'error' | 'success'>('idle');
@@ -99,17 +99,21 @@ const Smile: FC = () => {
 		<Wrapper>
 			<WrapperRotated>
 				<Null>
-					<Container>
+					<FeaturesCon>
 						<Inner>
 							<TitleWrapper>
 								<Title>Fill up the form and we’ll get in touch within a few hours</Title>
-								<Map src='images/main/formFilling/map.png' alt='' />
+								<Map
+									src='images/main/formFilling/map.png'
+									srcSet='images/main/formFilling/map@2x.png 2x'
+									alt='map of asia'
+								/>
 							</TitleWrapper>
 
 							<FormWrapper>
 								<Form onSubmit={handleFormSubmit}>
 									<FormTitle>
-										Hi, we’re <FormTitleSpan>Tinvio!</FormTitleSpan> And you?
+										Hi, we’re <span className='accent'>Tinvio!</span> And you?
 									</FormTitle>
 									<Label>Name</Label>
 									<Input
@@ -159,7 +163,7 @@ const Smile: FC = () => {
 											<img src='images/features/modal/success.svg' alt='success' />
 										</Indicate>
 									) : (
-										<Button type='submit' />
+										<Button>Submit</Button>
 									)}
 									<Spam>
 										No spam, promise
@@ -169,7 +173,7 @@ const Smile: FC = () => {
 								<Dots src='images/main/formFilling/dots.svg' alt='' />
 							</FormWrapper>
 						</Inner>
-					</Container>
+					</FeaturesCon>
 				</Null>
 			</WrapperRotated>
 		</Wrapper>
@@ -177,24 +181,33 @@ const Smile: FC = () => {
 };
 
 const Wrapper = styled.div`
-	height: 950px;
+	height: 1215px;
 	position: relative;
-	margin-top: 150px;
+	margin-top: 250px;
 	right: 0;
 	bottom: 0;
 	overflow: hidden;
 	border-radius: 0 0 50px 0;
-	margin-right: 54px;
+	margin-right: 0px;
 
-	@media (max-width: 1024px) {
-		margin-top: 250px;
-		margin-right: 0;
+	@media (min-width: 768px) {
+		height: 1270px;
 	}
-	@media (max-width: 768px) {
-		height: 1320px;
+
+	@media (min-width: 1024px) {
+		height: 850px;
 	}
-	@media (max-width: 580px) {
-		height: 1215px;
+
+	@media (min-width: 1280px) {
+		height: 890px;
+		margin-top: 150px;
+		margin-right: 54px;
+	}
+
+	@media (min-width: 1920px) {
+		height: 920px;
+		margin-top: 150px;
+		margin-right: 54px;
 	}
 `;
 
@@ -210,9 +223,8 @@ const WrapperRotated = styled.div`
 	bottom: 0;
 
 	border-radius: 0 50px 0 0;
-	@media (max-width: 1024px) {
-	}
 `;
+
 const Null = styled.div`
 	transform: skewY(-8deg);
 `;
@@ -220,11 +232,14 @@ const Null = styled.div`
 const Inner = styled.div`
 	display: flex;
 	justify-content: space-between;
-	margin-top: 127px;
-	@media (max-width: 768px) {
-		flex-direction: column;
-		align-items: center;
-		margin-top: 95px;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 95px;
+
+	@media (min-width: 1024px) {
+		flex-direction: row;
+		margin-top: 127px;
+		align-items: flex-start;
 	}
 `;
 
@@ -232,123 +247,147 @@ const Title = styled.h5`
 	font-family: 'Gilroy';
 	font-style: normal;
 	font-weight: 600;
-	font-size: 44px;
-	line-height: 54px;
+	font-size: 28px;
+	line-height: 33px;
 	margin: 0;
 	padding: 0;
+	text-align: center;
+	margin-bottom: 33px;
 	color: #212121;
-	max-width: 580px;
-	@media (max-width: 1280px) {
-		font-size: 36px;
-		line-height: 42px;
-	}
-	@media (max-width: 1024px) {
-		font-size: 32px;
-		line-height: 38px;
-	}
-	@media (max-width: 768px) {
+	max-width: 310px;
+
+	@media (min-width: 768px) {
 		font-size: 32px;
 		line-height: 39px;
-		text-align: center;
+		max-width: 450px;
 	}
-	@media (max-width: 580px) {
-		font-size: 28px;
-		line-height: 33px;
+
+	@media (min-width: 1024px) {
+		text-align: left;
+		max-width: 430px;
 	}
-	@media (max-width: 425px) {
-		max-width: 310px;
+
+	@media (min-width: 1280px) {
+		font-size: 36px;
+		line-height: 44px;
+		max-width: 480px;
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 44px;
+		line-height: 54px;
+		max-width: 580px;
 	}
 `;
 
 const TitleWrapper = styled.div`
 	position: relative;
 `;
+
 const Map = styled.img`
 	position: absolute;
 	left: -243px;
 	top: -87px;
 	z-index: -1;
-	@media (max-width: 768px) {
-		top: 401px;
+	width: 710px;
+	top: 545px;
+	left: -305px;
+
+	@media (min-width: 768px) {
+		width: auto;
+		top: 390px;
+		left: -474px;
 	}
-	@media (max-width: 425px) {
-		width: 620px;
-		top: 572px;
+
+	@media (min-width: 1024px) {
+		width: 950px;
+		top: -52px;
+		left: -410px;
+	}
+
+	@media (min-width: 1280px) {
+		width: auto;
+		top: -52px;
+		left: -390px;
+	}
+
+	@media (min-width: 1440px) {
+		top: -63px;
+		left: -305px;
+	}
+
+	@media (min-width: 1920px) {
+		top: -75px;
+		left: -235px;
 	}
 `;
 
 const FormWrapper = styled.div`
 	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(255, 255, 255, 0.3) 0%, rgba(250, 250, 250, 0.3) 100%);
 	border-radius: 36px;
-	padding: 32px;
-	width: 504px;
-	height: 597px;
+	padding: 16px;
 	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 
-	@media (max-width: 768px) {
-		width: 489px;
-	}
-	@media (max-width: 580px) {
-		width: 375px;
+	@media (min-width: 768px) {
+		padding: 32px;
 	}
 `;
+
 const Form = styled.form`
-	width: 440px;
-	height: 533px;
-	background: #ffffff;
+	background-color: #ffffff;
 	border-radius: 32px;
-	padding: 48px;
-	@media (max-width: 580px) {
-		width: 343px;
-		padding: 40px 24px 0;
+	padding: 40px 24px;
+
+	@media (min-width: 768px) {
+		padding: 48px 48px 40px 48px;
+	}
+
+	@media (min-width: 1920px) {
+		padding: 48px;
 	}
 `;
 
 const FormTitle = styled.p`
 	font-family: 'Gilroy';
-	font-style: normal;
 	font-weight: 600;
-	font-size: 28px;
-	line-height: 34px;
+	font-size: 20px;
+	line-height: 25px;
 	color: #212121;
 	padding: 0;
 	margin: 0 0 32px 0;
-	@media (max-width: 768px) {
+	text-align: center;
+
+	@media (min-width: 768px) {
 		font-size: 24px;
 		line-height: 29px;
-		text-align: center;
 	}
-	@media (max-width: 580px) {
-		font-size: 20px;
-		line-height: 25px;
+
+	@media (min-width: 1920px) {
+		font-size: 28px;
+		line-height: 34px;
 	}
-`;
-const FormTitleSpan = styled.span`
-	margin: 0;
-	padding: 0;
-	color: #ff474d;
 `;
 
 const Label = styled.p`
 	font-family: 'Inter';
-	font-style: normal;
 	font-weight: 400;
-	font-size: 14px;
-	line-height: 17px;
+	font-size: 12px;
+	line-height: 15px;
 	color: #5c5c5c;
 	margin: 0 0 8px 0;
 	padding: 0;
+
+	@media (min-width: 1920px) {
+		font-size: 14px;
+		line-height: 17px;
+	}
 `;
 
 const Input = styled.input<{ error: boolean }>`
 	background: #f3f4f5;
 	border-radius: 8px;
-	padding: 14px 16px 15px;
-	width: 342px;
-	height: 46px;
+	padding: 11px 16px;
+	width: 295px;
 	margin: 0 0 16px 0;
 	border: ${({ error }) => (error ? '1px solid #FA656A' : '1px solid #f3f4f5')};
 	outline: none;
@@ -358,6 +397,11 @@ const Input = styled.input<{ error: boolean }>`
 	font-size: 14px;
 	line-height: 17px;
 	color: #212121;
+
+	&:last-of-type {
+		margin-bottom: 48px;
+	}
+
 	&::placeholder {
 		font-family: 'Inter';
 		font-style: normal;
@@ -366,44 +410,71 @@ const Input = styled.input<{ error: boolean }>`
 		line-height: 17px;
 		color: #bdbdbd;
 	}
+
 	&:focus {
 		border: 1px solid #d2d2d2;
 	}
-	@media (max-width: 580px) {
-		width: 295px;
+
+	@media (min-width: 768px) {
+		width: 329px;
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 16px;
+		line-height: 19px;
+		width: 344px;
 	}
 `;
 
-const Button = styled.input`
+const Button = styled.button`
 	display: block;
 	background: #ff474d;
-	border-radius: 18.6667px;
-	width: 210px;
-	height: 56px;
+	border-radius: 18px;
+	width: 180px;
+	height: 48px;
 	padding: 0;
-	margin: 16px auto 0 auto;
+	margin: 0 auto;
 	font-family: 'Gilroy';
-	font-style: normal;
 	font-weight: 700;
-	font-size: 20px;
-	line-height: 25px;
+	font-size: 16px;
+	line-height: 20px;
 	color: #ffffff;
 	border: none;
-	box-sizing: content-box;
 	cursor: pointer;
+	transition: all 0.3s ease;
+
+	&:hover {
+		background-color: var(--text-primary-hover);
+		box-shadow: 8px 8px 20px 0 var(--shadow-color);
+	}
+
+	&:focus {
+		background-color: var(--text-primary);
+		box-shadow: 8px 4px 20px 0 var(--shadow-color);
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 20px;
+		line-height: 25px;
+		width: 210px;
+		height: 56px;
+		border-radius: 18px;
+	}
 `;
 
 const Spam = styled.div`
 	margin: 12px 0 0 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	text-align: center;
 	font-family: 'Gilroy';
-	font-style: normal;
 	font-weight: 400;
-	font-size: 16px;
-	line-height: 19px;
+	font-size: 14px;
+	line-height: 17px;
 	color: #bdbdbd;
+
+	@media (min-width: 1920px) {
+		font-size: 16px;
+		line-height: 19px;
+	}
 `;
 
 const Img = styled.img`
@@ -415,10 +486,11 @@ const Dots = styled.img`
 	right: -2px;
 	bottom: -37px;
 	z-index: -1;
-	@media (max-width: 768px) {
+
+	/* @media (max-width: 768px) {
 		right: 129px;
 		bottom: 429px;
-	}
+	} */
 `;
 
 const Indicate = styled.div`

@@ -59,7 +59,7 @@ const MoreMoney: FC = () => {
 
 const Wrapper = styled.div`
 	background: radial-gradient(129.72% 141.01% at 50% 50%, #f7f7f7 0%, #fafafa 100%);
-	border-radius: 40px;
+	border-radius: 0 40px 40px 0;
 	margin-right: 54px;
 	position: relative;
 	overflow: hidden;
@@ -70,8 +70,6 @@ const Wrapper = styled.div`
 	}
 	@media (max-width: 1024px) {
 		margin-right: 0;
-		border-top-left-radius: 0px;
-		border-bottom-left-radius: 0px;
 	}
 	@media (max-width: 975px) {
 		padding-bottom: 0;
