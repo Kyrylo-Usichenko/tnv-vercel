@@ -45,10 +45,10 @@ const MoreMoney: FC = () => {
 					<Inner ref={typeRef}>
 						<Title offset={offset - TOP_OFFSET}>Featured On</Title>
 						<Companies offset={offset - TOP_OFFSET}>
-							<Company src='images/main/featuredOn/techCrunch.svg' alt='' />
-							<Company src='images/main/featuredOn/techInAsia.svg' alt='' />
-							<Company src='images/main/featuredOn/pymnts.svg' alt='' />
-							<Company src='images/main/featuredOn/ventureBeat.svg' alt='' />
+							<Company1 src='images/main/featuredOn/techCrunch.svg' alt='' />
+							<Company2 src='images/main/featuredOn/techInAsia.svg' alt='' />
+							<Company3 src='images/main/featuredOn/pymnts.svg' alt='' />
+							<Company4 src='images/main/featuredOn/ventureBeat.svg' alt='' />
 						</Companies>
 					</Inner>
 				</Container>
@@ -88,6 +88,39 @@ const Company = styled.img`
 	}
 `;
 
+const Company1 = styled(Company)`
+	@media (min-width: 320px) {
+		width: 189px;
+	}
+	@media (min-width: 1920px) {
+		width: 222.75px;
+	}
+`;
+const Company2 = styled(Company)`
+	@media (min-width: 320px) {
+		width: 203px;
+	}
+	@media (min-width: 1920px) {
+		width: 228px;
+	}
+`;
+const Company3 = styled(Company)`
+	@media (min-width: 320px) {
+		width: 153px;
+	}
+	@media (min-width: 1920px) {
+		width: 187px;
+	}
+`;
+const Company4 = styled(Company)`
+	@media (min-width: 320px) {
+		width: 169px;
+		@media (min-width: 1920px) {
+			width: 211px;
+		}
+	}
+`;
+
 const Inner = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -110,6 +143,10 @@ const Title = styled.h4<{ offset: number }>`
 	right: ${({ offset }) => offset}vw;
 	scroll-behavior: smooth;
 
+	@media (max-width: 1440px) {
+		font-size: 36px;
+		line-height: 42px;
+	}
 	@media (max-width: 1024px) {
 		font-size: 32px;
 		line-height: 38px;
