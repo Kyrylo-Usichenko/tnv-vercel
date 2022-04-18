@@ -3,7 +3,7 @@ import React from 'react';
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import Header from '../components/common/Header/Header';
+import FeaturesHeader from '../components/common/Header/FeaturesHeader';
 import Footer from '../components/common/Footer';
 import Greetings from '../components/company/Greetings/Greetings';
 import Done from '../components/company/Done/Done';
@@ -34,7 +34,7 @@ const Company: NextPage<any> = (props) => {
 					<link rel='icon' href='/favicon.svg' />
 				</Head>
 
-				<Header locale={locale} Tab='Company' />
+				<FeaturesHeader locale={locale} Tab='Company' />
 				<Greetings />
 				<Done />
 				<Counts />
