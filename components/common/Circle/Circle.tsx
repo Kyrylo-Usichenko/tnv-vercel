@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Circle: FC = () => {
 	return (
-		<StyledSvg width='56' height='56' viewBox='0 0 56 56'>
+		<StyledSvg viewBox='0 0 56 56'>
 			<circle fill='none' stroke='#F3F4F5' cx='28' cy='28' r='26' strokeWidth='4px'></circle>
 			<circle
 				fill='none'
@@ -29,6 +29,13 @@ const Circle: FC = () => {
 const StyledSvg = styled.svg`
 	display: block;
 	margin: 0 auto 12px auto;
+	height: 48px;
+	width: 48px;
+
+	@media (min-width: 1920px) {
+		height: 56px;
+		width: 56px;
+	}
 `;
 
 export default Circle;

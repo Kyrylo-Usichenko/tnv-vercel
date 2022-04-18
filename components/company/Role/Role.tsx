@@ -241,6 +241,37 @@ const Explore = styled.button`
 	color: #212121;
 	margin: 0 auto 48px auto;
 	cursor: pointer;
+	position: relative;
+
+	&::before {
+		position: absolute;
+		content: 'Explore roles';
+		top: 15px;
+		left: 49px;
+		color: rgba(33, 33, 33, 0.1);
+		filter: blur(0.5px);
+		opacity: 0;
+		transition: opacity 0.2s ease;
+	}
+
+	&::after {
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: 100%;
+		top: 5px;
+		left: 5px;
+		border: 2px solid rgba(33, 33, 33, 0.1);
+		filter: blur(1px);
+		border-radius: 16px;
+		opacity: 0;
+		transition: opacity 0.2s ease;
+	}
+
+	&:hover::after,
+	&:hover::before {
+		opacity: 1;
+	}
 
 	@media (min-width: 768px) {
 		margin: 0 auto 64px auto;
