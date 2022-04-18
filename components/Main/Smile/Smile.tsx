@@ -416,7 +416,7 @@ const GreyBox3 = styled.div`
 	//}
 	@media (max-width: 1023px) {
 		top: -222px;
-		left: 176px;
+		left: 182px;
 		// }
 		// @media (max-width: 768px) {
 		width: 110.41px;
@@ -735,7 +735,7 @@ const GreyBox8 = styled.div`
 	//}
 	@media (max-width: 1023px) {
 		top: 460px;
-		right: 176px;
+		right: 182px;
 		// }
 		// @media (max-width: 768px) {
 		width: 110.41px;
