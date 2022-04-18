@@ -115,43 +115,49 @@ const Smile: FC = () => {
 									<FormTitle>
 										Hi, we’re <span className='accent'>Tinvio!</span> And you?
 									</FormTitle>
-									<Label>Name</Label>
-									<Input
-										placeholder='John Appleseed'
-										type='text'
-										value={form.name}
-										name='name'
-										onChange={handleInputChange}
-										error={loading === 'error' && nameError}
-									/>
-									{loading === 'error' && nameError ? (
-										<ModalInputError>Invalid Name</ModalInputError>
-									) : null}
-									<Label>Business Name</Label>
-									<Input
-										placeholder='Burgers & Boba (Singapore)'
-										type='text'
-										value={form.business}
-										name='business'
-										onChange={handleInputChange}
-										error={loading === 'error' && businessError}
-									/>
-									{loading === 'error' && businessError ? (
-										<ModalInputError>Invalid Business Name</ModalInputError>
-									) : null}
-									<Label>Phone</Label>
-									<Input
-										placeholder='65 9123 4567'
-										type='tel'
-										value={form.phone}
-										name='phone'
-										onChange={handleInputChange}
-										onKeyDown={addSpaceToPhone}
-										error={loading === 'error' && phoneError}
-									/>
-									{loading === 'error' && phoneError ? (
-										<ModalInputError>Invalid phone number</ModalInputError>
-									) : null}
+									<ModlaLabel>
+										Name
+										<ModalInput
+											placeholder='John Appleseed'
+											type='text'
+											value={form.name}
+											name='name'
+											onChange={handleInputChange}
+											error={loading === 'error' && nameError}
+										/>
+										{loading === 'error' && nameError ? (
+											<ModalInputError>Invalid Name</ModalInputError>
+										) : null}
+									</ModlaLabel>
+									<ModlaLabel>
+										Business Name
+										<ModalInput
+											placeholder='Burgers & Boba (Singapore)'
+											type='text'
+											value={form.business}
+											name='business'
+											onChange={handleInputChange}
+											error={loading === 'error' && businessError}
+										/>
+										{loading === 'error' && businessError ? (
+											<ModalInputError>Invalid Business Name</ModalInputError>
+										) : null}
+									</ModlaLabel>
+									<ModlaLabel>
+										Phone
+										<ModalInput
+											placeholder='65 9123 4567'
+											type='tel'
+											value={form.phone}
+											name='phone'
+											onChange={handleInputChange}
+											onKeyDown={addSpaceToPhone}
+											error={loading === 'error' && phoneError}
+										/>
+										{loading === 'error' && phoneError ? (
+											<ModalInputError>Invalid phone number</ModalInputError>
+										) : null}
+									</ModlaLabel>
 									{loading === 'loading' ? (
 										<Circle />
 									) : loading === 'error' ? (
@@ -368,14 +374,26 @@ const FormTitle = styled.p`
 	}
 `;
 
-const Label = styled.p`
+const ModlaLabel = styled.label`
+	display: flex;
+	flex-direction: column;
 	font-family: 'Inter';
 	font-weight: 400;
 	font-size: 12px;
 	line-height: 15px;
 	color: #5c5c5c;
-	margin: 0 0 8px 0;
-	padding: 0;
+	margin-bottom: 16px;
+	position: relative;
+
+	&:last-of-type {
+		margin-bottom: 48px;
+	}
+
+	@media (min-width: 768px) {
+		&:last-of-type {
+			margin-bottom: 32px;
+		}
+	}
 
 	@media (min-width: 1920px) {
 		font-size: 14px;
@@ -383,36 +401,31 @@ const Label = styled.p`
 	}
 `;
 
-const Input = styled.input<{ error: boolean }>`
+const ModalInput = styled.input<{ error: boolean }>`
 	background: #f3f4f5;
-	border-radius: 8px;
-	padding: 11px 16px;
+	border: none;
 	width: 295px;
-	margin: 0 0 16px 0;
+	border-radius: 8px;
 	border: ${({ error }) => (error ? '1px solid #FA656A' : '1px solid #f3f4f5')};
-	outline: none;
+	padding: 11px 16px;
 	font-family: 'Inter';
-	font-style: normal;
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 17px;
 	color: #212121;
-
-	&:last-of-type {
-		margin-bottom: 48px;
-	}
+	outline: none;
+	margin: 8px 0 0 0;
 
 	&::placeholder {
-		font-family: 'Inter';
-		font-style: normal;
-		font-weight: 400;
-		font-size: 14px;
-		line-height: 17px;
 		color: #bdbdbd;
 	}
 
 	&:focus {
 		border: 1px solid #d2d2d2;
+	}
+
+	&:disabled {
+		opacity: 0.5;
 	}
 
 	@media (min-width: 768px) {
@@ -422,8 +435,20 @@ const Input = styled.input<{ error: boolean }>`
 	@media (min-width: 1920px) {
 		font-size: 16px;
 		line-height: 19px;
+		padding: 14px 16px 14px 16px;
 		width: 344px;
 	}
+`;
+
+const ModalInputError = styled.p`
+	font-size: 12px;
+	line-height: 15px;
+	text-align: right;
+	color: #ff474d;
+	margin: 0 0 0 0;
+	position: absolute;
+	right: 0;
+	bottom: -17px;
 `;
 
 const Button = styled.button`
@@ -433,7 +458,7 @@ const Button = styled.button`
 	width: 180px;
 	height: 48px;
 	padding: 0;
-	margin: 0 auto;
+	margin: 0 auto 14px auto;
 	font-family: 'Gilroy';
 	font-weight: 700;
 	font-size: 16px;
@@ -463,8 +488,9 @@ const Button = styled.button`
 `;
 
 const Spam = styled.div`
-	margin: 12px 0 0 0;
-	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	font-family: 'Gilroy';
 	font-weight: 400;
 	font-size: 14px;
@@ -487,10 +513,10 @@ const Dots = styled.img`
 	bottom: -37px;
 	z-index: -1;
 
-	/* @media (max-width: 768px) {
+	@media (max-width: 768px) {
 		right: 129px;
 		bottom: 429px;
-	} */
+	}
 `;
 
 const Indicate = styled.div`
@@ -498,18 +524,15 @@ const Indicate = styled.div`
 	align-items: center;
 	justify-content: center;
 	background-color: #ff474d;
-	height: 56px;
-	width: 56px;
+	height: 48px;
+	width: 48px;
 	border-radius: 50%;
-	margin: 0 auto 12px auto;
-`;
+	margin: 0 auto 14px auto;
 
-const ModalInputError = styled.p`
-	font-size: 12px;
-	line-height: 15px;
-	text-align: right;
-	color: #ff474d;
-	margin: -13px 0 0 0;
+	@media (min-width: 1920px) {
+		height: 56px;
+		width: 56px;
+	}
 `;
 
 export default Smile;
