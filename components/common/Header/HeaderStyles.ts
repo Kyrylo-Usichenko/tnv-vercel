@@ -41,7 +41,9 @@ export const HeaderStyled = styled.header<{ isHeaderScrolled: boolean; isMenuOpe
 		max-width: 1392px;
 		padding: 0 40px;
 		padding-right: 40px;
-
+		@media (max-width: 1280px) {
+			max-width: 1112px;
+		}
 		@media (max-width: 439px) {
 			padding: 0 16px;
 		}

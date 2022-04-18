@@ -308,7 +308,7 @@ const GreyBox2 = styled.div`
 		left: -240px;
 	}
 	@media (max-width: 1280px) {
-		left: -349px;
+		left: -267px;
 	}
 	@media (max-width: 1250px) {
 		left: -240px;
@@ -353,7 +353,7 @@ const GreyBox3 = styled.div`
 		left: -150px;
 	}
 	@media (max-width: 1280px) {
-		left: -200px;
+		left: -165px;
 	}
 	@media (max-width: 1250px) {
 		left: -150px;
@@ -398,7 +398,7 @@ const GreyBox4 = styled.div`
 		left: -240px;
 	}
 	@media (max-width: 1280px) {
-		left: -89px;
+		left: -267px;
 	}
 	@media (max-width: 1250px) {
 		left: -68px;
@@ -443,7 +443,7 @@ const GreyBox5 = styled.div`
 		left: -68px;
 	}
 	@media (max-width: 1280px) {
-		left: -349px;
+		left: -89px;
 	}
 	@media (max-width: 1250px) {
 		left: -240px;
@@ -536,7 +536,7 @@ const GreyBox7 = styled.div`
 		right: -240px;
 	}
 	@media (max-width: 1280px) {
-		right: -349px;
+		right: -267px;
 	}
 	@media (max-width: 1250px) {
 		right: -240px;
@@ -582,7 +582,7 @@ const GreyBox8 = styled.div`
 		right: -150px;
 	}
 	@media (max-width: 1280px) {
-		right: -200px;
+		right: -165px;
 	}
 	@media (max-width: 1250px) {
 		right: -150px;
@@ -628,7 +628,7 @@ const GreyBox9 = styled.div`
 		right: -240px;
 	}
 	@media (max-width: 1280px) {
-		right: -89px;
+		right: -267px;
 	}
 	@media (max-width: 1250px) {
 		right: -68px;
@@ -674,7 +674,7 @@ const GreyBox10 = styled.div`
 		right: -68px;
 	}
 	@media (max-width: 1280px) {
-		right: -349px;
+		right: -89px;
 	}
 	@media (max-width: 1250px) {
 		right: -240px;
