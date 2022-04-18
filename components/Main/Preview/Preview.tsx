@@ -205,6 +205,8 @@ const Button = styled.button`
 	@media (max-width: 1440px) {
 		font-size: 16px;
 		line-height: 20px;
+		width: 188px;
+		height: 48px;
 	}
 `;
 const PreviewFootnote = styled.span`
