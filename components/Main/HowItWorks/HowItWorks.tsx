@@ -229,6 +229,15 @@ const Box = styled.div`
 	border-radius: 19.0256px;
 	box-shadow: 4px 7px 20px 0px rgba(33, 33, 33, 0.1);
 	transform: rotate(8deg);
+	@media (max-width: 1280px) {
+		border-radius: 19.0256px;
+	}
+	@media (max-width: 1024px) {
+		border-radius: 17.642px;
+	}
+	@media (max-width: 425px) {
+		border-radius: 11.6324px;
+	}
 `;
 
 const CardTop = styled.div`
@@ -466,7 +475,7 @@ const CardBotStars = styled.div`
 	@media (max-width: 970px) {
 		width: 40px;
 		left: 167px;
-		top: -25px;
+		top: -9px;
 	}
 `;
 
