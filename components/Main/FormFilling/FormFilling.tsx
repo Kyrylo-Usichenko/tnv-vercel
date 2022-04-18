@@ -441,12 +441,24 @@ const Button = styled.button`
 	color: #ffffff;
 	border: none;
 	cursor: pointer;
+	transition: all 0.3s ease;
+
+	&:hover {
+		background-color: var(--text-primary-hover);
+		box-shadow: 8px 8px 20px 0 var(--shadow-color);
+	}
+
+	&:focus {
+		background-color: var(--text-primary);
+		box-shadow: 8px 4px 20px 0 var(--shadow-color);
+	}
 
 	@media (min-width: 1920px) {
 		font-size: 20px;
 		line-height: 25px;
 		width: 210px;
 		height: 56px;
+		border-radius: 18px;
 	}
 `;
 
