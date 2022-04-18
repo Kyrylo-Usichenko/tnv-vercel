@@ -442,6 +442,12 @@ const GreyBox5 = styled.div`
 	@media (max-width: 1330px) {
 		left: -68px;
 	}
+	@media (max-width: 1280px) {
+		left: -349px;
+	}
+	@media (max-width: 1250px) {
+		left: -240px;
+	}
 	@media (max-width: 1023px) {
 		top: 345px;
 		left: 45px;
@@ -450,12 +456,7 @@ const GreyBox5 = styled.div`
 		width: 110.41px;
 		height: 107.38px;
 	}
-	@media (max-width: 1280px) {
-		left: -349px;
-	}
-	@media (max-width: 1250px) {
-		left: -240px;
-	}
+
 	@media (max-width: 650px) {
 		width: 67.07px;
 		height: 65.23px;
