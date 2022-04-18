@@ -390,21 +390,27 @@ const Indicate = styled.div`
 	align-items: center;
 	justify-content: center;
 	background-color: #ff474d;
-	height: 56px;
-	width: 56px;
+	height: 48px;
+	width: 48px;
 	border-radius: 50%;
 	margin: 0 auto 12px auto;
+
+	@media (min-width: 1920px) {
+		height: 56px;
+		width: 56px;
+	}
 `;
 
 const ModalSpam = styled.span`
-	display: block;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
 	font-family: 'Gilroy';
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 17px;
-
 	color: #bdbdbd;
-	text-align: center;
 
 	@media (min-width: 1920px) {
 		font-size: 16px;
