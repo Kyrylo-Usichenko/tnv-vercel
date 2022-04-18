@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NextPage } from 'next/types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import Header from '../components/common/Header/Header';
+import FeaturesHeader from '../components/common/Header/FeaturesHeader';
 import Preview from '../components/Features/Preview';
 import Supercharge from '../components/Features/Supercharge';
 import Footer from '../components/common/Footer';
@@ -41,7 +41,7 @@ const Features: NextPage<Props> = ({ locale }) => {
 	return (
 		<Main>
 			<Modal modalActive={modalActive} setModalActive={setModalActive} />
-			<Header locale={locale} Tab='Features' />
+			<FeaturesHeader locale={locale} Tab='Features' />
 			<Preview openModal={openModal} />
 			<Supercharge />
 			<Tools />
