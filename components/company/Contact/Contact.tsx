@@ -189,6 +189,37 @@ const ContactUs = styled.button`
 	padding: 14px 50px;
 	cursor: pointer;
 	transition: all 0.3s ease;
+	position: relative;
+
+	&::before {
+		position: absolute;
+		content: 'Contact Us';
+		top: 17px;
+		left: 53px;
+		color: rgba(33, 33, 33, 0.1);
+		filter: blur(0.5px);
+		opacity: 0;
+		transition: opacity 0.2s ease;
+	}
+
+	&::after {
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: 100%;
+		top: 5px;
+		left: 5px;
+		border: 2px solid rgba(33, 33, 33, 0.1);
+		filter: blur(1px);
+		border-radius: 16px;
+		opacity: 0;
+		transition: opacity 0.2s ease;
+	}
+
+	&:hover::after,
+	&:hover::before {
+		opacity: 1;
+	}
 
 	@media (min-width: 1920px) {
 		font-size: 18px;
@@ -200,6 +231,11 @@ const ContactUs = styled.button`
 const LightContactUs = styled(ContactUs)`
 	background-color: #ffffff;
 	color: #212121;
+
+	&::after,
+	&::before {
+		display: none;
+	}
 
 	&:hover {
 		background-color: #ffffffcc;
@@ -398,31 +434,36 @@ const MiddleSquareBottom = styled.div`
 	height: 98px;
 	background: url('images/company/Contact/midSquareRight.svg') no-repeat;
 	z-index: -1;
+
 	@media (min-width: 375px) {
 		background: url('images/company/Contact/midSquareRight375.svg') no-repeat;
 		right: 0;
 		bottom: 0;
 		width: 185px;
 		height: 194px;
-		@media (min-width: 768px) {
-			right: -11px;
-			bottom: 0px;
-			width: 384px;
-			height: 118px;
-			background: url('images/company/Contact/midSquareRight768.svg') no-repeat;
-		}
-		@media (min-width: 1024px) {
-			right: -124px;
-			bottom: 0;
-			width: 238px;
-			height: 213px;
-			background: url('images/company/Contact/midSquareRight1024.svg') no-repeat;
-		}
-		@media (min-width: 1440px) {
-			right: 0;
-			bottom: 0;
-			background: url('images/company/Contact/midSquareRight1920.svg') no-repeat;
-		}
+	}
+
+	@media (min-width: 768px) {
+		right: -11px;
+		bottom: 0px;
+		width: 384px;
+		height: 118px;
+		background: url('images/company/Contact/midSquareRight768.svg') no-repeat;
+	}
+
+	@media (min-width: 1024px) {
+		right: -124px;
+		bottom: 0;
+		width: 238px;
+		height: 213px;
+		background: url('images/company/Contact/midSquareRight1024.svg') no-repeat;
+	}
+
+	@media (min-width: 1440px) {
+		right: 0;
+		bottom: 0;
+		background: url('images/company/Contact/midSquareRight1920.svg') no-repeat;
+	}
 `;
 
 const MiddleDots = styled.div`
