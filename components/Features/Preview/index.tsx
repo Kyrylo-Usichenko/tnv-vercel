@@ -1,4 +1,4 @@
-import React, { FC, RefObject, useRef } from 'react';
+import React, { FC, RefObject, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
@@ -9,72 +9,49 @@ type PreviewProps = {
 
 const Preview: FC<PreviewProps> = ({ openModal }) => {
 	const heading = useRef() as RefObject<HTMLHeadingElement>;
-	const pic1 = useRef() as RefObject<HTMLPictureElement>;
-	const pic2 = useRef() as RefObject<HTMLPictureElement>;
 	const entry = useIntersectionObserver(heading, {});
 
-	const title = heading?.current;
-	const titleOffsetTop = title?.offsetTop;
-	const titleHeight = title?.getBoundingClientRect().height;
-	const endOfTitle = titleOffsetTop! + titleHeight!;
+	const pic1 = useRef() as RefObject<HTMLPictureElement>;
+	const pic2 = useRef() as RefObject<HTMLPictureElement>;
 
-	const dec1 = pic1?.current;
-	const dec2 = pic2?.current;
+	useEffect(() => {
+		const isVisible = !!entry?.isIntersecting;
 
-	const pos = useRef<number>();
-	const size = useRef<number>(1);
-	const opacity = useRef<number>(1);
+		const dec1 = pic1?.current;
+		const dec2 = pic2?.current;
 
-	React.useEffect(() => {
-		pos.current = window.pageYOffset;
+		const scrollHeight = Math.max(
+			document.body.scrollHeight,
+			document.documentElement.scrollHeight,
+			document.body.offsetHeight,
+			document.documentElement.offsetHeight,
+			document.body.clientHeight,
+			document.documentElement.clientHeight,
+		);
 
-		if (entry) {
-			window.addEventListener('scroll', () => {
-				if (window.pageYOffset === 0) {
-					pos.current = 0;
-					size.current = 1;
-					opacity.current = 1;
-				}
+		const updateScale = () => {
+			const scrolled = (window.scrollY / (scrollHeight - window.innerHeight)) * 30;
+			const scale = 1 + scrolled;
+			const opacity = 1 - scrolled;
 
-				if (pos.current === 0) {
-					if (size.current >= 2) {
-						size.current = 2;
-					} else {
-						size.current += 0.024;
-					}
+			dec1!.style.transform = `scale(${scale})`;
+			dec2!.style.transform = `scale(${scale})`;
 
-					if (opacity.current <= 0) {
-						opacity.current = 0;
-					} else {
-						opacity.current -= 0.02;
-					}
+			dec1!.style.opacity = `${opacity}`;
+			dec2!.style.opacity = `${opacity}`;
+		};
 
-					dec1!.style.transform = `scale(${size.current})`;
-					dec2!.style.transform = `scale(${size.current})`;
-					dec1!.style.opacity = `${opacity.current}`;
-					dec2!.style.opacity = `${opacity.current}`;
-				}
+		const onScroll = () => {
+			window.requestAnimationFrame(updateScale);
+		};
 
-				if (pos.current! < endOfTitle && pos.current! > 0) {
-					if (size.current <= 1) {
-						size.current = 1;
-					} else {
-						size.current -= 0.024;
-					}
-
-					if (opacity.current <= 1) {
-						opacity.current = 1;
-					} else {
-						opacity.current += 0.03;
-					}
-
-					dec1!.style.transform = `scale(${size.current})`;
-					dec2!.style.transform = `scale(${size.current})`;
-					dec1!.style.opacity = `${opacity.current}`;
-					dec2!.style.opacity = `${opacity.current}`;
-				}
-			});
+		if (isVisible) {
+			window.addEventListener('scroll', onScroll);
+		} else {
+			window.removeEventListener('scroll', onScroll);
 		}
+
+		return () => window.removeEventListener('scroll', onScroll);
 	}, [entry]);
 
 	return (
