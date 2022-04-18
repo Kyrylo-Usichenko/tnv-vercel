@@ -261,6 +261,13 @@ const GreyBox1 = styled.div`
 	@media (max-width: 1330px) {
 		left: -68px;
 	}
+	@media (max-width: 1280px) {
+		left: -89px;
+	}
+	@media (max-width: 1250px) {
+		left: -68px;
+	}
+
 	@media (max-width: 1023px) {
 		top: -222px;
 		left: 176px;
@@ -298,6 +305,12 @@ const GreyBox2 = styled.div`
 		height: 120.45px;
 	}
 	@media (max-width: 1330px) {
+		left: -240px;
+	}
+	@media (max-width: 1280px) {
+		left: -349px;
+	}
+	@media (max-width: 1250px) {
 		left: -240px;
 	}
 	@media (max-width: 1023px) {
@@ -339,6 +352,12 @@ const GreyBox3 = styled.div`
 	@media (max-width: 1330px) {
 		left: -150px;
 	}
+	@media (max-width: 1280px) {
+		left: -200px;
+	}
+	@media (max-width: 1250px) {
+		left: -150px;
+	}
 	@media (max-width: 1023px) {
 		top: -5px;
 		left: -64px;
@@ -378,6 +397,12 @@ const GreyBox4 = styled.div`
 	@media (max-width: 1330px) {
 		left: -240px;
 	}
+	@media (max-width: 1280px) {
+		left: -89px;
+	}
+	@media (max-width: 1250px) {
+		left: -68px;
+	}
 	@media (max-width: 1023px) {
 		top: 225px;
 		left: -64px;
@@ -403,7 +428,7 @@ const GreyBox5 = styled.div`
 	position: absolute;
 	width: 134.79px;
 	height: 134.79px;
-	z-index: 0;
+	z-index: 1;
 	transform: rotate(45deg);
 	display: flex;
 	align-items: center;
@@ -424,6 +449,12 @@ const GreyBox5 = styled.div`
 		// @media (max-width: 768px) {
 		width: 110.41px;
 		height: 107.38px;
+	}
+	@media (max-width: 1280px) {
+		left: -349px;
+	}
+	@media (max-width: 1250px) {
+		left: -240px;
 	}
 	@media (max-width: 650px) {
 		width: 67.07px;
@@ -455,6 +486,12 @@ const GreyBox6 = styled.div`
 		height: 120.45px;
 	}
 	@media (max-width: 1330px) {
+		right: -68px;
+	}
+	@media (max-width: 1280px) {
+		right: -89px;
+	}
+	@media (max-width: 1250px) {
 		right: -68px;
 	}
 	@media (max-width: 1023px) {
@@ -497,6 +534,12 @@ const GreyBox7 = styled.div`
 	@media (max-width: 1330px) {
 		right: -240px;
 	}
+	@media (max-width: 1280px) {
+		right: -349px;
+	}
+	@media (max-width: 1250px) {
+		right: -240px;
+	}
 	@media (max-width: 1023px) {
 		top: -5px;
 		right: -64px;
@@ -535,6 +578,12 @@ const GreyBox8 = styled.div`
 		height: 120.45px;
 	}
 	@media (max-width: 1330px) {
+		right: -150px;
+	}
+	@media (max-width: 1280px) {
+		right: -200px;
+	}
+	@media (max-width: 1250px) {
 		right: -150px;
 	}
 	@media (max-width: 1023px) {
@@ -577,6 +626,12 @@ const GreyBox9 = styled.div`
 	@media (max-width: 1330px) {
 		right: -240px;
 	}
+	@media (max-width: 1280px) {
+		right: -89px;
+	}
+	@media (max-width: 1250px) {
+		right: -68px;
+	}
 	@media (max-width: 1023px) {
 		top: 345px;
 		right: 45px;
@@ -616,6 +671,12 @@ const GreyBox10 = styled.div`
 	}
 	@media (max-width: 1330px) {
 		right: -68px;
+	}
+	@media (max-width: 1280px) {
+		right: -349px;
+	}
+	@media (max-width: 1250px) {
+		right: -240px;
 	}
 	@media (max-width: 1023px) {
 		top: 460px;
