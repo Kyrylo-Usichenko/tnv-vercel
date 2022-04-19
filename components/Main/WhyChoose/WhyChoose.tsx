@@ -47,11 +47,17 @@ const Wrapper = styled.section`
 	background: #363636;
 	overflow: hidden;
 	position: relative;
+	@media (max-width: 1280px) {
+		margin: 90px 0 0 0;
+	}
 	@media (max-width: 1210px) {
 		margin: 78px 0 0 0;
 	}
 	@media (max-width: 767px) {
 		padding: 55px 0 215px;
+	}
+	@media (max-width: 425px) {
+		margin: 115px 0 0 0;
 	}
 `;
 
@@ -87,6 +93,11 @@ const LeftTopDots = styled.div`
 	background: url('images/main/whyChoose/leftTopDots.svg') no-repeat;
 	width: 427px;
 	height: 323px;
+	z-index: -2;
+	@media (max-width: 1280px) {
+		left: -47px;
+		top: -30px;
+	}
 `;
 const DotsRight = styled.div`
 	position: absolute;

@@ -32,7 +32,6 @@ const PreviewInfo = styled.div`
 	}
 	@media (max-width: 1280px) {
 		padding: 252px 0 0;
-		margin-left: 40px;
 	}
 	@media (max-width: 1024px) {
 		padding: 257px 0 0;
