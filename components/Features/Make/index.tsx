@@ -69,9 +69,10 @@ const MakeTitle = styled.h2`
 	font-size: 32px;
 	line-height: 39px;
 	color: #212121;
-	margin: 0 0 12px 0;
+	margin: 0 auto 12px auto;
 	text-align: center;
 	position: relative;
+	max-width: 343px;
 
 	@media (min-width: 768px) {
 		font-size: 36px;

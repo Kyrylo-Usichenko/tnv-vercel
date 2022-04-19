@@ -141,6 +141,7 @@ const GalleryCon = styled.div`
 const GalleryGrid = styled.div`
 	display: flex;
 	gap: 16px;
+	width: 100%;
 
 	@media (min-width: 1280px) {
 		gap: 24px;
@@ -159,7 +160,7 @@ const GalleryColumn = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
-	width: 100%;
+	flex: 1;
 
 	@media (min-width: 1280px) {
 		gap: 24px;
@@ -168,28 +169,8 @@ const GalleryColumn = styled.div`
 
 const GalleryImg = styled.img`
 	border-radius: 32px;
-	width: 164px;
+	width: 100%;
 	object-fit: cover;
-
-	@media (min-width: 768px) {
-		width: 360px;
-	}
-
-	@media (min-width: 1024px) {
-		width: 306px;
-	}
-
-	@media (min-width: 1280px) {
-		width: 335px;
-	}
-
-	@media (min-width: 1440px) {
-		width: 406px;
-	}
-
-	@media (min-width: 1920px) {
-		width: 451px;
-	}
 `;
 
 const Img1 = styled(GalleryImg)`
@@ -264,7 +245,7 @@ const GalleryTitle = styled.h2`
 		content: url('images/features/gallery/dec-t.svg');
 		position: absolute;
 		top: -53px;
-		left: -46px;
+		left: -16px;
 	}
 
 	&::after {
@@ -284,6 +265,11 @@ const GalleryTitle = styled.h2`
 		order: 1;
 		text-align: left;
 		max-width: 230px;
+
+		&::before {
+			top: -50px;
+			left: -47px;
+		}
 	}
 
 	@media (min-width: 1280px) {

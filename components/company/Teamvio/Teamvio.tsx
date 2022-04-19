@@ -6,9 +6,11 @@ const Teamvio: FC = () => {
 	return (
 		<StyledTeamvio>
 			<FeaturesCon>
-				<Title>
-					Powered by <span className='accent'>Teamvio</span>
-				</Title>
+				<TitleDiv>
+					<Title>
+						Powered by <span className='accent'>Teamvio</span>
+					</Title>
+				</TitleDiv>
 				<Inner1>
 					<SquareLeft />
 					<SquareRightTop />
@@ -117,7 +119,13 @@ const Inner2 = styled.div`
 	}
 `;
 
+const TitleDiv = styled.div`
+	display: flex;
+	justify-content: center;
+`;
+
 const Title = styled.h3`
+	display: inline-block;
 	font-family: 'Gilroy';
 	font-weight: 600;
 	font-size: 32px;
@@ -130,49 +138,24 @@ const Title = styled.h3`
 	&:before {
 		content: url('images/company/Teamvio/stars.svg');
 		position: absolute;
-		left: -10px;
+		left: -30px;
 		top: -21px;
 	}
 
 	@media (min-width: 768px) {
 		font-size: 36px;
 		line-height: 44px;
-
-		&:before {
-			left: 160px;
-		}
 	}
 
 	@media (min-width: 1024px) {
 		font-size: 44px;
 		line-height: 54px;
 		margin: 0 0 48px 0;
-
-		&:before {
-			left: 220px;
-		}
-	}
-
-	@media (min-width: 1280px) {
-		&:before {
-			left: 270px;
-			top: -26px;
-		}
-	}
-
-	@media (min-width: 1440px) {
-		&:before {
-			left: 340px;
-		}
 	}
 
 	@media (min-width: 1920px) {
 		font-size: 48px;
 		line-height: 59px;
-
-		&:before {
-			left: 380px;
-		}
 	}
 `;
 
@@ -184,8 +167,6 @@ const Img = styled.img`
 `;
 
 const Img1 = styled(Img)`
-	height: 391px;
-
 	@media (min-width: 768px) {
 		grid-row: 1 / 3;
 		height: 507px;
@@ -197,10 +178,9 @@ const Img1 = styled(Img)`
 `;
 
 const Img2 = styled(Img)`
-	height: 313px;
-
 	@media (min-width: 768px) {
 		grid-row: 1 / 2;
+		height: 313px;
 	}
 
 	@media (min-width: 1024px) {
@@ -209,7 +189,9 @@ const Img2 = styled(Img)`
 `;
 
 const Img3 = styled(Img)`
-	height: 344px;
+	@media (min-width: 768px) {
+		height: 344px;
+	}
 
 	@media (min-width: 1024px) {
 		height: 469px;
@@ -217,7 +199,9 @@ const Img3 = styled(Img)`
 `;
 
 const Img4 = styled(Img)`
-	height: 344px;
+	@media (min-width: 768px) {
+		height: 344px;
+	}
 
 	@media (min-width: 1024px) {
 		height: 469px;

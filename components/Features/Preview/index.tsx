@@ -158,7 +158,7 @@ const PreviewTitle = styled.h2`
 	font-weight: 600;
 	font-size: 28px;
 	line-height: 34px;
-	max-width: 664px;
+	max-width: 345px;
 	color: var(--text-main);
 	margin: 0 0 16px 0;
 	position: relative;
@@ -226,7 +226,7 @@ const PreviewText = styled.p`
 	line-height: 22px;
 	text-align: center;
 	color: var(--text-second);
-	max-width: 420px;
+	max-width: 345px;
 	margin: 0 0 31px 0;
 
 	@media (min-width: 768px) {

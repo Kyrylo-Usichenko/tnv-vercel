@@ -110,6 +110,7 @@ const PanelText = styled.p`
 	color: #212121;
 	margin: 0;
 	padding-bottom: 24px;
+	padding-right: 20px;
 
 	@media (min-width: 768px) {
 		font-size: 16px;

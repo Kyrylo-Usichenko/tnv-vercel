@@ -28,14 +28,14 @@ export const Container = styled.div`
 `;
 
 export const FeaturesCon = styled.div`
-	max-width: 375px;
+	max-width: 100%;
 	padding: 0 16px;
 	margin: 0 auto;
 	position: relative;
 
-	@media (min-width: 768px) {
+	/* @media (min-width: 768px) {
 		max-width: 768px;
-	}
+	} */
 
 	@media (min-width: 1024px) {
 		max-width: 1024px;

@@ -78,6 +78,7 @@ const GalleryGrid = styled.div`
 	width: 100%;
 	z-index: 1;
 	position: relative;
+
 	@media (min-width: 768px) {
 		flex-direction: row;
 	}
@@ -91,7 +92,7 @@ const GalleryColumn = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
-	width: 100%;
+	flex: 1;
 
 	@media (min-width: 1280px) {
 		gap: 24px;
@@ -102,47 +103,21 @@ const GalleryImg = styled.img`
 	border-radius: 32px;
 	width: 100%;
 	object-fit: cover;
-
-	@media (min-width: 768px) {
-		width: 360px;
-	}
-
-	@media (min-width: 1024px) {
-		width: 310px;
-	}
-
-	@media (min-width: 1280px) {
-		width: 335px;
-	}
-
-	@media (min-width: 1440px) {
-		width: 374px;
-	}
-
-	@media (min-width: 1920px) {
-		width: 390px;
-	}
 `;
 
 const Img1 = styled(GalleryImg)`
-	height: 260px;
-
 	@media (min-width: 768px) {
 		height: 346px;
 	}
 `;
 
 const Img2 = styled(GalleryImg)`
-	height: 260px;
-
 	@media (min-width: 768px) {
 		height: 376px;
 	}
 `;
 
 const Img3 = styled(GalleryImg)`
-	height: 260px;
-
 	@media (min-width: 768px) {
 		height: 338px;
 	}
@@ -153,14 +128,12 @@ const Img3 = styled(GalleryImg)`
 `;
 
 const Img4 = styled(GalleryImg)`
-	height: 260px;
-
 	@media (min-width: 768px) {
 		height: 308px;
 	}
 
 	@media (min-width: 1024px) {
-		height: 300px;
+		height: 301px;
 	}
 `;
 
