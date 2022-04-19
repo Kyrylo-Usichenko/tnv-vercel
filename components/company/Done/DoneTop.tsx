@@ -145,7 +145,7 @@ const TopWrapper = styled.div`
 `;
 
 const GreyTopBlock = styled.div`
-	border-radius: 0 48px 48px 0;
+	border-radius: 0 32px 32px 0;
 	background: #f7f7f7;
 	display: flex;
 	overflow: hidden;
@@ -165,7 +165,7 @@ const GreyTopBlock = styled.div`
 
 const RedSide = styled.div`
 	background: #fb242b;
-	border-radius: 48px;
+	border-radius: 32px;
 	padding: 16px 0 16px 16px;
 	position: relative;
 	z-index: 1;
