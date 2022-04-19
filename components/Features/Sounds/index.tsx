@@ -162,11 +162,15 @@ const FlexConInfo = styled.div`
 `;
 
 const SoundsCon = styled.div`
-	padding: 48px 0;
-	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
 
 	@media (min-width: 1024px) {
 		display: flex;
+		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
 		text-align: left;
@@ -182,6 +186,7 @@ const SoundsTitle = styled.h3`
 	text-align: center;
 	color: #ffffff;
 	margin: 0 0 24px 0;
+	max-width: 343px;
 
 	@media (min-width: 768px) {
 		font-size: 32px;

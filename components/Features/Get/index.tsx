@@ -71,6 +71,7 @@ const GetTitle = styled.h2`
 	margin: 0 0 12px 0;
 	position: relative;
 	text-align: center;
+	max-width: 343px;
 
 	&::before {
 		content: '';

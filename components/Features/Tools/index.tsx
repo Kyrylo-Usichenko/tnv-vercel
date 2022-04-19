@@ -20,14 +20,14 @@ const Tools: FC = () => {
 					<Message>
 						<MessageeDec></MessageeDec>
 						<MessageButtons>
-							<MessageButton>
+							<MessageButton disabled>
 								<img src='images/features/tools/pin.svg' alt='pin' loading='lazy' />
 							</MessageButton>
-							<MessageButton>
+							<MessageButton disabled>
 								<img src='images/features/tools/file.svg' alt='file' loading='lazy' />
 							</MessageButton>
 							<label>
-								<MessageInput placeholder='Type something...' />
+								<MessageInput placeholder='Type something...' disabled />
 							</label>
 						</MessageButtons>
 						<MessageTitle>Send messages</MessageTitle>
@@ -367,7 +367,6 @@ const MessageButton = styled.button`
 	flex: 0 0 36px;
 	background-color: #f3f4f5;
 	border: none;
-	cursor: pointer;
 	border-radius: 8px;
 	margin-right: 8px;
 	padding: 0;
@@ -387,8 +386,7 @@ const MessageButton = styled.button`
 `;
 
 const MessageInput = styled.input`
-	max-width: 283px;
-	width: 100%;
+	width: 256px;
 	height: 36px;
 	background: #f3f4f5;
 	border: none;
@@ -398,6 +396,7 @@ const MessageInput = styled.input`
 
 	@media (min-width: 768px) {
 		height: 40px;
+		width: 283px;
 	}
 `;
 
