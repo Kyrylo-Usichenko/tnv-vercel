@@ -138,10 +138,10 @@ const Wrapper = styled.div`
 		flex-direction: column;
 		max-width: 490px;
 		align-items: center;
-		padding: 32px 32px 64px 32px;
+		padding: 32px;
 	}
 	@media (max-width: 425px) {
-		padding: 24px 24px 48px 24px;
+		padding: 24px;
 	}
 
 	.swiper-pagination {
@@ -244,6 +244,7 @@ const RightSliderWrap = styled.div`
 	flex: 0 0 40.3%;
 	width: 40.3%;
 	margin: 32px 32px 32px 0;
+
 	& div {
 		height: 100%;
 	}

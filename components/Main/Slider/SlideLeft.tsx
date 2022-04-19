@@ -31,7 +31,9 @@ const SlideLeft: FC<ISlide> = ({ sliderText, logo, name, text, width, height }) 
 const Wrapper = styled.div`
 	position: relative;
 	padding-bottom: 50px;
-
+	@media (max-width: 1024px) {
+		padding-bottom: 87px;
+	}
 	@media (max-width: 768px) {
 		padding-bottom: 0px;
 	}
