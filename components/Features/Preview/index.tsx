@@ -353,8 +353,8 @@ const Request = styled.div`
 	display: flex;
 	gap: 4.5px;
 	position: absolute;
-	top: 123px;
-	right: 8px;
+	top: 119px;
+	right: -8px;
 
 	@media (min-width: 768px) {
 		top: 157px;
@@ -386,15 +386,15 @@ const PaymentIco = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 18px;
-	height: 18px;
+	width: 21px;
+	height: 21px;
 	background-color: #d0d2ff;
 	border-radius: 50%;
 	align-self: flex-end;
 
 	& > img {
-		height: 9px;
-		width: 9px;
+		height: 11px;
+		width: 11px;
 	}
 
 	@media (min-width: 768px) {
@@ -419,12 +419,12 @@ const PaymentIco = styled.div`
 `;
 
 const Payment = styled.div`
-	width: 136.85px;
-	height: 44.27px;
+	width: 155px;
+	height: 50px;
 	background-color: #f9fafa;
 	border-radius: 10px;
 	border-bottom-left-radius: 0px;
-	padding: 6.6px;
+	padding: 7.5px;
 
 	@media (min-width: 768px) {
 		width: 200.56px;
@@ -442,10 +442,10 @@ const Payment = styled.div`
 const PaymentTitle = styled.p`
 	font-family: 'Gilroy';
 	font-weight: 700;
-	font-size: 8.27202px;
-	line-height: 10px;
+	font-size: 9px;
+	line-height: 12px;
 	color: #212121;
-	margin: 0 0 1.84px 0;
+	margin: 0 0 1.5px 0;
 
 	@media (min-width: 768px) {
 		font-size: 12.1226px;
@@ -463,10 +463,10 @@ const PaymentTitle = styled.p`
 const PaymentText = styled.p`
 	font-family: 'Inter';
 	font-weight: 400;
-	font-size: 7.0903px;
-	line-height: 9px;
+	font-size: 8px;
+	line-height: 10px;
 	color: #5c5c5c;
-	margin: 0 0 1.33px 0;
+	margin: 0 0 1.5px 0;
 
 	@media (min-width: 768px) {
 		font-size: 10.3908px;
@@ -484,7 +484,7 @@ const PaymentText = styled.p`
 const PaymentPrice = styled.p`
 	font-family: 'Inter';
 	font-weight: 400;
-	font-size: 7.0903px;
+	font-size: 8px;
 	line-height: 9px;
 	color: #5c5c5c;
 	margin: 0;
@@ -503,7 +503,7 @@ const PaymentPrice = styled.p`
 const PaymentTime = styled.p`
 	font-family: 'Inter';
 	font-weight: 400;
-	font-size: 4.72687px;
+	font-size: 5px;
 	line-height: 6px;
 	color: #5c5c5c;
 	margin: 0;
@@ -520,7 +520,7 @@ const PaymentTime = styled.p`
 `;
 
 const PaymentArrow = styled.img`
-	width: 3px;
+	width: 4px;
 	height: auto;
 
 	@media (min-width: 768px) {
