@@ -248,13 +248,33 @@ export const Dots = styled.img`
 		right: -15%;
 	}
 `;
-export const Stars = styled.img`
+export const Stars = styled.div`
 	position: absolute;
 	top: 60px;
 	right: 1px;
 	z-index: -1;
+	width: 946px;
+	height: 393px;
+	background: url('images/main/featuredOn/stars.svg') no-repeat;
+	@media (max-width: 1440px) {
+		top: 40px;
+	}
+	@media (max-width: 1024px) {
+		top: 45px;
+	}
 	@media (max-width: 950px) {
-		display: none;
+		//display: none;
+		right: 0;
+		top: 108px;
+	}
+	@media (max-width: 425px) {
+		//display: none;
+		right: 0;
+		top: 389px;
+		background: url('images/main/featuredOn/stars375.svg') no-repeat;
+		background-size: contain;
+		width: 353px;
+		height: 213px;
 	}
 `;
 const DivideLine = styled.div`
