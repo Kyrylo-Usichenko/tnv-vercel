@@ -292,7 +292,7 @@ const PreviewImg = styled.div`
 	width: 100%;
 
 	& > picture:nth-child(1) > img {
-		border-radius: 48px;
+		border-radius: 44px;
 		width: 100%;
 		height: auto;
 	}
@@ -313,6 +313,12 @@ const PreviewImg = styled.div`
 	@media (min-width: 1024px) {
 		&::before {
 			left: -400px;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		& > picture:nth-child(1) > img {
+			border-radius: 48px;
 		}
 	}
 `;

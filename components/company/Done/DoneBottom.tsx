@@ -107,6 +107,7 @@ const WrapperCon = styled.div`
 	@media (min-width: 1024px) {
 		display: flex;
 		flex-direction: row;
+		gap: 24px;
 	}
 
 	@media (min-width: 1280px) {
@@ -121,7 +122,7 @@ const WrapperCon = styled.div`
 
 const Black = styled.div`
 	background: #363636;
-	border-radius: 48px;
+	border-radius: 32px;
 	padding: 40px 40px 79px 40px;
 	position: relative;
 	overflow: hidden;
@@ -141,7 +142,7 @@ const Black = styled.div`
 		padding: 40px 40px 77px 40px;
 	}
 
-	@media (min-width: 1280px) {
+	@media (min-width: 1440px) {
 		flex: 0 0 382px;
 		padding: 40px 40px 56px 40px;
 	}
@@ -153,7 +154,7 @@ const Black = styled.div`
 
 const RedSide = styled.div`
 	background: #fb242b;
-	border-radius: 48px;
+	border-radius: 32px;
 	padding: 16px 0 16px 16px;
 	position: relative;
 	z-index: 1;
@@ -203,7 +204,7 @@ const Red = styled.div`
 	height: 100%;
 	text-align: center;
 	background: #fb242b;
-	border-radius: 48px;
+	border-radius: 32px;
 	position: relative;
 	overflow: hidden;
 	padding-top: 32px;
@@ -215,7 +216,7 @@ const Grey = styled.div`
 	flex-direction: column;
 	align-items: center;
 	background: #f7f7f7;
-	border-radius: 48px 0 0 48px;
+	border-radius: 32px 0 0 32px;
 	padding: 40px;
 	position: relative;
 	overflow: hidden;
@@ -291,29 +292,26 @@ const List = styled.ul`
 
 const Item = styled.li`
 	font-family: 'Inter';
-	font-style: normal;
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 21px;
 	color: #ffffff;
 	position: relative;
-	z-index: 0;
 	margin: 0 0 22px 0;
 	padding-left: 13px;
+	z-index: 1;
 
 	&:last-child {
 		margin: 0;
 	}
 
-	&:before {
-		content: '';
+	&::after {
+		content: url('images/company/Done/min-rec.svg');
 		position: absolute;
-		left: 0;
-		top: -6px;
-		width: 31px;
-		height: 31px;
-		background: url('images/company/Done/blackSquare.svg');
-		border-radius: 2px;
+		left: -3px;
+		top: -5px;
+		width: 22px;
+		height: 22px;
 		z-index: -1;
 	}
 
@@ -355,14 +353,21 @@ const BlackDots = styled.img`
 const DarkItem = styled(Item)`
 	color: #5c5c5c;
 
+	&::after {
+		display: none;
+	}
+
 	&::before {
-		left: 0;
+		content: '';
+		position: absolute;
+		left: 3px;
 		top: 0;
 		width: 21.38px;
 		height: 21.38px;
 		border-radius: 2px;
 		transform: rotate(45deg);
 		background: radial-gradient(95.51% 95.51% at 50% 50%, #ffffff 0%, #ffffff 100%);
+		z-index: -1;
 	}
 `;
 

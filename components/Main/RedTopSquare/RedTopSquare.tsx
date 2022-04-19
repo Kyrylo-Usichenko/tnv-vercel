@@ -1,13 +1,56 @@
-import React, { FC } from 'react';
+import React, { FC, RefObject, useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 const RedTopSquare: FC = () => {
+	const mainDiv = useRef() as RefObject<HTMLDivElement>;
+	const entry = useIntersectionObserver(mainDiv, {});
+
+	const pic1 = useRef() as RefObject<HTMLImageElement>;
+	const pic2 = useRef() as RefObject<HTMLImageElement>;
+
+	useEffect(() => {
+		const isVisible = !!entry?.isIntersecting;
+
+		const elem1 = pic1?.current;
+		const elem2 = pic2?.current;
+
+		const scrollHeight = Math.max(
+			document.body.scrollHeight,
+			document.documentElement.scrollHeight,
+			document.body.offsetHeight,
+			document.documentElement.offsetHeight,
+			document.body.clientHeight,
+			document.documentElement.clientHeight,
+		);
+
+		const updateScale = () => {
+			const scrolled = (window.scrollY / (scrollHeight - window.innerHeight)) * 0.5;
+			const scale = 1 + scrolled;
+
+			elem1!.style.transform = `scale(${scale})`;
+			elem2!.style.transform = `scale(${scale})`;
+		};
+
+		const onScroll = () => {
+			window.requestAnimationFrame(updateScale);
+		};
+
+		if (isVisible) {
+			window.addEventListener('scroll', onScroll);
+		} else {
+			window.removeEventListener('scroll', onScroll);
+		}
+
+		return () => window.removeEventListener('scroll', onScroll);
+	}, [entry]);
+
 	return (
-		<BigRed>
+		<BigRed ref={mainDiv}>
 			<SmallRed>
 				<Null>
-					<AppImage src='images/main/preview/app.png' />
-					<Phone src='images/main/preview/phone.png' />
+					<AppImage ref={pic1} src='images/main/preview/app.png' />
+					<Phone ref={pic2} src='images/main/preview/phone.png' />
 					<DotsLeft />
 					<DotsBottom />
 				</Null>
