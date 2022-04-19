@@ -65,14 +65,16 @@ const SuperchargeTitle = styled.h2`
 	font-size: 32px;
 	line-height: 39px;
 	color: var(--text-main);
-	margin: 0 0 24px 0;
+	margin: 0 auto 24px auto;
 	text-align: center;
+	max-width: 343px;
 
 	@media (min-width: 768px) {
 		text-align: left;
 		font-size: 36px;
 		line-height: 42px;
 		margin-bottom: 32px;
+		max-width: 100%;
 	}
 
 	@media (min-width: 1024px) {

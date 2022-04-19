@@ -199,6 +199,7 @@ const ReadyTitle = styled.h3`
 	text-align: center;
 	color: #212121;
 	margin: 0 0 24px 0;
+	max-width: 343px;
 
 	@media (min-width: 768px) {
 		font-size: 32px;

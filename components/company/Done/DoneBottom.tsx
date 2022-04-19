@@ -233,13 +233,6 @@ const Grey = styled.div`
 `;
 
 const Content = styled.div`
-	max-width: 290px;
-	margin: 0 auto;
-
-	@media (min-width: 768px) {
-		margin: 0;
-	}
-
 	@media (min-width: 1440px) {
 		max-width: 349px;
 	}

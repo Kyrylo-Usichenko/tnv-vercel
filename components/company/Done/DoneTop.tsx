@@ -74,10 +74,6 @@ const Wrapper = styled.section`
 	margin-bottom: 16px;
 	position: relative;
 
-	@media (min-width: 1024px) {
-		margin-bottom: 48px;
-	}
-
 	@media (min-width: 1280px) {
 		margin-bottom: 24px;
 	}
@@ -216,14 +212,11 @@ const RedSide = styled.div`
 
 const Content1 = styled.div`
 	padding: 42px 16px 40px 31px;
-	max-width: 375px;
-	margin: 0 auto;
 	position: relative;
 	z-index: 9;
 
 	@media (min-width: 768px) {
 		padding: 40px;
-		max-width: 768px;
 	}
 
 	@media (min-width: 1024px) {
