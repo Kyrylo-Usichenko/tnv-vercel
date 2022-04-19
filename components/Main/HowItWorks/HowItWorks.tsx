@@ -404,7 +404,7 @@ const CardMiddleIcon = styled.div`
 	width: 91px;
 	height: 93px;
 	left: -19px;
-	bottom: -50px;
+	bottom: -45px;
 	background: url('images/main/howItWorks/iconSecondCard.svg');
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
 	background-size: contain;
@@ -466,7 +466,7 @@ const CardMiddleStars = styled.div`
 const CardBotStars = styled.div`
 	position: absolute;
 	left: 281px;
-	top: -28px;
+	top: -5px;
 	width: 50px;
 	height: 59px;
 	background: url('images/main/howItWorks/starsThirdCard.svg') no-repeat;
@@ -502,9 +502,15 @@ const DotsLeft = styled.div`
 	left: 42px;
 	top: 153px;
 	background: url('images/main/howItWorks/leftBottomDots.png') no-repeat;
-	transform: rotate(-8deg);
+	//transform: rotate(-8deg);
 	background-size: contain;
 	z-index: -2;
+	@media (max-width: 1280px) {
+		width: 298px;
+		height: 225px;
+		left: -140px;
+		top: 123px;
+	}
 	@media (max-width: 970px) {
 		width: 298px;
 		height: 225px;
@@ -521,6 +527,10 @@ const DotsRight = styled.div`
 	width: 254px;
 	height: 192px;
 	background-size: contain;
+	@media (max-width: 1280px) {
+		left: 310px;
+		top: 243px;
+	}
 	@media (max-width: 970px) {
 		left: 343px;
 		top: 527px;
