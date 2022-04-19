@@ -19,7 +19,7 @@ export const HeaderStyled = styled.header<{ isHeaderScrolled: boolean; isMenuOpe
 
 	&::before {
 		content: '';
-		margin: -35px;
+		margin: 0px;
 		position: absolute;
 		top: 0;
 		right: 0;

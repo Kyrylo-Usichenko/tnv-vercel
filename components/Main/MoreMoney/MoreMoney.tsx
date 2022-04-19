@@ -25,6 +25,11 @@ const tabsImages = [
 		rightImg: payRight,
 		typedText: ['More money'],
 		isActive: true,
+		textLines: [
+			'Send invoices and easily track them until they’re paid',
+			'Manage inventory details and availability in real-time',
+			'24/7 order insights and data reports',
+		],
 	},
 	{
 		name: 'Orders',
@@ -32,6 +37,11 @@ const tabsImages = [
 		rightImg: orderRight,
 		typedText: ['More speedy', 'More money'],
 		isActive: false,
+		textLines: [
+			'Create chats with any business (even if they’re not on Tinvio)',
+			'Fully integrated with your favorite chat apps',
+			'Real-time messages and alerts',
+		],
 	},
 	{
 		name: 'Chats',
@@ -39,6 +49,11 @@ const tabsImages = [
 		rightImg: chatRight,
 		typedText: ['More speedy', 'More buddy'],
 		isActive: false,
+		textLines: [
+			'Send invoices and easily track them until they’re paid',
+			'Real-time payments settlement and reconciliation',
+			'Safe, secure, and compliant',
+		],
 	},
 ];
 
@@ -132,9 +147,9 @@ const MoreMoney: FC = () => {
 						</Button>
 					</ButtonsWrapper>
 					<List>
-						<Item>{`Send invoices and easily track them until they’re paid`}</Item>
-						<Item>Real-time payments settlement and reconciliation</Item>
-						<Item>Safe, secure, and compliant</Item>
+						<Item>{tab.textLines[0]}</Item>
+						<Item>{tab.textLines[1]}</Item>
+						<Item>{tab.textLines[2]}</Item>
 					</List>
 					<Link href='/features'>
 						<BottomButton>More Features</BottomButton>
@@ -446,7 +461,7 @@ const ButtonsWrapper = styled.div`
 `;
 const Inner = styled.div`
 	position: relative;
-	max-width: 540px;
+	max-width: 555px;
 	width: 100%;
 	z-index: 1;
 	@media (max-width: 1280px) {
