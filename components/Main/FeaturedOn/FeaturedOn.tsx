@@ -33,7 +33,7 @@ const MoreMoney: FC = () => {
 
 	return (
 		<Styled>
-			<Stars src='images/main/featuredOn/stars.svg' alt='' />
+			<Stars alt='' />
 
 			<Wrapper>
 				<GreySquare />
