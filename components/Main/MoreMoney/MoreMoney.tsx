@@ -63,6 +63,7 @@ interface IMoreMoneyItem {
 	rightImg: string;
 	typedText: string[];
 	isActive: boolean;
+	textLines: Array<string>;
 }
 
 const MoreMoney: FC = () => {
