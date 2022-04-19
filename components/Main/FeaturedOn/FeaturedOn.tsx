@@ -33,7 +33,7 @@ const MoreMoney: FC = () => {
 
 	return (
 		<Styled>
-			<Stars alt='' />
+			<Stars />
 
 			<Wrapper>
 				<GreySquare />
