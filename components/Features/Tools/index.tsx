@@ -92,7 +92,7 @@ const Manage = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	background: #f7f7f7;
-	border-radius: 48px;
+	border-radius: 32px;
 	text-align: center;
 	position: relative;
 	overflow: hidden;
@@ -254,7 +254,7 @@ const Wrapper = styled.div`
 
 const Message = styled.div`
 	background: #363636;
-	border-radius: 48px;
+	border-radius: 32px;
 	position: relative;
 	overflow: hidden;
 	padding: 54px 16px;
@@ -432,7 +432,7 @@ const Invoices = styled.div`
 	display: flex;
 	flex-direction: column;
 	background: #363636;
-	border-radius: 48px;
+	border-radius: 32px;
 	position: relative;
 	overflow: hidden;
 	z-index: 1;
@@ -531,7 +531,7 @@ const InvoiceBlock1 = styled.div`
 	width: 96px;
 	height: 96px;
 	background: #ffffff;
-	border-radius: 17.625px;
+	border-radius: 17px;
 	padding: 16px;
 	margin: 0 auto 16px auto;
 
@@ -552,7 +552,7 @@ const InvoiceBlock2 = styled.div`
 
 const Share = styled.div`
 	background: #f7f7f7;
-	border-radius: 48px;
+	border-radius: 32px;
 	position: relative;
 	overflow: hidden;
 	padding: 46px 0;

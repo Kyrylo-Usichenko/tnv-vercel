@@ -121,7 +121,7 @@ const WrapperCon = styled.div`
 
 const Black = styled.div`
 	background: #363636;
-	border-radius: 48px;
+	border-radius: 32px;
 	padding: 40px 40px 79px 40px;
 	position: relative;
 	overflow: hidden;
@@ -153,7 +153,7 @@ const Black = styled.div`
 
 const RedSide = styled.div`
 	background: #fb242b;
-	border-radius: 48px;
+	border-radius: 32px;
 	padding: 16px 0 16px 16px;
 	position: relative;
 	z-index: 1;
@@ -203,7 +203,7 @@ const Red = styled.div`
 	height: 100%;
 	text-align: center;
 	background: #fb242b;
-	border-radius: 48px;
+	border-radius: 32px;
 	position: relative;
 	overflow: hidden;
 	padding-top: 32px;
@@ -215,7 +215,7 @@ const Grey = styled.div`
 	flex-direction: column;
 	align-items: center;
 	background: #f7f7f7;
-	border-radius: 48px 0 0 48px;
+	border-radius: 32px 0 0 32px;
 	padding: 40px;
 	position: relative;
 	overflow: hidden;

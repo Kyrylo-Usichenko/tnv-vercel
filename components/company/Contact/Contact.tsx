@@ -94,7 +94,7 @@ const Block = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	border-radius: 48px;
+	border-radius: 32px;
 	background-color: #f7f7f7;
 	position: relative;
 	z-index: 0;
