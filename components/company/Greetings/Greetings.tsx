@@ -1,18 +1,16 @@
-import Image from 'next/image';
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { Container } from '../../common/Container/Container';
+import { FeaturesCon } from '../../common/Container/Container';
 
 const Greetings: FC = () => {
 	return (
 		<Wrapper>
-			<Container>
+			<FeaturesCon>
 				<Title>
 					Hi, we're <span className='accent'>Tinvio</span>!
 				</Title>
 				<SubTitle>We're reimaging how merchants and suppliers transact.</SubTitle>
 				<Main>
-					{/* <Bg /> */}
 					<Info>
 						<Text>
 							Tinvio is built for B2B transactions. It's an app, it's a dashboard, it's a checkout link,
@@ -35,14 +33,7 @@ const Greetings: FC = () => {
 						<LeftBotSquare2 />
 					</Info>
 					<PhoneWrapper>
-						<Image
-							src='/images/company/Greetings/ph-1024.png'
-							width={300}
-							height={480}
-							// layout='responsive'
-							objectFit='cover'
-						/>
-						{/* <picture>
+						<picture>
 							<source
 								srcSet='images/company/Greetings/ph-1024.png 1x, images/company/Greetings/ph-1024@2x.png 2x'
 								media='(min-width: 1024px)'
@@ -58,12 +49,12 @@ const Greetings: FC = () => {
 								srcSet='images/company/Greetings/ph-375@2x.png 2x'
 								alt='app'
 							/>
-						</picture> */}
+						</picture>
 						<Dec1></Dec1>
 						<RSquare />
 					</PhoneWrapper>
 				</Main>
-			</Container>
+			</FeaturesCon>
 		</Wrapper>
 	);
 };
@@ -161,33 +152,33 @@ const Main = styled.div`
 	position: relative;
 
 	@media (min-width: 1024px) {
-		justify-content: space-between;
 		flex-direction: row;
-		gap: 58px;
+		gap: 60px;
+	}
+
+	@media (min-width: 1280px) {
+		gap: 90px;
+	}
+
+	@media (min-width: 1440px) {
+		gap: 100px;
+	}
+
+	@media (min-width: 1920px) {
+		gap: 174px;
 	}
 `;
 
 const Info = styled.div`
 	position: relative;
 	padding: 48px 0;
-	// background: #f7f7f7;
-	// border-top-right-radius: 48px;
-	// border-bottom-right-radius: 48px;
-	// width: 100%;
-	flex: 0 0 735px;
+	order: 2;
 
-	&:before {
-		content: url('images/company/Greetings/text-dots.svg');
-		position: absolute;
-		top: 220px;
-		left: -60px;
-		z-index: -1;
-	}
-	&:after {
+	&::after {
 		content: '';
 		position: absolute;
 		top: 0;
-		right: -25vw;
+		left: -16px;
 		width: 100vw;
 		height: 100%;
 		background: #f7f7f7;
@@ -196,46 +187,49 @@ const Info = styled.div`
 		z-index: -1;
 	}
 
-	@media (min-width: 768px) {
-		&:before {
-			top: 170px;
-			left: -100px;
-		}
-	}
 	@media (min-width: 1024px) {
-		// flex: 0 0 455px;
+		order: 0;
+		flex: 0 0 430px;
 
-		&:before {
-			top: 90px;
-			left: -200px;
+		&::after {
+			left: -400px;
 		}
 	}
-	@media (max-width: 1280px) {
-		flex: 0 0 495px;
-		&:after {
-			right: -34vw;
+
+	@media (min-width: 1200px) {
+		&::after {
+			left: -500px;
 		}
 	}
-	@media (max-width: 1023px) {
-		order: 2;
-		margin-top: 58px;
 
-		&:after {
-			left: 0;
-			right: -16px;
+	@media (min-width: 1280px) {
+		flex: 0 0 492px;
+	}
+
+	@media (min-width: 1400px) {
+		&::after {
+			left: -650px;
 		}
 	}
 
 	@media (min-width: 1440px) {
-		// flex: 0 0 684px;
+		flex: 0 0 736px;
 
-		&:before {
-			top: 40px;
+		&::after {
+			left: -520px;
 		}
 	}
 
-	@media (min-width: 1920px) {
-		// flex: 0 0 735px;
+	@media (min-width: 1600px) {
+		&::after {
+			left: -690px;
+		}
+	}
+
+	@media (min-width: 1770px) {
+		&::after {
+			left: -850px;
+		}
 	}
 `;
 
@@ -253,25 +247,35 @@ const Text = styled.p`
 `;
 
 const Contact = styled.button`
-	border: 1px solid #d2d2d2;
 	border-radius: 16px;
+	border-style: none;
 	font-family: 'Gilroy';
 	font-weight: 700;
 	font-size: 16px;
-	// line-height: 20px;
+	line-height: 20px;
 	color: #212121;
 	padding: 14px 50px;
 	display: block;
-	margin: 0 auto 50px auto;
-	background: #ffffff;
+	background-color: #ffffff;
 	cursor: pointer;
 	display: flex;
-	alifn-items: center;
+	align-items: center;
+	transition: all 0.3s ease;
 
 	& img {
 		display: inline-flex;
 		margin-right: 8px;
 		max-width: 16px;
+	}
+
+	&:hover {
+		background-color: #ffffffcc;
+		box-shadow: 14px 4px 20px 0 var(--shadow-color);
+	}
+
+	&:focus {
+		background-color: var(--text-white);
+		box-shadow: 12px 2px 20px 0 var(--shadow-color);
 	}
 
 	@media (min-width: 1024px) {
@@ -287,7 +291,7 @@ const Contact = styled.button`
 
 const PhoneWrapper = styled.div`
 	position: relative;
-	right: 5%;
+	margin-bottom: 40px;
 
 	&::before {
 		content: url('images/company/Greetings/ph-dots-b-375.svg');
@@ -317,13 +321,9 @@ const PhoneWrapper = styled.div`
 		}
 	}
 
-	@media (max-width: 1023px) {
-		position: static;
-		order: 1;
-	}
-
 	@media (min-width: 1024px) {
-		position: static;
+		margin-bottom: 0;
+
 		&:before {
 			bottom: -61px;
 			right: -45px;
@@ -336,28 +336,29 @@ const PhoneWrapper = styled.div`
 			right: -80px;
 		}
 	}
-	@media (min-width: 1280px) {
-		& img {
-			width: 300px;
-			height: 560px;
-		}
-	}
 `;
 
-// const Phone = styled.img`
-// 	@media (min-width: 768px) {
-// 		margin-left: 130px;
-// 		width: 572px;
-// 		height: 760.5px;
-// 	}
+const Phone = styled.img`
+	height: 433px;
+	width: auto;
 
-// 	@media (min-width: 1024px) {
-// 		display: block;
-// 		width: 100%;
-// 		height: auto;
-// 		margin-left: 0;
-// 	}
-// `;
+	@media (min-width: 768px) {
+		margin-left: 130px;
+		height: 700px;
+	}
+
+	@media (min-width: 1024px) {
+		display: block;
+		width: 100%;
+		height: auto;
+		margin-left: 0;
+	}
+
+	@media (min-width: 1440px) {
+		width: auto;
+		height: 500px;
+	}
+`;
 
 const Dec1 = styled.div`
 	position: absolute;

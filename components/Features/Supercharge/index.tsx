@@ -1,9 +1,25 @@
-import React, { FC } from 'react';
+import React, { FC, RefObject, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 import { FeaturesCon } from '../../common/Container/Container';
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 const Supercharge: FC = () => {
+	const video = useRef() as RefObject<HTMLVideoElement>;
+	const entry = useIntersectionObserver(video, {});
+
+	useEffect(() => {
+		const isVisible = !!entry?.isIntersecting;
+
+		if (video.current) {
+			if (isVisible) {
+				void video.current.play();
+			} else {
+				video.current.pause();
+			}
+		}
+	}, [entry]);
+
 	return (
 		<StyledSupercharge>
 			<FeaturesCon>
@@ -13,10 +29,15 @@ const Supercharge: FC = () => {
 				<FullCon>
 					<FullConDec1>
 						<FullConApp
-							src='images/features/supercharge/app.jpg'
-							srcSet='images/features/supercharge/app@2x.jpg 2x'
-							alt='app'
-						/>
+							ref={video}
+							muted
+							loop
+							preload='metadata'
+							poster='images/features/supercharge/app@2x.jpg'
+						>
+							<source src='images/features/supercharge/video.mp4' type='video/mp4' />
+							Sorry, your browser doesn't support embedded videos.
+						</FullConApp>
 					</FullConDec1>
 				</FullCon>
 				<FlexConInfo>
@@ -289,7 +310,7 @@ const Text = styled.p`
 	}
 `;
 
-const FullConApp = styled.img`
+const FullConApp = styled.video`
 	width: 461.48px;
 	height: 304px;
 	margin-right: -95px;
@@ -304,7 +325,7 @@ const FullConApp = styled.img`
 
 	@media (min-width: 1024px) {
 		width: auto;
-		height: auto;
+		height: 95%;
 		margin-right: -182px;
 	}
 
@@ -313,7 +334,7 @@ const FullConApp = styled.img`
 	}
 
 	@media (min-width: 1440px) {
-		margin-right: -10px;
+		margin-right: -45px;
 	}
 `;
 
