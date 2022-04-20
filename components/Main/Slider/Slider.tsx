@@ -140,6 +140,9 @@ const Wrapper = styled.div`
 		align-items: center;
 		padding: 32px;
 	}
+	@media (max-width: 768px) {
+		padding: 32px 32px 64px;
+	}
 	@media (max-width: 425px) {
 		padding: 24px;
 	}
