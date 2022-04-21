@@ -70,6 +70,7 @@ const Slider: FC = () => {
 					navigation
 					loop={true}
 					pagination={{ el: '.dots', clickable: true }}
+					initialSlide={1}
 				>
 					{SLIDERS.map((slide, index) => (
 						<SwiperSlide key={`${slide.sliderText}${index}`} className='swiper-slide'>
