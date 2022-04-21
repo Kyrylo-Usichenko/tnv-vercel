@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FC, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Circle from '../../common/Circle/Circle';
-import { FeaturesCon } from '../../common/Container/Container';
+import { Container } from '../../common/Container/Container';
 
 const Smile: FC = () => {
 	const [loading, setLoading] = useState<'idle' | 'loading' | 'error' | 'success'>('idle');
@@ -99,7 +99,7 @@ const Smile: FC = () => {
 		<Wrapper>
 			<WrapperRotated>
 				<Null>
-					<FeaturesCon>
+					<Container>
 						<Inner>
 							<TitleWrapper>
 								<Title>Fill up the form and we’ll get in touch within a few hours</Title>
@@ -179,7 +179,7 @@ const Smile: FC = () => {
 								<Dots src='images/main/formFilling/dots.svg' alt='' />
 							</FormWrapper>
 						</Inner>
-					</FeaturesCon>
+					</Container>
 				</Null>
 			</WrapperRotated>
 		</Wrapper>
@@ -200,17 +200,17 @@ const Wrapper = styled.div`
 		height: 1270px;
 	}
 
-	@media (min-width: 1024px) {
+	@media (min-width: 1023px) {
 		height: 850px;
 	}
 
-	@media (min-width: 1280px) {
+	@media (min-width: 1280.5px) {
 		height: 890px;
 		margin-top: 150px;
 		margin-right: 54px;
 	}
 
-	@media (min-width: 1920px) {
+	@media (min-width: 1441px) {
 		height: 920px;
 		margin-top: 150px;
 		margin-right: 54px;
@@ -241,11 +241,18 @@ const Inner = styled.div`
 	flex-direction: column;
 	align-items: center;
 	margin-top: 95px;
+	margin-left: 27px;
+	margin-right: -27px;
 
-	@media (min-width: 1024px) {
+	@media (min-width: 1023px) {
 		flex-direction: row;
 		margin-top: 127px;
 		align-items: flex-start;
+	}
+
+	@media (max-width: 1280px) {
+		margin-left: 0;
+		margin-right: 0;
 	}
 `;
 
@@ -268,7 +275,7 @@ const Title = styled.h5`
 		max-width: 450px;
 	}
 
-	@media (min-width: 1024px) {
+	@media (min-width: 1023px) {
 		text-align: left;
 		max-width: 430px;
 	}
@@ -279,7 +286,7 @@ const Title = styled.h5`
 		max-width: 480px;
 	}
 
-	@media (min-width: 1920px) {
+	@media (min-width: 1440.5px) {
 		font-size: 44px;
 		line-height: 54px;
 		max-width: 580px;
@@ -305,10 +312,10 @@ const Map = styled.img`
 		left: -474px;
 	}
 
-	@media (min-width: 1024px) {
+	@media (min-width: 1023px) {
 		width: 950px;
 		top: -52px;
-		left: -410px;
+		left: -385px;
 	}
 
 	@media (min-width: 1280px) {
@@ -348,7 +355,7 @@ const Form = styled.form`
 		padding: 48px 48px 40px 48px;
 	}
 
-	@media (min-width: 1920px) {
+	@media (min-width: 1440.5px) {
 		padding: 48px;
 	}
 `;
@@ -368,7 +375,7 @@ const FormTitle = styled.p`
 		line-height: 29px;
 	}
 
-	@media (min-width: 1920px) {
+	@media (min-width: 1440.5px) {
 		font-size: 28px;
 		line-height: 34px;
 	}
@@ -395,7 +402,7 @@ const ModlaLabel = styled.label`
 		}
 	}
 
-	@media (min-width: 1920px) {
+	@media (min-width: 1440.5px) {
 		font-size: 14px;
 		line-height: 17px;
 	}
@@ -432,7 +439,7 @@ const ModalInput = styled.input<{ error: boolean }>`
 		width: 329px;
 	}
 
-	@media (min-width: 1920px) {
+	@media (min-width: 1440.5px) {
 		font-size: 16px;
 		line-height: 19px;
 		padding: 14px 16px 14px 16px;
@@ -478,7 +485,7 @@ const Button = styled.button`
 		box-shadow: 8px 4px 20px 0 var(--shadow-color);
 	}
 
-	@media (min-width: 1920px) {
+	@media (min-width: 1440.5px) {
 		font-size: 20px;
 		line-height: 25px;
 		width: 210px;
@@ -497,7 +504,7 @@ const Spam = styled.div`
 	line-height: 17px;
 	color: #bdbdbd;
 
-	@media (min-width: 1920px) {
+	@media (min-width: 1440.5px) {
 		font-size: 16px;
 		line-height: 19px;
 	}
@@ -529,7 +536,7 @@ const Indicate = styled.div`
 	border-radius: 50%;
 	margin: 0 auto 14px auto;
 
-	@media (min-width: 1920px) {
+	@media (min-width: 1440.5px) {
 		height: 56px;
 		width: 56px;
 	}

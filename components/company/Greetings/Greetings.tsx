@@ -6,9 +6,11 @@ const Greetings: FC = () => {
 	return (
 		<Wrapper>
 			<FeaturesCon>
-				<Title>
-					Hi, we're <span className='accent'>Tinvio</span>!
-				</Title>
+				<TitleDiv>
+					<Title>
+						Hi, we're <span className='accent'>Tinvio</span>!
+					</Title>
+				</TitleDiv>
 				<SubTitle>We're reimaging how merchants and suppliers transact.</SubTitle>
 				<Main>
 					<Info>
@@ -67,7 +69,13 @@ const Wrapper = styled.section`
 	}
 `;
 
+const TitleDiv = styled.div`
+	display: flex;
+	justify-content: center;
+`;
+
 const Title = styled.h1`
+	display: inline-block;
 	font-family: 'Gilroy';
 	font-weight: 600;
 	font-size: 44px;
@@ -81,48 +89,30 @@ const Title = styled.h1`
 		content: url('images/company/Greetings/dec-375.svg');
 		position: absolute;
 		top: -16px;
-		left: -12px;
+		left: -26px;
 	}
 
 	@media (min-width: 768px) {
 		&::before {
 			content: url('images/company/Greetings/dec-768.svg');
 			top: -25px;
-			left: 150px;
+			left: -66px;
 		}
 	}
 
 	@media (min-width: 1024px) {
 		font-size: 48px;
 		line-height: 59px;
-
-		&::before {
-			left: 235px;
-		}
 	}
 
 	@media (min-width: 1280px) {
 		font-size: 56px;
 		line-height: 66px;
-
-		&::before {
-			left: 250px;
-		}
-	}
-
-	@media (min-width: 1440px) {
-		&::before {
-			left: 335px;
-		}
 	}
 
 	@media (min-width: 1920px) {
 		font-size: 60px;
 		line-height: 74px;
-
-		&::before {
-			left: 380px;
-		}
 	}
 `;
 
