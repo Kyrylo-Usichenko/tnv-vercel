@@ -10,12 +10,12 @@ import HowItWorks from '../components/Main/HowItWorks/HowItWorks';
 import MoreMoney from '../components/Main/MoreMoney/MoreMoney';
 import FeaturedOn from '../components/Main/FeaturedOn/FeaturedOn';
 import WhyChoose from '../components/Main/WhyChoose/WhyChoose';
-import Smile from '../components/Main/Smile/Smile';
 import FormFilling from '../components/Main/FormFilling/FormFilling';
 import Footer from '../components/common/Footer';
 import { Container } from '../components/common/Container/Container';
 import { Main } from '../components/Main/Styles/Styles';
 import styled from 'styled-components';
+import SmileRework from '../components/Main/SmileRework/SmileRework';
 
 export async function getStaticProps({ locale }: any) {
 	return {
@@ -53,7 +53,7 @@ const Home: NextPage<any> = (props) => {
 					<MoreMoney />
 					<FeaturedOn />
 					<WhyChoose />
-					<Smile />
+					<SmileRework />
 					<FormFilling />
 					<Footer background='#ffffff' />
 				</section>
