@@ -5,43 +5,34 @@ import { FeaturesCon } from '../../common/Container/Container';
 const Commitments: FC = () => {
 	return (
 		<Wrapper>
-			<FlexCon>
-				<FullCon>
-					<SquareRight />
-					<SquareLeft />
-					<DotsRight />
-					<DotsLeft />
-
-					<FlexConInfo>
-						<FeaturesCon className='h-100'>
-							<Content>
-								<Heading>Our Core Commitments</Heading>
-								<List>
-									<Item>
-										<Img src='images/company/Commitments/pen.svg' loading='lazy' alt='pen' />
-										<Title>Every pixel matters</Title>
-										<SubTitle>Biased towards perfection</SubTitle>
-									</Item>
-									<Item>
-										<Img
-											src='images/company/Commitments/message.svg'
-											loading='lazy'
-											alt='message'
-										/>
-										<Title>Shut the fluff</Title>
-										<SubTitle>Clear and direct communication</SubTitle>
-									</Item>
-									<Item>
-										<Img src='images/company/Commitments/rocket.svg' loading='lazy' alt='rocket' />
-										<Title>Break things fast</Title>
-										<SubTitle>Ownership with ruthless agility</SubTitle>
-									</Item>
-								</List>
-							</Content>
-						</FeaturesCon>
-					</FlexConInfo>
-				</FullCon>
-			</FlexCon>
+			<FlexConInfo>
+				<SquareRight />
+				<SquareLeft />
+				<DotsRight />
+				<DotsLeft />
+				<FeaturesCon>
+					<Content>
+						<Heading>Our Core Commitments</Heading>
+						<List>
+							<Item>
+								<Img src='images/company/Commitments/pen.svg' loading='lazy' alt='pen' />
+								<Title>Every pixel matters</Title>
+								<SubTitle>Biased towards perfection</SubTitle>
+							</Item>
+							<Item>
+								<Img src='images/company/Commitments/message.svg' loading='lazy' alt='message' />
+								<Title>Shut the fluff</Title>
+								<SubTitle>Clear and direct communication</SubTitle>
+							</Item>
+							<Item>
+								<Img src='images/company/Commitments/rocket.svg' loading='lazy' alt='rocket' />
+								<Title>Break things fast</Title>
+								<SubTitle>Ownership with ruthless agility</SubTitle>
+							</Item>
+						</List>
+					</Content>
+				</FeaturesCon>
+			</FlexConInfo>
 		</Wrapper>
 	);
 };
@@ -53,41 +44,22 @@ const Wrapper = styled.section`
 	overflow: hidden;
 `;
 
-const FlexCon = styled.div`
+const FlexConInfo = styled.div`
 	position: relative;
-`;
-
-const FullCon = styled.div`
-	position: relative;
-	height: 737px;
 	border-top-right-radius: 48px;
 	border-bottom-right-radius: 48px;
 	background-color: var(--bg-black);
 	overflow: hidden;
 	z-index: 0;
-	@media (min-width: 768px) {
-		height: 326px;
-	}
-
-	@media (min-width: 1024px) {
-		height: 339px;
-	}
+	padding: 48px 0;
 
 	@media (min-width: 1280px) {
 		margin-right: 54px;
 	}
 
 	@media (min-width: 1920px) {
-		height: 360px;
+		margin-right: 234px;
 	}
-`;
-
-const FlexConInfo = styled.div`
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
 `;
 
 const Content = styled.div`
@@ -95,7 +67,16 @@ const Content = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: 100%;
+
+	@media (min-width: 1280px) {
+		margin-left: 27px;
+		margin-right: -27px;
+	}
+
+	@media (min-width: 1920px) {
+		margin-left: 117px;
+		margin-right: -117px;
+	}
 `;
 
 const Heading = styled.p`
@@ -121,7 +102,7 @@ const Heading = styled.p`
 		max-width: 400px;
 	}
 
-	@media (min-width: 1024px) {
+	@media (min-width: 1920px) {
 		font-size: 44px;
 		line-height: 54px;
 		max-width: 500px;
