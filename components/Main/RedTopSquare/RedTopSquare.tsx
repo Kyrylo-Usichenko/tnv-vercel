@@ -25,11 +25,12 @@ const RedTopSquare: FC = () => {
 		);
 
 		const updateScale = () => {
-			const scrolled = (window.scrollY / (scrollHeight - window.innerHeight)) * 0.5;
-			const scale = 1 + scrolled;
+			const scrolled1 = (window.scrollY / (scrollHeight - window.innerHeight)) * 0.25;
+			const scale = 1 + scrolled1;
+			const translateY = (window.scrollY / (scrollHeight - window.innerHeight)) * 350;
 
-			elem1!.style.transform = `scale(${scale})`;
-			elem2!.style.transform = `scale(${scale})`;
+			elem1!.style.transform = `scale(${scale}) translateY(-${translateY}px)`;
+			elem2!.style.transform = `scale(${scale}) translateY(-${translateY}px)`;
 		};
 
 		const onScroll = () => {
@@ -46,9 +47,9 @@ const RedTopSquare: FC = () => {
 	}, [entry]);
 
 	return (
-		<BigRed ref={mainDiv}>
+		<BigRed>
 			<SmallRed>
-				<Null>
+				<Null ref={mainDiv}>
 					<AppImage ref={pic1} src='images/main/preview/app.png' />
 					<Phone ref={pic2} src='images/main/preview/phone.png' />
 					<DotsLeft />
