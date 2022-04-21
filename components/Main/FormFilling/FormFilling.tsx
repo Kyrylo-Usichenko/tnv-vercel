@@ -189,7 +189,7 @@ const Smile: FC = () => {
 const Wrapper = styled.div`
 	height: 1215px;
 	position: relative;
-	margin-top: 250px;
+	margin-top: 80px;
 	right: 0;
 	bottom: 0;
 	overflow: hidden;

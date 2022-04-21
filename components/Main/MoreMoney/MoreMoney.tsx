@@ -537,6 +537,25 @@ const List = styled.ul`
 	list-style: none;
 	margin: 0;
 	padding: 0;
+
+	@media (max-width: 1440px) {
+		height: 86px;
+	}
+	@media (max-width: 1280px) {
+		height: 110px;
+	}
+	@media (max-width: 1024px) {
+		height: 110px;
+	}
+	@media (max-width: 768px) {
+		height: 119px;
+	}
+	@media (max-width: 425px) {
+		height: 130px;
+	}
+	@media (max-width: 375px) {
+		height: 125px;
+	}
 `;
 
 const Item = styled.li`
