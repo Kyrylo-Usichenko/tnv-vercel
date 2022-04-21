@@ -58,13 +58,6 @@ const Slider: FC = () => {
 	SwiperCore.use([Autoplay]);
 	const [controlledSwiper, setControlledSwiper] = useState<SwiperCore | null>(null);
 
-	const pagination = {
-		clickable: true,
-		renderBullet: function (index: number, className: string) {
-			return '<span class="' + className + '"/><span></span></span>';
-		},
-	};
-
 	return (
 		<Wrapper>
 			<LeftSliderWrap>
@@ -74,12 +67,10 @@ const Slider: FC = () => {
 					controller={{ control: controlledSwiper! }}
 					spaceBetween={0}
 					slidesPerView={1}
-					// autoplay
 					navigation
 					loop={true}
-					pagination={pagination}
-					// onSwiper={(swiper) => console.log(swiper)}
-					// onSlideChange={() => console.log('slide 1 change')}
+					pagination={{ el: '.dots', clickable: true }}
+					initialSlide={1}
 				>
 					{SLIDERS.map((slide, index) => (
 						<SwiperSlide key={`${slide.sliderText}${index}`} className='swiper-slide'>
@@ -101,10 +92,8 @@ const Slider: FC = () => {
 					modules={[EffectFade]}
 					spaceBetween={0}
 					slidesPerView={1}
-					// autoplay
 					loop={true}
 					onSwiper={(swiper) => setControlledSwiper(swiper)}
-					// onSlideChange={() => console.log('slide 2 change')}
 					effect='fade'
 					allowTouchMove={false}
 				>
@@ -115,6 +104,7 @@ const Slider: FC = () => {
 					))}
 				</Swiper>
 			</RightSliderWrap>
+			<Dots className='dots' />
 		</Wrapper>
 	);
 };
@@ -142,36 +132,6 @@ const Wrapper = styled.div`
 	}
 	@media (max-width: 425px) {
 		padding: 24px;
-	}
-
-	.swiper-pagination {
-		display: block;
-		position: fixed;
-		bottom: -53px;
-		z-index: 1;
-		@media (max-width: 375px) {
-			bottom: -44px;
-		}
-	}
-	.swiper-pagination-bullet {
-		display: inline-flex;
-		width: 17px;
-		height: 17px;
-		margin: 0 8px !important;
-		background: none;
-		border-radius: none;
-		& span {
-			flex: 0 0 12px;
-			height: 12px;
-			border-radius: 2px;
-			transform: rotate(45deg);
-			background-color: #e1e1e1;
-		}
-	}
-	.swiper-pagination-bullet.swiper-pagination-bullet-active {
-		& span {
-			background-color: white;
-		}
 	}
 `;
 
@@ -259,6 +219,37 @@ const RightSliderWrap = styled.div`
 		width: 100%;
 		order: 1;
 		margin: 0 0 30px;
+	}
+`;
+
+const Dots = styled.div`
+	&.swiper-pagination-bullets.swiper-pagination-horizontal {
+		position: absolute;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		bottom: -50px;
+		@media (max-width: 1440px) {
+			bottom: -47px;
+		}
+		@media (max-width: 767px) {
+			bottom: -40px;
+		}
+
+		.swiper-pagination-bullet {
+			width: 17px;
+			height: 12px;
+			flex: 0 0 12px;
+			margin: 0 12px !important;
+			border-radius: 2px;
+			transform: rotate(45deg);
+			background: #e1e1e1;
+			cursor: pointer;
+			@media (max-width: 767px) {
+				height: 10px;
+				flex: 0 0 10px;
+			}
+		}
 	}
 `;
 
