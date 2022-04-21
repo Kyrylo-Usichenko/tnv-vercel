@@ -99,6 +99,7 @@ const Wrapper = styled.section`
 	}
 	@media (max-width: 425px) {
 		margin: 750px 0 0 0;
+		padding: 0;
 	}
 	@media (max-width: 375px) {
 		margin: 395px 0 0 0;
