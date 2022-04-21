@@ -33,10 +33,6 @@ export const FeaturesCon = styled.div`
 	margin: 0 auto;
 	position: relative;
 
-	/* @media (min-width: 768px) {
-		max-width: 768px;
-	} */
-
 	@media (min-width: 1024px) {
 		max-width: 1024px;
 		padding: 0 40px;
