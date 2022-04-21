@@ -1,11 +1,10 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { FeaturesCon } from '../../common/Container/Container';
 
 const Send: FC = () => {
 	return (
 		<StyledSend>
-			<FeaturesCon>
+			<SendCon>
 				<SendInfo>
 					<SendTitle>Send invoices, save the trees </SendTitle>
 					<SendText>
@@ -14,6 +13,8 @@ const Send: FC = () => {
 						two!
 					</SendText>
 				</SendInfo>
+			</SendCon>
+			<PreviewImg>
 				<picture>
 					<source
 						srcSet='images/features/send/women-1920.jpg 1x, images/features/send/women-1920@2x.jpg 2x'
@@ -35,7 +36,7 @@ const Send: FC = () => {
 						srcSet='images/features/send/women-768.jpg 1x, images/features/send/women-768@2x.jpg 2x'
 						media='(min-width: 768px)'
 					/>
-					<SendImg
+					<img
 						src='images/features/send/women-375.jpg'
 						srcSet='images/features/send/women-375@2x.jpg 2x'
 						alt='women'
@@ -62,13 +63,41 @@ const Send: FC = () => {
 					<RemindCheck src='images/features/send/check.svg' alt='check' loading='lazy' />
 				</Remind>
 				<Dec1></Dec1>
-			</FeaturesCon>
+			</PreviewImg>
 		</StyledSend>
 	);
 };
 
 const StyledSend = styled.section`
 	margin-bottom: 120px;
+`;
+
+const SendCon = styled.div`
+	max-width: 100%;
+	padding: 0 16px;
+	margin: 0 auto;
+
+	@media (min-width: 768px) {
+		max-width: 768px;
+	}
+
+	@media (min-width: 1024px) {
+		max-width: 1024px;
+		padding: 0 40px;
+	}
+
+	@media (min-width: 1280px) {
+		max-width: 1032px;
+		padding: 0;
+	}
+
+	@media (min-width: 1440px) {
+		max-width: 1192px;
+	}
+
+	@media (min-width: 1920px) {
+		max-width: 1312px;
+	}
 `;
 
 const SendInfo = styled.div`
@@ -135,55 +164,84 @@ const SendText = styled.p`
 	margin: 0;
 `;
 
-const SendImg = styled.img`
-	border-radius: 43px;
-	width: 100%;
-	height: auto;
+const PreviewImg = styled.div`
+	position: relative;
+	max-width: 375px;
+	padding: 0 16px;
+	margin: 0 auto;
+
+	& > picture:nth-child(1) > img {
+		border-radius: 44px;
+		width: 100%;
+		height: auto;
+	}
+
+	@media (min-width: 768px) {
+		max-width: 768px;
+	}
+
+	@media (min-width: 1024px) {
+		max-width: 1024px;
+		padding: 0 40px;
+	}
+
+	@media (min-width: 1280px) {
+		max-width: 1032px;
+		padding: 0;
+	}
+
+	@media (min-width: 1440px) {
+		max-width: 1192px;
+	}
+
+	@media (min-width: 1920px) {
+		max-width: 1312px;
+	}
 `;
 
 const Invoice = styled.div`
 	position: absolute;
-	top: 267px;
-	right: 17px;
+	top: -30px;
+	right: 20px;
 	display: flex;
 	align-items: center;
-	width: 295.19px;
-	height: 50.18px;
+	width: 295px;
+	height: 50px;
 	background: #f3f4f5;
-	border-radius: 11.8076px;
-	padding: 11.3px;
+	border-radius: 11px;
+	padding: 11px;
 	box-shadow: 7px 7px 20px 0 rgba(33, 33, 33, 0.1);
 
 	@media (min-width: 768px) {
-		width: 392.91px;
-		height: 66.8px;
-		border-radius: 15.7165px;
+		width: 392px;
+		height: 66px;
+		border-radius: 15px;
 		padding: 15px;
-		top: 221px;
+		top: 76px;
 		right: 46px;
 	}
 
 	@media (min-width: 1024px) {
-		top: 195px;
-		right: 67px;
+		top: 66px;
+		right: 66px;
 	}
 
 	@media (min-width: 1280px) {
-		width: 429.41px;
+		width: 429px;
 		height: 73px;
-		border-radius: 17.1765px;
+		border-radius: 17px;
 		padding: 16px;
-		top: 192px;
-		right: 33px;
+		top: 68px;
+		right: 25px;
 	}
 
 	@media (min-width: 1440px) {
-		top: 231px;
-		right: 55px;
+		top: 115px;
+		right: 73px;
 	}
 
 	@media (min-width: 1920px) {
-		top: 259px;
+		top: 134px;
 	}
 `;
 
@@ -199,15 +257,15 @@ const InvoiceInfo = styled.div``;
 const InvoiceTitle = styled.p`
 	font-family: 'Gilroy';
 	font-weight: 700;
-	font-size: 12.3737px;
+	font-size: 12px;
 	line-height: 15px;
 	color: #212121;
 	margin: 0 0 2.87px 0;
 
 	@media (min-width: 768px) {
-		font-size: 16.47px;
+		font-size: 16px;
 		line-height: 20px;
-		margin: 0 0 3.79px 0;
+		margin: 0 0 4px 0;
 	}
 
 	@media (min-width: 1280px) {
@@ -220,13 +278,13 @@ const InvoiceTitle = styled.p`
 const InvoiceText = styled.p`
 	font-family: 'Inter';
 	font-weight: 500;
-	font-size: 8.24917px;
+	font-size: 8px;
 	line-height: 10px;
 	color: #5c5c5c;
 	margin: 0;
 
 	@media (min-width: 768px) {
-		font-size: 10.98px;
+		font-size: 11px;
 		line-height: 13px;
 	}
 
@@ -241,30 +299,30 @@ const InvoiceSpan = styled.span`
 `;
 
 const InvoiceButton = styled.button`
-	width: 70.81px;
-	height: 22.32px;
-	border: 0.550809px solid #d2d2d2;
+	width: 70px;
+	height: 22px;
+	border: 0.5px solid #d2d2d2;
 	background-color: transparent;
-	border-radius: 8.81294px;
+	border-radius: 8px;
 	font-family: 'Gilroy';
 	font-weight: 700;
-	font-size: 8.24917px;
+	font-size: 8px;
 	line-height: 10px;
 	text-align: center;
 	color: #212121;
 
 	@media (min-width: 768px) {
-		width: 94.25px;
-		height: 29.71px;
-		border-radius: 11.7304px;
-		font-size: 10.98px;
+		width: 94px;
+		height: 29px;
+		border-radius: 11px;
+		font-size: 10px;
 		line-height: 14px;
 	}
 
 	@media (min-width: 1280px) {
 		width: 103px;
-		height: 32.47px;
-		border-radius: 12.8201px;
+		height: 32px;
+		border-radius: 12px;
 		font-size: 12px;
 		line-height: 15px;
 	}
@@ -285,44 +343,45 @@ const InvoiceArrow = styled.img`
 
 const Remind = styled.div`
 	position: absolute;
-	top: 370px;
+	top: 81px;
 	right: 0;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	width: 141px;
-	height: 30.93px;
+	height: 30px;
 	background: #f3f4f5;
-	border-radius: 7.98307px;
+	border-radius: 7px;
 	padding: 9.5px;
 	box-shadow: 5px 3px 20px 0 rgba(33, 33, 33, 0.1);
 
 	@media (min-width: 768px) {
-		width: 187.68px;
-		height: 41.18px;
+		width: 187px;
+		height: 41px;
 		padding: 13px;
-		top: 338px;
+		top: 188px;
 		right: 9px;
 	}
 
 	@media (min-width: 1024px) {
-		top: 309px;
+		top: 178px;
 		right: 19px;
 	}
 
 	@media (min-width: 1280px) {
 		width: 205px;
 		height: 45px;
-		top: 316px;
-		right: -23px;
+		top: 191px;
+		right: -25px;
 	}
 
 	@media (min-width: 1440px) {
-		top: 355px;
+		top: 239px;
+		right: -21px;
 	}
 
 	@media (min-width: 1920px) {
-		top: 384px;
+		top: 258px;
 	}
 `;
 
@@ -337,12 +396,12 @@ const RemindInfo = styled.div`
 `;
 
 const RemindBell = styled.img`
-	width: 12.38px;
-	height: 13.76px;
+	width: 12px;
+	height: 13px;
 
 	@media (min-width: 768px) {
-		width: 16.48px;
-		height: 18.32px;
+		width: 16px;
+		height: 18px;
 	}
 
 	@media (min-width: 1280px) {
@@ -354,13 +413,13 @@ const RemindBell = styled.img`
 const RemindTitle = styled.p`
 	font-family: 'Gilroy';
 	font-weight: 400;
-	font-size: 9.62403px;
+	font-size: 9px;
 	line-height: 12px;
 	color: #212121;
 	margin: 0;
 
 	@media (min-width: 768px) {
-		font-size: 12.81px;
+		font-size: 12px;
 		line-height: 16px;
 	}
 
@@ -371,17 +430,17 @@ const RemindTitle = styled.p`
 `;
 
 const RemindCheck = styled.img`
-	width: 11.98px;
-	height: 11.97px;
+	width: 11px;
+	height: 11px;
 
 	@media (min-width: 768px) {
-		width: 15.95px;
-		height: 15.94px;
+		width: 15px;
+		height: 15px;
 	}
 
 	@media (min-width: 1280px) {
-		width: 17.42px;
-		height: 17.42px;
+		width: 17px;
+		height: 17px;
 	}
 `;
 
@@ -395,75 +454,77 @@ const Dec1 = styled.div`
 	&::before {
 		content: url('images/features/send/line-l-375.svg');
 		position: absolute;
-		bottom: 244px;
-		right: 140px;
+		top: 22px;
+		right: 135px;
 	}
 
 	&::after {
 		content: url('images/features/send/line-r-375.svg');
 		position: absolute;
-		bottom: 340px;
-		right: 70px;
+		top: 13px;
+		right: 60px;
 	}
 
 	@media (min-width: 768px) {
 		&::before {
 			content: url('images/features/send/line-l-768.svg');
-			bottom: 287px;
+			top: 144px;
 			right: 270px;
 		}
 
 		&::after {
 			content: url('images/features/send/line-r-768.svg');
-			bottom: 332px;
-			right: 137px;
+			top: 121px;
+			right: 129px;
 		}
 	}
 
 	@media (min-width: 1024px) {
 		&::before {
-			bottom: 297px;
-			right: 308px;
+			top: 134px;
+			right: 309px;
 		}
 
 		&::after {
-			bottom: 345px;
+			top: 110px;
+			right: 115px;
 		}
 	}
 
 	@media (min-width: 1280px) {
 		&::before {
 			content: url('images/features/send/line-l-1280.svg');
-			bottom: 332px;
-			right: 296px;
+			top: 143px;
+			right: 294px;
 		}
 
 		&::after {
 			content: url('images/features/send/line-r-1280.svg');
-			right: 111px;
-			bottom: 387px;
+			top: 119px;
+			right: 94px;
 		}
 	}
 
 	@media (min-width: 1440px) {
 		&::before {
-			bottom: 270px;
-			right: 346px;
+			top: 191px;
+			right: 345px;
 		}
 
 		&::after {
-			bottom: 324px;
+			top: 165px;
+			right: 121px;
 		}
 	}
 
 	@media (min-width: 1920px) {
 		&::before {
-			bottom: 242px;
-			right: 380px;
+			top: 211px;
+			right: 383px;
 		}
 
 		&::after {
-			bottom: 295px;
+			top: 185px;
 		}
 	}
 `;

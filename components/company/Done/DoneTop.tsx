@@ -44,7 +44,7 @@ const DoneTop: FC = () => {
 					</RedSide>
 				</TopWrapper>
 				<FlexConInfo>
-					<FeaturesCon>
+					<FeaturesCon className='h-100'>
 						<SquareG2 />
 						<SquareG3 />
 						<Content2>

@@ -10,9 +10,9 @@ const Breeze: FC = () => {
 				<BreezeCon>
 					<BreezeTitle>Breeze through orders without the stress</BreezeTitle>
 					<BreezeText>
-						Customers will love that they can browse item catalogs and check availability before placing
-						orders. You'll receive orders in beautifully formatted lists. Confirm or amend them in a few
-						taps, even when on-the-go!
+						Your customers will love that they can browse item catalogs and check availability before
+						placing orders. You'll receive orders in beautifully formatted lists. Confirm or amend them in a
+						few taps, even when on-the-go!
 					</BreezeText>
 					<BreezeBlock1>
 						<BreezeBlock2>
@@ -150,7 +150,7 @@ const BreezeText = styled.p`
 	}
 
 	@media (min-width: 1280px) {
-		max-width: 388px;
+		max-width: 442px;
 	}
 
 	@media (min-width: 1440px) {
@@ -162,7 +162,7 @@ const BreezeText = styled.p`
 	@media (min-width: 1920px) {
 		font-size: 18px;
 		line-height: 25px;
-		max-width: 477px;
+		max-width: 515px;
 
 		&::before {
 			left: -100px;
@@ -172,8 +172,8 @@ const BreezeText = styled.p`
 
 const BreezeBlock1 = styled.div`
 	position: static;
-	width: 405.17px;
-	height: 405.17px;
+	width: 405px;
+	height: 405px;
 	padding: 25px;
 	margin-top: 130px;
 	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(218, 218, 218, 0.3) 0%, rgba(250, 250, 250, 0.3) 100%);
@@ -203,15 +203,15 @@ const BreezeBlock1 = styled.div`
 `;
 
 const BreezeBlock2 = styled.div`
-	width: 354.78px;
-	height: 354.78px;
+	width: 354px;
+	height: 354px;
 	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(218, 218, 218, 0.6) 0%, rgba(250, 250, 250, 0.6) 100%);
 	border-radius: 55.2257px;
 	position: relative;
 
 	@media (min-width: 768px) {
-		width: 490.37px;
-		height: 490.37px;
+		width: 490px;
+		height: 490px;
 	}
 `;
 
@@ -305,10 +305,10 @@ const Add = styled.div`
 	position: absolute;
 	top: 35px;
 	left: 70px;
-	width: 196.71px;
-	height: 33.03px;
+	width: 196px;
+	height: 33px;
 	background-color: #ffffff;
-	border-radius: 8.52371px;
+	border-radius: 8.5px;
 	padding: 9.5px;
 	display: flex;
 	align-items: center;
@@ -372,8 +372,8 @@ const AddCon = styled.div`
 `;
 
 const AddFile = styled.img`
-	width: 13.21px;
-	height: 13.21px;
+	width: 13px;
+	height: 13px;
 
 	@media (min-width: 768px) {
 		width: 18px;
@@ -408,8 +408,8 @@ const Del = styled.div`
 	position: absolute;
 	top: 118px;
 	left: 7px;
-	width: 192.34px;
-	height: 32.86px;
+	width: 192px;
+	height: 32px;
 	background-color: #ffffff;
 	border-radius: 10px;
 	padding: 9.5px;
@@ -419,8 +419,8 @@ const Del = styled.div`
 	box-shadow: 5px 8px 17px 0 rgba(33, 33, 33, 0.1);
 
 	@media (min-width: 768px) {
-		width: 262.05px;
-		height: 44.77px;
+		width: 262px;
+		height: 44px;
 		border-radius: 14px;
 		padding: 13px;
 		top: 145px;
@@ -444,8 +444,8 @@ const DelCon = styled.div`
 `;
 
 const DelCal = styled.img`
-	width: 11.74px;
-	height: 13.21px;
+	width: 11px;
+	height: 13px;
 
 	@media (min-width: 768px) {
 		width: 16px;
@@ -470,7 +470,7 @@ const DelText = styled.p`
 const DelDate = styled.p`
 	font-family: 'Gilroy';
 	font-weight: 400;
-	font-size: 10.2758px;
+	font-size: 10px;
 	line-height: 12px;
 	color: #212121;
 	margin: 0;

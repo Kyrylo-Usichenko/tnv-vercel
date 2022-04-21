@@ -138,6 +138,35 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 
 const StyledPreview = styled.section`
 	overflow: hidden;
+
+	& > div {
+		max-width: 375px;
+		padding: 0 16px;
+		margin: 0 auto;
+		position: relative;
+
+		@media (min-width: 768px) {
+			max-width: 768px;
+		}
+
+		@media (min-width: 1024px) {
+			max-width: 1024px;
+			padding: 0 40px;
+		}
+
+		@media (min-width: 1280px) {
+			max-width: 1032px;
+			padding: 0;
+		}
+
+		@media (min-width: 1440px) {
+			max-width: 1192px;
+		}
+
+		@media (min-width: 1920px) {
+			max-width: 1312px;
+		}
+	}
 `;
 
 const PreviewInfo = styled.div`
@@ -300,8 +329,8 @@ const PreviewImg = styled.div`
 	&::before {
 		content: '';
 		position: absolute;
-		width: 569.32px;
-		height: 569.32px;
+		width: 569px;
+		height: 569px;
 		top: -97px;
 		left: -360px;
 		z-index: -1;
@@ -329,7 +358,7 @@ const AppImg = styled.img`
 	bottom: -84px;
 	z-index: 1;
 	border-radius: 0;
-	width: 177px;
+	width: 201px;
 	height: auto;
 
 	@media (min-width: 768px) {
@@ -398,22 +427,22 @@ const PaymentIco = styled.div`
 	}
 
 	@media (min-width: 768px) {
-		width: 27.61px;
-		height: 27.58px;
+		width: 27px;
+		height: 27px;
 
 		& > img {
-			width: 14.62px;
-			height: 14.6px;
+			width: 14px;
+			height: 14px;
 		}
 	}
 
 	@media (min-width: 1280px) {
-		width: 30.18px;
-		height: 30.15px;
+		width: 30px;
+		height: 30px;
 
 		& > img {
-			width: 15.98px;
-			height: 15.96px;
+			width: 16px;
+			height: 16px;
 		}
 	}
 `;
@@ -427,15 +456,15 @@ const Payment = styled.div`
 	padding: 7.5px;
 
 	@media (min-width: 768px) {
-		width: 200.56px;
-		height: 64.88px;
-		padding: 9.7px;
+		width: 200px;
+		height: 64px;
+		padding: 9px;
 	}
 
 	@media (min-width: 1280px) {
-		width: 219.25px;
-		height: 70.93px;
-		padding: 10.6px;
+		width: 219px;
+		height: 70px;
+		padding: 10px;
 	}
 `;
 
@@ -448,15 +477,15 @@ const PaymentTitle = styled.p`
 	margin: 0 0 1.5px 0;
 
 	@media (min-width: 768px) {
-		font-size: 12.1226px;
+		font-size: 12px;
 		line-height: 15px;
-		margin: 0 0 2.36px 0;
+		margin: 0 0 2.4px 0;
 	}
 
 	@media (min-width: 1280px) {
-		font-size: 13.2527px;
+		font-size: 13px;
 		line-height: 16px;
-		margin: 0 0 2.97px 0;
+		margin: 0 0 3px 0;
 	}
 `;
 
@@ -469,15 +498,15 @@ const PaymentText = styled.p`
 	margin: 0 0 1.5px 0;
 
 	@media (min-width: 768px) {
-		font-size: 10.3908px;
+		font-size: 10px;
 		line-height: 13px;
-		margin: 0 0 2.14px 0;
+		margin: 0 0 2px 0;
 	}
 
 	@media (min-width: 1280px) {
-		font-size: 11.3594px;
+		font-size: 11px;
 		line-height: 14px;
-		margin: 0 0 2.55px 0;
+		margin: 0 0 2.5px 0;
 	}
 `;
 
@@ -490,12 +519,12 @@ const PaymentPrice = styled.p`
 	margin: 0;
 
 	@media (min-width: 768px) {
-		font-size: 10.3908px;
+		font-size: 10px;
 		line-height: 13px;
 	}
 
 	@media (min-width: 1280px) {
-		font-size: 11.3594px;
+		font-size: 11px;
 		line-height: 14px;
 	}
 `;
@@ -509,12 +538,12 @@ const PaymentTime = styled.p`
 	margin: 0;
 
 	@media (min-width: 768px) {
-		font-size: 6.92719px;
+		font-size: 6px;
 		line-height: 8px;
 	}
 
 	@media (min-width: 1280px) {
-		font-size: 7.57294px;
+		font-size: 7px;
 		line-height: 9px;
 	}
 `;
@@ -552,11 +581,11 @@ const PreviewImgDeco1 = styled.div`
 	&::before {
 		content: '';
 		position: absolute;
-		width: 156px;
-		height: 169px;
+		width: 177px;
+		height: 191px;
 		background: rgba(0, 0, 0, 0.1);
-		filter: blur(16.91px);
-		border-radius: 8.93674px;
+		filter: blur(16px);
+		border-radius: 6px;
 		top: initial;
 		right: -15px;
 		bottom: -91px;

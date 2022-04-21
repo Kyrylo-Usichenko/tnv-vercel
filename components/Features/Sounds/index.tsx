@@ -5,21 +5,17 @@ import { FeaturesCon } from '../../common/Container/Container';
 const Sounds: FC = () => {
 	return (
 		<StyledSounds>
-			<FlexCon>
-				<FullCon>
-					<FullConDec></FullConDec>
-				</FullCon>
-				<FlexConInfo>
-					<FeaturesCon className='h-100'>
-						<SoundsCon>
-							<SoundsTitle>
-								Sounds easy? <Br /> Supply chain transactions don't have to be complicated.
-							</SoundsTitle>
-							<SoundsButton>Get Started</SoundsButton>
-						</SoundsCon>
-					</FeaturesCon>
-				</FlexConInfo>
-			</FlexCon>
+			<FlexConInfo>
+				<FullConDec></FullConDec>
+				<FeaturesCon>
+					<SoundsCon>
+						<SoundsTitle>
+							Sounds easy? <Br /> Supply chain transactions don't have to be complicated.
+						</SoundsTitle>
+						<SoundsButton>Get Started</SoundsButton>
+					</SoundsCon>
+				</FeaturesCon>
+			</FlexConInfo>
 		</StyledSounds>
 	);
 };
@@ -29,63 +25,6 @@ const StyledSounds = styled.section`
 
 	@media (min-width: 768px) {
 		margin-bottom: 140px;
-	}
-`;
-
-const FlexCon = styled.div`
-	position: relative;
-`;
-
-const FullCon = styled.div`
-	position: relative;
-	height: 255px;
-	border-top-right-radius: 48px;
-	border-bottom-right-radius: 48px;
-	background-color: var(--bg-black);
-
-	&::before {
-		content: url('images/features/sounds/dec-375.svg');
-		position: absolute;
-		bottom: -40px;
-		right: 0;
-	}
-
-	@media (min-width: 768px) {
-		height: 285px;
-
-		&::before {
-			content: url('images/features/sounds/dec-768.svg');
-			position: absolute;
-			bottom: -60px;
-			right: 0;
-		}
-	}
-
-	@media (min-width: 1024px) {
-		height: 196px;
-
-		&::before {
-			content: url('images/features/sounds/dec-1024.svg');
-			position: absolute;
-			bottom: -60px;
-			right: 0;
-		}
-	}
-
-	@media (min-width: 1280px) {
-		margin-right: 54px;
-
-		&::before {
-			content: url('images/features/sounds/dec-1280.svg');
-			position: absolute;
-			bottom: -50px;
-			right: -50px;
-		}
-	}
-
-	@media (min-width: 1920px) {
-		margin-right: 234px;
-		height: 216px;
 	}
 `;
 
@@ -146,7 +85,7 @@ const FullConDec = styled.div`
 			right: 400px;
 		}
 	}
-	@media (min-width: 1440px) {
+	@media (min-width: 1920px) {
 		&::before {
 			left: 140px;
 		}
@@ -154,11 +93,53 @@ const FullConDec = styled.div`
 `;
 
 const FlexConInfo = styled.div`
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	position: relative;
+	border-top-right-radius: 48px;
+	border-bottom-right-radius: 48px;
+	background-color: var(--bg-black);
+	padding: 48px 0;
+
+	&::before {
+		content: url('images/features/sounds/dec-375.svg');
+		position: absolute;
+		bottom: -40px;
+		right: 0;
+	}
+
+	@media (min-width: 768px) {
+		&::before {
+			content: url('images/features/sounds/dec-768.svg');
+			position: absolute;
+			bottom: -60px;
+			right: 0;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		padding: 54px 0;
+
+		&::before {
+			content: url('images/features/sounds/dec-1024.svg');
+			position: absolute;
+			bottom: -60px;
+			right: 0;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		margin-right: 54px;
+
+		&::before {
+			content: url('images/features/sounds/dec-1280.svg');
+			position: absolute;
+			bottom: -50px;
+			right: -50px;
+		}
+	}
+
+	@media (min-width: 1920px) {
+		margin-right: 234px;
+	}
 `;
 
 const SoundsCon = styled.div`
@@ -166,7 +147,6 @@ const SoundsCon = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100%;
 
 	@media (min-width: 1024px) {
 		display: flex;
@@ -174,7 +154,16 @@ const SoundsCon = styled.div`
 		justify-content: space-between;
 		align-items: center;
 		text-align: left;
-		padding: 54px 0;
+	}
+
+	@media (min-width: 1280px) {
+		margin-left: 27px;
+		margin-right: -27px;
+	}
+
+	@media (min-width: 1920px) {
+		margin-left: 117px;
+		margin-right: -117px;
 	}
 `;
 

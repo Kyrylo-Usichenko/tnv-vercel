@@ -5,120 +5,22 @@ import { FeaturesCon } from '../../common/Container/Container';
 const Ready: FC = () => {
 	return (
 		<StyledReady>
-			<FlexCon>
-				<FullCon>
-					<FullConDec></FullConDec>
-				</FullCon>
-				<FlexConInfo>
-					<FeaturesCon className='h-100'>
-						<ReadyCon>
-							<ReadyText>Are you ready?</ReadyText>
-							<ReadyTitle>Supercharge your business, the Tinvio way</ReadyTitle>
-							<ReadyButton>Get Started</ReadyButton>
-						</ReadyCon>
-					</FeaturesCon>
-				</FlexConInfo>
-			</FlexCon>
+			<FlexConInfo>
+				<FullConDec></FullConDec>
+				<FeaturesCon>
+					<ReadyCon>
+						<ReadyText>Are you ready?</ReadyText>
+						<ReadyTitle>Supercharge your business, the Tinvio way</ReadyTitle>
+						<ReadyButton>Get Started</ReadyButton>
+					</ReadyCon>
+				</FeaturesCon>
+			</FlexConInfo>
 		</StyledReady>
 	);
 };
 
 const StyledReady = styled.section`
 	margin-bottom: 120px;
-`;
-
-const FlexCon = styled.div`
-	position: relative;
-`;
-
-const FullCon = styled.div`
-	position: relative;
-	height: 253px;
-	border-top-right-radius: 48px;
-	border-bottom-right-radius: 48px;
-	background: #f7f7f7;
-	z-index: 1;
-	overflow: hidden;
-
-	&::before {
-		content: '';
-		position: absolute;
-		top: -34px;
-		left: -190px;
-		width: 354.73px;
-		height: 354.73px;
-		background: radial-gradient(
-			95.51% 95.51% at 50% 50%,
-			rgba(255, 255, 255, 0.6) 0%,
-			rgba(250, 250, 250, 0.6) 100%
-		);
-		border-radius: 36.7977px;
-		transform: rotate(-45deg);
-	}
-
-	&::after {
-		content: '';
-		position: absolute;
-		right: -450px;
-		bottom: -270px;
-		width: 506.68px;
-		height: 506.68px;
-		background: radial-gradient(
-			95.51% 95.51% at 50% 50%,
-			rgba(255, 255, 255, 0.6) 0%,
-			rgba(250, 250, 250, 0.6) 100%
-		);
-		border-radius: 42.989px;
-		transform: rotate(-45deg);
-		z-index: -1;
-	}
-
-	@media (min-width: 768px) {
-		height: 274px;
-
-		&::before {
-			width: 479.89px;
-			height: 479.89px;
-			left: -200px;
-			top: -70px;
-		}
-
-		&::after {
-			right: -290px;
-		}
-	}
-
-	@media (min-width: 1024px) {
-		height: 277px;
-
-		&::before {
-			left: -50px;
-			top: -90px;
-		}
-	}
-
-	@media (min-width: 1280px) {
-		height: 299px;
-		margin-right: 54px;
-
-		&::after {
-			right: -130px;
-			bottom: -220px;
-		}
-	}
-
-	@media (min-width: 1920px) {
-		margin-right: 234px;
-		height: 333px;
-
-		&::before {
-			left: 200px;
-		}
-
-		&::after {
-			right: -60px;
-		}
-	}
 `;
 
 const FullConDec = styled.div`
@@ -175,12 +77,87 @@ const FullConDec = styled.div`
 `;
 
 const FlexConInfo = styled.div`
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 2;
+	position: relative;
+	border-top-right-radius: 48px;
+	border-bottom-right-radius: 48px;
+	background-color: #f7f7f7;
+	z-index: 1;
+	overflow: hidden;
+	padding: 48px 0;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: -34px;
+		left: -190px;
+		width: 354.73px;
+		height: 354.73px;
+		background: radial-gradient(
+			95.51% 95.51% at 50% 50%,
+			rgba(255, 255, 255, 0.6) 0%,
+			rgba(250, 250, 250, 0.6) 100%
+		);
+		border-radius: 36.7977px;
+		transform: rotate(-45deg);
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		right: -450px;
+		bottom: -270px;
+		width: 506.68px;
+		height: 506.68px;
+		background: radial-gradient(
+			95.51% 95.51% at 50% 50%,
+			rgba(255, 255, 255, 0.6) 0%,
+			rgba(250, 250, 250, 0.6) 100%
+		);
+		border-radius: 42.989px;
+		transform: rotate(-45deg);
+		z-index: -1;
+	}
+
+	@media (min-width: 768px) {
+		&::before {
+			width: 479.89px;
+			height: 479.89px;
+			left: -200px;
+			top: -70px;
+		}
+
+		&::after {
+			right: -290px;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		&::before {
+			left: -50px;
+			top: -90px;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		margin-right: 54px;
+
+		&::after {
+			right: -130px;
+			bottom: -220px;
+		}
+	}
+
+	@media (min-width: 1920px) {
+		margin-right: 234px;
+
+		&::before {
+			left: 200px;
+		}
+
+		&::after {
+			right: -60px;
+		}
+	}
 `;
 
 const ReadyCon = styled.div`
@@ -188,7 +165,16 @@ const ReadyCon = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100%;
+
+	@media (min-width: 1280px) {
+		margin-left: 27px;
+		margin-right: -27px;
+	}
+
+	@media (min-width: 1920px) {
+		margin-left: 117px;
+		margin-right: -117px;
+	}
 `;
 
 const ReadyTitle = styled.h3`

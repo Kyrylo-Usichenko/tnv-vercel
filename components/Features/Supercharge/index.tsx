@@ -1,25 +1,9 @@
-import React, { FC, RefObject, useEffect, useRef } from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 
 import { FeaturesCon } from '../../common/Container/Container';
-import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 const Supercharge: FC = () => {
-	const video = useRef() as RefObject<HTMLVideoElement>;
-	const entry = useIntersectionObserver(video, {});
-
-	useEffect(() => {
-		const isVisible = !!entry?.isIntersecting;
-
-		if (video.current) {
-			if (isVisible) {
-				void video.current.play();
-			} else {
-				video.current.pause();
-			}
-		}
-	}, [entry]);
-
 	return (
 		<StyledSupercharge>
 			<FeaturesCon>
@@ -29,15 +13,10 @@ const Supercharge: FC = () => {
 				<FullCon>
 					<FullConDec1>
 						<FullConApp
-							ref={video}
-							muted
-							loop
-							preload='metadata'
-							poster='images/features/supercharge/app@2x.jpg'
-						>
-							<source src='images/features/supercharge/video.mp4' type='video/mp4' />
-							Sorry, your browser doesn't support embedded videos.
-						</FullConApp>
+							src='images/features/supercharge/1.jpg'
+							srcSet='images/features/supercharge/1@2x.jpg 2x'
+							alt='app'
+						/>
 					</FullConDec1>
 				</FullCon>
 				<FlexConInfo>
@@ -68,6 +47,11 @@ const Supercharge: FC = () => {
 									And more in one <br /> dashboard...
 								</Title>
 							</Elem>
+							<MobileApp
+								src='images/features/supercharge/1.jpg'
+								srcSet='images/features/supercharge/1@2x.jpg 2x'
+								alt='app'
+							/>
 						</FlexConGrid>
 					</FeaturesCon>
 				</FlexConInfo>
@@ -114,28 +98,11 @@ const FlexCon = styled.div`
 `;
 
 const FullCon = styled.div`
-	position: relative;
-	height: 889px;
-	border-top-right-radius: 48px;
-	border-bottom-right-radius: 48px;
-	background-color: var(--bg-black);
-
-	&::before {
-		content: url('images/features/supercharge/dots.svg');
-		position: absolute;
-		right: -100px;
-		bottom: 280px;
-		transform: rotate(90deg);
-	}
-
-	&::after {
-		content: url('images/features/supercharge/dec-375.svg');
-		position: absolute;
-		right: 2px;
-		bottom: -60px;
-	}
-
 	@media (min-width: 768px) {
+		position: relative;
+		border-top-right-radius: 48px;
+		border-bottom-right-radius: 48px;
+		background-color: var(--bg-black);
 		height: 653px;
 
 		&::before {
@@ -154,6 +121,8 @@ const FullCon = styled.div`
 		height: 484px;
 
 		&::before {
+			content: url('images/features/supercharge/dots.svg');
+			position: absolute;
 			display: block;
 			transform: rotate(0);
 			right: 360px;
@@ -199,11 +168,43 @@ const FullCon = styled.div`
 `;
 
 const FlexConInfo = styled.div`
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	border-top-right-radius: 48px;
+	border-bottom-right-radius: 48px;
+	background-color: var(--bg-black);
+
+	&::before {
+		content: url('images/features/supercharge/dots.svg');
+		position: absolute;
+		right: -100px;
+		bottom: 280px;
+		transform: rotate(90deg);
+	}
+
+	&::after {
+		content: url('images/features/supercharge/dec-375.svg');
+		position: absolute;
+		right: 2px;
+		bottom: -60px;
+	}
+
+	@media (min-width: 768px) {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		background-color: transparent;
+
+		&::before {
+			display: none;
+		}
+
+		&::after {
+			display: none;
+		}
+	}
 `;
 
 const FlexConGrid = styled.div`
@@ -310,23 +311,53 @@ const Text = styled.p`
 	}
 `;
 
-const FullConApp = styled.video`
-	width: 461.48px;
-	height: 304px;
-	margin-right: -95px;
-	margin-bottom: -1px;
+const MobileApp = styled.img`
+	display: block;
+	width: 105%;
+	height: auto;
+	border-bottom-right-radius: 48px;
+
+	@media (min-width: 450px) {
+		width: 104%;
+	}
+
+	@media (min-width: 580px) {
+		width: 103%;
+	}
 
 	@media (min-width: 768px) {
-		width: 608.73px;
+		display: none;
+	}
+`;
+
+const FullConApp = styled.img`
+	display: none;
+
+	@media (min-width: 768px) {
+		display: block;
+		width: 608px;
 		height: 401px;
 		margin-left: 0;
 		margin-right: -130px;
+		z-index: 2;
+	}
+
+	@media (min-width: 840px) {
+		margin-right: -100px;
+	}
+
+	@media (min-width: 920px) {
+		margin-right: -25px;
+	}
+
+	@media (min-width: 1000px) {
+		margin-right: 0;
 	}
 
 	@media (min-width: 1024px) {
 		width: auto;
-		height: 95%;
-		margin-right: -182px;
+		height: auto;
+		margin-right: -188px;
 	}
 
 	@media (min-width: 1280px) {
@@ -334,7 +365,7 @@ const FullConApp = styled.video`
 	}
 
 	@media (min-width: 1440px) {
-		margin-right: -45px;
+		margin-right: 0;
 	}
 `;
 
@@ -348,21 +379,29 @@ const FullConDec1 = styled.div`
 	border-top-right-radius: 48px;
 	border-bottom-right-radius: 48px;
 	overflow: hidden;
-	z-index: 1;
 
 	&::before {
-		content: url('images/features/supercharge/big-rec.svg');
+		content: '';
+		width: 499px;
+		height: 499px;
+		border-radius: 51px;
+		transform: rotate(-45deg);
+		background-color: #3a3a3a;
 		position: absolute;
-		top: 0;
-		left: -400px;
+		top: -242px;
+		left: -349px;
 	}
 
 	&::after {
-		content: url('images/features/supercharge/min-rec.svg');
+		content: '';
+		background-color: #3a3a3a;
+		width: 308px;
+		height: 308px;
+		border-radius: 31px;
+		transform: rotate(-45deg);
 		position: absolute;
 		right: 0px;
 		bottom: 60px;
-		z-index: -1;
 	}
 
 	@media (min-width: 768px) {
