@@ -1,4 +1,4 @@
-import React, { FC, RefObject, useEffect, useMemo, useRef, useState } from 'react';
+import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 import { Container } from '../../common/Container/Container';
