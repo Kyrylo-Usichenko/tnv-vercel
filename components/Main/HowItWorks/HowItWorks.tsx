@@ -76,20 +76,29 @@ const Wrapper = styled.section`
 	transform: skewY(-8deg);
 	transform-origin: bottom right;
 	border-radius: 50px 0px 0px 50px;
+	@media (max-width: 1440px) {
+		margin: 185px 0 0 58px;
+	}
+	@media (max-width: 1280px) {
+		margin: 200px 0 0 58px;
+	}
 	@media (max-width: 1024px) {
-		margin: 159px 0 0 0;
+		margin: 195px 0 0 0;
 	}
 	@media (max-width: 970px) {
 		height: inherit;
 		padding-bottom: 40px;
+		margin: 210px 0 0 0;
 	}
 	@media (max-width: 768px) {
 		margin: 639px 0 0 0;
 		padding-bottom: 121px;
 	}
-
+	@media (max-width: 520px) {
+		margin: 660px 0 0 0;
+	}
 	@media (max-width: 425px) {
-		margin: 710px 0 0 0;
+		margin: 750px 0 0 0;
 	}
 	@media (max-width: 375px) {
 		margin: 395px 0 0 0;

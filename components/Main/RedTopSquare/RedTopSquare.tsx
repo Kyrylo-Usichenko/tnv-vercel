@@ -126,6 +126,10 @@ const AppImage = styled.img`
 	right: 149px;
 	width: 829px;
 	height: 634px;
+	@media (max-width: 1024px) {
+		top: -202px;
+		right: 125px;
+	}
 	@media (max-width: 768px) {
 		top: -328px;
 		right: -574px;
@@ -148,6 +152,10 @@ const Phone = styled.img`
 	height: 414px;
 	background-size: contain;
 
+	@media (max-width: 1024px) {
+		top: 118px;
+		left: -165px;
+	}
 	@media (max-width: 768px) {
 		top: -45px;
 		left: 499px;
