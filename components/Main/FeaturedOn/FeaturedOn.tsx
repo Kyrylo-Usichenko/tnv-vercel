@@ -7,7 +7,7 @@ const TOP_OFFSET = 40;
 const MAX_OFFSET = 70;
 
 const MoreMoney: FC = () => {
-	const [offset, setOffset] = useState(TOP_OFFSET);
+	const [offset, setOffset] = useState<number>(0);
 	const typeRef = useRef() as RefObject<HTMLDivElement>;
 	const entry = useIntersectionObserver(typeRef, {});
 	const isVisible = !!entry?.isIntersecting;
@@ -19,8 +19,9 @@ const MoreMoney: FC = () => {
 			if (isVisible) {
 				const pos = typeRef.current!.getBoundingClientRect().top;
 				const offsetPos = (pos / screenHeight) * 100;
-
-				setOffset(offsetPos > MAX_OFFSET ? MAX_OFFSET : offsetPos - TOP_OFFSET >= 0 ? offsetPos : TOP_OFFSET);
+				const newOffset =
+					offsetPos > MAX_OFFSET ? MAX_OFFSET : offsetPos - TOP_OFFSET >= 0 ? offsetPos : TOP_OFFSET;
+				setOffset(newOffset);
 			}
 		};
 
@@ -44,10 +45,8 @@ const MoreMoney: FC = () => {
 				<DivideLine />
 
 				<Container>
-					<Inner>
-						<Title ref={typeRef} offset={offset - TOP_OFFSET}>
-							Featured On
-						</Title>
+					<Inner ref={typeRef}>
+						<Title offset={offset - TOP_OFFSET}>Featured On</Title>
 						<Companies offset={offset - TOP_OFFSET}>
 							<Company1 src='images/main/featuredOn/techCrunch.svg' alt='' />
 							<Company2 src='images/main/featuredOn/techInAsia.svg' alt='' />
@@ -141,9 +140,12 @@ const Title = styled.h4<{ offset: number }>`
 	margin: 0 0 32px 0;
 	padding: 48px 0 16px 0;
 	text-align: center;
-	transform: translateX(${({ offset }) => -offset}vw);
 	scroll-behavior: smooth;
-	transition: all 0.1s linear;
+	transition: all 0.35s linear;
+	will-change: transform;
+	transform: translate3d(${({ offset }) => -offset}vw, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg)
+		rotateZ(0deg) skew(0deg, 0deg);
+	transform-style: preserve-3d;
 
 	@media (max-width: 1440px) {
 		font-size: 36px;
@@ -171,7 +173,12 @@ const Companies = styled.div<{ offset: number }>`
 	max-width: 1132px;
 	width: 100%;
 	flex-wrap: wrap;
-	transform: translateX(${({ offset }) => offset}%);
+	// transform: translateX(${({ offset }) => offset}%);
+	transition: all 0.35s linear;
+	will-change: transform;
+	transform: translate3d(${({ offset }) => offset}vw, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg)
+		rotateZ(0deg) skew(0deg, 0deg);
+	transform-style: preserve-3d;
 
 	@media (max-width: 1024px) {
 		padding-left: 40px;
