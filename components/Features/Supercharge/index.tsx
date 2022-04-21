@@ -339,6 +339,7 @@ const FullConApp = styled.img`
 		height: 401px;
 		margin-left: 0;
 		margin-right: -130px;
+		z-index: 2;
 	}
 
 	@media (min-width: 840px) {
