@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 import { Container } from '../../common/Container/Container';
 
-const TOP_OFFSET = 30;
+const TOP_OFFSET = 40;
+const MAX_OFFSET = 70;
 
 const MoreMoney: FC = () => {
 	const [offset, setOffset] = useState(TOP_OFFSET);
@@ -18,7 +19,8 @@ const MoreMoney: FC = () => {
 			if (isVisible) {
 				const pos = typeRef.current!.getBoundingClientRect().top;
 				const offsetPos = (pos / screenHeight) * 100;
-				setOffset(offsetPos - TOP_OFFSET >= 0 ? offsetPos : TOP_OFFSET);
+
+				setOffset(offsetPos > MAX_OFFSET ? MAX_OFFSET : offsetPos - TOP_OFFSET >= 0 ? offsetPos : TOP_OFFSET);
 			}
 		};
 
@@ -42,8 +44,10 @@ const MoreMoney: FC = () => {
 				<DivideLine />
 
 				<Container>
-					<Inner ref={typeRef}>
-						<Title offset={offset - TOP_OFFSET}>Featured On</Title>
+					<Inner>
+						<Title ref={typeRef} offset={offset - TOP_OFFSET}>
+							Featured On
+						</Title>
 						<Companies offset={offset - TOP_OFFSET}>
 							<Company1 src='images/main/featuredOn/techCrunch.svg' alt='' />
 							<Company2 src='images/main/featuredOn/techInAsia.svg' alt='' />
@@ -136,12 +140,10 @@ const Title = styled.h4<{ offset: number }>`
 	color: #212121;
 	margin: 0 0 32px 0;
 	padding: 48px 0 16px 0;
-	// width: 660px;
-	// border-bottom: 1px solid #d2d2d2;
 	text-align: center;
-	position: relative;
-	right: ${({ offset }) => offset}vw;
+	transform: translateX(${({ offset }) => -offset}vw);
 	scroll-behavior: smooth;
+	transition: all 0.1s linear;
 
 	@media (max-width: 1440px) {
 		font-size: 36px;
@@ -169,8 +171,7 @@ const Companies = styled.div<{ offset: number }>`
 	max-width: 1132px;
 	width: 100%;
 	flex-wrap: wrap;
-	position: relative;
-	left: ${({ offset }) => offset}vw;
+	transform: translateX(${({ offset }) => offset}%);
 
 	@media (max-width: 1024px) {
 		padding-left: 40px;
