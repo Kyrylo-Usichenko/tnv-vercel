@@ -138,6 +138,35 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 
 const StyledPreview = styled.section`
 	overflow: hidden;
+
+	& > div {
+		max-width: 375px;
+		padding: 0 16px;
+		margin: 0 auto;
+		position: relative;
+
+		@media (min-width: 768px) {
+			max-width: 768px;
+		}
+
+		@media (min-width: 1024px) {
+			max-width: 1024px;
+			padding: 0 40px;
+		}
+
+		@media (min-width: 1280px) {
+			max-width: 1032px;
+			padding: 0;
+		}
+
+		@media (min-width: 1440px) {
+			max-width: 1192px;
+		}
+
+		@media (min-width: 1920px) {
+			max-width: 1312px;
+		}
+	}
 `;
 
 const PreviewInfo = styled.div`
