@@ -1,6 +1,5 @@
 import React, { ChangeEvent, FC, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Circle from '../../common/Circle/Circle';
 import { Container } from '../../common/Container/Container';
 
 const Smile: FC = () => {
@@ -158,19 +157,34 @@ const Smile: FC = () => {
 											<ModalInputError>Invalid phone number</ModalInputError>
 										) : null}
 									</ModlaLabel>
-									{loading === 'loading' ? (
-										<Circle />
-									) : loading === 'error' ? (
-										<Indicate>
-											<img src='images/features/modal/error.svg' alt='error' />
-										</Indicate>
-									) : loading === 'success' ? (
-										<Indicate>
-											<img src='images/features/modal/success.svg' alt='success' />
-										</Indicate>
-									) : (
-										<Button>Submit</Button>
-									)}
+									<Button type='submit' loading={loading !== 'idle'}>
+										Submit
+										<StyledSvg xmlns='http://www.w3.org/2000/svg' loading={loading !== 'idle'}>
+											<g>
+												<ellipse
+													ry='23.5'
+													rx='23.5'
+													cy='24'
+													cx='24'
+													stroke-width='1'
+													stroke='transparent'
+													fill='transparent'
+												/>
+												<StyledEllipse
+													ry='23.5'
+													rx='23.5'
+													cy='24'
+													cx='24'
+													stroke-width='1'
+													stroke='red'
+													fill='transparent'
+													loading={loading !== 'idle'}
+												/>
+											</g>
+										</StyledSvg>
+										{loading === 'success' ? <Success></Success> : null}
+										{loading === 'error' ? <Error></Error> : null}
+									</Button>
 									<Spam>
 										No spam, promise
 										<Img src='images/main/formFilling/hands.svg' alt='' />
@@ -458,11 +472,14 @@ const ModalInputError = styled.p`
 	bottom: -17px;
 `;
 
-const Button = styled.button`
+const Button = styled.button<{ loading?: boolean }>`
+	--btn-width: 48px;
+
 	display: block;
+	position: relative;
 	background: #ff474d;
-	border-radius: 18px;
-	width: 180px;
+	border-radius: ${({ loading }) => (loading ? '50%' : '18px')};
+	width: ${({ loading }) => (loading ? 'var(--btn-width)' : '180px')};
 	height: 48px;
 	padding: 0;
 	margin: 0 auto 14px auto;
@@ -470,27 +487,50 @@ const Button = styled.button`
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 20px;
-	color: #ffffff;
+	color: ${({ loading }) => (loading ? 'transparent' : '#ffffff')};
 	border: none;
 	cursor: pointer;
 	transition: all 0.3s ease;
+	animation: ${({ loading }) => (loading ? 'btnLoader 2s ease' : 'none')};
 
 	&:hover {
 		background-color: var(--text-primary-hover);
 		box-shadow: 8px 8px 20px 0 var(--shadow-color);
 	}
 
-	&:focus {
-		background-color: var(--text-primary);
-		box-shadow: 8px 4px 20px 0 var(--shadow-color);
+	@keyframes btnLoader {
+		20% {
+			width: var(--btn-width);
+			border-radius: 50%;
+			color: transparent;
+		}
+		40% {
+			width: var(--btn-width);
+			border-radius: 50%;
+			color: transparent;
+			background-color: transparent;
+		}
+		60% {
+			width: var(--btn-width);
+			border-radius: 50%;
+			color: transparent;
+			background-color: #ff474d;
+		}
+		100% {
+			width: var(--btn-width);
+			border-radius: 50%;
+			color: transparent;
+			background-color: #ff474d;
+		}
 	}
 
 	@media (min-width: 1440.5px) {
+		--btn-width: 56px;
+
 		font-size: 20px;
 		line-height: 25px;
-		width: 210px;
+		width: ${({ loading }) => (loading ? 'var(--btn-width)' : '210px')};
 		height: 56px;
-		border-radius: 18px;
 	}
 `;
 
@@ -526,19 +566,71 @@ const Dots = styled.img`
 	}
 `;
 
+const StyledSvg = styled.svg<{ loading: boolean }>`
+	--btn-width: 48px;
+
+	position: absolute;
+	top: 49%;
+	left: 51%;
+	width: var(--btn-width);
+	height: var(--btn-width);
+	transform: translate(-50%, -50%) rotate(-90deg);
+	opacity: ${({ loading }) => (loading ? '1' : '0')};
+
+	@media (min-width: 1440.5px) {
+		--btn-width: 56px;
+		left: 50%;
+		top: 50%;
+	}
+`;
+
+const StyledEllipse = styled.ellipse<{ loading: boolean }>`
+	stroke-dasharray: 180;
+	stroke-dashoffset: ${({ loading }) => (loading ? '0' : '-180')};
+	transition: all 0.5s ease 0.3s;
+
+	@media (min-width: 1440.5px) {
+		ry: 49%;
+		rx: 49%;
+		cy: 50%;
+		cx: 50%;
+	}
+`;
+
 const Indicate = styled.div`
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #ff474d;
 	height: 48px;
 	width: 48px;
 	border-radius: 50%;
-	margin: 0 auto 14px auto;
+	line-height: 0;
+	background-color: transparent;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+
+	&::before {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		width: 100%;
+	}
 
 	@media (min-width: 1440.5px) {
 		height: 56px;
 		width: 56px;
+	}
+`;
+
+const Success = styled(Indicate)`
+	&::before {
+		content: url('images/features/modal/success.svg');
+	}
+`;
+
+const Error = styled(Indicate)`
+	&::before {
+		content: url('images/features/modal/error.svg');
 	}
 `;
 

@@ -1,6 +1,6 @@
 import React, { ChangeEvent, Dispatch, FC, MouseEvent, useEffect, useState } from 'react';
+import Image from 'next/image';
 import styled from 'styled-components';
-import Circle from '../../common/Circle/Circle';
 
 type ModalProps = {
 	modalActive: boolean;
@@ -9,6 +9,7 @@ type ModalProps = {
 
 const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 	const [loading, setLoading] = useState<'idle' | 'loading' | 'error' | 'success'>('idle');
+	const [result, setResult] = useState(false);
 
 	const initialValues = {
 		name: '',
@@ -58,6 +59,9 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 				setLoading('error');
 			} else {
 				setLoading('success');
+				setTimeout(() => {
+					setResult(true);
+				}, 1000);
 			}
 		}, 2000);
 	};
@@ -68,6 +72,7 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 			setModalActive(false);
 		}
 		setLoading('idle');
+		setResult(false);
 		setForm(initialValues);
 	};
 
@@ -114,16 +119,16 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 					<ModalClose type='button' onClick={closeModal} className='modal-btn'>
 						<img src='images/features/modal/close.svg' alt='close' className='modal-btn' loading='lazy' />
 					</ModalClose>
-					{loading === 'success' ? (
+					{result ? (
 						<ModalTitle>Thank you!</ModalTitle>
 					) : (
 						<ModalTitle>
 							Hi, we're <span className='accent'>Tinvio!</span> And you?
 						</ModalTitle>
 					)}
-					{loading === 'success' ? (
+					{result ? (
 						<ModalSuccess>
-							<ModalSuccessImg src='images/features/modal/dec.svg' alt='decorations' />
+							<Image src='/images/features/modal/dec.svg' alt='decorations' width={110} height={110} />
 							<ModalSucceessText>We'll get in touch as soon as possible </ModalSucceessText>
 							<ModalButton type='button' className='modal-btn' onClick={closeModal}>
 								Close
@@ -174,15 +179,34 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 									<ModalInputError>Invalid phone number</ModalInputError>
 								) : null}
 							</ModlaLabel>
-							{loading === 'loading' ? (
-								<Circle />
-							) : loading === 'error' ? (
-								<Indicate>
-									<img src='images/features/modal/error.svg' alt='error' />
-								</Indicate>
-							) : (
-								<ModalButton type='submit'>Submit</ModalButton>
-							)}
+							<ModalButton type='submit' loading={loading !== 'idle'}>
+								Submit
+								<StyledSvg loading={loading !== 'idle'}>
+									<g>
+										<ellipse
+											ry='23.5'
+											rx='23.5'
+											cy='24'
+											cx='24'
+											strokeWidth='1'
+											stroke='transparent'
+											fill='transparent'
+										/>
+										<StyledEllipse
+											ry='23.5'
+											rx='23.5'
+											cy='24'
+											cx='24'
+											strokeWidth='1'
+											stroke='red'
+											fill='transparent'
+											loading={loading !== 'idle'}
+										/>
+									</g>
+								</StyledSvg>
+								{loading === 'success' ? <Success></Success> : null}
+								{loading === 'error' ? <Error></Error> : null}
+							</ModalButton>
 							<ModalSpam>
 								No spam, promise{' '}
 								<img src='images/main/formFilling/hands.svg' alt='hands' loading='lazy' />
@@ -348,36 +372,63 @@ const ModalInputError = styled.p`
 	bottom: -17px;
 `;
 
-const ModalButton = styled.button`
+const ModalButton = styled.button<{ loading?: boolean }>`
+	--btn-width: 48px;
+
 	display: block;
-	margin: 0 auto 12px auto;
-	width: 180px;
+	position: relative;
+	margin: 0 auto;
+	width: ${({ loading }) => (loading ? 'var(--btn-width)' : '180px')};
 	height: 48px;
 	padding: 14px;
-	background: #ff474d;
-	border: none;
-	border-radius: 18px;
+	background-color: #ff474d;
+	border-style: none;
+	border-radius: ${({ loading }) => (loading ? '50%' : '18px')};
 	text-align: center;
 	font-family: 'Gilroy';
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 19px;
-	color: #ffffff;
+	color: ${({ loading }) => (loading ? 'transparent' : '#ffffff')};
 	cursor: pointer;
 	transition: all 0.3s ease;
+	animation: ${({ loading }) => (loading ? 'btnLoader 2s ease' : 'none')};
 
 	&:hover {
 		background-color: var(--text-primary-hover);
 		box-shadow: 8px 8px 20px 0 var(--shadow-color);
 	}
 
-	&:focus {
-		background-color: var(--text-primary);
-		box-shadow: 8px 4px 20px 0 var(--shadow-color);
+	@keyframes btnLoader {
+		20% {
+			width: var(--btn-width);
+			border-radius: 50%;
+			color: transparent;
+		}
+		40% {
+			width: var(--btn-width);
+			border-radius: 50%;
+			color: transparent;
+			background-color: transparent;
+		}
+		60% {
+			width: var(--btn-width);
+			border-radius: 50%;
+			color: transparent;
+			background-color: #ff474d;
+		}
+		100% {
+			width: var(--btn-width);
+			border-radius: 50%;
+			color: transparent;
+			background-color: #ff474d;
+		}
 	}
 
 	@media (min-width: 1920px) {
-		width: 210px;
+		--btn-width: 56px;
+
+		width: ${({ loading }) => (loading ? 'var(--btn-width)' : '210px')};
 		height: 56px;
 		font-size: 20px;
 		line-height: 25px;
@@ -385,19 +436,71 @@ const ModalButton = styled.button`
 	}
 `;
 
+const StyledSvg = styled.svg<{ loading: boolean }>`
+	--btn-width: 48px;
+
+	position: absolute;
+	top: 49%;
+	left: 51%;
+	width: var(--btn-width);
+	height: var(--btn-width);
+	transform: translate(-50%, -50%) rotate(-90deg);
+	opacity: ${({ loading }) => (loading ? '1' : '0')};
+
+	@media (min-width: 1920px) {
+		--btn-width: 56px;
+		left: 50%;
+		top: 50%;
+	}
+`;
+
+const StyledEllipse = styled.ellipse<{ loading: boolean }>`
+	stroke-dasharray: 180;
+	stroke-dashoffset: ${({ loading }) => (loading ? '0' : '-180')};
+	transition: all 0.5s ease 0.3s;
+
+	@media (min-width: 1920px) {
+		ry: 49%;
+		rx: 49%;
+		cy: 50%;
+		cx: 50%;
+	}
+`;
+
 const Indicate = styled.div`
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #ff474d;
 	height: 48px;
 	width: 48px;
 	border-radius: 50%;
-	margin: 0 auto 12px auto;
+	line-height: 0;
+	background-color: transparent;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+
+	&::before {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		width: 100%;
+	}
 
 	@media (min-width: 1920px) {
 		height: 56px;
 		width: 56px;
+	}
+`;
+
+const Success = styled(Indicate)`
+	&::before {
+		content: url('images/features/modal/success.svg');
+	}
+`;
+
+const Error = styled(Indicate)`
+	&::before {
+		content: url('images/features/modal/error.svg');
 	}
 `;
 
@@ -411,6 +514,7 @@ const ModalSpam = styled.span`
 	font-size: 14px;
 	line-height: 17px;
 	color: #bdbdbd;
+	margin: 12px 0 0 0;
 
 	@media (min-width: 1920px) {
 		font-size: 16px;
@@ -435,11 +539,9 @@ const ModalClose = styled.button`
 	}
 `;
 
-const ModalSuccess = styled.div``;
-
-const ModalSuccessImg = styled.img`
-	display: block;
-	margin: 0 auto 12px auto;
+const ModalSuccess = styled.div`
+	display: flex;
+	flex-direction: column;
 `;
 
 const ModalSucceessText = styled.p`
@@ -449,7 +551,7 @@ const ModalSucceessText = styled.p`
 	line-height: 17px;
 	color: #717071;
 	text-align: center;
-	margin: 0 0 32px 0;
+	margin: 12px 0 32px 0;
 `;
 
 export default Modal;
