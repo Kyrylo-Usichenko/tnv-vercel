@@ -133,6 +133,7 @@ const Null = styled.div`
 	}
 	@media (max-width: 970px) {
 		order: 1;
+		height: 525px;
 	}
 `;
 const Info = styled.div`
@@ -610,20 +611,46 @@ const DotsRight = styled.div`
 	height: 192px;
 	background-size: contain;
 	z-index: -1;
-	@media (max-width: 1280px) {
-		left: 310px;
-		top: 243px;
-	}
 
-	@media (max-width: 970px) {
-		left: 462px;
-		top: 613px;
-	}
-	@media (max-width: 375px) {
-		width: 166.16px;
+	@media (min-width: 320px) {
+		width: 299px;
+		height: 226px;
+		background-size: cover;
 		padding: 0 30px;
-		top: 527px;
-		left: 215px;
+		top: 551px;
+		left: 227px;
+	}
+	@media (min-width: 768px) {
+		width: 299px;
+		height: 226px;
+		background-size: cover;
+		padding: 0 30px;
+		top: 608px;
+		left: 446px;
+	}
+	@media (min-width: 1024px) {
+		width: 299px;
+		height: 226px;
+		background-size: cover;
+		padding: 0 30px;
+		top: 229px;
+		left: 270px;
+	}
+	@media (min-width: 1280px) {
+		width: 299px;
+		height: 226px;
+		background-size: cover;
+		padding: 0 30px;
+		top: 229px;
+		left: 337px;
+	}
+	@media (min-width: 1920px) {
+		width: 299px;
+		height: 226px;
+		background-size: cover;
+		padding: 0 30px;
+		top: 229px;
+		left: 391px;
 	}
 `;
 
