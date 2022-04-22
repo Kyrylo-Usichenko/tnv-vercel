@@ -359,6 +359,7 @@ const Title = styled.h3`
 	@media (max-width: 767px) {
 		font-size: 28px;
 		line-height: 34px;
+		padding: 140px 0 0 0;
 	}
 `;
 const typewriter = keyframes`
