@@ -81,7 +81,7 @@ const BigRed = styled.div`
 	justify-content: center;
 	z-index: 0;
 	@media (max-width: 1024px) {
-		left: 530px;
+		left: 543px;
 	}
 	@media (max-width: 768px) {
 		width: 999px;

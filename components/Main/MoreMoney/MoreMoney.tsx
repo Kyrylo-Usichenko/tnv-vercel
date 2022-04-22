@@ -27,8 +27,8 @@ const tabsImages = [
 		isActive: true,
 		textLines: [
 			'Send invoices and easily track them until they’re paid',
-			'Manage inventory details and availability in real-time',
-			'24/7 order insights and data reports',
+			'Real-time payments settlement and reconciliation',
+			'Safe, secure, and compliant',
 		],
 	},
 	{
@@ -38,9 +38,9 @@ const tabsImages = [
 		typedText: ['More speedy'],
 		isActive: false,
 		textLines: [
-			'Create chats with any business (even if they’re not on Tinvio)',
-			'Fully integrated with your favorite chat apps',
-			'Real-time messages and alerts',
+			'Create or confirm purchase orders at lightning speed',
+			'Manage inventory details and availability in real-time',
+			'24/7 order insights and data reports',
 		],
 	},
 	{
@@ -50,9 +50,9 @@ const tabsImages = [
 		typedText: ['More buddy'],
 		isActive: false,
 		textLines: [
-			'Send invoices and easily track them until they’re paid',
-			'Real-time payments settlement and reconciliation',
-			'Safe, secure, and compliant',
+			'Create chats with any business (even if they’re not on Tinvio)',
+			'Fully integrated with your favorite chat apps',
+			'Real-time messages and alerts',
 		],
 	},
 ];
@@ -468,7 +468,7 @@ const Inner = styled.div`
 	z-index: 1;
 	@media (max-width: 1280px) {
 		// margin: 0 auto;
-		max-width: 440px;
+		max-width: 500px;
 	}
 	@media (max-width: 1023px) {
 		margin: 0 auto;
