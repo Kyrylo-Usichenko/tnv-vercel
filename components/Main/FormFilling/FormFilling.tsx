@@ -157,16 +157,16 @@ const Smile: FC = () => {
 											<ModalInputError>Invalid phone number</ModalInputError>
 										) : null}
 									</ModlaLabel>
-									<Button type='submit' loading={loading !== 'idle'}>
+									<Button type='submit' loaded={loading !== 'idle'}>
 										Submit
-										<StyledSvg xmlns='http://www.w3.org/2000/svg' loading={loading !== 'idle'}>
+										<StyledSvg xmlns='http://www.w3.org/2000/svg' loaded={loading !== 'idle'}>
 											<g>
 												<ellipse
 													ry='23.5'
 													rx='23.5'
 													cy='24'
 													cx='24'
-													stroke-width='1'
+													strokeWidth='1'
 													stroke='transparent'
 													fill='transparent'
 												/>
@@ -175,10 +175,10 @@ const Smile: FC = () => {
 													rx='23.5'
 													cy='24'
 													cx='24'
-													stroke-width='1'
+													strokeWidth='1'
 													stroke='red'
 													fill='transparent'
-													loading={loading !== 'idle'}
+													loaded={loading !== 'idle'}
 												/>
 											</g>
 										</StyledSvg>
@@ -472,14 +472,14 @@ const ModalInputError = styled.p`
 	bottom: -17px;
 `;
 
-const Button = styled.button<{ loading?: boolean }>`
+const Button = styled.button<{ loaded?: boolean }>`
 	--btn-width: 48px;
 
 	display: block;
 	position: relative;
 	background: #ff474d;
-	border-radius: ${({ loading }) => (loading ? '50%' : '18px')};
-	width: ${({ loading }) => (loading ? 'var(--btn-width)' : '180px')};
+	border-radius: ${({ loaded }) => (loaded ? '50%' : '18px')};
+	width: ${({ loaded }) => (loaded ? 'var(--btn-width)' : '180px')};
 	height: 48px;
 	padding: 0;
 	margin: 0 auto 14px auto;
@@ -487,11 +487,11 @@ const Button = styled.button<{ loading?: boolean }>`
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 20px;
-	color: ${({ loading }) => (loading ? 'transparent' : '#ffffff')};
+	color: ${({ loaded }) => (loaded ? 'transparent' : '#ffffff')};
 	border: none;
 	cursor: pointer;
 	transition: all 0.3s ease;
-	animation: ${({ loading }) => (loading ? 'btnLoader 2s ease' : 'none')};
+	animation: ${({ loaded }) => (loaded ? 'btnLoader 2s ease' : 'none')};
 
 	&:hover {
 		background-color: var(--text-primary-hover);
@@ -529,7 +529,7 @@ const Button = styled.button<{ loading?: boolean }>`
 
 		font-size: 20px;
 		line-height: 25px;
-		width: ${({ loading }) => (loading ? 'var(--btn-width)' : '210px')};
+		width: ${({ loaded }) => (loaded ? 'var(--btn-width)' : '210px')};
 		height: 56px;
 	}
 `;
@@ -566,7 +566,7 @@ const Dots = styled.img`
 	}
 `;
 
-const StyledSvg = styled.svg<{ loading: boolean }>`
+const StyledSvg = styled.svg<{ loaded: boolean }>`
 	--btn-width: 48px;
 
 	position: absolute;
@@ -575,7 +575,7 @@ const StyledSvg = styled.svg<{ loading: boolean }>`
 	width: var(--btn-width);
 	height: var(--btn-width);
 	transform: translate(-50%, -50%) rotate(-90deg);
-	opacity: ${({ loading }) => (loading ? '1' : '0')};
+	opacity: ${({ loaded }) => (loaded ? '1' : '0')};
 
 	@media (min-width: 1440.5px) {
 		--btn-width: 56px;
@@ -584,9 +584,9 @@ const StyledSvg = styled.svg<{ loading: boolean }>`
 	}
 `;
 
-const StyledEllipse = styled.ellipse<{ loading: boolean }>`
+const StyledEllipse = styled.ellipse<{ loaded: boolean }>`
 	stroke-dasharray: 180;
-	stroke-dashoffset: ${({ loading }) => (loading ? '0' : '-180')};
+	stroke-dashoffset: ${({ loaded }) => (loaded ? '0' : '-180')};
 	transition: all 0.5s ease 0.3s;
 
 	@media (min-width: 1440.5px) {

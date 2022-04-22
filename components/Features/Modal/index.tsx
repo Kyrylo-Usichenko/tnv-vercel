@@ -179,9 +179,9 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 									<ModalInputError>Invalid phone number</ModalInputError>
 								) : null}
 							</ModlaLabel>
-							<ModalButton type='submit' loading={loading !== 'idle'}>
+							<ModalButton type='submit' loaded={loading !== 'idle'}>
 								Submit
-								<StyledSvg loading={loading !== 'idle'}>
+								<StyledSvg loaded={loading !== 'idle'}>
 									<g>
 										<ellipse
 											ry='23.5'
@@ -200,7 +200,7 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 											strokeWidth='1'
 											stroke='red'
 											fill='transparent'
-											loading={loading !== 'idle'}
+											loaded={loading !== 'idle'}
 										/>
 									</g>
 								</StyledSvg>
@@ -372,27 +372,27 @@ const ModalInputError = styled.p`
 	bottom: -17px;
 `;
 
-const ModalButton = styled.button<{ loading?: boolean }>`
+const ModalButton = styled.button<{ loaded?: boolean }>`
 	--btn-width: 48px;
 
 	display: block;
 	position: relative;
 	margin: 0 auto;
-	width: ${({ loading }) => (loading ? 'var(--btn-width)' : '180px')};
+	width: ${({ loaded }) => (loaded ? 'var(--btn-width)' : '180px')};
 	height: 48px;
 	padding: 14px;
 	background-color: #ff474d;
 	border-style: none;
-	border-radius: ${({ loading }) => (loading ? '50%' : '18px')};
+	border-radius: ${({ loaded }) => (loaded ? '50%' : '18px')};
 	text-align: center;
 	font-family: 'Gilroy';
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 19px;
-	color: ${({ loading }) => (loading ? 'transparent' : '#ffffff')};
+	color: ${({ loaded }) => (loaded ? 'transparent' : '#ffffff')};
 	cursor: pointer;
 	transition: all 0.3s ease;
-	animation: ${({ loading }) => (loading ? 'btnLoader 2s ease' : 'none')};
+	animation: ${({ loaded }) => (loaded ? 'btnLoader 2s ease' : 'none')};
 
 	&:hover {
 		background-color: var(--text-primary-hover);
@@ -428,7 +428,7 @@ const ModalButton = styled.button<{ loading?: boolean }>`
 	@media (min-width: 1920px) {
 		--btn-width: 56px;
 
-		width: ${({ loading }) => (loading ? 'var(--btn-width)' : '210px')};
+		width: ${({ loaded }) => (loaded ? 'var(--btn-width)' : '210px')};
 		height: 56px;
 		font-size: 20px;
 		line-height: 25px;
@@ -436,7 +436,7 @@ const ModalButton = styled.button<{ loading?: boolean }>`
 	}
 `;
 
-const StyledSvg = styled.svg<{ loading: boolean }>`
+const StyledSvg = styled.svg<{ loaded: boolean }>`
 	--btn-width: 48px;
 
 	position: absolute;
@@ -445,7 +445,7 @@ const StyledSvg = styled.svg<{ loading: boolean }>`
 	width: var(--btn-width);
 	height: var(--btn-width);
 	transform: translate(-50%, -50%) rotate(-90deg);
-	opacity: ${({ loading }) => (loading ? '1' : '0')};
+	opacity: ${({ loaded }) => (loaded ? '1' : '0')};
 
 	@media (min-width: 1920px) {
 		--btn-width: 56px;
@@ -454,9 +454,9 @@ const StyledSvg = styled.svg<{ loading: boolean }>`
 	}
 `;
 
-const StyledEllipse = styled.ellipse<{ loading: boolean }>`
+const StyledEllipse = styled.ellipse<{ loaded: boolean }>`
 	stroke-dasharray: 180;
-	stroke-dashoffset: ${({ loading }) => (loading ? '0' : '-180')};
+	stroke-dashoffset: ${({ loaded }) => (loaded ? '0' : '-180')};
 	transition: all 0.5s ease 0.3s;
 
 	@media (min-width: 1920px) {
