@@ -35,7 +35,7 @@ const tabsImages = [
 		name: 'Orders',
 		leftImg: orderLeft,
 		rightImg: orderRight,
-		typedText: ['More speedy', 'More money'],
+		typedText: ['More speedy'],
 		isActive: false,
 		textLines: [
 			'Create chats with any business (even if they’re not on Tinvio)',
@@ -47,7 +47,7 @@ const tabsImages = [
 		name: 'Chats',
 		leftImg: chatLeft,
 		rightImg: chatRight,
-		typedText: ['More speedy', 'More buddy'],
+		typedText: ['More buddy'],
 		isActive: false,
 		textLines: [
 			'Send invoices and easily track them until they’re paid',
