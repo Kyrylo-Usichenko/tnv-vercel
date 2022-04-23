@@ -1,70 +1,122 @@
-import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
+import React, { FC, RefObject, useRef, useState } from 'react';
 import CountUp from 'react-countup';
 import styled from 'styled-components';
 
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
-const DELAY = 3000; // max of animated el delay + duration
-
 const Counts: FC = () => {
-	const [isShown, setIsShown] = useState(false);
-	const ref = useRef() as RefObject<HTMLParagraphElement>;
-	const entry = useIntersectionObserver(ref, {});
-	const isVisible = !!entry?.isIntersecting;
-
-	useEffect(() => {
-		if (isVisible && !isShown) {
-			const counter = setTimeout(() => {
-				setIsShown(true);
-			}, DELAY);
-
-			return () => clearTimeout(counter);
-		}
-	}, [isVisible]);
+	const [isShown01, setIsShown01] = useState(false);
+	const [isShown02, setIsShown02] = useState(false);
+	const [isShown03, setIsShown03] = useState(false);
+	const [isShown04, setIsShown04] = useState(false);
+	const ref01 = useRef() as RefObject<HTMLDivElement>;
+	const ref02 = useRef() as RefObject<HTMLDivElement>;
+	const ref03 = useRef() as RefObject<HTMLDivElement>;
+	const ref04 = useRef() as RefObject<HTMLDivElement>;
+	const entry01 = useIntersectionObserver(ref01, {});
+	const entry02 = useIntersectionObserver(ref02, {});
+	const entry03 = useIntersectionObserver(ref03, {});
+	const entry04 = useIntersectionObserver(ref04, {});
+	const isVisible01 = !!entry01?.isIntersecting;
+	const isVisible02 = !!entry02?.isIntersecting;
+	const isVisible03 = !!entry03?.isIntersecting;
+	const isVisible04 = !!entry04?.isIntersecting;
 
 	return (
 		<Wrapper className='counts'>
-			<Block1 className='block1'>
+			<Block1 ref={ref01} className='block1'>
 				<Block1Dots />
 				<Block1SquareRight />
 				<Block1SquareBottom />
 				<Content>
-					<Count ref={ref}>
-						{isShown ? 250 : isVisible ? <CountUp start={0} end={250} delay={0.2} duration={1.5} /> : 0}
+					<Count>
+						{isShown01 ? (
+							250
+						) : isVisible01 ? (
+							<CountUp
+								start={0}
+								end={250}
+								delay={0.2}
+								duration={1.1}
+								preserveValue
+								onEnd={() => setIsShown01(true)}
+							/>
+						) : (
+							0
+						)}
 						<span className='accent'>+</span>
 					</Count>
 					<Title>Team Members</Title>
 				</Content>
 			</Block1>
-			<Block2 className='block2'>
+			<Block2 ref={ref02} className='block2'>
 				<Block2Dots />
 				<Block2SquareLeft />
 				<Block2SquareBottom />
 				<Content>
 					<Count>
-						{isShown ? 10 : isVisible ? <CountUp start={0} end={10} delay={0.3} duration={1} /> : 0}
+						{isShown02 ? (
+							10
+						) : isVisible02 ? (
+							<CountUp
+								start={0}
+								end={10}
+								delay={0.3}
+								duration={0.7}
+								preserveValue
+								onEnd={() => setIsShown02(true)}
+							/>
+						) : (
+							0
+						)}
 						<span className='accent'>+</span>
 					</Count>
 					<Title>Nationalities</Title>
 				</Content>
 			</Block2>
-			<Block3 className='block3'>
+			<Block3 ref={ref03} className='block3'>
 				<Block3Dots />
 				<Block3Square />
 				<Content>
 					<Count>
-						{isShown ? 5000 : isVisible ? <CountUp start={0} end={5000} delay={0} duration={2.5} /> : 0}
+						{isShown03 ? (
+							5000
+						) : isVisible03 ? (
+							<CountUp
+								start={0}
+								end={5000}
+								delay={0}
+								duration={1.5}
+								preserveValue
+								onEnd={() => setIsShown03(true)}
+							/>
+						) : (
+							0
+						)}
 						<span className='accent'>+</span>
 					</Count>
 					<Title>Businesses</Title>
 				</Content>
 			</Block3>
-			<Block4 className='block4'>
+			<Block4 ref={ref04} className='block4'>
 				<Block4Square />
 				<Block4Dots />
 				<Content>
 					<Count>
-						{isShown ? 500 : isVisible ? <CountUp start={0} end={500} delay={0.2} duration={2} /> : 0}
+						{isShown04 ? (
+							500
+						) : isVisible04 ? (
+							<CountUp
+								start={0}
+								end={500}
+								delay={0.2}
+								duration={1.2}
+								preserveValue
+								onEnd={() => setIsShown04(true)}
+							/>
+						) : (
+							0
+						)}
 						<span className='accent'>M</span>
 					</Count>
 					<Title>Transactions</Title>
