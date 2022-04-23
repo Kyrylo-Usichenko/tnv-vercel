@@ -14,27 +14,40 @@ const MoreMoney: FC = () => {
 	const companiesRef = useRef(null) as RefObject<HTMLDivElement>;
 
 	useEffect(() => {
-		gsap.from('.featured-on', {
-			x: '-40%',
-			scrollTrigger: {
-				trigger: '.featured-on',
-				start: 'top bottom',
-				end: 'bottom center',
-				scrub: true,
-			},
-		});
-	}, []);
+		const box = companiesRef.current;
+		const [x, xEnd] = ['100%', 0];
 
-	useEffect(() => {
-		gsap.from('.companies', {
-			x: '40%',
-			scrollTrigger: {
-				trigger: '.companies',
-				start: 'top bottom',
-				end: 'bottom center',
-				scrub: true,
+		gsap.fromTo(
+			box,
+			{ x },
+			{
+				x: xEnd,
+				scrollTrigger: {
+					trigger: '.start',
+					scrub: 0.5,
+					start: 'top bottom',
+					end: 'bottom center',
+				},
 			},
-		});
+		);
+	}, []);
+	useEffect(() => {
+		const box = titleRef.current;
+		const [x, xEnd] = ['-40%', 0];
+
+		gsap.fromTo(
+			box,
+			{ x },
+			{
+				x: xEnd,
+				scrollTrigger: {
+					trigger: '.start',
+					scrub: 0.5,
+					start: 'top bottom',
+					end: 'bottom center',
+				},
+			},
+		);
 	}, []);
 
 	return (
@@ -49,10 +62,10 @@ const MoreMoney: FC = () => {
 
 				<Container>
 					<Inner>
-						<Title ref={titleRef} className='featured-on'>
+						<Title ref={titleRef} className='start'>
 							Featured On
 						</Title>
-						<Companies ref={companiesRef} className='companies'>
+						<Companies ref={companiesRef}>
 							<Company1 src='images/main/featuredOn/techCrunch.svg' alt='' />
 							<Company2 src='images/main/featuredOn/techInAsia.svg' alt='' />
 							<Company3 src='images/main/featuredOn/pymnts.svg' alt='' />
@@ -133,6 +146,10 @@ const Inner = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+
+	.animate-box {
+		width: 100%;
+	}
 `;
 
 const Title = styled.h4`
@@ -156,10 +173,10 @@ const Title = styled.h4`
 		line-height: 38px;
 	}
 	@media (max-width: 768px) {
-		max-width: 336px;
+		// max-width: 336px;
 	}
 	@media (max-width: 440px) {
-		max-width: 253px;
+		// max-width: 253px;
 		font-size: 28px;
 		line-height: 33px;
 		padding-bottom: 24px;
@@ -173,6 +190,7 @@ const Companies = styled.div`
 	max-width: 1132px;
 	width: 100%;
 	flex-wrap: wrap;
+	margin: 0 auto;
 
 	@media (max-width: 1024px) {
 		padding-left: 40px;
