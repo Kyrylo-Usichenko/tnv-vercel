@@ -1,38 +1,41 @@
-import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
+import React, { FC, RefObject, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
 import { Container } from '../../common/Container/Container';
 
-const TOP_OFFSET = 40;
-const MAX_OFFSET = 70;
-
 const MoreMoney: FC = () => {
-	const [offset, setOffset] = useState<number>(0);
-	const typeRef = useRef() as RefObject<HTMLDivElement>;
-	const entry = useIntersectionObserver(typeRef, {});
-	const isVisible = !!entry?.isIntersecting;
+	if (typeof window !== 'undefined') {
+		gsap.registerPlugin(ScrollTrigger);
+	}
+
+	const titleRef = useRef(null) as RefObject<HTMLHeadingElement>;
+	const companiesRef = useRef(null) as RefObject<HTMLDivElement>;
 
 	useEffect(() => {
-		const updateOffset = () => {
-			const screenHeight = window.innerHeight;
+		gsap.from('.featured-on', {
+			x: '-40%',
+			scrollTrigger: {
+				trigger: '.featured-on',
+				start: 'top bottom',
+				end: 'bottom center',
+				scrub: true,
+			},
+		});
+	}, []);
 
-			if (isVisible) {
-				const pos = typeRef.current!.getBoundingClientRect().top;
-				const offsetPos = (pos / screenHeight) * 100;
-				const newOffset =
-					offsetPos > MAX_OFFSET ? MAX_OFFSET : offsetPos - TOP_OFFSET >= 0 ? offsetPos : TOP_OFFSET;
-				setOffset(newOffset);
-			}
-		};
-
-		const onScroll = () => {
-			window.requestAnimationFrame(updateOffset);
-		};
-
-		window.addEventListener('scroll', onScroll);
-
-		return () => window.removeEventListener('scroll', onScroll);
-	}, [isVisible]);
+	useEffect(() => {
+		gsap.from('.companies', {
+			x: '40%',
+			scrollTrigger: {
+				trigger: '.companies',
+				start: 'top bottom',
+				end: 'bottom center',
+				scrub: true,
+			},
+		});
+	}, []);
 
 	return (
 		<Styled>
@@ -45,9 +48,11 @@ const MoreMoney: FC = () => {
 				<DivideLine />
 
 				<Container>
-					<Inner ref={typeRef}>
-						<Title offset={offset - TOP_OFFSET}>Featured On</Title>
-						<Companies offset={offset - TOP_OFFSET}>
+					<Inner>
+						<Title ref={titleRef} className='featured-on'>
+							Featured On
+						</Title>
+						<Companies ref={companiesRef} className='companies'>
 							<Company1 src='images/main/featuredOn/techCrunch.svg' alt='' />
 							<Company2 src='images/main/featuredOn/techInAsia.svg' alt='' />
 							<Company3 src='images/main/featuredOn/pymnts.svg' alt='' />
@@ -130,7 +135,7 @@ const Inner = styled.div`
 	align-items: center;
 `;
 
-const Title = styled.h4<{ offset: number }>`
+const Title = styled.h4`
 	font-family: 'Gilroy';
 	font-style: normal;
 	font-weight: 600;
@@ -140,12 +145,7 @@ const Title = styled.h4<{ offset: number }>`
 	margin: 0 0 32px 0;
 	padding: 48px 0 16px 0;
 	text-align: center;
-	scroll-behavior: smooth;
-	transition: all 0.35s linear;
-	will-change: transform;
-	transform: translate3d(${({ offset }) => -offset}vw, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg)
-		rotateZ(0deg) skew(0deg, 0deg);
-	transform-style: preserve-3d;
+	width: 100%;
 
 	@media (max-width: 1440px) {
 		font-size: 36px;
@@ -166,19 +166,13 @@ const Title = styled.h4<{ offset: number }>`
 	}
 `;
 
-const Companies = styled.div<{ offset: number }>`
+const Companies = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	max-width: 1132px;
 	width: 100%;
 	flex-wrap: wrap;
-	// transform: translateX(${({ offset }) => offset}%);
-	transition: all 0.35s linear;
-	will-change: transform;
-	transform: translate3d(${({ offset }) => offset}vw, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg)
-		rotateZ(0deg) skew(0deg, 0deg);
-	transform-style: preserve-3d;
 
 	@media (max-width: 1024px) {
 		padding-left: 40px;

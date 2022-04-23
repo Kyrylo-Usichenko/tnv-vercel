@@ -1,7 +1,10 @@
 import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
-import styled, { css } from 'styled-components';
+import CountUp from 'react-countup';
+import styled from 'styled-components';
 
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
+
+const DELAY = 3000; // max of animated el delay + duration
 
 const Counts: FC = () => {
 	const [isShown, setIsShown] = useState(false);
@@ -10,7 +13,13 @@ const Counts: FC = () => {
 	const isVisible = !!entry?.isIntersecting;
 
 	useEffect(() => {
-		if (isVisible && !isShown) setIsShown(true);
+		if (isVisible && !isShown) {
+			const counter = setTimeout(() => {
+				setIsShown(true);
+			}, DELAY);
+
+			return () => clearTimeout(counter);
+		}
 	}, [isVisible]);
 
 	return (
@@ -21,7 +30,7 @@ const Counts: FC = () => {
 				<Block1SquareBottom />
 				<Content>
 					<Count ref={ref}>
-						<CountNumber isAnimated={isVisible} isShown={isShown} num={250} />
+						{isShown ? 250 : isVisible ? <CountUp start={0} end={250} delay={0.2} duration={1.5} /> : 0}
 						<span className='accent'>+</span>
 					</Count>
 					<Title>Team Members</Title>
@@ -33,7 +42,7 @@ const Counts: FC = () => {
 				<Block2SquareBottom />
 				<Content>
 					<Count>
-						<CountNumber isAnimated={isVisible} isShown={isShown} num={10} />
+						{isShown ? 10 : isVisible ? <CountUp start={0} end={10} delay={0.3} duration={1} /> : 0}
 						<span className='accent'>+</span>
 					</Count>
 					<Title>Nationalities</Title>
@@ -44,7 +53,7 @@ const Counts: FC = () => {
 				<Block3Square />
 				<Content>
 					<Count>
-						<CountNumber isAnimated={isVisible} isShown={isShown} num={5000} />
+						{isShown ? 5000 : isVisible ? <CountUp start={0} end={5000} delay={0} duration={2.5} /> : 0}
 						<span className='accent'>+</span>
 					</Count>
 					<Title>Businesses</Title>
@@ -55,7 +64,7 @@ const Counts: FC = () => {
 				<Block4Dots />
 				<Content>
 					<Count>
-						<CountNumber isAnimated={isVisible} isShown={isShown} num={500} />
+						{isShown ? 500 : isVisible ? <CountUp start={0} end={500} delay={0.2} duration={2} /> : 0}
 						<span className='accent'>M</span>
 					</Count>
 					<Title>Transactions</Title>
@@ -227,25 +236,6 @@ const Count = styled.p`
 		font-size: 48px;
 		line-height: 59px;
 	}
-`;
-const CountNumber = styled.span<{ isAnimated: boolean; num: number; isShown?: boolean }>`
-	@property --num${({ num }) => num} {
-		syntax: '<integer>';
-		initial-value: ${({ isShown, num }) => (isShown ? num : 0)};
-		inherits: false;
-	}
-
-	${({ isAnimated, num }) =>
-		isAnimated &&
-		css`
-			transition: ${`--num${num}`} 2.5s;
-			counter-set: num var(${`--num${num}`});
-
-			&:after {
-				content: counter(num);
-			}
-			${`--num${num}`}: ${num};
-		`}
 `;
 
 const Title = styled.p`
