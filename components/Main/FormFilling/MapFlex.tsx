@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 import FadeIn from '../../common/FadeIn/FadeIn';
 
-const Map: FC = () => {
+const MapFlex: FC = () => {
 	const [isShow, setIsShow] = useState(false);
 	const ref = useRef() as RefObject<HTMLDivElement>;
 	const entry = useIntersectionObserver(ref, {});
@@ -29,7 +29,7 @@ const Map: FC = () => {
 								srcSet='./images/main/map/countries/hong-kong@2x.png 2x'
 								alt='Hong-Kong'
 							/>
-							<Point name='Hong-Kong' top={-12} left={-2} />
+							<Point name='Hong-Kong' top={-175} left={0} />
 						</HongKong>
 					</FadeIn>
 					<FadeIn duration={1500} delay={500}>
@@ -40,7 +40,7 @@ const Map: FC = () => {
 								srcSet='./images/main/map/countries/indonesia@2x.png 2x'
 								alt='Indonesia'
 							/>
-							<Point name='Indonesia' top={110} left={112} />
+							<Point name='Indonesia' top={65} left={23.5} />
 						</Indonesia>
 					</FadeIn>
 					<FadeIn duration={1500} delay={1500}>
@@ -51,7 +51,7 @@ const Map: FC = () => {
 								srcSet='./images/main/map/countries/philippines@2x.png 2x'
 								alt='Philippines'
 							/>
-							<Point name='Philippines' top={-17} left={15} />
+							<Point name='Philippines' top={2} left={16} />
 						</Philippines>
 					</FadeIn>
 					<FadeIn duration={1500} delay={0}>
@@ -62,7 +62,7 @@ const Map: FC = () => {
 								srcSet='./images/main/map/countries/singapore@2x.png 2x'
 								alt='Singapore'
 							/>
-							<Point name='Singapore' top={-6} left={2} />
+							<Point name='Singapore' top={-190} left={15} />
 						</Singapore>
 					</FadeIn>
 					<FadeIn duration={1500} delay={2000}>
@@ -73,7 +73,7 @@ const Map: FC = () => {
 								srcSet='./images/main/map/countries/thailand@2x.png 2x'
 								alt='Thailand'
 							/>
-							<Point name='Thailand' top={-12} left={11} />
+							<Point name='Thailand' top={-1} left={15} />
 						</Thailand>
 					</FadeIn>
 					<FadeIn duration={1500} delay={2500}>
@@ -84,19 +84,21 @@ const Map: FC = () => {
 								srcSet='./images/main/map/countries/vietnam@2x.png 2x'
 								alt='Vietnam'
 							/>
-							<Point name='Vietnam' top={-16} left={22} />
+							<Point name='Vietnam' top={-6} left={24} />
 						</Vietnam>
 					</FadeIn>
 					<FadeIn duration={1500} delay={2500}>
-						<Arrow>
-							<img src='./images/main/map/arrow-line-text/arrow-icon.svg' alt='arrow' />
-						</Arrow>
-						<Line>
-							<img src='./images/main/map/arrow-line-text/arch-line-icon.svg' alt='line' />
-						</Line>
-						<Text>
-							<img src='./images/main/map/arrow-line-text/meet-icon.svg' alt='meet us in' />
-						</Text>
+						<TextBox>
+							<Arrow>
+								<img src='./images/main/map/arrow-line-text/arrow-icon.svg' alt='arrow' />
+							</Arrow>
+							<Line>
+								<img src='./images/main/map/arrow-line-text/arch-line-icon.svg' alt='line' />
+							</Line>
+							<Text>
+								<img src='./images/main/map/arrow-line-text/meet-icon.svg' alt='meet us in' />
+							</Text>
+						</TextBox>
 					</FadeIn>
 				</>
 			)}
@@ -108,6 +110,15 @@ const Wrapper = styled.div`
 	width: 986px;
 	height: 688px;
 	position: relative;
+
+	& img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
 
 	@media (max-width: 1440px) {
 		width: 934px;
@@ -123,17 +134,10 @@ const Wrapper = styled.div`
 	}
 `;
 
-const SingaporeStartAnimation = styled.div`
-	position: absolute;
-	top: 551px;
-	left: 471px;
-	z-index: -1;
-`;
-
 const Point = styled.div<{ name: string; top: number; left: number }>`
 	position: absolute;
-	top: ${({ top }) => top}px;
-	left: ${({ left }) => left}px;
+	top: ${({ top }) => top}%;
+	left: ${({ left }) => left}%;
 	width: 12px;
 	height: 16px;
 	background: url('./images/main/map/point-icon.svg');
@@ -184,49 +188,77 @@ const Point = styled.div<{ name: string; top: number; left: number }>`
 
 const HongKong = styled.div`
 	position: absolute;
-	top: 325px;
-	left: 560px;
+	top: 48.1%;
+	left: 56.45%;
+	width: 0.9%;
+	height: 1.3%;
 `;
 const Indonesia = styled.div`
 	position: absolute;
-	top: 518px;
-	left: 392px;
+	top: 75%;
+	left: 39.7%;
+	width: 48%;
+	height: 25%;
 `;
 const Philippines = styled.div`
 	position: absolute;
-	top: 382px;
-	left: 624px;
+	top: 52.5%;
+	left: 63.1%;
+	width: 9.3%;
+	height: 25%;
 `;
 const Singapore = styled.div`
 	position: absolute;
-	top: 551px;
-	left: 471px;
+	top: 81.1%;
+	left: 47.8%;
+	width: 1.5%;
+	height: 1%;
+`;
+const SingaporeStartAnimation = styled(Singapore)`
+	z-index: -1;
 `;
 const Thailand = styled.div`
 	position: absolute;
-	top: 359px;
-	left: 404px;
+	top: 50.5%;
+	left: 40.85%;
+	width: 8%;
+	height: 26%;
 `;
 const Vietnam = styled.div`
 	position: absolute;
-	top: 330px;
-	left: 443px;
+	top: 47.1%;
+	left: 44.8%;
+	width: 9.5%;
+	height: 24%;
 `;
 
+const TextBox = styled.div`
+	position: absolute;
+	top: 49%;
+	left: 70%;
+	width: 20%;
+	height: 20%;
+`;
 const Arrow = styled.div`
 	position: absolute;
-	top: 437px;
-	left: 745px;
+	bottom: 17.5%;
+	left: 26%;
+	width: 5%;
+	height: 12.4%;
 `;
 const Line = styled.div`
 	position: absolute;
-	top: 360px;
-	left: 753px;
+	bottom: 3%;
+	left: 31%;
+	width: 57%;
+	height: 84%;
 `;
 const Text = styled.div`
 	position: absolute;
-	top: 340px;
-	left: 786px;
+	top: 0;
+	right: 0;
+	width: 54%;
+	height: 11%;
 `;
 
-export default Map;
+export default MapFlex;
