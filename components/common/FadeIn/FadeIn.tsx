@@ -1,6 +1,11 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
+interface IFAdeIn {
+	duration: number;
+	delay: number;
+}
+
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -10,12 +15,10 @@ const fadeIn = keyframes`
   }
 `;
 
-const FadeIn = ({ duration = 300, delay = 0, children, ...delegated }) => {
+const FadeIn: React.FC<IFAdeIn> = ({ duration = 300, delay = 0, children }) => {
 	return (
 		<Wrapper
-			{...delegated}
 			style={{
-				...(delegated.style || {}),
 				animationDuration: `${duration}ms`,
 				animationDelay: `${delay}ms`,
 			}}
