@@ -8,7 +8,6 @@ const Map: FC = () => {
 	const ref = useRef() as RefObject<HTMLDivElement>;
 	const entry = useIntersectionObserver(ref, {});
 	const isVisible = !!entry?.isIntersecting;
-	console.log(isVisible);
 
 	useEffect(() => {
 		if (isVisible && !isShow) {
@@ -22,7 +21,7 @@ const Map: FC = () => {
 			<SingaporeStartAnimation ref={ref} />
 			{isShow && (
 				<>
-					<FadeIn duration={2000} delay={1000}>
+					<FadeIn duration={1500} delay={1000}>
 						<HongKong>
 							<img
 								className='hong-kong'
@@ -33,7 +32,7 @@ const Map: FC = () => {
 							<Point name='Hong-Kong' top={-12} left={-2} />
 						</HongKong>
 					</FadeIn>
-					<FadeIn duration={2000} delay={500}>
+					<FadeIn duration={1500} delay={500}>
 						<Indonesia>
 							<img
 								className='indonesia'
@@ -44,7 +43,7 @@ const Map: FC = () => {
 							<Point name='Indonesia' top={110} left={112} />
 						</Indonesia>
 					</FadeIn>
-					<FadeIn duration={2000} delay={1500}>
+					<FadeIn duration={1500} delay={1500}>
 						<Philippines>
 							<img
 								className='philippines'
@@ -55,7 +54,7 @@ const Map: FC = () => {
 							<Point name='Philippines' top={-17} left={15} />
 						</Philippines>
 					</FadeIn>
-					<FadeIn duration={2000} delay={0}>
+					<FadeIn duration={1500} delay={0}>
 						<Singapore>
 							<img
 								className='singapore'
@@ -66,7 +65,7 @@ const Map: FC = () => {
 							<Point name='Singapore' top={-6} left={2} />
 						</Singapore>
 					</FadeIn>
-					<FadeIn duration={2000} delay={2000}>
+					<FadeIn duration={1500} delay={2000}>
 						<Thailand>
 							<img
 								className='thailand'
@@ -77,7 +76,7 @@ const Map: FC = () => {
 							<Point name='Thailand' top={-12} left={11} />
 						</Thailand>
 					</FadeIn>
-					<FadeIn duration={2000} delay={2500}>
+					<FadeIn duration={1500} delay={2500}>
 						<Vietnam>
 							<img
 								className='vietnam'
@@ -88,7 +87,7 @@ const Map: FC = () => {
 							<Point name='Vietnam' top={-16} left={22} />
 						</Vietnam>
 					</FadeIn>
-					<FadeIn duration={2000} delay={2500}>
+					<FadeIn duration={1500} delay={2500}>
 						<Arrow>
 							<img src='./images/main/map/arrow-line-text/arrow-icon.svg' alt='arrow' />
 						</Arrow>

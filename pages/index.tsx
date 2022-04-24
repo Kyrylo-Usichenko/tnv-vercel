@@ -16,6 +16,7 @@ import { Container } from '../components/common/Container/Container';
 import { Main } from '../components/Main/Styles/Styles';
 import styled from 'styled-components';
 import SmileRework from '../components/Main/SmileRework/SmileRework';
+import Map from '../components/Main/FormFilling/Map';
 
 export async function getStaticProps({ locale }: any) {
 	return {

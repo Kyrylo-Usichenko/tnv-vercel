@@ -1,6 +1,8 @@
 import React, { ChangeEvent, FC, useEffect, useState } from 'react';
 import styled from 'styled-components';
+
 import { Container } from '../../common/Container/Container';
+import MapComponent from './Map';
 
 const Smile: FC = () => {
 	const [loading, setLoading] = useState<'idle' | 'loading' | 'error' | 'success'>('idle');
@@ -102,11 +104,14 @@ const Smile: FC = () => {
 						<Inner>
 							<TitleWrapper>
 								<Title>Fill up the form and we’ll get in touch within a few hours</Title>
-								<Map
+								{/* <Map
 									src='images/main/formFilling/map.png'
 									srcSet='images/main/formFilling/map@2x.png 2x'
 									alt='map of asia'
-								/>
+								/> */}
+								<MapBox>
+									<MapComponent />
+								</MapBox>
 							</TitleWrapper>
 
 							<FormWrapper>
@@ -311,7 +316,7 @@ const TitleWrapper = styled.div`
 	position: relative;
 `;
 
-const Map = styled.img`
+const MapBox = styled.div`
 	position: absolute;
 	left: -243px;
 	top: -87px;
@@ -348,6 +353,43 @@ const Map = styled.img`
 		left: -235px;
 	}
 `;
+// const Map = styled.img`
+// 	position: absolute;
+// 	left: -243px;
+// 	top: -87px;
+// 	z-index: -1;
+// 	width: 710px;
+// 	top: 545px;
+// 	left: -305px;
+
+// 	@media (min-width: 768px) {
+// 		width: auto;
+// 		top: 390px;
+// 		left: -474px;
+// 	}
+
+// 	@media (min-width: 1023px) {
+// 		width: 950px;
+// 		top: -52px;
+// 		left: -385px;
+// 	}
+
+// 	@media (min-width: 1280px) {
+// 		width: auto;
+// 		top: -52px;
+// 		left: -390px;
+// 	}
+
+// 	@media (min-width: 1440px) {
+// 		top: -63px;
+// 		left: -305px;
+// 	}
+
+// 	@media (min-width: 1920px) {
+// 		top: -75px;
+// 		left: -235px;
+// 	}
+// `;
 
 const FormWrapper = styled.div`
 	background: radial-gradient(95.51% 95.51% at 50% 50%, rgba(255, 255, 255, 0.3) 0%, rgba(250, 250, 250, 0.3) 100%);
