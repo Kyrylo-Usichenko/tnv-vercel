@@ -15,17 +15,17 @@ const Commitments: FC = () => {
 						<Heading>Our Core Commitments</Heading>
 						<List>
 							<Item>
-								<Img src='images/company/Commitments/pen.svg' loading='lazy' alt='pen' />
+								<Img src='/images/company/Commitments/pen.svg' loading='lazy' alt='pen' />
 								<Title>Every pixel matters</Title>
 								<SubTitle>Biased towards perfection</SubTitle>
 							</Item>
 							<Item>
-								<Img src='images/company/Commitments/message.svg' loading='lazy' alt='message' />
+								<Img src='/images/company/Commitments/message.svg' loading='lazy' alt='message' />
 								<Title>Shut the fluff</Title>
 								<SubTitle>Clear and direct communication</SubTitle>
 							</Item>
 							<Item>
-								<Img src='images/company/Commitments/rocket.svg' loading='lazy' alt='rocket' />
+								<Img src='/images/company/Commitments/rocket.svg' loading='lazy' alt='rocket' />
 								<Title>Break things fast</Title>
 								<SubTitle>Ownership with ruthless agility</SubTitle>
 							</Item>
@@ -193,7 +193,7 @@ const SquareRight = styled.div`
 	top: 0;
 	width: 770px;
 	height: 356px;
-	background: url('images/company/Commitments/squareRight.svg') no-repeat;
+	background: url('/images/company/Commitments/squareRight.svg') no-repeat;
 	z-index: 0;
 	@media (min-width: 375px) {
 		display: none;
@@ -220,7 +220,7 @@ const SquareLeft = styled.div`
 	top: 0;
 	width: 338px;
 	height: 289px;
-	background: url('images/company/Commitments/squareLeft.svg') no-repeat;
+	background: url('/images/company/Commitments/squareLeft.svg') no-repeat;
 	z-index: 0;
 	@media (min-width: 768px) {
 		left: 0;
@@ -239,7 +239,7 @@ const DotsRight = styled.div`
 	top: 0;
 	width: 338px;
 	height: 289px;
-	background: url('images/company/Commitments/dotsRight.svg') no-repeat;
+	background: url('/images/company/Commitments/dotsRight.svg') no-repeat;
 	z-index: 0;
 	@media (min-width: 375px) {
 		display: none;
@@ -262,20 +262,20 @@ const DotsLeft = styled.div`
 	bottom: 0;
 	width: 215px;
 	height: 162.7px;
-	background: url('images/company/Commitments/dotsLeft.svg') no-repeat;
+	background: url('/images/company/Commitments/dotsLeft.svg') no-repeat;
 	z-index: 0;
 	@media (min-width: 375px) {
 		bottom: 170px;
-		background: url('images/company/Commitments/dotsLeft375.svg') no-repeat;
+		background: url('/images/company/Commitments/dotsLeft375.svg') no-repeat;
 		left: 0;
 	}
 	@media (min-width: 768px) {
-		background: url('images/company/Commitments/dotsLeft.svg') no-repeat;
+		background: url('/images/company/Commitments/dotsLeft.svg') no-repeat;
 		bottom: -34px;
 		left: 0;
 	}
 	@media (min-width: 1920px) {
-		background: url('images/company/Commitments/dotsLeft.svg') no-repeat;
+		background: url('/images/company/Commitments/dotsLeft.svg') no-repeat;
 		bottom: 0px;
 		left: 0;
 	}

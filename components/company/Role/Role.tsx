@@ -12,28 +12,28 @@ const Role: FC = () => {
 					<GalleryGrid>
 						<GalleryColumn>
 							<Img1
-								src='images/company/Role/1.jpg'
-								srcSet='images/company/Role/1@2x.jpg 2x'
+								src='/images/company/Role/1.jpg'
+								srcSet='/images/company/Role/1@2x.jpg 2x'
 								alt='Big city'
 								loading='lazy'
 							/>
 							<Img3
-								src='images/company/Role/3.jpg'
-								srcSet='images/company/Role/3@2x.jpg 2x'
+								src='/images/company/Role/3.jpg'
+								srcSet='/images/company/Role/3@2x.jpg 2x'
 								alt='Big city'
 								loading='lazy'
 							/>
 						</GalleryColumn>
 						<GalleryColumn>
 							<Img2
-								src='images/company/Role/2.jpg'
-								srcSet='images/company/Role/2@2x.jpg 2x'
+								src='/images/company/Role/2.jpg'
+								srcSet='/images/company/Role/2@2x.jpg 2x'
 								alt='Big city'
 								loading='lazy'
 							/>
 							<Img4
-								src='images/company/Role/4.jpg'
-								srcSet='images/company/Role/4@2x.jpg 2x'
+								src='/images/company/Role/4.jpg'
+								srcSet='/images/company/Role/4@2x.jpg 2x'
 								alt='Big city'
 								loading='lazy'
 							/>
@@ -157,7 +157,7 @@ const GalleryTitle = styled.h2`
 	max-width: 315px;
 
 	&::before {
-		content: url('images/company/Role/dec.svg');
+		content: url('/images/company/Role/dec.svg');
 		position: absolute;
 		top: -42px;
 		left: -24px;
@@ -268,7 +268,7 @@ const Dots = styled.div`
 	top: 13px;
 	width: 338px;
 	height: 256px;
-	background: url('images/company/Role/dots.svg') no-repeat;
+	background: url('/images/company/Role/dots.svg') no-repeat;
 	z-index: -1;
 	@media (min-width: 375px) {
 		right: -238px;

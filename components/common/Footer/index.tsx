@@ -15,8 +15,8 @@ const Footer: FC<Props> = ({ background }) => {
 				<FirstLine>
 					<FirstLineHalf>
 						<FooterFullLogo>
-							<FooterLogo src='icons/common/logo/logo.svg' alt='octopus' loading='lazy' />
-							<FooterLogoText src='icons/common/logo/logo-text.svg' alt='tinvio' loading='lazy' />
+							<FooterLogo src='/icons/common/logo/logo.svg' alt='octopus' loading='lazy' />
+							<FooterLogoText src='/icons/common/logo/logo-text.svg' alt='tinvio' loading='lazy' />
 						</FooterFullLogo>
 						<FirstLineSeparate />
 						<FooterUl>
@@ -38,25 +38,25 @@ const Footer: FC<Props> = ({ background }) => {
 						<Links>
 							<Socials>
 								<Social href={'/'}>
-									<img src='images/footer/linkedin.svg' alt='linkedin' loading='lazy' />
+									<img src='/images/footer/linkedin.svg' alt='linkedin' loading='lazy' />
 								</Social>
 								<Social href={'/'}>
-									<img src='images/footer/inst.svg' alt='instagram' loading='lazy' />
+									<img src='/images/footer/inst.svg' alt='instagram' loading='lazy' />
 								</Social>
 							</Socials>
 							<FirstLineSeparate />
 							<Stores>
 								<Store href={'/'}>
 									<img
-										src='images/footer/gp.png'
-										srcSet='images/footer/gp@2x.png 2x'
+										src='/images/footer/gp.png'
+										srcSet='/images/footer/gp@2x.png 2x'
 										alt='google play'
 									/>
 								</Store>
 								<Store href={'/'}>
 									<img
-										src='images/footer/as.png'
-										srcSet='images/footer/as@2x.png 2x'
+										src='/images/footer/as.png'
+										srcSet='/images/footer/as@2x.png 2x'
 										alt='google play'
 									/>
 								</Store>

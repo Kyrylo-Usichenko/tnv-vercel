@@ -316,7 +316,7 @@ const Block4Square = styled.div`
 	top: 0px;
 	width: 166.67px;
 	height: 166.67px;
-	background: url('images/company/Counts/block4Square.svg') no-repeat;
+	background: url('/images/company/Counts/block4Square.svg') no-repeat;
 	z-index: -1;
 `;
 
@@ -326,7 +326,7 @@ const Block4Dots = styled.div`
 	bottom: -9px;
 	width: 196.9px;
 	height: 149px;
-	background: url('images/company/Counts/block4Dots.svg') no-repeat;
+	background: url('/images/company/Counts/block4Dots.svg') no-repeat;
 	z-index: -1;
 `;
 
@@ -336,7 +336,7 @@ const Block3Square = styled.div`
 	bottom: -34px;
 	width: 136.99px;
 	height: 136.99px;
-	background: url('images/company/Counts/block3Square.svg') no-repeat;
+	background: url('/images/company/Counts/block3Square.svg') no-repeat;
 	z-index: -1;
 `;
 
@@ -346,7 +346,7 @@ const Block3Dots = styled.div`
 	top: 0px;
 	width: 196.9px;
 	height: 149px;
-	background: url('images/company/Counts/block3Dots.svg') no-repeat;
+	background: url('/images/company/Counts/block3Dots.svg') no-repeat;
 	z-index: -1;
 	@media (max-width: 1280px) {
 		right: -115px;
@@ -359,7 +359,7 @@ const Block2SquareBottom = styled.div`
 	bottom: 0px;
 	width: 266px;
 	height: 108px;
-	background: url('images/company/Counts/block2SquareBottom.svg') no-repeat;
+	background: url('/images/company/Counts/block2SquareBottom.svg') no-repeat;
 	z-index: -1;
 	@media (max-width: 425px) {
 		left: 37px;
@@ -374,7 +374,7 @@ const Block2SquareLeft = styled.div`
 
 	width: 186.41px;
 	height: 186.41px;
-	background: url('images/company/Counts/block2SquareLeft.svg') no-repeat;
+	background: url('/images/company/Counts/block2SquareLeft.svg') no-repeat;
 	z-index: -1;
 `;
 
@@ -384,7 +384,7 @@ const Block2Dots = styled.div`
 	bottom: 12px;
 	width: 196.9px;
 	height: 149px;
-	background: url('images/company/Counts/block2Dots.svg') no-repeat;
+	background: url('/images/company/Counts/block2Dots.svg') no-repeat;
 	z-index: -1;
 	@media (max-width: 1280px) {
 		left: 176px;
@@ -401,7 +401,7 @@ const Block1Dots = styled.div`
 	bottom: -67px;
 	width: 325px;
 	height: 245.94px;
-	background: url('images/company/Counts/block1Dots.svg') no-repeat;
+	background: url('/images/company/Counts/block1Dots.svg') no-repeat;
 	z-index: -1;
 `;
 
@@ -411,7 +411,7 @@ const Block1SquareRight = styled.div`
 	top: 0px;
 	width: 312.56px;
 	height: 312.56px;
-	background: url('images/company/Counts/block1SquareRight.svg') no-repeat;
+	background: url('/images/company/Counts/block1SquareRight.svg') no-repeat;
 	z-index: -1;
 `;
 
@@ -421,7 +421,7 @@ const Block1SquareBottom = styled.div`
 	bottom: 0px;
 	width: 378px;
 	height: 121px;
-	background: url('images/company/Counts/block1SquareBottom.svg') no-repeat;
+	background: url('/images/company/Counts/block1SquareBottom.svg') no-repeat;
 	z-index: -1;
 `;
 

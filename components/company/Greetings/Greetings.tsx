@@ -28,7 +28,7 @@ const Greetings: FC = () => {
 							digitize the zillions of these offline receivables and payables. One transaction at a time.
 						</Text>
 						<Contact>
-							<img src='./images/company/Greetings/chat-icon.svg' alt='chat' /> Contact Us
+							<img src='/images/company/Greetings/chat-icon.svg' alt='chat' /> Contact Us
 						</Contact>
 						<LeftTopSquare />
 						<LeftBotSquare />
@@ -37,18 +37,18 @@ const Greetings: FC = () => {
 					<PhoneWrapper>
 						<picture>
 							<source
-								srcSet='images/company/Greetings/ph-1024.png 1x, images/company/Greetings/ph-1024@2x.png 2x'
+								srcSet='/images/company/Greetings/ph-1024.png 1x, /images/company/Greetings/ph-1024@2x.png 2x'
 								media='(min-width: 1024px)'
 							/>
 							<source
-								srcSet='images/company/Greetings/ph-768.png 1x, images/company/Greetings/ph-768@2x.png 2x'
+								srcSet='/images/company/Greetings/ph-768.png 1x, /images/company/Greetings/ph-768@2x.png 2x'
 								media='(min-width: 768px)'
 							/>
 							<Phone
 								width='398'
 								height='658'
-								src='images/company/Greetings/ph-375.png'
-								srcSet='images/company/Greetings/ph-375@2x.png 2x'
+								src='/images/company/Greetings/ph-375.png'
+								srcSet='/images/company/Greetings/ph-375@2x.png 2x'
 								alt='app'
 							/>
 						</picture>
@@ -86,7 +86,7 @@ const Title = styled.h1`
 	position: relative;
 
 	&::before {
-		content: url('images/company/Greetings/dec-375.svg');
+		content: url('/images/company/Greetings/dec-375.svg');
 		position: absolute;
 		top: -16px;
 		left: -26px;
@@ -94,7 +94,7 @@ const Title = styled.h1`
 
 	@media (min-width: 768px) {
 		&::before {
-			content: url('images/company/Greetings/dec-768.svg');
+			content: url('/images/company/Greetings/dec-768.svg');
 			top: -25px;
 			left: -66px;
 		}
@@ -284,7 +284,7 @@ const PhoneWrapper = styled.div`
 	margin-bottom: 40px;
 
 	&::before {
-		content: url('images/company/Greetings/ph-dots-b-375.svg');
+		content: url('/images/company/Greetings/ph-dots-b-375.svg');
 		position: absolute;
 		bottom: -120px;
 		right: -30px;
@@ -292,7 +292,7 @@ const PhoneWrapper = styled.div`
 	}
 
 	&::after {
-		content: url('images/company/Greetings/ph-dec-375.svg');
+		content: url('/images/company/Greetings/ph-dec-375.svg');
 		position: absolute;
 		top: 186px;
 		right: -33px;
@@ -301,7 +301,7 @@ const PhoneWrapper = styled.div`
 
 	@media (min-width: 768px) {
 		&::before {
-			content: url('images/company/Greetings/ph-dots-b-768.svg');
+			content: url('/images/company/Greetings/ph-dots-b-768.svg');
 			bottom: -22px;
 			right: 67px;
 		}
@@ -321,7 +321,7 @@ const PhoneWrapper = styled.div`
 
 		&::after {
 			display: block;
-			content: url('images/company/Greetings/ph-dec-1280.svg');
+			content: url('/images/company/Greetings/ph-dec-1280.svg');
 			top: 110px;
 			right: -80px;
 		}
@@ -358,7 +358,7 @@ const Dec1 = styled.div`
 	left: 0;
 
 	&::before {
-		content: url('images/company/Greetings/ph-dots-t.svg');
+		content: url('/images/company/Greetings/ph-dots-t.svg');
 		position: absolute;
 		top: 60px;
 		left: -209px;

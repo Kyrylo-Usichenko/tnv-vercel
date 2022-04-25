@@ -10,7 +10,7 @@ const DoneTop: FC = () => {
 			</FeaturesCon>
 			<Wrapper>
 				<TopWrapper>
-					<DotsT src='images/company/Done/dots-t.svg' loading='lazy' />
+					<DotsT src='/images/company/Done/dots-t.svg' loading='lazy' />
 					<SquareT />
 					<GreyTopBlock>
 						<SquareG1 />
@@ -32,15 +32,15 @@ const DoneTop: FC = () => {
 					</GreyTopBlock>
 					<RedSide>
 						<SquareRT />
-						<DotsRT src='images/company/Done/dotsRT.svg' loading='lazy' />
+						<DotsRT src='/images/company/Done/dotsRT.svg' loading='lazy' />
 						<img
-							src='images/company/Done/ipad.png'
-							srcSet='images/company/Done/ipad@2x.png 2x'
+							src='/images/company/Done/ipad.png'
+							srcSet='/images/company/Done/ipad@2x.png 2x'
 							alt='ipad'
 							loading='lazy'
 						/>
 						<SquareRB />
-						<DotsRB src='images/company/Done/dotsRB.svg' loading='lazy' />
+						<DotsRB src='/images/company/Done/dotsRB.svg' loading='lazy' />
 					</RedSide>
 				</TopWrapper>
 				<FlexConInfo>
@@ -61,7 +61,7 @@ const DoneTop: FC = () => {
 									4000+ active businesses across the region
 								</Item>
 							</List>
-							<DotsG src='images/company/Done/dotsG.svg' loading='lazy' />
+							<DotsG src='/images/company/Done/dotsG.svg' loading='lazy' />
 						</Content2>
 					</FeaturesCon>
 				</FlexConInfo>
