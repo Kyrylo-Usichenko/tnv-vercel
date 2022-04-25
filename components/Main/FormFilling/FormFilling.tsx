@@ -274,6 +274,8 @@ const Inner = styled.div`
 `;
 
 const Title = styled.h5`
+	position: relative;
+	z-index: 3;
 	font-family: 'Gilroy';
 	font-style: normal;
 	font-weight: 600;
