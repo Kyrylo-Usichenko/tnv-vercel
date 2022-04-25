@@ -2,18 +2,17 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 
 import { FeaturesCon } from '../../common/Container/Container';
+import { useTranslation } from 'react-i18next';
 
 const Breeze: FC = () => {
+	const { t } = useTranslation();
+
 	return (
 		<SyledBreeze>
 			<FeaturesCon>
 				<BreezeCon>
-					<BreezeTitle>Breeze through orders without the stress</BreezeTitle>
-					<BreezeText>
-						Your customers will love that they can browse item catalogs and check availability before
-						placing orders. You'll receive orders in beautifully formatted lists. Confirm or amend them in a
-						few taps, even when on-the-go!
-					</BreezeText>
+					<BreezeTitle>{t('features:ordersTitle')}</BreezeTitle>
+					<BreezeText>{t('features:ordersText')}</BreezeText>
 					<BreezeBlock1>
 						<BreezeBlock2>
 							<Block>

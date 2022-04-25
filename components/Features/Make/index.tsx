@@ -2,19 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { FeaturesCon } from '../../common/Container/Container';
+import { useTranslation } from 'react-i18next';
 
 const Make = () => {
+	const { t } = useTranslation();
+
 	return (
 		<SyledMake>
 			<FeaturesCon>
 				<MakeCon>
 					<MakeInfo>
-						<MakeTitle>Make collections fast, flexible, fun</MakeTitle>
-						<MakeText>
-							Give customers a modern B2B payments experience, with more ways to pay (including credit
-							terms). Zero setup or risk for you. They'll stay with you longer, purchase more from you,
-							and you'll get cash in your bank so much faster!
-						</MakeText>
+						<MakeTitle>{t('features:paymentsTitle')}</MakeTitle>
+						<MakeText>{t('features:paymentsText')}</MakeText>
 					</MakeInfo>
 					<First>
 						<Second>

@@ -1,18 +1,19 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
+import { useTranslation } from 'react-i18next';
 
 const Sounds: FC = () => {
+	const { t } = useTranslation();
+
 	return (
 		<StyledSounds>
 			<FlexConInfo>
 				<FullConDec></FullConDec>
 				<FeaturesCon>
 					<SoundsCon>
-						<SoundsTitle>
-							Sounds easy? <Br /> Supply chain transactions don't have to be complicated.
-						</SoundsTitle>
-						<SoundsButton>Get Started</SoundsButton>
+						<SoundsTitle>{t('features:separatorText')}</SoundsTitle>
+						<SoundsButton>{t('features:separatorButton')}</SoundsButton>
 					</SoundsCon>
 				</FeaturesCon>
 			</FlexConInfo>

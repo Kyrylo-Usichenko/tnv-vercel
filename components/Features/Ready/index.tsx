@@ -1,17 +1,20 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
+import { useTranslation } from 'react-i18next';
 
 const Ready: FC = () => {
+	const { t } = useTranslation();
+
 	return (
 		<StyledReady>
 			<FlexConInfo>
 				<FullConDec></FullConDec>
 				<FeaturesCon>
 					<ReadyCon>
-						<ReadyText>Are you ready?</ReadyText>
-						<ReadyTitle>Supercharge your business, the Tinvio way</ReadyTitle>
-						<ReadyButton>Get Started</ReadyButton>
+						<ReadyText>{t('features:ctaReady')}</ReadyText>
+						<ReadyTitle>{t('features:ctaTitle')}</ReadyTitle>
+						<ReadyButton>{t('features:ctaButton')}</ReadyButton>
 					</ReadyCon>
 				</FeaturesCon>
 			</FlexConInfo>

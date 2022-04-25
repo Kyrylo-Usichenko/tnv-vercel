@@ -544,7 +544,6 @@ function createCss() {
 
 		delay += 50;
 	}
-	console.log(delay);
 
 	return css`
 		${styles}

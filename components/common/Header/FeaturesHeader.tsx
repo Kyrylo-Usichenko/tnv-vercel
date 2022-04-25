@@ -174,23 +174,23 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 						</Link>
 						<Socials>
 							<Social href={'/'}>
-								<img src='images/footer/linkedin.svg' alt='linkedin' loading='lazy' />
+								<img src='/images/footer/linkedin.svg' alt='linkedin' loading='lazy' />
 							</Social>
 							<Social href={'/'}>
-								<img src='images/footer/inst.svg' alt='instagram' loading='lazy' />
+								<img src='/images/footer/inst.svg' alt='instagram' loading='lazy' />
 							</Social>
 							<Store href={'/'}>
 								<img
-									src='images/footer/gp.png'
-									srcSet='images/footer/gp@2x.png 2x'
+									src='/images/footer/gp.png'
+									srcSet='/images/footer/gp@2x.png 2x'
 									alt='google play'
 									loading='lazy'
 								/>
 							</Store>
 							<Store href={'/'}>
 								<img
-									src='images/footer/as.png'
-									srcSet='images/footer/as@2x.png 2x'
+									src='/images/footer/as.png'
+									srcSet='/images/footer/as@2x.png 2x'
 									alt='google play'
 									loading='lazy'
 								/>

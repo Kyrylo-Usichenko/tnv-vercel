@@ -188,7 +188,7 @@ const LeftSliderWrap = styled.div`
 			content: '';
 			width: 11.67px;
 			height: 20px;
-			background: url('images/main/whyChoose/arrow.svg');
+			background: url('/images/main/whyChoose/arrow.svg');
 		}
 	}
 	.swiper-button-next {
@@ -199,7 +199,7 @@ const LeftSliderWrap = styled.div`
 			transform: rotate(180deg);
 			width: 11.67px;
 			height: 20px;
-			background: url('images/main/whyChoose/arrow.svg');
+			background: url('/images/main/whyChoose/arrow.svg');
 		}
 	}
 `;

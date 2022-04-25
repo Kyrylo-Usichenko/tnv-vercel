@@ -3,12 +3,15 @@ import Image from 'next/image';
 import styled from 'styled-components';
 
 import { FeaturesCon } from '../../common/Container/Container';
+import { useTranslation } from 'react-i18next';
 
 const Supercharge: FC = () => {
+	const { t } = useTranslation();
+
 	return (
 		<StyledSupercharge>
 			<FeaturesCon>
-				<SuperchargeTitle>Supercharge your business with Tinvio</SuperchargeTitle>
+				<SuperchargeTitle>{t('features:introductionTitle')}</SuperchargeTitle>
 			</FeaturesCon>
 			<FlexCon>
 				<FullCon>
@@ -27,24 +30,16 @@ const Supercharge: FC = () => {
 					<FeaturesCon className='h-100'>
 						<FlexConGrid>
 							<Elem>
-								<Title>Chats</Title>
-								<Text>
-									Send messages, invoices, and payment links directly to customers (even if they're
-									not on Tinvio)
-								</Text>
+								<Title>{t('features:introductionChats')}</Title>
+								<Text>{t('features:introductionChatsText')}</Text>
 							</Elem>
 							<Elem>
-								<Title>Orders</Title>
-								<Text>
-									Receive, manage, and track all your orders in a format designed to prevent mistakes
-								</Text>
+								<Title>{t('features:introductionOrders')}</Title>
+								<Text>{t('features:introductionOrdersText')}</Text>
 							</Elem>
 							<Elem>
-								<Title>Payments</Title>
-								<Text>
-									Collect payments and reconcile against invoices, without even checking bank
-									statements
-								</Text>
+								<Title>{t('features:introductionPayments')}</Title>
+								<Text>{t('features:introductionPaymentsText')}</Text>
 							</Elem>
 							<Elem>
 								<Title>
