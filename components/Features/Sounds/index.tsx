@@ -38,10 +38,15 @@ const FullConDec = styled.div`
 	overflow: hidden;
 
 	&::before {
-		content: url('/images/features/sounds/sounds-rec.webp');
+		content: '';
+		background-color: #444444;
+		width: 278px;
+		height: 278px;
+		border-radius: 32px;
+		transform: rotate(-45deg);
 		position: absolute;
-		top: 0;
-		left: -220px;
+		top: -87px;
+		left: -128px;
 	}
 
 	&::after {
@@ -59,6 +64,10 @@ const FullConDec = styled.div`
 	}
 
 	@media (min-width: 1024px) {
+		&::before {
+			left: -167px;
+		}
+
 		&::after {
 			content: url('/images/features/sounds/sounds-dots.svg');
 			right: 150px;
@@ -79,7 +88,7 @@ const FullConDec = styled.div`
 
 	@media (min-width: 1440px) {
 		&::before {
-			left: -60px;
+			left: -4px;
 		}
 
 		&::after {
@@ -88,7 +97,7 @@ const FullConDec = styled.div`
 	}
 	@media (min-width: 1920px) {
 		&::before {
-			left: 140px;
+			left: 240px;
 		}
 	}
 `;
