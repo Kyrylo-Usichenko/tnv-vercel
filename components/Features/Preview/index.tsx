@@ -2,6 +2,8 @@ import React, { FC, RefObject, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
+import LineL from './LineL';
+import LineR from './LineR';
 
 type PreviewProps = {
 	openModal: () => void;
@@ -13,6 +15,8 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 
 	const pic1 = useRef() as RefObject<HTMLPictureElement>;
 	const pic2 = useRef() as RefObject<HTMLPictureElement>;
+
+	const mainImg = useRef() as RefObject<HTMLImageElement>;
 
 	useEffect(() => {
 		const isVisible = !!entry?.isIntersecting;
@@ -103,6 +107,7 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 								alt='Man holding smartphone'
 								width={1190}
 								height={600}
+								ref={mainImg}
 							/>
 						</picture>
 						<AppImg
@@ -110,6 +115,7 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 							srcSet='images/features/preview/app@2x.png 2x'
 							alt='message'
 						/>
+						<AppShadow />
 						<Request>
 							<PaymentIco>
 								<img src='images/features/preview/file.svg' alt='file' />
@@ -126,8 +132,8 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 								</PaymentCon>
 							</Payment>
 						</Request>
-						<PreviewImgDeco1 />
-						<PreviewImgDeco2 />
+						<LineL />
+						<LineR />
 						<PreviewImgDeco3 />
 					</PreviewImg>
 				</PreviewInfo>
@@ -360,6 +366,18 @@ const AppImg = styled.img`
 	border-radius: 0;
 	width: 201px;
 	height: auto;
+	/* opacity: 0; */
+	/* animation: appImgAnim 1s ease-in; */
+	animation-fill-mode: forwards;
+
+	@keyframes appImgAnim {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
 
 	@media (min-width: 768px) {
 		width: 288px;
@@ -380,6 +398,18 @@ const Request = styled.div`
 	position: absolute;
 	top: 45px;
 	right: -8px;
+	/* opacity: 0; */
+	/* animation: requestAnim 1s ease-in; */
+	animation-fill-mode: forwards;
+
+	@keyframes requestAnim {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
 
 	@media (min-width: 768px) {
 		top: 68px;
@@ -566,113 +596,39 @@ const PaymentCon = styled.div`
 	justify-content: space-between;
 `;
 
-const PreviewImgDeco1 = styled.div`
+const AppShadow = styled.div`
 	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	height: 100%;
-	width: 100%;
+	width: 177px;
+	height: 191px;
+	background: rgba(0, 0, 0, 0.1);
+	filter: blur(16px);
+	border-radius: 6px;
+	top: initial;
+	right: -15px;
+	bottom: -91px;
+	opacity: 0;
+	/* animation: appImgAnim 1s ease-in; */
+	animation-fill-mode: forwards;
 
-	&::before {
-		content: '';
-		position: absolute;
-		width: 177px;
-		height: 191px;
-		background: rgba(0, 0, 0, 0.1);
-		filter: blur(16px);
-		border-radius: 6px;
-		top: initial;
-		right: -15px;
-		bottom: -91px;
+	@keyframes appImgAnim {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
 	}
 
 	@media (min-width: 768px) {
-		&::before {
-			width: 253px;
-			height: 273px;
-			left: 80px;
-			top: 75px;
-		}
+		width: 253px;
+		height: 273px;
+		left: 80px;
+		top: 75px;
 	}
 
 	@media (min-width: 1440px) {
-		&::before {
-			left: 95px;
-			top: 90px;
-		}
-	}
-`;
-
-const PreviewImgDeco2 = styled.div`
-	height: inherit;
-	width: inherit;
-
-	&::after {
-		content: url('images/features/preview/line-r-375.svg');
-		position: absolute;
-		top: 96px;
-		right: 88px;
-	}
-
-	@media (min-width: 768px) {
-		&::after {
-			content: url('images/features/preview/line-r.svg');
-			position: absolute;
-			top: 130px;
-			right: 102px;
-		}
-	}
-
-	@media (min-width: 1024px) {
-		&::before {
-			content: url('images/features/preview/line-l.svg');
-			position: absolute;
-			top: 105px;
-			left: 161px;
-		}
-
-		&::after {
-			top: 135px;
-			right: 160px;
-		}
-	}
-
-	@media (min-width: 1280px) {
-		&::before {
-			top: 132px;
-			left: 205px;
-		}
-
-		&::after {
-			top: 155px;
-			right: 175px;
-		}
-	}
-
-	@media (min-width: 1440px) {
-		&::before {
-			top: 139px;
-			left: 278px;
-		}
-
-		&::after {
-			top: 153px;
-			right: 200px;
-		}
-	}
-
-	@media (min-width: 1920px) {
-		&::before {
-			top: 178px;
-			left: 337px;
-		}
-
-		&::after {
-			top: 182px;
-			right: 221px;
-		}
+		left: 95px;
+		top: 90px;
 	}
 `;
 

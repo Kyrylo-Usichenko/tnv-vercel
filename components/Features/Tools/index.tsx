@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import Image from 'next/image';
 import styled from 'styled-components';
 
 const Tools: FC = () => {
@@ -8,12 +9,7 @@ const Tools: FC = () => {
 				<Manage>
 					<ManageTitle>Manage orders</ManageTitle>
 					<ManageText>Yay, you've got a new order! Check and confirm the order in lightning speed</ManageText>
-					<ManageImg
-						src='images/features/tools/manage.png'
-						srcSet='images/features/tools/manage@2x.png 2x'
-						alt='app'
-						loading='lazy'
-					/>
+					<Image src='/images/features/tools/manage@2x.png' alt='app' width={252} height={324} />
 					<ManageDec></ManageDec>
 				</Manage>
 				<Wrapper>
@@ -21,10 +17,10 @@ const Tools: FC = () => {
 						<MessageeDec></MessageeDec>
 						<MessageButtons>
 							<MessageButton disabled>
-								<img src='images/features/tools/pin.svg' alt='pin' loading='lazy' />
+								<Image src='/images/features/tools/pin.svg' alt='pin' width={16} height={17} />
 							</MessageButton>
 							<MessageButton disabled>
-								<img src='images/features/tools/file.svg' alt='file' loading='lazy' />
+								<Image src='/images/features/tools/file.svg' alt='file' width={14} height={17} />
 							</MessageButton>
 							<label>
 								<MessageInput placeholder='Type something...' disabled />
@@ -36,14 +32,19 @@ const Tools: FC = () => {
 						<Share>
 							<ShareDec></ShareDec>
 							<ShareBlock1>
-								<img src='images/features/tools/share.svg' alt='share' loading='lazy' />
+								<Image src='/images/features/tools/share.svg' alt='share' width={48} height={48} />
 							</ShareBlock1>
 							<ShareTitle>Share payment links</ShareTitle>
 						</Share>
 						<Invoices>
 							<InvoiceBlock1>
 								<InvoiceBlock2>
-									<img src='images/features/tools/dollar.svg' alt='dollar' loading='lazy' />
+									<Image
+										src='/images/features/tools/dollar.svg'
+										alt='dollar'
+										width={22}
+										height={44}
+									/>
 								</InvoiceBlock2>
 							</InvoiceBlock1>
 							<InvoiceTitle>Create invoices</InvoiceTitle>
@@ -244,8 +245,6 @@ const ManageText = styled.p`
 	}
 `;
 
-const ManageImg = styled.img``;
-
 const Wrapper = styled.div`
 	@media (min-width: 1024px) {
 		flex: 1;
@@ -259,24 +258,38 @@ const Message = styled.div`
 	overflow: hidden;
 	padding: 54px 16px;
 	margin-bottom: 16px;
+	z-index: 1;
 
 	&::before {
-		content: url('images/features/tools/message-rec-l.webp');
+		content: '';
+		background-color: #3f3f3f;
+		width: 223px;
+		height: 223px;
+		border-radius: 26px;
+		transform: rotate(-45deg);
 		position: absolute;
-		top: 0;
-		left: 0;
+		top: -62px;
+		left: -67px;
+		z-index: -1;
 	}
 
 	@media (min-width: 768px) {
 		&::before {
-			top: -20px;
+			top: -70px;
+			left: -54px;
 		}
 
 		&::after {
-			content: url('images/features/tools/message-rec-b.webp');
+			content: '';
+			width: 294px;
+			height: 294px;
+			border-radius: 26px;
+			transform: rotate(-45deg);
+			background-color: #3f3f3f;
 			position: absolute;
-			right: -150px;
-			bottom: 0;
+			right: -101px;
+			bottom: -104px;
+			z-index: -1;
 		}
 	}
 
@@ -295,19 +308,21 @@ const Message = styled.div`
 		max-height: 228px;
 
 		&::after {
-			right: -200px;
+			right: -169px;
+			bottom: -106px;
 		}
 	}
 
 	@media (min-width: 1440px) {
 		&::after {
-			right: -100px;
+			right: -72px;
+			bottom: -88px;
 		}
 	}
 
 	@media (min-width: 1920px) {
 		&::after {
-			right: 150px;
+			right: 179px;
 		}
 	}
 `;
@@ -438,30 +453,44 @@ const Invoices = styled.div`
 	padding: 46px 0;
 
 	&::before {
-		content: url('images/features/tools/invoice-rec-l.webp');
+		content: '';
+		width: 229px;
+		height: 229px;
+		background-color: #3f3f3f;
+		border-radius: 26px;
+		transform: rotate(-45deg);
 		position: absolute;
-		top: 0;
-		left: -14px;
+		top: -65px;
+		left: -150px;
+		z-index: -2;
 	}
 
 	&::after {
-		content: url('images/features/tools/invoice-rec-r.webp');
+		content: '';
+		width: 235px;
+		height: 235px;
+		background-color: #3f3f3f;
+		border-radius: 26px;
+		transform: rotate(-31deg);
 		position: absolute;
-		right: -26px;
-		bottom: -2px;
+		right: -73px;
+		bottom: -37px;
+		z-index: -2;
 	}
 
 	@media (min-width: 768px) {
 		flex: 1;
 
 		&::before {
-			left: 0;
+			top: -58px;
+			left: -162px;
 		}
 	}
 
 	@media (min-width: 1024px) {
 		&::after {
-			right: -150px;
+			right: -227px;
+			bottom: -51px;
 		}
 	}
 
@@ -471,7 +500,7 @@ const Invoices = styled.div`
 		max-height: 229px;
 
 		&::after {
-			right: -100px;
+			right: -151px;
 		}
 	}
 `;

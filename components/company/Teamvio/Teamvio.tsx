@@ -18,14 +18,14 @@ const Teamvio: FC = () => {
 					<RightDots />
 					<LeftDots />
 					<Img1
-						src='images/company/Teamvio/1.jpg'
-						srcSet='images/company/Teamvio/1@2x.jpg 2x'
+						src='/images/company/Teamvio/1.jpg'
+						srcSet='/images/company/Teamvio/1@2x.jpg 2x'
 						alt='people'
 						loading='lazy'
 					/>
 					<Img2
-						src='images/company/Teamvio/2.jpg'
-						srcSet='images/company/Teamvio/2@2x.jpg 2x'
+						src='/images/company/Teamvio/2.jpg'
+						srcSet='/images/company/Teamvio/2@2x.jpg 2x'
 						alt='people'
 						loading='lazy'
 					/>
@@ -41,14 +41,14 @@ const Teamvio: FC = () => {
 				</Inner1>
 				<Inner2>
 					<Img3
-						src='images/company/Teamvio/3.jpg'
-						srcSet='images/company/Teamvio/3@2x.jpg 2x'
+						src='/images/company/Teamvio/3.jpg'
+						srcSet='/images/company/Teamvio/3@2x.jpg 2x'
 						alt='people'
 						loading='lazy'
 					/>
 					<Img4
-						src='images/company/Teamvio/4.jpg'
-						srcSet='images/company/Teamvio/4@2x.jpg 2x'
+						src='/images/company/Teamvio/4.jpg'
+						srcSet='/images/company/Teamvio/4@2x.jpg 2x'
 						alt='people'
 						loading='lazy'
 					/>
@@ -136,7 +136,7 @@ const Title = styled.h3`
 	text-align: center;
 
 	&:before {
-		content: url('images/company/Teamvio/stars.svg');
+		content: url('/images/company/Teamvio/stars.svg');
 		position: absolute;
 		left: -30px;
 		top: -21px;
@@ -350,7 +350,7 @@ const RightDots = styled.div`
 	z-index: -1;
 	width: 389.43px;
 	height: 294.7px;
-	background: url('images/company/Teamvio/rightDots.svg');
+	background: url('/images/company/Teamvio/rightDots.svg');
 `;
 
 const LeftDots = styled.div`
@@ -359,7 +359,7 @@ const LeftDots = styled.div`
 	top: 294px;
 	width: 389.43px;
 	height: 294.7px;
-	background: url('images/company/Teamvio/leftDots.svg');
+	background: url('/images/company/Teamvio/leftDots.svg');
 	z-index: -1;
 `;
 
@@ -369,11 +369,11 @@ const JoinSquareLeft = styled.div`
 	bottom: 0px;
 	width: 267px;
 	height: 102px;
-	background: url('images/company/Teamvio/joinSquareLeft.svg') no-repeat;
+	background: url('/images/company/Teamvio/joinSquareLeft.svg') no-repeat;
 	z-index: -1;
 
 	@media (min-width: 375px) {
-		background: url('images/company/Teamvio/joinSquare375.svg') no-repeat;
+		background: url('/images/company/Teamvio/joinSquare375.svg') no-repeat;
 		width: 260px;
 		height: 175px;
 		left: 0px;
@@ -384,7 +384,7 @@ const JoinSquareLeft = styled.div`
 		bottom: -17px;
 	}
 	@media (min-width: 1024px) {
-		background: url('images/company/Teamvio/joinSquareLeft.svg') no-repeat;
+		background: url('/images/company/Teamvio/joinSquareLeft.svg') no-repeat;
 		width: 267px;
 		height: 102px;
 		left: -47px;
@@ -398,7 +398,7 @@ const JoinSquareRight = styled.div`
 	top: 0px;
 	width: 258px;
 	height: 122px;
-	background: url('images/company/Teamvio/joinSquareRight.svg') no-repeat;
+	background: url('/images/company/Teamvio/joinSquareRight.svg') no-repeat;
 	z-index: -1;
 
 	@media (min-width: 375px) {
@@ -432,17 +432,17 @@ const JoinDots = styled.div`
 	bottom: 0px;
 	width: 208px;
 	height: 35px;
-	background: url('images/company/Teamvio/joinDots.svg') no-repeat;
+	background: url('/images/company/Teamvio/joinDots.svg') no-repeat;
 	z-index: -1;
 	@media (min-width: 375px) {
-		background: url('images/company/Teamvio/joinDots375.svg') no-repeat;
+		background: url('/images/company/Teamvio/joinDots375.svg') no-repeat;
 		width: 76px;
 		height: 109px;
 		right: 0;
 		bottom: 0;
 	}
 	@media (min-width: 1024px) {
-		background: url('images/company/Teamvio/joinDots.svg') no-repeat;
+		background: url('/images/company/Teamvio/joinDots.svg') no-repeat;
 		width: 208px;
 		height: 35px;
 		right: 88px;
