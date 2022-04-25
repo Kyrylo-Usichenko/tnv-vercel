@@ -2,8 +2,11 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 
 import { FeaturesCon } from '../../common/Container/Container';
+import { useTranslation } from 'next-i18next';
 
 const Gallery: FC = () => {
+	const { t } = useTranslation();
+
 	return (
 		<StyledGallery>
 			<FeaturesCon>
@@ -38,7 +41,7 @@ const Gallery: FC = () => {
 							/>
 						</GalleryColumn>
 					</GalleryGrid>
-					<GalleryTitle>It's your business. Run it like a rockstar.</GalleryTitle>
+					<GalleryTitle>{t('features:rockstar')}</GalleryTitle>
 				</GalleryCon>
 			</FeaturesCon>
 		</StyledGallery>

@@ -1,17 +1,16 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'next-i18next';
 
 const Send: FC = () => {
+	const { t } = useTranslation();
+
 	return (
 		<StyledSend>
 			<SendCon>
 				<SendInfo>
-					<SendTitle>Send invoices, save the trees </SendTitle>
-					<SendText>
-						Send invoices digitally, and track them all the way until they're paid. It's easier to reconcile
-						and more organized than printouts. If they're overdue, automatically send a friendly reminder or
-						two!
-					</SendText>
+					<SendTitle>{t('features:invoicesTitle')}</SendTitle>
+					<SendText>{t('features:invoicesText')}</SendText>
 				</SendInfo>
 			</SendCon>
 			<PreviewImg>

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { Container } from '../../common/Container/Container';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const HowItWorks: FC = () => {
 	const { t } = useTranslation();

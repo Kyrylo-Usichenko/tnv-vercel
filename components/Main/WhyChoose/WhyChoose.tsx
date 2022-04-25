@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { Container } from '../../common/Container/Container';
 import Slider from '../Slider/Slider';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const WhyChoose: FC = () => {
 	const { t } = useTranslation();

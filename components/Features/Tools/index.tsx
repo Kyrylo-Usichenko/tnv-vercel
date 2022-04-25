@@ -1,14 +1,17 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
+import { useTranslation } from 'next-i18next';
 
 const Tools: FC = () => {
+	const { t } = useTranslation();
+
 	return (
 		<StyledTools>
 			<FullCon>
 				<Manage>
-					<ManageTitle>Manage orders</ManageTitle>
-					<ManageText>Yay, you've got a new order! Check and confirm the order in lightning speed</ManageText>
+					<ManageTitle>{t('features:introductionManageOrders')}</ManageTitle>
+					<ManageText>{t('features:introductionManageOrdersText')}</ManageText>
 					<Image src='/images/features/tools/manage@2x.png' alt='app' width={252} height={324} />
 					<ManageDec></ManageDec>
 				</Manage>
@@ -26,7 +29,7 @@ const Tools: FC = () => {
 								<MessageInput placeholder='Type something...' disabled />
 							</label>
 						</MessageButtons>
-						<MessageTitle>Send messages</MessageTitle>
+						<MessageTitle>{t('features:introductionSendMessages')}</MessageTitle>
 					</Message>
 					<WrapperLine2>
 						<Share>
@@ -34,7 +37,7 @@ const Tools: FC = () => {
 							<ShareBlock1>
 								<Image src='/images/features/tools/share.svg' alt='share' width={48} height={48} />
 							</ShareBlock1>
-							<ShareTitle>Share payment links</ShareTitle>
+							<ShareTitle>{t('features:introductionShare')}</ShareTitle>
 						</Share>
 						<Invoices>
 							<InvoiceBlock1>
@@ -47,7 +50,7 @@ const Tools: FC = () => {
 									/>
 								</InvoiceBlock2>
 							</InvoiceBlock1>
-							<InvoiceTitle>Create invoices</InvoiceTitle>
+							<InvoiceTitle>{t('features:introductionCreateInvoices')}</InvoiceTitle>
 							<InvoicesDec></InvoicesDec>
 						</Invoices>
 					</WrapperLine2>

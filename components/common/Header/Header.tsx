@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 
 import {
@@ -52,22 +52,12 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 	const menuToggle = () => {
 		setMenuOpend((prevState) => !prevState);
 	};
-	// const [customLink, setMenuOpend] = useState(null);
-	// const [currentTab, setCurrentTab] = useState('');
-	//
-	// switch (Tab) {
-	// 	case 'Home':
-	// 		setCurrentTab('/');
-	// }
-	// const [tabsLocale, setTabsLocale] = useState('');
-	// switch (locale) {
-	// 	case 'en':
-	// 		return setTabsLocale('');
-	// 	default:
-	// 		return setTabsLocale(locale);
-	// }
 
 	const { t } = useTranslation();
+	console.log(t('header:Features'));
+
+	console.log(locale);
+
 	useEffect(() => {
 		function handleScroll() {
 			setHeaderScrolled(window.pageYOffset > 50);
@@ -102,18 +92,7 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 
 								<LanguageMenu isOpen={dropDawn}>
 									<FlagWrapper>
-										<Link
-											href={
-												Tab === 'Home'
-													? '/'
-													: Tab === 'Features'
-													? 'features'
-													: Tab === 'Company'
-													? 'company'
-													: '/'
-											}
-											locale='en'
-										>
+										<Link href='/' locale='en'>
 											<img
 												src='/icons/common/flags/gbflug.svg'
 												alt=''
@@ -123,26 +102,7 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 										</Link>
 									</FlagWrapper>
 									<FlagWrapper>
-										<Link
-											href={
-												Tab === 'Home'
-													? '/'
-													: Tab === 'Features'
-													? 'features'
-													: Tab === 'Company'
-													? 'company'
-													: '/'
-											}
-											as={
-												Tab === 'Home'
-													? '/id'
-													: Tab === 'Features'
-													? 'features/id'
-													: Tab === 'Company'
-													? 'company/id'
-													: '/'
-											}
-										>
+										<Link href='/' locale='id'>
 											<img
 												src='/icons/common/flags/idflug.svg'
 												alt=''
@@ -180,10 +140,10 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 								<Link href='/'>{t('header:Home')}</Link>
 							</NavItem>
 							<NavItem isActive={Tab === 'Features'}>
-								<Link href={'/features'}>{t('header:Features')}</Link>
+								<Link href='/features'>{t('header:Features')}</Link>
 							</NavItem>
 							<NavItem isActive={Tab === 'Company'}>
-								<Link href={'/company'}>{t('header:Company')}</Link>
+								<Link href='/company'>{t('header:Company')}</Link>
 							</NavItem>
 						</Nav>
 

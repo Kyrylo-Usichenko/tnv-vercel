@@ -1,18 +1,21 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'next-i18next';
 
 const DoneBottom: FC = () => {
+	const { t } = useTranslation();
+
 	return (
 		<Wrapper>
 			<WrapperCon>
 				<Black>
 					<BlackST src='/images/company/Done/blackST.svg' loading='lazy' />
 					<Content>
-						<Title>2020</Title>
+						<Title>{t('company:doneYear2')}</Title>
 						<List>
-							<Item>Seed funding led by Sequoia, GFC</Item>
-							<Item>Launch multi-country localization, digital invoicing and more</Item>
-							<Item>Adapt to Covid-19. Triple our team size to 100. Activate 1000+ new businesses</Item>
+							<Item>{t('company:doneBlock2Line1')}</Item>
+							<Item>{t('company:doneBlock2Line2')}</Item>
+							<Item>{t('company:doneBlock2Line3')}</Item>
 						</List>
 					</Content>
 					<BlackDots src='/images/company/Done/black-dots.svg' loading='lazy' />
@@ -33,7 +36,7 @@ const DoneBottom: FC = () => {
 				<RedWrapper>
 					<Red>
 						<RedST />
-						<RedTitle>Dark mode too!</RedTitle>
+						<RedTitle>{t('company:doneDark')}</RedTitle>
 						<picture>
 							<source
 								srcSet='/images/company/Done/phone-375.png 1x, /images/company/Done/phone-375@2x.png 2x'
@@ -57,13 +60,11 @@ const DoneBottom: FC = () => {
 				<Grey>
 					<GreyST />
 					<Content>
-						<DarkTitle>Q3 2019</DarkTitle>
+						<DarkTitle>{t('company:doneYear3')}</DarkTitle>
 						<List>
-							<DarkItem>
-								Our founder Ajay raises pre-seed in Europe. Moves back home to Singapore to start Tinvio
-							</DarkItem>
-							<DarkItem>Zero to one in team, product, processes. Launch merchant mobile app</DarkItem>
-							<DarkItem>Ajay meets our COO Tedo. Expand into Indonesia and more markets </DarkItem>
+							<DarkItem>{t('company:doneBlock3Line1')}</DarkItem>
+							<DarkItem>{t('company:doneBlock3Line2')}</DarkItem>
+							<DarkItem>{t('company:doneBlock3Line3')}</DarkItem>
 						</List>
 					</Content>
 					<GreySB />

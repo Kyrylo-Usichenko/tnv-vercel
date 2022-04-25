@@ -2,7 +2,7 @@ import React, { FC, RefObject, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 import { Container } from '../../common/Container/Container';
 
@@ -277,7 +277,7 @@ export const Stars = styled.div`
 	z-index: -1;
 	width: 946px;
 	height: 393px;
-	background: url('images/main/featuredOn/stars.svg') no-repeat;
+	background: url('/images/main/featuredOn/stars.svg') no-repeat;
 	@media (max-width: 1440px) {
 		top: 40px;
 	}

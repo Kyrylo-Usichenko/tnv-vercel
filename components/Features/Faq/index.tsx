@@ -3,39 +3,22 @@ import styled from 'styled-components';
 
 import { FeaturesCon } from '../../common/Container/Container';
 import Panel from './Panel';
+import { useTranslation } from 'next-i18next';
 
 const Faq: FC = () => {
+	const { t } = useTranslation();
+
 	return (
 		<StyledFaq>
 			<StyledFaqDec1></StyledFaqDec1>
 			<StyledFaqDec2></StyledFaqDec2>
 			<FeaturesCon>
 				<FaqTitle>FAQ</FaqTitle>
-				<Panel name='How to get started with Tinvio?'>
-					You can create an account on Tinvio (dashboard or mobile app) within a minute to start managing
-					chats, orders, and invoices. For payments, our Customer Success team will reach out for account
-					verification and onboarding. Once verified, you'll be good to go!
-				</Panel>
-				<Panel name='How does Tinvio work?'>
-					This dashboard is an easy all-in-one interface for you to manage chats, orders, invoices, and
-					payments with your merchants. Merchants just need to download the free Tinvio mobile app to exchange
-					messages, place orders, and make payments. It's zero friction for them!
-				</Panel>
-				<Panel name='How to collect payments on Tinvio?'>
-					Once your account is verified, you'll be able to request and reconcile payments for all your orders
-					and invoices on Tinvio. Your merchants will receive notifications for each payment request in their
-					favorite channels (e.g. Tinvio app, WhatsApp), and they'll be able to complete payment in a fast and
-					flexible checkout experience. You'll receive real-time updates and reports for all your payments!
-				</Panel>
-				<Panel name='What are the supported payment methods?'>
-					We’re always enabling new payment methods. Our Customer Success teams will advise on the available
-					methods in your market (including transaction fees for that method). In general, we support bank
-					transfers, credit cards, and B2B BNPL options!
-				</Panel>
-				<Panel name='I have more product questions! Who do I contact?'>
-					If you're already signed up, you can live chat with "Team Tinvio" in the dashboard or mobile app.
-					Otherwise, you can contact us at support@tinvio.com for more information!
-				</Panel>
+				<Panel name={t('features:question1')}>{t('features:answer1')}</Panel>
+				<Panel name={t('features:question2')}>{t('features:answer2')}</Panel>
+				<Panel name={t('features:question3')}>{t('features:answer3')}</Panel>
+				<Panel name={t('features:question4')}>{t('features:answer4')}</Panel>
+				<Panel name={t('features:question5')}>{t('features:answer5')}</Panel>
 			</FeaturesCon>
 		</StyledFaq>
 	);

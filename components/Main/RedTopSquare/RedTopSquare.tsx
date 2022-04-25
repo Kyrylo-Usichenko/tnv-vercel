@@ -179,11 +179,11 @@ const DotsLeft = styled.div`
 	height: 146px;
 	position: absolute;
 	z-index: 1;
-	background: url('images/main/preview/dots-little.png') no-repeat;
+	background: url('/images/main/preview/dots-little.png') no-repeat;
 	@media (max-width: 768px) {
 		width: 245px;
 		height: 181px;
-		background: url('images/main/preview/dots-top768.svg') no-repeat;
+		background: url('/images/main/preview/dots-top768.svg') no-repeat;
 		top: -291px;
 		left: 489px;
 		background-size: contain;
@@ -202,19 +202,19 @@ const DotsBottom = styled.div`
 	left: 269px;
 	position: absolute;
 	z-index: 1;
-	background: url('images/main/preview/dots-big.png') no-repeat;
+	background: url('/images/main/preview/dots-big.png') no-repeat;
 	background-size: contain;
 	@media (max-width: 768px) {
 		width: 408.7px;
 		height: 309.28px;
-		background: url('images/main/preview/dots-big768.svg') no-repeat;
+		background: url('/images/main/preview/dots-big768.svg') no-repeat;
 		top: 56px;
 		left: 630px;
 	}
 	@media (max-width: 375px) {
 		width: 277.53px;
 		height: 210.02px;
-		background: url('images/main/preview/dots-big375.svg') no-repeat;
+		background: url('/images/main/preview/dots-big375.svg') no-repeat;
 		top: 84px;
 		left: 408px;
 	}

@@ -2,17 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { FeaturesCon } from '../../common/Container/Container';
+import { useTranslation } from 'next-i18next';
 
 const Get = () => {
+	const { t } = useTranslation();
+
 	return (
 		<SyledGet>
 			<FeaturesCon>
 				<GetCon>
-					<GetTitle>Get smarter about all the little details </GetTitle>
-					<GetText>
-						Monitor your transaction activity on one dashboard. Generate customized order, invoice, and
-						payments reports. Prevent fraud, improve operations, and grow grow grow!
-					</GetText>
+					<GetTitle>{t('features:getSmarterTitle')}</GetTitle>
+					<GetText>{t('features:getSmarterText')}</GetText>
 					<First>
 						<Second>
 							<LeftImg

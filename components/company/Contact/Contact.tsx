@@ -1,39 +1,42 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
+import { useTranslation } from 'next-i18next';
 
 const Contact: FC = () => {
+	const { t } = useTranslation();
+
 	return (
 		<Wrapper className='contact'>
 			<FeaturesCon>
 				<SquareRight />
 				<SquareLeft />
 				<DotsLeft />
-				<Title>Contact us</Title>
+				<Title>{t('company:contactTitle')}</Title>
 				<Inner>
 					<Block>
 						<LeftSquareLeft />
 						<LeftSquareBottom />
 						<LeftDots />
-						<Heading>Product Support</Heading>
-						<Content>Need help? Live chat with “Team Tinvio” in the app or dashboard</Content>
-						<ContactUs>Contact Us</ContactUs>
+						<Heading>{t('company:contactHeading1')}</Heading>
+						<Content>{t('company:contactText1')}</Content>
+						<ContactUs>{t('company:contactButton1')}</ContactUs>
 					</Block>
 					<DarkBlock>
 						<MiddleSquareLeft />
 						<MiddleSquareBottom />
 						<MiddleDots />
-						<LightHeading>Business & Partnerships</LightHeading>
-						<LightContent>Interested in collaborating or partnering with Tinvio?</LightContent>
-						<LightContactUs>Contact Us</LightContactUs>
+						<LightHeading>{t('company:contactHeading2')}</LightHeading>
+						<LightContent>{t('company:contactText2')}</LightContent>
+						<LightContactUs>{t('company:contactButton2')}</LightContactUs>
 					</DarkBlock>
 					<Block>
 						<RightSquareLeft />
 						<RightSquareBottom />
 						<RightDots />
-						<Heading>Media Relations</Heading>
-						<Content>Working on a story? We're happy to share more about Tinvio</Content>
-						<ContactUs>Contact Us</ContactUs>
+						<Heading>{t('company:contactHeading3')}</Heading>
+						<Content>{t('company:contactText3')}</Content>
+						<ContactUs>{t('company:contactButton3')}</ContactUs>
 					</Block>
 				</Inner>
 			</FeaturesCon>

@@ -4,6 +4,7 @@ import { FeaturesCon } from '../../common/Container/Container';
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 import LineL from './LineL';
 import LineR from './LineR';
+import { useTranslation } from 'next-i18next';
 
 type PreviewProps = {
 	openModal: () => void;
@@ -57,6 +58,7 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 
 		return () => window.removeEventListener('scroll', onScroll);
 	}, [entry]);
+	const { t } = useTranslation();
 
 	return (
 		<StyledPreview>
@@ -67,17 +69,15 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 							<source srcSet='/images/features/preview/dec1-1920.svg' media='(min-width: 1024px)' />
 							<img src='/images/features/preview/dec1-768.svg' alt='decoration' />
 						</PreviewDec1>
-						One dashboard, all your supply chain transactions
+						{t('features:heroTitle')}
 						<PreviewDec2 ref={pic2}>
 							<source srcSet='/images/features/preview/dec2-1920.svg' media='(min-width: 1024px)' />
 							<img src='/images/features/preview/dec2-768.svg' alt='decoration' />
 						</PreviewDec2>
 					</PreviewTitle>
-					<PreviewText>
-						From orders to real-time cash in your bank. Run your business like a rockstar.
-					</PreviewText>
+					<PreviewText>{t('features:heroText')}</PreviewText>
 					<PreviewButton type='button' onClick={openModal}>
-						Try it for free
+						{t('features:heroButton')}
 					</PreviewButton>
 					<PreviewImg>
 						<picture>

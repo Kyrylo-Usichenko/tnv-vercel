@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Container } from '../../common/Container/Container';
 import MapComponentFlex from './MapFlex';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const Smile: FC = () => {
 	const [loading, setLoading] = useState<'idle' | 'loading' | 'error' | 'success'>('idle');
