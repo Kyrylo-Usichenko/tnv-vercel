@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import Image from 'next/image';
 import styled from 'styled-components';
 
 import { FeaturesCon } from '../../common/Container/Container';
@@ -19,34 +20,56 @@ const Breeze: FC = () => {
 							<Block>
 								<Add>
 									<AddCon>
-										<AddFile src='images/features/breeze/file.svg' alt='file' loading='lazy' />
+										<AddFile>
+											<Image
+												src='/images/features/breeze/file.svg'
+												layout='fill'
+												objectFit='contain'
+												alt='file'
+											/>
+										</AddFile>
 										<AddText>Add Catalog to Order List</AddText>
 									</AddCon>
-									<AddArrow src='images/features/breeze/arrow.svg' alt='arrow' loading='lazy' />
+									<AddArrow>
+										<Image
+											src='/images/features/breeze/arrow.svg'
+											layout='fill'
+											objectFit='contain'
+											alt='arrow'
+										/>
+									</AddArrow>
 								</Add>
 								<Del>
 									<DelCon>
-										<DelCal
-											src='images/features/breeze/calendar.svg'
-											alt='calendar'
-											loading='lazy'
-										/>
+										<DelCal>
+											<Image
+												src='/images/features/breeze/calendar.svg'
+												layout='fill'
+												objectFit='contain'
+												alt='calendar'
+											/>
+										</DelCal>
+
 										<DelText>Delivery on</DelText>
 									</DelCon>
 									<DelDate>Tue, 27 Oct</DelDate>
 								</Del>
-								<Man
-									src='images/features/breeze/man.jpg'
-									srcSet='images/features/breeze/man@2x.jpg 2x'
-									alt='man'
-									loading='lazy'
-								/>
-								<Women
-									src='images/features/breeze/women.jpg'
-									srcSet='images/features/breeze/women@2x.jpg 2x'
-									alt='women'
-									loading='lazy'
-								/>
+								<Man>
+									<Image
+										src='/images/features/breeze/man@2x.jpg'
+										layout='fill'
+										objectFit='contain'
+										alt='man'
+									/>
+								</Man>
+								<Women>
+									<Image
+										src='/images/features/breeze/women@2x.jpg'
+										layout='fill'
+										objectFit='contain'
+										alt='man'
+									/>
+								</Women>
 								<Order>
 									<OrderInfo>
 										<OrderText>Total Amount</OrderText>
@@ -256,11 +279,15 @@ const Block = styled.div`
 	}
 `;
 
-const Img = styled.img`
+const ImgDiv = styled.div`
 	position: absolute;
 	height: 91px;
 	width: 91px;
 	border-radius: 50%;
+
+	& img {
+		border-radius: 50%;
+	}
 
 	@media (min-width: 768px) {
 		width: 124px;
@@ -273,7 +300,7 @@ const Img = styled.img`
 	}
 `;
 
-const Man = styled(Img)`
+const Man = styled(ImgDiv)`
 	left: 6px;
 	bottom: 75px;
 
@@ -287,7 +314,7 @@ const Man = styled(Img)`
 	}
 `;
 
-const Women = styled(Img)`
+const Women = styled(ImgDiv)`
 	top: 118px;
 	right: 17px;
 
@@ -371,7 +398,8 @@ const AddCon = styled.div`
 	}
 `;
 
-const AddFile = styled.img`
+const AddFile = styled.div`
+	position: relative;
 	width: 13px;
 	height: 13px;
 
@@ -381,12 +409,14 @@ const AddFile = styled.img`
 	}
 `;
 
-const AddArrow = styled.img`
+const AddArrow = styled.div`
+	position: relative;
 	height: 6px;
-	width: auto;
+	width: 6px;
 
 	@media (min-width: 768px) {
 		height: 9px;
+		width: 9px;
 	}
 `;
 
@@ -443,7 +473,8 @@ const DelCon = styled.div`
 	}
 `;
 
-const DelCal = styled.img`
+const DelCal = styled.div`
+	position: relative;
 	width: 11px;
 	height: 13px;
 
