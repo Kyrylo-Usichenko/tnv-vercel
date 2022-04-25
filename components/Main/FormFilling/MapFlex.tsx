@@ -202,8 +202,8 @@ const Indonesia = styled.div`
 `;
 const Philippines = styled.div`
 	position: absolute;
-	top: 52.5%;
-	left: 63.1%;
+	top: 52.55%;
+	left: 63.2%;
 	width: 9.3%;
 	height: 25%;
 `;
