@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import styled from 'styled-components';
 
 import { FeaturesCon } from '../../common/Container/Container';
@@ -18,16 +19,22 @@ const Make = () => {
 					</MakeInfo>
 					<First>
 						<Second>
-							<LeftImg
-								src='/images/features/make/left.png'
-								srcSet='/images/features/make/left@2x.png 2x'
-								alt='app'
-							/>
-							<RightImg
-								src='/images/features/make/right.png'
-								srcSet='/images/features/make/right@2x.png 2x'
-								alt='app'
-							/>
+							<LeftImg>
+								<Image
+									src='/images/features/make/left@2x.png'
+									layout='fill'
+									objectFit='contain'
+									alt='app'
+								/>
+							</LeftImg>
+							<RightImg>
+								<Image
+									src='/images/features/make/right@2x.png'
+									layout='fill'
+									objectFit='contain'
+									alt='app'
+								/>
+							</RightImg>
 						</Second>
 					</First>
 				</MakeCon>
@@ -252,47 +259,52 @@ const Second = styled.div`
 	}
 `;
 
-const LeftImg = styled.img`
+const LeftImg = styled.div`
 	position: absolute;
 	transform: rotate(45deg);
 	top: -109px;
 	left: 12px;
-	width: auto;
+	width: 246px;
 	height: 410px;
 	z-index: 2;
 
 	@media (min-width: 768px) {
 		top: -152px;
 		left: 33px;
+		width: 330px;
 		height: 550px;
 	}
 
 	@media (min-width: 1024px) {
 		top: -107px;
 		left: 98px;
-		height: auto;
+		width: 294px;
+		height: 490px;
 	}
 `;
 
-const RightImg = styled.img`
+const RightImg = styled.div`
 	position: absolute;
 	transform: rotate(45deg);
 	top: 94px;
 	right: 43px;
 	width: auto;
+	width: 246px;
 	height: 410px;
 	z-index: 2;
 
 	@media (min-width: 768px) {
 		top: 149px;
 		right: 64px;
+		width: 330px;
 		height: 550px;
 	}
 
 	@media (min-width: 1024px) {
 		top: 157px;
 		right: 53px;
-		height: auto;
+		width: 294px;
+		height: 490px;
 	}
 `;
 
