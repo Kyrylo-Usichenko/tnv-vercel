@@ -212,12 +212,12 @@ const SoundsTitle = styled.h3`
 		max-width: 850px;
 	}
 `;
-
-const Br = styled.br`
-	@media (min-width: 1024px) {
-		display: none;
-	}
-`;
+//
+// const Br = styled.br`
+// 	@media (min-width: 1024px) {
+// 		display: none;
+// 	}
+// `;
 
 const SoundsButton = styled.button`
 	width: 188px;
