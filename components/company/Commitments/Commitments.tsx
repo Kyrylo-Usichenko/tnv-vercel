@@ -1,8 +1,11 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
+import { useTranslation } from 'next-i18next';
 
 const Commitments: FC = () => {
+	const { t } = useTranslation();
+
 	return (
 		<Wrapper>
 			<FlexConInfo>
@@ -12,22 +15,22 @@ const Commitments: FC = () => {
 				<DotsLeft />
 				<FeaturesCon>
 					<Content>
-						<Heading>Our Core Commitments</Heading>
+						<Heading>{t('company:сommitmentsTitle')}</Heading>
 						<List>
 							<Item>
 								<Img src='/images/company/Commitments/pen.svg' loading='lazy' alt='pen' />
-								<Title>Every pixel matters</Title>
-								<SubTitle>Biased towards perfection</SubTitle>
+								<Title>{t('company:сommitmentsHeading1')}</Title>
+								<SubTitle>{t('company:сommitmentsText1')}</SubTitle>
 							</Item>
 							<Item>
 								<Img src='/images/company/Commitments/message.svg' loading='lazy' alt='message' />
-								<Title>Shut the fluff</Title>
-								<SubTitle>Clear and direct communication</SubTitle>
+								<Title>{t('company:сommitmentsHeading2')}</Title>
+								<SubTitle>{t('company:сommitmentsText2')}</SubTitle>
 							</Item>
 							<Item>
 								<Img src='/images/company/Commitments/rocket.svg' loading='lazy' alt='rocket' />
-								<Title>Break things fast</Title>
-								<SubTitle>Ownership with ruthless agility</SubTitle>
+								<Title>{t('company:сommitmentsHeading3')}</Title>
+								<SubTitle>{t('company:сommitmentsText3')}</SubTitle>
 							</Item>
 						</List>
 					</Content>

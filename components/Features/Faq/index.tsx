@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { FeaturesCon } from '../../common/Container/Container';
 import Panel from './Panel';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const Faq: FC = () => {
 	const { t } = useTranslation();

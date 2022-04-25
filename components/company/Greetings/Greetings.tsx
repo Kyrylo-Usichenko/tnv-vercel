@@ -1,8 +1,11 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
+import { useTranslation } from 'next-i18next';
 
 const Greetings: FC = () => {
+	const { t } = useTranslation();
+
 	return (
 		<Wrapper>
 			<FeaturesCon>
@@ -11,24 +14,14 @@ const Greetings: FC = () => {
 						Hi, we're <span className='accent'>Tinvio</span>!
 					</Title>
 				</TitleDiv>
-				<SubTitle>We're reimaging how merchants and suppliers transact.</SubTitle>
+				<SubTitle>{t('company:greetingsSubTitle')}</SubTitle>
 				<Main>
 					<Info>
-						<Text>
-							Tinvio is built for B2B transactions. It's an app, it's a dashboard, it's a checkout link,
-							it's a digital wallet, it's a credit line, it's money in (and out) of your bank, and so much
-							more. Tradition meets modern in a delightful chat-led user experience. The best part? We
-							make it fast, flexible, and fun. Try it out – we'd love to hear your feedback too!
-						</Text>
-						<Text>
-							Why do we do it? It's painfully frustrating for businesses to transact. It shouldn't be so
-							hard. We're minting NFTs on a new blockchain everyday and we're about to colonize Mars, but
-							in our supply chains, businesses are still exchanging cold hard cash, writing checks, and
-							keying manual bank transfers. We're going to reimagine the status quo, we're going to
-							digitize the zillions of these offline receivables and payables. One transaction at a time.
-						</Text>
+						<Text>{t('company:greetingsText1')}</Text>
+						<Text>{t('company:greetingsText2')}</Text>
 						<Contact>
-							<img src='/images/company/Greetings/chat-icon.svg' alt='chat' /> Contact Us
+							<img src='/images/company/Greetings/chat-icon.svg' alt='chat' />
+							{t('company:greetingsButton')}
 						</Contact>
 						<LeftTopSquare />
 						<LeftBotSquare />

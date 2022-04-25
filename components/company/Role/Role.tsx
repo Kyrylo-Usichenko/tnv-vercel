@@ -1,8 +1,11 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
+import { useTranslation } from 'next-i18next';
 
 const Role: FC = () => {
+	const { t } = useTranslation();
+
 	return (
 		<Wrapper>
 			<Square />
@@ -40,8 +43,8 @@ const Role: FC = () => {
 						</GalleryColumn>
 					</GalleryGrid>
 					<Content>
-						<GalleryTitle>Find the perfect role at any of our offices near you</GalleryTitle>
-						<Explore>Explore roles</Explore>
+						<GalleryTitle>{t('company:rolesText')}</GalleryTitle>
+						<Explore>{t('company:rolesButton')}</Explore>
 					</Content>
 				</GalleryCon>
 			</FeaturesCon>

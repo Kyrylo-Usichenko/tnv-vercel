@@ -1,12 +1,15 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
+import { useTranslation } from 'next-i18next';
 
 const DoneTop: FC = () => {
+	const { t } = useTranslation();
+
 	return (
 		<>
 			<FeaturesCon>
-				<Title>What we've done</Title>
+				<Title>{t('company:doneTitle')}</Title>
 			</FeaturesCon>
 			<Wrapper>
 				<TopWrapper>
@@ -15,18 +18,11 @@ const DoneTop: FC = () => {
 					<GreyTopBlock>
 						<SquareG1 />
 						<Content1>
-							<Year>2021</Year>
+							<Year>{t('features:doneYear')}</Year>
 							<List>
-								<Item>
-									Launch Tinvio Checkout for on-platform payments, supplier web dashboard and more
-								</Item>
-								<Item>
-									Series A funding to build embedded supply chain financing products for our users
-								</Item>
-								<Item>
-									Expand into new verticals and markets. Close the year with 200 team members and
-									4000+ active businesses across the region
-								</Item>
+								<Item>{t('company:doneBlock1Line1')}</Item>
+								<Item>{t('company:doneBlock1Line2')}</Item>
+								<Item>{t('company:doneBlock1Line3')}</Item>
 							</List>
 						</Content1>
 					</GreyTopBlock>
@@ -48,18 +44,11 @@ const DoneTop: FC = () => {
 						<SquareG2 />
 						<SquareG3 />
 						<Content2>
-							<Year>2021</Year>
+							<Year>{t('company:doneYear')}</Year>
 							<List>
-								<Item>
-									Launch Tinvio Checkout for on-platform payments, supplier web dashboard and more
-								</Item>
-								<Item>
-									Series A funding to build embedded supply chain financing products for our users
-								</Item>
-								<Item>
-									Expand into new verticals and markets. Close the year with 200 team members and
-									4000+ active businesses across the region
-								</Item>
+								<Item>{t('company:doneBlock1Line1')}</Item>
+								<Item>{t('company:doneBlock1Line2')}</Item>
+								<Item>{t('company:doneBlock1Line3')}</Item>
 							</List>
 							<DotsG src='/images/company/Done/dotsG.svg' loading='lazy' />
 						</Content2>

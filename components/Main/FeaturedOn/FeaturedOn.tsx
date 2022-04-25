@@ -2,7 +2,7 @@ import React, { FC, RefObject, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 import { Container } from '../../common/Container/Container';
 

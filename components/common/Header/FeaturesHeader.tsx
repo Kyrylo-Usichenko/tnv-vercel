@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 
 import Logo from '../Logos/Logo';
@@ -40,17 +40,16 @@ type PropsType = {
 	Tab: string;
 	locale: string;
 };
-
 const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 	const [isHeaderScrolled, setHeaderScrolled] = useState(false);
 	const [dropDawn, setDropDawn] = useState(false);
 	const [isMenuOpend, setMenuOpend] = useState(false);
-
 	const menuToggle = () => {
 		setMenuOpend((prevState) => !prevState);
 	};
 
 	const { t } = useTranslation();
+
 	useEffect(() => {
 		function handleScroll() {
 			setHeaderScrolled(window.pageYOffset > 50);

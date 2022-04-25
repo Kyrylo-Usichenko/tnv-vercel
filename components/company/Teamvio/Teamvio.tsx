@@ -1,8 +1,11 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
+import { useTranslation } from 'next-i18next';
 
 const Teamvio: FC = () => {
+	const { t } = useTranslation();
+
 	return (
 		<StyledTeamvio>
 			<FeaturesCon>
@@ -36,7 +39,7 @@ const Teamvio: FC = () => {
 						<Text>
 							Up for a challenge? <Br /> We're always looking for the best
 						</Text>
-						<Button>Join Us</Button>
+						<Button>{t('company:teamvioButton')}</Button>
 					</Join>
 				</Inner1>
 				<Inner2>

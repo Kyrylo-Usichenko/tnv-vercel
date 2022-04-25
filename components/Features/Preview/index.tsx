@@ -4,7 +4,7 @@ import { FeaturesCon } from '../../common/Container/Container';
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 import LineL from './LineL';
 import LineR from './LineR';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 type PreviewProps = {
 	openModal: () => void;

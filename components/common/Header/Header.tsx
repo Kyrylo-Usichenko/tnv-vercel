@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 
 import {
@@ -54,6 +54,10 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 	};
 
 	const { t } = useTranslation();
+	console.log(t('header:Features'));
+
+	console.log(locale);
+
 	useEffect(() => {
 		function handleScroll() {
 			setHeaderScrolled(window.pageYOffset > 50);

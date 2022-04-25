@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { FeaturesCon } from '../../common/Container/Container';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const Make = () => {
 	const { t } = useTranslation();

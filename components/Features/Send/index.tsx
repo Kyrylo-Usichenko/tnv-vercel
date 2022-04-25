@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const Send: FC = () => {
 	const { t } = useTranslation();
