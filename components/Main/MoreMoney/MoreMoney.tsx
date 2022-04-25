@@ -6,6 +6,7 @@ import styled, { keyframes, css } from 'styled-components';
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 import { Container } from '../../common/Container/Container';
+import { useTranslation } from 'react-i18next';
 
 const TYPE_WRITE_SPEED = 0.35;
 const TYPE_WRITE_DELAY = 700;
@@ -18,45 +19,6 @@ const orderRight = '/images/main/moreMoney/order-right.png';
 const chatLeft = '/images/main/moreMoney/chat-left.png';
 const chatRight = '/images/main/moreMoney/chat-right.png';
 
-const tabsImages = [
-	{
-		name: 'Payments',
-		leftImg: payLeft,
-		rightImg: payRight,
-		typedText: ['More money'],
-		isActive: true,
-		textLines: [
-			'Send invoices and easily track them until they’re paid',
-			'Real-time payments settlement and reconciliation',
-			'Safe, secure, and compliant',
-		],
-	},
-	{
-		name: 'Orders',
-		leftImg: orderLeft,
-		rightImg: orderRight,
-		typedText: ['More speedy'],
-		isActive: false,
-		textLines: [
-			'Create or confirm purchase orders at lightning speed',
-			'Manage inventory details and availability in real-time',
-			'24/7 order insights and data reports',
-		],
-	},
-	{
-		name: 'Chats',
-		leftImg: chatLeft,
-		rightImg: chatRight,
-		typedText: ['More buddy'],
-		isActive: false,
-		textLines: [
-			'Create chats with any business (even if they’re not on Tinvio)',
-			'Fully integrated with your favorite chat apps',
-			'Real-time messages and alerts',
-		],
-	},
-];
-
 interface IMoreMoneyItem {
 	name: string;
 	leftImg: string;
@@ -67,6 +29,33 @@ interface IMoreMoneyItem {
 }
 
 const MoreMoney: FC = () => {
+	const { t } = useTranslation();
+	const tabsImages = [
+		{
+			name: 'Payments',
+			leftImg: payLeft,
+			rightImg: payRight,
+			typedText: [t('main:moreMoneyTitle1')],
+			isActive: true,
+			textLines: [t('main:moreMoneyTab1Row1'), t('main:moreMoneyTab1Row2'), t('main:moreMoneyTab1Row3')],
+		},
+		{
+			name: 'Orders',
+			leftImg: orderLeft,
+			rightImg: orderRight,
+			typedText: [t('main:moreMoneyTitle2')],
+			isActive: false,
+			textLines: [t('main:moreMoneyTab2Row1'), t('main:moreMoneyTab2Row2'), t('main:moreMoneyTab2Row3')],
+		},
+		{
+			name: 'Chats',
+			leftImg: chatLeft,
+			rightImg: chatRight,
+			typedText: [t('main:moreMoneyTitle3')],
+			isActive: false,
+			textLines: [t('main:moreMoneyTab3Row1'), t('main:moreMoneyTab3Row2'), t('main:moreMoneyTab3Row3')],
+		},
+	];
 	const [tabs, setTabs] = useState(tabsImages);
 	const [tab, setTab] = useState(tabsImages[0]);
 	const [text, setText] = useState(tabsImages[0].typedText[0]);
@@ -129,7 +118,7 @@ const MoreMoney: FC = () => {
 			<Container>
 				<Inner>
 					<Title>
-						Smarter supply chain transactions.{' '}
+						{t('main:moreMoneyTitle')}{' '}
 						<TitleWrap>
 							<TitleSpan ref={typeRef} isVisible={isVisible} isBackwards={isBackwards}>
 								{text}
@@ -138,13 +127,13 @@ const MoreMoney: FC = () => {
 					</Title>
 					<ButtonsWrapper>
 						<Button width='134' onClick={() => onBtnClick(tabs[0])} isActive={tab === tabs[0]}>
-							Payments
+							{t('main:moreMoneyTab1')}
 						</Button>
 						<Button width='114' onClick={() => onBtnClick(tabs[1])} isActive={tab === tabs[1]}>
-							Orders
+							{t('main:moreMoneyTab2')}
 						</Button>
 						<Button width='107' onClick={() => onBtnClick(tabs[2])} isActive={tab === tabs[2]}>
-							Chats
+							{t('main:moreMoneyTab3')}
 						</Button>
 					</ButtonsWrapper>
 					<List>
@@ -153,7 +142,7 @@ const MoreMoney: FC = () => {
 						<Item>{tab.textLines[2]}</Item>
 					</List>
 					<Link href='/features'>
-						<BottomButton>More Features</BottomButton>
+						<BottomButton>{t('main:moreMoneyButton')}</BottomButton>
 					</Link>
 				</Inner>
 			</Container>
@@ -309,7 +298,7 @@ const RightMock = styled.div`
 	position: absolute;
 	left: 116px;
 	top: 42px;
-	background: url('images/main/moreMoney/fruitPlanet.png') no-repeat;
+	background: url('/images/main/moreMoney/fruitPlanet.png') no-repeat;
 	background-size: contain;
 	width: 300px;
 	height: 488px;
@@ -575,7 +564,7 @@ const Item = styled.li`
 	&:before {
 		content: '';
 		position: absolute;
-		background: url('images/main/moreMoney/square.svg');
+		background: url('/images/main/moreMoney/square.svg');
 		width: 14px;
 		height: 14px;
 		left: 0;
@@ -613,7 +602,7 @@ const MobRightDots = styled.div`
 		top: 60%;
 		right: 0;
 		transform: translateX(50%);
-		background: url('images/main/moreMoney/mob-right-dots.svg') 0 0 / contain no-repeat;
+		background: url('/images/main/moreMoney/mob-right-dots.svg') 0 0 / contain no-repeat;
 	}
 	@media (max-width: 600px) {
 		top: 58%;

@@ -17,28 +17,28 @@ const Send: FC = () => {
 			<PreviewImg>
 				<picture>
 					<source
-						srcSet='images/features/send/women-1920.jpg 1x, images/features/send/women-1920@2x.jpg 2x'
+						srcSet='/images/features/send/women-1920.jpg 1x, /images/features/send/women-1920@2x.jpg 2x'
 						media='(min-width: 1920px)'
 					/>
 					<source
-						srcSet='images/features/send/women-1440.jpg 1x, images/features/send/women-1440@2x.jpg 2x'
+						srcSet='/images/features/send/women-1440.jpg 1x, /images/features/send/women-1440@2x.jpg 2x'
 						media='(min-width: 1440px)'
 					/>
 					<source
-						srcSet='images/features/send/women-1280.jpg 1x, images/features/send/women-1280@2x.jpg 2x'
+						srcSet='/images/features/send/women-1280.jpg 1x, /images/features/send/women-1280@2x.jpg 2x'
 						media='(min-width: 1280px)'
 					/>
 					<source
-						srcSet='images/features/send/women-1024.jpg 1x, images/features/send/women-1024@2x.jpg 2x'
+						srcSet='/images/features/send/women-1024.jpg 1x, /images/features/send/women-1024@2x.jpg 2x'
 						media='(min-width: 1024px)'
 					/>
 					<source
-						srcSet='images/features/send/women-768.jpg 1x, images/features/send/women-768@2x.jpg 2x'
+						srcSet='/images/features/send/women-768.jpg 1x, /images/features/send/women-768@2x.jpg 2x'
 						media='(min-width: 768px)'
 					/>
 					<img
-						src='images/features/send/women-375.jpg'
-						srcSet='images/features/send/women-375@2x.jpg 2x'
+						src='/images/features/send/women-375.jpg'
+						srcSet='/images/features/send/women-375@2x.jpg 2x'
 						alt='women'
 						loading='lazy'
 					/>
@@ -49,7 +49,7 @@ const Send: FC = () => {
 							<InvoiceTitle>Send an invoice for this order</InvoiceTitle>
 							<InvoiceText>
 								Need a template? <InvoiceSpan> Generate Invoice</InvoiceSpan>{' '}
-								<InvoiceArrow src='images/features/send/arrow.svg' alt='arrow' loading='lazy' />
+								<InvoiceArrow src='/images/features/send/arrow.svg' alt='arrow' loading='lazy' />
 							</InvoiceText>
 						</InvoiceInfo>
 						<InvoiceButton>Send Invoice</InvoiceButton>
@@ -57,10 +57,10 @@ const Send: FC = () => {
 				</Invoice>
 				<Remind>
 					<RemindInfo>
-						<RemindBell src='images/features/send/bell.svg' alt='bell' loading='lazy' />
+						<RemindBell src='/images/features/send/bell.svg' alt='bell' loading='lazy' />
 						<RemindTitle>Send Reminders</RemindTitle>
 					</RemindInfo>
-					<RemindCheck src='images/features/send/check.svg' alt='check' loading='lazy' />
+					<RemindCheck src='/images/features/send/check.svg' alt='check' loading='lazy' />
 				</Remind>
 				<Dec1></Dec1>
 			</PreviewImg>
@@ -452,14 +452,14 @@ const Dec1 = styled.div`
 	bottom: 0;
 
 	&::before {
-		content: url('images/features/send/line-l-375.svg');
+		content: url('/images/features/send/line-l-375.svg');
 		position: absolute;
 		top: 22px;
 		right: 135px;
 	}
 
 	&::after {
-		content: url('images/features/send/line-r-375.svg');
+		content: url('/images/features/send/line-r-375.svg');
 		position: absolute;
 		top: 13px;
 		right: 60px;
@@ -467,13 +467,13 @@ const Dec1 = styled.div`
 
 	@media (min-width: 768px) {
 		&::before {
-			content: url('images/features/send/line-l-768.svg');
+			content: url('/images/features/send/line-l-768.svg');
 			top: 144px;
 			right: 270px;
 		}
 
 		&::after {
-			content: url('images/features/send/line-r-768.svg');
+			content: url('/images/features/send/line-r-768.svg');
 			top: 121px;
 			right: 129px;
 		}
@@ -493,13 +493,13 @@ const Dec1 = styled.div`
 
 	@media (min-width: 1280px) {
 		&::before {
-			content: url('images/features/send/line-l-1280.svg');
+			content: url('/images/features/send/line-l-1280.svg');
 			top: 143px;
 			right: 294px;
 		}
 
 		&::after {
-			content: url('images/features/send/line-r-1280.svg');
+			content: url('/images/features/send/line-r-1280.svg');
 			top: 119px;
 			right: 94px;
 		}

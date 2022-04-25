@@ -193,7 +193,7 @@ const ManageDec = styled.div`
 	width: 100%;
 
 	&::before {
-		content: url('images/features/tools/manage-dots.webp');
+		content: url('/images/features/tools/manage-dots.webp');
 		position: absolute;
 		bottom: 0;
 		right: -190px;
@@ -337,7 +337,7 @@ const MessageeDec = styled.div`
 	width: 100%;
 
 	&::before {
-		content: url('images/features/tools/message-dots.svg');
+		content: url('/images/features/tools/message-dots.svg');
 		position: absolute;
 		left: 0;
 		bottom: -30px;
@@ -368,7 +368,7 @@ const MessageButtons = styled.form`
 		position: relative;
 
 		&::before {
-			content: url('images/features/tools/arrow.svg');
+			content: url('/images/features/tools/arrow.svg');
 			position: absolute;
 			top: 10px;
 			right: 21px;
@@ -515,7 +515,7 @@ const InvoicesDec = styled.div`
 	width: 100%;
 
 	&::before {
-		content: url('images/features/tools/invoice-dots.svg');
+		content: url('/images/features/tools/invoice-dots.svg');
 		position: absolute;
 		right: 0;
 		top: -7px;
@@ -672,7 +672,7 @@ const ShareDec = styled.div`
 	width: 100%;
 
 	&::before {
-		content: url('images/features/tools/share-dots.webp');
+		content: url('/images/features/tools/share-dots.webp');
 		position: absolute;
 		left: 183px;
 		top: 0;

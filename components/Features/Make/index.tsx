@@ -214,7 +214,7 @@ const Second = styled.div`
 	position: relative;
 
 	&::before {
-		content: url('images/features/make/dec-375.svg');
+		content: url('/images/features/make/dec-375.svg');
 		position: absolute;
 		top: -130px;
 		left: 205px;
@@ -223,7 +223,7 @@ const Second = styled.div`
 	}
 
 	&::after {
-		content: url('images/features/make/dots-375.svg');
+		content: url('/images/features/make/dots-375.svg');
 		position: absolute;
 		bottom: 33px;
 		left: -20px;
@@ -234,13 +234,13 @@ const Second = styled.div`
 		height: 490.37px;
 
 		&::before {
-			content: url('images/features/make/dec.svg');
+			content: url('/images/features/make/dec.svg');
 			top: -185px;
 			left: 289px;
 		}
 
 		&::after {
-			content: url('images/features/make/dots.svg');
+			content: url('/images/features/make/dots.svg');
 			bottom: 33px;
 			left: -20px;
 		}

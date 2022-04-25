@@ -64,13 +64,13 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 				<PreviewInfo>
 					<PreviewTitle ref={heading}>
 						<PreviewDec1 ref={pic1}>
-							<source srcSet='images/features/preview/dec1-1920.svg' media='(min-width: 1024px)' />
-							<img src='images/features/preview/dec1-768.svg' alt='decoration' />
+							<source srcSet='/images/features/preview/dec1-1920.svg' media='(min-width: 1024px)' />
+							<img src='/images/features/preview/dec1-768.svg' alt='decoration' />
 						</PreviewDec1>
 						One dashboard, all your supply chain transactions
 						<PreviewDec2 ref={pic2}>
-							<source srcSet='images/features/preview/dec2-1920.svg' media='(min-width: 1024px)' />
-							<img src='images/features/preview/dec2-768.svg' alt='decoration' />
+							<source srcSet='/images/features/preview/dec2-1920.svg' media='(min-width: 1024px)' />
+							<img src='/images/features/preview/dec2-768.svg' alt='decoration' />
 						</PreviewDec2>
 					</PreviewTitle>
 					<PreviewText>
@@ -82,28 +82,28 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 					<PreviewImg>
 						<picture>
 							<source
-								srcSet='images/features/preview/man-1920.jpg 1x, images/features/preview/man-1920@2x.jpg 2x'
+								srcSet='/images/features/preview/man-1920.jpg 1x, /images/features/preview/man-1920@2x.jpg 2x'
 								media='(min-width: 1920px)'
 							/>
 							<source
-								srcSet='images/features/preview/man-1440.jpg 1x, images/features/preview/man-1440@2x.jpg 2x'
+								srcSet='/images/features/preview/man-1440.jpg 1x, /images/features/preview/man-1440@2x.jpg 2x'
 								media='(min-width: 1440px)'
 							/>
 							<source
-								srcSet='images/features/preview/man-1280.jpg 1x, images/features/preview/man-1280@2x.jpg 2x'
+								srcSet='/images/features/preview/man-1280.jpg 1x, /images/features/preview/man-1280@2x.jpg 2x'
 								media='(min-width: 1280px)'
 							/>
 							<source
-								srcSet='images/features/preview/man-1024.jpg 1x, images/features/preview/man-1024@2x.jpg 2x'
+								srcSet='/images/features/preview/man-1024.jpg 1x, /images/features/preview/man-1024@2x.jpg 2x'
 								media='(min-width: 1024px)'
 							/>
 							<source
-								srcSet='images/features/preview/man-768.jpg 1x, images/features/preview/man-768@2x.jpg 2x'
+								srcSet='/images/features/preview/man-768.jpg 1x, /images/features/preview/man-768@2x.jpg 2x'
 								media='(min-width: 768px)'
 							/>
 							<img
-								src='images/features/preview/man-375.jpg'
-								srcSet='images/features/preview/man-375@2x.jpg 2x'
+								src='/images/features/preview/man-375.jpg'
+								srcSet='/images/features/preview/man-375@2x.jpg 2x'
 								alt='Man holding smartphone'
 								width={1190}
 								height={600}
@@ -111,19 +111,19 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 							/>
 						</picture>
 						<AppImg
-							src='images/features/preview/app.png'
-							srcSet='images/features/preview/app@2x.png 2x'
+							src='/images/features/preview/app.png'
+							srcSet='/images/features/preview/app@2x.png 2x'
 							alt='message'
 						/>
 						<AppShadow />
 						<Request>
 							<PaymentIco>
-								<img src='images/features/preview/file.svg' alt='file' />
+								<img src='/images/features/preview/file.svg' alt='file' />
 							</PaymentIco>
 							<Payment>
 								<PaymentCon>
 									<PaymentTitle>Payment Requested</PaymentTitle>
-									<PaymentArrow src='images/features/preview/arrow.svg' alt='arrow' />
+									<PaymentArrow src='/images/features/preview/arrow.svg' alt='arrow' />
 								</PaymentCon>
 								<PaymentText>INV-HDNSD5H</PaymentText>
 								<PaymentCon>
@@ -637,7 +637,7 @@ const PreviewImgDeco3 = styled.div`
 	width: inherit;
 
 	&::before {
-		content: url('images/features/preview/dots-b.webp');
+		content: url('/images/features/preview/dots-b.webp');
 		position: absolute;
 		left: -130px;
 		bottom: -140px;
@@ -656,7 +656,7 @@ const PreviewImgDeco3 = styled.div`
 		}
 
 		&::after {
-			content: url('images/features/preview/dots-t.webp');
+			content: url('/images/features/preview/dots-t.webp');
 			position: absolute;
 			top: -75px;
 			right: -270px;

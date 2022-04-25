@@ -2,6 +2,7 @@ import React, { FC, RefObject, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useTranslation } from 'react-i18next';
 
 import { Container } from '../../common/Container/Container';
 
@@ -12,6 +13,7 @@ const MoreMoney: FC = () => {
 
 	const titleRef = useRef(null) as RefObject<HTMLHeadingElement>;
 	const companiesRef = useRef(null) as RefObject<HTMLDivElement>;
+	const { t } = useTranslation();
 
 	useEffect(() => {
 		const box = companiesRef.current;
@@ -63,7 +65,7 @@ const MoreMoney: FC = () => {
 				<Container>
 					<Inner>
 						<Title ref={titleRef} className='start'>
-							Featured On
+							{t('main:FeaturedOn')}
 						</Title>
 						<Companies ref={companiesRef}>
 							<Company1 src='images/main/featuredOn/techCrunch.svg' alt='' />

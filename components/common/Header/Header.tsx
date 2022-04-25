@@ -52,6 +52,20 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 	const menuToggle = () => {
 		setMenuOpend((prevState) => !prevState);
 	};
+	// const [customLink, setMenuOpend] = useState(null);
+	// const [currentTab, setCurrentTab] = useState('');
+	//
+	// switch (Tab) {
+	// 	case 'Home':
+	// 		setCurrentTab('/');
+	// }
+	// const [tabsLocale, setTabsLocale] = useState('');
+	// switch (locale) {
+	// 	case 'en':
+	// 		return setTabsLocale('');
+	// 	default:
+	// 		return setTabsLocale(locale);
+	// }
 
 	const { t } = useTranslation();
 	useEffect(() => {
@@ -64,7 +78,6 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 	const modalRef = useOnClickOutside(() => {
 		setDropDawn(false);
 	});
-
 	return (
 		<HeaderStyled isHeaderScrolled={isHeaderScrolled} isMenuOpend={isMenuOpend}>
 			<Container className='h-100'>
@@ -89,7 +102,18 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 
 								<LanguageMenu isOpen={dropDawn}>
 									<FlagWrapper>
-										<Link href='/' locale='en'>
+										<Link
+											href={
+												Tab === 'Home'
+													? '/'
+													: Tab === 'Features'
+													? 'features'
+													: Tab === 'Company'
+													? 'company'
+													: '/'
+											}
+											locale='en'
+										>
 											<img
 												src='/icons/common/flags/gbflug.svg'
 												alt=''
@@ -99,7 +123,26 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 										</Link>
 									</FlagWrapper>
 									<FlagWrapper>
-										<Link href='/' locale='id'>
+										<Link
+											href={
+												Tab === 'Home'
+													? '/'
+													: Tab === 'Features'
+													? 'features'
+													: Tab === 'Company'
+													? 'company'
+													: '/'
+											}
+											as={
+												Tab === 'Home'
+													? '/id'
+													: Tab === 'Features'
+													? 'features/id'
+													: Tab === 'Company'
+													? 'company/id'
+													: '/'
+											}
+										>
 											<img
 												src='/icons/common/flags/idflug.svg'
 												alt=''
@@ -134,20 +177,20 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 
 						<Nav>
 							<NavItem isActive={Tab === 'Home'}>
-								<Link href='/'>{t('home:Home')}</Link>
+								<Link href='/'>{t('header:Home')}</Link>
 							</NavItem>
 							<NavItem isActive={Tab === 'Features'}>
-								<Link href='/features'>{t('home:Features')}</Link>
+								<Link href={'/features'}>{t('header:Features')}</Link>
 							</NavItem>
 							<NavItem isActive={Tab === 'Company'}>
-								<Link href='/company'>{t('home:Company')}</Link>
+								<Link href={'/company'}>{t('header:Company')}</Link>
 							</NavItem>
 						</Nav>
 
 						<ButtonWrapper>
 							<Link href={'/'}>
 								<HeaderButton isHeaderScrolled={isHeaderScrolled} Tab={Tab}>
-									{t('home:GetStarted')}
+									{t('header:GetStarted')}
 								</HeaderButton>
 							</Link>
 						</ButtonWrapper>
