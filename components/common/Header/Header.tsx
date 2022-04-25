@@ -67,7 +67,6 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 	// 		return setTabsLocale(locale);
 	// }
 
-	console.log(Tab);
 	const { t } = useTranslation();
 	useEffect(() => {
 		function handleScroll() {
