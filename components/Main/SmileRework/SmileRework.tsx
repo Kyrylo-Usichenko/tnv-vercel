@@ -1,10 +1,17 @@
-import React, { FC } from 'react';
-import styled from 'styled-components';
-import { Container } from '../../common/Container/Container';
+import React, { FC, RefObject, useRef } from 'react';
+import styled, { keyframes } from 'styled-components';
+
 import { useTranslation } from 'next-i18next';
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
+
+import { Container } from '../../common/Container/Container';
+import FadeIn from '../../common/FadeIn/FadeIn';
 
 const Smile: FC = () => {
 	const { t } = useTranslation();
+	const ref = useRef() as RefObject<HTMLDivElement>;
+	const entry = useIntersectionObserver(ref, {});
+	const isVisible = !!entry?.isIntersecting;
 
 	return (
 		<Wrapper>
@@ -19,92 +26,146 @@ const Smile: FC = () => {
 				<LeftGrey top='44' left='-514' size='554.34' radius='51.6' />
 
 				<Dots top='27' left='-353' src='/images/main/smile/leftDots.svg' alt='' />
-				<Inner>
+				<Inner ref={ref}>
 					<GreyWrapper1>
-						<Grey></Grey>
-						<GreyInner></GreyInner>
-						<Img
-							src='/images/main/smile/pet-shop.png'
-							srcSet='/images/main/smile/pet-shop2x.png 2x'
-							alt=''
-						/>
+						{isVisible && (
+							<FadeIn duration={500} delay={2200}>
+								<Grey></Grey>
+								<GreyInner></GreyInner>
+								<Img
+									src='/images/main/smile/pet-shop.png'
+									srcSet='/images/main/smile/pet-shop2x.png 2x'
+									alt=''
+								/>
+							</FadeIn>
+						)}
 					</GreyWrapper1>
+
 					<TopFirstLine>
 						<GreyWrapper2>
-							<Grey></Grey>
-							<GreyInner></GreyInner>
-							<Img src='/images/main/smile/nex.svg' alt='' />
+							{isVisible && (
+								<FadeIn duration={500} delay={1000}>
+									<Grey></Grey>
+									<GreyInner></GreyInner>
+									<Img src='/images/main/smile/nex.svg' alt='' />{' '}
+								</FadeIn>
+							)}
 						</GreyWrapper2>
 						<GreyWrapper>
-							<Grey></Grey>
-							<GreyInner></GreyInner>
-							<Img src='/images/main/smile/bbs.png' srcSet='/images/main/smile/bbs2x.png 2x' alt='' />
+							{isVisible && (
+								<FadeIn duration={500} delay={2800}>
+									<Grey></Grey>
+									<GreyInner></GreyInner>
+									<Img
+										src='/images/main/smile/bbs.png'
+										srcSet='/images/main/smile/bbs2x.png 2x'
+										alt=''
+									/>
+								</FadeIn>
+							)}
 						</GreyWrapper>
 					</TopFirstLine>
 					<TopSecondLine>
 						<GreyWrapper3>
-							<Grey></Grey>
-							<GreyInner></GreyInner>
-							<Img src='/images/main/smile/nayla.svg' alt='' />
+							{isVisible && (
+								<FadeIn duration={500} delay={1800}>
+									<Grey></Grey>
+									<GreyInner></GreyInner>
+									<Img src='/images/main/smile/nayla.svg' alt='' />{' '}
+								</FadeIn>
+							)}
 						</GreyWrapper3>
 						<GreyWrapper>
-							<Grey></Grey>
-							<GreyInner></GreyInner>
-							<Img src='/images/main/smile/toko-kita.svg' alt='' />
+							{isVisible && (
+								<FadeIn duration={500} delay={2400}>
+									<Grey></Grey>
+									<GreyInner></GreyInner>
+									<Img src='/images/main/smile/toko-kita.svg' alt='' />{' '}
+								</FadeIn>
+							)}
 						</GreyWrapper>
 					</TopSecondLine>
 
-					<PinkWrapper>
-						<Pink>
-							<Red>
-								<Bardo>
-									<Content>
-										<TextWrapper>
-											<Text>5000+</Text>
-											<Text>happy businesses</Text>
-										</TextWrapper>
-										<Line />
-									</Content>
-								</Bardo>
-							</Red>
-						</Pink>
-					</PinkWrapper>
+					{isVisible ? (
+						<FadeIn duration={2000} delay={0.2}>
+							<PinkWrapper>
+								<PinkBig />
+								<PinkSmall />
+								{/* <Pink> */}
+								<Red>
+									<Bardo>
+										<Content>
+											<TextWrapper>
+												<Text>5000+</Text>
+												<Text>happy businesses</Text>
+											</TextWrapper>
+											<Line />
+										</Content>
+									</Bardo>
+								</Red>
+								{/* </Pink> */}
+							</PinkWrapper>
+						</FadeIn>
+					) : (
+						<PinkWrapper />
+					)}
+
 					<BotFirstLine>
 						<GreyWrapper3>
-							<Grey></Grey>
-							<GreyInner></GreyInner>
-							<Img
-								src='/images/main/smile/burger.png'
-								srcSet='/images/main/smile/burger2x.png 2x'
-								alt=''
-							/>
+							{isVisible && (
+								<FadeIn duration={500} delay={2600}>
+									<Grey></Grey>
+									<GreyInner></GreyInner>
+									<Img
+										src='/images/main/smile/burger.png'
+										srcSet='/images/main/smile/burger2x.png 2x'
+										alt=''
+									/>{' '}
+								</FadeIn>
+							)}
 						</GreyWrapper3>
 						<GreyWrapper>
-							<Grey></Grey>
-							<GreyInner></GreyInner>
-							<Img src='/images/main/smile/group-the-companies.svg' alt='' />
+							{isVisible && (
+								<FadeIn duration={500} delay={1400}>
+									<Grey></Grey>
+									<GreyInner></GreyInner>
+									<Img src='/images/main/smile/group-the-companies.svg' alt='' />
+								</FadeIn>
+							)}
 						</GreyWrapper>
 					</BotFirstLine>
 					<BotSecondLine>
 						<GreyWrapper2>
-							<Grey></Grey>
-							<GreyInner></GreyInner>
-							<Img src='/images/main/smile/es-teh.svg' alt='' />
+							{isVisible && (
+								<FadeIn duration={500} delay={2000}>
+									<Grey></Grey>
+									<GreyInner></GreyInner>
+									<Img src='/images/main/smile/es-teh.svg' alt='' />
+								</FadeIn>
+							)}
 						</GreyWrapper2>
 						<GreyWrapper>
-							<Grey></Grey>
-							<GreyInner></GreyInner>
-							<Img
-								src='/images/main/smile/gong-cha.png'
-								srcSet='/images/main/smile/gong-cha2x.png 2x'
-								alt=''
-							/>
+							{isVisible && (
+								<FadeIn duration={500} delay={1200}>
+									<Grey></Grey>
+									<GreyInner></GreyInner>
+									<Img
+										src='/images/main/smile/gong-cha.png'
+										srcSet='/images/main/smile/gong-cha2x.png 2x'
+										alt=''
+									/>
+								</FadeIn>
+							)}
 						</GreyWrapper>
 					</BotSecondLine>
 					<GreyWrapper4>
-						<Grey></Grey>
-						<GreyInner></GreyInner>
-						<Img src='/images/main/smile/kho-pa-ka.svg' alt='' />
+						{isVisible && (
+							<FadeIn duration={500} delay={1600}>
+								<Grey></Grey>
+								<GreyInner></GreyInner>
+								<Img src='/images/main/smile/kho-pa-ka.svg' alt='' />
+							</FadeIn>
+						)}
 					</GreyWrapper4>
 				</Inner>
 			</MainBox>
@@ -215,6 +276,16 @@ const Title = styled.p`
 		line-height: 33px;
 	}
 `;
+
+const pulseShape = keyframes`
+ 0% { transform: scale(0.5); }
+  80%, 100% { opacity: 0; }
+`;
+const pulse = keyframes`
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+`;
+
 const PinkWrapper = styled.div`
 	width: 344px;
 	height: 344px;
@@ -222,6 +293,9 @@ const PinkWrapper = styled.div`
 	justify-content: center;
 	align-items: center;
 	margin: -96px 0 0;
+	transform: rotate(45deg);
+	position: relative;
+
 	@media (min-width: 768px) {
 		width: 491px;
 		height: 491px;
@@ -233,35 +307,77 @@ const PinkWrapper = styled.div`
 		margin: 0 2px;
 	}
 `;
-const Pink = styled.div`
-	width: 243px;
-	height: 243px;
+
+const PinkBig = styled.div`
+	position: absolute;
+	width: 343px; // encrease for animation 243px + 100px
+	height: 343px;
 	background: rgba(251, 36, 43, 0.3);
-	transform: rotate(45deg);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-radius: 17.7451px;
+	animation: ${pulseShape} 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
 	@media (min-width: 768px) {
-		width: 347px;
-		height: 347px;
+		width: 447px; // encrease for animation 347px + 100px
+		height: 447px;
 		border-radius: 25.3502px;
 	}
 	@media (min-width: 1024px) {
-		width: 327px;
-		height: 327px;
+		width: 427px; // encrease for animation 327px + 100px
+		height: 427px;
 		border-radius: 24.0543px;
 	}
 `;
+// const Pink = styled.div`
+// 	width: 243px;
+// 	height: 243px;
+// 	background: rgba(251, 36, 43, 0.3);
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	border-radius: 17.7451px;
+// 	animation: ${pulseShape} 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+// 	@media (min-width: 768px) {
+// 		width: 347px;
+// 		height: 347px;
+// 		border-radius: 25.3502px;
+// 	}
+// 	@media (min-width: 1024px) {
+// 		width: 327px;
+// 		height: 327px;
+// 		border-radius: 24.0543px;
+// 	}
+// `;
 
+const PinkSmall = styled.div`
+	position: absolute;
+	width: 265px; // encrease for animation 215px + 50px
+	height: 265px;
+	background: rgba(251, 36, 43, 0.4);
+	border-radius: 17.7451px;
+	animation: ${pulseShape} 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+
+	@media (min-width: 768px) {
+		width: 358px; // encrease for animation 308px + 50px
+		height: 358px;
+		border-radius: 25.3502px;
+	}
+	@media (min-width: 1024px) {
+		width: 342px; // encrease for animation 292px + 50px
+		height: 342px;
+		border-radius: 24.0543px;
+	}
+`;
 const Red = styled.div`
 	width: 215px;
 	height: 215px;
-	background: rgba(251, 36, 43, 0.4);
+	// background: rgba(251, 36, 43, 0.4);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-radius: 17.7451px;
+	animation: ${pulse} 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
 	@media (min-width: 768px) {
 		width: 308px;
 		height: 308px;
