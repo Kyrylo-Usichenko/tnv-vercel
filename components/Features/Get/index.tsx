@@ -16,13 +16,13 @@ const Get = () => {
 					<First>
 						<Second>
 							<LeftImg
-								src='images/features/get/left.png'
-								srcSet='images/features/get/left@2x.png 2x'
+								src='/images/features/get/left.png'
+								srcSet='/images/features/get/left@2x.png 2x'
 								alt='app'
 							/>
 							<RightImg
-								src='images/features/get/right.png'
-								srcSet='images/features/get/right@2x.png 2x'
+								src='/images/features/get/right.png'
+								srcSet='/images/features/get/right@2x.png 2x'
 								alt='app'
 							/>
 						</Second>
@@ -208,7 +208,7 @@ const Second = styled.div`
 	position: relative;
 
 	&::after {
-		content: url('images/features/get/dots-375.svg');
+		content: url('/images/features/get/dots-375.svg');
 		position: absolute;
 		top: 29px;
 		right: -104px;
@@ -220,7 +220,7 @@ const Second = styled.div`
 		height: 490.37px;
 
 		&::before {
-			content: url('images/features/get/dec.svg');
+			content: url('/images/features/get/dec.svg');
 			position: absolute;
 			top: -67px;
 			left: 28px;
@@ -228,7 +228,7 @@ const Second = styled.div`
 		}
 
 		&::after {
-			content: url('images/features/get/dots.svg');
+			content: url('/images/features/get/dots.svg');
 			top: 66px;
 			right: -200px;
 		}

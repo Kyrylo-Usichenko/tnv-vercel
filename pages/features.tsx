@@ -22,7 +22,7 @@ export async function getStaticProps({ locale }: any) {
 	return {
 		props: {
 			locale,
-			...(await serverSideTranslations(locale, ['home'])),
+			...(await serverSideTranslations(locale, ['home', 'main'])),
 		},
 	};
 }
@@ -37,7 +37,6 @@ const Features: NextPage<Props> = ({ locale }) => {
 	const openModal = () => {
 		setModalActive(true);
 	};
-
 	return (
 		<Main>
 			<Modal modalActive={modalActive} setModalActive={setModalActive} />

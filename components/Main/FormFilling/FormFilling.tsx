@@ -3,9 +3,11 @@ import styled from 'styled-components';
 
 import { Container } from '../../common/Container/Container';
 import MapComponentFlex from './MapFlex';
+import { useTranslation } from 'react-i18next';
 
 const Smile: FC = () => {
 	const [loading, setLoading] = useState<'idle' | 'loading' | 'error' | 'success'>('idle');
+	const { t } = useTranslation();
 
 	const initialValues = {
 		name: '',
@@ -103,7 +105,7 @@ const Smile: FC = () => {
 					<Container>
 						<Inner>
 							<TitleWrapper>
-								<Title>Fill up the form and we’ll get in touch within a few hours</Title>
+								<Title>{t('main:formTitle')}</Title>
 								<MapBox>
 									<MapComponentFlex />
 								</MapBox>
@@ -115,7 +117,7 @@ const Smile: FC = () => {
 										Hi, we’re <span className='accent'>Tinvio!</span> And you?
 									</FormTitle>
 									<ModlaLabel>
-										Name
+										{t('main:formName')}
 										<ModalInput
 											placeholder='John Appleseed'
 											type='text'
@@ -129,7 +131,7 @@ const Smile: FC = () => {
 										) : null}
 									</ModlaLabel>
 									<ModlaLabel>
-										Business Name
+										{t('main:formBusinessName')}
 										<ModalInput
 											placeholder='Burgers & Boba (Singapore)'
 											type='text'
@@ -143,7 +145,7 @@ const Smile: FC = () => {
 										) : null}
 									</ModlaLabel>
 									<ModlaLabel>
-										Phone
+										{t('main:formPhone')}
 										<ModalInput
 											placeholder='65 9123 4567'
 											type='tel'
@@ -158,7 +160,7 @@ const Smile: FC = () => {
 										) : null}
 									</ModlaLabel>
 									<Button type='submit' loaded={loading !== 'idle'}>
-										Submit
+										{t('main:formButton')}
 										<StyledSvg xmlns='http://www.w3.org/2000/svg' loaded={loading !== 'idle'}>
 											<g>
 												<ellipse
@@ -186,7 +188,7 @@ const Smile: FC = () => {
 										{loading === 'error' ? <Error></Error> : null}
 									</Button>
 									<Spam>
-										No spam, promise
+										{t('main:formUnderButton')}
 										<Img src='images/main/formFilling/hands.svg' alt='' />
 									</Spam>
 								</Form>
@@ -632,13 +634,13 @@ const Indicate = styled.div`
 
 const Success = styled(Indicate)`
 	&::before {
-		content: url('images/features/modal/success.svg');
+		content: url('/images/features/modal/success.svg');
 	}
 `;
 
 const Error = styled(Indicate)`
 	&::before {
-		content: url('images/features/modal/error.svg');
+		content: url('/images/features/modal/error.svg');
 	}
 `;
 

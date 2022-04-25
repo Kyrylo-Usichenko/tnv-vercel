@@ -1,8 +1,10 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { Container } from '../../common/Container/Container';
+import { useTranslation } from 'react-i18next';
 
 const HowItWorks: FC = () => {
+	const { t } = useTranslation();
 	return (
 		<Wrapper>
 			<ContainerHow>
@@ -51,14 +53,11 @@ const HowItWorks: FC = () => {
 						</div>
 					</Null>
 					<Info>
-						<InfoTitle>Check out how it works</InfoTitle>
-						<InfoText>
-							It’s easy! Exchange messages, create or confirm orders, send invoices, and collect payments
-							across your supply chain — all within one dashboard.
-						</InfoText>
+						<InfoTitle>{t('main:howItWorksTitle')}</InfoTitle>
+						<InfoText>{t('main:howItWorksContent')}</InfoText>
 						<Button>
 							<img width='12px' height='14px' src='icons/main/howItWorks/Play.svg' alt='' />
-							<ButtonText>Play video</ButtonText>
+							<ButtonText>{t('main:howItWorksButton')}</ButtonText>
 						</Button>
 						<DotsRight />
 					</Info>
@@ -416,7 +415,7 @@ const CardBot = styled.div`
 // `;
 
 const CardTopIcon = styled.div`
-	background: url('images/main/howItWorks/iconFirstCard.png');
+	background: url('/images/main/howItWorks/iconFirstCard.png');
 	width: 92px;
 	height: 92px;
 	position: absolute;
@@ -444,7 +443,7 @@ const CardMiddleIcon = styled.div`
 	height: 93px;
 	left: -19px;
 	bottom: -45px;
-	background: url('images/main/howItWorks/iconSecondCard.svg');
+	background: url('/images/main/howItWorks/iconSecondCard.svg');
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
 	background-size: cover;
 
@@ -466,7 +465,7 @@ const CardBotIcon = styled.div`
 	position: absolute;
 	width: 87px;
 	height: 87px;
-	background: url('images/main/howItWorks/iconThirdCard.png');
+	background: url('/images/main/howItWorks/iconThirdCard.png');
 	left: -5px;
 	top: -35px;
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
@@ -492,7 +491,7 @@ const CardTopStars = styled.div`
 	top: -53px;
 	width: 56px;
 	height: 42px;
-	background: url('images/main/howItWorks/starsFirstCard.svg');
+	background: url('/images/main/howItWorks/starsFirstCard.svg');
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
 	@media (max-width: 970px) {
 		left: 170px;
@@ -509,7 +508,7 @@ const CardMiddleStars = styled.div`
 	top: -71px;
 	width: 80px;
 	height: 44px;
-	background: url('images/main/howItWorks/starsSecondCard.svg') no-repeat;
+	background: url('/images/main/howItWorks/starsSecondCard.svg') no-repeat;
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
 	background-size: cover;
 
@@ -533,7 +532,7 @@ const CardBotStars = styled.div`
 	top: -5px;
 	width: 50px;
 	height: 59px;
-	background: url('images/main/howItWorks/starsThirdCard.svg') no-repeat;
+	background: url('/images/main/howItWorks/starsThirdCard.svg') no-repeat;
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
 	background-size: contain;
 
@@ -555,7 +554,7 @@ const CardBotStars2 = styled.div`
 	top: -68px;
 	width: 51px;
 	height: 36px;
-	background: url('images/main/howItWorks/sideStars.svg') no-repeat;
+	background: url('/images/main/howItWorks/sideStars.svg') no-repeat;
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
 	background-size: contain;
 
@@ -577,7 +576,7 @@ const DotsLeft = styled.div`
 	position: absolute;
 	left: 42px;
 	top: 153px;
-	background: url('images/main/howItWorks/leftBottomDots.png') no-repeat;
+	background: url('/images/main/howItWorks/leftBottomDots.png') no-repeat;
 	//transform: rotate(-8deg);
 	background-size: contain;
 	z-index: -2;
@@ -606,7 +605,7 @@ const DotsRight = styled.div`
 	position: absolute;
 	left: 397px;
 	top: 303px;
-	background: url('images/main/howItWorks/rightBottomDots.png') no-repeat;
+	background: url('/images/main/howItWorks/rightBottomDots.png') no-repeat;
 	width: 254px;
 	height: 192px;
 	background-size: contain;
@@ -662,7 +661,7 @@ const RedLine = styled.div`
 	left: 265px;
 	// top: 42px;
 	top: 55px;
-	background: url('images/main/howItWorks/redLineFirst.svg') no-repeat;
+	background: url('/images/main/howItWorks/redLineFirst.svg') no-repeat;
 	// transform: rotate(-8deg);
 	background-size: contain;
 	@media (max-width: 970px) {
@@ -684,7 +683,7 @@ const RedLine2 = styled.div`
 	left: -122px;
 	// top: 55px;
 	top: 35px;
-	background: url('images/main/howItWorks/redLineSecond.svg') no-repeat;
+	background: url('/images/main/howItWorks/redLineSecond.svg') no-repeat;
 	// transform: rotate(-8deg);
 	background-size: contain;
 	@media (max-width: 970px) {

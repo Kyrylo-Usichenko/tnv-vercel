@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 
 const Logo: FC = () => {
-	return <Img src='icons/common/logo/logo.svg' alt='octopus' />;
+	return <Img src='/icons/common/logo/logo.svg' alt='octopus' />;
 };
 
 const Img = styled.img`

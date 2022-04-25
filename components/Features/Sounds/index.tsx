@@ -37,7 +37,7 @@ const FullConDec = styled.div`
 	overflow: hidden;
 
 	&::before {
-		content: url('images/features/sounds/sounds-rec.webp');
+		content: url('/images/features/sounds/sounds-rec.webp');
 		position: absolute;
 		top: 0;
 		left: -220px;
@@ -59,7 +59,7 @@ const FullConDec = styled.div`
 
 	@media (min-width: 1024px) {
 		&::after {
-			content: url('images/features/sounds/sounds-dots.svg');
+			content: url('/images/features/sounds/sounds-dots.svg');
 			right: 150px;
 			bottom: -15px;
 		}
@@ -100,7 +100,7 @@ const FlexConInfo = styled.div`
 	padding: 48px 0;
 
 	&::before {
-		content: url('images/features/sounds/dec-375.svg');
+		content: url('/images/features/sounds/dec-375.svg');
 		position: absolute;
 		bottom: -40px;
 		right: 0;
@@ -108,7 +108,7 @@ const FlexConInfo = styled.div`
 
 	@media (min-width: 768px) {
 		&::before {
-			content: url('images/features/sounds/dec-768.svg');
+			content: url('/images/features/sounds/dec-768.svg');
 			position: absolute;
 			bottom: -60px;
 			right: 0;
@@ -119,7 +119,7 @@ const FlexConInfo = styled.div`
 		padding: 54px 0;
 
 		&::before {
-			content: url('images/features/sounds/dec-1024.svg');
+			content: url('/images/features/sounds/dec-1024.svg');
 			position: absolute;
 			bottom: -60px;
 			right: 0;
@@ -130,7 +130,7 @@ const FlexConInfo = styled.div`
 		margin-right: 54px;
 
 		&::before {
-			content: url('images/features/sounds/dec-1280.svg');
+			content: url('/images/features/sounds/dec-1280.svg');
 			position: absolute;
 			bottom: -50px;
 			right: -50px;
