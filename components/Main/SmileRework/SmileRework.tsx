@@ -1,49 +1,56 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { Container } from '../../common/Container/Container';
+import { useTranslation } from 'react-i18next';
 
 const Smile: FC = () => {
+	const { t } = useTranslation();
+
 	return (
 		<Wrapper>
 			<Container>
-				<Title>We’ll put a smile on your supply chain </Title>
+				<Title>{t('main:smileTitle')}</Title>
 			</Container>
 			<MainBox>
-				<Dots top='-512' left='647' src='images/main/smile/rightDots.svg' alt='' />
+				<Dots top='-512' left='647' src='/images/main/smile/rightDots.svg' alt='' />
 
 				<RightTopGrey top='-293' left='311' size='457.92' radius='42.6248' />
 				<LeftTopGrey top='-288' left='-536' size='554.34' radius='51.6' />
 				<LeftGrey top='44' left='-514' size='554.34' radius='51.6' />
 
-				<Dots top='27' left='-353' src='images/main/smile/leftDots.svg' alt='' />
+				<Dots top='27' left='-353' src='/images/main/smile/leftDots.svg' alt='' />
 				<Inner>
 					<GreyWrapper1>
 						<Grey></Grey>
 						<GreyInner></GreyInner>
-						<Img src='images/main/smile/pet-shop.png' srcSet='images/main/smile/pet-shop2x.png 2x' alt='' />
+						<Img
+							src='/images/main/smile/pet-shop.png'
+							srcSet='/images/main/smile/pet-shop2x.png 2x'
+							alt=''
+						/>
 					</GreyWrapper1>
 					<TopFirstLine>
 						<GreyWrapper2>
 							<Grey></Grey>
 							<GreyInner></GreyInner>
-							<Img src='images/main/smile/nex.svg' alt='' />
+							<Img src='/images/main/smile/nex.svg' alt='' />
 						</GreyWrapper2>
 						<GreyWrapper>
 							<Grey></Grey>
 							<GreyInner></GreyInner>
-							<Img src='images/main/smile/bbs.png' srcSet='images/main/smile/bbs2x.png 2x' alt='' />
+							<Img src='/images/main/smile/bbs.png' srcSet='/images/main/smile/bbs2x.png 2x' alt='' />
 						</GreyWrapper>
 					</TopFirstLine>
 					<TopSecondLine>
 						<GreyWrapper3>
 							<Grey></Grey>
 							<GreyInner></GreyInner>
-							<Img src='images/main/smile/nayla.svg' alt='' />
+							<Img src='/images/main/smile/nayla.svg' alt='' />
 						</GreyWrapper3>
 						<GreyWrapper>
 							<Grey></Grey>
 							<GreyInner></GreyInner>
-							<Img src='images/main/smile/toko-kita.svg' alt='' />
+							<Img src='/images/main/smile/toko-kita.svg' alt='' />
 						</GreyWrapper>
 					</TopSecondLine>
 
@@ -66,26 +73,30 @@ const Smile: FC = () => {
 						<GreyWrapper3>
 							<Grey></Grey>
 							<GreyInner></GreyInner>
-							<Img src='images/main/smile/burger.png' srcSet='images/main/smile/burger2x.png 2x' alt='' />
+							<Img
+								src='/images/main/smile/burger.png'
+								srcSet='/images/main/smile/burger2x.png 2x'
+								alt=''
+							/>
 						</GreyWrapper3>
 						<GreyWrapper>
 							<Grey></Grey>
 							<GreyInner></GreyInner>
-							<Img src='images/main/smile/group-the-companies.svg' alt='' />
+							<Img src='/images/main/smile/group-the-companies.svg' alt='' />
 						</GreyWrapper>
 					</BotFirstLine>
 					<BotSecondLine>
 						<GreyWrapper2>
 							<Grey></Grey>
 							<GreyInner></GreyInner>
-							<Img src='images/main/smile/es-teh.svg' alt='' />
+							<Img src='/images/main/smile/es-teh.svg' alt='' />
 						</GreyWrapper2>
 						<GreyWrapper>
 							<Grey></Grey>
 							<GreyInner></GreyInner>
 							<Img
-								src='images/main/smile/gong-cha.png'
-								srcSet='images/main/smile/gong-cha2x.png 2x'
+								src='/images/main/smile/gong-cha.png'
+								srcSet='/images/main/smile/gong-cha2x.png 2x'
 								alt=''
 							/>
 						</GreyWrapper>
@@ -93,7 +104,7 @@ const Smile: FC = () => {
 					<GreyWrapper4>
 						<Grey></Grey>
 						<GreyInner></GreyInner>
-						<Img src='images/main/smile/kho-pa-ka.svg' alt='' />
+						<Img src='/images/main/smile/kho-pa-ka.svg' alt='' />
 					</GreyWrapper4>
 				</Inner>
 			</MainBox>
@@ -574,7 +585,7 @@ const Text = styled.p`
 `;
 const Line = styled.div`
 	margin-top: 13px;
-	background: url('images/main/smile/line.svg') no-repeat;
+	background: url('/images/main/smile/line.svg') no-repeat;
 	width: 137px;
 	height: 51px;
 	background-size: contain;

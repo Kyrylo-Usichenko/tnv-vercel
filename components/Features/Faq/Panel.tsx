@@ -22,7 +22,7 @@ const Panel: FC<PanelProps> = ({ name, children }) => {
 				<PanelTitle>{name}</PanelTitle>
 				<PanelButton type='button' onClick={panelBtnHandler}>
 					<img
-						src={`images/features/faq/${isclose ? 'open.svg' : 'close.svg'}`}
+						src={`/images/features/faq/${isclose ? 'open.svg' : 'close.svg'}`}
 						alt='open/close'
 						loading='lazy'
 					/>

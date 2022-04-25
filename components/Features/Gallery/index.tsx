@@ -11,28 +11,28 @@ const Gallery: FC = () => {
 					<GalleryGrid>
 						<GalleryColumn>
 							<Img1
-								src='images/features/gallery/1.jpg'
-								srcSet='images/features/gallery/1@2x.jpg 2x'
+								src='/images/features/gallery/1.jpg'
+								srcSet='/images/features/gallery/1@2x.jpg 2x'
 								alt='man with pancil'
 								loading='lazy'
 							/>
 							<Img3
-								src='images/features/gallery/3.jpg'
-								srcSet='images/features/gallery/3@2x.jpg 2x'
+								src='/images/features/gallery/3.jpg'
+								srcSet='/images/features/gallery/3@2x.jpg 2x'
 								alt='happy man on kitchen'
 								loading='lazy'
 							/>
 						</GalleryColumn>
 						<GalleryColumn>
 							<Img2
-								src='images/features/gallery/2.jpg'
-								srcSet='images/features/gallery/2@2x.jpg 2x'
+								src='/images/features/gallery/2.jpg'
+								srcSet='/images/features/gallery/2@2x.jpg 2x'
 								alt='happy old man with phone'
 								loading='lazy'
 							/>
 							<Img4
-								src='images/features/gallery/4.jpg'
-								srcSet='images/features/gallery/4@2x.jpg 2x'
+								src='/images/features/gallery/4.jpg'
+								srcSet='/images/features/gallery/4@2x.jpg 2x'
 								alt='happy women with laptop'
 								loading='lazy'
 							/>
@@ -242,14 +242,14 @@ const GalleryTitle = styled.h2`
 	max-width: 315px;
 
 	&::before {
-		content: url('images/features/gallery/dec-t.svg');
+		content: url('/images/features/gallery/dec-t.svg');
 		position: absolute;
 		top: -53px;
 		left: -16px;
 	}
 
 	&::after {
-		content: url('images/features/gallery/dec-b.svg');
+		content: url('/images/features/gallery/dec-b.svg');
 		position: absolute;
 		right: -30px;
 		bottom: -52px;

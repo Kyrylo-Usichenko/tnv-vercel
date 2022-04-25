@@ -112,7 +112,7 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 			<FormWrapper modalActive={modalActive}>
 				<ModalContent modalActive={modalActive}>
 					<ModalClose type='button' onClick={closeModal} className='modal-btn'>
-						<img src='images/features/modal/close.svg' alt='close' className='modal-btn' loading='lazy' />
+						<img src='/images/features/modal/close.svg' alt='close' className='modal-btn' loading='lazy' />
 					</ModalClose>
 					{loading === 'success' ? (
 						<ModalTitle>Thank you!</ModalTitle>
@@ -123,7 +123,7 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 					)}
 					{loading === 'success' ? (
 						<ModalSuccess>
-							<ModalSuccessImg src='images/features/modal/dec.svg' alt='decorations' />
+							<ModalSuccessImg src='/images/features/modal/dec.svg' alt='decorations' />
 							<ModalSucceessText>We'll get in touch as soon as possible </ModalSucceessText>
 							<ModalButton type='button' className='modal-btn' onClick={closeModal}>
 								Close
@@ -178,14 +178,14 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 								<Circle />
 							) : loading === 'error' ? (
 								<Indicate>
-									<img src='images/features/modal/error.svg' alt='error' />
+									<img src='/images/features/modal/error.svg' alt='error' />
 								</Indicate>
 							) : (
 								<ModalButton type='submit'>Submit</ModalButton>
 							)}
 							<ModalSpam>
 								No spam, promise{' '}
-								<img src='images/main/formFilling/hands.svg' alt='hands' loading='lazy' />
+								<img src='/images/main/formFilling/hands.svg' alt='hands' loading='lazy' />
 							</ModalSpam>
 						</ModalForm>
 					)}

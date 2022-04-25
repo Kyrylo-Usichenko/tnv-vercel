@@ -19,15 +19,15 @@ const Breeze: FC = () => {
 							<Block>
 								<Add>
 									<AddCon>
-										<AddFile src='images/features/breeze/file.svg' alt='file' loading='lazy' />
+										<AddFile src='/images/features/breeze/file.svg' alt='file' loading='lazy' />
 										<AddText>Add Catalog to Order List</AddText>
 									</AddCon>
-									<AddArrow src='images/features/breeze/arrow.svg' alt='arrow' loading='lazy' />
+									<AddArrow src='/images/features/breeze/arrow.svg' alt='arrow' loading='lazy' />
 								</Add>
 								<Del>
 									<DelCon>
 										<DelCal
-											src='images/features/breeze/calendar.svg'
+											src='/images/features/breeze/calendar.svg'
 											alt='calendar'
 											loading='lazy'
 										/>
@@ -36,14 +36,14 @@ const Breeze: FC = () => {
 									<DelDate>Tue, 27 Oct</DelDate>
 								</Del>
 								<Man
-									src='images/features/breeze/man.jpg'
-									srcSet='images/features/breeze/man@2x.jpg 2x'
+									src='/images/features/breeze/man.jpg'
+									srcSet='/images/features/breeze/man@2x.jpg 2x'
 									alt='man'
 									loading='lazy'
 								/>
 								<Women
-									src='images/features/breeze/women.jpg'
-									srcSet='images/features/breeze/women@2x.jpg 2x'
+									src='/images/features/breeze/women.jpg'
+									srcSet='/images/features/breeze/women@2x.jpg 2x'
 									alt='women'
 									loading='lazy'
 								/>
@@ -141,7 +141,7 @@ const BreezeText = styled.p`
 		max-width: 340px;
 
 		&::before {
-			content: url('images/features/breeze/breeze-dots-l.webp');
+			content: url('/images/features/breeze/breeze-dots-l.webp');
 			position: absolute;
 			left: -250px;
 			bottom: -215px;
@@ -224,7 +224,7 @@ const Block = styled.div`
 	transform: rotate(45deg);
 
 	&::before {
-		content: url('images/features/breeze/women-dec.svg');
+		content: url('/images/features/breeze/women-dec.svg');
 		position: absolute;
 		top: 94px;
 		right: -21px;
@@ -237,7 +237,7 @@ const Block = styled.div`
 		}
 
 		&::after {
-			content: url('images/features/breeze/man-dec.svg');
+			content: url('/images/features/breeze/man-dec.svg');
 			position: absolute;
 			top: 204px;
 			left: -58px;
@@ -316,14 +316,14 @@ const Add = styled.div`
 	box-shadow: 5px 8px 17px 0 rgba(33, 33, 33, 0.1);
 
 	&::before {
-		content: url('images/features/breeze/con-l-375.svg');
+		content: url('/images/features/breeze/con-l-375.svg');
 		position: absolute;
 		left: 33px;
 		bottom: -64px;
 	}
 
 	&::after {
-		content: url('images/features/breeze/women-l-375.svg');
+		content: url('/images/features/breeze/women-l-375.svg');
 		position: absolute;
 		right: -13px;
 		bottom: -90px;
@@ -337,12 +337,12 @@ const Add = styled.div`
 		top: 31px;
 
 		&::before {
-			content: url('images/features/breeze/con-l-768.svg');
+			content: url('/images/features/breeze/con-l-768.svg');
 			bottom: -85px;
 		}
 
 		&::after {
-			content: url('images/features/breeze/women-l-768.svg');
+			content: url('/images/features/breeze/women-l-768.svg');
 			right: -55px;
 			bottom: -119px;
 		}
@@ -490,7 +490,7 @@ const Order = styled.div`
 	box-shadow: 5px 8px 17px 0 rgba(33, 33, 33, 0.1);
 
 	&::before {
-		content: url('images/features/breeze/man-l-375.svg');
+		content: url('/images/features/breeze/man-l-375.svg');
 		position: absolute;
 		top: -51px;
 		left: -44px;
@@ -502,7 +502,7 @@ const Order = styled.div`
 		bottom: 72px;
 
 		&::before {
-			content: url('images/features/breeze/man-l-768.svg');
+			content: url('/images/features/breeze/man-l-768.svg');
 			top: -69px;
 			left: -74px;
 		}
@@ -579,7 +579,7 @@ const BreezeBlock2Dec0 = styled.div`
 	z-index: -1;
 
 	&::after {
-		content: url('images/features/breeze/breeze-dots-m.webp');
+		content: url('/images/features/breeze/breeze-dots-m.webp');
 		position: absolute;
 		left: -9px;
 		bottom: -54px;
@@ -588,7 +588,7 @@ const BreezeBlock2Dec0 = styled.div`
 
 	@media (min-width: 768px) {
 		&::before {
-			content: url('images/features/breeze/breeze-dots-r.webp');
+			content: url('/images/features/breeze/breeze-dots-r.webp');
 			position: absolute;
 			right: -290px;
 			top: -130px;

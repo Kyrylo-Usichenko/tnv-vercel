@@ -3,34 +3,37 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 
 import { FeaturesCon } from '../Container/Container';
+import { useTranslation } from 'next-i18next';
 
 type Props = {
 	background?: string | undefined;
 };
 
 const Footer: FC<Props> = ({ background }) => {
+	const { t } = useTranslation();
+	console.log(t('main:footerLogin'));
 	return (
 		<StyledFooter background={background}>
 			<FeaturesCon>
 				<FirstLine>
 					<FirstLineHalf>
 						<FooterFullLogo>
-							<FooterLogo src='icons/common/logo/logo.svg' alt='octopus' loading='lazy' />
-							<FooterLogoText src='icons/common/logo/logo-text.svg' alt='tinvio' loading='lazy' />
+							<FooterLogo src='/icons/common/logo/logo.svg' alt='octopus' loading='lazy' />
+							<FooterLogoText src='/icons/common/logo/logo-text.svg' alt='tinvio' loading='lazy' />
 						</FooterFullLogo>
 						<FirstLineSeparate />
 						<FooterUl>
 							<FooterLi>
-								<Link href={'/'}>Home</Link>
+								<Link href={'/'}>{t('main:footerHome')}</Link>
 							</FooterLi>
 							<FooterLi>
-								<Link href={'/features'}>Features</Link>
+								<Link href={'/features'}>{t('main:footerFeatures')}</Link>
 							</FooterLi>
 							<FooterLi>
-								<Link href={'/company'}>Company</Link>
+								<Link href={'/company'}>{t('main:footerCompany')}</Link>
 							</FooterLi>
 							<FooterLi>
-								<Link href={'/login'}>Login</Link>
+								<Link href={'/login'}>{t('main:footerLogin')}</Link>
 							</FooterLi>
 						</FooterUl>
 					</FirstLineHalf>
@@ -38,25 +41,25 @@ const Footer: FC<Props> = ({ background }) => {
 						<Links>
 							<Socials>
 								<Social href={'/'}>
-									<img src='images/footer/linkedin.svg' alt='linkedin' loading='lazy' />
+									<img src='/images/footer/linkedin.svg' alt='linkedin' loading='lazy' />
 								</Social>
 								<Social href={'/'}>
-									<img src='images/footer/inst.svg' alt='instagram' loading='lazy' />
+									<img src='/images/footer/inst.svg' alt='instagram' loading='lazy' />
 								</Social>
 							</Socials>
 							<FirstLineSeparate />
 							<Stores>
 								<Store href={'/'}>
 									<img
-										src='images/footer/gp.png'
-										srcSet='images/footer/gp@2x.png 2x'
+										src='/images/footer/gp.png'
+										srcSet='/images/footer/gp@2x.png 2x'
 										alt='google play'
 									/>
 								</Store>
 								<Store href={'/'}>
 									<img
-										src='images/footer/as.png'
-										srcSet='images/footer/as@2x.png 2x'
+										src='/images/footer/as.png'
+										srcSet='/images/footer/as@2x.png 2x'
 										alt='google play'
 									/>
 								</Store>
@@ -65,18 +68,18 @@ const Footer: FC<Props> = ({ background }) => {
 					</SecondLineHalf>
 				</FirstLine>
 				<SecondLine>
-					<SecondLineText>© Tinvio™ 2020. All Rights Reserved</SecondLineText>
+					<SecondLineText>{t('main:footerRights')}</SecondLineText>
 					<SecondLineSeparate1 />
 					<SecondLineCon>
 						<SecondLineText>
 							<Link href={'/legal'} as='/privacy'>
-								Privacy Policy
+								{t('main:footerPrivacy')}
 							</Link>
 						</SecondLineText>
 						<SecondLineSeparate2 />
 						<SecondLineText>
 							<Link href={'/legal'} as='/terms'>
-								Terms of Service
+								{t('main:footerTerms')}
 							</Link>
 						</SecondLineText>
 					</SecondLineCon>

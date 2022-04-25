@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const LogoText: FC = () => {
 	return (
 		<>
-			<Img src='icons/common/logo/logo-text.svg' alt='tinvio' />
+			<Img src='/icons/common/logo/logo-text.svg' alt='tinvio' />
 		</>
 	);
 };

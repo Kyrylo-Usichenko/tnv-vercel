@@ -13,8 +13,8 @@ const Supercharge: FC = () => {
 				<FullCon>
 					<FullConDec1>
 						<FullConApp
-							src='images/features/supercharge/1.jpg'
-							srcSet='images/features/supercharge/1@2x.jpg 2x'
+							src='/images/features/supercharge/1.jpg'
+							srcSet='/images/features/supercharge/1@2x.jpg 2x'
 							alt='app'
 						/>
 					</FullConDec1>
@@ -48,8 +48,8 @@ const Supercharge: FC = () => {
 								</Title>
 							</Elem>
 							<MobileApp
-								src='images/features/supercharge/1.jpg'
-								srcSet='images/features/supercharge/1@2x.jpg 2x'
+								src='/images/features/supercharge/1.jpg'
+								srcSet='/images/features/supercharge/1@2x.jpg 2x'
 								alt='app'
 							/>
 						</FlexConGrid>
@@ -110,7 +110,7 @@ const FullCon = styled.div`
 		}
 
 		&::after {
-			content: url('images/features/supercharge/dec-768.svg');
+			content: url('/images/features/supercharge/dec-768.svg');
 			position: absolute;
 			right: 0;
 			bottom: -85px;
@@ -121,7 +121,7 @@ const FullCon = styled.div`
 		height: 484px;
 
 		&::before {
-			content: url('images/features/supercharge/dots.svg');
+			content: url('/images/features/supercharge/dots.svg');
 			position: absolute;
 			display: block;
 			transform: rotate(0);
@@ -130,7 +130,7 @@ const FullCon = styled.div`
 		}
 
 		&::after {
-			content: url('images/features/supercharge/dec-1024.svg');
+			content: url('/images/features/supercharge/dec-1024.svg');
 			position: absolute;
 			right: 0;
 			bottom: -91px;
@@ -145,7 +145,7 @@ const FullCon = styled.div`
 		}
 
 		&::after {
-			content: url('images/features/supercharge/dec-1280.svg');
+			content: url('/images/features/supercharge/dec-1280.svg');
 			position: absolute;
 			right: -50px;
 			bottom: -53px;
@@ -173,7 +173,7 @@ const FlexConInfo = styled.div`
 	background-color: var(--bg-black);
 
 	&::before {
-		content: url('images/features/supercharge/dots.svg');
+		content: url('/images/features/supercharge/dots.svg');
 		position: absolute;
 		right: -100px;
 		bottom: 280px;
@@ -181,7 +181,7 @@ const FlexConInfo = styled.div`
 	}
 
 	&::after {
-		content: url('images/features/supercharge/dec-375.svg');
+		content: url('/images/features/supercharge/dec-375.svg');
 		position: absolute;
 		right: 2px;
 		bottom: -60px;
@@ -278,7 +278,7 @@ const Title = styled.h3`
 	text-align: center;
 
 	&::before {
-		content: url('images/features/supercharge/title-rec.svg');
+		content: url('/images/features/supercharge/title-rec.svg');
 		position: absolute;
 		top: -10px;
 		left: -27px;

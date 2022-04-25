@@ -2,6 +2,7 @@ import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 import { Container } from '../../common/Container/Container';
+import { useTranslation } from 'react-i18next';
 
 const TOP_OFFSET = 40;
 const MAX_OFFSET = 70;
@@ -11,6 +12,7 @@ const MoreMoney: FC = () => {
 	const typeRef = useRef() as RefObject<HTMLDivElement>;
 	const entry = useIntersectionObserver(typeRef, {});
 	const isVisible = !!entry?.isIntersecting;
+	const { t } = useTranslation();
 
 	useEffect(() => {
 		const updateOffset = () => {
@@ -46,7 +48,7 @@ const MoreMoney: FC = () => {
 
 				<Container>
 					<Inner ref={typeRef}>
-						<Title offset={offset - TOP_OFFSET}>Featured On</Title>
+						<Title offset={offset - TOP_OFFSET}>{t('main:FeaturedOn')}</Title>
 						<Companies offset={offset - TOP_OFFSET}>
 							<Company1 src='images/main/featuredOn/techCrunch.svg' alt='' />
 							<Company2 src='images/main/featuredOn/techInAsia.svg' alt='' />

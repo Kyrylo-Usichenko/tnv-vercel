@@ -10,11 +10,11 @@ const Preview: FC = () => {
 			<PreviewTitle>
 				Collecting payments <span className='accent'>is easy</span>, right?
 			</PreviewTitle>
-			<PreviewText>{t('home:ManageAll')}</PreviewText>
+			<PreviewText>{t('main:previewText')}</PreviewText>
 			<PreviewAction>
-				<Button>Get Started Now</Button>
+				<Button>{t('main:previewButton')}</Button>
 				<PreviewFootnote>
-					It's free to try!
+					{t('main:previewButtonText')}
 					<PreviewSmile />
 				</PreviewFootnote>
 			</PreviewAction>
@@ -59,7 +59,7 @@ const PreviewTitle = styled.h2`
 		content: '';
 		width: 87px;
 		height: 80px;
-		background: url('images/main/preview/decorations.svg');
+		background: url('/images/main/preview/decorations.svg');
 		position: absolute;
 		z-index: 1;
 		left: -42px;
@@ -86,7 +86,7 @@ const PreviewTitle = styled.h2`
 		content: '';
 		width: 59px;
 		height: 56px;
-		background: url('images/main/preview/decorations768.svg');
+		background: url('/images/main/preview/decorations768.svg');
 		position: absolute;
 		z-index: 1;
 		right: -44px;

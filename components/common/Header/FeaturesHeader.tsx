@@ -131,20 +131,20 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 
 						<Nav>
 							<NavItem isActive={Tab === 'Home'}>
-								<Link href='/'>{t('home:Home')}</Link>
+								<Link href='/'>{t('header:Home')}</Link>
 							</NavItem>
 							<NavItem isActive={Tab === 'Features'}>
-								<Link href='/features'>{t('home:Features')}</Link>
+								<Link href='/features'>{t('header:Features')}</Link>
 							</NavItem>
 							<NavItem isActive={Tab === 'Company'}>
-								<Link href='/company'>{t('home:Company')}</Link>
+								<Link href='/company'>{t('header:Company')}</Link>
 							</NavItem>
 						</Nav>
 
 						<ButtonWrapper>
 							<Link href={'/'}>
 								<HeaderButton isHeaderScrolled={isHeaderScrolled} Tab={Tab}>
-									{t('home:GetStarted')}
+									{t('header:GetStarted')}
 								</HeaderButton>
 							</Link>
 						</ButtonWrapper>
@@ -158,19 +158,19 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 
 					<MobileNav isMenuOpend={isMenuOpend}>
 						<MobileNavItem isActive={Tab === 'Home'}>
-							<Link href='/'>{t('home:Home')}</Link>
+							<Link href='/'>{t('header:Home')}</Link>
 						</MobileNavItem>
 						<MobileNavItem isActive={Tab === 'Features'}>
-							<Link href='/features'>{t('home:Features')}</Link>
+							<Link href='/features'>{t('header:Features')}</Link>
 						</MobileNavItem>
 						<MobileNavItem isActive={Tab === 'Company'}>
-							<Link href='/company'>{t('home:Company')}</Link>
+							<Link href='/company'>{t('header:Company')}</Link>
 						</MobileNavItem>
 					</MobileNav>
 
 					<MobileLinks isMenuOpend={isMenuOpend}>
 						<Link href='/'>
-							<MobileButton>{t('home:GetStarted')}</MobileButton>
+							<MobileButton>{t('header:GetStarted')}</MobileButton>
 						</Link>
 						<Socials>
 							<Social href={'/'}>

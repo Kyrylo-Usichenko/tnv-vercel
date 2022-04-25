@@ -3,8 +3,11 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { Container } from '../../common/Container/Container';
 import Slider from '../Slider/Slider';
+import { useTranslation } from 'react-i18next';
 
 const WhyChoose: FC = () => {
+	const { t } = useTranslation();
+
 	return (
 		<Styled>
 			<LeftTopDots />
@@ -23,7 +26,7 @@ const WhyChoose: FC = () => {
 						<Inner>
 							<RightSquare />
 							<LeftSquare />
-							<Title>Why choose Tinvio?</Title>
+							<Title>{t('main:whyChoose')}</Title>
 							<Slider />
 						</Inner>
 					</Container>
@@ -90,7 +93,7 @@ const LeftTopDots = styled.div`
 	position: absolute;
 	left: 246px;
 	top: -36px;
-	background: url('images/main/whyChoose/leftTopDots.svg') no-repeat;
+	background: url('/images/main/whyChoose/leftTopDots.svg') no-repeat;
 	width: 427px;
 	height: 323px;
 	z-index: -2;

@@ -19,13 +19,13 @@ const Make = () => {
 					<First>
 						<Second>
 							<LeftImg
-								src='images/features/make/left.png'
-								srcSet='images/features/make/left@2x.png 2x'
+								src='/images/features/make/left.png'
+								srcSet='/images/features/make/left@2x.png 2x'
 								alt='app'
 							/>
 							<RightImg
-								src='images/features/make/right.png'
-								srcSet='images/features/make/right@2x.png 2x'
+								src='/images/features/make/right.png'
+								srcSet='/images/features/make/right@2x.png 2x'
 								alt='app'
 							/>
 						</Second>
@@ -207,7 +207,7 @@ const Second = styled.div`
 	position: relative;
 
 	&::before {
-		content: url('images/features/make/dec-375.svg');
+		content: url('/images/features/make/dec-375.svg');
 		position: absolute;
 		top: -130px;
 		left: 205px;
@@ -216,7 +216,7 @@ const Second = styled.div`
 	}
 
 	&::after {
-		content: url('images/features/make/dots-375.svg');
+		content: url('/images/features/make/dots-375.svg');
 		position: absolute;
 		bottom: 33px;
 		left: -20px;
@@ -227,13 +227,13 @@ const Second = styled.div`
 		height: 490.37px;
 
 		&::before {
-			content: url('images/features/make/dec.svg');
+			content: url('/images/features/make/dec.svg');
 			top: -185px;
 			left: 289px;
 		}
 
 		&::after {
-			content: url('images/features/make/dots.svg');
+			content: url('/images/features/make/dots.svg');
 			bottom: 33px;
 			left: -20px;
 		}
