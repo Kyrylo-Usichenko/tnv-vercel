@@ -364,17 +364,13 @@ const AppImg = styled.img`
 	@media (min-width: 768px) {
 		width: 288px;
 		height: auto;
-		right: -9px;
-		bottom: -30px;
+		left: 32px;
+		top: 32px;
 	}
 
-	@media (min-width: 1024px) {
-		right: -24px;
-	}
-
-	@media (min-width: 1280px) {
-		right: -21px;
-		bottom: 16px;
+	@media (min-width: 1440px) {
+		left: 48px;
+		top: 48px;
 	}
 `;
 
@@ -382,32 +378,32 @@ const Request = styled.div`
 	display: flex;
 	gap: 4.5px;
 	position: absolute;
-	top: 119px;
+	top: 45px;
 	right: -8px;
 
 	@media (min-width: 768px) {
-		top: 157px;
-		right: 110px;
+		top: 68px;
+		right: -5px;
 	}
 
 	@media (min-width: 1024px) {
-		top: 159px;
-		right: 185px;
+		top: 73px;
+		right: 52px;
 	}
 
 	@media (min-width: 1280px) {
-		top: 181px;
-		right: 216px;
+		top: 87px;
+		right: 45px;
 	}
 
 	@media (min-width: 1440px) {
-		top: 212px;
-		right: 288px;
+		top: 85px;
+		right: 72px;
 	}
 
 	@media (min-width: 1920px) {
-		top: 233px;
-		right: 352px;
+		top: 114px;
+		right: 93px;
 	}
 `;
 
@@ -454,6 +450,7 @@ const Payment = styled.div`
 	border-radius: 10px;
 	border-bottom-left-radius: 0px;
 	padding: 7.5px;
+	box-shadow: 10px 8px 20px -7px rgba(0, 0, 0, 0.1);
 
 	@media (min-width: 768px) {
 		width: 200px;
@@ -595,21 +592,15 @@ const PreviewImgDeco1 = styled.div`
 		&::before {
 			width: 253px;
 			height: 273px;
-			right: -15px;
-			bottom: -40px;
+			left: 80px;
+			top: 75px;
 		}
 	}
 
-	@media (min-width: 1024px) {
+	@media (min-width: 1440px) {
 		&::before {
-			right: -33px;
-		}
-	}
-
-	@media (min-width: 1280px) {
-		&::before {
-			right: -28px;
-			bottom: 4px;
+			left: 95px;
+			top: 90px;
 		}
 	}
 `;
@@ -618,75 +609,69 @@ const PreviewImgDeco2 = styled.div`
 	height: inherit;
 	width: inherit;
 
-	&::before {
-		content: url('/images/features/preview/line-375.svg');
+	&::after {
+		content: url('/images/features/preview/line-r-375.svg');
 		position: absolute;
-		top: 168px;
-		left: 170px;
+		top: 96px;
+		right: 88px;
 	}
 
 	@media (min-width: 768px) {
-		&::before {
-			content: url('/images/features/preview/line-l-768.svg');
-			top: 210px;
-			left: 340px;
-		}
-
 		&::after {
-			content: url('/images/features/preview/line-r-768.svg');
+			content: url('/images/features/preview/line-r.svg');
 			position: absolute;
-			top: 222px;
-			right: 175px;
+			top: 130px;
+			right: 102px;
 		}
 	}
 
 	@media (min-width: 1024px) {
 		&::before {
-			content: url('/images/features/preview/line-l-1024.svg');
-			top: 212px;
-			left: 473px;
+			content: url('/images/features/preview/line-l.svg');
+			position: absolute;
+			top: 105px;
+			left: 161px;
 		}
 
 		&::after {
-			content: url('/images/features/preview/line-r-1024.svg');
-			top: 226px;
-			right: 265px;
+			top: 135px;
+			right: 160px;
 		}
 	}
 
 	@media (min-width: 1280px) {
 		&::before {
-			top: 238px;
-			left: 513px;
+			top: 132px;
+			left: 205px;
 		}
 
 		&::after {
-			top: 253px;
-			right: 268px;
+			top: 155px;
+			right: 175px;
 		}
 	}
 
 	@media (min-width: 1440px) {
 		&::before {
-			top: 272px;
-			left: 600px;
+			top: 139px;
+			left: 278px;
 		}
 
 		&::after {
-			top: 285px;
-			right: 269px;
+			top: 153px;
+			right: 200px;
 		}
 	}
 
 	@media (min-width: 1920px) {
 		&::before {
-			top: 292px;
-			left: 657px;
+			top: 178px;
+			left: 337px;
 		}
 
 		&::after {
-			content: url('/images/features/preview/line-r-1920.svg');
-			top: 306px;
+			top: 182px;
+			right: 221px;
 		}
 	}
 `;

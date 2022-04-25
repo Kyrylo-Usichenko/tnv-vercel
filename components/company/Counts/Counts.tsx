@@ -1,61 +1,122 @@
-import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
-import styled, { css } from 'styled-components';
+import React, { FC, RefObject, useRef, useState } from 'react';
+import CountUp from 'react-countup';
+import styled from 'styled-components';
 
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 const Counts: FC = () => {
-	const [isShown, setIsShown] = useState(false);
-	const ref = useRef() as RefObject<HTMLParagraphElement>;
-	const entry = useIntersectionObserver(ref, {});
-	const isVisible = !!entry?.isIntersecting;
-
-	useEffect(() => {
-		if (isVisible && !isShown) setIsShown(true);
-	}, [isVisible]);
+	const [isShown01, setIsShown01] = useState(false);
+	const [isShown02, setIsShown02] = useState(false);
+	const [isShown03, setIsShown03] = useState(false);
+	const [isShown04, setIsShown04] = useState(false);
+	const ref01 = useRef() as RefObject<HTMLDivElement>;
+	const ref02 = useRef() as RefObject<HTMLDivElement>;
+	const ref03 = useRef() as RefObject<HTMLDivElement>;
+	const ref04 = useRef() as RefObject<HTMLDivElement>;
+	const entry01 = useIntersectionObserver(ref01, {});
+	const entry02 = useIntersectionObserver(ref02, {});
+	const entry03 = useIntersectionObserver(ref03, {});
+	const entry04 = useIntersectionObserver(ref04, {});
+	const isVisible01 = !!entry01?.isIntersecting;
+	const isVisible02 = !!entry02?.isIntersecting;
+	const isVisible03 = !!entry03?.isIntersecting;
+	const isVisible04 = !!entry04?.isIntersecting;
 
 	return (
 		<Wrapper className='counts'>
-			<Block1 className='block1'>
+			<Block1 ref={ref01} className='block1'>
 				<Block1Dots />
 				<Block1SquareRight />
 				<Block1SquareBottom />
 				<Content>
-					<Count ref={ref}>
-						<CountNumber isAnimated={isVisible} isShown={isShown} num={250} />
+					<Count>
+						{isShown01 ? (
+							250
+						) : isVisible01 ? (
+							<CountUp
+								start={0}
+								end={250}
+								delay={0.2}
+								duration={1.1}
+								preserveValue
+								onEnd={() => setIsShown01(true)}
+							/>
+						) : (
+							0
+						)}
 						<span className='accent'>+</span>
 					</Count>
 					<Title>Team Members</Title>
 				</Content>
 			</Block1>
-			<Block2 className='block2'>
+			<Block2 ref={ref02} className='block2'>
 				<Block2Dots />
 				<Block2SquareLeft />
 				<Block2SquareBottom />
 				<Content>
 					<Count>
-						<CountNumber isAnimated={isVisible} isShown={isShown} num={10} />
+						{isShown02 ? (
+							10
+						) : isVisible02 ? (
+							<CountUp
+								start={0}
+								end={10}
+								delay={0.3}
+								duration={0.7}
+								preserveValue
+								onEnd={() => setIsShown02(true)}
+							/>
+						) : (
+							0
+						)}
 						<span className='accent'>+</span>
 					</Count>
 					<Title>Nationalities</Title>
 				</Content>
 			</Block2>
-			<Block3 className='block3'>
+			<Block3 ref={ref03} className='block3'>
 				<Block3Dots />
 				<Block3Square />
 				<Content>
 					<Count>
-						<CountNumber isAnimated={isVisible} isShown={isShown} num={5000} />
+						{isShown03 ? (
+							5000
+						) : isVisible03 ? (
+							<CountUp
+								start={0}
+								end={5000}
+								delay={0}
+								duration={1.5}
+								preserveValue
+								onEnd={() => setIsShown03(true)}
+							/>
+						) : (
+							0
+						)}
 						<span className='accent'>+</span>
 					</Count>
 					<Title>Businesses</Title>
 				</Content>
 			</Block3>
-			<Block4 className='block4'>
+			<Block4 ref={ref04} className='block4'>
 				<Block4Square />
 				<Block4Dots />
 				<Content>
 					<Count>
-						<CountNumber isAnimated={isVisible} isShown={isShown} num={500} />
+						{isShown04 ? (
+							500
+						) : isVisible04 ? (
+							<CountUp
+								start={0}
+								end={500}
+								delay={0.2}
+								duration={1.2}
+								preserveValue
+								onEnd={() => setIsShown04(true)}
+							/>
+						) : (
+							0
+						)}
 						<span className='accent'>M</span>
 					</Count>
 					<Title>Transactions</Title>
@@ -227,25 +288,6 @@ const Count = styled.p`
 		font-size: 48px;
 		line-height: 59px;
 	}
-`;
-const CountNumber = styled.span<{ isAnimated: boolean; num: number; isShown?: boolean }>`
-	@property --num${({ num }) => num} {
-		syntax: '<integer>';
-		initial-value: ${({ isShown, num }) => (isShown ? num : 0)};
-		inherits: false;
-	}
-
-	${({ isAnimated, num }) =>
-		isAnimated &&
-		css`
-			transition: ${`--num${num}`} 2.5s;
-			counter-set: num var(${`--num${num}`});
-
-			&:after {
-				content: counter(num);
-			}
-			${`--num${num}`}: ${num};
-		`}
 `;
 
 const Title = styled.p`

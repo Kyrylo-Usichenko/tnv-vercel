@@ -1,7 +1,8 @@
 import React, { ChangeEvent, FC, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Circle from '../../common/Circle/Circle';
+
 import { Container } from '../../common/Container/Container';
+import MapComponentFlex from './MapFlex';
 import { useTranslation } from 'react-i18next';
 
 const Smile: FC = () => {
@@ -105,11 +106,9 @@ const Smile: FC = () => {
 						<Inner>
 							<TitleWrapper>
 								<Title>{t('main:formTitle')}</Title>
-								<Map
-									src='images/main/formFilling/map.png'
-									srcSet='images/main/formFilling/map@2x.png 2x'
-									alt='map of asia'
-								/>
+								<MapBox>
+									<MapComponentFlex />
+								</MapBox>
 							</TitleWrapper>
 
 							<FormWrapper>
@@ -160,19 +159,34 @@ const Smile: FC = () => {
 											<ModalInputError>Invalid phone number</ModalInputError>
 										) : null}
 									</ModlaLabel>
-									{loading === 'loading' ? (
-										<Circle />
-									) : loading === 'error' ? (
-										<Indicate>
-											<img src='images/features/modal/error.svg' alt='error' />
-										</Indicate>
-									) : loading === 'success' ? (
-										<Indicate>
-											<img src='images/features/modal/success.svg' alt='success' />
-										</Indicate>
-									) : (
-										<Button>{t('main:formButton')}</Button>
-									)}
+									<Button type='submit' loaded={loading !== 'idle'}>
+										{t('main:formButton')}
+										<StyledSvg xmlns='http://www.w3.org/2000/svg' loaded={loading !== 'idle'}>
+											<g>
+												<ellipse
+													ry='23.5'
+													rx='23.5'
+													cy='24'
+													cx='24'
+													strokeWidth='1'
+													stroke='transparent'
+													fill='transparent'
+												/>
+												<StyledEllipse
+													ry='23.5'
+													rx='23.5'
+													cy='24'
+													cx='24'
+													strokeWidth='1'
+													stroke='red'
+													fill='transparent'
+													loaded={loading !== 'idle'}
+												/>
+											</g>
+										</StyledSvg>
+										{loading === 'success' ? <Success></Success> : null}
+										{loading === 'error' ? <Error></Error> : null}
+									</Button>
 									<Spam>
 										{t('main:formUnderButton')}
 										<Img src='images/main/formFilling/hands.svg' alt='' />
@@ -198,12 +212,15 @@ const Wrapper = styled.div`
 	border-radius: 0 0 50px 0;
 	margin-right: 0px;
 
+	@media (min-width: 415px) {
+		height: 1155px;
+	}
 	@media (min-width: 768px) {
-		height: 1270px;
+		height: 1350px;
 	}
 
 	@media (min-width: 1023px) {
-		height: 850px;
+		height: 930px;
 	}
 
 	@media (min-width: 1280.5px) {
@@ -259,6 +276,8 @@ const Inner = styled.div`
 `;
 
 const Title = styled.h5`
+	position: relative;
+	z-index: 3;
 	font-family: 'Gilroy';
 	font-style: normal;
 	font-weight: 600;
@@ -299,18 +318,20 @@ const TitleWrapper = styled.div`
 	position: relative;
 `;
 
-const Map = styled.img`
+const MapBox = styled.div`
 	position: absolute;
-	left: -243px;
-	top: -87px;
-	z-index: -1;
-	width: 710px;
-	top: 545px;
+	width: 620px;
 	left: -305px;
+	top: 520px;
 
+	@media (min-width: 415px) {
+		width: 710px;
+		top: 470px;
+		left: -310px;
+	}
 	@media (min-width: 768px) {
 		width: auto;
-		top: 390px;
+		top: 370px;
 		left: -474px;
 	}
 
@@ -342,6 +363,7 @@ const FormWrapper = styled.div`
 	border-radius: 36px;
 	padding: 16px;
 	position: relative;
+	z-index: 2;
 
 	@media (min-width: 768px) {
 		padding: 32px;
@@ -460,11 +482,14 @@ const ModalInputError = styled.p`
 	bottom: -17px;
 `;
 
-const Button = styled.button`
+const Button = styled.button<{ loaded?: boolean }>`
+	--btn-width: 48px;
+
 	display: block;
+	position: relative;
 	background: #ff474d;
-	border-radius: 18px;
-	width: 180px;
+	border-radius: ${({ loaded }) => (loaded ? '50%' : '18px')};
+	width: ${({ loaded }) => (loaded ? 'var(--btn-width)' : '180px')};
 	height: 48px;
 	padding: 0;
 	margin: 0 auto 14px auto;
@@ -472,27 +497,50 @@ const Button = styled.button`
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 20px;
-	color: #ffffff;
+	color: ${({ loaded }) => (loaded ? 'transparent' : '#ffffff')};
 	border: none;
 	cursor: pointer;
 	transition: all 0.3s ease;
+	animation: ${({ loaded }) => (loaded ? 'btnLoader 2s ease' : 'none')};
 
 	&:hover {
 		background-color: var(--text-primary-hover);
 		box-shadow: 8px 8px 20px 0 var(--shadow-color);
 	}
 
-	&:focus {
-		background-color: var(--text-primary);
-		box-shadow: 8px 4px 20px 0 var(--shadow-color);
+	@keyframes btnLoader {
+		20% {
+			width: var(--btn-width);
+			border-radius: 50%;
+			color: transparent;
+		}
+		40% {
+			width: var(--btn-width);
+			border-radius: 50%;
+			color: transparent;
+			background-color: transparent;
+		}
+		60% {
+			width: var(--btn-width);
+			border-radius: 50%;
+			color: transparent;
+			background-color: #ff474d;
+		}
+		100% {
+			width: var(--btn-width);
+			border-radius: 50%;
+			color: transparent;
+			background-color: #ff474d;
+		}
 	}
 
 	@media (min-width: 1440.5px) {
+		--btn-width: 56px;
+
 		font-size: 20px;
 		line-height: 25px;
-		width: 210px;
+		width: ${({ loaded }) => (loaded ? 'var(--btn-width)' : '210px')};
 		height: 56px;
-		border-radius: 18px;
 	}
 `;
 
@@ -528,19 +576,71 @@ const Dots = styled.img`
 	}
 `;
 
+const StyledSvg = styled.svg<{ loaded: boolean }>`
+	--btn-width: 48px;
+
+	position: absolute;
+	top: 49%;
+	left: 51%;
+	width: var(--btn-width);
+	height: var(--btn-width);
+	transform: translate(-50%, -50%) rotate(-90deg);
+	opacity: ${({ loaded }) => (loaded ? '1' : '0')};
+
+	@media (min-width: 1440.5px) {
+		--btn-width: 56px;
+		left: 50%;
+		top: 50%;
+	}
+`;
+
+const StyledEllipse = styled.ellipse<{ loaded: boolean }>`
+	stroke-dasharray: 180;
+	stroke-dashoffset: ${({ loaded }) => (loaded ? '0' : '-180')};
+	transition: all 0.5s ease 0.3s;
+
+	@media (min-width: 1440.5px) {
+		ry: 49%;
+		rx: 49%;
+		cy: 50%;
+		cx: 50%;
+	}
+`;
+
 const Indicate = styled.div`
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #ff474d;
 	height: 48px;
 	width: 48px;
 	border-radius: 50%;
-	margin: 0 auto 14px auto;
+	line-height: 0;
+	background-color: transparent;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+
+	&::before {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		width: 100%;
+	}
 
 	@media (min-width: 1440.5px) {
 		height: 56px;
 		width: 56px;
+	}
+`;
+
+const Success = styled(Indicate)`
+	&::before {
+		content: url('/images/features/modal/success.svg');
+	}
+`;
+
+const Error = styled(Indicate)`
+	&::before {
+		content: url('/images/features/modal/error.svg');
 	}
 `;
 
