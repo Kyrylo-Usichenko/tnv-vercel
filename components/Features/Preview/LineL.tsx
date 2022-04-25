@@ -913,7 +913,7 @@ function createCss() {
 const Svg = styled.svg`
 	display: none;
 
-	${createCss()};
+	/* ${createCss()}; */
 
 	@keyframes lineLAnim {
 		from {
@@ -948,7 +948,7 @@ const Svg = styled.svg`
 `;
 
 const Rect = styled.rect`
-	opacity: 0;
+	/* opacity: 0; */
 `;
 
 export default LineL;

@@ -366,7 +366,7 @@ const AppImg = styled.img`
 	border-radius: 0;
 	width: 201px;
 	height: auto;
-	opacity: 0;
+	/* opacity: 0; */
 	/* animation: appImgAnim 1s ease-in; */
 	animation-fill-mode: forwards;
 
@@ -398,7 +398,7 @@ const Request = styled.div`
 	position: absolute;
 	top: 45px;
 	right: -8px;
-	opacity: 0;
+	/* opacity: 0; */
 	/* animation: requestAnim 1s ease-in; */
 	animation-fill-mode: forwards;
 

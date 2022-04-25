@@ -557,7 +557,7 @@ const Svg = styled.svg`
 	right: 84px;
 	width: 80px;
 
-	${createCss()};
+	//${createCss()};
 
 	@keyframes lineRAnim {
 		from {
@@ -596,7 +596,7 @@ const Svg = styled.svg`
 `;
 
 const Rect = styled.rect`
-	opacity: 0;
+	/* opacity: 0; */
 `;
 
 export default LineR;
