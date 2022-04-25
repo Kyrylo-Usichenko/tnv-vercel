@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import Image from 'next/image';
 import styled from 'styled-components';
 
 import { FeaturesCon } from '../../common/Container/Container';
@@ -12,11 +13,14 @@ const Supercharge: FC = () => {
 			<FlexCon>
 				<FullCon>
 					<FullConDec1>
-						<FullConApp
-							src='/images/features/supercharge/1.jpg'
-							srcSet='/images/features/supercharge/1@2x.jpg 2x'
-							alt='app'
-						/>
+						<FullConApp>
+							<Image
+								src='/images/features/supercharge/1@2x.jpg'
+								layout='fill'
+								objectFit='contain'
+								alt='app'
+							/>
+						</FullConApp>
 					</FullConDec1>
 				</FullCon>
 				<FlexConInfo>
@@ -330,8 +334,9 @@ const MobileApp = styled.img`
 	}
 `;
 
-const FullConApp = styled.img`
+const FullConApp = styled.div`
 	display: none;
+	position: relative;
 
 	@media (min-width: 768px) {
 		display: block;
@@ -351,12 +356,12 @@ const FullConApp = styled.img`
 	}
 
 	@media (min-width: 1000px) {
-		margin-right: 0;
+		margin-right: -20px;
 	}
 
 	@media (min-width: 1024px) {
-		width: auto;
-		height: auto;
+		width: 653px;
+		height: 460px;
 		margin-right: -188px;
 	}
 
@@ -386,7 +391,7 @@ const FullConDec1 = styled.div`
 		height: 499px;
 		border-radius: 51px;
 		transform: rotate(-45deg);
-		background-color: #3a3a3a;
+		background-color: #3f3f3f;
 		position: absolute;
 		top: -242px;
 		left: -349px;
@@ -394,7 +399,7 @@ const FullConDec1 = styled.div`
 
 	&::after {
 		content: '';
-		background-color: #3a3a3a;
+		background-color: #3f3f3f;
 		width: 308px;
 		height: 308px;
 		border-radius: 31px;

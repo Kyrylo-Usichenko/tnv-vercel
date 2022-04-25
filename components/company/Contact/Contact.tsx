@@ -306,7 +306,7 @@ const DotsLeft = styled.div`
 	bottom: -143px;
 	width: 377.43px;
 	height: 255.35px;
-	background: url('images/company/Contact/dotsLeft.svg');
+	background: url('/images/company/Contact/dotsLeft.svg');
 	z-index: -1;
 	@media (min-width: 375px) {
 		bottom: -169px;
@@ -335,7 +335,7 @@ const LeftSquareLeft = styled.div`
 	top: 0px;
 	width: 195px;
 	height: 280px;
-	background: url('images/company/Contact/leftSquareLeft.svg') no-repeat;
+	background: url('/images/company/Contact/leftSquareLeft.svg') no-repeat;
 	z-index: -1;
 	@media (min-width: 375px) {
 		display: none;
@@ -358,7 +358,7 @@ const LeftSquareBottom = styled.div`
 	bottom: 0px;
 	width: 276px;
 	height: 98px;
-	background: url('images/company/Contact/leftSquareBot.svg') no-repeat;
+	background: url('/images/company/Contact/leftSquareBot.svg') no-repeat;
 	z-index: -1;
 	@media (min-width: 375px) {
 		right: -131px;
@@ -366,7 +366,7 @@ const LeftSquareBottom = styled.div`
 		bottom: 20px;
 	}
 	@media (min-width: 768px) {
-		background: url('images/company/Contact/leftSquareBot768.svg') no-repeat;
+		background: url('/images/company/Contact/leftSquareBot768.svg') no-repeat;
 		width: 219px;
 		height: 221px;
 		transform: rotate(0deg);
@@ -377,13 +377,13 @@ const LeftSquareBottom = styled.div`
 		bottom: -129px;
 	}
 	@media (min-width: 1440px) {
-		background: url('images/company/Contact/leftSquareBot1440.svg') no-repeat;
+		background: url('/images/company/Contact/leftSquareBot1440.svg') no-repeat;
 
 		bottom: -145px;
 		right: 44px;
 	}
 	@media (min-width: 1920px) {
-		background: url('images/company/Contact/leftSquareBot1440.svg') no-repeat;
+		background: url('/images/company/Contact/leftSquareBot1440.svg') no-repeat;
 
 		bottom: -149px;
 		right: 74px;
@@ -396,7 +396,7 @@ const LeftDots = styled.div`
 	top: 0px;
 	width: 218px;
 	height: 164.97px;
-	background: url('images/company/Contact/leftDots.svg') no-repeat;
+	background: url('/images/company/Contact/leftDots.svg') no-repeat;
 	z-index: -1;
 	@media (min-width: 375px) {
 		left: -166px;
@@ -412,7 +412,7 @@ const MiddleSquareLeft = styled.div`
 	top: 0px;
 	width: 181px;
 	height: 220px;
-	background: url('images/company/Contact/midSquareLeft.svg') no-repeat;
+	background: url('/images/company/Contact/midSquareLeft.svg') no-repeat;
 	z-index: -1;
 	@media (min-width: 375px) {
 		left: -138px;
@@ -432,11 +432,11 @@ const MiddleSquareBottom = styled.div`
 	bottom: 0px;
 	width: 276px;
 	height: 98px;
-	background: url('images/company/Contact/midSquareRight.svg') no-repeat;
+	background: url('/images/company/Contact/midSquareRight.svg') no-repeat;
 	z-index: -1;
 
 	@media (min-width: 375px) {
-		background: url('images/company/Contact/midSquareRight375.svg') no-repeat;
+		background: url('/images/company/Contact/midSquareRight375.svg') no-repeat;
 		right: 0;
 		bottom: 0;
 		width: 185px;
@@ -448,7 +448,7 @@ const MiddleSquareBottom = styled.div`
 		bottom: 0px;
 		width: 384px;
 		height: 118px;
-		background: url('images/company/Contact/midSquareRight768.svg') no-repeat;
+		background: url('/images/company/Contact/midSquareRight768.svg') no-repeat;
 	}
 
 	@media (min-width: 1024px) {
@@ -462,7 +462,7 @@ const MiddleSquareBottom = styled.div`
 	@media (min-width: 1440px) {
 		right: 0;
 		bottom: 0;
-		background: url('images/company/Contact/midSquareRight1920.svg') no-repeat;
+		background: url('/images/company/Contact/midSquareRight1920.svg') no-repeat;
 	}
 `;
 
@@ -472,7 +472,7 @@ const MiddleDots = styled.div`
 	top: 0px;
 	width: 158px;
 	height: 149px;
-	background: url('images/company/Contact/midDots.svg') no-repeat;
+	background: url('/images/company/Contact/midDots.svg') no-repeat;
 	z-index: -1;
 	@media (min-width: 375px) {
 		display: none;
@@ -498,10 +498,10 @@ const RightSquareLeft = styled.div`
 	bottom: 0px;
 	width: 151px;
 	height: 196px;
-	background: url('images/company/Contact/rightSquareLeft.svg') no-repeat;
+	background: url('/images/company/Contact/rightSquareLeft.svg') no-repeat;
 	z-index: -1;
 	@media (min-width: 768px) {
-		background: url('images/company/Contact/rightSquareLeft768.svg') no-repeat;
+		background: url('/images/company/Contact/rightSquareLeft768.svg') no-repeat;
 		left: 0;
 		bottom: 0;
 		width: 289px;
@@ -513,7 +513,7 @@ const RightSquareLeft = styled.div`
 		bottom: 0px;
 		width: 151px;
 		height: 196px;
-		background: url('images/company/Contact/rightSquareLeft.svg') no-repeat;
+		background: url('/images/company/Contact/rightSquareLeft.svg') no-repeat;
 		z-index: -1;
 	}
 `;
@@ -524,7 +524,7 @@ const RightSquareBottom = styled.div`
 	top: 0px;
 	width: 220px;
 	height: 247px;
-	background: url('images/company/Contact/rightSquareRight.svg') no-repeat;
+	background: url('/images/company/Contact/rightSquareRight.svg') no-repeat;
 	z-index: -1;
 	@media (min-width: 375px) {
 		display: block;
@@ -532,19 +532,19 @@ const RightSquareBottom = styled.div`
 		bottom: 0;
 	}
 	@media (min-width: 768px) {
-		background: url('images/company/Contact/rightSquareRight768.svg') no-repeat;
+		background: url('/images/company/Contact/rightSquareRight768.svg') no-repeat;
 
 		display: block;
 		right: 0px;
 		bottom: 0;
 	}
 	@media (min-width: 1024px) {
-		background: url('images/company/Contact/rightSquareRight.svg') no-repeat;
+		background: url('/images/company/Contact/rightSquareRight.svg') no-repeat;
 		right: -94px;
 		bottom: 0;
 	}
 	@media (min-width: 1440px) {
-		background: url('images/company/Contact/rightSquareRight.svg') no-repeat;
+		background: url('/images/company/Contact/rightSquareRight.svg') no-repeat;
 		right: -41px;
 		bottom: 0;
 	}
@@ -556,7 +556,7 @@ const RightDots = styled.div`
 	top: 0px;
 	width: 218px;
 	height: 164.97px;
-	background: url('images/company/Contact/rightDots.svg') no-repeat;
+	background: url('/images/company/Contact/rightDots.svg') no-repeat;
 	z-index: -1;
 	@media (min-width: 375px) {
 		display: none;

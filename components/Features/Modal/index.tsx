@@ -117,7 +117,13 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 			<FormWrapper modalActive={modalActive}>
 				<ModalContent modalActive={modalActive}>
 					<ModalClose type='button' onClick={closeModal} className='modal-btn'>
-						<img src='/images/features/modal/close.svg' alt='close' className='modal-btn' loading='lazy' />
+						<Image
+							src='/images/features/modal/close.svg'
+							alt='close'
+							width={12}
+							height={12}
+							className='modal-btn'
+						/>
 					</ModalClose>
 					{result ? (
 						<ModalTitle>Thank you!</ModalTitle>
@@ -204,12 +210,30 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 										/>
 									</g>
 								</StyledSvg>
-								{loading === 'success' ? <Success></Success> : null}
-								{loading === 'error' ? <Error></Error> : null}
+								{loading === 'success' ? (
+									<Indicate>
+										<Image
+											src='/images/features/modal/success.svg'
+											alt='success'
+											width={28}
+											height={22}
+										/>
+									</Indicate>
+								) : null}
+								{loading === 'error' ? (
+									<Indicate>
+										<Image
+											src='/images/features/modal/error.svg'
+											alt='error'
+											width={20}
+											height={20}
+										/>
+									</Indicate>
+								) : null}
 							</ModalButton>
 							<ModalSpam>
 								No spam, promise{' '}
-								<img src='/images/main/formFilling/hands.svg' alt='hands' loading='lazy' />
+								<Image src='/images/main/formFilling/hands.svg' alt='hands' width={16} height={18} />
 							</ModalSpam>
 						</ModalForm>
 					)}
@@ -468,6 +492,9 @@ const StyledEllipse = styled.ellipse<{ loaded: boolean }>`
 `;
 
 const Indicate = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	height: 48px;
 	width: 48px;
 	border-radius: 50%;
@@ -478,29 +505,9 @@ const Indicate = styled.div`
 	left: 50%;
 	transform: translateX(-50%);
 
-	&::before {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 100%;
-		width: 100%;
-	}
-
 	@media (min-width: 1920px) {
 		height: 56px;
 		width: 56px;
-	}
-`;
-
-const Success = styled(Indicate)`
-	&::before {
-		content: url('images/features/modal/success.svg');
-	}
-`;
-
-const Error = styled(Indicate)`
-	&::before {
-		content: url('images/features/modal/error.svg');
 	}
 `;
 

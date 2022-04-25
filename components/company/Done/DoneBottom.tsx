@@ -6,7 +6,7 @@ const DoneBottom: FC = () => {
 		<Wrapper>
 			<WrapperCon>
 				<Black>
-					<BlackST src='images/company/Done/blackST.svg' loading='lazy' />
+					<BlackST src='/images/company/Done/blackST.svg' loading='lazy' />
 					<Content>
 						<Title>2020</Title>
 						<List>
@@ -15,19 +15,19 @@ const DoneBottom: FC = () => {
 							<Item>Adapt to Covid-19. Triple our team size to 100. Activate 1000+ new businesses</Item>
 						</List>
 					</Content>
-					<BlackDots src='images/company/Done/black-dots.svg' loading='lazy' />
-					<BlackSB src='images/company/Done/blackSB.svg' loading='lazy' />
+					<BlackDots src='/images/company/Done/black-dots.svg' loading='lazy' />
+					<BlackSB src='/images/company/Done/blackSB.svg' loading='lazy' />
 				</Black>
 				<RedSide>
 					<SquareRT />
-					<DotsRT src='images/company/Done/dotsRT.svg' loading='lazy' />
+					<DotsRT src='/images/company/Done/dotsRT.svg' loading='lazy' />
 					<img
-						src='images/company/Done/ipad.png'
-						srcSet='images/company/Done/ipad@2x.png 2x'
+						src='/images/company/Done/ipad.png'
+						srcSet='/images/company/Done/ipad@2x.png 2x'
 						alt='ipad'
 						loading='lazy'
 					/>
-					<DotsRB src='images/company/Done/dotsRB.svg' loading='lazy' />
+					<DotsRB src='/images/company/Done/dotsRB.svg' loading='lazy' />
 					<SquareRB />
 				</RedSide>
 				<RedWrapper>
@@ -36,22 +36,22 @@ const DoneBottom: FC = () => {
 						<RedTitle>Dark mode too!</RedTitle>
 						<picture>
 							<source
-								srcSet='images/company/Done/phone-375.png 1x, images/company/Done/phone-375@2x.png 2x'
+								srcSet='/images/company/Done/phone-375.png 1x, /images/company/Done/phone-375@2x.png 2x'
 								media='(min-width: 1440px)'
 							/>
 							<source
-								srcSet='images/company/Done/phone-1024.png 1x, images/company/Done/phone-1024@2x.png 2x'
+								srcSet='/images/company/Done/phone-1024.png 1x, /images/company/Done/phone-1024@2x.png 2x'
 								media='(min-width: 1024px)'
 							/>
 							<Phone
-								src='images/company/Done/phone-375.png'
-								srcSet='images/company/Done/phone-375@2x.png 2x'
+								src='/images/company/Done/phone-375.png'
+								srcSet='/images/company/Done/phone-375@2x.png 2x'
 								alt='app in phone'
 								loading='lazy'
 							/>
 						</picture>
 						<RedSB />
-						<RedDots src='images/company/Done/dots-red.svg' loading='lazy' />
+						<RedDots src='/images/company/Done/dots-red.svg' loading='lazy' />
 					</Red>
 				</RedWrapper>
 				<Grey>
@@ -67,9 +67,9 @@ const DoneBottom: FC = () => {
 						</List>
 					</Content>
 					<GreySB />
-					<GreyDots src='images/company/Done/dots-grey.svg' loading='lazy' />
+					<GreyDots src='/images/company/Done/dots-grey.svg' loading='lazy' />
 				</Grey>
-				<DotsB src='images/company/Done/dots-b.svg' loading='lazy' />
+				<DotsB src='/images/company/Done/dots-b.svg' loading='lazy' />
 			</WrapperCon>
 		</Wrapper>
 	);
@@ -299,7 +299,7 @@ const Item = styled.li`
 	}
 
 	&::after {
-		content: url('images/company/Done/min-rec.svg');
+		content: url('/images/company/Done/min-rec.svg');
 		position: absolute;
 		left: -3px;
 		top: -5px;
