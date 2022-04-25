@@ -184,6 +184,10 @@ const Point = styled.div<{ name: string; top: number; left: number }>`
 			visibility: visible;
 		}
 	}
+
+	@media (max-width: 767px) {
+		top: ${({ top }) => top - 4}%;
+	}
 `;
 
 const HongKong = styled.div`
@@ -192,6 +196,12 @@ const HongKong = styled.div`
 	left: 56.45%;
 	width: 0.9%;
 	height: 1.3%;
+	& > div {
+		@media (max-width: 767px) {
+			top: -245%;
+			left: -30%;
+		}
+	}
 `;
 const Indonesia = styled.div`
 	position: absolute;
@@ -202,8 +212,8 @@ const Indonesia = styled.div`
 `;
 const Philippines = styled.div`
 	position: absolute;
-	top: 52.5%;
-	left: 63.1%;
+	top: 52.55%;
+	left: 63.2%;
 	width: 9.3%;
 	height: 25%;
 `;
@@ -213,6 +223,13 @@ const Singapore = styled.div`
 	left: 47.8%;
 	width: 1.5%;
 	height: 1%;
+
+	& > div {
+		@media (max-width: 767px) {
+			top: -293%;
+			left: -3%;
+		}
+	}
 `;
 const SingaporeStartAnimation = styled(Singapore)`
 	z-index: -1;
