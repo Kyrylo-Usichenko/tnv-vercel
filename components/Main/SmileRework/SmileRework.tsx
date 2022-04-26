@@ -91,7 +91,6 @@ const Smile: FC = () => {
 							<PinkWrapper>
 								<PinkBig />
 								<PinkSmall />
-								{/* <Pink> */}
 								<Red>
 									<Bardo>
 										<Content>
@@ -103,7 +102,6 @@ const Smile: FC = () => {
 										</Content>
 									</Bardo>
 								</Red>
-								{/* </Pink> */}
 							</PinkWrapper>
 						</FadeIn>
 					) : (
@@ -310,62 +308,42 @@ const PinkWrapper = styled.div`
 
 const PinkBig = styled.div`
 	position: absolute;
-	width: 343px; // encrease for animation 243px + 100px
+	width: 343px; // increase for animation 243px + 100px
 	height: 343px;
 	background: rgba(251, 36, 43, 0.3);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-radius: 17.7451px;
-	animation: ${pulseShape} 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+	animation: ${pulseShape} 2.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
 	@media (min-width: 768px) {
-		width: 447px; // encrease for animation 347px + 100px
+		width: 447px; // increase for animation 347px + 100px
 		height: 447px;
 		border-radius: 25.3502px;
 	}
 	@media (min-width: 1024px) {
-		width: 427px; // encrease for animation 327px + 100px
+		width: 427px; // increase for animation 327px + 100px
 		height: 427px;
 		border-radius: 24.0543px;
 	}
 `;
-// const Pink = styled.div`
-// 	width: 243px;
-// 	height: 243px;
-// 	background: rgba(251, 36, 43, 0.3);
-// 	display: flex;
-// 	justify-content: center;
-// 	align-items: center;
-// 	border-radius: 17.7451px;
-// 	animation: ${pulseShape} 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-// 	@media (min-width: 768px) {
-// 		width: 347px;
-// 		height: 347px;
-// 		border-radius: 25.3502px;
-// 	}
-// 	@media (min-width: 1024px) {
-// 		width: 327px;
-// 		height: 327px;
-// 		border-radius: 24.0543px;
-// 	}
-// `;
 
 const PinkSmall = styled.div`
 	position: absolute;
-	width: 265px; // encrease for animation 215px + 50px
-	height: 265px;
+	width: 215px;
+	height: 215px;
 	background: rgba(251, 36, 43, 0.4);
 	border-radius: 17.7451px;
-	animation: ${pulseShape} 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+	animation: ${pulse} 2.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
 
 	@media (min-width: 768px) {
-		width: 358px; // encrease for animation 308px + 50px
-		height: 358px;
+		width: 308px;
+		height: 308px;
 		border-radius: 25.3502px;
 	}
 	@media (min-width: 1024px) {
-		width: 342px; // encrease for animation 292px + 50px
-		height: 342px;
+		width: 292px;
+		height: 292px;
 		border-radius: 24.0543px;
 	}
 `;
@@ -377,7 +355,7 @@ const Red = styled.div`
 	justify-content: center;
 	align-items: center;
 	border-radius: 17.7451px;
-	animation: ${pulse} 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
+	// animation: ${pulse} 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
 	@media (min-width: 768px) {
 		width: 308px;
 		height: 308px;
