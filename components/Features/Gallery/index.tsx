@@ -32,7 +32,7 @@ const Gallery: FC = () => {
 										</FadeIn>
 									</Img1>
 									<Img3>
-										<FadeIn duration={500} delay={800}>
+										<FadeIn duration={500} delay={1100}>
 											<GalleryImg
 												src='/images/features/gallery/3@2x.jpg'
 												layout='fill'
@@ -44,7 +44,7 @@ const Gallery: FC = () => {
 								</GalleryColumn>
 								<GalleryColumn>
 									<Img2>
-										<FadeIn duration={500} delay={500}>
+										<FadeIn duration={500} delay={800}>
 											<GalleryImg
 												src='/images/features/gallery/2@2x.jpg'
 												layout='fill'
@@ -54,7 +54,7 @@ const Gallery: FC = () => {
 										</FadeIn>
 									</Img2>
 									<Img4>
-										<FadeIn duration={500} delay={1100}>
+										<FadeIn duration={500} delay={500}>
 											<GalleryImg
 												src='/images/features/gallery/4@2x.jpg'
 												layout='fill'
