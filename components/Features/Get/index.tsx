@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import styled from 'styled-components';
 
 import { FeaturesCon } from '../../common/Container/Container';
@@ -15,16 +16,26 @@ const Get = () => {
 					<GetText>{t('features:getSmarterText')}</GetText>
 					<First>
 						<Second>
-							<LeftImg
-								src='/images/features/get/left.png'
-								srcSet='/images/features/get/left@2x.png 2x'
-								alt='app'
-							/>
-							<RightImg
-								src='/images/features/get/right.png'
-								srcSet='/images/features/get/right@2x.png 2x'
-								alt='app'
-							/>
+							<LeftImgWrap>
+								<LeftImg>
+									<Image
+										src='/images/features/get/left@2x.png'
+										layout='fill'
+										objectFit='contain'
+										alt='app'
+									/>
+								</LeftImg>
+							</LeftImgWrap>
+							<RightImgWrap>
+								<RightImg>
+									<Image
+										src='/images/features/get/right@2x.png'
+										layout='fill'
+										objectFit='contain'
+										alt='app'
+									/>
+								</RightImg>
+							</RightImgWrap>
 						</Second>
 					</First>
 				</GetCon>
@@ -245,47 +256,71 @@ const Second = styled.div`
 	}
 `;
 
-const LeftImg = styled.img`
+const LeftImgWrap = styled.div`
 	position: absolute;
 	transform: rotate(45deg);
 	top: -9px;
 	left: -31px;
-	width: auto;
-	height: 320px;
 	z-index: 2;
 
 	@media (min-width: 768px) {
 		top: -9px;
 		left: -109px;
-		height: 430px;
 	}
 
 	@media (min-width: 1024px) {
 		top: -25px;
 		left: -93px;
-		height: auto;
 	}
 `;
 
-const RightImg = styled.img`
+const LeftImg = styled.div`
+	position: relative;
+	width: 202px;
+	height: 320px;
+
+	@media (min-width: 768px) {
+		width: 271px;
+		height: 430px;
+	}
+
+	@media (min-width: 1024px) {
+		width: 288px;
+		height: 455px;
+	}
+`;
+
+const RightImgWrap = styled.div`
 	position: absolute;
 	transform: rotate(45deg);
 	top: 28px;
 	right: -78px;
-	width: auto;
-	height: 410px;
 	z-index: 2;
 
 	@media (min-width: 768px) {
 		top: -37px;
 		right: -122px;
-		height: 650px;
 	}
 
 	@media (min-width: 1024px) {
 		top: -4px;
 		right: -131px;
-		height: auto;
+	}
+`;
+
+const RightImg = styled.div`
+	position: relative;
+	width: 318px;
+	height: 410px;
+
+	@media (min-width: 768px) {
+		width: 504px;
+		height: 650px;
+	}
+
+	@media (min-width: 1024px) {
+		width: 498px;
+		height: 641px;
 	}
 `;
 

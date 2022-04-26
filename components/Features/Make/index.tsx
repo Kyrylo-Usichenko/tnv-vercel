@@ -18,22 +18,26 @@ const Make = () => {
 					</MakeInfo>
 					<First>
 						<Second>
-							<LeftImg>
-								<Image
-									src='/images/features/make/left@2x.png'
-									layout='fill'
-									objectFit='contain'
-									alt='app'
-								/>
-							</LeftImg>
-							<RightImg>
-								<Image
-									src='/images/features/make/right@2x.png'
-									layout='fill'
-									objectFit='contain'
-									alt='app'
-								/>
-							</RightImg>
+							<LeftImgWrap>
+								<LeftImg>
+									<Image
+										src='/images/features/make/left@2x.png'
+										layout='fill'
+										objectFit='contain'
+										alt='app'
+									/>
+								</LeftImg>
+							</LeftImgWrap>
+							<RightImgWrap>
+								<RightImg>
+									<Image
+										src='/images/features/make/right@2x.png'
+										layout='fill'
+										objectFit='contain'
+										alt='app'
+									/>
+								</RightImg>
+							</RightImgWrap>
 						</Second>
 					</First>
 				</MakeCon>
@@ -258,50 +262,69 @@ const Second = styled.div`
 	}
 `;
 
-const LeftImg = styled.div`
+const LeftImgWrap = styled.div`
 	position: absolute;
 	transform: rotate(45deg);
 	top: -109px;
 	left: 12px;
-	width: 246px;
-	height: 410px;
 	z-index: 2;
 
 	@media (min-width: 768px) {
 		top: -152px;
 		left: 33px;
-		width: 330px;
-		height: 550px;
 	}
 
 	@media (min-width: 1024px) {
 		top: -107px;
 		left: 98px;
-		width: 294px;
-		height: 490px;
 	}
 `;
 
-const RightImg = styled.div`
-	position: absolute;
-	transform: rotate(45deg);
-	top: 94px;
-	right: 43px;
-	width: auto;
+const LeftImg = styled.div`
+	position: relative;
 	width: 246px;
 	height: 410px;
-	z-index: 2;
 
 	@media (min-width: 768px) {
-		top: 149px;
-		right: 64px;
 		width: 330px;
 		height: 550px;
 	}
 
 	@media (min-width: 1024px) {
+		width: 294px;
+		height: 490px;
+	}
+`;
+
+const RightImgWrap = styled.div`
+	position: absolute;
+	transform: rotate(45deg);
+	top: 94px;
+	right: 43px;
+	z-index: 2;
+
+	@media (min-width: 768px) {
+		top: 149px;
+		right: 64px;
+	}
+
+	@media (min-width: 1024px) {
 		top: 157px;
 		right: 53px;
+	}
+`;
+
+const RightImg = styled.div`
+	position: relative;
+	width: 246px;
+	height: 410px;
+
+	@media (min-width: 768px) {
+		width: 330px;
+		height: 550px;
+	}
+
+	@media (min-width: 1024px) {
 		width: 294px;
 		height: 490px;
 	}

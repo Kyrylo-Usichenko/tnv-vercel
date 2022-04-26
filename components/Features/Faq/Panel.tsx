@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { FC } from 'react';
 import styled from 'styled-components';
 
@@ -21,10 +22,11 @@ const Panel: FC<PanelProps> = ({ name, children }) => {
 			<PanelName isclose={isclose}>
 				<PanelTitle>{name}</PanelTitle>
 				<PanelButton type='button' onClick={panelBtnHandler}>
-					<img
+					<Image
 						src={`/images/features/faq/${isclose ? 'open.svg' : 'close.svg'}`}
+						width={20}
+						height={20}
 						alt='open/close'
-						loading='lazy'
 					/>
 				</PanelButton>
 			</PanelName>

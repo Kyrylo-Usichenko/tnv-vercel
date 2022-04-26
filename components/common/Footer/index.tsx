@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import { FeaturesCon } from '../Container/Container';
 import { useTranslation } from 'next-i18next';
+import Image from 'next/image';
 
 type Props = {
 	background?: string | undefined;
@@ -18,8 +19,12 @@ const Footer: FC<Props> = ({ background }) => {
 				<FirstLine>
 					<FirstLineHalf>
 						<FooterFullLogo>
-							<FooterLogo src='/icons/common/logo/logo.svg' alt='octopus' loading='lazy' />
-							<FooterLogoText src='/icons/common/logo/logo-text.svg' alt='tinvio' loading='lazy' />
+							<FooterLogo>
+								<Image src='/icons/common/logo/logo.svg' width={43.55} height={38} alt='octopus' />
+							</FooterLogo>
+							<FooterLogoText>
+								<Image src='/icons/common/logo/logo-text.svg' width={60.2} height={19} alt='tinvio' />
+							</FooterLogoText>
 						</FooterFullLogo>
 						<FirstLineSeparate />
 						<FooterUl>
@@ -41,27 +46,19 @@ const Footer: FC<Props> = ({ background }) => {
 						<Links>
 							<Socials>
 								<Social href={'/'}>
-									<img src='/images/footer/linkedin.svg' alt='linkedin' loading='lazy' />
+									<Image src='/images/footer/linkedin.svg' alt='linkedin' width={32} height={32} />
 								</Social>
 								<Social href={'/'}>
-									<img src='/images/footer/inst.svg' alt='instagram' loading='lazy' />
+									<Image src='/images/footer/inst.svg' alt='instagram' width={32} height={32} />
 								</Social>
 							</Socials>
 							<FirstLineSeparate />
 							<Stores>
 								<Store href={'/'}>
-									<img
-										src='/images/footer/gp.png'
-										srcSet='/images/footer/gp@2x.png 2x'
-										alt='google play'
-									/>
+									<Image src='/images/footer/gp@2x.png' width={113} height={40} alt='google play' />
 								</Store>
 								<Store href={'/'}>
-									<img
-										src='/images/footer/as.png'
-										srcSet='/images/footer/as@2x.png 2x'
-										alt='google play'
-									/>
+									<Image src='/images/footer/as@2x.png' width={113} height={40} alt='google play' />
 								</Store>
 							</Stores>
 						</Links>
@@ -154,16 +151,14 @@ const FooterFullLogo = styled.div`
 	}
 `;
 
-const FooterLogo = styled.img`
-	width: 43.55px;
-	height: 38px;
+const FooterLogo = styled.div`
 	margin-right: 7.4px;
 `;
 
-const FooterLogoText = styled.img`
-	width: 60.2px;
-	height: 19px;
-	margin-right: 24px;
+const FooterLogoText = styled.div`
+	@media (min-width: 1024px) {
+		margin-right: 24px;
+	}
 `;
 
 const FooterUl = styled.ul`
