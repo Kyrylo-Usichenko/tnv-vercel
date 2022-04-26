@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { RefObject, useRef } from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 
-import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
+import useAnimate from '../../../hooks/useAnimate';
+
+import { FeaturesCon } from '../../common/Container/Container';
+import FadeIn from '../../common/FadeIn/FadeIn';
 
 const Make = () => {
 	const { t } = useTranslation();
+	const ref = useRef() as RefObject<HTMLDivElement>;
+	const isShow = useAnimate(ref);
 
 	return (
 		<SyledMake>
@@ -16,29 +21,35 @@ const Make = () => {
 						<MakeTitle>{t('features:paymentsTitle')}</MakeTitle>
 						<MakeText>{t('features:paymentsText')}</MakeText>
 					</MakeInfo>
-					<First>
-						<Second>
-							<LeftImgWrap>
-								<LeftImg>
-									<Image
-										src='/images/features/make/left@2x.png'
-										layout='fill'
-										objectFit='contain'
-										alt='app'
-									/>
-								</LeftImg>
-							</LeftImgWrap>
-							<RightImgWrap>
-								<RightImg>
-									<Image
-										src='/images/features/make/right@2x.png'
-										layout='fill'
-										objectFit='contain'
-										alt='app'
-									/>
-								</RightImg>
-							</RightImgWrap>
-						</Second>
+					<First ref={ref}>
+						{isShow && (
+							<Second>
+								<LeftImgWrap>
+									<FadeIn duration={500} delay={200}>
+										<LeftImg>
+											<Image
+												src='/images/features/make/left@2x.png'
+												layout='fill'
+												objectFit='contain'
+												alt='app'
+											/>
+										</LeftImg>
+									</FadeIn>
+								</LeftImgWrap>
+								<RightImgWrap>
+									<FadeIn duration={500} delay={500}>
+										<RightImg>
+											<Image
+												src='/images/features/make/right@2x.png'
+												layout='fill'
+												objectFit='contain'
+												alt='app'
+											/>
+										</RightImg>{' '}
+									</FadeIn>
+								</RightImgWrap>
+							</Second>
+						)}
 					</First>
 				</MakeCon>
 			</FeaturesCon>
