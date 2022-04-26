@@ -39,7 +39,6 @@ import {
 } from './HeaderStyles';
 import ArrowDown from '../Arrow/ArrowDown';
 import useOnClickOutside from '../../../hooks/useOnClickOutside';
-import { useRouter } from 'next/router';
 
 type PropsType = {
 	Tab: string;
