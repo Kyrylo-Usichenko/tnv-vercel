@@ -2,7 +2,11 @@ import React, { FC } from 'react';
 import { useTranslation } from 'next-i18next';
 import styled from 'styled-components';
 
-const Preview: FC = () => {
+type PreviewProps = {
+	scrollDown: () => void;
+};
+
+const Preview: FC<PreviewProps> = ({ scrollDown }) => {
 	const { t } = useTranslation();
 
 	return (
@@ -12,7 +16,7 @@ const Preview: FC = () => {
 			</PreviewTitle>
 			<PreviewText>{t('main:previewText')}</PreviewText>
 			<PreviewAction>
-				<Button>{t('main:previewButton')}</Button>
+				<Button onClick={scrollDown}>{t('main:previewButton')}</Button>
 				<PreviewFootnote>
 					{t('main:previewButtonText')}
 					<PreviewSmile />

@@ -112,7 +112,7 @@ const GalleryCon = styled.div`
 
 	@media (min-width: 1024px) {
 		flex-direction: row;
-		gap: 64px;
+		gap: 78px;
 
 		&::before {
 			right: -440px;
@@ -130,6 +130,8 @@ const GalleryCon = styled.div`
 	}
 
 	@media (min-width: 1440px) {
+		gap: 100px;
+
 		&::before {
 			right: -360px;
 		}
@@ -140,6 +142,8 @@ const GalleryCon = styled.div`
 	}
 
 	@media (min-width: 1920px) {
+		gap: 161px;
+
 		&::before {
 			right: -270px;
 		}
@@ -158,14 +162,6 @@ const GalleryGrid = styled.div`
 	@media (min-width: 1280px) {
 		gap: 24px;
 	}
-
-	@media (min-width: 1440px) {
-		gap: 30px;
-	}
-
-	@media (min-width: 1920px) {
-		gap: 32px;
-	}
 `;
 
 const GalleryColumn = styled.div`
@@ -180,7 +176,11 @@ const GalleryColumn = styled.div`
 `;
 
 const GalleryImg = styled(Image)`
-	border-radius: 32px;
+	border-radius: 30px;
+
+	@media (min-width: 1280px) {
+		border-radius: 32px;
+	}
 `;
 
 const ImgDiv = styled.div`
@@ -192,11 +192,7 @@ const Img1 = styled(ImgDiv)`
 	height: 230px;
 
 	@media (min-width: 768px) {
-		height: 316px;
-	}
-
-	@media (min-width: 1280px) {
-		height: 346px;
+		height: 300px;
 	}
 `;
 
@@ -204,10 +200,6 @@ const Img2 = styled(ImgDiv)`
 	height: 260px;
 
 	@media (min-width: 768px) {
-		height: 343px;
-	}
-
-	@media (min-width: 1280px) {
 		height: 376px;
 	}
 `;
@@ -216,15 +208,7 @@ const Img3 = styled(ImgDiv)`
 	height: 260px;
 
 	@media (min-width: 768px) {
-		height: 322px;
-	}
-
-	@media (min-width: 1024px) {
-		height: 302px;
-	}
-
-	@media (min-width: 1280px) {
-		height: 330px;
+		height: 376px;
 	}
 `;
 
@@ -232,14 +216,6 @@ const Img4 = styled(ImgDiv)`
 	height: 230px;
 
 	@media (min-width: 768px) {
-		height: 294px;
-	}
-
-	@media (min-width: 1024px) {
-		height: 274px;
-	}
-
-	@media (min-width: 1280px) {
 		height: 300px;
 	}
 `;
@@ -288,14 +264,13 @@ const GalleryTitle = styled.h2`
 	}
 
 	@media (min-width: 1280px) {
-		font-size: 48px;
-		line-height: 59px;
+		font-size: 56px;
+		line-height: 69px;
+		max-width: 282px;
 	}
 
 	@media (min-width: 1920px) {
-		font-size: 56px;
-		line-height: 69px;
-		max-width: 280px;
+		margin-right: 58px;
 	}
 `;
 

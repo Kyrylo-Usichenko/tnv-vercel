@@ -3,7 +3,11 @@ import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
 
-const Greetings: FC = () => {
+type GreetingsProps = {
+	scrollDown: () => void;
+};
+
+const Greetings: FC<GreetingsProps> = ({ scrollDown }) => {
 	const { t } = useTranslation();
 
 	return (
@@ -19,7 +23,7 @@ const Greetings: FC = () => {
 					<Info>
 						<Text>{t('company:greetingsText1')}</Text>
 						<Text>{t('company:greetingsText2')}</Text>
-						<Contact>
+						<Contact onClick={scrollDown}>
 							<img src='/images/company/Greetings/chat-icon.svg' alt='chat' />
 							{t('company:greetingsButton')}
 						</Contact>
