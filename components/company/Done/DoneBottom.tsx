@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'next-i18next';
+import FadeIn from '../../common/FadeIn/FadeIn';
 
-const DoneBottom: FC = () => {
+const DoneBottom: FC<{ isShow: boolean }> = ({ isShow }) => {
 	const { t } = useTranslation();
 
 	return (
@@ -10,26 +11,34 @@ const DoneBottom: FC = () => {
 			<WrapperCon>
 				<Black>
 					<BlackST src='/images/company/Done/blackST.svg' loading='lazy' />
-					<Content>
-						<Title>{t('company:doneYear2')}</Title>
-						<List>
-							<Item>{t('company:doneBlock2Line1')}</Item>
-							<Item>{t('company:doneBlock2Line2')}</Item>
-							<Item>{t('company:doneBlock2Line3')}</Item>
-						</List>
-					</Content>
+					{isShow && (
+						<FadeIn duration={500} delay={1100}>
+							<Content>
+								<Title>{t('company:doneYear2')}</Title>
+								<List>
+									<Item>{t('company:doneBlock2Line1')}</Item>
+									<Item>{t('company:doneBlock2Line2')}</Item>
+									<Item>{t('company:doneBlock2Line3')}</Item>
+								</List>
+							</Content>
+						</FadeIn>
+					)}
 					<BlackDots src='/images/company/Done/black-dots.svg' loading='lazy' />
 					<BlackSB src='/images/company/Done/blackSB.svg' loading='lazy' />
 				</Black>
 				<RedSide>
 					<SquareRT />
 					<DotsRT src='/images/company/Done/dotsRT.svg' loading='lazy' />
-					<img
-						src='/images/company/Done/ipad.png'
-						srcSet='/images/company/Done/ipad@2x.png 2x'
-						alt='ipad'
-						loading='lazy'
-					/>
+					{isShow && (
+						<FadeIn duration={500} delay={800}>
+							<img
+								src='/images/company/Done/ipad.png'
+								srcSet='/images/company/Done/ipad@2x.png 2x'
+								alt='ipad'
+								loading='lazy'
+							/>
+						</FadeIn>
+					)}
 					<DotsRB src='/images/company/Done/dotsRB.svg' loading='lazy' />
 					<SquareRB />
 				</RedSide>
@@ -37,36 +46,44 @@ const DoneBottom: FC = () => {
 					<Red>
 						<RedST />
 						<RedTitle>{t('company:doneDark')}</RedTitle>
-						<picture>
-							<source
-								srcSet='/images/company/Done/phone-375.png 1x, /images/company/Done/phone-375@2x.png 2x'
-								media='(min-width: 1440px)'
-							/>
-							<source
-								srcSet='/images/company/Done/phone-1024.png 1x, /images/company/Done/phone-1024@2x.png 2x'
-								media='(min-width: 1024px)'
-							/>
-							<Phone
-								src='/images/company/Done/phone-375.png'
-								srcSet='/images/company/Done/phone-375@2x.png 2x'
-								alt='app in phone'
-								loading='lazy'
-							/>
-						</picture>
+						{isShow && (
+							<FadeIn duration={500} delay={800}>
+								<picture>
+									<source
+										srcSet='/images/company/Done/phone-375.png 1x, /images/company/Done/phone-375@2x.png 2x'
+										media='(min-width: 1440px)'
+									/>
+									<source
+										srcSet='/images/company/Done/phone-1024.png 1x, /images/company/Done/phone-1024@2x.png 2x'
+										media='(min-width: 1024px)'
+									/>
+									<Phone
+										src='/images/company/Done/phone-375.png'
+										srcSet='/images/company/Done/phone-375@2x.png 2x'
+										alt='app in phone'
+										loading='lazy'
+									/>
+								</picture>
+							</FadeIn>
+						)}
 						<RedSB />
 						<RedDots src='/images/company/Done/dots-red.svg' loading='lazy' />
 					</Red>
 				</RedWrapper>
 				<Grey>
 					<GreyST />
-					<Content>
-						<DarkTitle>{t('company:doneYear3')}</DarkTitle>
-						<List>
-							<DarkItem>{t('company:doneBlock3Line1')}</DarkItem>
-							<DarkItem>{t('company:doneBlock3Line2')}</DarkItem>
-							<DarkItem>{t('company:doneBlock3Line3')}</DarkItem>
-						</List>
-					</Content>
+					{isShow && (
+						<FadeIn duration={500} delay={1400}>
+							<Content>
+								<DarkTitle>{t('company:doneYear3')}</DarkTitle>
+								<List>
+									<DarkItem>{t('company:doneBlock3Line1')}</DarkItem>
+									<DarkItem>{t('company:doneBlock3Line2')}</DarkItem>
+									<DarkItem>{t('company:doneBlock3Line3')}</DarkItem>
+								</List>
+							</Content>
+						</FadeIn>
+					)}
 					<GreySB />
 					<GreyDots src='/images/company/Done/dots-grey.svg' loading='lazy' />
 				</Grey>

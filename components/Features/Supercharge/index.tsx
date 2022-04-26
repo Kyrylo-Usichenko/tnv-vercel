@@ -1,12 +1,17 @@
-import React, { FC } from 'react';
+import React, { FC, RefObject, useRef } from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 
-import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
+import useAnimate from '../../../hooks/useAnimate';
+
+import { FeaturesCon } from '../../common/Container/Container';
+import FadeIn from '../../common/FadeIn/FadeIn';
 
 const Supercharge: FC = () => {
 	const { t } = useTranslation();
+	const ref = useRef() as RefObject<HTMLDivElement>;
+	const isShow = useAnimate(ref);
 
 	return (
 		<StyledSupercharge>
@@ -28,24 +33,36 @@ const Supercharge: FC = () => {
 				</FullCon>
 				<FlexConInfo>
 					<FeaturesCon className='h-100'>
-						<FlexConGrid>
-							<Elem>
-								<Title>{t('features:introductionChats')}</Title>
-								<Text>{t('features:introductionChatsText')}</Text>
-							</Elem>
-							<Elem>
-								<Title>{t('features:introductionOrders')}</Title>
-								<Text>{t('features:introductionOrdersText')}</Text>
-							</Elem>
-							<Elem>
-								<Title>{t('features:introductionPayments')}</Title>
-								<Text>{t('features:introductionPaymentsText')}</Text>
-							</Elem>
-							<Elem>
-								<Title>
-									And more in one <br /> dashboard...
-								</Title>
-							</Elem>
+						<FlexConGrid ref={ref}>
+							{isShow && (
+								<>
+									<FadeIn duration={500} delay={500}>
+										<Elem>
+											<Title>{t('features:introductionChats')}</Title>
+											<Text>{t('features:introductionChatsText')}</Text>
+										</Elem>
+									</FadeIn>
+									<FadeIn duration={500} delay={750}>
+										<Elem>
+											<Title>{t('features:introductionOrders')}</Title>
+											<Text>{t('features:introductionOrdersText')}</Text>
+										</Elem>
+									</FadeIn>
+									<FadeIn duration={500} delay={1000}>
+										<Elem>
+											<Title>{t('features:introductionPayments')}</Title>
+											<Text>{t('features:introductionPaymentsText')}</Text>
+										</Elem>
+									</FadeIn>
+									<FadeIn duration={500} delay={1250}>
+										<Elem>
+											<Title>
+												And more in one <br /> dashboard...
+											</Title>
+										</Elem>
+									</FadeIn>
+								</>
+							)}
 							<MobileApp
 								src='/images/features/supercharge/1.jpg'
 								srcSet='/images/features/supercharge/1@2x.jpg 2x'
