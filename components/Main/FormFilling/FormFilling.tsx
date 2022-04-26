@@ -1,11 +1,15 @@
-import React, { ChangeEvent, FC, useEffect, useState } from 'react';
+import React, { ChangeEvent, FC, RefObject, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { Container } from '../../common/Container/Container';
 import MapComponentFlex from './MapFlex';
 import { useTranslation } from 'next-i18next';
 
-const Smile: FC = () => {
+type SmileProps = {
+	formRef: RefObject<HTMLDivElement>;
+};
+
+const Smile: FC<SmileProps> = ({ formRef }) => {
 	const [loading, setLoading] = useState<'idle' | 'loading' | 'error' | 'success'>('idle');
 	const { t } = useTranslation();
 
@@ -99,7 +103,7 @@ const Smile: FC = () => {
 	}, [form]);
 
 	return (
-		<Wrapper>
+		<Wrapper ref={formRef}>
 			<WrapperRotated>
 				<Null>
 					<Container>
