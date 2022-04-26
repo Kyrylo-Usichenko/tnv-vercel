@@ -190,20 +190,20 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 								<StyledSvg loaded={loading !== 'idle'}>
 									<g>
 										<ellipse
-											ry='23.5'
-											rx='23.5'
+											ry='23'
+											rx='23'
 											cy='24'
 											cx='24'
-											strokeWidth='1'
+											strokeWidth='2'
 											stroke='transparent'
 											fill='transparent'
 										/>
 										<StyledEllipse
-											ry='23.5'
-											rx='23.5'
+											ry='23'
+											rx='23'
 											cy='24'
 											cx='24'
-											strokeWidth='1'
+											strokeWidth='2'
 											stroke='red'
 											fill='transparent'
 											loaded={loading !== 'idle'}
@@ -464,7 +464,7 @@ const StyledSvg = styled.svg<{ loaded: boolean }>`
 	--btn-width: 48px;
 
 	position: absolute;
-	top: 49%;
+	top: 50%;
 	left: 51%;
 	width: var(--btn-width);
 	height: var(--btn-width);
