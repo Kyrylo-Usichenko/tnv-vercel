@@ -12,7 +12,6 @@ type Props = {
 
 const Footer: FC<Props> = ({ background }) => {
 	const { t } = useTranslation();
-	console.log(t('main:footerLogin'));
 	return (
 		<StyledFooter background={background}>
 			<FeaturesCon>

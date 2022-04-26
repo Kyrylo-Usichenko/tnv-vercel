@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { NextPage } from 'next/types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -10,12 +10,13 @@ import Privacy from '../components/Legal/Privacy';
 import { CurrentTabCon, CurrentTabName, TabContainer, TabTitle } from '../components/Legal/styles';
 import Terms from '../components/Legal/Terms';
 import { Tabs } from '../constants';
+import { any } from 'prop-types';
 
 export async function getStaticProps({ locale }: any) {
 	return {
 		props: {
 			locale,
-			...(await serverSideTranslations(locale, ['home'])),
+			...(await serverSideTranslations(locale, ['home', 'header', 'main'])),
 		},
 	};
 }
@@ -27,7 +28,26 @@ type Props = {
 const Legal: NextPage<Props> = ({ locale }) => {
 	const router = useRouter();
 	const [currentTab, setCurrentTab] = useState<string>(router.asPath.slice(1));
+	useEffect(() => {
+		const hello = async () => {
+			if (router.asPath.slice(1) === 'legal') {
+				await router.push('/legal', '/privacy');
+				setCurrentTab('privacy');
+			}
+		};
+		hello().catch(() => console.log('error'));
+	});
 
+	const onPrivacyClick = async () => {
+		setCurrentTab(Tabs.privacy);
+		await router.push('/legal', '/privacy');
+	};
+	const onTermsClick = async () => {
+		setCurrentTab(Tabs.terms);
+		await router.push('/legal', '/terms');
+	};
+	//
+	// console.log(router.asPath.slice(1));
 	return (
 		<Main>
 			<Header locale={locale} Tab='Legal' />
@@ -35,13 +55,10 @@ const Legal: NextPage<Props> = ({ locale }) => {
 				<TabContainer>
 					<TabTitle>Tinvio Legal Info</TabTitle>
 					<CurrentTabCon>
-						<CurrentTabName
-							isActive={currentTab === Tabs.privacy}
-							onClick={() => setCurrentTab(Tabs.privacy)}
-						>
+						<CurrentTabName isActive={currentTab === Tabs.privacy} onClick={onPrivacyClick}>
 							Privacy Policy
 						</CurrentTabName>
-						<CurrentTabName isActive={currentTab === Tabs.terms} onClick={() => setCurrentTab(Tabs.terms)}>
+						<CurrentTabName isActive={currentTab === Tabs.terms} onClick={onTermsClick}>
 							Terms of Service
 						</CurrentTabName>
 					</CurrentTabCon>
