@@ -21,7 +21,7 @@ const MapFlex: FC = () => {
 			<SingaporeStartAnimation ref={ref} />
 			{isShow && (
 				<>
-					<FadeIn duration={1500} delay={1000}>
+					<FadeIn duration={1000} delay={600}>
 						<HongKong>
 							<img
 								className='hong-kong'
@@ -32,7 +32,7 @@ const MapFlex: FC = () => {
 							<Point name='Hong-Kong' top={-175} left={0} />
 						</HongKong>
 					</FadeIn>
-					<FadeIn duration={1500} delay={500}>
+					<FadeIn duration={1000} delay={300}>
 						<Indonesia>
 							<img
 								className='indonesia'
@@ -43,7 +43,7 @@ const MapFlex: FC = () => {
 							<Point name='Indonesia' top={65} left={23.5} />
 						</Indonesia>
 					</FadeIn>
-					<FadeIn duration={1500} delay={1500}>
+					<FadeIn duration={1000} delay={900}>
 						<Philippines>
 							<img
 								className='philippines'
@@ -54,7 +54,7 @@ const MapFlex: FC = () => {
 							<Point name='Philippines' top={2} left={16} />
 						</Philippines>
 					</FadeIn>
-					<FadeIn duration={1500} delay={0}>
+					<FadeIn duration={1000} delay={0}>
 						<Singapore>
 							<img
 								className='singapore'
@@ -65,7 +65,7 @@ const MapFlex: FC = () => {
 							<Point name='Singapore' top={-190} left={15} />
 						</Singapore>
 					</FadeIn>
-					<FadeIn duration={1500} delay={2000}>
+					<FadeIn duration={1000} delay={1200}>
 						<Thailand>
 							<img
 								className='thailand'
@@ -76,7 +76,7 @@ const MapFlex: FC = () => {
 							<Point name='Thailand' top={-1} left={15} />
 						</Thailand>
 					</FadeIn>
-					<FadeIn duration={1500} delay={2500}>
+					<FadeIn duration={1000} delay={1500}>
 						<Vietnam>
 							<img
 								className='vietnam'
@@ -87,7 +87,7 @@ const MapFlex: FC = () => {
 							<Point name='Vietnam' top={-6} left={24} />
 						</Vietnam>
 					</FadeIn>
-					<FadeIn duration={1500} delay={2500}>
+					<FadeIn duration={1000} delay={1500}>
 						<TextBox>
 							<Arrow>
 								<img src='./images/main/map/arrow-line-text/arrow-icon.svg' alt='arrow' />
