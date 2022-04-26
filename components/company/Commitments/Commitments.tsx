@@ -102,13 +102,12 @@ const Heading = styled.p`
 	@media (min-width: 1024px) {
 		font-size: 36px;
 		line-height: 44px;
-		max-width: 400px;
+		max-width: unset;
 	}
 
 	@media (min-width: 1920px) {
 		font-size: 44px;
 		line-height: 54px;
-		max-width: 500px;
 	}
 `;
 

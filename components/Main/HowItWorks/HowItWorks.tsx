@@ -157,6 +157,7 @@ const InfoTitle = styled.h2`
 	color: #212121;
 	padding: 0;
 	margin: 0 0 16px 0;
+	white-space: nowrap;
 	@media (max-width: 1440px) {
 		font-size: 36px;
 		line-height: 42px;
