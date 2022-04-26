@@ -12,43 +12,46 @@ const HowItWorks: FC = () => {
 					<Null>
 						<div>
 							<CardTop>
-								<Box />
+								<Box>
+									<CardContent>
+										<CardTitle>{t('main:howItWorksChats')}</CardTitle>
+										<CardText>{t('main:howItWorksChatsText')}</CardText>
+									</CardContent>
+								</Box>
 								<CardTopIcon />
 								<CardTopStars />
 								<RedLine />
-								<img
-									src='./images/main/howItWorks/text-chat.svg'
-									alt='Connect to anyone in your supply chain and exchange messages'
-								/>
-								{/* <Title>Chats</Title>
-								<Text width='191.27'>
-									Connect to anyone in your supply chain and exchange messages{' '}
-								</Text> */}
+								{/*<img*/}
+								{/*	src='./images/main/howItWorks/text-chat.svg'*/}
+								{/*	alt='Connect to anyone in your supply chain and exchange messages'*/}
+								{/*/>*/}
 							</CardTop>
 							<CardMiddle>
-								<Box />
+								<Box>
+									<CardContent>
+										<CardTitle>{t('main:howItWorksOrders')}</CardTitle>
+										<CardText>{t('main:howItWorksOrdersText')}</CardText>
+									</CardContent>
+								</Box>
 								<CardMiddleIcon />
 								<CardMiddleStars />
 								{/* <Title>Orders</Title> */}
 								<RedLine2 />
 								{/* <Text width='175.11'>Create or confirm purchase orders with tap of a button</Text> */}
-								<img
-									src='./images/main/howItWorks/text-order.svg'
-									alt='Create or confirm purchase orders with tap of a button'
-								/>
 							</CardMiddle>
 							<CardBot>
-								<Box />
+								<Box>
+									<CardContent>
+										<CardTitle>{t('main:howItWorksPayments')}</CardTitle>
+										<CardText>{t('main:howItWorksPaymentsText')}</CardText>
+									</CardContent>
+								</Box>
 								<CardBotIcon />
 								<CardBotStars />
 								<CardBotStars2 />
 								<DotsLeft />
 								{/* <Title>Payments</Title>
 								<Text width='175.11'>Send invoices and reconcile payments in one dashboard</Text> */}
-								<img
-									src='./images/main/howItWorks/text-pay.svg'
-									alt='Send invoices and reconcile payments in one dashboard'
-								/>
 							</CardBot>
 						</div>
 					</Null>
@@ -702,4 +705,63 @@ const RedLine2 = styled.div`
 		top: 29px;
 	}
 `;
+const CardContent = styled.div`
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 25px 40px;
+	@media (max-width: 1024px) {
+		padding: 25px 24px;
+	}
+	@media (max-width: 425px) {
+		padding: 8px 10px;
+	}
+`;
+const CardTitle = styled.p`
+	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20.6111px;
+	line-height: 26px;
+	/* identical to box height */
+
+	display: flex;
+	align-items: center;
+
+	color: #212121;
+	margin: 0;
+	padding: 0 0 5px;
+	@media (max-width: 1024px) {
+		font-size: 19.1121px;
+		line-height: 24px;
+	}
+	@media (max-width: 425px) {
+		font-size: 14px;
+		line-height: 11px;
+	}
+`;
+
+const CardText = styled.p`
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 15px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	color: #5c5c5c;
+	@media (max-width: 1024px) {
+		font-size: 11px;
+		line-height: 13px;
+	}
+	@media (max-width: 425px) {
+		font-size: 9px;
+		line-height: 11px;
+	}
+`;
+
 export default HowItWorks;

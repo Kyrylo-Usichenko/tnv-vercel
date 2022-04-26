@@ -463,7 +463,7 @@ const MiddleSquareBottom = styled.div`
 		bottom: 0;
 		width: 238px;
 		height: 213px;
-		background: url('images/company/Contact/midSquareRight1024.svg') no-repeat;
+		background: url('/images/company/Contact/midSquareRight1024.svg') no-repeat;
 	}
 
 	@media (min-width: 1440px) {

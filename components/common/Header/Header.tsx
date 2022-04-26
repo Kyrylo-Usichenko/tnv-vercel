@@ -49,15 +49,11 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 	const [isHeaderScrolled, setHeaderScrolled] = useState(false);
 	const [dropDawn, setDropDawn] = useState(false);
 	const [isMenuOpend, setMenuOpend] = useState(false);
-
 	const menuToggle = () => {
 		setMenuOpend((prevState) => !prevState);
 	};
 
 	const { t } = useTranslation();
-	console.log(t('header:Features'));
-
-	console.log(locale);
 
 	useEffect(() => {
 		function handleScroll() {
@@ -69,6 +65,16 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 	const modalRef = useOnClickOutside(() => {
 		setDropDawn(false);
 	});
+	const localeTab =
+		Tab === 'Home'
+			? '/'
+			: Tab === 'Features'
+			? '/features'
+			: Tab === 'Company'
+			? '/company'
+			: Tab === 'Legal'
+			? '/legal'
+			: '/';
 	return (
 		<HeaderStyled isHeaderScrolled={isHeaderScrolled} isMenuOpend={isMenuOpend}>
 			<Container className='h-100'>
@@ -93,7 +99,7 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 
 								<LanguageMenu isOpen={dropDawn}>
 									<FlagWrapper>
-										<Link href='/' locale='en'>
+										<Link href={localeTab} locale='en'>
 											<img
 												src='/icons/common/flags/gbflug.svg'
 												alt=''
@@ -103,7 +109,7 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 										</Link>
 									</FlagWrapper>
 									<FlagWrapper>
-										<Link href='/' locale='id'>
+										<Link href={localeTab} locale='id'>
 											<img
 												src='/icons/common/flags/idflug.svg'
 												alt=''
@@ -113,7 +119,7 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 										</Link>
 									</FlagWrapper>
 									<FlagWrapper>
-										<Link href='/' locale='th'>
+										<Link href={localeTab} locale='th'>
 											<img
 												src='/icons/common/flags/thflug.svg'
 												alt=''
@@ -123,7 +129,7 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 										</Link>
 									</FlagWrapper>
 									<FlagWrapper>
-										<Link href='/' locale='vi'>
+										<Link href={localeTab} locale='vi'>
 											<img
 												src='/icons/common/flags/viflug.svg'
 												alt=''

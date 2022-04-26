@@ -140,7 +140,7 @@ const Point = styled.div<{ name: string; top: number; left: number }>`
 	left: ${({ left }) => left}%;
 	width: 12px;
 	height: 16px;
-	background: url('./images/main/map/point-icon.svg');
+	background: url('/images/main/map/point-icon.svg');
 	z-index: 1;
 	cursor: pointer;
 	transition: all 0.3s ease;
