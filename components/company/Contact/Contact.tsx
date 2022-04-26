@@ -24,7 +24,7 @@ const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
 						<LeftDots />
 						<Heading>{t('company:contactHeading1')}</Heading>
 						<Content>{t('company:contactText1')}</Content>
-						<ContactUs>{t('company:contactButton1')}</ContactUs>
+						<ContactUs data-text={t('company:contactButton1')}>{t('company:contactButton1')}</ContactUs>
 					</Block>
 					<DarkBlock>
 						<MiddleSquareLeft />
@@ -40,7 +40,7 @@ const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
 						<RightDots />
 						<Heading>{t('company:contactHeading3')}</Heading>
 						<Content>{t('company:contactText3')}</Content>
-						<ContactUs>{t('company:contactButton3')}</ContactUs>
+						<ContactUs data-text={t('company:contactButton3')}>{t('company:contactButton3')}</ContactUs>
 					</Block>
 				</Inner>
 			</FeaturesCon>
@@ -200,7 +200,7 @@ const ContactUs = styled.button`
 
 	&::before {
 		position: absolute;
-		content: 'Contact Us';
+		content: attr(data-text);
 		top: 17px;
 		left: 53px;
 		color: rgba(33, 33, 33, 0.1);
