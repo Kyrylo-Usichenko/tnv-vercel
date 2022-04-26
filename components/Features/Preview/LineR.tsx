@@ -563,7 +563,7 @@ const Svg = styled.svg`
 			opacity: 0;
 		}
 		to {
-			opacity: 0.8;
+			opacity: 1;
 		}
 	}
 

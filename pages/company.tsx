@@ -1,5 +1,5 @@
 import { NextPage } from 'next/types';
-import React from 'react';
+import React, { RefObject, useRef } from 'react';
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -25,6 +25,19 @@ export async function getStaticProps({ locale }: any) {
 
 const Company: NextPage<any> = (props) => {
 	const locale: any = props.locale;
+
+	const contactSection = useRef() as RefObject<HTMLDivElement>;
+
+	const executeScroll = () => {
+		if (contactSection.current) {
+			scrollTo({
+				top: contactSection.current.offsetTop - 100,
+				left: 0,
+				behavior: 'smooth',
+			});
+		}
+	};
+
 	return (
 		<>
 			<Main>
@@ -35,13 +48,13 @@ const Company: NextPage<any> = (props) => {
 				</Head>
 
 				<FeaturesHeader locale={locale} Tab='Company' />
-				<Greetings />
+				<Greetings scrollDown={executeScroll} />
 				<Done />
 				<Counts />
 				<Teamvio />
 				<Commitments />
 				<Role />
-				<Contact />
+				<Contact contactSectionRef={contactSection} />
 				<Footer background='#ffffff' />
 			</Main>
 		</>

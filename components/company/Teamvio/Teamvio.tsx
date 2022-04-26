@@ -14,48 +14,60 @@ const Teamvio: FC = () => {
 						Powered by <span className='accent'>Teamvio</span>
 					</Title>
 				</TitleDiv>
-				<Inner1>
-					<SquareLeft />
-					<SquareRightTop />
-					<SquareRightBot />
-					<RightDots />
-					<LeftDots />
-					<Img1
-						src='/images/company/Teamvio/1.jpg'
-						srcSet='/images/company/Teamvio/1@2x.jpg 2x'
-						alt='people'
-						loading='lazy'
-					/>
-					<Img2
-						src='/images/company/Teamvio/2.jpg'
-						srcSet='/images/company/Teamvio/2@2x.jpg 2x'
-						alt='people'
-						loading='lazy'
-					/>
-					<Join>
-						<JoinSquareLeft />
-						<JoinSquareRight />
-						<JoinDots />
-						<Text>
-							Up for a challenge? <Br /> We're always looking for the best
-						</Text>
-						<Button>{t('company:teamvioButton')}</Button>
-					</Join>
-				</Inner1>
-				<Inner2>
-					<Img3
-						src='/images/company/Teamvio/3.jpg'
-						srcSet='/images/company/Teamvio/3@2x.jpg 2x'
-						alt='people'
-						loading='lazy'
-					/>
-					<Img4
-						src='/images/company/Teamvio/4.jpg'
-						srcSet='/images/company/Teamvio/4@2x.jpg 2x'
-						alt='people'
-						loading='lazy'
-					/>
-				</Inner2>
+				<Inner>
+					<Inner1>
+						<SquareLeft />
+						<SquareRightTop />
+						<SquareRightBot />
+						<RightDots />
+						<LeftDots />
+						<Img1
+							src='/images/company/Teamvio/1.jpg'
+							srcSet='/images/company/Teamvio/1@2x.jpg 2x'
+							alt='people'
+							loading='lazy'
+						/>
+						<MobileImg
+							src='/images/company/Teamvio/2.jpg'
+							srcSet='/images/company/Teamvio/2@2x.jpg 2x'
+							alt='people'
+							loading='lazy'
+						/>
+						<Img3
+							src='/images/company/Teamvio/3.jpg'
+							srcSet='/images/company/Teamvio/3@2x.jpg 2x'
+							alt='people'
+							loading='lazy'
+						/>
+					</Inner1>
+					<Inner2>
+						<Img2
+							src='/images/company/Teamvio/2.jpg'
+							srcSet='/images/company/Teamvio/2@2x.jpg 2x'
+							alt='people'
+							loading='lazy'
+						/>
+						<Join>
+							<JoinSquareLeft />
+							<JoinSquareRight />
+							<JoinDots />
+							<Text>Up for a challenge? We're always looking for the best</Text>
+							<Button>{t('company:teamvioButton')}</Button>
+						</Join>
+						<MobileImg
+							src='/images/company/Teamvio/3.jpg'
+							srcSet='/images/company/Teamvio/3@2x.jpg 2x'
+							alt='people'
+							loading='lazy'
+						/>
+						<Img4
+							src='/images/company/Teamvio/4.jpg'
+							srcSet='/images/company/Teamvio/4@2x.jpg 2x'
+							alt='people'
+							loading='lazy'
+						/>
+					</Inner2>
+				</Inner>
 			</FeaturesCon>
 		</StyledTeamvio>
 	);
@@ -73,6 +85,20 @@ const StyledTeamvio = styled.section`
 	}
 `;
 
+const Inner = styled.div`
+	display: flex;
+	flex-direction: column;
+
+	@media (min-width: 768px) {
+		flex-direction: row;
+		gap: 16px;
+	}
+
+	@media (min-width: 1024px) {
+		gap: 24px;
+	}
+`;
+
 const Inner1 = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -82,26 +108,12 @@ const Inner1 = styled.div`
 	margin-bottom: 16px;
 
 	@media (min-width: 768px) {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
+		flex: 1;
+		margin-bottom: 0;
 	}
 
 	@media (min-width: 1024px) {
-		grid-template-columns: 396px 1fr;
-		margin-bottom: 24px;
 		gap: 24px;
-	}
-
-	@media (min-width: 1280px) {
-		grid-template-columns: 451px 1fr;
-	}
-
-	@media (min-width: 1440px) {
-		grid-template-columns: 520px 1fr;
-	}
-
-	@media (min-width: 1920px) {
-		grid-template-columns: 580px 1fr;
 	}
 `;
 
@@ -113,8 +125,7 @@ const Inner2 = styled.div`
 	z-index: 1;
 
 	@media (min-width: 768px) {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
+		flex: 1;
 	}
 
 	@media (min-width: 1024px) {
@@ -165,49 +176,90 @@ const Title = styled.h3`
 const Img = styled.img`
 	display: block;
 	width: 100%;
+	height: auto;
 	object-fit: cover;
 	border-radius: 32px;
 `;
 
 const Img1 = styled(Img)`
 	@media (min-width: 768px) {
-		grid-row: 1 / 3;
-		height: 507px;
+		height: 425px;
 	}
 
 	@media (min-width: 1024px) {
-		height: 485px;
+		height: 477px;
+	}
+
+	@media (min-width: 1920px) {
+		height: 481px;
 	}
 `;
 
 const Img2 = styled(Img)`
+	display: none;
+
 	@media (min-width: 768px) {
-		grid-row: 1 / 2;
-		height: 313px;
+		display: block;
+		height: 329px;
 	}
 
 	@media (min-width: 1024px) {
-		height: 347px;
+		height: 376px;
+	}
+
+	@media (min-width: 1280px) {
+		height: 395px;
+	}
+
+	@media (min-width: 1440px) {
+		height: 408px;
 	}
 `;
 
 const Img3 = styled(Img)`
+	display: none;
+
 	@media (min-width: 768px) {
-		height: 344px;
+		display: block;
+		height: 425px;
 	}
 
 	@media (min-width: 1024px) {
-		height: 469px;
+		height: 477px;
+	}
+
+	@media (min-width: 1920px) {
+		height: 481px;
 	}
 `;
 
 const Img4 = styled(Img)`
 	@media (min-width: 768px) {
-		height: 344px;
+		height: 329px;
 	}
 
 	@media (min-width: 1024px) {
-		height: 469px;
+		height: 376px;
+	}
+
+	@media (min-width: 1280px) {
+		height: 395px;
+	}
+
+	@media (min-width: 1440px) {
+		height: 408px;
+	}
+`;
+
+const MobileImg = styled.img`
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 32px;
+
+	@media (min-width: 768px) {
+		display: none;
 	}
 `;
 
@@ -219,12 +271,12 @@ const Join = styled.div`
 	position: relative;
 	z-index: 0;
 	overflow: hidden;
+
 	@media (min-width: 768px) {
-		grid-column: 2 / 3;
 		padding: 32px 0;
 	}
 
-	@media (min-width: 1024px) {
+	@media (min-width: 1280px) {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -239,7 +291,8 @@ const Text = styled.p`
 	line-height: 22px;
 	color: #ffffff;
 	text-align: center;
-	margin: 0 0 24px 0;
+	margin: 0 auto 24px auto;
+	max-width: 330px;
 
 	@media (min-width: 768px) {
 		max-width: 250px;
@@ -249,28 +302,19 @@ const Text = styled.p`
 		text-align: left;
 	}
 
-	@media (min-width: 1024px) {
+	@media (min-width: 1280px) {
 		margin: 0;
+		max-width: 205px;
 	}
 
 	@media (min-width: 1440px) {
-		max-width: 310px;
+		max-width: 250px;
 	}
 
 	@media (min-width: 1920px) {
 		font-size: 24px;
 		line-height: 29px;
-		max-width: 390px;
-	}
-`;
-
-const Br = styled.br`
-	@media (min-width: 768px) {
-		display: none;
-	}
-
-	@media (min-width: 1440px) {
-		display: block;
+		max-width: 310px;
 	}
 `;
 

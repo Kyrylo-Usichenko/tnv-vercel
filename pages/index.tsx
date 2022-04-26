@@ -1,5 +1,5 @@
 import { NextPage } from 'next/types';
-import React from 'react';
+import React, { RefObject, useRef } from 'react';
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -28,6 +28,19 @@ export async function getStaticProps({ locale }: any) {
 
 const Home: NextPage<any> = (props) => {
 	const locale = props.locale;
+
+	const formSection = useRef() as RefObject<HTMLDivElement>;
+
+	const executeScroll = () => {
+		if (formSection.current) {
+			scrollTo({
+				top: formSection.current.offsetTop,
+				left: 0,
+				behavior: 'smooth',
+			});
+		}
+	};
+
 	return (
 		<Styled>
 			<GreySquare2>
@@ -47,14 +60,14 @@ const Home: NextPage<any> = (props) => {
 
 				<section>
 					<Container>
-						<Preview />
+						<Preview scrollDown={executeScroll} />
 					</Container>
 					<HowItWorks />
 					<MoreMoney />
 					<FeaturedOn />
 					<WhyChoose />
 					<SmileRework />
-					<FormFilling />
+					<FormFilling formRef={formSection} />
 					<Footer background='#ffffff' />
 				</section>
 			</Main>

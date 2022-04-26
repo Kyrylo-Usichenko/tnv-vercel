@@ -32,12 +32,12 @@ const MoreMoney: FC = () => {
 	const { t } = useTranslation();
 	const tabsImages = [
 		{
-			name: 'Payments',
-			leftImg: payLeft,
-			rightImg: payRight,
+			name: 'Chats',
+			leftImg: chatLeft,
+			rightImg: chatRight,
 			typedText: [t('main:moreMoneyTitle1')],
-			isActive: true,
-			textLines: [t('main:moreMoneyTab1Row1'), t('main:moreMoneyTab1Row2'), t('main:moreMoneyTab1Row3')],
+			isActive: false,
+			textLines: [t('main:moreMoneyTab3Row1'), t('main:moreMoneyTab3Row2'), t('main:moreMoneyTab3Row3')],
 		},
 		{
 			name: 'Orders',
@@ -48,12 +48,12 @@ const MoreMoney: FC = () => {
 			textLines: [t('main:moreMoneyTab2Row1'), t('main:moreMoneyTab2Row2'), t('main:moreMoneyTab2Row3')],
 		},
 		{
-			name: 'Chats',
-			leftImg: chatLeft,
-			rightImg: chatRight,
+			name: 'Payments',
+			leftImg: payLeft,
+			rightImg: payRight,
 			typedText: [t('main:moreMoneyTitle3')],
-			isActive: false,
-			textLines: [t('main:moreMoneyTab3Row1'), t('main:moreMoneyTab3Row2'), t('main:moreMoneyTab3Row3')],
+			isActive: true,
+			textLines: [t('main:moreMoneyTab1Row1'), t('main:moreMoneyTab1Row2'), t('main:moreMoneyTab1Row3')],
 		},
 	];
 	const [tabs, setTabs] = useState(tabsImages);
@@ -126,13 +126,13 @@ const MoreMoney: FC = () => {
 						</TitleWrap>
 					</Title>
 					<ButtonsWrapper>
-						<Button width='134' onClick={() => onBtnClick(tabs[0])} isActive={tab === tabs[0]}>
+						<Button width='107' onClick={() => onBtnClick(tabs[0])} isActive={tab === tabs[0]}>
 							{t('main:moreMoneyTab1')}
 						</Button>
 						<Button width='114' onClick={() => onBtnClick(tabs[1])} isActive={tab === tabs[1]}>
 							{t('main:moreMoneyTab2')}
 						</Button>
-						<Button width='107' onClick={() => onBtnClick(tabs[2])} isActive={tab === tabs[2]}>
+						<Button width='134' onClick={() => onBtnClick(tabs[2])} isActive={tab === tabs[2]}>
 							{t('main:moreMoneyTab3')}
 						</Button>
 					</ButtonsWrapper>

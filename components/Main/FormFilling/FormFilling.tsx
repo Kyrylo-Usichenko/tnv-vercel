@@ -1,11 +1,15 @@
-import React, { ChangeEvent, FC, useEffect, useState } from 'react';
+import React, { ChangeEvent, FC, RefObject, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { Container } from '../../common/Container/Container';
 import MapComponentFlex from './MapFlex';
 import { useTranslation } from 'next-i18next';
 
-const Smile: FC = () => {
+type SmileProps = {
+	formRef: RefObject<HTMLDivElement>;
+};
+
+const Smile: FC<SmileProps> = ({ formRef }) => {
 	const [loading, setLoading] = useState<'idle' | 'loading' | 'error' | 'success'>('idle');
 	const { t } = useTranslation();
 
@@ -99,7 +103,7 @@ const Smile: FC = () => {
 	}, [form]);
 
 	return (
-		<Wrapper>
+		<Wrapper ref={formRef}>
 			<WrapperRotated>
 				<Null>
 					<Container>
@@ -168,16 +172,16 @@ const Smile: FC = () => {
 													rx='23.5'
 													cy='24'
 													cx='24'
-													strokeWidth='1'
+													strokeWidth='2'
 													stroke='transparent'
 													fill='transparent'
 												/>
 												<StyledEllipse
-													ry='23.5'
-													rx='23.5'
+													ry='23'
+													rx='23'
 													cy='24'
 													cx='24'
-													strokeWidth='1'
+													strokeWidth='2'
 													stroke='red'
 													fill='transparent'
 													loaded={loading !== 'idle'}
@@ -580,7 +584,7 @@ const StyledSvg = styled.svg<{ loaded: boolean }>`
 	--btn-width: 48px;
 
 	position: absolute;
-	top: 49%;
+	top: 50%;
 	left: 51%;
 	width: var(--btn-width);
 	height: var(--btn-width);
@@ -589,7 +593,7 @@ const StyledSvg = styled.svg<{ loaded: boolean }>`
 
 	@media (min-width: 1440.5px) {
 		--btn-width: 56px;
-		left: 50%;
+		left: 49%;
 		top: 50%;
 	}
 `;
@@ -600,8 +604,8 @@ const StyledEllipse = styled.ellipse<{ loaded: boolean }>`
 	transition: all 0.5s ease 0.3s;
 
 	@media (min-width: 1440.5px) {
-		ry: 49%;
-		rx: 49%;
+		ry: 48%;
+		rx: 48%;
 		cy: 50%;
 		cx: 50%;
 	}

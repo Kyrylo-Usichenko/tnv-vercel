@@ -11,7 +11,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 295.34 144)'
 				fill='url(#paint1_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-2'
@@ -20,7 +19,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 290.549 137.382)'
 				fill='url(#paint0_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-3'
@@ -29,7 +27,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 285.775 129.81)'
 				fill='url(#paint2_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-4'
@@ -38,7 +35,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 280.843 122.344)'
 				fill='url(#paint3_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-5'
@@ -47,7 +43,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 275.705 115.026)'
 				fill='url(#paint4_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-6'
@@ -56,7 +51,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 270.293 107.918)'
 				fill='url(#paint5_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-7'
@@ -65,7 +59,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 264.509 101.128)'
 				fill='url(#paint6_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-8'
@@ -74,7 +67,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 258.207 94.8579)'
 				fill='url(#paint7_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-9'
@@ -83,7 +75,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 251.173 89.5352)'
 				fill='url(#paint8_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-10'
@@ -92,7 +83,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 243.011 86.0928)'
 				fill='url(#paint9_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-11'
@@ -101,7 +91,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 234.085 86.6133)'
 				fill='url(#paint10_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-12'
@@ -110,7 +99,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 226.753 91.3726)'
 				fill='url(#paint11_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-13'
@@ -119,7 +107,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 221.285 98.1709)'
 				fill='url(#paint12_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-14'
@@ -128,7 +115,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 217.34 104)'
 				fill='url(#paint13_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-15'
@@ -137,7 +123,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 213.521 110.51)'
 				fill='url(#paint14_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-16'
@@ -146,7 +131,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 207.598 117.18)'
 				fill='url(#paint15_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-17'
@@ -155,7 +139,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 200.559 122.691)'
 				fill='url(#paint16_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-18'
@@ -164,7 +147,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 192.52 126.643)'
 				fill='url(#paint17_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-19'
@@ -173,7 +155,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 183.828 128.81)'
 				fill='url(#paint18_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-20'
@@ -182,7 +163,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 174.889 129.281)'
 				fill='url(#paint19_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-21'
@@ -191,7 +171,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 165.992 128.337)'
 				fill='url(#paint20_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-22'
@@ -200,7 +179,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 157.282 126.29)'
 				fill='url(#paint21_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-23'
@@ -209,7 +187,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 148.813 123.397)'
 				fill='url(#paint22_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-24'
@@ -218,7 +195,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 140.594 119.853)'
 				fill='url(#paint23_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-25'
@@ -227,7 +203,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 132.61 115.799)'
 				fill='url(#paint24_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-26'
@@ -236,7 +211,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 124.845 111.338)'
 				fill='url(#paint25_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-27'
@@ -245,7 +219,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 117.279 106.545)'
 				fill='url(#paint26_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-28'
@@ -254,7 +227,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 109.892 101.478)'
 				fill='url(#paint27_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-29'
@@ -263,7 +235,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 102.669 96.1787)'
 				fill='url(#paint28_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-30'
@@ -272,7 +243,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 95.5947 90.6816)'
 				fill='url(#paint29_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-31'
@@ -281,7 +251,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 88.6566 85.0137)'
 				fill='url(#paint30_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-32'
@@ -290,7 +259,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 81.8438 79.1953)'
 				fill='url(#paint31_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-33'
@@ -299,7 +267,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 75.142 73.2393)'
 				fill='url(#paint32_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-34'
@@ -308,7 +275,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 68.4703 67.0913)'
 				fill='url(#paint33_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-35'
@@ -317,7 +283,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 62.1803 61.1025)'
 				fill='url(#paint34_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-36'
@@ -326,7 +291,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 41.3402 41)'
 				fill='url(#paint35_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-37'
@@ -335,7 +299,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 48.3402 48)'
 				fill='url(#paint36_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-38'
@@ -344,7 +307,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 34.3402 34)'
 				fill='url(#paint37_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-39'
@@ -353,7 +315,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 28.3402 27)'
 				fill='url(#paint38_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-40'
@@ -362,7 +323,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 22.3402 20)'
 				fill='url(#paint39_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-41'
@@ -371,7 +331,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 16.3402 13)'
 				fill='url(#paint40_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-42'
@@ -380,7 +339,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 55.7332 54.7754)'
 				fill='url(#paint41_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-43'
@@ -389,7 +347,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 9.34021 7)'
 				fill='url(#paint42_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<Rect
 				id='rect-44'
@@ -398,7 +355,6 @@ const LineL = () => {
 				rx='1'
 				transform='matrix(0.895337 0.445389 -0.446684 0.894692 1.34009 2)'
 				fill='url(#paint43_radial_3029_13669)'
-				fill-opacity='0.8'
 			/>
 			<defs>
 				<radialGradient
@@ -920,7 +876,7 @@ const Svg = styled.svg`
 			opacity: 0;
 		}
 		to {
-			opacity: 0.8;
+			opacity: 1;
 		}
 	}
 

@@ -1,13 +1,17 @@
-import React, { FC } from 'react';
+import React, { FC, RefObject } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
 
-const Contact: FC = () => {
+type ContactProps = {
+	contactSectionRef: RefObject<HTMLDivElement>;
+};
+
+const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
 	const { t } = useTranslation();
 
 	return (
-		<Wrapper className='contact'>
+		<Wrapper className='contact' ref={contactSectionRef}>
 			<FeaturesCon>
 				<SquareRight />
 				<SquareLeft />
