@@ -10,7 +10,6 @@ import Privacy from '../components/Legal/Privacy';
 import { CurrentTabCon, CurrentTabName, TabContainer, TabTitle } from '../components/Legal/styles';
 import Terms from '../components/Legal/Terms';
 import { Tabs } from '../constants';
-import { any } from 'prop-types';
 
 export async function getStaticProps({ locale }: any) {
 	return {
@@ -55,9 +54,11 @@ const Legal: NextPage<Props> = ({ locale }) => {
 				<TabContainer>
 					<TabTitle>Tinvio Legal Info</TabTitle>
 					<CurrentTabCon>
+						{/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
 						<CurrentTabName isActive={currentTab === Tabs.privacy} onClick={onPrivacyClick}>
 							Privacy Policy
 						</CurrentTabName>
+						{/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
 						<CurrentTabName isActive={currentTab === Tabs.terms} onClick={onTermsClick}>
 							Terms of Service
 						</CurrentTabName>
