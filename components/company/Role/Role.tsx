@@ -157,7 +157,7 @@ const GalleryTitle = styled.h2`
 	text-align: center;
 	margin: 0 0 32px 0;
 	position: relative;
-	max-width: 315px;
+	max-width: 330px;
 
 	&::before {
 		content: url('/images/company/Role/dec.svg');
@@ -169,7 +169,7 @@ const GalleryTitle = styled.h2`
 	@media (min-width: 768px) {
 		font-size: 44px;
 		line-height: 54px;
-		max-width: 540px;
+		max-width: 525px;
 
 		&::before {
 			left: 0;
@@ -178,7 +178,7 @@ const GalleryTitle = styled.h2`
 
 	@media (min-width: 1024px) {
 		text-align: left;
-		max-width: 400px;
+		max-width: 359px;
 
 		&::before {
 			left: -33px;
@@ -189,16 +189,17 @@ const GalleryTitle = styled.h2`
 	@media (min-width: 1280px) {
 		font-size: 48px;
 		line-height: 59px;
+		max-width: 405px;
 	}
 
 	@media (min-width: 1440px) {
-		max-width: 600px;
+		max-width: 550px;
 	}
 
 	@media (min-width: 1920px) {
 		font-size: 56px;
 		line-height: 69px;
-		max-width: 750px;
+		max-width: 710px;
 	}
 `;
 
