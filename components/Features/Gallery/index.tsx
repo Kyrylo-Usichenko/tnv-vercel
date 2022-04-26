@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
+import Image from 'next/image';
 
 const Gallery: FC = () => {
 	const { t } = useTranslation();
@@ -13,32 +14,40 @@ const Gallery: FC = () => {
 				<GalleryCon>
 					<GalleryGrid>
 						<GalleryColumn>
-							<Img1
-								src='/images/features/gallery/1.jpg'
-								srcSet='/images/features/gallery/1@2x.jpg 2x'
-								alt='man with pancil'
-								loading='lazy'
-							/>
-							<Img3
-								src='/images/features/gallery/3.jpg'
-								srcSet='/images/features/gallery/3@2x.jpg 2x'
-								alt='happy man on kitchen'
-								loading='lazy'
-							/>
+							<Img1>
+								<GalleryImg
+									src='/images/features/gallery/1@2x.jpg'
+									layout='fill'
+									objectFit='cover'
+									alt='man with pancil'
+								/>
+							</Img1>
+							<Img3>
+								<GalleryImg
+									src='/images/features/gallery/3@2x.jpg'
+									layout='fill'
+									objectFit='cover'
+									alt='happy man on kitchen'
+								/>
+							</Img3>
 						</GalleryColumn>
 						<GalleryColumn>
-							<Img2
-								src='/images/features/gallery/2.jpg'
-								srcSet='/images/features/gallery/2@2x.jpg 2x'
-								alt='happy old man with phone'
-								loading='lazy'
-							/>
-							<Img4
-								src='/images/features/gallery/4.jpg'
-								srcSet='/images/features/gallery/4@2x.jpg 2x'
-								alt='happy women with laptop'
-								loading='lazy'
-							/>
+							<Img2>
+								<GalleryImg
+									src='/images/features/gallery/2@2x.jpg'
+									layout='fill'
+									objectFit='cover'
+									alt='happy old man with phone'
+								/>
+							</Img2>
+							<Img4>
+								<GalleryImg
+									src='/images/features/gallery/4@2x.jpg'
+									layout='fill'
+									objectFit='cover'
+									alt='happy women with laptop'
+								/>
+							</Img4>
 						</GalleryColumn>
 					</GalleryGrid>
 					<GalleryTitle>{t('features:rockstar')}</GalleryTitle>
@@ -170,13 +179,16 @@ const GalleryColumn = styled.div`
 	}
 `;
 
-const GalleryImg = styled.img`
+const GalleryImg = styled(Image)`
 	border-radius: 32px;
-	width: 100%;
-	object-fit: cover;
 `;
 
-const Img1 = styled(GalleryImg)`
+const ImgDiv = styled.div`
+	position: relative;
+	width: 100%;
+`;
+
+const Img1 = styled(ImgDiv)`
 	height: 230px;
 
 	@media (min-width: 768px) {
@@ -188,7 +200,7 @@ const Img1 = styled(GalleryImg)`
 	}
 `;
 
-const Img2 = styled(GalleryImg)`
+const Img2 = styled(ImgDiv)`
 	height: 260px;
 
 	@media (min-width: 768px) {
@@ -200,7 +212,7 @@ const Img2 = styled(GalleryImg)`
 	}
 `;
 
-const Img3 = styled(GalleryImg)`
+const Img3 = styled(ImgDiv)`
 	height: 260px;
 
 	@media (min-width: 768px) {
@@ -216,7 +228,7 @@ const Img3 = styled(GalleryImg)`
 	}
 `;
 
-const Img4 = styled(GalleryImg)`
+const Img4 = styled(ImgDiv)`
 	height: 230px;
 
 	@media (min-width: 768px) {

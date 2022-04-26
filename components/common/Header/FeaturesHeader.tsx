@@ -1,4 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
+import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 
@@ -173,26 +174,16 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 						</Link>
 						<Socials>
 							<Social href={'/'}>
-								<img src='/images/footer/linkedin.svg' alt='linkedin' loading='lazy' />
+								<Image src='/images/footer/linkedin.svg' alt='linkedin' width={32} height={32} />
 							</Social>
 							<Social href={'/'}>
-								<img src='/images/footer/inst.svg' alt='instagram' loading='lazy' />
+								<Image src='/images/footer/inst.svg' alt='instagram' width={32} height={32} />
 							</Social>
 							<Store href={'/'}>
-								<img
-									src='/images/footer/gp.png'
-									srcSet='/images/footer/gp@2x.png 2x'
-									alt='google play'
-									loading='lazy'
-								/>
+								<Image src='/images/footer/gp@2x.png' width={113} height={40} alt='google play' />
 							</Store>
 							<Store href={'/'}>
-								<img
-									src='/images/footer/as.png'
-									srcSet='/images/footer/as@2x.png 2x'
-									alt='google play'
-									loading='lazy'
-								/>
+								<Image src='/images/footer/as@2x.png' width={113} height={40} alt='google play' />
 							</Store>
 						</Socials>
 					</MobileLinks>

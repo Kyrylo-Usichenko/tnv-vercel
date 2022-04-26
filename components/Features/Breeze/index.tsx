@@ -53,20 +53,24 @@ const Breeze: FC = () => {
 									<DelDate>Tue, 27 Oct</DelDate>
 								</Del>
 								<Man>
-									<Image
-										src='/images/features/breeze/man@2x.jpg'
-										layout='fill'
-										objectFit='contain'
-										alt='man'
-									/>
+									<ImgWrap>
+										<Image
+											src='/images/features/breeze/man@2x.jpg'
+											layout='fill'
+											objectFit='contain'
+											alt='man'
+										/>
+									</ImgWrap>
 								</Man>
 								<Women>
-									<Image
-										src='/images/features/breeze/women@2x.jpg'
-										layout='fill'
-										objectFit='contain'
-										alt='man'
-									/>
+									<ImgWrap>
+										<Image
+											src='/images/features/breeze/women@2x.jpg'
+											layout='fill'
+											objectFit='contain'
+											alt='man'
+										/>
+									</ImgWrap>
 								</Women>
 								<Order>
 									<OrderInfo>
@@ -279,18 +283,8 @@ const Block = styled.div`
 
 const ImgDiv = styled.div`
 	position: absolute;
-	height: 91px;
-	width: 91px;
-	border-radius: 50%;
-
-	& img {
-		border-radius: 50%;
-	}
 
 	@media (min-width: 768px) {
-		width: 124px;
-		height: 124px;
-
 		&::before {
 			top: 114px;
 			right: -6px;
@@ -323,6 +317,21 @@ const Women = styled(ImgDiv)`
 
 	@media (min-width: 1280px) {
 		right: 5px;
+	}
+`;
+
+const ImgWrap = styled.div`
+	position: relative;
+	height: 91px;
+	width: 91px;
+
+	& img {
+		border-radius: 50%;
+	}
+
+	@media (min-width: 768px) {
+		width: 124px;
+		height: 124px;
 	}
 `;
 
