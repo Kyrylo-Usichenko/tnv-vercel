@@ -1,19 +1,11 @@
-import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
+import React, { FC, RefObject, useRef } from 'react';
 import styled from 'styled-components';
-import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
+import useAnimate from '../../../hooks/useAnimate';
 import FadeIn from '../../common/FadeIn/FadeIn';
 
 const MapFlex: FC = () => {
-	const [isShow, setIsShow] = useState(false);
 	const ref = useRef() as RefObject<HTMLDivElement>;
-	const entry = useIntersectionObserver(ref, {});
-	const isVisible = !!entry?.isIntersecting;
-
-	useEffect(() => {
-		if (isVisible && !isShow) {
-			setIsShow(true);
-		}
-	}, [isVisible]);
+	const isShow = useAnimate(ref);
 
 	return (
 		<Wrapper>
