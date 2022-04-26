@@ -1,6 +1,8 @@
 import React, { FC, RefObject, useRef } from 'react';
 import styled from 'styled-components';
+
 import useAnimate from '../../../hooks/useAnimate';
+
 import FadeIn from '../../common/FadeIn/FadeIn';
 
 const MapFlex: FC = () => {

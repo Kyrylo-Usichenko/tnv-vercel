@@ -2,7 +2,7 @@ import React, { FC, RefObject, useRef } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 import { useTranslation } from 'next-i18next';
-import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
+import useAnimate from '../../../hooks/useAnimate';
 
 import { Container } from '../../common/Container/Container';
 import FadeIn from '../../common/FadeIn/FadeIn';
@@ -10,8 +10,7 @@ import FadeIn from '../../common/FadeIn/FadeIn';
 const Smile: FC = () => {
 	const { t } = useTranslation();
 	const ref = useRef() as RefObject<HTMLDivElement>;
-	const entry = useIntersectionObserver(ref, {});
-	const isVisible = !!entry?.isIntersecting;
+	const isShow = useAnimate(ref);
 
 	return (
 		<Wrapper>
@@ -28,7 +27,7 @@ const Smile: FC = () => {
 				<Dots top='27' left='-353' src='/images/main/smile/leftDots.svg' alt='' />
 				<Inner ref={ref}>
 					<GreyWrapper1>
-						{isVisible && (
+						{isShow && (
 							<FadeIn duration={500} delay={2200}>
 								<Grey></Grey>
 								<GreyInner></GreyInner>
@@ -43,7 +42,7 @@ const Smile: FC = () => {
 
 					<TopFirstLine>
 						<GreyWrapper2>
-							{isVisible && (
+							{isShow && (
 								<FadeIn duration={500} delay={1000}>
 									<Grey></Grey>
 									<GreyInner></GreyInner>
@@ -52,7 +51,7 @@ const Smile: FC = () => {
 							)}
 						</GreyWrapper2>
 						<GreyWrapper>
-							{isVisible && (
+							{isShow && (
 								<FadeIn duration={500} delay={2800}>
 									<Grey></Grey>
 									<GreyInner></GreyInner>
@@ -67,7 +66,7 @@ const Smile: FC = () => {
 					</TopFirstLine>
 					<TopSecondLine>
 						<GreyWrapper3>
-							{isVisible && (
+							{isShow && (
 								<FadeIn duration={500} delay={1800}>
 									<Grey></Grey>
 									<GreyInner></GreyInner>
@@ -76,7 +75,7 @@ const Smile: FC = () => {
 							)}
 						</GreyWrapper3>
 						<GreyWrapper>
-							{isVisible && (
+							{isShow && (
 								<FadeIn duration={500} delay={2400}>
 									<Grey></Grey>
 									<GreyInner></GreyInner>
@@ -86,7 +85,7 @@ const Smile: FC = () => {
 						</GreyWrapper>
 					</TopSecondLine>
 
-					{isVisible ? (
+					{isShow ? (
 						<FadeIn duration={2000} delay={0.2}>
 							<PinkWrapper>
 								<PinkBig />
@@ -110,7 +109,7 @@ const Smile: FC = () => {
 
 					<BotFirstLine>
 						<GreyWrapper3>
-							{isVisible && (
+							{isShow && (
 								<FadeIn duration={500} delay={2600}>
 									<Grey></Grey>
 									<GreyInner></GreyInner>
@@ -123,7 +122,7 @@ const Smile: FC = () => {
 							)}
 						</GreyWrapper3>
 						<GreyWrapper>
-							{isVisible && (
+							{isShow && (
 								<FadeIn duration={500} delay={1400}>
 									<Grey></Grey>
 									<GreyInner></GreyInner>
@@ -134,7 +133,7 @@ const Smile: FC = () => {
 					</BotFirstLine>
 					<BotSecondLine>
 						<GreyWrapper2>
-							{isVisible && (
+							{isShow && (
 								<FadeIn duration={500} delay={2000}>
 									<Grey></Grey>
 									<GreyInner></GreyInner>
@@ -143,7 +142,7 @@ const Smile: FC = () => {
 							)}
 						</GreyWrapper2>
 						<GreyWrapper>
-							{isVisible && (
+							{isShow && (
 								<FadeIn duration={500} delay={1200}>
 									<Grey></Grey>
 									<GreyInner></GreyInner>
@@ -157,7 +156,7 @@ const Smile: FC = () => {
 						</GreyWrapper>
 					</BotSecondLine>
 					<GreyWrapper4>
-						{isVisible && (
+						{isShow && (
 							<FadeIn duration={500} delay={1600}>
 								<Grey></Grey>
 								<GreyInner></GreyInner>
