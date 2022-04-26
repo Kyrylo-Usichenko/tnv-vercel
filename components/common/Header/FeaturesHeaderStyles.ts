@@ -193,6 +193,7 @@ export const LanguageMenu = styled.div<{ isOpen: boolean }>`
 	position: absolute;
 	display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
 	top: 33px;
+	z-index: 5;
 	left: -9px;
 	flex-direction: column;
 	height: 139px;

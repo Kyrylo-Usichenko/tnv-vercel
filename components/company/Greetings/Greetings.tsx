@@ -15,7 +15,7 @@ const Greetings: FC<GreetingsProps> = ({ scrollDown }) => {
 			<FeaturesCon>
 				<TitleDiv>
 					<Title>
-						Hi, we're <span className='accent'>Tinvio</span>!
+						{t('company:greetingsTitle')} <span className='accent'>Tinvio</span>!
 					</Title>
 				</TitleDiv>
 				<SubTitle>{t('company:greetingsSubTitle')}</SubTitle>

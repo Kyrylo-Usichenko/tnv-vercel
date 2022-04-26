@@ -11,7 +11,7 @@ const Teamvio: FC = () => {
 			<FeaturesCon>
 				<TitleDiv>
 					<Title>
-						Powered by <span className='accent'>Teamvio</span>
+						{t('company:teamvioTitle')} <span className='accent'>Teamvio</span>
 					</Title>
 				</TitleDiv>
 				<Inner>
@@ -51,7 +51,7 @@ const Teamvio: FC = () => {
 							<JoinSquareLeft />
 							<JoinSquareRight />
 							<JoinDots />
-							<Text>Up for a challenge? We're always looking for the best</Text>
+							<Text>{t('company:teamvioText')}</Text>
 							<Button>{t('company:teamvioButton')}</Button>
 						</Join>
 						<MobileImg

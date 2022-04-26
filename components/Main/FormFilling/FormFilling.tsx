@@ -118,7 +118,8 @@ const Smile: FC<SmileProps> = ({ formRef }) => {
 							<FormWrapper>
 								<Form onSubmit={handleFormSubmit}>
 									<FormTitle>
-										Hi, we’re <span className='accent'>Tinvio!</span> And you?
+										{t('main:formHeadingBefore')}
+										<span className='accent'> Tinvio!</span> {t('main:formHeadingAfter')}
 									</FormTitle>
 									<ModlaLabel>
 										{t('main:formName')}
@@ -397,15 +398,18 @@ const FormTitle = styled.p`
 	padding: 0;
 	margin: 0 0 32px 0;
 	text-align: center;
+	max-width: 295px;
 
 	@media (min-width: 768px) {
 		font-size: 24px;
 		line-height: 29px;
+		max-width: 329px;
 	}
 
 	@media (min-width: 1440.5px) {
 		font-size: 28px;
 		line-height: 34px;
+		max-width: 344px;
 	}
 `;
 
