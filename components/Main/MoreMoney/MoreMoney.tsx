@@ -1,12 +1,13 @@
 import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import styled, { keyframes, css } from 'styled-components';
 
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
+import { useTranslation } from 'next-i18next';
 
 import { Container } from '../../common/Container/Container';
-import { useTranslation } from 'next-i18next';
+import LeftMockComponent from './LeftMock';
+import RightMockComponent from './RightMock';
 
 const TYPE_WRITE_SPEED = 0.35;
 const TYPE_WRITE_DELAY = 700;
@@ -150,16 +151,8 @@ const MoreMoney: FC = () => {
 			<PurpleSquare>
 				<RedSquare>
 					<Null>
-						<LeftMock>
-							<ImageInner>
-								<Image src={tab.leftImg} alt={tab.name} layout='fill' objectFit='contain' priority />
-							</ImageInner>
-						</LeftMock>
-						<RightMock>
-							<ImageInner>
-								<Image src={tab.rightImg} alt={tab.name} layout='fill' objectFit='contain' priority />
-							</ImageInner>
-						</RightMock>
+						<LeftMockComponent name={tab.name} image={tab.leftImg} />
+						<RightMockComponent name={tab.name} image={tab.rightImg} />
 						<Stars src='images/main/moreMoney/stars.svg' alt='stars' />
 						<Dots src='images/main/moreMoney/dots.svg' alt='dots' />
 					</Null>
@@ -256,33 +249,6 @@ const Null = styled.div`
 	height: 400px;
 	position: relative;
 `;
-const ImageInner = styled.div`
-	width: 100%;
-	height: 100%;
-	position: relative;
-`;
-
-const LeftMock = styled.div`
-	position: absolute;
-	left: -139px;
-	top: -102px;
-	width: 300px;
-	height: 488px;
-	transition: all 0.3s ease;
-	@media (max-width: 1023px) {
-		right: 39%;
-		left: auto;
-		top: -95px;
-		width: 330px;
-		height: 536px;
-	}
-	@media (max-width: 425px) {
-		width: 225px;
-		height: 520px;
-		right: 45%;
-		top: -75px;
-	}
-`;
 
 const Dots = styled.img`
 	position: absolute;
@@ -291,28 +257,6 @@ const Dots = styled.img`
 	@media (max-width: 425px) {
 		top: 10px;
 		left: 120px;
-	}
-`;
-
-const RightMock = styled.div`
-	position: absolute;
-	left: 116px;
-	top: 42px;
-	background: url('/images/main/moreMoney/fruitPlanet.png') no-repeat;
-	background-size: contain;
-	width: 300px;
-	height: 488px;
-
-	@media (max-width: 1023px) {
-		top: 0;
-		left: 47%;
-		width: 330px;
-		height: 536px;
-	}
-	@media (max-width: 425px) {
-		// left: 204px;
-		// top: 0;
-		width: 225px;
 	}
 `;
 
