@@ -1,10 +1,12 @@
 import React, { FC, RefObject, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { FeaturesCon } from '../../common/Container/Container';
+
+import { useTranslation } from 'next-i18next';
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
+
+import { FeaturesCon } from '../../common/Container/Container';
 import LineL from './LineL';
 import LineR from './LineR';
-import { useTranslation } from 'next-i18next';
 
 type PreviewProps = {
 	openModal: () => void;
@@ -18,6 +20,8 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 	const pic2 = useRef() as RefObject<HTMLPictureElement>;
 
 	const mainImg = useRef() as RefObject<HTMLImageElement>;
+
+	const { t } = useTranslation();
 
 	useEffect(() => {
 		const isVisible = !!entry?.isIntersecting;
@@ -58,7 +62,6 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 
 		return () => window.removeEventListener('scroll', onScroll);
 	}, [entry]);
-	const { t } = useTranslation();
 
 	return (
 		<StyledPreview>
