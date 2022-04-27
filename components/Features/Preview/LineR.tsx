@@ -6,7 +6,6 @@ type LineRProps = {
 };
 
 const LineR: FC<LineRProps> = ({ animate }) => {
-	console.log('LineR', animate);
 	return (
 		<Svg
 			width='110'
