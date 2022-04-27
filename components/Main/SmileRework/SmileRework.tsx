@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components';
 import { useTranslation } from 'next-i18next';
 import useAnimate from '../../../hooks/useAnimate';
 
-import { Container } from '../../common/Container/Container';
+import { FeaturesCon } from '../../common/Container/Container';
 import FadeIn from '../../common/FadeIn/FadeIn';
 
 const Smile: FC = () => {
@@ -14,9 +14,9 @@ const Smile: FC = () => {
 
 	return (
 		<Wrapper>
-			<Container>
+			<FeaturesCon>
 				<Title>{t('main:smileTitle')}</Title>
-			</Container>
+			</FeaturesCon>
 			<MainBox>
 				<Dots top='-512' left='647' src='/images/main/smile/rightDots.svg' alt='' />
 

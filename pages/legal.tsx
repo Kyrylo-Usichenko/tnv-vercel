@@ -3,13 +3,13 @@ import { useRouter } from 'next/router';
 import { NextPage } from 'next/types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import Header from '../components/common/Header/Header';
 import { Main } from '../components/Main/Styles/Styles';
 import Footer from '../components/common/Footer';
 import Privacy from '../components/Legal/Privacy';
 import { CurrentTabCon, CurrentTabName, TabContainer, TabTitle } from '../components/Legal/styles';
 import Terms from '../components/Legal/Terms';
 import { Tabs } from '../constants';
+import FeaturesHeader from '../components/common/Header/FeaturesHeader';
 
 export async function getStaticProps({ locale }: any) {
 	return {
@@ -49,7 +49,7 @@ const Legal: NextPage<Props> = ({ locale }) => {
 	// console.log(router.asPath.slice(1));
 	return (
 		<Main>
-			<Header locale={locale} Tab='Legal' />
+			<FeaturesHeader locale={locale} Tab='Legal' />
 			<section className='legal'>
 				<TabContainer>
 					<TabTitle>Tinvio Legal Info</TabTitle>

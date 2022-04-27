@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useTranslation } from 'next-i18next';
 import useAnimate from '../../../hooks/useAnimate';
 
-import { Container } from '../../common/Container/Container';
+import { Container, FeaturesCon } from '../../common/Container/Container';
 import FadeIn from '../../common/FadeIn/FadeIn';
 
 const HowItWorks: FC = () => {
@@ -106,132 +106,136 @@ const HowItWorks: FC = () => {
 };
 
 const Wrapper = styled.section`
-	height: 685px;
-	margin: 159px 0 0 58px;
 	background: #f7f7f7;
 	z-index: 1;
 	transform: skewY(-8deg);
 	transform-origin: bottom right;
 	border-radius: 50px 0px 0px 50px;
-	@media (max-width: 1440px) {
-		margin: 185px 0 0 58px;
+	margin: 395px 0 0 0;
+	padding-bottom: 30px;
+	height: inherit;
+	@media (min-width: 768px) {
+		margin: 639px 0 0 0;
+		padding-bottom: 110px;
 	}
-	@media (max-width: 1280px) {
-		margin: 200px 0 0 58px;
-	}
-	@media (max-width: 1024px) {
+	@media (min-width: 1024px) {
 		margin: 195px 0 0 0;
 	}
-	@media (max-width: 970px) {
-		height: inherit;
-		padding-bottom: 40px;
-		margin: 210px 0 0 0;
+	@media (min-width: 1280px) {
+		margin: 200px 0 0 58px;
+		padding-bottom: 125px;
 	}
-	@media (max-width: 768px) {
-		margin: 639px 0 0 0;
-		padding-bottom: 121px;
+	@media (min-width: 1440px) {
+		margin: 185px 0 0 58px;
 	}
-	@media (max-width: 520px) {
-		margin: 660px 0 0 0;
-	}
-	@media (max-width: 425px) {
-		margin: 750px 0 0 0;
-		padding: 0;
-	}
-	@media (max-width: 375px) {
-		margin: 395px 0 0 0;
+	@media (min-width: 1920px) {
+		height: 685px;
+		margin: 159px 0 0 58px;
+		background: #f7f7f7;
+		z-index: 1;
+		transform: skewY(-8deg);
+		transform-origin: bottom right;
+		border-radius: 50px 0px 0px 50px;
 	}
 `;
-const ContainerHow = styled(Container)`
-	top: 7%;
+const ContainerHow = styled(FeaturesCon)`
+	top: 33px;
 `;
 const Inner = styled.div`
 	display: flex;
+	flex-direction: column;
+	align-items: center;
 	justify-content: space-between;
-	@media (max-width: 970px) {
-		flex-direction: column;
-		align-items: center;
+	@media (min-width: 1024px) {
+		flex-direction: row;
+		align-items: flex-start;
 	}
 `;
 const Null = styled.div`
 	transform: skewY(8deg);
-	width: 826px;
+	width: 550px;
 	height: 495px;
 	position: relative;
 	top: 64px;
-	@media (max-width: 1440px) {
-		width: 708px;
+	order: 1;
+
+	@media (min-width: 1024px) {
+		order: 0;
 	}
-	@media (max-width: 1280px) {
+	@media (min-width: 1280px) {
 		width: 636px;
 	}
-	@media (max-width: 1024px) {
-		width: 550px;
+	@media (min-width: 1440px) {
+		width: 708px;
 	}
-	@media (max-width: 970px) {
-		order: 1;
-		height: 525px;
+
+	@media (min-width: 1920px) {
+		transform: skewY(8deg);
+		width: 826px;
+		height: 495px;
+		position: relative;
+		top: 64px;
 	}
 `;
 const Info = styled.div`
 	transform: skewY(8deg);
 	max-width: 574px;
 	height: 230px;
-	margin-top: 200px;
-	@media (max-width: 970px) {
-		text-align: center;
-		margin-top: 100px;
+	text-align: center;
+	margin-top: 100px;
+	@media (min-width: 1024px) {
+		text-align: left;
+		margin-top: 200px;
 	}
 `;
 const InfoTitle = styled.h2`
 	font-family: 'Gilroy';
 	font-style: normal;
 	font-weight: 600;
-	font-size: 44px;
-	line-height: 54px;
 	color: #212121;
 	padding: 0;
 	margin: 0 0 16px 0;
 	white-space: nowrap;
-	@media (max-width: 1440px) {
-		font-size: 36px;
-		line-height: 42px;
-	}
-	@media (max-width: 1024px) {
+	font-size: 28px;
+	line-height: 34px;
+	@media (min-width: 768px) {
 		font-size: 32px;
 		line-height: 38px;
 	}
-	@media (max-width: 767px) {
-		font-size: 28px;
-		line-height: 34px;
+	@media (min-width: 1280px) {
+		font-size: 36px;
+		line-height: 42px;
+	}
+	@media (min-width: 1920px) {
+		font-size: 44px;
+		line-height: 54px;
 	}
 `;
 const InfoText = styled.p`
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 400;
-	font-size: 18px;
-	line-height: 24px;
 	color: #5c5c5c;
 	padding: 0;
 	max-width: 478px;
 	margin: 0 0 32px 0;
-	@media (max-width: 1440px) {
+	font-size: 14px;
+	line-height: 23px;
+
+	@media (min-width: 768px) {
+		max-width: 429px;
 		font-size: 16px;
-		line-height: 23px;
 	}
-	@media (max-width: 1280px) {
-		max-width: 398px;
-	}
-	@media (max-width: 1024px) {
+	@media (min-width: 1024px) {
 		max-width: 356px;
 	}
-	@media (max-width: 970px) {
-		max-width: 429px;
+	@media (min-width: 1280px) {
+		max-width: 398px;
 	}
-	@media (max-width: 767px) {
-		font-size: 14px;
-		line-height: 23px;
+	@media (min-width: 1920px) {
+		font-size: 18px;
+		line-height: 24px;
+		max-width: 478px;
 	}
 `;
 
@@ -241,31 +245,31 @@ const Button = styled.button`
 	background: #ffffff;
 	border-radius: 18px;
 	border: none;
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	@media (max-width: 970px) {
-		margin: 0 auto;
+	@media (min-width: 1024px) {
+		margin: 0;
 	}
 `;
 const ButtonText = styled.p`
 	font-family: 'Gilroy';
 	font-style: normal;
 	font-weight: 700;
-	font-size: 18px;
-	line-height: 22px;
 	display: flex;
 	align-items: center;
 	text-align: center;
 	color: #212121;
 	margin: 0 0 0 8px;
 	padding: 0;
-	@media (max-width: 767px) {
-		font-size: 14px;
-		line-height: 17px;
+	font-size: 14px;
+	line-height: 17px;
+	@media (min-width: 768px) {
+		font-size: 18px;
+		line-height: 22px;
 	}
 `;
 
@@ -276,35 +280,25 @@ const Box = styled.div`
 	top: 0;
 	left: 0;
 	background: white;
-	border-radius: 19.0256px;
+	border-radius: 11.6324px;
 	box-shadow: 4px 7px 20px 0px rgba(33, 33, 33, 0.1);
 	transform: rotate(8deg);
-	@media (max-width: 1280px) {
-		border-radius: 19.0256px;
-	}
-	@media (max-width: 1024px) {
+	@media (min-width: 768px) {
 		border-radius: 17.642px;
 	}
-	@media (max-width: 425px) {
-		border-radius: 11.6324px;
+	@media (min-width: 1280px) {
+		border-radius: 19.0256px;
 	}
 `;
 
 const CardTop = styled.div`
 	position: relative;
-	top: 33.99px;
-	left: 25px;
-	height: 109.36px;
-	width: 271.77px;
-	// background: white;
-	// border-radius: 19.0256px;
-	// box-shadow: 4px 7px 20px 0px rgba(33, 33, 33, 0.1);
-	// transform: matrix(0.99, 0.14, -0.14, 0.99, 0, 0);
+	top: 34px;
 	z-index: 2;
-	// display: flex;
-	// flex-direction: column;
-	// align-items: center;
-
+	width: 167px;
+	height: 67px;
+	left: 110px;
+	padding: 0 15px;
 	& img {
 		position: absolute;
 		width: 100%;
@@ -314,31 +308,29 @@ const CardTop = styled.div`
 		object-fit: contain;
 		z-index: 1;
 	}
-	@media (max-width: 970px) {
+	@media (min-width: 768px) {
 		width: 252px;
 		height: 101px;
 		left: 60px;
 		padding: 0 15px;
 	}
-	@media (max-width: 768px) {
-		width: 252px;
+	@media (min-width: 1024px) {
 		height: 101px;
 		left: 60px;
 		padding: 0 15px;
 	}
-	@media (max-width: 425px) {
-		width: 166.16px;
-		height: 66.86px;
-		left: 110px;
-		padding: 0 15px;
+	@media (min-width: 1280px) {
+		position: relative;
+		top: 34px;
+		left: 25px;
+		height: 110px;
+		width: 272px;
+		z-index: 2;
 	}
 `;
 const CardMiddle = styled.div`
 	position: absolute;
-	top: 204.32px;
-	left: 269.44px;
-	height: 109.36px;
-	width: 271.77px;
+
 	// background: white;
 	// border-radius: 19.0256px;
 	// box-shadow: 4px 7px 20px 0px rgba(33, 33, 33, 0.1);
@@ -347,6 +339,11 @@ const CardMiddle = styled.div`
 	// display: flex;
 	// flex-direction: column;
 	// align-items: center;
+	width: 166.16px;
+	height: 66.86px;
+	padding: 0 30px;
+	top: 147px;
+	left: 272px;
 
 	& img {
 		position: absolute;
@@ -357,21 +354,32 @@ const CardMiddle = styled.div`
 		object-fit: contain;
 		z-index: 1;
 	}
-
-	@media (max-width: 970px) {
+	@media (min-width: 768px) {
 		width: 252px;
 		height: 101px;
 		top: 191px;
 		left: 290px;
 	}
-
-	@media (max-width: 425px) {
-		width: 166.16px;
-		height: 66.86px;
-		padding: 0 30px;
-		top: 147px;
-		left: 272px;
+	@media (min-width: 1024px) {
+		top: 204.32px;
+		left: 269.44px;
+		height: 109.36px;
+		width: 271.77px;
 	}
+	//@media (max-width: 970px) {
+	//	width: 252px;
+	//	height: 101px;
+	//	top: 191px;
+	//	left: 290px;
+	//}
+	//
+	//@media (max-width: 425px) {
+	//	width: 166.16px;
+	//	height: 66.86px;
+	//	padding: 0 30px;
+	//	top: 147px;
+	//	left: 272px;
+	//}
 `;
 const CardBot = styled.div`
 	position: absolute;
@@ -379,26 +387,27 @@ const CardBot = styled.div`
 	left: 0.87px;
 	height: 109.36px;
 	width: 271.77px;
-	// background: white;
-	// border-radius: 19.0256px;
-	// box-shadow: 4px 7px 20px 0px rgba(33, 33, 33, 0.1);
-	// transform: matrix(0.99, 0.14, -0.14, 0.99, 0, 0);
 	z-index: -1;
-	// display: flex;
-	// flex-direction: column;
-	// align-items: center;
 
 	& img {
 		position: absolute;
-		width: 100%;
-		height: 80%;
-		top: 10px;
-		left: 0;
 		object-fit: contain;
 		z-index: 1;
-	}
 
-	@media (max-width: 970px) {
+		width: 166.16px;
+		height: 66.86px;
+		padding: 0 30px;
+		top: 244px;
+		left: 100px;
+	}
+	@media (min-width: 1px) {
+		width: 166.16px;
+		height: 66.86px;
+		padding: 0 30px;
+		top: 244px;
+		left: 100px;
+	}
+	@media (min-width: 768px) {
 		padding: 0 30px;
 		width: 252px;
 		height: 101px;
@@ -406,237 +415,275 @@ const CardBot = styled.div`
 		left: 26px;
 	}
 
-	@media (max-width: 425px) {
-		width: 166.16px;
-		height: 66.86px;
-		padding: 0 30px;
-		top: 244px;
-		left: 100px;
+	@media (min-width: 1024px) {
+		position: absolute;
+		top: 341.88px;
+		left: 0.87px;
+		height: 109.36px;
+		width: 271.77px;
+		z-index: -1;
+		padding: 0;
 	}
 `;
 
-// const Title = styled.div`
-// 	font-family: 'Gilroy';
-// 	font-style: normal;
-// 	font-weight: 700;
-// 	font-size: 20.6111px;
-// 	line-height: 26px;
-// 	display: flex;
-// 	align-items: center;
-// 	color: #212121;
-// 	margin-top: 24px;
-// 	padding: 0;
-// 	@media (max-width: 970px) {
-// 		font-size: 12.6018px;
-// 		line-height: 16px;
-// 		margin-top: 15px;
-// 	}
-// `;
-
-// const Text = styled.p<{ width: string }>`
-// 	max-width: ${({ width }) => `${width}px`};
-// 	padding: 0;
-// 	margin: 10px 0 0 0;
-// 	font-family: 'Inter';
-// 	font-style: normal;
-// 	font-weight: 400;
-// 	font-size: 12px;
-// 	line-height: 15px;
-// 	display: flex;
-// 	align-items: center;
-// 	text-align: center;
-// 	color: #5c5c5c;
-// 	@media (max-width: 970px) {
-// 		margin: 0;
-// 		font-weight: 400;
-// 		font-size: 7.33688px;
-// 	}
-// `;
-
 const CardTopIcon = styled.div`
 	background: url('/images/main/howItWorks/iconFirstCard.png');
-	width: 92px;
-	height: 92px;
 	position: absolute;
-	left: 219px;
-	top: -34px;
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
 	background-size: cover;
-	@media (max-width: 970px) {
+	left: 145px;
+	top: -13px;
+	width: 50px;
+	height: 50px;
+
+	@media (min-width: 768px) {
 		left: 224px;
 		top: -2px;
 		width: 70px;
 		height: 70px;
 	}
-
-	@media (max-width: 425px) {
-		left: 145px;
-		top: -13px;
-		width: 50px;
-		height: 50px;
+	@media (min-width: 1024px) {
+		background: url('/images/main/howItWorks/iconFirstCard.png');
+		width: 92px;
+		height: 92px;
+		position: absolute;
+		left: 219px;
+		top: -34px;
+		transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
+		background-size: cover;
 	}
+	//@media (max-width: 970px) {
+	//	left: 224px;
+	//	top: -2px;
+	//	width: 70px;
+	//	height: 70px;
+	//}
+	//
+	//@media (max-width: 425px) {
+	//	left: 145px;
+	//	top: -13px;
+	//	width: 50px;
+	//	height: 50px;
+	//}
 `;
 const CardMiddleIcon = styled.div`
 	position: absolute;
-	width: 91px;
-	height: 93px;
-	left: -19px;
-	bottom: -45px;
 	background: url('/images/main/howItWorks/iconSecondCard.svg');
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
 	background-size: cover;
-
-	@media (max-width: 970px) {
+	left: -18px;
+	bottom: -26px;
+	width: 50px;
+	height: 50px;
+	@media (min-width: 768px) {
 		left: -18px;
 		bottom: -15px;
 		width: 68px;
 		height: 66px;
 	}
-
-	@media (max-width: 425px) {
-		left: -18px;
-		bottom: -26px;
-		width: 50px;
-		height: 50px;
+	@media (min-width: 1024px) {
+		position: absolute;
+		width: 91px;
+		height: 93px;
+		left: -19px;
+		bottom: -45px;
+		background: url('/images/main/howItWorks/iconSecondCard.svg');
+		transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
+		background-size: cover;
 	}
 `;
 const CardBotIcon = styled.div`
 	position: absolute;
-	width: 87px;
-	height: 87px;
 	background: url('/images/main/howItWorks/iconThirdCard.png');
-	left: -5px;
-	top: -35px;
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
 	background-size: contain;
-
-	@media (max-width: 970px) {
-		left: -2px;
-		top: -39px;
-		width: 70px;
-		height: 70px;
-	}
-	@media (max-width: 425px) {
+	left: -2px;
+	top: -21px;
+	width: 50px;
+	height: 50px;
+	@media (min-width: 1px) {
 		left: -2px;
 		top: -21px;
 		width: 50px;
 		height: 50px;
 	}
+	@media (min-width: 768px) {
+		left: -2px;
+		top: -39px;
+		width: 70px;
+		height: 70px;
+	}
+	@media (min-width: 1024px) {
+		position: absolute;
+		width: 87px;
+		height: 87px;
+		background: url('/images/main/howItWorks/iconThirdCard.png');
+		left: -5px;
+		top: -35px;
+		transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
+		background-size: contain;
+	}
 `;
 
 const CardTopStars = styled.div`
 	position: absolute;
-	left: 137px;
+	left: 170px;
 	top: -53px;
 	width: 56px;
 	height: 42px;
 	background: url('/images/main/howItWorks/starsFirstCard.svg');
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
-	@media (max-width: 970px) {
+	@media (max-width: 1px) {
+		left: 75px;
+	}
+	@media (min-width: 768px) {
 		left: 170px;
 	}
 
-	@media (max-width: 425px) {
-		left: 75px;
+	@media (min-width: 1024px) {
+		position: absolute;
+		left: 137px;
+		top: -53px;
+		width: 56px;
+		height: 42px;
+		background: url('/images/main/howItWorks/starsFirstCard.svg');
+		transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
 	}
 `;
 
 const CardMiddleStars = styled.div`
 	position: absolute;
-	left: 187px;
-	top: -71px;
-	width: 80px;
-	height: 44px;
 	background: url('/images/main/howItWorks/starsSecondCard.svg') no-repeat;
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
 	background-size: cover;
-
-	@media (max-width: 970px) {
-		width: 85px;
-		height: 45px;
-		left: 167px;
-		top: -49px;
-	}
-	@media (max-width: 425px) {
+	width: 85px;
+	height: 45px;
+	left: 167px;
+	top: -49px;
+	@media (min-width: 1px) {
 		width: 60px;
 		height: 32px;
 		left: 100px;
 		top: -43px;
 	}
+	@media (min-width: 768px) {
+		width: 85px;
+		height: 45px;
+		left: 167px;
+		top: -49px;
+	}
+	@media (min-width: 1024px) {
+		position: absolute;
+		left: 187px;
+		top: -71px;
+		width: 80px;
+		height: 44px;
+		background: url('/images/main/howItWorks/starsSecondCard.svg') no-repeat;
+		transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
+		background-size: cover;
+	}
 `;
 
 const CardBotStars = styled.div`
 	position: absolute;
-	left: 281px;
-	top: -5px;
-	width: 50px;
 	height: 59px;
 	background: url('/images/main/howItWorks/starsThirdCard.svg') no-repeat;
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
 	background-size: contain;
-
-	@media (max-width: 970px) {
+	width: 60px;
+	left: 277px;
+	top: 7px;
+	@media (min-width: 1px) {
+		width: 40px;
+		left: 167px;
+		top: -9px;
+	}
+	@media (min-width: 768px) {
 		width: 60px;
 		left: 277px;
 		top: 7px;
 	}
-	@media (max-width: 425px) {
-		width: 40px;
-		left: 167px;
-		top: -9px;
+	@media (min-width: 1024px) {
+		position: absolute;
+		left: 281px;
+		top: -5px;
+		width: 50px;
+		height: 59px;
+		background: url('/images/main/howItWorks/starsThirdCard.svg') no-repeat;
+		transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
+		background-size: contain;
 	}
 `;
 
 const CardBotStars2 = styled.div`
 	position: absolute;
-	left: 80px;
-	top: -68px;
-	width: 51px;
 	height: 36px;
 	background: url('/images/main/howItWorks/sideStars.svg') no-repeat;
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
 	background-size: contain;
-
-	@media (max-width: 970px) {
-		width: 70px;
-		left: 76px;
-		top: -60px;
-	}
-	@media (max-width: 425px) {
+	width: 70px;
+	left: 76px;
+	top: -60px;
+	@media (min-width: 1px) {
 		width: 40px;
 		left: 37px;
 		top: -44px;
 	}
+	@media (min-width: 768px) {
+		width: 70px;
+		left: 76px;
+		top: -60px;
+	}
+	@media (min-width: 1024px) {
+		position: absolute;
+		left: 80px;
+		top: -68px;
+		width: 51px;
+		height: 36px;
+		background: url('/images/main/howItWorks/sideStars.svg') no-repeat;
+		transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
+		background-size: contain;
+	}
 `;
 
 const DotsLeft = styled.div`
-	width: 298px;
-	height: 225px;
 	position: absolute;
-	left: 42px;
-	top: 153px;
 	background: url('/images/main/howItWorks/leftBottomDots.png') no-repeat;
 	//transform: rotate(-8deg);
 	background-size: contain;
 	z-index: -2;
-	@media (max-width: 1280px) {
+	width: 298px;
+	height: 225px;
+	left: -292px;
+	top: -339px;
+	@media (min-width: 1px) {
 		width: 298px;
 		height: 225px;
-		left: -140px;
-		top: 123px;
+		left: -292px;
+		top: -339px;
 	}
-
-	@media (max-width: 970px) {
+	@media (min-width: 768px) {
 		width: 298px;
 		height: 225px;
 		left: -202px;
 		top: -395px;
 	}
-	@media (max-width: 425px) {
+	@media (min-width: 1024px) {
 		width: 298px;
 		height: 225px;
-		left: -292px;
-		top: -339px;
+		left: -140px;
+		top: 123px;
+	}
+	@media (min-width: 1280px) {
+		width: 298px;
+		height: 225px;
+		position: absolute;
+		left: 42px;
+		top: 153px;
+		background: url('/images/main/howItWorks/leftBottomDots.png') no-repeat;
+		//transform: rotate(-8deg);
+		background-size: contain;
+		z-index: -2;
 	}
 `;
 
@@ -694,51 +741,53 @@ const DotsRight = styled.div`
 
 const RedLine = styled.div`
 	position: absolute;
-	width: 141px;
 	height: 91px;
-	// left: 267px;
-	left: 265px;
-	// top: 42px;
-	top: 55px;
 	background: url('/images/main/howItWorks/redLineFirst.svg') no-repeat;
 	// transform: rotate(-8deg);
 	background-size: contain;
-	@media (max-width: 970px) {
+	width: 100px;
+	left: 157px;
+	top: 38px;
+	@media (min-width: 768px) {
 		width: 124px;
 		left: 238px;
 		top: 58px;
 	}
-	@media (max-width: 425px) {
-		width: 100px;
-		left: 157px;
-		top: 38px;
+	@media (min-width: 1280px) {
+		position: absolute;
+		width: 141px;
+		height: 91px;
+		// left: 267px;
+		left: 265px;
+		// top: 42px;
+		top: 55px;
+		background: url('/images/main/howItWorks/redLineFirst.svg') no-repeat;
+		// transform: rotate(-8deg);
+		background-size: contain;
 	}
 `;
 const RedLine2 = styled.div`
 	position: absolute;
-	width: 141px;
-	// height: 91px;
 	height: 85px;
-	left: -122px;
-	// top: 55px;
-	top: 35px;
+
 	background: url('/images/main/howItWorks/redLineSecond.svg') no-repeat;
-	// transform: rotate(-8deg);
 	background-size: contain;
-	@media (max-width: 970px) {
-		width: 100px;
-		left: -87px;
-		top: 29px;
-	}
-	@media (max-width: 768px) {
+	width: 100px;
+	left: -87px;
+	top: 29px;
+	@media (min-width: 768px) {
 		width: 124px;
 		left: -117px;
 		top: 12px;
 	}
-	@media (max-width: 425px) {
-		width: 100px;
-		left: -87px;
-		top: 29px;
+	@media (min-width: 1024px) {
+		position: absolute;
+		width: 141px;
+		height: 85px;
+		left: -122px;
+		top: 35px;
+		background: url('/images/main/howItWorks/redLineSecond.svg') no-repeat;
+		background-size: contain;
 	}
 `;
 const CardContent = styled.div`
@@ -746,35 +795,44 @@ const CardContent = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 25px 40px;
-	@media (max-width: 1024px) {
+	padding: 8px 10px;
+	@media (min-width: 768px) {
 		padding: 25px 24px;
 	}
-	@media (max-width: 425px) {
-		padding: 8px 10px;
+	@media (min-width: 1280px) {
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 25px 40px;
 	}
 `;
 const CardTitle = styled.p`
 	font-family: 'Gilroy';
 	font-style: normal;
 	font-weight: 700;
-	font-size: 20.6111px;
-	line-height: 26px;
-	/* identical to box height */
-
 	display: flex;
 	align-items: center;
-
 	color: #212121;
 	margin: 0;
 	padding: 0 0 5px;
-	@media (max-width: 1024px) {
+	font-size: 14px;
+	line-height: 11px;
+	@media (min-width: 768px) {
 		font-size: 19.1121px;
 		line-height: 24px;
 	}
-	@media (max-width: 425px) {
-		font-size: 14px;
-		line-height: 11px;
+	@media (min-width: 1024px) {
+		font-family: 'Gilroy';
+		font-style: normal;
+		font-weight: 700;
+		font-size: 20.6111px;
+		line-height: 26px;
+		display: flex;
+		align-items: center;
+		color: #212121;
+		margin: 0;
+		padding: 0 0 5px;
 	}
 `;
 
@@ -782,21 +840,30 @@ const CardText = styled.p`
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 400;
-	font-size: 12px;
-	line-height: 15px;
 	display: flex;
 	align-items: center;
 	text-align: center;
 	margin: 0;
 	padding: 0;
 	color: #5c5c5c;
-	@media (max-width: 1024px) {
+	font-size: 9px;
+	line-height: 11px;
+	@media (min-width: 768px) {
 		font-size: 11px;
 		line-height: 13px;
 	}
-	@media (max-width: 425px) {
-		font-size: 9px;
-		line-height: 11px;
+	@media (min-width: 1024px) {
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 15px;
+		display: flex;
+		align-items: center;
+		text-align: center;
+		margin: 0;
+		padding: 0;
+		color: #5c5c5c;
 	}
 `;
 

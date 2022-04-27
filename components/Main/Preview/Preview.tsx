@@ -27,151 +27,133 @@ const Preview: FC<PreviewProps> = ({ scrollDown }) => {
 };
 
 const PreviewInfo = styled.div`
-	padding: 260px 0 0;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
-	@media (max-width: 1440px) {
-		padding: 252px 0 0;
-	}
-	@media (max-width: 1280px) {
-		padding: 252px 0 0;
-	}
-	@media (max-width: 1024px) {
-		padding: 257px 0 0;
-	}
-	@media (max-width: 768px) {
+	align-items: center;
+	padding: 140px 0 0;
+	@media (min-width: 768px) {
 		padding: 126px 0 0;
-		align-items: center;
 		margin-left: 0;
 	}
-	@media (max-width: 370px) {
-		padding: 140px 0 0;
+	@media (min-width: 1024px) {
+		padding: 257px 0 0;
+		align-items: flex-start;
+	}
+	@media (min-width: 1280px) {
+		padding: 252px 0 0;
+	}
+	@media (min-width: 1440px) {
+		padding: 252px 0 0;
+	}
+	@media (min-width: 1920px) {
+		padding: 260px 0 0;
 	}
 `;
 
 const PreviewTitle = styled.h2`
-	max-width: 478px;
-	margin: 0 0 16px 0;
 	font-family: 'Gilroy';
 	font-weight: 600;
-	font-size: 48px;
-	line-height: 59px;
+
 	position: relative;
+
+	font-size: 32px;
+	line-height: 39px;
+	margin: 0 0 16px 0;
+	max-width: 333px;
+	text-align: center;
 
 	&:before {
 		content: '';
-		width: 87px;
-		height: 80px;
 		background: url('/images/main/preview/decorations.svg');
 		position: absolute;
 		z-index: 1;
-		left: -42px;
-		top: -44px;
 		background-size: contain;
-		@media (max-width: 1024px) {
-			transform: rotate(27deg);
-		}
-		@media (max-width: 768px) {
-			left: -31px;
-			top: -55px;
-		}
-		@media (max-width: 425px) {
-			left: -18px;
-			top: -43px;
-		}
-		@media (max-width: 375px) {
-			width: 75px;
-			left: -15px;
-			top: -45px;
-		}
-	}
-	&:after {
-		content: '';
-		width: 59px;
-		height: 56px;
-		background: url('/images/main/preview/decorations768.svg');
-		position: absolute;
-		z-index: 1;
-		right: -44px;
-		top: 25px;
-		@media (max-width: 425px) {
-			right: 0;
+		transform: rotate(27deg);
+		height: 80px;
+		width: 75px;
+		left: -15px;
+		top: -45px;
+
+		@media (min-width: 768px) {
+			left: -20px;
+			top: -44px;
 		}
 		@media (min-width: 1024px) {
-			display: none;
+			left: -26px;
+			top: -38px;
+		}
+		@media (min-width: 1280px) {
+			left: -35px;
+			top: -27px;
+			transform: rotate(0deg);
+		}
+		@media (min-width: 1920px) {
+			left: -42px;
+			top: -44px;
+			width: 87px;
+			height: 80px;
 		}
 	}
-	@media (max-width: 1440px) {
-		font-size: 44px;
-		line-height: 54px;
-		margin: 0 0 11px 0;
-		max-width: 427px;
-	}
-	@media (max-width: 1280px) {
-		font-size: 44px;
-		line-height: 54px;
-		margin: 0 0 11px 0;
-		max-width: 427px;
-	}
-	@media (max-width: 1024px) {
-		font-size: 36px;
-		line-height: 49px;
-		margin: 0 0 15px 0;
-		max-width: 373px;
-	}
-	@media (max-width: 768px) {
+
+	@media (min-width: 768px) {
 		font-size: 32px;
 		line-height: 39px;
 		margin: 0 0 16px 0;
 		max-width: 333px;
-		text-align: center;
 	}
-	@media (max-width: 767px) {
-		font-size: 28px;
-		line-height: 34px;
+	@media (min-width: 1024px) {
+		text-align: left;
+	}
+	@media (min-width: 1280px) {
+		font-size: 44px;
+		line-height: 54px;
+		margin: 0 0 11px 0;
+		max-width: 427px;
+	}
+	@media (min-width: 1440px) {
+		font-size: 44px;
+		line-height: 54px;
+		margin: 0 0 11px 0;
+		max-width: 427px;
+	}
+	@media (min-width: 1920px) {
+		max-width: 478px;
 		margin: 0 0 16px 0;
-		max-width: 333px;
+		font-weight: 600;
+		font-size: 48px;
+		line-height: 59px;
 	}
 `;
 
 const PreviewText = styled.p`
-	max-width: 415px;
 	font-family: 'Inter';
 	font-weight: 400;
-	font-size: 20px;
-	line-height: 26px;
 	color: var(--text-second);
 	margin: 0 0 32px 0;
-	@media (max-width: 1440px) {
-		font-size: 18px;
-		line-height: 24px;
-		max-width: 369px;
-	}
-	@media (max-width: 1440px) {
-		font-size: 18px;
-		line-height: 24px;
-		max-width: 369px;
-	}
-	@media (max-width: 1280px) {
-		font-size: 18px;
-		line-height: 24px;
-	}
-	@media (max-width: 1024px) {
-		font-size: 16px;
-		line-height: 24px;
-		max-width: 334px;
-	}
-	@media (max-width: 768px) {
+	text-align: center;
+	font-size: 14px;
+	line-height: 22px;
+	max-width: 333px;
+	@media (min-width: 768px) {
 		font-size: 16px;
 		line-height: 24px;
 		max-width: 477px;
-		text-align: center;
 	}
-	@media (max-width: 767px) {
-		font-size: 14px;
-		line-height: 22px;
-		max-width: 333px;
+	@media (min-width: 1024px) {
+		font-size: 16px;
+		line-height: 24px;
+		max-width: 334px;
+		text-align: left;
+	}
+	@media (min-width: 1280px) {
+		font-size: 18px;
+		line-height: 24px;
+		max-width: 369px;
+	}
+	@media (min-width: 1920px) {
+		font-size: 20px;
+		line-height: 26px;
+		max-width: 415px;
 	}
 `;
 const PreviewAction = styled.div`
@@ -181,12 +163,9 @@ const PreviewAction = styled.div`
 	row-gap: 12px;
 `;
 const Button = styled.button`
-	font-size: 20px;
-	line-height: 25px;
 	font-family: 'Gilroy', sans-serif;
 	font-weight: 700;
-	width: 220px;
-	height: 56px;
+
 	color: var(--text-white);
 	text-align: center;
 	padding: 14px 0;
@@ -195,6 +174,10 @@ const Button = styled.button`
 	background-color: var(--text-primary);
 	cursor: pointer;
 	transition: all 0.3s ease;
+	font-size: 16px;
+	line-height: 20px;
+	width: 188px;
+	height: 48px;
 
 	&:hover {
 		background-color: var(--text-primary-hover);
@@ -205,11 +188,11 @@ const Button = styled.button`
 		background-color: var(--text-primary);
 		box-shadow: 8px 4px 20px 0 var(--shadow-color);
 	}
-	@media (max-width: 1440px) {
-		font-size: 16px;
-		line-height: 20px;
-		width: 188px;
-		height: 48px;
+	@media (min-width: 1440px) {
+		line-height: 25px;
+		font-size: 20px;
+		width: 220px;
+		height: 56px;
 	}
 `;
 const PreviewFootnote = styled.span`
@@ -220,9 +203,11 @@ const PreviewFootnote = styled.span`
 	font-size: 16px;
 	line-height: 19px;
 	color: var(--text-second);
-	@media (max-width: 1440px) {
-		font-size: 14px;
-		line-height: 17px;
+	font-size: 14px;
+	line-height: 17px;
+	@media (min-width: 1440px) {
+		font-size: 16px;
+		line-height: 19px;
 	}
 `;
 

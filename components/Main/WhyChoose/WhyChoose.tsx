@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { Container } from '../../common/Container/Container';
+import { FeaturesCon } from '../../common/Container/Container';
 import Slider from '../Slider/Slider';
 import { useTranslation } from 'next-i18next';
 
@@ -16,7 +16,7 @@ const WhyChoose: FC = () => {
 				<Null>
 					{/* <GreySquare /> */}
 
-					<Container>
+					<FeaturesCon>
 						<DotsLeftBot>
 							<Image src='/images/main/whyChoose/big-rombs.png' layout='fill' objectFit='contain' />
 						</DotsLeftBot>
@@ -29,7 +29,7 @@ const WhyChoose: FC = () => {
 							<Title>{t('main:whyChoose')}</Title>
 							<Slider />
 						</Inner>
-					</Container>
+					</FeaturesCon>
 				</Null>
 			</Wrapper>
 		</Styled>
