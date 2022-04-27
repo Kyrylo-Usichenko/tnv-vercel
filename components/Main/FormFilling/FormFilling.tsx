@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FC, RefObject, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import { Container, FeaturesCon } from '../../common/Container/Container';
+import { FeaturesCon } from '../../common/Container/Container';
 import MapComponentFlex from './MapFlex';
 import { useTranslation } from 'next-i18next';
 

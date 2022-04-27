@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useTranslation } from 'next-i18next';
 import useAnimate from '../../../hooks/useAnimate';
 
-import { Container, FeaturesCon } from '../../common/Container/Container';
+import { FeaturesCon } from '../../common/Container/Container';
 import FadeIn from '../../common/FadeIn/FadeIn';
 
 const HowItWorks: FC = () => {

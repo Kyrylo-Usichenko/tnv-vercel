@@ -5,7 +5,7 @@ import styled, { keyframes, css } from 'styled-components';
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 import { useTranslation } from 'next-i18next';
 
-import { Container, FeaturesCon } from '../../common/Container/Container';
+import { FeaturesCon } from '../../common/Container/Container';
 import LeftMockComponent from './LeftMock';
 import RightMockComponent from './RightMock';
 
