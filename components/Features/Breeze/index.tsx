@@ -1,12 +1,30 @@
-import React, { FC } from 'react';
+import React, { FC, useState, useRef, RefObject, useEffect } from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
 
+import ManL from './ManL';
+import WomenL from './WomenL';
+import ConL from './ConL';
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
+
 const Breeze: FC = () => {
 	const { t } = useTranslation();
+
+	const [animate, setAnimate] = useState(false);
+
+	const mainBlock = useRef() as RefObject<HTMLImageElement>;
+	const blockEntry = useIntersectionObserver(mainBlock, {});
+
+	useEffect(() => {
+		const isVisible = !!blockEntry?.isIntersecting;
+
+		if (isVisible) {
+			setAnimate(true);
+		}
+	}, [blockEntry]);
 
 	return (
 		<SyledBreeze>
@@ -14,10 +32,11 @@ const Breeze: FC = () => {
 				<BreezeCon>
 					<BreezeTitle>{t('features:ordersTitle')}</BreezeTitle>
 					<BreezeText>{t('features:ordersText')}</BreezeText>
-					<BreezeBlock1>
+					<BreezeBlock1 ref={mainBlock}>
 						<BreezeBlock2>
 							<Block>
-								<Add>
+								<Add animate={animate}>
+									<ConL animate={animate} />
 									<AddCon>
 										<AddFile>
 											<Image
@@ -37,8 +56,9 @@ const Breeze: FC = () => {
 											alt='arrow'
 										/>
 									</AddArrow>
+									<WomenL animate={animate} />
 								</Add>
-								<Del>
+								<Del animate={animate}>
 									<DelCon>
 										<DelCal>
 											<Image
@@ -52,7 +72,8 @@ const Breeze: FC = () => {
 									</DelCon>
 									<DelDate>Tue, 27 Oct</DelDate>
 								</Del>
-								<Man>
+								<ManDec src='/images/features/breeze/man-dec.svg' alt='stars' animate={animate} />
+								<Man animate={animate}>
 									<ImgWrap>
 										<Image
 											src='/images/features/breeze/man@2x.jpg'
@@ -62,7 +83,8 @@ const Breeze: FC = () => {
 										/>
 									</ImgWrap>
 								</Man>
-								<Women>
+								<WomendDec src='/images/features/breeze/women-dec.svg' alt='stars' animate={animate} />
+								<Women animate={animate}>
 									<ImgWrap>
 										<Image
 											src='/images/features/breeze/women@2x.jpg'
@@ -72,7 +94,8 @@ const Breeze: FC = () => {
 										/>
 									</ImgWrap>
 								</Women>
-								<Order>
+								<ManL animate={animate} />
+								<Order animate={animate}>
 									<OrderInfo>
 										<OrderText>Total Amount</OrderText>
 										<OrderPrice>$ 1340.00</OrderPrice>
@@ -247,36 +270,63 @@ const Block = styled.div`
 	right: 0;
 	bottom: 0;
 	transform: rotate(45deg);
+`;
 
-	&::before {
-		content: url('/images/features/breeze/women-dec.svg');
-		position: absolute;
-		top: 94px;
-		right: -21px;
+const WomendDec = styled.img<{ animate: boolean }>`
+	position: absolute;
+	top: 94px;
+	right: -21px;
+
+	opacity: 0;
+	animation: ${({ animate }) => (animate ? 'womenDecAnim 0.5s ease-in' : 'none')};
+	animation-fill-mode: forwards;
+	animation-delay: 500ms;
+
+	@keyframes womenDecAnim {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
 	}
 
 	@media (min-width: 768px) {
-		&::before {
-			top: 120px;
-			right: -8px;
-		}
-
-		&::after {
-			content: url('/images/features/breeze/man-dec.svg');
-			position: absolute;
-			top: 204px;
-			left: -58px;
-		}
+		top: 120px;
+		right: -8px;
 	}
 
 	@media (min-width: 1280px) {
-		&::before {
-			top: 113px;
-			right: -25px;
-		}
+		top: 113px;
+		right: -25px;
+	}
+`;
 
-		&::after {
-			left: -23px;
+const ManDec = styled.img<{ animate: boolean }>`
+	display: none;
+
+	@media (min-width: 768px) {
+		display: block;
+		position: absolute;
+		top: 204px;
+		left: -58px;
+
+		opacity: 0;
+		animation: ${({ animate }) => (animate ? 'manDecAnim 0.5s ease-in' : 'none')};
+		animation-fill-mode: forwards;
+		animation-delay: 500ms;
+	}
+
+	@media (min-width: 1280px) {
+		left: -23px;
+	}
+
+	@keyframes manDecAnim {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
 		}
 	}
 `;
@@ -292,9 +342,22 @@ const ImgDiv = styled.div`
 	}
 `;
 
-const Man = styled(ImgDiv)`
+const Man = styled(ImgDiv)<{ animate: boolean }>`
 	left: 6px;
 	bottom: 75px;
+	opacity: 0;
+	animation: ${({ animate }) => (animate ? 'manAnim 0.5s ease-in' : 'none')};
+	animation-fill-mode: forwards;
+	animation-delay: 500ms;
+
+	@keyframes manAnim {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
 
 	@media (min-width: 768px) {
 		left: -28px;
@@ -306,9 +369,22 @@ const Man = styled(ImgDiv)`
 	}
 `;
 
-const Women = styled(ImgDiv)`
+const Women = styled(ImgDiv)<{ animate: boolean }>`
 	top: 118px;
 	right: 17px;
+	opacity: 0;
+	animation: ${({ animate }) => (animate ? 'womenAnim 0.5s ease-in' : 'none')};
+	animation-fill-mode: forwards;
+	animation-delay: 500ms;
+
+	@keyframes womenAnim {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
 
 	@media (min-width: 768px) {
 		top: 162px;
@@ -335,7 +411,7 @@ const ImgWrap = styled.div`
 	}
 `;
 
-const Add = styled.div`
+const Add = styled.div<{ animate: boolean }>`
 	position: absolute;
 	top: 35px;
 	left: 70px;
@@ -349,18 +425,18 @@ const Add = styled.div`
 	justify-content: space-between;
 	box-shadow: 5px 8px 17px 0 rgba(33, 33, 33, 0.1);
 
-	&::before {
-		content: url('/images/features/breeze/con-l-375.svg');
-		position: absolute;
-		left: 33px;
-		bottom: -64px;
-	}
+	opacity: 0;
+	animation: ${({ animate }) => (animate ? 'addAnim 0.5s ease-in' : 'none')};
+	animation-fill-mode: forwards;
+	animation-delay: 1s;
 
-	&::after {
-		content: url('/images/features/breeze/women-l-375.svg');
-		position: absolute;
-		right: -13px;
-		bottom: -90px;
+	@keyframes addAnim {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
 	}
 
 	@media (min-width: 768px) {
@@ -369,29 +445,10 @@ const Add = styled.div`
 		border-radius: 11px;
 		padding: 13px;
 		top: 31px;
-
-		&::before {
-			content: url('/images/features/breeze/con-l-768.svg');
-			bottom: -85px;
-		}
-
-		&::after {
-			content: url('/images/features/breeze/women-l-768.svg');
-			right: -55px;
-			bottom: -119px;
-		}
 	}
 
 	@media (min-width: 1280px) {
 		left: 120px;
-
-		&::before {
-			left: 47px;
-		}
-
-		&::after {
-			right: -21px;
-		}
 	}
 `;
 
@@ -441,7 +498,7 @@ const AddText = styled.p`
 	}
 `;
 
-const Del = styled.div`
+const Del = styled.div<{ animate: boolean }>`
 	position: absolute;
 	top: 118px;
 	left: 7px;
@@ -454,6 +511,20 @@ const Del = styled.div`
 	align-items: center;
 	justify-content: space-between;
 	box-shadow: 5px 8px 17px 0 rgba(33, 33, 33, 0.1);
+
+	opacity: 0;
+	animation: ${({ animate }) => (animate ? 'delAnim 0.5s ease-in' : 'none')};
+	animation-fill-mode: forwards;
+	animation-delay: 2.5s;
+
+	@keyframes delAnim {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
 
 	@media (min-width: 768px) {
 		width: 262px;
@@ -519,7 +590,7 @@ const DelDate = styled.p`
 	}
 `;
 
-const Order = styled.div`
+const Order = styled.div<{ animate: boolean }>`
 	position: absolute;
 	right: 9px;
 	bottom: 35px;
@@ -527,23 +598,24 @@ const Order = styled.div`
 	border-radius: 9px;
 	box-shadow: 5px 8px 17px 0 rgba(33, 33, 33, 0.1);
 
-	&::before {
-		content: url('/images/features/breeze/man-l-375.svg');
-		position: absolute;
-		top: -51px;
-		left: -44px;
+	opacity: 0;
+	animation: ${({ animate }) => (animate ? 'orderAnim 0.5s ease-in' : 'none')};
+	animation-fill-mode: forwards;
+	animation-delay: 2.5s;
+
+	@keyframes orderAnim {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
 	}
 
 	@media (min-width: 768px) {
 		border-radius: 14px;
 		right: 43px;
 		bottom: 72px;
-
-		&::before {
-			content: url('/images/features/breeze/man-l-768.svg');
-			top: -69px;
-			left: -74px;
-		}
 	}
 
 	@media (min-width: 1280px) {
