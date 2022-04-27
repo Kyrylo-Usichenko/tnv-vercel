@@ -159,7 +159,7 @@ const GalleryCon = styled.div`
 	}
 
 	@media (min-width: 1920px) {
-		gap: 161px;
+		gap: 60px;
 
 		&::before {
 			right: -270px;
@@ -260,7 +260,7 @@ const GalleryTitle = styled.h2`
 		content: url('/images/features/gallery/dec-b.svg');
 		position: absolute;
 		right: -30px;
-		bottom: -52px;
+		bottom: -62px;
 	}
 
 	@media (min-width: 768px) {
@@ -281,13 +281,26 @@ const GalleryTitle = styled.h2`
 	}
 
 	@media (min-width: 1280px) {
+		max-width: 250px;
+		font-size: 48px;
+		line-height: 59px;
+	}
+
+	@media (min-width: 1440px) {
 		font-size: 56px;
 		line-height: 69px;
-		max-width: 282px;
+		max-width: 290px;
+		margin-right: 30px;
 	}
 
 	@media (min-width: 1920px) {
-		margin-right: 58px;
+		max-width: 450px;
+		margin-right: 0;
+
+		&::after {
+			right: 200px;
+			bottom: -65px;
+		}
 	}
 `;
 
