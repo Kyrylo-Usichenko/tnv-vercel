@@ -1,4 +1,4 @@
-import React, { FC, RefObject, useEffect, useRef } from 'react';
+import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import { useTranslation } from 'next-i18next';
@@ -13,6 +13,10 @@ type PreviewProps = {
 };
 
 const Preview: FC<PreviewProps> = ({ openModal }) => {
+	const { t } = useTranslation();
+
+	const [animate, setAnimate] = useState(false);
+
 	const heading = useRef() as RefObject<HTMLHeadingElement>;
 	const entry = useIntersectionObserver(heading, {});
 
@@ -20,8 +24,7 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 	const pic2 = useRef() as RefObject<HTMLPictureElement>;
 
 	const mainImg = useRef() as RefObject<HTMLImageElement>;
-
-	const { t } = useTranslation();
+	const imgEntry = useIntersectionObserver(mainImg, {});
 
 	useEffect(() => {
 		const isVisible = !!entry?.isIntersecting;
@@ -62,6 +65,14 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 
 		return () => window.removeEventListener('scroll', onScroll);
 	}, [entry]);
+
+	useEffect(() => {
+		const isVisible = !!imgEntry?.isIntersecting;
+
+		if (isVisible) {
+			setAnimate(true);
+		}
+	}, [imgEntry]);
 
 	return (
 		<StyledPreview>
@@ -117,26 +128,17 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 							src='/images/features/preview/app.png'
 							srcSet='/images/features/preview/app@2x.png 2x'
 							alt='message'
+							animate={animate}
 						/>
-						<AppShadow />
-						<Request>
-							<PaymentIco>
-								<img src='/images/features/preview/file.svg' alt='file' />
-							</PaymentIco>
-							<Payment>
-								<PaymentCon>
-									<PaymentTitle>Payment Requested</PaymentTitle>
-									<PaymentArrow src='/images/features/preview/arrow.svg' alt='arrow' />
-								</PaymentCon>
-								<PaymentText>INV-HDNSD5H</PaymentText>
-								<PaymentCon>
-									<PaymentPrice>$ 450.00</PaymentPrice>
-									<PaymentTime>5:26 PM</PaymentTime>
-								</PaymentCon>
-							</Payment>
-						</Request>
-						<LineL />
-						<LineR />
+						<AppShadow animate={animate} />
+						<RequestImg
+							src='/images/features/preview/request.png'
+							srcSet='/images/features/preview/request@2x.png 2x'
+							alt='Payment request'
+							animate={animate}
+						/>
+						<LineL animate={animate} />
+						<LineR animate={animate} />
 						<PreviewImgDeco3 />
 					</PreviewImg>
 				</PreviewInfo>
@@ -147,46 +149,17 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 
 const StyledPreview = styled.section`
 	overflow: hidden;
-
-	& > div {
-		max-width: 375px;
-		padding: 0 16px;
-		margin: 0 auto;
-		position: relative;
-
-		@media (min-width: 768px) {
-			max-width: 768px;
-		}
-
-		@media (min-width: 1024px) {
-			max-width: 1024px;
-			padding: 0 40px;
-		}
-
-		@media (min-width: 1280px) {
-			max-width: 1032px;
-			padding: 0;
-		}
-
-		@media (min-width: 1440px) {
-			max-width: 1192px;
-		}
-
-		@media (min-width: 1920px) {
-			max-width: 1312px;
-		}
-	}
 `;
 
 const PreviewInfo = styled.div`
-	padding: 144px 0 180px 0;
+	padding: 144px 0 48% 0;
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 
-	@media (max-width: 768px) {
-		padding: 142px 0 180px 0;
+	@media (min-width: 768px) {
+		padding: 144px 0 180px 0;
 	}
 `;
 
@@ -328,6 +301,8 @@ const PreviewButton = styled.button`
 const PreviewImg = styled.div`
 	position: relative;
 	width: 100%;
+	height: 0;
+	padding-bottom: 116%;
 
 	& > picture:nth-child(1) > img {
 		border-radius: 44px;
@@ -348,7 +323,14 @@ const PreviewImg = styled.div`
 		transform: rotate(-45deg);
 	}
 
+	@media (min-width: 768px) {
+		padding-bottom: 75%;
+	}
+
 	@media (min-width: 1024px) {
+		height: auto;
+		padding-bottom: 0;
+
 		&::before {
 			left: -400px;
 		}
@@ -361,17 +343,18 @@ const PreviewImg = styled.div`
 	}
 `;
 
-const AppImg = styled.img`
+const AppImg = styled.img<{ animate: boolean }>`
 	position: absolute;
-	right: -10px;
-	bottom: -84px;
+	right: -2%;
+	bottom: -22%;
 	z-index: 1;
 	border-radius: 0;
-	width: 201px;
+	width: 58.6%;
 	height: auto;
-	/* opacity: 0; */
-	/* animation: appImgAnim 1s ease-in; */
+	opacity: 0;
+	animation: ${({ animate }) => (animate ? 'appImgAnim 0.5s ease-in' : 'none')};
 	animation-fill-mode: forwards;
+	animation-delay: 3.7s;
 
 	@keyframes appImgAnim {
 		from {
@@ -383,8 +366,14 @@ const AppImg = styled.img`
 	}
 
 	@media (min-width: 768px) {
-		width: 288px;
+		width: 39.2%;
 		height: auto;
+		left: 4%;
+		top: 6%;
+	}
+
+	@media (min-width: 1024px) {
+		width: 288px;
 		left: 32px;
 		top: 32px;
 	}
@@ -395,223 +384,19 @@ const AppImg = styled.img`
 	}
 `;
 
-const Request = styled.div`
-	display: flex;
-	gap: 4.5px;
+const AppShadow = styled.div<{ animate: boolean }>`
 	position: absolute;
-	top: 45px;
-	right: -8px;
-	/* opacity: 0; */
-	/* animation: requestAnim 1s ease-in; */
-	animation-fill-mode: forwards;
-
-	@keyframes requestAnim {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-
-	@media (min-width: 768px) {
-		top: 68px;
-		right: -5px;
-	}
-
-	@media (min-width: 1024px) {
-		top: 73px;
-		right: 52px;
-	}
-
-	@media (min-width: 1280px) {
-		top: 87px;
-		right: 45px;
-	}
-
-	@media (min-width: 1440px) {
-		top: 85px;
-		right: 72px;
-	}
-
-	@media (min-width: 1920px) {
-		top: 114px;
-		right: 93px;
-	}
-`;
-
-const PaymentIco = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 21px;
-	height: 21px;
-	background-color: #d0d2ff;
-	border-radius: 50%;
-	align-self: flex-end;
-
-	& > img {
-		height: 11px;
-		width: 11px;
-	}
-
-	@media (min-width: 768px) {
-		width: 27px;
-		height: 27px;
-
-		& > img {
-			width: 14px;
-			height: 14px;
-		}
-	}
-
-	@media (min-width: 1280px) {
-		width: 30px;
-		height: 30px;
-
-		& > img {
-			width: 16px;
-			height: 16px;
-		}
-	}
-`;
-
-const Payment = styled.div`
-	width: 155px;
-	height: 50px;
-	background-color: #f9fafa;
-	border-radius: 10px;
-	border-bottom-left-radius: 0px;
-	padding: 7.5px;
-	box-shadow: 10px 8px 20px -7px rgba(0, 0, 0, 0.1);
-
-	@media (min-width: 768px) {
-		width: 200px;
-		height: 64px;
-		padding: 9px;
-	}
-
-	@media (min-width: 1280px) {
-		width: 219px;
-		height: 70px;
-		padding: 10px;
-	}
-`;
-
-const PaymentTitle = styled.p`
-	font-family: 'Gilroy';
-	font-weight: 700;
-	font-size: 9px;
-	line-height: 12px;
-	color: #212121;
-	margin: 0 0 1.5px 0;
-
-	@media (min-width: 768px) {
-		font-size: 12px;
-		line-height: 15px;
-		margin: 0 0 2.4px 0;
-	}
-
-	@media (min-width: 1280px) {
-		font-size: 13px;
-		line-height: 16px;
-		margin: 0 0 3px 0;
-	}
-`;
-
-const PaymentText = styled.p`
-	font-family: 'Inter';
-	font-weight: 400;
-	font-size: 8px;
-	line-height: 10px;
-	color: #5c5c5c;
-	margin: 0 0 1.5px 0;
-
-	@media (min-width: 768px) {
-		font-size: 10px;
-		line-height: 13px;
-		margin: 0 0 2px 0;
-	}
-
-	@media (min-width: 1280px) {
-		font-size: 11px;
-		line-height: 14px;
-		margin: 0 0 2.5px 0;
-	}
-`;
-
-const PaymentPrice = styled.p`
-	font-family: 'Inter';
-	font-weight: 400;
-	font-size: 8px;
-	line-height: 9px;
-	color: #5c5c5c;
-	margin: 0;
-
-	@media (min-width: 768px) {
-		font-size: 10px;
-		line-height: 13px;
-	}
-
-	@media (min-width: 1280px) {
-		font-size: 11px;
-		line-height: 14px;
-	}
-`;
-
-const PaymentTime = styled.p`
-	font-family: 'Inter';
-	font-weight: 400;
-	font-size: 5px;
-	line-height: 6px;
-	color: #5c5c5c;
-	margin: 0;
-
-	@media (min-width: 768px) {
-		font-size: 6px;
-		line-height: 8px;
-	}
-
-	@media (min-width: 1280px) {
-		font-size: 7px;
-		line-height: 9px;
-	}
-`;
-
-const PaymentArrow = styled.img`
-	width: 4px;
-	height: auto;
-
-	@media (min-width: 768px) {
-		width: 5px;
-		height: auto;
-	}
-
-	@media (min-width: 1280px) {
-		width: 6px;
-		height: auto;
-	}
-`;
-
-const PaymentCon = styled.div`
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-`;
-
-const AppShadow = styled.div`
-	position: absolute;
-	width: 177px;
-	height: 191px;
+	width: 52%;
+	height: 48%;
 	background: rgba(0, 0, 0, 0.1);
 	filter: blur(16px);
 	border-radius: 6px;
-	top: initial;
-	right: -15px;
-	bottom: -91px;
+	right: -4%;
+	bottom: -23%;
 	opacity: 0;
-	/* animation: appImgAnim 1s ease-in; */
+	animation: ${({ animate }) => (animate ? 'appImgAnim 0.5s ease-in' : 'none')};
 	animation-fill-mode: forwards;
+	animation-delay: 3.7s;
 
 	@keyframes appImgAnim {
 		from {
@@ -623,6 +408,13 @@ const AppShadow = styled.div`
 	}
 
 	@media (min-width: 768px) {
+		width: 34.4%;
+		height: 49.5%;
+		left: 11%;
+		top: 13%;
+	}
+
+	@media (min-width: 1024px) {
 		width: 253px;
 		height: 273px;
 		left: 80px;
@@ -632,6 +424,55 @@ const AppShadow = styled.div`
 	@media (min-width: 1440px) {
 		left: 95px;
 		top: 90px;
+	}
+`;
+
+const RequestImg = styled.img<{ animate: boolean }>`
+	position: absolute;
+	top: 12.3%;
+	right: -2%;
+	width: 52.5%;
+	height: auto;
+	opacity: 0;
+	animation: ${({ animate }) => (animate ? 'appImgAnim 0.5s ease-in' : 'none')};
+	animation-fill-mode: forwards;
+	animation-delay: 1.3s;
+
+	@keyframes appImgAnim {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	@media (min-width: 768px) {
+		width: 31.4%;
+		top: 12.6%;
+		right: -3%;
+	}
+
+	@media (min-width: 1024px) {
+		top: 67px;
+		right: 19px;
+		width: 264px;
+		height: auto;
+	}
+
+	@media (min-width: 1280px) {
+		top: 87px;
+		right: 36px;
+	}
+
+	@media (min-width: 1440px) {
+		top: 85px;
+		right: 60px;
+	}
+
+	@media (min-width: 1920px) {
+		top: 114px;
+		right: 81px;
 	}
 `;
 
