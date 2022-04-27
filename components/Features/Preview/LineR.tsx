@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
 
-const LineR = () => {
+type LineRProps = {
+	animate: boolean;
+};
+
+const LineR: FC<LineRProps> = ({ animate }) => {
 	return (
-		<Svg width='110' height='68' viewBox='0 0 110 68' fill='none' xmlns='http://www.w3.org/2000/svg'>
+		<Svg
+			width='110'
+			height='68'
+			viewBox='0 0 110 68'
+			fill='none'
+			xmlns='http://www.w3.org/2000/svg'
+			isVisible={animate}
+		>
 			<Rect
 				id='rect-1'
 				width='3'
@@ -532,17 +543,17 @@ const LineR = () => {
 
 function createCss() {
 	let styles = '';
-	let delay = 0;
+	let delay = 500;
 
 	for (let i = 1; i <= 26; i++) {
 		styles += `
        #rect-${i} {
-				animation: lineRAnim 50ms ease ${delay}ms;
+				animation: lineRAnim 40ms ease ${delay}ms;
 				animation-fill-mode: forwards;
 			}
 		`;
 
-		delay += 50;
+		delay += 40;
 	}
 
 	return css`
@@ -550,13 +561,14 @@ function createCss() {
 	`;
 }
 
-const Svg = styled.svg`
+const Svg = styled.svg<{ isVisible: boolean }>`
 	position: absolute;
-	top: 85px;
-	right: 84px;
-	width: 80px;
+	top: 23.8%;
+	right: 25%;
+	width: 23.3%;
+	height: auto;
 
-	//${createCss()};
+	${({ isVisible }) => (isVisible ? createCss() : null)}
 
 	@keyframes lineRAnim {
 		from {
@@ -568,14 +580,15 @@ const Svg = styled.svg`
 	}
 
 	@media (min-width: 768px) {
-		top: 130px;
-		right: 102px;
-		width: auto;
+		top: 23.2%;
+		right: 12%;
+		width: 15%;
 	}
 
 	@media (min-width: 1024px) {
 		top: 135px;
 		right: 160px;
+		width: auto;
 	}
 
 	@media (min-width: 1280px) {
@@ -595,7 +608,7 @@ const Svg = styled.svg`
 `;
 
 const Rect = styled.rect`
-	/* opacity: 0; */
+	opacity: 0;
 `;
 
 export default LineR;

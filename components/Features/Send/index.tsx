@@ -1,9 +1,29 @@
-import React, { FC } from 'react';
+import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'next-i18next';
 
+import LineL375 from './LineL375';
+import LineR375 from './LineR375';
+import LineL from './LineL';
+import LineR from './LineR';
+import { FeaturesCon } from '../../common/Container/Container';
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
+
 const Send: FC = () => {
+	const [animate, setAnimate] = useState(false);
+
 	const { t } = useTranslation();
+
+	const mainImg = useRef() as RefObject<HTMLImageElement>;
+	const imgEntry = useIntersectionObserver(mainImg, {});
+
+	useEffect(() => {
+		const isVisible = !!imgEntry?.isIntersecting;
+
+		if (isVisible) {
+			setAnimate(true);
+		}
+	}, [imgEntry]);
 
 	return (
 		<StyledSend>
@@ -13,56 +33,76 @@ const Send: FC = () => {
 					<SendText>{t('features:invoicesText')}</SendText>
 				</SendInfo>
 			</SendCon>
-			<PreviewImg>
-				<picture>
-					<source
-						srcSet='/images/features/send/women-1920.jpg 1x, /images/features/send/women-1920@2x.jpg 2x'
-						media='(min-width: 1920px)'
-					/>
-					<source
-						srcSet='/images/features/send/women-1440.jpg 1x, /images/features/send/women-1440@2x.jpg 2x'
-						media='(min-width: 1440px)'
-					/>
-					<source
-						srcSet='/images/features/send/women-1280.jpg 1x, /images/features/send/women-1280@2x.jpg 2x'
-						media='(min-width: 1280px)'
-					/>
-					<source
-						srcSet='/images/features/send/women-1024.jpg 1x, /images/features/send/women-1024@2x.jpg 2x'
-						media='(min-width: 1024px)'
-					/>
-					<source
-						srcSet='/images/features/send/women-768.jpg 1x, /images/features/send/women-768@2x.jpg 2x'
-						media='(min-width: 768px)'
-					/>
-					<img
-						src='/images/features/send/women-375.jpg'
-						srcSet='/images/features/send/women-375@2x.jpg 2x'
-						alt='women'
+			<FeaturesCon>
+				<PreviewImg>
+					<picture>
+						<source
+							srcSet='/images/features/send/women-1920.jpg 1x, /images/features/send/women-1920@2x.jpg 2x'
+							media='(min-width: 1920px)'
+						/>
+						<source
+							srcSet='/images/features/send/women-1440.jpg 1x, /images/features/send/women-1440@2x.jpg 2x'
+							media='(min-width: 1440px)'
+						/>
+						<source
+							srcSet='/images/features/send/women-1280.jpg 1x, /images/features/send/women-1280@2x.jpg 2x'
+							media='(min-width: 1280px)'
+						/>
+						<source
+							srcSet='/images/features/send/women-1024.jpg 1x, /images/features/send/women-1024@2x.jpg 2x'
+							media='(min-width: 1024px)'
+						/>
+						<source
+							srcSet='/images/features/send/women-768.jpg 1x, /images/features/send/women-768@2x.jpg 2x'
+							media='(min-width: 768px)'
+						/>
+						<img
+							src='/images/features/send/women-375.jpg'
+							srcSet='/images/features/send/women-375@2x.jpg 2x'
+							alt='women'
+							loading='lazy'
+							ref={mainImg}
+						/>
+					</picture>
+					<InvoiceImg
+						src='/images/features/send/invoice.png'
+						srcSet='/images/features/send/invoice@2x.png 2x'
+						alt='Invoice'
 						loading='lazy'
+						animate={animate}
 					/>
-				</picture>
-				<Invoice>
-					<InvoiceCon>
-						<InvoiceInfo>
-							<InvoiceTitle>Send an invoice for this order</InvoiceTitle>
-							<InvoiceText>
-								Need a template? <InvoiceSpan> Generate Invoice</InvoiceSpan>{' '}
-								<InvoiceArrow src='/images/features/send/arrow.svg' alt='arrow' loading='lazy' />
-							</InvoiceText>
-						</InvoiceInfo>
-						<InvoiceButton>Send Invoice</InvoiceButton>
-					</InvoiceCon>
-				</Invoice>
-				<Remind>
-					<RemindInfo>
-						<RemindBell src='/images/features/send/bell.svg' alt='bell' loading='lazy' />
-						<RemindTitle>Send Reminders</RemindTitle>
-					</RemindInfo>
-					<RemindCheck src='/images/features/send/check.svg' alt='check' loading='lazy' />
-				</Remind>
-				<Dec1></Dec1>
-			</PreviewImg>
+					<RemindImg
+						src='/images/features/send/reminde.png'
+						srcSet='/images/features/send/reminde@2x.png 2x'
+						alt='Reminde'
+						loading='lazy'
+						animate={animate}
+					/>
+					<Invoice animate={animate}>
+						<InvoiceCon>
+							<InvoiceInfo>
+								<InvoiceTitle>Send an invoice for this order</InvoiceTitle>
+								<InvoiceText>
+									Need a template? <InvoiceSpan> Generate Invoice</InvoiceSpan>{' '}
+									<InvoiceArrow src='/images/features/send/arrow.svg' alt='arrow' loading='lazy' />
+								</InvoiceText>
+							</InvoiceInfo>
+							<InvoiceButton>Send Invoice</InvoiceButton>
+						</InvoiceCon>
+					</Invoice>
+					<Remind animate={animate}>
+						<RemindInfo>
+							<RemindBell src='/images/features/send/bell.svg' alt='bell' loading='lazy' />
+							<RemindTitle>Send Reminders</RemindTitle>
+						</RemindInfo>
+						<RemindCheck src='/images/features/send/check.svg' alt='check' loading='lazy' />
+					</Remind>
+					<LineL375 animate={animate} />
+					<LineR375 animate={animate} />
+					<LineL animate={animate} />
+					<LineR animate={animate} />
+				</PreviewImg>
+			</FeaturesCon>
 		</StyledSend>
 	);
 };
@@ -165,44 +205,50 @@ const SendText = styled.p`
 
 const PreviewImg = styled.div`
 	position: relative;
-	max-width: 375px;
-	padding: 0 16px;
-	margin: 0 auto;
 
 	& > picture:nth-child(1) > img {
 		border-radius: 44px;
 		width: 100%;
 		height: auto;
 	}
+`;
+
+const InvoiceImg = styled.img<{ animate: boolean }>`
+	position: absolute;
+	top: -7%;
+	right: 0%;
+	width: 86%;
+	height: auto;
+	opacity: 0;
+	animation: ${({ animate }) => (animate ? 'appImgAnim 0.5s ease-in' : 'none')};
+	animation-fill-mode: forwards;
+	animation-delay: 2.3s;
+
+	@keyframes appImgAnim {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
 
 	@media (min-width: 768px) {
-		max-width: 768px;
+		width: 53.3%;
+		top: 10%;
+		right: 7%;
 	}
 
 	@media (min-width: 1024px) {
-		max-width: 1024px;
-		padding: 0 40px;
-	}
-
-	@media (min-width: 1280px) {
-		max-width: 1032px;
-		padding: 0;
-	}
-
-	@media (min-width: 1440px) {
-		max-width: 1192px;
-	}
-
-	@media (min-width: 1920px) {
-		max-width: 1312px;
+		display: none;
 	}
 `;
 
-const Invoice = styled.div`
+const Invoice = styled.div<{ animate: boolean }>`
 	position: absolute;
 	top: -30px;
 	right: 20px;
-	display: flex;
+	display: none;
 	align-items: center;
 	width: 295px;
 	height: 50px;
@@ -221,8 +267,13 @@ const Invoice = styled.div`
 	}
 
 	@media (min-width: 1024px) {
-		top: 66px;
-		right: 66px;
+		display: flex;
+		top: 46px;
+		right: 41px;
+		opacity: 0;
+		animation: ${({ animate }) => (animate ? 'appImgAnim 0.5s ease-in' : 'none')};
+		animation-fill-mode: forwards;
+		animation-delay: 2.3s;
 	}
 
 	@media (min-width: 1280px) {
@@ -340,11 +391,42 @@ const InvoiceArrow = styled.img`
 	}
 `;
 
-const Remind = styled.div`
+const RemindImg = styled.img<{ animate: boolean }>`
+	position: absolute;
+	top: 20.5%;
+	right: -5.5%;
+	width: 42.6%;
+	height: auto;
+	opacity: 0;
+	animation: ${({ animate }) => (animate ? 'appImgAnim 0.5s ease-in' : 'none')};
+	animation-fill-mode: forwards;
+	animation-delay: 3.5s;
+
+	@keyframes appImgAnim {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	@media (min-width: 768px) {
+		width: 26.5%;
+		top: 29.5%;
+		right: -2%;
+	}
+
+	@media (min-width: 1024px) {
+		display: none;
+	}
+`;
+
+const Remind = styled.div<{ animate: boolean }>`
 	position: absolute;
 	top: 81px;
 	right: 0;
-	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: space-between;
 	width: 141px;
@@ -363,15 +445,20 @@ const Remind = styled.div`
 	}
 
 	@media (min-width: 1024px) {
-		top: 178px;
-		right: 19px;
+		display: flex;
+		top: 162px;
+		right: -26px;
+		opacity: 0;
+		animation: ${({ animate }) => (animate ? 'appImgAnim 0.5s ease-in' : 'none')};
+		animation-fill-mode: forwards;
+		animation-delay: 3.5s;
 	}
 
 	@media (min-width: 1280px) {
 		width: 205px;
 		height: 45px;
 		top: 191px;
-		right: -25px;
+		right: -23px;
 	}
 
 	@media (min-width: 1440px) {
@@ -440,91 +527,6 @@ const RemindCheck = styled.img`
 	@media (min-width: 1280px) {
 		width: 17px;
 		height: 17px;
-	}
-`;
-
-const Dec1 = styled.div`
-	position: absolute;
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-
-	&::before {
-		content: url('/images/features/send/line-l-375.svg');
-		position: absolute;
-		top: 22px;
-		right: 135px;
-	}
-
-	&::after {
-		content: url('/images/features/send/line-r-375.svg');
-		position: absolute;
-		top: 13px;
-		right: 60px;
-	}
-
-	@media (min-width: 768px) {
-		&::before {
-			content: url('/images/features/send/line-l-768.svg');
-			top: 144px;
-			right: 270px;
-		}
-
-		&::after {
-			content: url('/images/features/send/line-r-768.svg');
-			top: 121px;
-			right: 129px;
-		}
-	}
-
-	@media (min-width: 1024px) {
-		&::before {
-			top: 134px;
-			right: 309px;
-		}
-
-		&::after {
-			top: 110px;
-			right: 115px;
-		}
-	}
-
-	@media (min-width: 1280px) {
-		&::before {
-			content: url('/images/features/send/line-l-1280.svg');
-			top: 143px;
-			right: 294px;
-		}
-
-		&::after {
-			content: url('/images/features/send/line-r-1280.svg');
-			top: 119px;
-			right: 94px;
-		}
-	}
-
-	@media (min-width: 1440px) {
-		&::before {
-			top: 191px;
-			right: 345px;
-		}
-
-		&::after {
-			top: 165px;
-			right: 121px;
-		}
-	}
-
-	@media (min-width: 1920px) {
-		&::before {
-			top: 211px;
-			right: 383px;
-		}
-
-		&::after {
-			top: 185px;
-		}
 	}
 `;
 
