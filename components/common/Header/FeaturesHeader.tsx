@@ -61,7 +61,6 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 	const modalRef = useOnClickOutside(() => {
 		setDropDawn(false);
 	});
-	console.log(Tab);
 	const localeTab =
 		Tab === 'Home'
 			? '/'

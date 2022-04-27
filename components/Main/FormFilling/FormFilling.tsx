@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FC, RefObject, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import { Container } from '../../common/Container/Container';
+import { FeaturesCon } from '../../common/Container/Container';
 import MapComponentFlex from './MapFlex';
 import { useTranslation } from 'next-i18next';
 
@@ -106,7 +106,7 @@ const Smile: FC<SmileProps> = ({ formRef }) => {
 		<Wrapper ref={formRef}>
 			<WrapperRotated>
 				<Null>
-					<Container>
+					<FeaturesCon>
 						<Inner>
 							<TitleWrapper>
 								<Title>{t('main:formTitle')}</Title>
@@ -200,7 +200,7 @@ const Smile: FC<SmileProps> = ({ formRef }) => {
 								<Dots src='images/main/formFilling/dots.svg' alt='' />
 							</FormWrapper>
 						</Inner>
-					</Container>
+					</FeaturesCon>
 				</Null>
 			</WrapperRotated>
 		</Wrapper>

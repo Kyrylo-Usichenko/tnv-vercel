@@ -5,7 +5,7 @@ import styled, { keyframes, css } from 'styled-components';
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 import { useTranslation } from 'next-i18next';
 
-import { Container } from '../../common/Container/Container';
+import { FeaturesCon } from '../../common/Container/Container';
 import LeftMockComponent from './LeftMock';
 import RightMockComponent from './RightMock';
 
@@ -116,7 +116,7 @@ const MoreMoney: FC = () => {
 
 	return (
 		<Wrapper>
-			<Container>
+			<FeaturesCon>
 				<Inner>
 					<Title>
 						{t('main:moreMoneyTitle')}{' '}
@@ -146,7 +146,7 @@ const MoreMoney: FC = () => {
 						<BottomButton>{t('main:moreMoneyButton')}</BottomButton>
 					</Link>
 				</Inner>
-			</Container>
+			</FeaturesCon>
 			<GreySquare />
 			<PurpleSquare>
 				<RedSquare>
@@ -166,20 +166,25 @@ const MoreMoney: FC = () => {
 const Wrapper = styled.div`
 	width: 100%;
 	position: relative;
-	height: 826px;
-	margin-top: 299px;
-	@media (max-width: 1280px) {
-		margin-bottom: auto;
-		height: 295px;
-		// margin-top: 0px;
-	}
-	@media (max-width: 1023px) {
+	height: 765px;
+	margin-top: 0px;
+
+	@media (min-width: 768px) {
 		// margin-bottom: auto;
 		height: 896px;
 		margin-top: 0px;
 	}
-	@media (max-width: 425px) {
-		height: 765px;
+	@media (min-width: 1280px) {
+		margin-bottom: auto;
+		height: 295px;
+		// margin-top: 0px;
+	}
+	@media (min-width: 1440px) {
+		width: 100%;
+		position: relative;
+		height: 826px;
+		margin-top: 299px;
+		// margin-top: 0px;
 	}
 `;
 
@@ -190,56 +195,94 @@ const GreySquare = styled.div`
 	border-radius: 28.2072px;
 	transform: rotate(-45deg);
 	position: absolute;
-	top: 108px;
 	// left: 71px;
-	right: calc(50% + 400px);
-	@media (max-width: 1280px) {
-		right: auto;
-		top: 221px;
-		left: -277px;
+
+	right: auto;
+	top: 221px;
+	left: -277px;
+	@media (min-width: 1280px) {
+		width: 477.93px;
+		height: 477.93px;
+		background: radial-gradient(
+			95.51% 95.51% at 50% 50%,
+			rgba(218, 218, 218, 0.15) 0%,
+			rgba(250, 250, 250, 0.15) 100%
+		);
+		border-radius: 28.2072px;
+		transform: rotate(-45deg);
+		position: absolute;
+		top: 108px;
+		// left: 71px;
+		left: unset;
+		right: calc(50% + 400px);
 	}
 `;
 
 const PurpleSquare = styled.div`
-	position: absolute;
-	width: 559.25px;
-	height: 559.25px;
+	position: relative;
 	background: rgba(251, 36, 43, 0.6);
 	border-radius: 72px;
-	transform: rotate(-45deg);
+	transform: rotate(-45deg) translateX(-71%);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	left: 62%;
-	top: 55px;
-
-	@media (max-width: 1279px) {
-		left: 57%;
-	}
-	@media (max-width: 1023px) {
+	top: -120px;
+	left: 50%;
+	width: 451px;
+	height: 451px;
+	@media (min-width: 768px) {
 		position: relative;
 		top: -120px;
 		left: 50%;
 		transform: rotate(-45deg) translateX(-71%);
+		width: 559.25px;
+		height: 559.25px;
 	}
-
-	@media (max-width: 425px) {
-		width: 451px;
-		height: 451px;
+	@media (min-width: 1024px) {
+		left: 57%;
+		position: absolute;
+		width: 559.25px;
+		height: 559.25px;
+		background: rgba(251, 36, 43, 0.6);
+		border-radius: 72px;
+		transform: rotate(-45deg);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		left: 62%;
+		top: 55px;
+	}
+	@media (min-width: 1280px) {
+		position: absolute;
+		width: 559.25px;
+		height: 559.25px;
+		background: rgba(251, 36, 43, 0.6);
+		border-radius: 72px;
+		transform: rotate(-45deg);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		left: 62%;
+		top: 55px;
 	}
 `;
 
 const RedSquare = styled.div`
-	width: 489.69px;
-	height: 489.69px;
 	background: #fb242b;
 	border-radius: 62px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	@media (max-width: 425px) {
-		width: 395px;
-		height: 395px;
+	width: 395px;
+	height: 395px;
+	@media (min-width: 768px) {
+		width: 489.69px;
+		height: 489.69px;
+		background: #fb242b;
+		border-radius: 62px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 `;
 
@@ -254,20 +297,22 @@ const Dots = styled.img`
 	position: absolute;
 	left: 133px;
 	top: -78px;
-	@media (max-width: 425px) {
-		top: 10px;
-		left: 120px;
+	@media (min-width: 768px) {
+		position: absolute;
+		left: 133px;
+		top: -78px;
 	}
 `;
 
 const Stars = styled.img`
 	position: absolute;
-	left: -251px;
-	top: -57px;
+	left: -202px;
+	top: -107px;
 
-	@media (max-width: 1023px) {
-		left: -202px;
-		top: -107px;
+	@media (min-width: 1024px) {
+		position: absolute;
+		left: -251px;
+		top: -57px;
 	}
 `;
 
@@ -275,24 +320,39 @@ const Title = styled.h3`
 	font-family: 'Gilroy';
 	font-style: normal;
 	font-weight: 600;
-	font-size: 44px;
-	line-height: 54px;
 	color: #212121;
-	margin: 90px 0 24px 0;
-	padding: 190px 0 0 0;
-	@media (max-width: 1280px) {
-		font-size: 32px;
-		line-height: 39px;
-		// margin: 0 0 24px 0;
-	}
-	@media (max-width: 1023px) {
+	margin: 0 0 24px 0;
+	font-size: 28px;
+	line-height: 34px;
+	padding: 140px 0 0 0;
+	text-align: center;
+	@media (min-width: 768px) {
 		text-align: center;
 		margin: 0 0 24px 0;
+		font-size: 32px;
+		line-height: 39px;
+		padding: 190px 0 0 0;
 	}
-	@media (max-width: 767px) {
-		font-size: 28px;
-		line-height: 34px;
-		padding: 140px 0 0 0;
+	@media (min-width: 1024px) {
+		font-size: 36px;
+		line-height: 44px;
+		text-align: left;
+		margin: 290px 0 24px 0;
+	}
+	@media (min-width: 1280px) {
+		font-size: 36px;
+		line-height: 44px;
+		text-align: left;
+	}
+	@media (min-width: 1920px) {
+		font-family: 'Gilroy';
+		font-style: normal;
+		font-weight: 600;
+		font-size: 44px;
+		line-height: 54px;
+		color: #212121;
+		margin: 90px 0 24px 0;
+		padding: 190px 0 0 0;
 	}
 `;
 const typewriter = keyframes`
@@ -319,10 +379,13 @@ const blink = keyframes`
 
 const TitleWrap = styled.div`
 	display: inline-block;
-	min-width: 192px;
-	text-align: left;
-	@media (max-width: 425px) {
-		min-width: 170px;
+	min-width: 170px;
+	text-align: center;
+
+	@media (min-width: 768px) {
+		display: inline-block;
+		min-width: 192px;
+		text-align: left;
 	}
 `;
 const TitleSpan = styled.span<{ isVisible: boolean; isBackwards: boolean }>`
@@ -333,21 +396,27 @@ const TitleSpan = styled.span<{ isVisible: boolean; isBackwards: boolean }>`
 	white-space: nowrap;
 	&:after {
 		background: #212121;
-		height: 40px;
+		height: 27px;
 		width: 2px;
 		content: '';
 		position: absolute;
 		bottom: 0;
 		right: -5px;
-		@media (max-width: 1280px) {
+
+		@media (min-width: 768px) {
 			height: 30px;
 		}
-		@media (max-width: 425px) {
-			height: 27px;
+		@media (min-width: 1024px) {
+			background: #212121;
+			height: 40px;
+			width: 2px;
+			content: '';
+			position: absolute;
+			bottom: 0;
+			right: -5px;
 		}
 	}
 
-	position: relative;
 	width: max-content;
 
 	${({ isVisible, isBackwards }) =>
@@ -357,12 +426,13 @@ const TitleSpan = styled.span<{ isVisible: boolean; isBackwards: boolean }>`
 			&::after {
 				content: '';
 				position: absolute;
-				top: 9px;
+				top: 6px;
 				right: 0;
 				bottom: 0;
 				left: 0;
-				@media (max-width: 1280px) {
-					top: 6px;
+
+				@media (min-width: 1280px) {
+					top: 9px;
 				}
 			}
 
@@ -387,28 +457,46 @@ const ButtonsWrapper = styled.div`
 	display: flex;
 	justify-content: space-between;
 	max-width: 387px;
-	margin: 0 0 24px 0;
+	margin: 0 auto 24px;
 	width: 100%;
 	padding: 0;
-	@media (max-width: 1023px) {
-		margin: 0 auto 24px;
+
+	@media (min-width: 1024px) {
+		display: flex;
+		justify-content: space-between;
+		max-width: 387px;
+		margin: 0 0 24px 0;
+		width: 100%;
+		padding: 0;
 	}
 `;
 const Inner = styled.div`
 	position: relative;
-	max-width: 555px;
+	max-width: 335px;
 	width: 100%;
 	z-index: 1;
-	@media (max-width: 1280px) {
-		// margin: 0 auto;
-		max-width: 500px;
-	}
-	@media (max-width: 1023px) {
+	margin: 0 auto;
+	@media (min-width: 768px) {
 		margin: 0 auto;
 		// max-width: 408px;
+		max-width: 500px;
 	}
-	@media (max-width: 425px) {
-		max-width: 335px;
+	@media (min-width: 1024px) {
+		// margin: 0 auto;
+		max-width: 500px;
+		margin: 0;
+	}
+	@media (min-width: 1280px) {
+		// margin: 0 auto;
+		margin: 0;
+	}
+
+	@media (min-width: 1440px) {
+		// margin: 0 auto;
+		position: relative;
+		max-width: 555px;
+		width: 100%;
+		z-index: 1;
 	}
 `;
 
@@ -426,11 +514,13 @@ const Button = styled.a<{ width: string; isActive: boolean }>`
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 17px;
+	margin: 0 16px 0 0;
+
 	&:hover {
 		box-shadow: ${({ isActive }) => (isActive ? 'none' : '4px 4px 20px 0px rgba(33, 33, 33, 0.1)')};
 	}
-	@media (max-width: 1280px) {
-		margin: 0 16px 0 0;
+	@media (min-width: 1440px) {
+		margin: 0;
 	}
 `;
 
@@ -441,29 +531,48 @@ const BottomButton = styled.button`
 	font-family: 'Gilroy';
 	font-style: normal;
 	font-weight: 700;
-	font-size: 20px;
-	line-height: 25px;
+	font-size: 16px;
+	line-height: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	color: #ffffff;
 	width: 210px;
-	height: 56px;
-	margin: 32px 0 0 0;
+	margin: 32px auto 0;
 	padding: 0;
 	outline: none;
 	border: none;
+	height: 48px;
+
 	&:hover {
 		opacity: 0.8;
 	}
-	@media (max-width: 1440px) {
+	@media (min-width: 1024px) {
 		height: 48px;
 		font-size: 16px;
 		line-height: 20px;
 		border-radius: 16px;
+		margin: 32px 0 0;
 	}
-	@media (max-width: 1023px) {
-		margin: 32px auto 0;
+	@media (min-width: 1920px) {
+		background: #ff474d;
+		border-radius: 18px;
+		cursor: pointer;
+		font-family: 'Gilroy';
+		font-style: normal;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 25px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #ffffff;
+		width: 210px;
+		height: 56px;
+		margin: 32px 0 0 0;
+		padding: 0;
+		outline: none;
+		border: none;
 	}
 `;
 
@@ -471,24 +580,26 @@ const List = styled.ul`
 	list-style: none;
 	margin: 0;
 	padding: 0;
-
-	@media (max-width: 1440px) {
+	height: 125px;
+	@media (min-width: 768px) {
+		height: 119px;
+		margin: 0 0 0 50px;
+	}
+	@media (min-width: 1024px) {
+		height: 110px;
+		margin: 0;
+	}
+	@media (min-width: 1280px) {
+		height: 110px;
+	}
+	@media (min-width: 1440px) {
 		height: 86px;
 	}
-	@media (max-width: 1280px) {
-		height: 110px;
-	}
-	@media (max-width: 1024px) {
-		height: 110px;
-	}
-	@media (max-width: 768px) {
-		height: 119px;
-	}
-	@media (max-width: 425px) {
-		height: 130px;
-	}
-	@media (max-width: 375px) {
-		height: 125px;
+	@media (min-width: 1920px) {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		height: unset;
 	}
 `;
 
@@ -496,12 +607,13 @@ const Item = styled.li`
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 400;
-	font-size: 18px;
-	line-height: 23px;
+
 	color: #212121;
 	margin: 0 0 8px 0;
 	padding: 0 0 0 27px;
 	position: relative;
+	font-size: 14px;
+	line-height: 20px;
 	&:last-child {
 		margin: 0;
 	}
@@ -514,42 +626,51 @@ const Item = styled.li`
 		left: 0;
 		top: 4px;
 	}
-	@media (max-width: 1280px) {
-		font-size: 16px;
-		line-height: 23px;
+	@media (min-width: 1px) {
+		font-size: 14px;
+		line-height: 20px;
 	}
-	@media (max-width: 1023px) {
+	@media (min-width: 768px) {
 		margin: 0 0 12px -20px;
 		&:last-child {
 			margin: 0 0 0 -20px;
 		}
 	}
-	@media (max-width: 470px) {
-		margin: 0 0 12px -5px;
+	@media (min-width: 1024px) {
+		font-size: 16px;
+		line-height: 23px;
 		&:last-child {
-			margin: 0 0 0 -5px;
+			margin: 0 0 0 -20px;
 		}
 	}
-	@media (max-width: 767px) {
-		font-size: 14px;
-		line-height: 20px;
+	@media (min-width: 1280px) {
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 23px;
+		color: #212121;
+		margin: 0 0 8px 0;
+		padding: 0 0 0 27px;
+		position: relative;
+		&:last-child {
+			margin: 0;
+		}
 	}
 `;
 
 const MobRightDots = styled.div`
-	display: none;
-	@media (max-width: 768px) {
-		display: block;
-		position: absolute;
-		width: 243.1px;
-		height: 183.97px;
-		top: 60%;
-		right: 0;
-		transform: translateX(50%);
-		background: url('/images/main/moreMoney/mob-right-dots.svg') 0 0 / contain no-repeat;
-	}
-	@media (max-width: 600px) {
-		top: 58%;
+	display: block;
+	position: absolute;
+	width: 243.1px;
+	height: 183.97px;
+	top: 58%;
+	right: 0;
+	transform: translateX(50%);
+	background: url('/images/main/moreMoney/mob-right-dots.svg') 0 0 / contain no-repeat;
+
+	@media (min-width: 1024px) {
+		display: none;
 	}
 `;
 

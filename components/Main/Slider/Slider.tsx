@@ -118,8 +118,6 @@ const Wrapper = styled.div`
 	border-radius: 32px;
 	display: flex;
 	justify-content: space-between;
-	position: relative;
-
 	@media (max-width: 1140px) {
 		max-width: calc(100vw - 80px);
 	}

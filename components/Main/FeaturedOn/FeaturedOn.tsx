@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useTranslation } from 'next-i18next';
 
-import { Container } from '../../common/Container/Container';
+import { FeaturesCon } from '../../common/Container/Container';
 
 const MoreMoney: FC = () => {
 	if (typeof window !== 'undefined') {
@@ -62,7 +62,7 @@ const MoreMoney: FC = () => {
 				<Dots src='images/main/featuredOn/dots.svg' alt='' />
 				<DivideLine />
 
-				<Container>
+				<FeaturesCon>
 					<Inner>
 						<Title ref={titleRef} className='start'>
 							{t('main:FeaturedOn')}
@@ -74,7 +74,7 @@ const MoreMoney: FC = () => {
 							<Company4 src='images/main/featuredOn/ventureBeat.svg' alt='' />
 						</Companies>
 					</Inner>
-				</Container>
+				</FeaturesCon>
 			</Wrapper>
 		</Styled>
 	);
@@ -88,7 +88,7 @@ const Wrapper = styled.div`
 	overflow: hidden;
 	padding-bottom: 48px;
 
-	@media (max-width: 1280px) {
+	@media (min-width: 1280px) {
 		margin-top: 560px;
 	}
 	@media (max-width: 1024px) {
@@ -195,8 +195,8 @@ const Companies = styled.div`
 	margin: 0 auto;
 
 	@media (max-width: 1024px) {
-		padding-left: 40px;
-		padding-right: 40px;
+		//padding-left: 40px;
+		//padding-right: 40px;
 		& img {
 			height: 22px;
 			max-height: 100%;
