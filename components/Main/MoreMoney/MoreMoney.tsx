@@ -1,13 +1,12 @@
 import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import styled, { keyframes, css } from 'styled-components';
+import Image from 'next/image';
 
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 import { useTranslation } from 'next-i18next';
 
 import { FeaturesCon } from '../../common/Container/Container';
-import LeftMockComponent from './LeftMock';
-import RightMockComponent from './RightMock';
 
 const TYPE_WRITE_SPEED = 0.35;
 const TYPE_WRITE_DELAY = 700;
@@ -95,7 +94,6 @@ const MoreMoney: FC = () => {
 
 		if (!isVisible) setIsBackwards(false);
 	}, [tab.name]);
-	console.log(tab);
 
 	const onBtnClick = (tabItem: IMoreMoneyItem) => {
 		if (tabItem.isActive) return;
@@ -151,8 +149,36 @@ const MoreMoney: FC = () => {
 			<PurpleSquare>
 				<RedSquare>
 					<Null>
-						<LeftMockComponent name={tab.name} image={tab.leftImg} />
-						<RightMockComponent name={tab.name} image={tab.rightImg} />
+						<LeftMock isActive={tab.name === 'Chats'}>
+							<ImageInner>
+								<Image src={chatLeft} alt={tab.name} layout='fill' objectFit='contain' priority />
+							</ImageInner>
+						</LeftMock>
+						<RightMock isActive={tab.name === 'Chats'}>
+							<ImageInner>
+								<Image src={chatRight} alt={tab.name} layout='fill' objectFit='contain' priority />
+							</ImageInner>
+						</RightMock>
+						<LeftMock isActive={tab.name === 'Orders'}>
+							<ImageInner>
+								<Image src={orderLeft} alt={tab.name} layout='fill' objectFit='contain' priority />
+							</ImageInner>
+						</LeftMock>
+						<RightMock isActive={tab.name === 'Orders'}>
+							<ImageInner>
+								<Image src={orderRight} alt={tab.name} layout='fill' objectFit='contain' priority />
+							</ImageInner>
+						</RightMock>
+						<LeftMock isActive={tab.name === 'Payments'}>
+							<ImageInner>
+								<Image src={payLeft} alt={tab.name} layout='fill' objectFit='contain' priority />
+							</ImageInner>
+						</LeftMock>
+						<RightMock isActive={tab.name === 'Payments'}>
+							<ImageInner>
+								<Image src={payRight} alt={tab.name} layout='fill' objectFit='contain' priority />
+							</ImageInner>
+						</RightMock>
 						<Stars src='/images/main/moreMoney/stars.svg' alt='stars' />
 						<Dots src='/images/main/moreMoney/dots.svg' alt='dots' />
 					</Null>
@@ -162,6 +188,57 @@ const MoreMoney: FC = () => {
 		</Wrapper>
 	);
 };
+
+const ImageInner = styled.div`
+	width: 100%;
+	height: 100%;
+	position: relative;
+`;
+
+const LeftMock = styled.div<{ isActive: boolean }>`
+	position: absolute;
+	left: -139px;
+	top: -102px;
+	width: 300px;
+	height: 488px;
+	transition: opacity 0.4s ease-in;
+	opacity: ${({ isActive }) => (isActive ? '1' : '0')};
+
+	@media (max-width: 1023px) {
+		right: 39%;
+		left: auto;
+		top: -95px;
+		width: 330px;
+		height: 536px;
+	}
+	@media (max-width: 425px) {
+		width: 225px;
+		height: 520px;
+		right: 45%;
+		top: -75px;
+	}
+`;
+
+const RightMock = styled.div<{ isActive: boolean }>`
+	position: absolute;
+	left: 116px;
+	top: 42px;
+	background-size: contain;
+	width: 300px;
+	height: 488px;
+	transition: opacity 0.4s ease-in 0.2s;
+	opacity: ${({ isActive }) => (isActive ? '1' : '0')};
+
+	@media (max-width: 1023px) {
+		top: 0;
+		left: 47%;
+		width: 330px;
+		height: 536px;
+	}
+	@media (max-width: 425px) {
+		width: 225px;
+	}
+`;
 
 const Wrapper = styled.div`
 	width: 100%;

@@ -19,7 +19,7 @@ const RightMockComponent: FC<IMock> = ({ name, image }) => {
 	return (
 		<>
 			{updatedName === name && (
-				<FadeIn duration={300} delay={400} isShow={updatedName === name}>
+				<FadeIn duration={1000} delay={400} isShow={updatedName === name}>
 					<RightMock>
 						<ImageInner>
 							<Image src={image} alt={updatedName} layout='fill' objectFit='contain' priority />
@@ -41,7 +41,6 @@ const RightMock = styled.div`
 	position: absolute;
 	left: 116px;
 	top: 42px;
-	background: url('/images/main/moreMoney/fruitPlanet.png') no-repeat;
 	background-size: contain;
 	width: 300px;
 	height: 488px;

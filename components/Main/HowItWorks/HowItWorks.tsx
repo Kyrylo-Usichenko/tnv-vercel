@@ -6,6 +6,8 @@ import useAnimate from '../../../hooks/useAnimate';
 
 import { FeaturesCon } from '../../common/Container/Container';
 import FadeIn from '../../common/FadeIn/FadeIn';
+import Line1 from './Line1';
+import Line2 from './Line2';
 
 const HowItWorks: FC = () => {
 	const { t } = useTranslation();
@@ -19,70 +21,44 @@ const HowItWorks: FC = () => {
 					<Null>
 						<div ref={ref}>
 							<CardTop>
-								<FadeIn duration={200} delay={0} isShow={isShow}>
-									<Box>
+								<FadeIn duration={300} delay={0} isShow={isShow}>
+									<Box isShow={isShow}>
 										<CardContent>
 											<CardTitle>{t('main:howItWorksChats')}</CardTitle>
 											<CardText>{t('main:howItWorksChatsText')}</CardText>
 										</CardContent>
 									</Box>
-								</FadeIn>
-								<FadeIn duration={200} delay={1000} isShow={isShow}>
 									<CardTopIcon />
-								</FadeIn>
-								<FadeIn duration={200} delay={2000} isShow={isShow}>
 									<CardTopStars />
 								</FadeIn>
-								<FadeIn duration={200} delay={200} isShow={isShow}>
-									<RedLine />
-								</FadeIn>
-								{/*<img*/}
-								{/*	src='./images/main/howItWorks/text-chat.svg'*/}
-								{/*	alt='Connect to anyone in your supply chain and exchange messages'*/}
-								{/*/>*/}
+								<Line1 animate={isShow} />
 							</CardTop>
 							<CardMiddle>
-								<FadeIn duration={200} delay={400} isShow={isShow}>
-									<Box>
+								<FadeIn duration={300} delay={500} isShow={isShow}>
+									<Box2 isShow={isShow}>
 										<CardContent>
 											<CardTitle>{t('main:howItWorksOrders')}</CardTitle>
 											<CardText>{t('main:howItWorksOrdersText')}</CardText>
 										</CardContent>
-									</Box>
-								</FadeIn>
-								<FadeIn duration={200} delay={1200} isShow={isShow}>
+									</Box2>
 									<CardMiddleIcon />
-								</FadeIn>
-								<FadeIn duration={200} delay={1800} isShow={isShow}>
 									<CardMiddleStars />
 								</FadeIn>
-								<FadeIn duration={200} delay={600} isShow={isShow}>
-									{/* <Title>Orders</Title> */}
-									<RedLine2 />
-								</FadeIn>
-								{/* <Text width='175.11'>Create or confirm purchase orders with tap of a button</Text> */}
+								<Line2 animate={isShow} />
 							</CardMiddle>
 							<CardBot>
-								<FadeIn duration={200} delay={800} isShow={isShow}>
-									<Box>
+								<FadeIn duration={300} delay={1000} isShow={isShow}>
+									<Box3 isShow={isShow}>
 										<CardContent>
 											<CardTitle>{t('main:howItWorksPayments')}</CardTitle>
 											<CardText>{t('main:howItWorksPaymentsText')}</CardText>
 										</CardContent>
-									</Box>
-								</FadeIn>
-								<FadeIn duration={200} delay={1400} isShow={isShow}>
+									</Box3>
 									<CardBotIcon />
-								</FadeIn>
-								<FadeIn duration={200} delay={1600} isShow={isShow}>
 									<CardBotStars />
-								</FadeIn>
-								<FadeIn duration={200} delay={2000} isShow={isShow}>
 									<CardBotStars2 />
 								</FadeIn>
 								<DotsLeft />
-								{/* <Title>Payments</Title>
-										<Text width='175.11'>Send invoices and reconcile payments in one dashboard</Text> */}
 							</CardBot>
 						</div>
 					</Null>
@@ -247,6 +223,18 @@ const Button = styled.button`
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
+	transition: all 0.3s ease;
+
+	&:hover {
+		background-color: #ffffffcc;
+		box-shadow: 14px 4px 20px 0 var(--shadow-color);
+	}
+
+	&:focus {
+		background-color: var(--text-white);
+		box-shadow: 12px 2px 20px 0 var(--shadow-color);
+	}
+
 	@media (min-width: 1024px) {
 		margin: 0;
 	}
@@ -269,7 +257,7 @@ const ButtonText = styled.p`
 	}
 `;
 
-const Box = styled.div`
+const Box = styled.div<{ isShow: boolean }>`
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -278,13 +266,23 @@ const Box = styled.div`
 	background: white;
 	border-radius: 11.6324px;
 	box-shadow: 4px 7px 20px 0px rgba(33, 33, 33, 0.1);
-	transform: rotate(8deg);
+	transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+	transform: ${({ isShow }) => (isShow ? 'rotate(8deg) translateY(0px)' : 'rotate(8deg) translateY(50px)')};
+
 	@media (min-width: 768px) {
 		border-radius: 17.642px;
 	}
 	@media (min-width: 1280px) {
 		border-radius: 19.0256px;
 	}
+`;
+
+const Box2 = styled(Box)`
+	transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s;
+`;
+
+const Box3 = styled(Box)`
+	transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 1s;
 `;
 
 const CardTop = styled.div`
@@ -735,57 +733,6 @@ const DotsRight = styled.div`
 	}
 `;
 
-const RedLine = styled.div`
-	position: absolute;
-	height: 91px;
-	background: url('/images/main/howItWorks/redLineFirst.svg') no-repeat;
-	// transform: rotate(-8deg);
-	background-size: contain;
-	width: 100px;
-	left: 157px;
-	top: 38px;
-	@media (min-width: 768px) {
-		width: 124px;
-		left: 238px;
-		top: 58px;
-	}
-	@media (min-width: 1280px) {
-		position: absolute;
-		width: 141px;
-		height: 91px;
-		// left: 267px;
-		left: 265px;
-		// top: 42px;
-		top: 55px;
-		background: url('/images/main/howItWorks/redLineFirst.svg') no-repeat;
-		// transform: rotate(-8deg);
-		background-size: contain;
-	}
-`;
-const RedLine2 = styled.div`
-	position: absolute;
-	height: 85px;
-
-	background: url('/images/main/howItWorks/redLineSecond.svg') no-repeat;
-	background-size: contain;
-	width: 100px;
-	left: -87px;
-	top: 29px;
-	@media (min-width: 768px) {
-		width: 124px;
-		left: -117px;
-		top: 12px;
-	}
-	@media (min-width: 1024px) {
-		position: absolute;
-		width: 141px;
-		height: 85px;
-		left: -122px;
-		top: 35px;
-		background: url('/images/main/howItWorks/redLineSecond.svg') no-repeat;
-		background-size: contain;
-	}
-`;
 const CardContent = styled.div`
 	z-index: 2;
 	display: flex;
