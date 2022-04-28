@@ -52,13 +52,13 @@ const Supercharge: FC = () => {
 									<Text>{t('features:introductionPaymentsText')}</Text>
 								</Elem>
 							</FadeIn>
-							<FadeIn duration={500} delay={1250} isShow={isShow}>
-								<Elem>
+							<Elem>
+								<FadeIn duration={500} delay={1250} isShow={isShow}>
 									<Title>
 										And more in one <br /> dashboard...
 									</Title>
-								</Elem>
-							</FadeIn>
+								</FadeIn>
+							</Elem>
 							<MobileApp
 								src='/images/features/supercharge/1.jpg'
 								srcSet='/images/features/supercharge/1@2x.jpg 2x'
