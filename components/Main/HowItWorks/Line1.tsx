@@ -557,7 +557,7 @@ const Svg = styled.svg<{ isVisible?: boolean }>`
 	width: 100px;
 	left: 157px;
 	top: 38px;
-
+	z-index: -1;
 	${({ isVisible }) => (isVisible ? createCss() : null)}
 
 	@keyframes line1Anim {

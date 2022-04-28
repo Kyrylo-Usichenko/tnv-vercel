@@ -341,7 +341,7 @@ const CardMiddle = styled.div`
 	width: 166.16px;
 	height: 66.86px;
 	padding: 0 30px;
-	top: 147px;
+	top: 152px;
 	left: 272px;
 
 	& img {
@@ -403,7 +403,7 @@ const CardBot = styled.div`
 		width: 166.16px;
 		height: 66.86px;
 		padding: 0 30px;
-		top: 244px;
+		top: 259px;
 		left: 100px;
 	}
 	@media (min-width: 768px) {
