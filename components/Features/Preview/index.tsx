@@ -16,6 +16,7 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 	const { t } = useTranslation();
 
 	const [animate, setAnimate] = useState(false);
+	const [loaded, setLoaded] = useState(false);
 
 	const heading = useRef() as RefObject<HTMLHeadingElement>;
 	const entry = useIntersectionObserver(heading, {});
@@ -67,9 +68,20 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 	}, [entry]);
 
 	useEffect(() => {
+		const onLoad = () => {
+			setLoaded(true);
+		};
+
+		mainImg.current?.addEventListener('load', onLoad);
+
+		return () => mainImg.current?.removeEventListener('load', onLoad);
+	}, [mainImg]);
+
+	useEffect(() => {
 		const isVisible = !!imgEntry?.isIntersecting;
 
-		if (isVisible) {
+		if (isVisible && loaded) {
+			console.log('animate');
 			setAnimate(true);
 		}
 	}, [imgEntry]);
