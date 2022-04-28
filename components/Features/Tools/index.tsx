@@ -412,6 +412,10 @@ const MessageInput = styled.input`
 	font-size: 14px;
 	padding: 11px 19px 11px 14px;
 
+	&:disabled {
+		background: #f3f4f5;
+	}
+
 	@media (min-width: 768px) {
 		height: 40px;
 		width: 283px;
