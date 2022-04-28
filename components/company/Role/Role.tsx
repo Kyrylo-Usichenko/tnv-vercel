@@ -2,7 +2,7 @@ import React, { FC, RefObject, useRef } from 'react';
 import styled from 'styled-components';
 
 import { useTranslation } from 'next-i18next';
-import useAnimate from '../../../hooks/useAnimate';
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 import { FeaturesCon } from '../../common/Container/Container';
 import FadeIn from '../../common/FadeIn/FadeIn';
@@ -10,7 +10,8 @@ import FadeIn from '../../common/FadeIn/FadeIn';
 const Role: FC = () => {
 	const { t } = useTranslation();
 	const ref = useRef() as RefObject<HTMLDivElement>;
-	const isShow = useAnimate(ref);
+	const entry = useIntersectionObserver(ref, {});
+	const isVisible = !!entry?.isIntersecting;
 
 	return (
 		<Wrapper>
@@ -19,8 +20,7 @@ const Role: FC = () => {
 			<FeaturesCon>
 				<GalleryCon>
 					<GalleryGrid ref={ref}>
-						{' '}
-						{isShow && (
+						{isVisible && (
 							<>
 								<GalleryColumn>
 									<FadeIn duration={500} delay={200}>

@@ -1,19 +1,18 @@
 import React, { FC, RefObject, useRef } from 'react';
 
-import useAnimate from '../../../hooks/useAnimate';
-
 import DoneTop from './DoneTop';
 import DoneBottom from './DoneBottom';
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 const Done: FC = () => {
-	const ref = useRef() as RefObject<HTMLElement>;
-	const isShow = useAnimate(ref);
-
+	const ref = useRef() as RefObject<HTMLDivElement>;
+	const entry = useIntersectionObserver(ref, {});
+	const isVisible = !!entry?.isIntersecting;
 	return (
-		<section ref={ref}>
-			<DoneTop isShow={isShow} />
-			<DoneBottom isShow={isShow} />
-		</section>
+		<div ref={ref}>
+			<DoneTop isVisible={isVisible} />
+			<DoneBottom isVisible={isVisible} />
+		</div>
 	);
 };
 

@@ -1,14 +1,10 @@
-import React, { FC, RefObject, useRef, useState } from 'react';
+import React, { FC, RefObject, useRef } from 'react';
 import CountUp from 'react-countup';
 import styled from 'styled-components';
 
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 const Counts: FC = () => {
-	const [isShown01, setIsShown01] = useState(false);
-	const [isShown02, setIsShown02] = useState(false);
-	const [isShown03, setIsShown03] = useState(false);
-	const [isShown04, setIsShown04] = useState(false);
 	const ref01 = useRef() as RefObject<HTMLDivElement>;
 	const ref02 = useRef() as RefObject<HTMLDivElement>;
 	const ref03 = useRef() as RefObject<HTMLDivElement>;
@@ -30,20 +26,7 @@ const Counts: FC = () => {
 				<Block1SquareBottom />
 				<Content>
 					<Count>
-						{isShown01 ? (
-							250
-						) : isVisible01 ? (
-							<CountUp
-								start={0}
-								end={250}
-								delay={0.2}
-								duration={1.1}
-								preserveValue
-								onEnd={() => setIsShown01(true)}
-							/>
-						) : (
-							0
-						)}
+						{isVisible01 ? <CountUp start={0} end={250} delay={0.2} duration={1.1} preserveValue /> : 0}
 						<span className='accent'>+</span>
 					</Count>
 					<Title>Team Members</Title>
@@ -55,20 +38,7 @@ const Counts: FC = () => {
 				<Block2SquareBottom />
 				<Content>
 					<Count>
-						{isShown02 ? (
-							10
-						) : isVisible02 ? (
-							<CountUp
-								start={0}
-								end={10}
-								delay={0.3}
-								duration={0.7}
-								preserveValue
-								onEnd={() => setIsShown02(true)}
-							/>
-						) : (
-							0
-						)}
+						{isVisible02 ? <CountUp start={0} end={10} delay={0.3} duration={0.7} preserveValue /> : 0}
 						<span className='accent'>+</span>
 					</Count>
 					<Title>Nationalities</Title>
@@ -79,20 +49,7 @@ const Counts: FC = () => {
 				<Block3Square />
 				<Content>
 					<Count>
-						{isShown03 ? (
-							5000
-						) : isVisible03 ? (
-							<CountUp
-								start={0}
-								end={5000}
-								delay={0}
-								duration={1.5}
-								preserveValue
-								onEnd={() => setIsShown03(true)}
-							/>
-						) : (
-							0
-						)}
+						{isVisible03 ? <CountUp start={0} end={5000} delay={0} duration={1.5} preserveValue /> : 0}
 						<span className='accent'>+</span>
 					</Count>
 					<Title>Businesses</Title>
@@ -103,20 +60,7 @@ const Counts: FC = () => {
 				<Block4Dots />
 				<Content>
 					<Count>
-						{isShown04 ? (
-							500
-						) : isVisible04 ? (
-							<CountUp
-								start={0}
-								end={500}
-								delay={0.2}
-								duration={1.2}
-								preserveValue
-								onEnd={() => setIsShown04(true)}
-							/>
-						) : (
-							0
-						)}
+						${isVisible04 ? <CountUp start={0} end={500} delay={0.2} duration={1.2} preserveValue /> : 0}
 						<span className='accent'>M</span>
 					</Count>
 					<Title>Transactions</Title>

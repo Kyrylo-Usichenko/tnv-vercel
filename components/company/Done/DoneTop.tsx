@@ -4,7 +4,7 @@ import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
 import FadeIn from '../../common/FadeIn/FadeIn';
 
-const DoneTop: FC<{ isShow: boolean }> = ({ isShow }) => {
+const DoneTop: FC<{ isVisible: boolean }> = ({ isVisible }) => {
 	const { t } = useTranslation();
 
 	return (
@@ -30,7 +30,7 @@ const DoneTop: FC<{ isShow: boolean }> = ({ isShow }) => {
 					<RedSide>
 						<SquareRT />
 						<DotsRT src='/images/company/Done/dotsRT.svg' loading='lazy' />
-						{isShow && (
+						{isVisible && (
 							<FadeIn duration={500} delay={500}>
 								<img
 									src='/images/company/Done/ipad.png'
@@ -48,7 +48,7 @@ const DoneTop: FC<{ isShow: boolean }> = ({ isShow }) => {
 					<FeaturesCon className='h-100'>
 						<SquareG2 />
 						<SquareG3 />
-						{isShow && (
+						{isVisible && (
 							<Content2>
 								<FadeIn duration={500} delay={200}>
 									<Year>{t('company:doneYear')}</Year>

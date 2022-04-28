@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useTranslation } from 'next-i18next';
 import FadeIn from '../../common/FadeIn/FadeIn';
 
-const DoneBottom: FC<{ isShow: boolean }> = ({ isShow }) => {
+const DoneBottom: FC<{ isVisible: boolean }> = ({ isVisible }) => {
 	const { t } = useTranslation();
 
 	return (
@@ -11,7 +11,7 @@ const DoneBottom: FC<{ isShow: boolean }> = ({ isShow }) => {
 			<WrapperCon>
 				<Black>
 					<BlackST src='/images/company/Done/blackST.svg' loading='lazy' />
-					{isShow && (
+					{isVisible && (
 						<FadeIn duration={500} delay={1100}>
 							<Content>
 								<Title>{t('company:doneYear2')}</Title>
@@ -29,7 +29,7 @@ const DoneBottom: FC<{ isShow: boolean }> = ({ isShow }) => {
 				<RedSide>
 					<SquareRT />
 					<DotsRT src='/images/company/Done/dotsRT.svg' loading='lazy' />
-					{isShow && (
+					{isVisible && (
 						<FadeIn duration={500} delay={800}>
 							<img
 								src='/images/company/Done/ipad.png'
@@ -46,7 +46,7 @@ const DoneBottom: FC<{ isShow: boolean }> = ({ isShow }) => {
 					<Red>
 						<RedST />
 						<RedTitle>{t('company:doneDark')}</RedTitle>
-						{isShow && (
+						{isVisible && (
 							<FadeIn duration={500} delay={800}>
 								<picture>
 									<source
@@ -72,7 +72,7 @@ const DoneBottom: FC<{ isShow: boolean }> = ({ isShow }) => {
 				</RedWrapper>
 				<Grey>
 					<GreyST />
-					{isShow && (
+					{isVisible && (
 						<FadeIn duration={500} delay={1400}>
 							<Content>
 								<DarkTitle>{t('company:doneYear3')}</DarkTitle>
