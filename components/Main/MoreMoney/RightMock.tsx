@@ -19,7 +19,7 @@ const RightMockComponent: FC<IMock> = ({ name, image }) => {
 	return (
 		<>
 			{updatedName === name && (
-				<FadeIn duration={300} delay={400} isShow={updatedName === name}>
+				<FadeIn duration={1000} delay={400} isShow={updatedName === name}>
 					<RightMock>
 						<ImageInner>
 							<Image src={image} alt={updatedName} layout='fill' objectFit='contain' priority />
