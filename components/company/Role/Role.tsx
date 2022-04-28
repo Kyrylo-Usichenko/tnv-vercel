@@ -19,47 +19,42 @@ const Role: FC = () => {
 			<FeaturesCon>
 				<GalleryCon>
 					<GalleryGrid ref={ref}>
-						{' '}
-						{isShow && (
-							<>
-								<GalleryColumn>
-									<FadeIn duration={500} delay={200}>
-										<Img1
-											src='/images/company/Role/1.jpg'
-											srcSet='/images/company/Role/1@2x.jpg 2x'
-											alt='Big city'
-											loading='lazy'
-										/>
-									</FadeIn>
-									<FadeIn duration={500} delay={1100}>
-										<Img3
-											src='/images/company/Role/3.jpg'
-											srcSet='/images/company/Role/3@2x.jpg 2x'
-											alt='Big city'
-											loading='lazy'
-										/>
-									</FadeIn>
-								</GalleryColumn>
-								<GalleryColumn>
-									<FadeIn duration={500} delay={800}>
-										<Img2
-											src='/images/company/Role/2.jpg'
-											srcSet='/images/company/Role/2@2x.jpg 2x'
-											alt='Big city'
-											loading='lazy'
-										/>
-									</FadeIn>
-									<FadeIn duration={500} delay={500}>
-										<Img4
-											src='/images/company/Role/4.jpg'
-											srcSet='/images/company/Role/4@2x.jpg 2x'
-											alt='Big city'
-											loading='lazy'
-										/>
-									</FadeIn>
-								</GalleryColumn>
-							</>
-						)}
+						<GalleryColumn>
+							<FadeIn duration={500} delay={200} isShow={isShow}>
+								<Img1
+									src='/images/company/Role/1.jpg'
+									srcSet='/images/company/Role/1@2x.jpg 2x'
+									alt='Big city'
+									loading='lazy'
+								/>
+							</FadeIn>
+							<FadeIn duration={500} delay={1100} isShow={isShow}>
+								<Img3
+									src='/images/company/Role/3.jpg'
+									srcSet='/images/company/Role/3@2x.jpg 2x'
+									alt='Big city'
+									loading='lazy'
+								/>
+							</FadeIn>
+						</GalleryColumn>
+						<GalleryColumn>
+							<FadeIn duration={500} delay={800} isShow={isShow}>
+								<Img2
+									src='/images/company/Role/2.jpg'
+									srcSet='/images/company/Role/2@2x.jpg 2x'
+									alt='Big city'
+									loading='lazy'
+								/>
+							</FadeIn>
+							<FadeIn duration={500} delay={500} isShow={isShow}>
+								<Img4
+									src='/images/company/Role/4.jpg'
+									srcSet='/images/company/Role/4@2x.jpg 2x'
+									alt='Big city'
+									loading='lazy'
+								/>
+							</FadeIn>
+						</GalleryColumn>
 					</GalleryGrid>
 					<Content>
 						<GalleryTitle>{t('company:rolesText')}</GalleryTitle>

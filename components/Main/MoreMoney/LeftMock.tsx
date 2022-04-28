@@ -19,7 +19,7 @@ const LeftMockComponent: FC<IMock> = ({ name, image }) => {
 	return (
 		<>
 			{updatedName === name && (
-				<FadeIn duration={300} delay={100}>
+				<FadeIn duration={300} delay={100} isShow={updatedName === name}>
 					<LeftMock>
 						<ImageInner>
 							<Image src={image} alt={updatedName} layout='fill' objectFit='contain' priority />
