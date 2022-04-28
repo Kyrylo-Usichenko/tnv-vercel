@@ -533,17 +533,17 @@ const Line2: FC<Line2Props> = ({ animate }) => {
 
 function createCss() {
 	let styles = '';
-	let delay = 2000;
+	let delay = 900;
 
 	for (let i = 1; i <= 27; i++) {
 		styles += `
        #rect-${i} {
-				animation: line2Anim 40ms ease ${delay}ms;
+				animation: line2Anim 11ms ease ${delay}ms;
 				animation-fill-mode: forwards;
 			}
 		`;
 
-		delay += 40;
+		delay += 11;
 	}
 
 	return css`
