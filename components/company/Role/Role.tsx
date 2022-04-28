@@ -240,7 +240,7 @@ const Explore = styled.button`
 		top: 15px;
 		left: 49px;
 		color: rgba(33, 33, 33, 0.1);
-		filter: blur(0.5px);
+		filter: blur(1px);
 		opacity: 0;
 		transition: opacity 0.2s ease;
 	}
@@ -250,10 +250,10 @@ const Explore = styled.button`
 		content: '';
 		width: 100%;
 		height: 100%;
-		top: 5px;
-		left: 5px;
-		border: 2px solid rgba(33, 33, 33, 0.1);
-		filter: blur(1px);
+		top: 4px;
+		left: 4px;
+		border: 1px solid rgba(33, 33, 33, 0.1);
+		filter: blur(2px);
 		border-radius: 16px;
 		opacity: 0;
 		transition: opacity 0.2s ease;
