@@ -1,11 +1,16 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
+import Image from 'next/image';
 
 const Logo: FC = () => {
-	return <Img src='/icons/common/logo/logo.svg' alt='octopus' />;
+	return (
+		<Wrapper>
+			<Image priority width='100%' height='100%' src='/icons/common/logo/logo.svg' alt='octopus' />
+		</Wrapper>
+	);
 };
 
-const Img = styled.img`
+const Wrapper = styled.div`
 	width: 43.55px;
 	height: 38px;
 
