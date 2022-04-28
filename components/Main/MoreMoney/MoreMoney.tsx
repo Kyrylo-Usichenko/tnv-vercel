@@ -37,7 +37,7 @@ const MoreMoney: FC = () => {
 			leftImg: chatLeft,
 			rightImg: chatRight,
 			typedText: [t('main:moreMoneyTitle1')],
-			isActive: false,
+			isActive: true,
 			textLines: [t('main:moreMoneyTab3Row1'), t('main:moreMoneyTab3Row2'), t('main:moreMoneyTab3Row3')],
 		},
 		{
@@ -53,7 +53,7 @@ const MoreMoney: FC = () => {
 			leftImg: payLeft,
 			rightImg: payRight,
 			typedText: [t('main:moreMoneyTitle3')],
-			isActive: true,
+			isActive: false,
 			textLines: [t('main:moreMoneyTab1Row1'), t('main:moreMoneyTab1Row2'), t('main:moreMoneyTab1Row3')],
 		},
 	];
@@ -95,10 +95,10 @@ const MoreMoney: FC = () => {
 
 		if (!isVisible) setIsBackwards(false);
 	}, [tab.name]);
+	console.log(tab);
 
 	const onBtnClick = (tabItem: IMoreMoneyItem) => {
 		if (tabItem.isActive) return;
-
 		const updatedTabs = tabs.map((tabUpdated) => {
 			if (tabUpdated.name === tabItem.name) {
 				tabUpdated.isActive = true;
