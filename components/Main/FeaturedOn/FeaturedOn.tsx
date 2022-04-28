@@ -88,17 +88,23 @@ const Wrapper = styled.div`
 	overflow: hidden;
 	padding-bottom: 48px;
 
+	@media (min-width: 375px) {
+		margin-top: 500px;
+	}
+	@media (min-width: 1024px) {
+		margin-top: 0;
+	}
 	@media (min-width: 1280px) {
 		margin-top: 560px;
+	}
+	@media (min-width: 1440px) {
+		margin-top: 0;
 	}
 	@media (max-width: 1024px) {
 		margin-right: 0;
 	}
 	@media (max-width: 975px) {
 		padding-bottom: 0;
-	}
-	@media (max-width: 768px) {
-		margin-top: 500px;
 	}
 `;
 
