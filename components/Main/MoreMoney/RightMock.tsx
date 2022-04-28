@@ -41,7 +41,6 @@ const RightMock = styled.div`
 	position: absolute;
 	left: 116px;
 	top: 42px;
-	background: url('/images/main/moreMoney/fruitPlanet.png') no-repeat;
 	background-size: contain;
 	width: 300px;
 	height: 488px;

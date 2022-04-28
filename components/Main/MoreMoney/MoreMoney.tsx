@@ -95,7 +95,6 @@ const MoreMoney: FC = () => {
 
 		if (!isVisible) setIsBackwards(false);
 	}, [tab.name]);
-	console.log(tab);
 
 	const onBtnClick = (tabItem: IMoreMoneyItem) => {
 		if (tabItem.isActive) return;
