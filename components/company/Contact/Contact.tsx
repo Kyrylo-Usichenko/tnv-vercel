@@ -204,7 +204,7 @@ const ContactUs = styled.button`
 		top: 17px;
 		left: 53px;
 		color: rgba(33, 33, 33, 0.1);
-		filter: blur(0.5px);
+		filter: blur(1px);
 		opacity: 0;
 		transition: opacity 0.2s ease;
 	}
@@ -214,10 +214,10 @@ const ContactUs = styled.button`
 		content: '';
 		width: 100%;
 		height: 100%;
-		top: 5px;
+		top: 4px;
 		left: 5px;
-		border: 2px solid rgba(33, 33, 33, 0.1);
-		filter: blur(1px);
+		border: 1px solid rgba(33, 33, 33, 0.1);
+		filter: blur(2px);
 		border-radius: 16px;
 		opacity: 0;
 		transition: opacity 0.2s ease;
