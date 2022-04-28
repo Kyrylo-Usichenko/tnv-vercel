@@ -153,8 +153,8 @@ const MoreMoney: FC = () => {
 					<Null>
 						<LeftMockComponent name={tab.name} image={tab.leftImg} />
 						<RightMockComponent name={tab.name} image={tab.rightImg} />
-						<Stars src='images/main/moreMoney/stars.svg' alt='stars' />
-						<Dots src='images/main/moreMoney/dots.svg' alt='dots' />
+						<Stars src='/images/main/moreMoney/stars.svg' alt='stars' />
+						<Dots src='/images/main/moreMoney/dots.svg' alt='dots' />
 					</Null>
 				</RedSquare>
 			</PurpleSquare>
@@ -174,6 +174,11 @@ const Wrapper = styled.div`
 		height: 896px;
 		margin-top: 0px;
 	}
+	@media (min-width: 1024px) {
+		margin-bottom: auto;
+		height: 701px;
+		// margin-top: 0px;
+	}
 	@media (min-width: 1280px) {
 		margin-bottom: auto;
 		height: 295px;
@@ -182,7 +187,7 @@ const Wrapper = styled.div`
 	@media (min-width: 1440px) {
 		width: 100%;
 		position: relative;
-		height: 826px;
+		height: 706px;
 		margin-top: 299px;
 		// margin-top: 0px;
 	}
@@ -515,7 +520,16 @@ const Button = styled.a<{ width: string; isActive: boolean }>`
 	font-size: 14px;
 	line-height: 17px;
 	margin: 0 16px 0 0;
-
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	&:focus {
+		outline: none !important;
+	}
 	&:hover {
 		box-shadow: ${({ isActive }) => (isActive ? 'none' : '4px 4px 20px 0px rgba(33, 33, 33, 0.1)')};
 	}

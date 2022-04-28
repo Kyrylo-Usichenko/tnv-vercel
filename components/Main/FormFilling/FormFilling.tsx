@@ -194,10 +194,10 @@ const Smile: FC<SmileProps> = ({ formRef }) => {
 									</Button>
 									<Spam>
 										{t('main:formUnderButton')}
-										<Img src='images/main/formFilling/hands.svg' alt='' />
+										<Img src='/images/main/formFilling/hands.svg' alt='' />
 									</Spam>
 								</Form>
-								<Dots src='images/main/formFilling/dots.svg' alt='' />
+								<Dots src='/images/main/formFilling/dots.svg' alt='' />
 							</FormWrapper>
 						</Inner>
 					</FeaturesCon>

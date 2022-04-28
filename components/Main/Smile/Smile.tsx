@@ -12,64 +12,64 @@ const Smile: FC = () => {
 			<MainBox>
 				<GreyBox1>
 					<GreyBoxInner>
-						<BoxImg src='images/main/smile/toko-kita.svg' alt='' />
+						<BoxImg src='/images/main/smile/toko-kita.svg' alt='' />
 					</GreyBoxInner>
 				</GreyBox1>
 				<GreyBox2>
 					<GreyBoxInner>
-						<BoxImg src='images/main/smile/bbs.svg' alt='' />
+						<BoxImg src='/images/main/smile/bbs.svg' alt='' />
 					</GreyBoxInner>
 				</GreyBox2>
 				<GreyBox3>
 					<GreyBoxInner>
-						<BoxImg src='images/main/smile/pet-shop.png' alt='' />
+						<BoxImg src='/images/main/smile/pet-shop.png' alt='' />
 					</GreyBoxInner>
 				</GreyBox3>
 				<GreyBox4>
 					<GreyBoxInner>
-						<BoxImg src='images/main/smile/nex.svg' alt='' />
+						<BoxImg src='/images/main/smile/nex.svg' alt='' />
 					</GreyBoxInner>
 				</GreyBox4>
 				<GreyBox5>
 					<GreyBoxInner>
-						<BoxImg src='images/main/smile/nayla.svg' alt='' />
+						<BoxImg src='/images/main/smile/nayla.svg' alt='' />
 					</GreyBoxInner>
 				</GreyBox5>
 
 				<GreyBox6>
 					<GreyBoxInner>
-						<BoxImg src='images/main/smile/group-of-companies.svg' alt='' />
+						<BoxImg src='/images/main/smile/group-of-companies.svg' alt='' />
 					</GreyBoxInner>
 				</GreyBox6>
 				<GreyBox7>
 					<GreyBoxInner>
-						<BoxImg src='images/main/smile/gong-cha.png' alt='' />
+						<BoxImg src='/images/main/smile/gong-cha.png' alt='' />
 					</GreyBoxInner>
 				</GreyBox7>
 				<GreyBox8>
 					<GreyBoxInner>
-						<BoxImg src='images/main/smile/kho-pa-ka.png' alt='' />
+						<BoxImg src='/images/main/smile/kho-pa-ka.png' alt='' />
 					</GreyBoxInner>
 				</GreyBox8>
 
 				<GreyBox9>
 					<GreyBoxInner>
-						<BoxImg src='images/main/smile/es-teh.svg' alt='' />
+						<BoxImg src='/images/main/smile/es-teh.svg' alt='' />
 					</GreyBoxInner>
 				</GreyBox9>
 				<GreyBox10>
 					<GreyBoxInner>
-						<BoxImg src='images/main/smile/burger-lobster.png' alt='' />
+						<BoxImg src='/images/main/smile/burger-lobster.png' alt='' />
 					</GreyBoxInner>
 				</GreyBox10>
 
-				<Dots top='-512' left='647' src='images/main/smile/rightDots.svg' alt='' />
+				<Dots top='-512' left='647' src='/images/main/smile/rightDots.svg' alt='' />
 
 				<RightTopGrey top='-329' left='714' size='457.92' radius='42.6248' />
 				<LeftTopGrey top='-411' left='-653' size='554.34' radius='51.6' />
 				<LeftGrey top='-94' left='-714' size='554.34' radius='51.6' />
 
-				<Dots top='418' left='-490' src='images/main/smile/leftDots.svg' alt='' />
+				<Dots top='418' left='-490' src='/images/main/smile/leftDots.svg' alt='' />
 				<B1>
 					<B2>
 						<B3>
@@ -231,7 +231,7 @@ const Text = styled.p`
 const Line = styled.div`
 	position: absolute;
 	top: 13px;
-	background: url('images/main/smile/line.svg') no-repeat;
+	background: url('/images/main/smile/line.svg') no-repeat;
 	width: 202px;
 	height: 77px;
 	background-size: contain;

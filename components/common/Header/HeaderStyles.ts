@@ -30,7 +30,7 @@ export const HeaderStyled = styled.header<{ isHeaderScrolled: boolean; isMenuOpe
 	}
 
 	&::after {
-		content: url('images/header/mobile-dots-right-375.webp');
+		content: url('/images/header/mobile-dots-right-375.webp');
 		display: ${({ isMenuOpend }) => (isMenuOpend ? 'block' : 'none')};
 		position: absolute;
 		bottom: 20px;
@@ -374,7 +374,7 @@ export const MobileLinks = styled.div<{ isMenuOpend: boolean }>`
 	gap: 32px;
 
 	&::before {
-		content: url('images/header/mobile-dots-left.webp');
+		content: url('/images/header/mobile-dots-left.webp');
 		position: absolute;
 		left: -16px;
 		bottom: 20px;
@@ -382,7 +382,7 @@ export const MobileLinks = styled.div<{ isMenuOpend: boolean }>`
 	}
 
 	&::after {
-		content: url('images/header/mobile-dots-right.webp');
+		content: url('/images/header/mobile-dots-right.webp');
 		position: absolute;
 		right: -30px;
 		bottom: 75px;
