@@ -219,7 +219,7 @@ const GalleryTitle = styled.h2`
 
 const Explore = styled.button`
 	display: block;
-	border: 1px solid #d2d2d2;
+	border: 2px solid #d2d2d2;
 	border-radius: 18px;
 	background-color: #ffffff;
 	font-family: 'Gilroy';
@@ -233,35 +233,29 @@ const Explore = styled.button`
 	margin: 0 auto 48px auto;
 	cursor: pointer;
 	position: relative;
-
-	&::before {
-		position: absolute;
-		content: 'Explore roles';
-		top: 15px;
-		left: 49px;
-		color: rgba(33, 33, 33, 0.1);
-		filter: blur(1px);
-		opacity: 0;
-		transition: opacity 0.2s ease;
-	}
+	transition: all 0.2s ease;
 
 	&::after {
 		position: absolute;
 		content: '';
 		width: 100%;
 		height: 100%;
-		top: 4px;
-		left: 4px;
-		border: 1px solid rgba(33, 33, 33, 0.1);
+		top: 0;
+		left: 0;
+		border: 2px solid rgba(33, 33, 33, 0.1);
 		filter: blur(2px);
 		border-radius: 16px;
 		opacity: 0;
 		transition: opacity 0.2s ease;
 	}
 
-	&:hover::after,
-	&:hover::before {
+	&:hover::after {
 		opacity: 1;
+	}
+
+	&:hover {
+		border: 2px solid transparent;
+		color: rgba(33, 33, 33, 0.1);
 	}
 
 	@media (min-width: 768px) {
