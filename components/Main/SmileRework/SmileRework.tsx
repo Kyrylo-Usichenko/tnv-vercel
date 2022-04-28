@@ -12,6 +12,17 @@ const Smile: FC = () => {
 	const ref = useRef() as RefObject<HTMLDivElement>;
 	const isShow = useAnimate(ref);
 
+	const delay1 = 1000;
+	const delay2 = 1400;
+	const delay3 = 1800;
+	const delay4 = 2000;
+	const delay5 = 2600;
+	const delay6 = 2800;
+	const delay7 = 3200;
+	const delay8 = 3400;
+	const delay9 = 3800;
+	const delay10 = 4000;
+
 	return (
 		<Wrapper>
 			<FeaturesCon>
@@ -27,7 +38,7 @@ const Smile: FC = () => {
 				<Dots top='27' left='-353' src='/images/main/smile/leftDots.svg' alt='' />
 				<Inner ref={ref}>
 					<GreyWrapper1>
-						<FadeIn duration={500} delay={2200} isShow={isShow}>
+						<FadeIn duration={500} delay={delay1} isShow={isShow}>
 							<Grey></Grey>
 							<GreyInner></GreyInner>
 							<Img
@@ -40,14 +51,14 @@ const Smile: FC = () => {
 
 					<TopFirstLine>
 						<GreyWrapper2>
-							<FadeIn duration={500} delay={1000} isShow={isShow}>
+							<FadeIn duration={500} delay={delay3} isShow={isShow}>
 								<Grey></Grey>
 								<GreyInner></GreyInner>
 								<Img src='/images/main/smile/nex.svg' alt='' />{' '}
 							</FadeIn>
 						</GreyWrapper2>
 						<GreyWrapper>
-							<FadeIn duration={500} delay={2800} isShow={isShow}>
+							<FadeIn duration={500} delay={delay5} isShow={isShow}>
 								<Grey></Grey>
 								<GreyInner></GreyInner>
 								<Img src='/images/main/smile/bbs.png' srcSet='/images/main/smile/bbs2x.png 2x' alt='' />
@@ -56,14 +67,14 @@ const Smile: FC = () => {
 					</TopFirstLine>
 					<TopSecondLine>
 						<GreyWrapper3>
-							<FadeIn duration={500} delay={1800} isShow={isShow}>
+							<FadeIn duration={500} delay={delay7} isShow={isShow}>
 								<Grey></Grey>
 								<GreyInner></GreyInner>
 								<Img src='/images/main/smile/nayla.svg' alt='' />{' '}
 							</FadeIn>
 						</GreyWrapper3>
 						<GreyWrapper>
-							<FadeIn duration={500} delay={2400} isShow={isShow}>
+							<FadeIn duration={500} delay={delay9} isShow={isShow}>
 								<Grey></Grey>
 								<GreyInner></GreyInner>
 								<Img src='/images/main/smile/toko-kita.svg' alt='' />{' '}
@@ -95,7 +106,7 @@ const Smile: FC = () => {
 
 					<BotFirstLine>
 						<GreyWrapper3>
-							<FadeIn duration={500} delay={2600} isShow={isShow}>
+							<FadeIn duration={500} delay={delay2} isShow={isShow}>
 								<Grey></Grey>
 								<GreyInner></GreyInner>
 								<Img
@@ -106,7 +117,7 @@ const Smile: FC = () => {
 							</FadeIn>
 						</GreyWrapper3>
 						<GreyWrapper>
-							<FadeIn duration={500} delay={1400} isShow={isShow}>
+							<FadeIn duration={500} delay={delay4} isShow={isShow}>
 								<Grey></Grey>
 								<GreyInner></GreyInner>
 								<Img src='/images/main/smile/group-the-companies.svg' alt='' />
@@ -115,14 +126,14 @@ const Smile: FC = () => {
 					</BotFirstLine>
 					<BotSecondLine>
 						<GreyWrapper2>
-							<FadeIn duration={500} delay={2000} isShow={isShow}>
+							<FadeIn duration={500} delay={delay6} isShow={isShow}>
 								<Grey></Grey>
 								<GreyInner></GreyInner>
 								<Img src='/images/main/smile/es-teh.svg' alt='' />
 							</FadeIn>
 						</GreyWrapper2>
 						<GreyWrapper>
-							<FadeIn duration={500} delay={1200} isShow={isShow}>
+							<FadeIn duration={500} delay={delay8} isShow={isShow}>
 								<Grey></Grey>
 								<GreyInner></GreyInner>
 								<Img
@@ -134,7 +145,7 @@ const Smile: FC = () => {
 						</GreyWrapper>
 					</BotSecondLine>
 					<GreyWrapper4>
-						<FadeIn duration={500} delay={1600} isShow={isShow}>
+						<FadeIn duration={500} delay={delay10} isShow={isShow}>
 							<Grey></Grey>
 							<GreyInner></GreyInner>
 							<Img src='/images/main/smile/kho-pa-ka.svg' alt='' />
