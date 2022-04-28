@@ -11,10 +11,12 @@ const fadeIn = keyframes`
   from {
     opacity: 0;
 		visibility: hidden;
+		/* transform: translateY(50px) */
   }
   to {
     opacity: 1;
 		visibility: visible;
+		/* transform: translateY(-50px) */
   }
 `;
 

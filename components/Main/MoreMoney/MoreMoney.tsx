@@ -201,7 +201,7 @@ const LeftMock = styled.div<{ isActive: boolean }>`
 	top: -102px;
 	width: 300px;
 	height: 488px;
-	transition: opacity 0.4s ease-in 0.5s;
+	transition: opacity 0.4s ease-in;
 	opacity: ${({ isActive }) => (isActive ? '1' : '0')};
 
 	@media (max-width: 1023px) {
@@ -226,7 +226,7 @@ const RightMock = styled.div<{ isActive: boolean }>`
 	background-size: contain;
 	width: 300px;
 	height: 488px;
-	transition: opacity 0.4s ease-in 0.6s;
+	transition: opacity 0.4s ease-in 0.2s;
 	opacity: ${({ isActive }) => (isActive ? '1' : '0')};
 
 	@media (max-width: 1023px) {

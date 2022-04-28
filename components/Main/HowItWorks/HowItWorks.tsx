@@ -21,8 +21,8 @@ const HowItWorks: FC = () => {
 					<Null>
 						<div ref={ref}>
 							<CardTop>
-								<FadeIn duration={500} delay={0} isShow={isShow}>
-									<Box>
+								<FadeIn duration={300} delay={0} isShow={isShow}>
+									<Box isShow={isShow}>
 										<CardContent>
 											<CardTitle>{t('main:howItWorksChats')}</CardTitle>
 											<CardText>{t('main:howItWorksChatsText')}</CardText>
@@ -34,26 +34,26 @@ const HowItWorks: FC = () => {
 								<Line1 animate={isShow} />
 							</CardTop>
 							<CardMiddle>
-								<FadeIn duration={500} delay={1500} isShow={isShow}>
-									<Box>
+								<FadeIn duration={300} delay={500} isShow={isShow}>
+									<Box2 isShow={isShow}>
 										<CardContent>
 											<CardTitle>{t('main:howItWorksOrders')}</CardTitle>
 											<CardText>{t('main:howItWorksOrdersText')}</CardText>
 										</CardContent>
-									</Box>
+									</Box2>
 									<CardMiddleIcon />
 									<CardMiddleStars />
 								</FadeIn>
 								<Line2 animate={isShow} />
 							</CardMiddle>
 							<CardBot>
-								<FadeIn duration={500} delay={3000} isShow={isShow}>
-									<Box>
+								<FadeIn duration={300} delay={1000} isShow={isShow}>
+									<Box3 isShow={isShow}>
 										<CardContent>
 											<CardTitle>{t('main:howItWorksPayments')}</CardTitle>
 											<CardText>{t('main:howItWorksPaymentsText')}</CardText>
 										</CardContent>
-									</Box>
+									</Box3>
 									<CardBotIcon />
 									<CardBotStars />
 									<CardBotStars2 />
@@ -257,7 +257,7 @@ const ButtonText = styled.p`
 	}
 `;
 
-const Box = styled.div`
+const Box = styled.div<{ isShow: boolean }>`
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -266,13 +266,23 @@ const Box = styled.div`
 	background: white;
 	border-radius: 11.6324px;
 	box-shadow: 4px 7px 20px 0px rgba(33, 33, 33, 0.1);
-	transform: rotate(8deg);
+	transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+	transform: ${({ isShow }) => (isShow ? 'rotate(8deg) translateY(0px)' : 'rotate(8deg) translateY(50px)')};
+
 	@media (min-width: 768px) {
 		border-radius: 17.642px;
 	}
 	@media (min-width: 1280px) {
 		border-radius: 19.0256px;
 	}
+`;
+
+const Box2 = styled(Box)`
+	transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s;
+`;
+
+const Box3 = styled(Box)`
+	transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 1s;
 `;
 
 const CardTop = styled.div`
