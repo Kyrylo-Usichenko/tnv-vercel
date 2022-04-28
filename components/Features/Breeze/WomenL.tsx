@@ -920,17 +920,17 @@ const WomenL: FC<WomenLProps> = ({ animate }) => {
 
 function createCss() {
 	let styles = '';
-	let delay = 1500;
+	let delay = 600;
 
-	for (let i = 1; i <= 46; i++) {
+	for (let i = 46; i >= 1; i--) {
 		styles += `
        #rect-${i} {
-				animation: womenLAnim 40ms ease ${delay}ms;
+				animation: womenLAnim 11ms ease ${delay}ms;
 				animation-fill-mode: forwards;
 			}
 		`;
 
-		delay += 40;
+		delay += 11;
 	}
 
 	return css`
