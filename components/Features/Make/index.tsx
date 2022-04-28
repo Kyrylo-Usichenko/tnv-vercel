@@ -22,34 +22,32 @@ const Make = () => {
 						<MakeText>{t('features:paymentsText')}</MakeText>
 					</MakeInfo>
 					<First ref={ref}>
-						{isShow && (
-							<Second>
-								<LeftImgWrap>
-									<FadeIn duration={500} delay={200}>
-										<LeftImg>
-											<Image
-												src='/images/features/make/left@2x.png'
-												layout='fill'
-												objectFit='contain'
-												alt='app'
-											/>
-										</LeftImg>
-									</FadeIn>
-								</LeftImgWrap>
-								<RightImgWrap>
-									<FadeIn duration={500} delay={500}>
-										<RightImg>
-											<Image
-												src='/images/features/make/right@2x.png'
-												layout='fill'
-												objectFit='contain'
-												alt='app'
-											/>
-										</RightImg>{' '}
-									</FadeIn>
-								</RightImgWrap>
-							</Second>
-						)}
+						<Second>
+							<LeftImgWrap>
+								<FadeIn duration={500} delay={200} isShow={isShow}>
+									<LeftImg>
+										<Image
+											src='/images/features/make/left@2x.png'
+											layout='fill'
+											objectFit='contain'
+											alt='app'
+										/>
+									</LeftImg>
+								</FadeIn>
+							</LeftImgWrap>
+							<RightImgWrap>
+								<FadeIn duration={500} delay={500} isShow={isShow}>
+									<RightImg>
+										<Image
+											src='/images/features/make/right@2x.png'
+											layout='fill'
+											objectFit='contain'
+											alt='app'
+										/>
+									</RightImg>{' '}
+								</FadeIn>
+							</RightImgWrap>
+						</Second>
 					</First>
 				</MakeCon>
 			</FeaturesCon>

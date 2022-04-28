@@ -27,66 +27,52 @@ const Smile: FC = () => {
 				<Dots top='27' left='-353' src='/images/main/smile/leftDots.svg' alt='' />
 				<Inner ref={ref}>
 					<GreyWrapper1>
-						{isShow && (
-							<FadeIn duration={500} delay={2200}>
-								<Grey></Grey>
-								<GreyInner></GreyInner>
-								<Img
-									src='/images/main/smile/pet-shop.png'
-									srcSet='/images/main/smile/pet-shop2x.png 2x'
-									alt=''
-								/>
-							</FadeIn>
-						)}
+						<FadeIn duration={500} delay={2200} isShow={isShow}>
+							<Grey></Grey>
+							<GreyInner></GreyInner>
+							<Img
+								src='/images/main/smile/pet-shop.png'
+								srcSet='/images/main/smile/pet-shop2x.png 2x'
+								alt=''
+							/>
+						</FadeIn>
 					</GreyWrapper1>
 
 					<TopFirstLine>
 						<GreyWrapper2>
-							{isShow && (
-								<FadeIn duration={500} delay={1000}>
-									<Grey></Grey>
-									<GreyInner></GreyInner>
-									<Img src='/images/main/smile/nex.svg' alt='' />{' '}
-								</FadeIn>
-							)}
+							<FadeIn duration={500} delay={1000} isShow={isShow}>
+								<Grey></Grey>
+								<GreyInner></GreyInner>
+								<Img src='/images/main/smile/nex.svg' alt='' />{' '}
+							</FadeIn>
 						</GreyWrapper2>
 						<GreyWrapper>
-							{isShow && (
-								<FadeIn duration={500} delay={2800}>
-									<Grey></Grey>
-									<GreyInner></GreyInner>
-									<Img
-										src='/images/main/smile/bbs.png'
-										srcSet='/images/main/smile/bbs2x.png 2x'
-										alt=''
-									/>
-								</FadeIn>
-							)}
+							<FadeIn duration={500} delay={2800} isShow={isShow}>
+								<Grey></Grey>
+								<GreyInner></GreyInner>
+								<Img src='/images/main/smile/bbs.png' srcSet='/images/main/smile/bbs2x.png 2x' alt='' />
+							</FadeIn>
 						</GreyWrapper>
 					</TopFirstLine>
 					<TopSecondLine>
 						<GreyWrapper3>
-							{isShow && (
-								<FadeIn duration={500} delay={1800}>
-									<Grey></Grey>
-									<GreyInner></GreyInner>
-									<Img src='/images/main/smile/nayla.svg' alt='' />{' '}
-								</FadeIn>
-							)}
+							<FadeIn duration={500} delay={1800} isShow={isShow}>
+								<Grey></Grey>
+								<GreyInner></GreyInner>
+								<Img src='/images/main/smile/nayla.svg' alt='' />{' '}
+							</FadeIn>
 						</GreyWrapper3>
 						<GreyWrapper>
-							{isShow && (
-								<FadeIn duration={500} delay={2400}>
-									<Grey></Grey>
-									<GreyInner></GreyInner>
-									<Img src='/images/main/smile/toko-kita.svg' alt='' />{' '}
-								</FadeIn>
-							)}
+							<FadeIn duration={500} delay={2400} isShow={isShow}>
+								<Grey></Grey>
+								<GreyInner></GreyInner>
+								<Img src='/images/main/smile/toko-kita.svg' alt='' />{' '}
+							</FadeIn>
 						</GreyWrapper>
 					</TopSecondLine>
 
 					{isShow ? (
-						<FadeIn duration={2000} delay={0.2}>
+						<FadeIn duration={2000} delay={0.2} isShow={isShow}>
 							<PinkWrapper>
 								<PinkBig />
 								<PinkSmall />
@@ -109,60 +95,50 @@ const Smile: FC = () => {
 
 					<BotFirstLine>
 						<GreyWrapper3>
-							{isShow && (
-								<FadeIn duration={500} delay={2600}>
-									<Grey></Grey>
-									<GreyInner></GreyInner>
-									<Img
-										src='/images/main/smile/burger.png'
-										srcSet='/images/main/smile/burger2x.png 2x'
-										alt=''
-									/>{' '}
-								</FadeIn>
-							)}
+							<FadeIn duration={500} delay={2600} isShow={isShow}>
+								<Grey></Grey>
+								<GreyInner></GreyInner>
+								<Img
+									src='/images/main/smile/burger.png'
+									srcSet='/images/main/smile/burger2x.png 2x'
+									alt=''
+								/>{' '}
+							</FadeIn>
 						</GreyWrapper3>
 						<GreyWrapper>
-							{isShow && (
-								<FadeIn duration={500} delay={1400}>
-									<Grey></Grey>
-									<GreyInner></GreyInner>
-									<Img src='/images/main/smile/group-the-companies.svg' alt='' />
-								</FadeIn>
-							)}
+							<FadeIn duration={500} delay={1400} isShow={isShow}>
+								<Grey></Grey>
+								<GreyInner></GreyInner>
+								<Img src='/images/main/smile/group-the-companies.svg' alt='' />
+							</FadeIn>
 						</GreyWrapper>
 					</BotFirstLine>
 					<BotSecondLine>
 						<GreyWrapper2>
-							{isShow && (
-								<FadeIn duration={500} delay={2000}>
-									<Grey></Grey>
-									<GreyInner></GreyInner>
-									<Img src='/images/main/smile/es-teh.svg' alt='' />
-								</FadeIn>
-							)}
+							<FadeIn duration={500} delay={2000} isShow={isShow}>
+								<Grey></Grey>
+								<GreyInner></GreyInner>
+								<Img src='/images/main/smile/es-teh.svg' alt='' />
+							</FadeIn>
 						</GreyWrapper2>
 						<GreyWrapper>
-							{isShow && (
-								<FadeIn duration={500} delay={1200}>
-									<Grey></Grey>
-									<GreyInner></GreyInner>
-									<Img
-										src='/images/main/smile/gong-cha.png'
-										srcSet='/images/main/smile/gong-cha2x.png 2x'
-										alt=''
-									/>
-								</FadeIn>
-							)}
+							<FadeIn duration={500} delay={1200} isShow={isShow}>
+								<Grey></Grey>
+								<GreyInner></GreyInner>
+								<Img
+									src='/images/main/smile/gong-cha.png'
+									srcSet='/images/main/smile/gong-cha2x.png 2x'
+									alt=''
+								/>
+							</FadeIn>
 						</GreyWrapper>
 					</BotSecondLine>
 					<GreyWrapper4>
-						{isShow && (
-							<FadeIn duration={500} delay={1600}>
-								<Grey></Grey>
-								<GreyInner></GreyInner>
-								<Img src='/images/main/smile/kho-pa-ka.svg' alt='' />
-							</FadeIn>
-						)}
+						<FadeIn duration={500} delay={1600} isShow={isShow}>
+							<Grey></Grey>
+							<GreyInner></GreyInner>
+							<Img src='/images/main/smile/kho-pa-ka.svg' alt='' />
+						</FadeIn>
 					</GreyWrapper4>
 				</Inner>
 			</MainBox>

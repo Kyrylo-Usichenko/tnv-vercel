@@ -20,34 +20,32 @@ const Get = () => {
 					<GetTitle>{t('features:getSmarterTitle')}</GetTitle>
 					<GetText>{t('features:getSmarterText')}</GetText>
 					<First ref={ref}>
-						{isShow && (
-							<Second>
-								<LeftImgWrap>
-									<FadeIn duration={500} delay={200}>
-										<LeftImg>
-											<Image
-												src='/images/features/get/left@2x.png'
-												layout='fill'
-												objectFit='contain'
-												alt='app'
-											/>
-										</LeftImg>
-									</FadeIn>
-								</LeftImgWrap>
-								<RightImgWrap>
-									<FadeIn duration={500} delay={500}>
-										<RightImg>
-											<Image
-												src='/images/features/get/right@2x.png'
-												layout='fill'
-												objectFit='contain'
-												alt='app'
-											/>
-										</RightImg>
-									</FadeIn>
-								</RightImgWrap>
-							</Second>
-						)}
+						<Second>
+							<LeftImgWrap>
+								<FadeIn duration={500} delay={200} isShow={isShow}>
+									<LeftImg>
+										<Image
+											src='/images/features/get/left@2x.png'
+											layout='fill'
+											objectFit='contain'
+											alt='app'
+										/>
+									</LeftImg>
+								</FadeIn>
+							</LeftImgWrap>
+							<RightImgWrap>
+								<FadeIn duration={500} delay={500} isShow={isShow}>
+									<RightImg>
+										<Image
+											src='/images/features/get/right@2x.png'
+											layout='fill'
+											objectFit='contain'
+											alt='app'
+										/>
+									</RightImg>
+								</FadeIn>
+							</RightImgWrap>
+						</Second>
 					</First>
 				</GetCon>
 			</FeaturesCon>

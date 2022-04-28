@@ -18,76 +18,72 @@ const HowItWorks: FC = () => {
 				<Inner>
 					<Null>
 						<div ref={ref}>
-							{isShow && (
-								<>
-									<CardTop>
-										<FadeIn duration={200} delay={0}>
-											<Box>
-												<CardContent>
-													<CardTitle>{t('main:howItWorksChats')}</CardTitle>
-													<CardText>{t('main:howItWorksChatsText')}</CardText>
-												</CardContent>
-											</Box>
-										</FadeIn>
-										<FadeIn duration={200} delay={1000}>
-											<CardTopIcon />
-										</FadeIn>
-										<FadeIn duration={200} delay={2000}>
-											<CardTopStars />
-										</FadeIn>
-										<FadeIn duration={200} delay={200}>
-											<RedLine />
-										</FadeIn>
-										{/*<img*/}
-										{/*	src='./images/main/howItWorks/text-chat.svg'*/}
-										{/*	alt='Connect to anyone in your supply chain and exchange messages'*/}
-										{/*/>*/}
-									</CardTop>
-									<CardMiddle>
-										<FadeIn duration={200} delay={400}>
-											<Box>
-												<CardContent>
-													<CardTitle>{t('main:howItWorksOrders')}</CardTitle>
-													<CardText>{t('main:howItWorksOrdersText')}</CardText>
-												</CardContent>
-											</Box>
-										</FadeIn>
-										<FadeIn duration={200} delay={1200}>
-											<CardMiddleIcon />
-										</FadeIn>
-										<FadeIn duration={200} delay={1800}>
-											<CardMiddleStars />
-										</FadeIn>
-										<FadeIn duration={200} delay={600}>
-											{/* <Title>Orders</Title> */}
-											<RedLine2 />
-										</FadeIn>
-										{/* <Text width='175.11'>Create or confirm purchase orders with tap of a button</Text> */}
-									</CardMiddle>
-									<CardBot>
-										<FadeIn duration={200} delay={800}>
-											<Box>
-												<CardContent>
-													<CardTitle>{t('main:howItWorksPayments')}</CardTitle>
-													<CardText>{t('main:howItWorksPaymentsText')}</CardText>
-												</CardContent>
-											</Box>
-										</FadeIn>
-										<FadeIn duration={200} delay={1400}>
-											<CardBotIcon />
-										</FadeIn>
-										<FadeIn duration={200} delay={1600}>
-											<CardBotStars />
-										</FadeIn>
-										<FadeIn duration={200} delay={2000}>
-											<CardBotStars2 />
-										</FadeIn>
-										<DotsLeft />
-										{/* <Title>Payments</Title>
+							<CardTop>
+								<FadeIn duration={200} delay={0} isShow={isShow}>
+									<Box>
+										<CardContent>
+											<CardTitle>{t('main:howItWorksChats')}</CardTitle>
+											<CardText>{t('main:howItWorksChatsText')}</CardText>
+										</CardContent>
+									</Box>
+								</FadeIn>
+								<FadeIn duration={200} delay={1000} isShow={isShow}>
+									<CardTopIcon />
+								</FadeIn>
+								<FadeIn duration={200} delay={2000} isShow={isShow}>
+									<CardTopStars />
+								</FadeIn>
+								<FadeIn duration={200} delay={200} isShow={isShow}>
+									<RedLine />
+								</FadeIn>
+								{/*<img*/}
+								{/*	src='./images/main/howItWorks/text-chat.svg'*/}
+								{/*	alt='Connect to anyone in your supply chain and exchange messages'*/}
+								{/*/>*/}
+							</CardTop>
+							<CardMiddle>
+								<FadeIn duration={200} delay={400} isShow={isShow}>
+									<Box>
+										<CardContent>
+											<CardTitle>{t('main:howItWorksOrders')}</CardTitle>
+											<CardText>{t('main:howItWorksOrdersText')}</CardText>
+										</CardContent>
+									</Box>
+								</FadeIn>
+								<FadeIn duration={200} delay={1200} isShow={isShow}>
+									<CardMiddleIcon />
+								</FadeIn>
+								<FadeIn duration={200} delay={1800} isShow={isShow}>
+									<CardMiddleStars />
+								</FadeIn>
+								<FadeIn duration={200} delay={600} isShow={isShow}>
+									{/* <Title>Orders</Title> */}
+									<RedLine2 />
+								</FadeIn>
+								{/* <Text width='175.11'>Create or confirm purchase orders with tap of a button</Text> */}
+							</CardMiddle>
+							<CardBot>
+								<FadeIn duration={200} delay={800} isShow={isShow}>
+									<Box>
+										<CardContent>
+											<CardTitle>{t('main:howItWorksPayments')}</CardTitle>
+											<CardText>{t('main:howItWorksPaymentsText')}</CardText>
+										</CardContent>
+									</Box>
+								</FadeIn>
+								<FadeIn duration={200} delay={1400} isShow={isShow}>
+									<CardBotIcon />
+								</FadeIn>
+								<FadeIn duration={200} delay={1600} isShow={isShow}>
+									<CardBotStars />
+								</FadeIn>
+								<FadeIn duration={200} delay={2000} isShow={isShow}>
+									<CardBotStars2 />
+								</FadeIn>
+								<DotsLeft />
+								{/* <Title>Payments</Title>
 										<Text width='175.11'>Send invoices and reconcile payments in one dashboard</Text> */}
-									</CardBot>
-								</>
-							)}
+							</CardBot>
 						</div>
 					</Null>
 					<Info>

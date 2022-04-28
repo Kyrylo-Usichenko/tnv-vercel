@@ -18,54 +18,50 @@ const Gallery: FC = () => {
 			<FeaturesCon>
 				<GalleryCon>
 					<GalleryGrid ref={ref}>
-						{isShow && (
-							<>
-								<GalleryColumn>
-									<Img1>
-										<FadeIn duration={500} delay={200}>
-											<GalleryImg
-												src='/images/features/gallery/1@2x.jpg'
-												layout='fill'
-												objectFit='cover'
-												alt='man with pancil'
-											/>
-										</FadeIn>
-									</Img1>
-									<Img3>
-										<FadeIn duration={500} delay={1100}>
-											<GalleryImg
-												src='/images/features/gallery/3@2x.jpg'
-												layout='fill'
-												objectFit='cover'
-												alt='happy man on kitchen'
-											/>
-										</FadeIn>
-									</Img3>
-								</GalleryColumn>
-								<GalleryColumn>
-									<Img2>
-										<FadeIn duration={500} delay={800}>
-											<GalleryImg
-												src='/images/features/gallery/2@2x.jpg'
-												layout='fill'
-												objectFit='cover'
-												alt='happy old man with phone'
-											/>
-										</FadeIn>
-									</Img2>
-									<Img4>
-										<FadeIn duration={500} delay={500}>
-											<GalleryImg
-												src='/images/features/gallery/4@2x.jpg'
-												layout='fill'
-												objectFit='cover'
-												alt='happy women with laptop'
-											/>
-										</FadeIn>
-									</Img4>
-								</GalleryColumn>
-							</>
-						)}
+						<GalleryColumn>
+							<Img1>
+								<FadeIn duration={500} delay={200} isShow={isShow}>
+									<GalleryImg
+										src='/images/features/gallery/1@2x.jpg'
+										layout='fill'
+										objectFit='cover'
+										alt='man with pancil'
+									/>
+								</FadeIn>
+							</Img1>
+							<Img3>
+								<FadeIn duration={500} delay={1100} isShow={isShow}>
+									<GalleryImg
+										src='/images/features/gallery/3@2x.jpg'
+										layout='fill'
+										objectFit='cover'
+										alt='happy man on kitchen'
+									/>
+								</FadeIn>
+							</Img3>
+						</GalleryColumn>
+						<GalleryColumn>
+							<Img2>
+								<FadeIn duration={500} delay={800} isShow={isShow}>
+									<GalleryImg
+										src='/images/features/gallery/2@2x.jpg'
+										layout='fill'
+										objectFit='cover'
+										alt='happy old man with phone'
+									/>
+								</FadeIn>
+							</Img2>
+							<Img4>
+								<FadeIn duration={500} delay={500} isShow={isShow}>
+									<GalleryImg
+										src='/images/features/gallery/4@2x.jpg'
+										layout='fill'
+										objectFit='cover'
+										alt='happy women with laptop'
+									/>
+								</FadeIn>
+							</Img4>
+						</GalleryColumn>
 					</GalleryGrid>
 					<GalleryTitle>{t('features:rockstar')}</GalleryTitle>
 				</GalleryCon>

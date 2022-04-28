@@ -34,35 +34,31 @@ const Supercharge: FC = () => {
 				<FlexConInfo>
 					<FeaturesCon className='h-100'>
 						<FlexConGrid ref={ref}>
-							{isShow && (
-								<>
-									<FadeIn duration={500} delay={500}>
-										<Elem>
-											<Title>{t('features:introductionChats')}</Title>
-											<Text>{t('features:introductionChatsText')}</Text>
-										</Elem>
-									</FadeIn>
-									<FadeIn duration={500} delay={750}>
-										<Elem>
-											<Title>{t('features:introductionOrders')}</Title>
-											<Text>{t('features:introductionOrdersText')}</Text>
-										</Elem>
-									</FadeIn>
-									<FadeIn duration={500} delay={1000}>
-										<Elem>
-											<Title>{t('features:introductionPayments')}</Title>
-											<Text>{t('features:introductionPaymentsText')}</Text>
-										</Elem>
-									</FadeIn>
-									<FadeIn duration={500} delay={1250}>
-										<Elem>
-											<Title>
-												And more in one <br /> dashboard...
-											</Title>
-										</Elem>
-									</FadeIn>
-								</>
-							)}
+							<FadeIn duration={500} delay={500} isShow={isShow}>
+								<Elem>
+									<Title>{t('features:introductionChats')}</Title>
+									<Text>{t('features:introductionChatsText')}</Text>
+								</Elem>
+							</FadeIn>
+							<FadeIn duration={500} delay={750} isShow={isShow}>
+								<Elem>
+									<Title>{t('features:introductionOrders')}</Title>
+									<Text>{t('features:introductionOrdersText')}</Text>
+								</Elem>
+							</FadeIn>
+							<FadeIn duration={500} delay={1000} isShow={isShow}>
+								<Elem>
+									<Title>{t('features:introductionPayments')}</Title>
+									<Text>{t('features:introductionPaymentsText')}</Text>
+								</Elem>
+							</FadeIn>
+							<FadeIn duration={500} delay={1250} isShow={isShow}>
+								<Elem>
+									<Title>
+										And more in one <br /> dashboard...
+									</Title>
+								</Elem>
+							</FadeIn>
 							<MobileApp
 								src='/images/features/supercharge/1.jpg'
 								srcSet='/images/features/supercharge/1@2x.jpg 2x'
