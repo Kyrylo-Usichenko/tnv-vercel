@@ -124,20 +124,12 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 								ref={mainImg}
 							/>
 						</picture>
-						{/*<AppImg*/}
-						{/*	src='/images/features/preview/app.png'*/}
-						{/*	srcSet='/images/features/preview/app@2x.png 2x'*/}
-						{/*	alt='message'*/}
-						{/*	animate={animate}*/}
-						{/*/>*/}
-
 						<AppImg
 							src='/images/features/preview/app-shadow.png'
 							srcSet='/images/features/preview/app-shadow@2x.png 2x'
 							alt='message'
 							animate={animate}
 						/>
-						{/*<AppShadow animate={animate} />*/}
 						<RequestImg
 							src='/images/features/preview/request.png'
 							srcSet='/images/features/preview/request@2x.png 2x'
@@ -359,9 +351,11 @@ const AppImg = styled.img<{ animate: boolean }>`
 	width: 72.6%;
 	height: auto;
 	opacity: 0;
-	animation: ${({ animate }) => (animate ? 'appImgAnim 0.5s ease-in' : 'none')};
+	transform: ${({ animate }) => (animate ? 'scale(1)' : 'scale(0.9)')};
+	transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) 1.2s;
+	animation: ${({ animate }) => (animate ? 'appImgAnim 0.3s ease-in' : 'none')};
 	animation-fill-mode: forwards;
-	animation-delay: 3.7s;
+	animation-delay: 1.15s;
 
 	@keyframes appImgAnim {
 		from {
@@ -391,50 +385,6 @@ const AppImg = styled.img<{ animate: boolean }>`
 		width: 362px;
 	}
 `;
-// const AppShadow = styled.div<{ animate: boolean }>`
-// 	position: absolute;
-// 	width: 52%;
-// 	height: 48%;
-// 	background: rgba(0, 0, 0, 0.1);
-//
-// 	filter: blur(16px);
-// 	-webkit-filter: blur(16px);
-// 	border-radius: 6px;
-// 	right: -4%;
-// 	bottom: -23%;
-// 	opacity: 0;
-// 	animation: ${({ animate }) => (animate ? 'appImgAnim 0.5s ease-in' : 'none')};
-// 	animation-fill-mode: forwards;
-// 	animation-delay: 3.7s;
-//
-// 	@keyframes appImgAnim {
-// 		from {
-// 			opacity: 0;
-// 		}
-// 		to {
-// 			opacity: 1;
-// 		}
-// 	}
-//
-// 	@media (min-width: 768px) {
-// 		width: 34.4%;
-// 		height: 49.5%;
-// 		left: 11%;
-// 		top: 13%;
-// 	}
-//
-// 	@media (min-width: 1024px) {
-// 		width: 253px;
-// 		height: 273px;
-// 		left: 80px;
-// 		top: 75px;
-// 	}
-//
-// 	@media (min-width: 1440px) {
-// 		left: 95px;
-// 		top: 90px;
-// 	}
-// `;
 
 const RequestImg = styled.img<{ animate: boolean }>`
 	position: absolute;
@@ -443,9 +393,9 @@ const RequestImg = styled.img<{ animate: boolean }>`
 	width: 52.5%;
 	height: auto;
 	opacity: 0;
-	animation: ${({ animate }) => (animate ? 'appImgAnim 0.5s ease-in' : 'none')};
+	animation: ${({ animate }) => (animate ? 'appImgAnim 0.3s ease-in' : 'none')};
 	animation-fill-mode: forwards;
-	animation-delay: 1.3s;
+	animation-delay: 0.6s;
 
 	@keyframes appImgAnim {
 		from {

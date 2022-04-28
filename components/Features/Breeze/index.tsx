@@ -35,27 +35,29 @@ const Breeze: FC = () => {
 					<BreezeBlock1 ref={mainBlock}>
 						<BreezeBlock2>
 							<Block>
-								<Add animate={animate}>
+								<Add>
 									<ConL animate={animate} />
-									<AddCon>
-										<AddFile>
+									<AddBlock animate={animate}>
+										<AddCon>
+											<AddFile>
+												<Image
+													src='/images/features/breeze/file.svg'
+													layout='fill'
+													objectFit='contain'
+													alt='file'
+												/>
+											</AddFile>
+											<AddText>Add Catalog to Order List</AddText>
+										</AddCon>
+										<AddArrow>
 											<Image
-												src='/images/features/breeze/file.svg'
+												src='/images/features/breeze/arrow.svg'
 												layout='fill'
 												objectFit='contain'
-												alt='file'
+												alt='arrow'
 											/>
-										</AddFile>
-										<AddText>Add Catalog to Order List</AddText>
-									</AddCon>
-									<AddArrow>
-										<Image
-											src='/images/features/breeze/arrow.svg'
-											layout='fill'
-											objectFit='contain'
-											alt='arrow'
-										/>
-									</AddArrow>
+										</AddArrow>
+									</AddBlock>
 									<WomenL animate={animate} />
 								</Add>
 								<Del animate={animate}>
@@ -278,9 +280,9 @@ const WomendDec = styled.img<{ animate: boolean }>`
 	right: -21px;
 
 	opacity: 0;
-	animation: ${({ animate }) => (animate ? 'womenDecAnim 0.5s ease-in' : 'none')};
+	animation: ${({ animate }) => (animate ? 'womenDecAnim 0.3s ease-in' : 'none')};
 	animation-fill-mode: forwards;
-	animation-delay: 500ms;
+	animation-delay: 300ms;
 
 	@keyframes womenDecAnim {
 		from {
@@ -312,9 +314,9 @@ const ManDec = styled.img<{ animate: boolean }>`
 		left: -58px;
 
 		opacity: 0;
-		animation: ${({ animate }) => (animate ? 'manDecAnim 0.5s ease-in' : 'none')};
+		animation: ${({ animate }) => (animate ? 'manDecAnim 0.3s ease-in' : 'none')};
 		animation-fill-mode: forwards;
-		animation-delay: 500ms;
+		animation-delay: 1.8s;
 	}
 
 	@media (min-width: 1280px) {
@@ -346,9 +348,9 @@ const Man = styled(ImgDiv)<{ animate: boolean }>`
 	left: 6px;
 	bottom: 75px;
 	opacity: 0;
-	animation: ${({ animate }) => (animate ? 'manAnim 0.5s ease-in' : 'none')};
+	animation: ${({ animate }) => (animate ? 'manAnim 0.3s ease-in' : 'none')};
 	animation-fill-mode: forwards;
-	animation-delay: 500ms;
+	animation-delay: 1.8s;
 
 	@keyframes manAnim {
 		from {
@@ -373,9 +375,9 @@ const Women = styled(ImgDiv)<{ animate: boolean }>`
 	top: 118px;
 	right: 17px;
 	opacity: 0;
-	animation: ${({ animate }) => (animate ? 'womenAnim 0.5s ease-in' : 'none')};
+	animation: ${({ animate }) => (animate ? 'womenAnim 0.3s ease-in' : 'none')};
 	animation-fill-mode: forwards;
-	animation-delay: 500ms;
+	animation-delay: 300ms;
 
 	@keyframes womenAnim {
 		from {
@@ -411,10 +413,21 @@ const ImgWrap = styled.div`
 	}
 `;
 
-const Add = styled.div<{ animate: boolean }>`
+const Add = styled.div`
 	position: absolute;
 	top: 35px;
 	left: 70px;
+
+	@media (min-width: 768px) {
+		top: 31px;
+	}
+
+	@media (min-width: 1280px) {
+		left: 120px;
+	}
+`;
+
+const AddBlock = styled.div<{ animate: boolean }>`
 	width: 196px;
 	height: 33px;
 	background-color: #ffffff;
@@ -424,11 +437,12 @@ const Add = styled.div<{ animate: boolean }>`
 	align-items: center;
 	justify-content: space-between;
 	box-shadow: 5px 8px 17px 0 rgba(33, 33, 33, 0.1);
-
+	transform: ${({ animate }) => (animate ? 'scale(1)' : 'scale(0.9)')};
+	transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) 0.9s;
 	opacity: 0;
-	animation: ${({ animate }) => (animate ? 'addAnim 0.5s ease-in' : 'none')};
+	animation: ${({ animate }) => (animate ? 'addAnim 0.3s ease-in' : 'none')};
 	animation-fill-mode: forwards;
-	animation-delay: 1s;
+	animation-delay: 0.85s;
 
 	@keyframes addAnim {
 		from {
@@ -444,11 +458,6 @@ const Add = styled.div<{ animate: boolean }>`
 		height: 45px;
 		border-radius: 11px;
 		padding: 13px;
-		top: 31px;
-	}
-
-	@media (min-width: 1280px) {
-		left: 120px;
 	}
 `;
 
@@ -511,11 +520,12 @@ const Del = styled.div<{ animate: boolean }>`
 	align-items: center;
 	justify-content: space-between;
 	box-shadow: 5px 8px 17px 0 rgba(33, 33, 33, 0.1);
-
+	transform: ${({ animate }) => (animate ? 'scale(1)' : 'scale(0.9)')};
+	transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) 1.45s;
 	opacity: 0;
-	animation: ${({ animate }) => (animate ? 'delAnim 0.5s ease-in' : 'none')};
+	animation: ${({ animate }) => (animate ? 'delAnim 0.3s ease-in' : 'none')};
 	animation-fill-mode: forwards;
-	animation-delay: 2.5s;
+	animation-delay: 1.35s;
 
 	@keyframes delAnim {
 		from {
@@ -597,11 +607,12 @@ const Order = styled.div<{ animate: boolean }>`
 	background-color: #ffffff;
 	border-radius: 9px;
 	box-shadow: 5px 8px 17px 0 rgba(33, 33, 33, 0.1);
-
+	transform: ${({ animate }) => (animate ? 'scale(1)' : 'scale(0.9)')};
+	transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) 2.5s;
 	opacity: 0;
-	animation: ${({ animate }) => (animate ? 'orderAnim 0.5s ease-in' : 'none')};
+	animation: ${({ animate }) => (animate ? 'orderAnim 0.3s ease-in' : 'none')};
 	animation-fill-mode: forwards;
-	animation-delay: 2.5s;
+	animation-delay: 2.4s;
 
 	@keyframes orderAnim {
 		from {
