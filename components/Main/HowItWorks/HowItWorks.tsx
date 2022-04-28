@@ -813,7 +813,7 @@ const CardTitle = styled.p`
 	margin: 0;
 	padding: 0 0 5px;
 	font-size: 14px;
-	line-height: 11px;
+	line-height: 18px;
 	@media (min-width: 768px) {
 		font-size: 19.1121px;
 		line-height: 24px;
