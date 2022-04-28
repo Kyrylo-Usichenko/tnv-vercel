@@ -197,10 +197,10 @@ const Companies = styled.div`
 	width: 100%;
 	flex-wrap: wrap;
 	margin: 0 auto;
-
+	& img {
+		margin-bottom: 48px;
+	}
 	@media (max-width: 1024px) {
-		//padding-left: 40px;
-		//padding-right: 40px;
 		& img {
 			height: 22px;
 			max-height: 100%;
