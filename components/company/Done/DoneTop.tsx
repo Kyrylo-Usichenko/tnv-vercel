@@ -19,7 +19,7 @@ const DoneTop: FC<{ isShow: boolean }> = ({ isShow }) => {
 					<GreyTopBlock>
 						<SquareG1 />
 						<Content1>
-							<Year>{t('features:doneYear')}</Year>
+							<Year>{t('company:doneYear')}</Year>
 							<List>
 								<Item>{t('company:doneBlock1Line1')}</Item>
 								<Item>{t('company:doneBlock1Line2')}</Item>
