@@ -59,7 +59,7 @@ const MoreMoney: FC = () => {
 			<Wrapper>
 				<GreySquare />
 				<GreySquareRight top='-279' right='88' />
-				<Dots src='images/main/featuredOn/dots.svg' alt='' />
+				<Dots src='/images/main/featuredOn/dots.svg' alt='' />
 				<DivideLine />
 
 				<FeaturesCon>
@@ -68,10 +68,10 @@ const MoreMoney: FC = () => {
 							{t('main:FeaturedOn')}
 						</Title>
 						<Companies ref={companiesRef}>
-							<Company1 src='images/main/featuredOn/techCrunch.svg' alt='' />
-							<Company2 src='images/main/featuredOn/techInAsia.svg' alt='' />
-							<Company3 src='images/main/featuredOn/pymnts.svg' alt='' />
-							<Company4 src='images/main/featuredOn/ventureBeat.svg' alt='' />
+							<Company1 src='/images/main/featuredOn/techCrunch.svg' alt='' />
+							<Company2 src='/images/main/featuredOn/techInAsia.svg' alt='' />
+							<Company3 src='/images/main/featuredOn/pymnts.svg' alt='' />
+							<Company4 src='/images/main/featuredOn/ventureBeat.svg' alt='' />
 						</Companies>
 					</Inner>
 				</FeaturesCon>
@@ -297,7 +297,7 @@ export const Stars = styled.div`
 		//display: none;
 		right: 0;
 		top: 389px;
-		background: url('images/main/featuredOn/stars375.svg') no-repeat;
+		background: url('/images/main/featuredOn/stars375.svg') no-repeat;
 		background-size: contain;
 		width: 353px;
 		height: 213px;

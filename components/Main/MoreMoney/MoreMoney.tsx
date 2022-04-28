@@ -153,8 +153,8 @@ const MoreMoney: FC = () => {
 					<Null>
 						<LeftMockComponent name={tab.name} image={tab.leftImg} />
 						<RightMockComponent name={tab.name} image={tab.rightImg} />
-						<Stars src='images/main/moreMoney/stars.svg' alt='stars' />
-						<Dots src='images/main/moreMoney/dots.svg' alt='dots' />
+						<Stars src='/images/main/moreMoney/stars.svg' alt='stars' />
+						<Dots src='/images/main/moreMoney/dots.svg' alt='dots' />
 					</Null>
 				</RedSquare>
 			</PurpleSquare>
