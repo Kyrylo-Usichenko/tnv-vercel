@@ -98,7 +98,6 @@ const MoreMoney: FC = () => {
 	console.log(tab);
 
 	const onBtnClick = (tabItem: IMoreMoneyItem) => {
-		console.log(tabItem);
 		if (tabItem.isActive) return;
 		const updatedTabs = tabs.map((tabUpdated) => {
 			if (tabUpdated.name === tabItem.name) {
