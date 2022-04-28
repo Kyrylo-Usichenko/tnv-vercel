@@ -197,6 +197,8 @@ const ContactUs = styled.button`
 	cursor: pointer;
 	transition: all 0.3s ease;
 	position: relative;
+	outline: none;
+	z-index: 1;
 
 	&::before {
 		position: absolute;
@@ -221,6 +223,7 @@ const ContactUs = styled.button`
 		border-radius: 16px;
 		opacity: 0;
 		transition: opacity 0.2s ease;
+		z-index: -1;
 	}
 
 	&:hover::after,

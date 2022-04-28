@@ -103,6 +103,7 @@ const Counts: FC = () => {
 				<Block4Dots />
 				<Content>
 					<Count>
+						$
 						{isShown04 ? (
 							500
 						) : isVisible04 ? (

@@ -68,7 +68,7 @@ const Home: NextPage<any> = (props) => {
 					<FeaturedOn />
 					<WhyChoose />
 					<SmileRework />
-					<FormFilling formRef={formSection} />
+					<FormFilling locale={locale} formRef={formSection} />
 					<Footer background='#ffffff' />
 				</section>
 			</Main>

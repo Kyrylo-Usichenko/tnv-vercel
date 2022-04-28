@@ -557,6 +557,7 @@ const Svg = styled.svg<{ isVisible?: boolean }>`
 	width: 100px;
 	left: -87px;
 	top: 29px;
+	z-index: -1;
 
 	${({ isVisible }) => (isVisible ? createCss() : null)}
 

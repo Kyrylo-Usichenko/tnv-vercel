@@ -37,26 +37,28 @@ const Footer: FC<Props> = ({ background }) => {
 								<Link href={'/company'}>{t('main:footerCompany')}</Link>
 							</FooterLi>
 							<FooterLi>
-								<Link href={'/login'}>{t('main:footerLogin')}</Link>
+								<Link href={'/'}>{t('main:footerLogin')}</Link>
 							</FooterLi>
 						</FooterUl>
 					</FirstLineHalf>
 					<SecondLineHalf>
 						<Links>
 							<Socials>
-								<Social href={'/'}>
+								<Social href={'https://www.linkedin.com/company/tinvio/?originalSubdomain=sg'}>
 									<Image src='/images/footer/linkedin.svg' alt='linkedin' width={32} height={32} />
 								</Social>
-								<Social href={'/'}>
+								<Social href={'https://www.instagram.com/tinvioapp/?hl=en'}>
 									<Image src='/images/footer/inst.svg' alt='instagram' width={32} height={32} />
 								</Social>
 							</Socials>
 							<FirstLineSeparate />
 							<Stores>
-								<Store href={'/'}>
+								<Store
+									href={'https://play.google.com/store/apps/details?id=com.tinvio.tinvio&hl=en&gl=US'}
+								>
 									<Image src='/images/footer/gp@2x.png' width={113} height={40} alt='google play' />
 								</Store>
-								<Store href={'/'}>
+								<Store href={'https://apps.apple.com/sg/app/tinvio/id1472428382'}>
 									<Image src='/images/footer/as@2x.png' width={113} height={40} alt='google play' />
 								</Store>
 							</Stores>
@@ -234,6 +236,10 @@ const Social = styled.a`
 	cursor: pointer;
 	margin-right: 16px;
 	height: 32px;
+	transition: all 0.2s ease-in-out;
+	&:hover {
+		transform: scale(1.1);
+	}
 
 	&:last-of-type {
 		margin-right: 0;
@@ -253,6 +259,10 @@ const Stores = styled.div`
 const Store = styled.a`
 	height: 40px;
 	margin-right: 16px;
+	transition: all 0.2s ease-in-out;
+	&:hover {
+		transform: scale(1.05);
+	}
 	&:last-child {
 		margin-right: 0;
 	}
