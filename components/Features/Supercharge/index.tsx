@@ -54,9 +54,7 @@ const Supercharge: FC = () => {
 							</FadeIn>
 							<Elem>
 								<FadeIn duration={500} delay={1250} isShow={isShow}>
-									<Title>
-										And more in one <br /> dashboard...
-									</Title>
+									<Title>{t('features:introductionMore')}...</Title>
 								</FadeIn>
 							</Elem>
 							<MobileApp

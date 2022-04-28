@@ -7,12 +7,12 @@ import { useTranslation } from 'next-i18next';
 
 type SmileProps = {
 	formRef: RefObject<HTMLDivElement>;
+	locale: string;
 };
 
-const Smile: FC<SmileProps> = ({ formRef }) => {
+const Smile: FC<SmileProps> = ({ formRef, locale }) => {
 	const [loading, setLoading] = useState<'idle' | 'loading' | 'error' | 'success'>('idle');
 	const { t } = useTranslation();
-
 	const initialValues = {
 		name: '',
 		business: '',
@@ -138,7 +138,17 @@ const Smile: FC<SmileProps> = ({ formRef }) => {
 									<ModlaLabel>
 										{t('main:formBusinessName')}
 										<ModalInput
-											placeholder='Burgers & Boba (Singapore)'
+											placeholder={
+												locale == 'en'
+													? 'Burgers & Boba (Singapore)'
+													: locale == 'th'
+													? 'Business Name: Burgers & Boba (Thailand)'
+													: locale == 'id'
+													? 'Business Name: Burgers & Boba (Indonesia)'
+													: locale == 'vn'
+													? 'Business Name: Burgers & Boba (Vietnam)'
+													: 'Burgers & Boba (Singapore)'
+											}
 											type='text'
 											value={form.business}
 											name='business'
@@ -152,7 +162,17 @@ const Smile: FC<SmileProps> = ({ formRef }) => {
 									<ModlaLabel>
 										{t('main:formPhone')}
 										<ModalInput
-											placeholder='65 9123 4567'
+											placeholder={
+												locale == 'en'
+													? '65 9123 4567'
+													: locale == 'th'
+													? '66 9123 4567'
+													: locale == 'id'
+													? '62 9123 4567'
+													: locale == 'vn'
+													? '81 9123 4567'
+													: '65 9123 4567'
+											}
 											type='tel'
 											value={form.phone}
 											name='phone'
