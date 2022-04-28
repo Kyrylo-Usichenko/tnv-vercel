@@ -83,22 +83,26 @@ const MoreMoney: FC = () => {
 const Wrapper = styled.div`
 	background: radial-gradient(129.72% 141.01% at 50% 50%, #f7f7f7 0%, #fafafa 100%);
 	border-radius: 0 40px 40px 0;
-	margin-right: 54px;
+
 	position: relative;
 	overflow: hidden;
 	padding-bottom: 48px;
+	margin-top: 510px;
 
-	@media (min-width: 1280px) {
+	@media (min-width: 768px) {
+		padding-bottom: 0;
 		margin-top: 560px;
 	}
-	@media (max-width: 1024px) {
-		margin-right: 0;
-	}
-	@media (max-width: 975px) {
+	@media (min-width: 1024px) {
 		padding-bottom: 0;
+		margin-top: 95px;
 	}
-	@media (max-width: 768px) {
-		margin-top: 500px;
+	@media (min-width: 1280px) {
+		margin-top: 560px;
+		margin-right: 54px;
+	}
+	@media (min-width: 1440px) {
+		margin-top: 95px;
 	}
 `;
 

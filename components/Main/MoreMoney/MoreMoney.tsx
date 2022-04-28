@@ -174,6 +174,11 @@ const Wrapper = styled.div`
 		height: 896px;
 		margin-top: 0px;
 	}
+	@media (min-width: 1024px) {
+		margin-bottom: auto;
+		height: 701px;
+		// margin-top: 0px;
+	}
 	@media (min-width: 1280px) {
 		margin-bottom: auto;
 		height: 295px;
@@ -182,7 +187,7 @@ const Wrapper = styled.div`
 	@media (min-width: 1440px) {
 		width: 100%;
 		position: relative;
-		height: 826px;
+		height: 706px;
 		margin-top: 299px;
 		// margin-top: 0px;
 	}
