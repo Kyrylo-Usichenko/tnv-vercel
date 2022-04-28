@@ -498,17 +498,17 @@ const ConL: FC<ConLProps> = ({ animate }) => {
 
 function createCss() {
 	let styles = '';
-	let delay = 1500;
+	let delay = 1150;
 
-	for (let i = 1; i <= 25; i++) {
+	for (let i = 25; i >= 3; i--) {
 		styles += `
        #rect-${i} {
-				animation: conLAnim 40ms ease ${delay}ms;
+				animation: conLAnim 16ms ease ${delay}ms;
 				animation-fill-mode: forwards;
 			}
 		`;
 
-		delay += 40;
+		delay += 16;
 	}
 
 	return css`

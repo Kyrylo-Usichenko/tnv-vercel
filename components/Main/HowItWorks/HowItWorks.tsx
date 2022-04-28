@@ -267,8 +267,7 @@ const Box = styled.div<{ isShow: boolean }>`
 	border-radius: 11.6324px;
 	box-shadow: 4px 7px 20px 0px rgba(33, 33, 33, 0.1);
 	transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s;
-	transform: ${({ isShow }) =>
-		isShow ? 'rotate(8deg) translate(0px, 0px)' : 'rotate(16deg) translate(-30px, 50px)'};
+	transform: ${({ isShow }) => (isShow ? 'rotate(8deg) translate(0px, 0px)' : 'rotate(8deg) translate(0px, 50px)')};
 
 	@media (min-width: 768px) {
 		border-radius: 17.642px;
@@ -280,14 +279,12 @@ const Box = styled.div<{ isShow: boolean }>`
 
 const Box2 = styled(Box)`
 	transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s;
-	transform: ${({ isShow }) =>
-		isShow ? 'rotate(8deg) translate(0px, 0px)' : 'rotate(16deg) translate(30px, -50px)'};
+	transform: ${({ isShow }) => (isShow ? 'rotate(8deg) translate(0px, 0px)' : 'rotate(8deg) translate(0px, 50px)')};
 `;
 
 const Box3 = styled(Box)`
 	transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 1.1s;
-	transform: ${({ isShow }) =>
-		isShow ? 'rotate(8deg) translate(0px, 0px)' : 'rotate(-16deg) translate(30px, 50px)'};
+	transform: ${({ isShow }) => (isShow ? 'rotate(8deg) translate(0px, 0px)' : 'rotate(8deg) translate(0px, 50px)')};
 `;
 
 const CardTop = styled.div`

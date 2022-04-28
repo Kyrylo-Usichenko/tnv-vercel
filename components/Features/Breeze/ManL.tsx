@@ -803,17 +803,17 @@ const ManL: FC<ManLProps> = ({ animate }) => {
 
 function createCss() {
 	let styles = '';
-	let delay = 1000;
+	let delay = 2100;
 
-	for (let i = 1; i <= 40; i++) {
+	for (let i = 40; i >= 1; i--) {
 		styles += `
        #rect-${i} {
-				animation: manLAnim 40ms ease ${delay}ms;
+				animation: manLAnim 11ms ease ${delay}ms;
 				animation-fill-mode: forwards;
 			}
 		`;
 
-		delay += 40;
+		delay += 11;
 	}
 
 	return css`

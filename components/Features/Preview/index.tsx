@@ -352,9 +352,11 @@ const AppImg = styled.img<{ animate: boolean }>`
 	width: 58.6%;
 	height: auto;
 	opacity: 0;
-	animation: ${({ animate }) => (animate ? 'appImgAnim 0.5s ease-in' : 'none')};
+	transform: ${({ animate }) => (animate ? 'scale(1)' : 'scale(0.9)')};
+	transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) 1.2s;
+	animation: ${({ animate }) => (animate ? 'appImgAnim 0.3s ease-in' : 'none')};
 	animation-fill-mode: forwards;
-	animation-delay: 3.7s;
+	animation-delay: 1.15s;
 
 	@keyframes appImgAnim {
 		from {
@@ -394,9 +396,11 @@ const AppShadow = styled.div<{ animate: boolean }>`
 	right: -4%;
 	bottom: -23%;
 	opacity: 0;
-	animation: ${({ animate }) => (animate ? 'appImgAnim 0.5s ease-in' : 'none')};
+	transform: ${({ animate }) => (animate ? 'scale(1)' : 'scale(0.8)')};
+	transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) 1.2s;
+	animation: ${({ animate }) => (animate ? 'appImgAnim 0.3s ease-in' : 'none')};
 	animation-fill-mode: forwards;
-	animation-delay: 3.7s;
+	animation-delay: 1.15s;
 
 	@keyframes appImgAnim {
 		from {
@@ -434,9 +438,9 @@ const RequestImg = styled.img<{ animate: boolean }>`
 	width: 52.5%;
 	height: auto;
 	opacity: 0;
-	animation: ${({ animate }) => (animate ? 'appImgAnim 0.5s ease-in' : 'none')};
+	animation: ${({ animate }) => (animate ? 'appImgAnim 0.3s ease-in' : 'none')};
 	animation-fill-mode: forwards;
-	animation-delay: 1.3s;
+	animation-delay: 0.6s;
 
 	@keyframes appImgAnim {
 		from {
