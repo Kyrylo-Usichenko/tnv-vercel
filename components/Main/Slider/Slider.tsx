@@ -10,51 +10,49 @@ import 'swiper/css/effect-fade';
 
 import SlideLeft from './SlideLeft';
 import SlideImage from './SlideRight';
-
-const SLIDERS = [
-	{
-		sliderText:
-			"Tinvio helps our business run smoother. We can manage our customer's orders, receivables, and most importantly, trace and reconcile their payments without checking banking apps or statements.",
-		logo: '/images/main/whyChoose/itacho-logo.png',
-		name: 'Hafidz & Indah',
-		text: 'Owners (Sejadah Grocery)',
-		image: '/images/main/whyChoose/itacho.webp',
-		width: '96px',
-		height: '49px',
-	},
-	{
-		sliderText:
-			'Tinvio has been a foundational partner and solution. We now have faster and more efficient communication with our clients, which makes order processing and deliveries smoother than ever before.',
-		logo: '/images/main/whyChoose/moonleaf-logo.svg',
-		name: 'Pauline Limgenco',
-		text: 'Director (Moonleaf)',
-		image: '/images/main/whyChoose/moonleaf.webp',
-		width: '102px',
-		height: '48px',
-	},
-	{
-		sliderText:
-			'Tinvio definitely helps to reduce the time and errors in order management between customers and suppliers. It’s super easy to use and available on mobile and web, and the team are friendly and always helpful.',
-		logo: '/images/main/whyChoose/phaitong-logo.svg',
-		name: 'Punnasiri Chaipatikul',
-		text: 'Business Development Manager (Phaitong Station)',
-		image: '/images/main/whyChoose/phaitong.webp',
-		width: '70px',
-		height: '52px',
-	},
-	{
-		sliderText:
-			"With Tinvio, it's easier for my customers to make payments across various methods. Every payment is also collected in one business account where funds can be withdrawn instantly at any time.",
-		logo: '/images/main/whyChoose/baker-logo.svg',
-		name: 'Fathira Dida',
-		text: 'Owner (Baker Old)',
-		image: '/images/main/whyChoose/baker.webp',
-		width: '54px',
-		height: '64px',
-	},
-];
+import { useTranslation } from 'next-i18next';
 
 const Slider: FC = () => {
+	const { t } = useTranslation();
+
+	const SLIDERS = [
+		{
+			sliderText: t('main:whyChooseSlide1'),
+			logo: '/images/main/whyChoose/itacho-logo.png',
+			name: 'Hafidz & Indah',
+			text: 'Owners (Sejadah Grocery)',
+			image: '/images/main/whyChoose/itacho.webp',
+			width: '96px',
+			height: '49px',
+		},
+		{
+			sliderText: t('main:whyChooseSlide2'),
+			logo: '/images/main/whyChoose/moonleaf-logo.svg',
+			name: 'Pauline Limgenco',
+			text: 'Director (Moonleaf)',
+			image: '/images/main/whyChoose/moonleaf.webp',
+			width: '102px',
+			height: '48px',
+		},
+		{
+			sliderText: t('main:whyChooseSlide3'),
+			logo: '/images/main/whyChoose/phaitong-logo.svg',
+			name: 'Punnasiri Chaipatikul',
+			text: 'Business Development Manager (Phaitong Station)',
+			image: '/images/main/whyChoose/phaitong.webp',
+			width: '70px',
+			height: '52px',
+		},
+		{
+			sliderText: t('main:whyChooseSlide4'),
+			logo: '/images/main/whyChoose/baker-logo.svg',
+			name: 'Fathira Dida',
+			text: 'Owner (Baker Old)',
+			image: '/images/main/whyChoose/baker.webp',
+			width: '54px',
+			height: '64px',
+		},
+	];
 	SwiperCore.use([Autoplay]);
 	const [controlledSwiper, setControlledSwiper] = useState<SwiperCore | null>(null);
 

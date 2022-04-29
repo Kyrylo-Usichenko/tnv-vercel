@@ -111,7 +111,7 @@ const Smile: FC<SmileProps> = ({ formRef, locale }) => {
 							<TitleWrapper>
 								<Title>{t('main:formTitle')}</Title>
 								<MapBox>
-									<MapComponentFlex />
+									<MapComponentFlex locale={locale} />
 								</MapBox>
 							</TitleWrapper>
 
@@ -594,8 +594,8 @@ const Img = styled.img`
 
 const Dots = styled.img`
 	position: absolute;
-	right: -2px;
-	bottom: -37px;
+	right: -29px;
+	bottom: 29px;
 	z-index: -1;
 
 	@media (max-width: 768px) {

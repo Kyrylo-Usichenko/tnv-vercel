@@ -14,7 +14,7 @@
   "formHeadingAfter": "And you?",
   "previewText": "Manage all your supply chain transactions in one dashboard. Get paid faster, reconcile quicker, grow bigger.",
   "footerRights": "© Tinvio™ 2020. All Rights Reserved",
-  "smileContent": "5000+ happy businesses",
+  "smileContent": "happy businesses",
   "footerCompany": "Company",
   "footerPrivacy": "Privacy Policy",
   "moreMoneyTab1": "Chats",
@@ -47,5 +47,10 @@
   "howItWorksPayments": "Payments",
   "howItWorksChatsText": "Connect to anyone in your supply chain and exchange messages",
   "howItWorksOrdersText": "Create or confirm purchase orders with tap of a button.",
-  "howItWorksPaymentsText": "Send invoices and reconcile payments in one dashboard"
+  "howItWorksPaymentsText": "Send invoices and reconcile payments in one dashboard",
+
+  "whyChooseSlide1": "Tinvio has been a foundational partner and solution. We now have faster and more efficient  communication with our clients, which makes order processing and deliveries smoother than ever before.",
+  "whyChooseSlide2": "With Tinvio, it's easier for my customers to make payments across various methods. Every payment is also collected in one business account where funds can be withdrawn instantly at any time.",
+  "whyChooseSlide3": "Tinvio helps our business run smoother. We can manage our customer's orders, receivables, and most importantly, trace and reconcile their payments without checking banking apps or statements.",
+  "whyChooseSlide4": "Tinvio definitely helps to reduce the time and errors in order management between customers and suppliers. It’s super easy to use and available on mobile and web, and the team are friendly and always helpful."
 }
