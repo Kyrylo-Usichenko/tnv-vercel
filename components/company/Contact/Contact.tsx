@@ -216,10 +216,13 @@ const ContactUs = styled.a`
 
 	&::before {
 		position: absolute;
+		width: 100%;
 		content: attr(data-text);
-		top: 17px;
-		left: 53px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 		color: rgba(33, 33, 33, 0.1);
+		z-index: 2;
 		filter: blur(1px);
 		opacity: 0;
 		transition: opacity 0.2s ease;
@@ -230,19 +233,22 @@ const ContactUs = styled.a`
 		content: '';
 		width: 100%;
 		height: 100%;
-		top: 4px;
-		left: 5px;
-		border: 1px solid rgba(33, 33, 33, 0.1);
+		top: 0;
+		left: 0;
+		border: 2px solid rgba(33, 33, 33, 0.1);
 		filter: blur(2px);
 		border-radius: 16px;
 		opacity: 0;
 		transition: opacity 0.2s ease;
-		z-index: -1;
 	}
 
 	&:hover::after,
 	&:hover::before {
 		opacity: 1;
+	}
+
+	&:hover {
+		color: rgba(33, 33, 33, 0.8);
 	}
 
 	@media (min-width: 1920px) {

@@ -47,8 +47,14 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale, openModal, scrollDo
 	const [isHeaderScrolled, setHeaderScrolled] = useState(false);
 	const [dropDawn, setDropDawn] = useState(false);
 	const [isMenuOpend, setMenuOpend] = useState(false);
+
 	const menuToggle = () => {
 		setMenuOpend((prevState) => !prevState);
+	};
+
+	const scrollHide = () => {
+		menuToggle();
+		if (scrollDown) scrollDown();
 	};
 
 	const { t } = useTranslation();
@@ -57,12 +63,16 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale, openModal, scrollDo
 		function handleScroll() {
 			setHeaderScrolled(window.pageYOffset > 50);
 		}
+
 		window.addEventListener('scroll', handleScroll);
+
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
+
 	const modalRef = useOnClickOutside(() => {
 		setDropDawn(false);
 	});
+
 	const localeTab =
 		Tab === 'Home'
 			? '/'
@@ -77,6 +87,11 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale, openModal, scrollDo
 	const btnClick = () => {
 		if (openModal) openModal();
 		if (scrollDown) scrollDown();
+	};
+
+	const mobileBtnClick = () => {
+		if (openModal) openModal();
+		if (scrollDown) scrollHide();
 	};
 
 	return (
@@ -189,9 +204,9 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale, openModal, scrollDo
 					</MobileNav>
 
 					<MobileLinks isMenuOpend={isMenuOpend}>
-						<Link href='/'>
-							<MobileButton>{t('header:GetStarted')}</MobileButton>
-						</Link>
+						<MobileButton type='button' onClick={mobileBtnClick}>
+							{t('header:GetStarted')}
+						</MobileButton>
 						<Socials>
 							<Social href={'/'}>
 								<Image src='/images/footer/linkedin.svg' alt='linkedin' width={32} height={32} />
