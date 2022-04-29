@@ -2,9 +2,8 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
-import FadeIn from '../../common/FadeIn/FadeIn';
 
-const DoneTop: FC<{ isShow: boolean }> = ({ isShow }) => {
+const DoneTop: FC = () => {
 	const { t } = useTranslation();
 
 	return (
@@ -30,14 +29,12 @@ const DoneTop: FC<{ isShow: boolean }> = ({ isShow }) => {
 					<RedSide>
 						<SquareRT />
 						<DotsRT src='/images/company/Done/dotsRT.svg' loading='lazy' />
-						<FadeIn duration={500} delay={500} isShow={isShow}>
-							<img
-								src='/images/company/Done/ipad.png'
-								srcSet='/images/company/Done/ipad@2x.png 2x'
-								alt='ipad'
-								loading='lazy'
-							/>
-						</FadeIn>
+						<img
+							src='/images/company/Done/ipad.png'
+							srcSet='/images/company/Done/ipad@2x.png 2x'
+							alt='ipad'
+							loading='lazy'
+						/>
 						<SquareRB />
 						<DotsRB src='/images/company/Done/dotsRB.svg' loading='lazy' />
 					</RedSide>
@@ -47,14 +44,12 @@ const DoneTop: FC<{ isShow: boolean }> = ({ isShow }) => {
 						<SquareG2 />
 						<SquareG3 />
 						<Content2>
-							<FadeIn duration={500} delay={200} isShow={isShow}>
-								<Year>{t('company:doneYear')}</Year>
-								<List>
-									<Item>{t('company:doneBlock1Line1')}</Item>
-									<Item>{t('company:doneBlock1Line2')}</Item>
-									<Item>{t('company:doneBlock1Line3')}</Item>
-								</List>
-							</FadeIn>
+							<Year>{t('company:doneYear')}</Year>
+							<List>
+								<Item>{t('company:doneBlock1Line1')}</Item>
+								<Item>{t('company:doneBlock1Line2')}</Item>
+								<Item>{t('company:doneBlock1Line3')}</Item>
+							</List>
 							<DotsG src='/images/company/Done/dotsG.svg' loading='lazy' />
 						</Content2>
 					</FeaturesCon>
