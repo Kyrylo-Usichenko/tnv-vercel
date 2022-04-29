@@ -21,32 +21,12 @@ const Teamvio: FC = () => {
 						<SquareRightBot />
 						<RightDots />
 						<LeftDots />
-						<Img1
-							src='/images/company/Teamvio/1.jpg'
-							srcSet='/images/company/Teamvio/1@2x.jpg 2x'
-							alt='people'
-							loading='lazy'
-						/>
-						<MobileImg
-							src='/images/company/Teamvio/2.jpg'
-							srcSet='/images/company/Teamvio/2@2x.jpg 2x'
-							alt='people'
-							loading='lazy'
-						/>
-						<Img3
-							src='/images/company/Teamvio/3.jpg'
-							srcSet='/images/company/Teamvio/3@2x.jpg 2x'
-							alt='people'
-							loading='lazy'
-						/>
+						<Img1 src='/images/company/Teamvio/1@2x.jpg' alt='people' loading='lazy' />
+						<MobileImg src='/images/company/Teamvio/2@2x.jpg' alt='people' loading='lazy' />
+						<Img3 src='/images/company/Teamvio/3@2x.jpg' alt='people' loading='lazy' />
 					</Inner1>
 					<Inner2>
-						<Img2
-							src='/images/company/Teamvio/2.jpg'
-							srcSet='/images/company/Teamvio/2@2x.jpg 2x'
-							alt='people'
-							loading='lazy'
-						/>
+						<Img2 src='/images/company/Teamvio/2@2x.jpg' alt='people' loading='lazy' />
 						<Join>
 							<JoinSquareLeft />
 							<JoinSquareRight />
@@ -54,18 +34,8 @@ const Teamvio: FC = () => {
 							<Text>{t('company:teamvioText')}</Text>
 							<Button>{t('company:teamvioButton')}</Button>
 						</Join>
-						<MobileImg
-							src='/images/company/Teamvio/3.jpg'
-							srcSet='/images/company/Teamvio/3@2x.jpg 2x'
-							alt='people'
-							loading='lazy'
-						/>
-						<Img4
-							src='/images/company/Teamvio/4.jpg'
-							srcSet='/images/company/Teamvio/4@2x.jpg 2x'
-							alt='people'
-							loading='lazy'
-						/>
+						<MobileImg src='/images/company/Teamvio/3@2x.jpg' alt='people' loading='lazy' />
+						<Img4 src='/images/company/Teamvio/4@2x.jpg' alt='people' loading='lazy' />
 					</Inner2>
 				</Inner>
 			</FeaturesCon>
