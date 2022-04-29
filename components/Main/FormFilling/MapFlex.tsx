@@ -12,7 +12,6 @@ const MapFlex: FC<SmileProps> = ({ locale }) => {
 	const ref = useRef() as RefObject<HTMLDivElement>;
 	const isShow = useAnimate(ref);
 	const { t } = useTranslation();
-	console.log(locale);
 	return (
 		<Wrapper>
 			<img className='map' src='./images/main/map/map-grey.png' alt='map' />
