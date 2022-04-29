@@ -363,17 +363,17 @@ const LineR: FC<LineRProps> = ({ animate }) => {
 
 function createCss() {
 	let styles = '';
-	let delay = 2800;
+	let delay = 1100;
 
 	for (let i = 1; i <= 17; i++) {
 		styles += `
        #rect-${i} {
-				animation: lineLAnim 40ms ease ${delay}ms;
+				animation: lineLAnim 11ms ease ${delay}ms;
 				animation-fill-mode: forwards;
 			}
 		`;
 
-		delay += 40;
+		delay += 11;
 	}
 
 	return css`

@@ -403,17 +403,17 @@ const LineR375: FC<LineR375Props> = ({ animate }) => {
 
 function createCss() {
 	let styles = '';
-	let delay = 2800;
+	let delay = 1100;
 
 	for (let i = 1; i <= 19; i++) {
 		styles += `
        #rect-${i} {
-				animation: lineR375Anim 40ms ease ${delay}ms;
+				animation: lineR375Anim 11ms ease ${delay}ms;
 				animation-fill-mode: forwards;
 			}
 		`;
 
-		delay += 40;
+		delay += 11;
 	}
 
 	return css`
