@@ -28,7 +28,7 @@ const Role: FC = () => {
 									loading='lazy'
 								/>
 							</FadeIn>
-							<FadeIn duration={500} delay={1100} isShow={isShow}>
+							<FadeIn duration={500} delay={800} isShow={isShow}>
 								<Img3
 									src='/images/company/Role/3.jpg'
 									srcSet='/images/company/Role/3@2x.jpg 2x'
@@ -38,7 +38,7 @@ const Role: FC = () => {
 							</FadeIn>
 						</GalleryColumn>
 						<GalleryColumn>
-							<FadeIn duration={500} delay={800} isShow={isShow}>
+							<FadeIn duration={500} delay={500} isShow={isShow}>
 								<Img2
 									src='/images/company/Role/2.jpg'
 									srcSet='/images/company/Role/2@2x.jpg 2x'
@@ -46,7 +46,7 @@ const Role: FC = () => {
 									loading='lazy'
 								/>
 							</FadeIn>
-							<FadeIn duration={500} delay={500} isShow={isShow}>
+							<FadeIn duration={500} delay={1100} isShow={isShow}>
 								<Img4
 									src='/images/company/Role/4.jpg'
 									srcSet='/images/company/Role/4@2x.jpg 2x'
