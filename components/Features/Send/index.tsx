@@ -220,9 +220,9 @@ const InvoiceImg = styled.img<{ animate: boolean }>`
 	width: 86%;
 	height: auto;
 	opacity: 0;
-	animation: ${({ animate }) => (animate ? 'appImgAnim 0.5s ease-in' : 'none')};
+	animation: ${({ animate }) => (animate ? 'appImgAnim 0.3s ease-in' : 'none')};
 	animation-fill-mode: forwards;
-	animation-delay: 2.3s;
+	animation-delay: 0.8s;
 
 	@keyframes appImgAnim {
 		from {
@@ -271,9 +271,9 @@ const Invoice = styled.div<{ animate: boolean }>`
 		top: 46px;
 		right: 41px;
 		opacity: 0;
-		animation: ${({ animate }) => (animate ? 'appImgAnim 0.5s ease-in' : 'none')};
+		animation: ${({ animate }) => (animate ? 'appImgAnim 0.3s ease-in' : 'none')};
 		animation-fill-mode: forwards;
-		animation-delay: 2.3s;
+		animation-delay: 0.8s;
 	}
 
 	@media (min-width: 1280px) {
@@ -398,9 +398,9 @@ const RemindImg = styled.img<{ animate: boolean }>`
 	width: 42.6%;
 	height: auto;
 	opacity: 0;
-	animation: ${({ animate }) => (animate ? 'appImgAnim 0.5s ease-in' : 'none')};
+	animation: ${({ animate }) => (animate ? 'appImgAnim 0.35s ease-in' : 'none')};
 	animation-fill-mode: forwards;
-	animation-delay: 3.5s;
+	animation-delay: 1.3s;
 
 	@keyframes appImgAnim {
 		from {
@@ -449,9 +449,9 @@ const Remind = styled.div<{ animate: boolean }>`
 		top: 162px;
 		right: -26px;
 		opacity: 0;
-		animation: ${({ animate }) => (animate ? 'appImgAnim 0.5s ease-in' : 'none')};
+		animation: ${({ animate }) => (animate ? 'appImgAnim 0.35s ease-in' : 'none')};
 		animation-fill-mode: forwards;
-		animation-delay: 3.5s;
+		animation-delay: 1.3s;
 	}
 
 	@media (min-width: 1280px) {

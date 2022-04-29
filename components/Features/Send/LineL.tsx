@@ -923,17 +923,17 @@ const LineL: FC<LineLProps> = ({ animate }) => {
 
 function createCss() {
 	let styles = '';
-	let delay = 0;
+	let delay = 300;
 
-	for (let i = 1; i <= 45; i++) {
+	for (let i = 45; i >= 1; i--) {
 		styles += `
        #rect-${i} {
-				animation: lineLAnim 40ms ease ${delay}ms;
+				animation: lineLAnim 11ms ease ${delay}ms;
 				animation-fill-mode: forwards;
 			}
 		`;
 
-		delay += 40;
+		delay += 11;
 	}
 
 	return css`
