@@ -117,7 +117,8 @@ const MoreMoney: FC = () => {
 			<FeaturesCon>
 				<Inner>
 					<Title>
-						{t('main:moreMoneyTitle')}{' '}
+						{t('main:moreMoneyTitle')}
+						{'. '}
 						<TitleWrap>
 							<TitleSpan ref={typeRef} isVisible={isVisible} isBackwards={isBackwards}>
 								{text}
