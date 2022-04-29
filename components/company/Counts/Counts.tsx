@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 import { useTranslation } from 'next-i18next';
 
-const Counts: FC = ({ locale }: string) => {
+const Counts: FC = () => {
 	const [isShown01, setIsShown01] = useState(false);
 	const [isShown02, setIsShown02] = useState(false);
 	const [isShown03, setIsShown03] = useState(false);
