@@ -44,10 +44,13 @@ const Footer: FC<Props> = ({ background }) => {
 					<SecondLineHalf>
 						<Links>
 							<Socials>
-								<Social href={'https://www.linkedin.com/company/tinvio/?originalSubdomain=sg'}>
+								<Social
+									href={'https://www.linkedin.com/company/tinvio/?originalSubdomain=sg'}
+									target='_blank'
+								>
 									<Image src='/images/footer/linkedin.svg' alt='linkedin' width={32} height={32} />
 								</Social>
-								<Social href={'https://www.instagram.com/tinvioapp/?hl=en'}>
+								<Social href={'https://www.instagram.com/tinvioapp/?hl=en'} target='_blank'>
 									<Image src='/images/footer/inst.svg' alt='instagram' width={32} height={32} />
 								</Social>
 							</Socials>
@@ -55,10 +58,11 @@ const Footer: FC<Props> = ({ background }) => {
 							<Stores>
 								<Store
 									href={'https://play.google.com/store/apps/details?id=com.tinvio.tinvio&hl=en&gl=US'}
+									target='_blank'
 								>
 									<Image src='/images/footer/gp@2x.png' width={113} height={40} alt='google play' />
 								</Store>
-								<Store href={'https://apps.apple.com/sg/app/tinvio/id1472428382'}>
+								<Store href={'https://apps.apple.com/sg/app/tinvio/id1472428382'} target='_blank'>
 									<Image src='/images/footer/as@2x.png' width={113} height={40} alt='google play' />
 								</Store>
 							</Stores>
