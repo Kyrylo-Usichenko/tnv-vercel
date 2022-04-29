@@ -34,46 +34,23 @@ const Send: FC = () => {
 				</SendInfo>
 			</SendCon>
 			<FeaturesCon>
-				<PreviewImg>
+				<PreviewImg animate={animate}>
 					<picture>
-						<source
-							srcSet='/images/features/send/women-1920.jpg 1x, /images/features/send/women-1920@2x.jpg 2x'
-							media='(min-width: 1920px)'
-						/>
-						<source
-							srcSet='/images/features/send/women-1440.jpg 1x, /images/features/send/women-1440@2x.jpg 2x'
-							media='(min-width: 1440px)'
-						/>
-						<source
-							srcSet='/images/features/send/women-1280.jpg 1x, /images/features/send/women-1280@2x.jpg 2x'
-							media='(min-width: 1280px)'
-						/>
-						<source
-							srcSet='/images/features/send/women-1024.jpg 1x, /images/features/send/women-1024@2x.jpg 2x'
-							media='(min-width: 1024px)'
-						/>
-						<source
-							srcSet='/images/features/send/women-768.jpg 1x, /images/features/send/women-768@2x.jpg 2x'
-							media='(min-width: 768px)'
-						/>
-						<img
-							src='/images/features/send/women-375.jpg'
-							srcSet='/images/features/send/women-375@2x.jpg 2x'
-							alt='women'
-							loading='lazy'
-							ref={mainImg}
-						/>
+						<source srcSet='/images/features/send/women-1920@2x.jpg' media='(min-width: 1920px)' />
+						<source srcSet='/images/features/send/women-1440@2x.jpg' media='(min-width: 1440px)' />
+						<source srcSet='/images/features/send/women-1280@2x.jpg' media='(min-width: 1280px)' />
+						<source srcSet='/images/features/send/women-1024@2x.jpg' media='(min-width: 1024px)' />
+						<source srcSet='/images/features/send/women-768@2x.jpg' media='(min-width: 768px)' />
+						<img src='/images/features/send/women-375@2x.jpg' alt='women' loading='lazy' ref={mainImg} />
 					</picture>
 					<InvoiceImg
-						src='/images/features/send/invoice.png'
-						srcSet='/images/features/send/invoice@2x.png 2x'
+						src='/images/features/send/invoice@2x.png'
 						alt='Invoice'
 						loading='lazy'
 						animate={animate}
 					/>
 					<RemindImg
-						src='/images/features/send/reminde.png'
-						srcSet='/images/features/send/reminde@2x.png 2x'
+						src='/images/features/send/reminde@2x.png'
 						alt='Reminde'
 						loading='lazy'
 						animate={animate}
@@ -203,13 +180,18 @@ const SendText = styled.p`
 	margin: 0;
 `;
 
-const PreviewImg = styled.div`
+const PreviewImg = styled.div<{ animate: boolean }>`
 	position: relative;
+	background-color: #bab9b5;
+	border-radius: 44px;
 
 	& > picture:nth-child(1) > img {
 		border-radius: 44px;
 		width: 100%;
 		height: auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 `;
 
