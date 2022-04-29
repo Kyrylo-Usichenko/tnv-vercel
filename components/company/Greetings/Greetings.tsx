@@ -242,6 +242,7 @@ const Contact = styled.button`
 	line-height: 20px;
 	color: #212121;
 	padding: 14px 50px;
+	margin: 0 auto;
 	display: block;
 	background-color: #ffffff;
 	cursor: pointer;
