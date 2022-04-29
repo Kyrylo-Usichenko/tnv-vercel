@@ -24,7 +24,13 @@ const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
 						<LeftDots />
 						<Heading>{t('company:contactHeading1')}</Heading>
 						<Content>{t('company:contactText1')}</Content>
-						<ContactUs data-text={t('company:contactButton1')}>{t('company:contactButton1')}</ContactUs>
+						<ContactUs
+							href='http://dashboard.tinvio.com'
+							target='_blank'
+							data-text={t('company:contactButton1')}
+						>
+							{t('company:contactButton1')}
+						</ContactUs>
 					</Block>
 					<DarkBlock>
 						<MiddleSquareLeft />
@@ -32,7 +38,9 @@ const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
 						<MiddleDots />
 						<LightHeading>{t('company:contactHeading2')}</LightHeading>
 						<LightContent>{t('company:contactText2')}</LightContent>
-						<LightContactUs>{t('company:contactButton2')}</LightContactUs>
+						<LightContactUs href='mailto:partners@tinvio.com' target='_blank'>
+							{t('company:contactButton2')}
+						</LightContactUs>
 					</DarkBlock>
 					<Block>
 						<RightSquareLeft />
@@ -40,7 +48,13 @@ const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
 						<RightDots />
 						<Heading>{t('company:contactHeading3')}</Heading>
 						<Content>{t('company:contactText3')}</Content>
-						<ContactUs data-text={t('company:contactButton3')}>{t('company:contactButton3')}</ContactUs>
+						<ContactUs
+							href='mailto:press@tinvio.com'
+							target='_blank'
+							data-text={t('company:contactButton3')}
+						>
+							{t('company:contactButton3')}
+						</ContactUs>
 					</Block>
 				</Inner>
 			</FeaturesCon>
@@ -182,7 +196,7 @@ const LightContent = styled(Content)`
 	color: #ffffff;
 `;
 
-const ContactUs = styled.button`
+const ContactUs = styled.a`
 	text-decoration: none;
 	border: 1px solid #d2d2d2;
 	background-color: transparent;
