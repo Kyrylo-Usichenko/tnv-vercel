@@ -58,7 +58,11 @@ const Role: FC = () => {
 					</GalleryGrid>
 					<Content>
 						<GalleryTitle>{t('company:rolesText')}</GalleryTitle>
-						<Explore href='https://www.linkedin.com/company/tinvio/jobs/' target='_blank'>
+						<Explore
+							data-text={t('company:rolesButton')}
+							href='https://www.linkedin.com/company/tinvio/jobs/'
+							target='_blank'
+						>
 							{t('company:rolesButton')}
 						</Explore>
 					</Content>
@@ -221,7 +225,7 @@ const GalleryTitle = styled.h2`
 
 const Explore = styled.a`
 	display: block;
-	border: 2px solid #d2d2d2;
+	border: 1px solid #d2d2d2;
 	border-radius: 18px;
 	background-color: #ffffff;
 	font-family: 'Gilroy';
@@ -239,6 +243,20 @@ const Explore = styled.a`
 	position: relative;
 	transition: all 0.2s ease;
 
+	&::before {
+		position: absolute;
+		width: 100%;
+		content: attr(data-text);
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: rgba(33, 33, 33, 0.1);
+		z-index: 2;
+		filter: blur(1px);
+		opacity: 0;
+		transition: opacity 0.2s ease;
+	}
+
 	&::after {
 		position: absolute;
 		content: '';
@@ -253,13 +271,13 @@ const Explore = styled.a`
 		transition: opacity 0.2s ease;
 	}
 
-	&:hover::after {
+	&:hover::after,
+	&:hover::before {
 		opacity: 1;
 	}
 
 	&:hover {
-		border: 2px solid transparent;
-		color: rgba(33, 33, 33, 0.1);
+		color: rgba(33, 33, 33, 0.8);
 	}
 
 	@media (min-width: 768px) {
