@@ -75,14 +75,6 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 		}
 	}, [imgEntry, loaded]);
 
-	useEffect(() => {
-		const onLoadImg = () => {
-			setLoaded(true);
-		};
-
-		window.addEventListener('load', onLoadImg);
-	});
-
 	return (
 		<StyledPreview>
 			<FeaturesCon>
@@ -112,7 +104,10 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 							<img
 								src='/images/features/preview/man-375@2x.jpg'
 								alt='Man holding smartphone'
+								width={1190}
+								height={600}
 								ref={mainImg}
+								onLoad={() => setLoaded(true)}
 							/>
 						</picture>
 						<AppImg src='/images/features/preview/app-shadow@2x.png' alt='message' animate={animate} />
