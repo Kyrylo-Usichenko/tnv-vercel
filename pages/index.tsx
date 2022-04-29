@@ -57,7 +57,7 @@ const Home: NextPage<any> = (props) => {
 				</Head>
 
 				{/*<Header locale={locale} Tab='Home' />*/}
-				<FeaturesHeader locale={locale} Tab='Home' />
+				<FeaturesHeader locale={locale} Tab='Home' scrollDown={executeScroll} />
 
 				<section>
 					<FeaturesCon>

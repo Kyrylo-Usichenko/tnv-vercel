@@ -3,7 +3,11 @@ import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
 
-const Ready: FC = () => {
+type ReadyProps = {
+	openModal: () => void;
+};
+
+const Ready: FC<ReadyProps> = ({ openModal }) => {
 	const { t } = useTranslation();
 
 	return (
@@ -14,7 +18,9 @@ const Ready: FC = () => {
 					<ReadyCon>
 						<ReadyText>{t('features:ctaReady')}</ReadyText>
 						<ReadyTitle>{t('features:ctaTitle')}</ReadyTitle>
-						<ReadyButton>{t('features:ctaButton')}</ReadyButton>
+						<ReadyButton type='button' onClick={openModal}>
+							{t('features:ctaButton')}
+						</ReadyButton>
 					</ReadyCon>
 				</FeaturesCon>
 			</FlexConInfo>

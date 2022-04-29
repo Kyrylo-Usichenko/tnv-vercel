@@ -40,17 +40,17 @@ const Features: NextPage<Props> = ({ locale }) => {
 	return (
 		<Main>
 			<Modal modalActive={modalActive} setModalActive={setModalActive} />
-			<FeaturesHeader locale={locale} Tab='Features' />
+			<FeaturesHeader locale={locale} Tab='Features' openModal={openModal} />
 			<Preview openModal={openModal} />
 			<Supercharge />
 			<Tools />
 			<Breeze />
-			<Sounds />
+			<Sounds openModal={openModal} />
 			<Send />
 			<Make />
 			<Get />
 			<Gallery />
-			<Ready />
+			<Ready openModal={openModal} />
 			<Faq />
 			<Footer background='#ffffff' />
 		</Main>

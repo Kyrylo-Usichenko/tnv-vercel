@@ -32,7 +32,9 @@ const Teamvio: FC = () => {
 							<JoinSquareRight />
 							<JoinDots />
 							<Text>{t('company:teamvioText')}</Text>
-							<Button>{t('company:teamvioButton')}</Button>
+							<Button href='https://www.linkedin.com/company/tinvio/jobs/' target='_blank'>
+								{t('company:teamvioButton')}
+							</Button>
 						</Join>
 						<MobileImg src='/images/company/Teamvio/3@2x.jpg' alt='people' loading='lazy' />
 						<Img4 src='/images/company/Teamvio/4@2x.jpg' alt='people' loading='lazy' />
@@ -288,7 +290,7 @@ const Text = styled.p`
 	}
 `;
 
-const Button = styled.button`
+const Button = styled.a`
 	border-radius: 18px;
 	background-color: #ffffff;
 	border: none;
@@ -296,6 +298,7 @@ const Button = styled.button`
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 20px;
+	text-decoration: none;
 	padding: 14px 0;
 	width: 188px;
 	color: #212121;

@@ -58,7 +58,9 @@ const Role: FC = () => {
 					</GalleryGrid>
 					<Content>
 						<GalleryTitle>{t('company:rolesText')}</GalleryTitle>
-						<Explore>{t('company:rolesButton')}</Explore>
+						<Explore href='https://www.linkedin.com/company/tinvio/jobs/' target='_blank'>
+							{t('company:rolesButton')}
+						</Explore>
 					</Content>
 				</GalleryCon>
 			</FeaturesCon>
@@ -217,7 +219,7 @@ const GalleryTitle = styled.h2`
 	}
 `;
 
-const Explore = styled.button`
+const Explore = styled.a`
 	display: block;
 	border: 2px solid #d2d2d2;
 	border-radius: 18px;
@@ -225,11 +227,13 @@ const Explore = styled.button`
 	font-family: 'Gilroy';
 	font-weight: 700;
 	font-size: 16px;
-	line-height: 20px;
+	text-decoration: none;
+	text-align: center;
 	padding: 0;
 	width: 188px;
 	height: 48px;
 	color: #212121;
+	padding: 14px 0;
 	margin: 0 auto 48px auto;
 	cursor: pointer;
 	position: relative;
@@ -271,6 +275,7 @@ const Explore = styled.button`
 		line-height: 23px;
 		width: 210px;
 		height: 56px;
+		padding: 16px;
 	}
 `;
 

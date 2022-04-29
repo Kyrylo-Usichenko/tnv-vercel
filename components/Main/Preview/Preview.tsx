@@ -16,7 +16,9 @@ const Preview: FC<PreviewProps> = ({ scrollDown }) => {
 			</PreviewTitle>
 			<PreviewText>{t('main:previewText')}</PreviewText>
 			<PreviewAction>
-				<Button onClick={scrollDown}>{t('main:previewButton')}</Button>
+				<Button type='button' onClick={scrollDown}>
+					{t('main:previewButton')}
+				</Button>
 				<PreviewFootnote>
 					{t('main:previewButtonText')}
 					<PreviewSmile />

@@ -3,7 +3,11 @@ import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
 
-const Sounds: FC = () => {
+type SoundsProps = {
+	openModal: () => void;
+};
+
+const Sounds: FC<SoundsProps> = ({ openModal }) => {
 	const { t } = useTranslation();
 
 	return (
@@ -13,7 +17,9 @@ const Sounds: FC = () => {
 				<FeaturesCon>
 					<SoundsCon>
 						<SoundsTitle>{t('features:separatorText')}</SoundsTitle>
-						<SoundsButton>{t('features:separatorButton')}</SoundsButton>
+						<SoundsButton type='button' onClick={openModal}>
+							{t('features:separatorButton')}
+						</SoundsButton>
 					</SoundsCon>
 				</FeaturesCon>
 			</FlexConInfo>
