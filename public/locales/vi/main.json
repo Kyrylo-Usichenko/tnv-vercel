@@ -15,7 +15,7 @@
   "formHeadingAfter": "Còn bạn?",
   "previewText": "Quản lý tất cả các giao dịch chuỗi cung ứng của bạn trong một bảng điều khiển. Được thanh toán nhanh hơn, giải quyết nhanh hơn, phát triển lớn hơn. ",
   "footerRights": "© Tinvio ™ 2020. Mọi quyền được bảo lưu ",
-  "smileContent": "Hơn 5000 doanh nghiệp hài lòng",
+  "smileContent": "doanh nghiệp hài lòng",
   "footerCompany": "Công ty",
   "footerPrivacy": "Chính sách bảo mật",
   "moreMoneyTab1": "Trò chuyện",
@@ -23,7 +23,7 @@
   "moreMoneyTab3": "Thanh toán",
   "previewButton": "Bắt đầu ngay",
   "footerFeatures": "Tính năng ",
-  "moreMoneyTitle": "Giao dịch chuỗi cung ứng thông minh hơn ",
+  "moreMoneyTitle": "Giao dịch chuỗi cung ứng thông minh hơn",
   "formUnderButton": "Chúng tôi không spam, xin hứa!",
   "howItWorksChats": "Trò chuyện",
   "howItWorksTitle": "Kiểm tra xem chúng tôi hoạt động như thế nào",
@@ -48,5 +48,9 @@
   "howItWorksPayments": "Thanh toán",
   "howItWorksChatsText": "Kết nối với bất kỳ ai trong chuỗi cung ứng của bạn và trao đổi tin nhắn với nhau",
   "howItWorksOrdersText": "Tạo hoặc xác nhận đơn đặt hàng chỉ trong một cú nhấp chuột",
-  "howItWorksPaymentsText": "Gửi hóa đơn và điều chỉnh các khoản thanh toán trong một trang tổng quan"
+  "howItWorksPaymentsText": "Gửi hóa đơn và điều chỉnh các khoản thanh toán trong một trang tổng quan",
+  "whyChooseSlide1": "Tinvio là một đối tác và giải pháp nền tảng của chúng tôi. Giờ đây, chúng tôi có khả năng giao tiếp nhanh hơn và hiệu quả hơn với khách hàng, điều này giúp cho việc xử lý đơn hàng và giao hàng trơn tru hơn bao giờ hết.",
+  "whyChooseSlide2": "Với Tinvio, khách hàng của tôi dễ dàng thực hiện thanh toán bằng nhiều phương thức khác nhau. Mọi khoản thanh toán cũng được thu vào một tài khoản doanh nghiệp, nơi có thể rút tiền ngay lập tức bất kỳ lúc nào.",
+  "whyChooseSlide3": "Tinvio giúp công việc kinh doanh của chúng tôi hoạt động trơn tru hơn. Chúng tôi có thể quản lý các đơn đặt hàng, khoản phải thu của khách hàng và quan trọng nhất là theo dõi và đối chiếu các khoản thanh toán mà không cần kiểm tra các ứng dụng ngân hàng hoặc bảng sao kê.",
+  "whyChooseSlide4": "Tinvio chắc chắn giúp giảm thiểu thời gian và sai sót trong việc quản lý đơn hàng giữa khách hàng và nhà cung cấp. Ứng dụng này rất dễ sử dụng và khả dụng trên thiết bị di động và web, đồng thời Tinvio cũng rất thân thiện và luôn hữu ích."
 }

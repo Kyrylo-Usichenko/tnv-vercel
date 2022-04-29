@@ -442,7 +442,7 @@ const MiddleSquareLeft = styled.div`
 	top: 0px;
 	width: 181px;
 	height: 220px;
-	background: url('/images/company/Contact/midSquareLeft.svg') no-repeat;
+	background: url('/images/company/Contact/midSquareLeft.png') no-repeat;
 	z-index: -1;
 	@media (min-width: 375px) {
 		left: -138px;
@@ -462,11 +462,11 @@ const MiddleSquareBottom = styled.div`
 	bottom: 0px;
 	width: 276px;
 	height: 98px;
-	background: url('/images/company/Contact/midSquareRight.svg') no-repeat;
+	background: url('/images/company/Contact/midSquareRight.png') no-repeat;
 	z-index: -1;
 
 	@media (min-width: 375px) {
-		background: url('/images/company/Contact/midSquareRight375.svg') no-repeat;
+		background: url('/images/company/Contact/midSquareRight375.png') no-repeat;
 		right: 0;
 		bottom: 0;
 		width: 185px;
@@ -478,7 +478,7 @@ const MiddleSquareBottom = styled.div`
 		bottom: 0px;
 		width: 384px;
 		height: 118px;
-		background: url('/images/company/Contact/midSquareRight768.svg') no-repeat;
+		background: url('/images/company/Contact/midSquareRight768.png') no-repeat;
 	}
 
 	@media (min-width: 1024px) {
@@ -486,13 +486,13 @@ const MiddleSquareBottom = styled.div`
 		bottom: 0;
 		width: 238px;
 		height: 213px;
-		background: url('/images/company/Contact/midSquareRight1024.svg') no-repeat;
+		background: url('/images/company/Contact/midSquareRight1024.png') no-repeat;
 	}
 
 	@media (min-width: 1440px) {
 		right: 0;
 		bottom: 0;
-		background: url('/images/company/Contact/midSquareRight1920.svg') no-repeat;
+		background: url('/images/company/Contact/midSquareRight1920.png') no-repeat;
 	}
 `;
 
@@ -502,7 +502,7 @@ const MiddleDots = styled.div`
 	top: 0px;
 	width: 158px;
 	height: 149px;
-	background: url('/images/company/Contact/midDots.svg') no-repeat;
+	background: url('/images/company/Contact/midDots.png') no-repeat;
 	z-index: -1;
 	@media (min-width: 375px) {
 		display: none;

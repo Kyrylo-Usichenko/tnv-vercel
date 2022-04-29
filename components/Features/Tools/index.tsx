@@ -340,7 +340,7 @@ const MessageeDec = styled.div`
 	width: 100%;
 
 	&::before {
-		content: url('/images/features/tools/message-dots.svg');
+		content: url('/images/features/tools/message-dots.png');
 		position: absolute;
 		left: 0;
 		bottom: -30px;
@@ -522,7 +522,7 @@ const InvoicesDec = styled.div`
 	width: 100%;
 
 	&::before {
-		content: url('/images/features/tools/invoice-dots.svg');
+		content: url('/images/features/tools/invoice-dots.png');
 		position: absolute;
 		right: 0;
 		top: -7px;

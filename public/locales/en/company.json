@@ -43,5 +43,13 @@
   "сommitmentsTitle": "Our Core Commitments",
   "сommitmentsHeading1": "Every pixel matters",
   "сommitmentsHeading2": "Shut the fluff",
-  "сommitmentsHeading3": "Break things fast"
+  "сommitmentsHeading3": "Break things fast",
+
+  "count1": "Team Members",
+  "count2": "Nationalities",
+  "count3": "Businesses",
+  "count4": "Transactions",
+  "countMillion": "M"
+
+
 }

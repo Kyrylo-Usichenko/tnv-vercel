@@ -4,11 +4,14 @@ import styled from 'styled-components';
 import useAnimate from '../../../hooks/useAnimate';
 
 import FadeIn from '../../common/FadeIn/FadeIn';
-
-const MapFlex: FC = () => {
+import { useTranslation } from 'next-i18next';
+type SmileProps = {
+	locale: string;
+};
+const MapFlex: FC<SmileProps> = ({ locale }) => {
 	const ref = useRef() as RefObject<HTMLDivElement>;
 	const isShow = useAnimate(ref);
-
+	const { t } = useTranslation();
 	return (
 		<Wrapper>
 			<img className='map' src='./images/main/map/map-grey.png' alt='map' />
@@ -89,9 +92,7 @@ const MapFlex: FC = () => {
 							<Line>
 								<img src='./images/main/map/arrow-line-text/arch-line-icon.svg' alt='line' />
 							</Line>
-							<Text>
-								<img src='./images/main/map/arrow-line-text/meet-icon.svg' alt='meet us in' />
-							</Text>
+							<Text locale={locale}>{t('main:formMap')}</Text>
 						</TextBox>
 					</FadeIn>
 				</>
@@ -246,9 +247,15 @@ const Vietnam = styled.div`
 const TextBox = styled.div`
 	position: absolute;
 	top: 49%;
-	left: 70%;
+	left: 69%;
 	width: 20%;
 	height: 20%;
+	@media (min-width: 1024px) {
+		left: 67%;
+	}
+	@media (min-width: 1280px) {
+		left: 69%;
+	}
 `;
 const Arrow = styled.div`
 	position: absolute;
@@ -264,12 +271,31 @@ const Line = styled.div`
 	width: 57%;
 	height: 84%;
 `;
-const Text = styled.div`
+const Text = styled.div<{ locale: string }>`
 	position: absolute;
-	top: 0;
-	right: 0;
+	top: -3px;
 	width: 54%;
 	height: 11%;
+	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 15px;
+	white-space: nowrap;
+	display: flex;
+	align-items: center;
+	z-index: 10;
+	color: #ff474d;
+
+	right: ${({ locale }) => (locale === 'id' ? '17px' : locale === 'vi' ? '30px' : '0')};
+	@media (min-width: 768px) {
+		font-size: 18px;
+		line-height: 22px;
+	}
+	@media (min-width: 1024px) {
+		font-size: 16px;
+		line-height: 20px;
+	}
 `;
 
 export default MapFlex;

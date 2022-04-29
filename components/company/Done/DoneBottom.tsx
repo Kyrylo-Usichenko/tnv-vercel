@@ -9,7 +9,7 @@ const DoneBottom: FC = () => {
 		<Wrapper>
 			<WrapperCon>
 				<Black>
-					<BlackST src='/images/company/Done/blackST.svg' loading='lazy' />
+					<BlackST src='/images/company/Done/blackST.png' loading='lazy' />
 					<Content>
 						<Title>{t('company:doneYear2')}</Title>
 						<List>
@@ -18,8 +18,8 @@ const DoneBottom: FC = () => {
 							<Item>{t('company:doneBlock2Line3')}</Item>
 						</List>
 					</Content>
-					<BlackDots src='/images/company/Done/black-dots.svg' loading='lazy' />
-					<BlackSB src='/images/company/Done/blackSB.svg' loading='lazy' />
+					<BlackDots src='/images/company/Done/black-dots.png' loading='lazy' />
+					<BlackSB src='/images/company/Done/blackSB.png' loading='lazy' />
 				</Black>
 				<RedSide>
 					<SquareRT />
@@ -300,7 +300,7 @@ const Item = styled.li`
 	}
 
 	&::after {
-		content: url('/images/company/Done/min-rec.svg');
+		content: url('/images/company/Done/min-rec.png');
 		position: absolute;
 		left: -3px;
 		top: -5px;
@@ -335,7 +335,7 @@ const BlackSB = styled.img`
 
 const BlackDots = styled.img`
 	position: absolute;
-	right: -44px;
+	right: 0;
 	bottom: 0;
 	z-index: -1;
 

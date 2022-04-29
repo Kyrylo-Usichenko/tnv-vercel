@@ -92,7 +92,7 @@ const Smile: FC = () => {
 										<Content>
 											<TextWrapper>
 												<Text>5000+</Text>
-												<Text>happy businesses</Text>
+												<Text>{t('main:smileContent')}</Text>
 											</TextWrapper>
 											<Line />
 										</Content>

@@ -42,5 +42,11 @@
   "сommitmentsTitle": "ความมุ่งมั่นหลักของเรา",
   "сommitmentsHeading1": "ทุกพิกเซลมีความสำคัญ",
   "сommitmentsHeading2": "ปิดจุดบกพร่อง",
-  "сommitmentsHeading3": "แบ่งแยกสิ่งต่าง ๆ อย่างรวดเร็ว"
+  "сommitmentsHeading3": "แบ่งแยกสิ่งต่าง ๆ อย่างรวดเร็ว",
+
+  "count1": "สมาชิกในทีม คน",
+  "count2": "สัญชาติ",
+  "count3": "ธุรกิจ",
+  "count4": "ธุรกรรม",
+  "countMillion": "ล้าน"
 }
