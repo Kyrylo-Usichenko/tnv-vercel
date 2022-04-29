@@ -329,7 +329,6 @@ export const HeaderButton = styled.button<{ isHeaderScrolled: boolean; Tab: stri
 	&:hover {
 		background-color: ${({ Tab, isHeaderScrolled }) =>
 			Tab === 'Home' && !isHeaderScrolled ? '#ffffffcc' : 'var(--text-primary-hover)'};
-		box-shadow: 8px 8px 20px 0 var(--shadow-color);
 		box-shadow: ${({ Tab, isHeaderScrolled }) =>
 			Tab === 'Home' && !isHeaderScrolled
 				? '14px 4px 20px 0 var(--shadow-color)'
@@ -339,7 +338,6 @@ export const HeaderButton = styled.button<{ isHeaderScrolled: boolean; Tab: stri
 	&:focus {
 		background-color: ${({ Tab, isHeaderScrolled }) =>
 			Tab === 'Home' && !isHeaderScrolled ? 'var(--text-white)' : 'var(--text-primary)'};
-		box-shadow: 8px 4px 20px 0 var(--shadow-color);
 		box-shadow: ${({ Tab, isHeaderScrolled }) =>
 			Tab === 'Home' && !isHeaderScrolled
 				? '12px 2px 20px 0 var(--shadow-color)'
