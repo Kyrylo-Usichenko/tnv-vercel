@@ -3,8 +3,9 @@ import CountUp from 'react-countup';
 import styled from 'styled-components';
 
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
+import { useTranslation } from 'next-i18next';
 
-const Counts: FC = () => {
+const Counts: FC = ({ locale }: string) => {
 	const [isShown01, setIsShown01] = useState(false);
 	const [isShown02, setIsShown02] = useState(false);
 	const [isShown03, setIsShown03] = useState(false);
@@ -21,6 +22,7 @@ const Counts: FC = () => {
 	const isVisible02 = !!entry02?.isIntersecting;
 	const isVisible03 = !!entry03?.isIntersecting;
 	const isVisible04 = !!entry04?.isIntersecting;
+	const { t } = useTranslation();
 
 	return (
 		<Wrapper className='counts'>
@@ -46,7 +48,7 @@ const Counts: FC = () => {
 						)}
 						<span className='accent'>+</span>
 					</Count>
-					<Title>Team Members</Title>
+					<Title>{t('company:count1')}</Title>
 				</Content>
 			</Block1>
 			<Block2 ref={ref02} className='block2'>
@@ -71,7 +73,7 @@ const Counts: FC = () => {
 						)}
 						<span className='accent'>+</span>
 					</Count>
-					<Title>Nationalities</Title>
+					<Title>{t('company:count2')}</Title>
 				</Content>
 			</Block2>
 			<Block3 ref={ref03} className='block3'>
@@ -95,7 +97,7 @@ const Counts: FC = () => {
 						)}
 						<span className='accent'>+</span>
 					</Count>
-					<Title>Businesses</Title>
+					<Title>{t('company:count3')}</Title>
 				</Content>
 			</Block3>
 			<Block4 ref={ref04} className='block4'>
@@ -118,9 +120,9 @@ const Counts: FC = () => {
 						) : (
 							0
 						)}
-						<span className='accent'>M</span>
+						<span className='accent'>{t('company:countMillion')}</span>
 					</Count>
-					<Title>Transactions</Title>
+					<Title>{t('company:count4')}</Title>
 				</Content>
 			</Block4>
 		</Wrapper>

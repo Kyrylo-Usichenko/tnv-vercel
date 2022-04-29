@@ -57,7 +57,7 @@ const Company: NextPage<any> = (props) => {
 				<FeaturesHeader locale={locale} Tab='Company' openModal={openModal} />
 				<Greetings scrollDown={executeScroll} />
 				<Done />
-				<Counts />
+				<Counts locale={locale} />
 				<Teamvio />
 				<Commitments />
 				<Role />
