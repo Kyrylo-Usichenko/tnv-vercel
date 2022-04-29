@@ -56,7 +56,7 @@ const FullConDec = styled.div`
 	}
 
 	&::after {
-		content: url('/images/features/sounds/sounds-dots-375.svg');
+		content: url('/images/features/sounds/sounds-dots-375.png');
 		position: absolute;
 		right: -55px;
 		bottom: -83px;
@@ -75,7 +75,7 @@ const FullConDec = styled.div`
 		}
 
 		&::after {
-			content: url('/images/features/sounds/sounds-dots.svg');
+			content: url('/images/features/sounds/sounds-dots.png');
 			right: 150px;
 			bottom: -15px;
 		}

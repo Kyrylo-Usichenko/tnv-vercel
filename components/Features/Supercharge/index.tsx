@@ -131,7 +131,7 @@ const FullCon = styled.div`
 		height: 484px;
 
 		&::before {
-			content: url('/images/features/supercharge/dots.svg');
+			content: url('/images/features/supercharge/dots.png');
 			position: absolute;
 			display: block;
 			transform: rotate(0);
@@ -183,7 +183,7 @@ const FlexConInfo = styled.div`
 	background-color: var(--bg-black);
 
 	&::before {
-		content: url('/images/features/supercharge/dots.svg');
+		content: url('/images/features/supercharge/dots.png');
 		position: absolute;
 		right: -100px;
 		bottom: 280px;
@@ -288,7 +288,7 @@ const Title = styled.h3`
 	text-align: center;
 
 	&::before {
-		content: url('/images/features/supercharge/title-rec.svg');
+		content: url('/images/features/supercharge/title-rec.png');
 		position: absolute;
 		top: -10px;
 		left: -27px;

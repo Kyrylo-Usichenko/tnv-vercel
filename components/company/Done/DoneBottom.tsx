@@ -300,7 +300,7 @@ const Item = styled.li`
 	}
 
 	&::after {
-		content: url('/images/company/Done/min-rec.svg');
+		content: url('/images/company/Done/min-rec.png');
 		position: absolute;
 		left: -3px;
 		top: -5px;
