@@ -219,6 +219,8 @@ const InvoiceImg = styled.img<{ animate: boolean }>`
 	right: 0%;
 	width: 86%;
 	height: auto;
+	transform: ${({ animate }) => (animate ? 'scale(1)' : 'scale(0.9)')};
+	transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) 0.85s;
 	opacity: 0;
 	animation: ${({ animate }) => (animate ? 'appImgAnim 0.3s ease-in' : 'none')};
 	animation-fill-mode: forwards;
@@ -270,6 +272,8 @@ const Invoice = styled.div<{ animate: boolean }>`
 		display: flex;
 		top: 46px;
 		right: 41px;
+		transform: ${({ animate }) => (animate ? 'scale(1)' : 'scale(0.9)')};
+		transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) 0.85s;
 		opacity: 0;
 		animation: ${({ animate }) => (animate ? 'appImgAnim 0.3s ease-in' : 'none')};
 		animation-fill-mode: forwards;
@@ -397,6 +401,8 @@ const RemindImg = styled.img<{ animate: boolean }>`
 	right: -5.5%;
 	width: 42.6%;
 	height: auto;
+	transform: ${({ animate }) => (animate ? 'scale(1)' : 'scale(0.9)')};
+	transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) 1.35s;
 	opacity: 0;
 	animation: ${({ animate }) => (animate ? 'appImgAnim 0.35s ease-in' : 'none')};
 	animation-fill-mode: forwards;
@@ -448,6 +454,8 @@ const Remind = styled.div<{ animate: boolean }>`
 		display: flex;
 		top: 162px;
 		right: -26px;
+		transform: ${({ animate }) => (animate ? 'scale(1)' : 'scale(0.9)')};
+		transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) 1.35s;
 		opacity: 0;
 		animation: ${({ animate }) => (animate ? 'appImgAnim 0.35s ease-in' : 'none')};
 		animation-fill-mode: forwards;

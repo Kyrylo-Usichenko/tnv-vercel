@@ -66,6 +66,10 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale, openModal, scrollDo
 
 		window.addEventListener('scroll', handleScroll);
 
+		if (window.pageYOffset > 50) {
+			setHeaderScrolled(true);
+		}
+
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
 
