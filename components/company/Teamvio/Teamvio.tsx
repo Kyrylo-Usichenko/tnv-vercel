@@ -291,6 +291,7 @@ const Text = styled.p`
 `;
 
 const Button = styled.a`
+	display: inline-block;
 	border-radius: 18px;
 	background-color: #ffffff;
 	border: none;

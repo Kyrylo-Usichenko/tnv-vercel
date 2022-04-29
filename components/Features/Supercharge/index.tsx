@@ -57,11 +57,7 @@ const Supercharge: FC = () => {
 									<Title>{t('features:introductionMore')}...</Title>
 								</FadeIn>
 							</Elem>
-							<MobileApp
-								src='/images/features/supercharge/1.jpg'
-								srcSet='/images/features/supercharge/1@2x.jpg 2x'
-								alt='app'
-							/>
+							<MobileApp src='/images/features/supercharge/1@2x.jpg' alt='app' />
 						</FlexConGrid>
 					</FeaturesCon>
 				</FlexConInfo>

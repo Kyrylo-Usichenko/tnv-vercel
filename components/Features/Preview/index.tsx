@@ -16,6 +16,7 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 	const { t } = useTranslation();
 
 	const [animate, setAnimate] = useState(false);
+	const [loaded, setLoaded] = useState(false);
 
 	const heading = useRef() as RefObject<HTMLHeadingElement>;
 	const entry = useIntersectionObserver(heading, {});
@@ -69,10 +70,18 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 	useEffect(() => {
 		const isVisible = !!imgEntry?.isIntersecting;
 
-		if (isVisible) {
+		if (isVisible && loaded) {
 			setAnimate(true);
 		}
-	}, [imgEntry]);
+	}, [imgEntry, loaded]);
+
+	useEffect(() => {
+		const onLoadImg = () => {
+			setLoaded(true);
+		};
+
+		window.addEventListener('load', onLoadImg);
+	});
 
 	return (
 		<StyledPreview>
@@ -93,46 +102,22 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 					<PreviewButton type='button' onClick={openModal}>
 						{t('features:heroButton')}
 					</PreviewButton>
-					<PreviewImg>
+					<PreviewImg animate={animate}>
 						<picture>
-							<source
-								srcSet='/images/features/preview/man-1920.jpg 1x, /images/features/preview/man-1920@2x.jpg 2x'
-								media='(min-width: 1920px)'
-							/>
-							<source
-								srcSet='/images/features/preview/man-1440.jpg 1x, /images/features/preview/man-1440@2x.jpg 2x'
-								media='(min-width: 1440px)'
-							/>
-							<source
-								srcSet='/images/features/preview/man-1280.jpg 1x, /images/features/preview/man-1280@2x.jpg 2x'
-								media='(min-width: 1280px)'
-							/>
-							<source
-								srcSet='/images/features/preview/man-1024.jpg 1x, /images/features/preview/man-1024@2x.jpg 2x'
-								media='(min-width: 1024px)'
-							/>
-							<source
-								srcSet='/images/features/preview/man-768.jpg 1x, /images/features/preview/man-768@2x.jpg 2x'
-								media='(min-width: 768px)'
-							/>
+							<source srcSet='/images/features/preview/man-1920@2x.jpg' media='(min-width: 1920px)' />
+							<source srcSet='/images/features/preview/man-1440@2x.jpg' media='(min-width: 1440px)' />
+							<source srcSet='/images/features/preview/man-1280@2x.jpg' media='(min-width: 1280px)' />
+							<source srcSet='/images/features/preview/man-1024@2x.jpg' media='(min-width: 1024px)' />
+							<source srcSet='/images/features/preview/man-768@2x.jpg' media='(min-width: 768px)' />
 							<img
-								src='/images/features/preview/man-375.jpg'
-								srcSet='/images/features/preview/man-375@2x.jpg 2x'
+								src='/images/features/preview/man-375@2x.jpg'
 								alt='Man holding smartphone'
-								width={1190}
-								height={600}
 								ref={mainImg}
 							/>
 						</picture>
-						<AppImg
-							src='/images/features/preview/app-shadow.png'
-							srcSet='/images/features/preview/app-shadow@2x.png 2x'
-							alt='message'
-							animate={animate}
-						/>
+						<AppImg src='/images/features/preview/app-shadow@2x.png' alt='message' animate={animate} />
 						<RequestImg
-							src='/images/features/preview/request.png'
-							srcSet='/images/features/preview/request@2x.png 2x'
+							src='/images/features/preview/request@2x.png'
 							alt='Payment request'
 							animate={animate}
 						/>
@@ -297,16 +282,23 @@ const PreviewButton = styled.button`
 	}
 `;
 
-const PreviewImg = styled.div`
+const PreviewImg = styled.div<{ animate: boolean }>`
 	position: relative;
 	width: 100%;
 	height: 0;
 	padding-bottom: 116%;
+	background-color: #e6e8e7;
+	border-radius: 44px;
 
 	& > picture:nth-child(1) > img {
 		border-radius: 44px;
 		width: 100%;
 		height: auto;
+		opacity: ${({ animate }) => (animate ? '1' : '0')};
+		transition: opacity 0.3s ease-in;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	&::before {
@@ -323,7 +315,7 @@ const PreviewImg = styled.div`
 	}
 
 	@media (min-width: 768px) {
-		padding-bottom: 75%;
+		padding-bottom: 74%;
 	}
 
 	@media (min-width: 1024px) {
@@ -336,6 +328,8 @@ const PreviewImg = styled.div`
 	}
 
 	@media (min-width: 1280px) {
+		border-radius: 48px;
+
 		& > picture:nth-child(1) > img {
 			border-radius: 48px;
 		}

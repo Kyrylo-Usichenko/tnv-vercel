@@ -21,38 +21,18 @@ const Role: FC = () => {
 					<GalleryGrid ref={ref}>
 						<GalleryColumn>
 							<FadeIn duration={500} delay={200} isShow={isShow}>
-								<Img1
-									src='/images/company/Role/1.jpg'
-									srcSet='/images/company/Role/1@2x.jpg 2x'
-									alt='Big city'
-									loading='lazy'
-								/>
+								<Img1 src='/images/company/Role/1@2x.jpg' alt='Big city' loading='lazy' />
 							</FadeIn>
 							<FadeIn duration={500} delay={800} isShow={isShow}>
-								<Img3
-									src='/images/company/Role/3.jpg'
-									srcSet='/images/company/Role/3@2x.jpg 2x'
-									alt='Big city'
-									loading='lazy'
-								/>
+								<Img3 src='/images/company/Role/3@2x.jpg' alt='Big city' loading='lazy' />
 							</FadeIn>
 						</GalleryColumn>
 						<GalleryColumn>
 							<FadeIn duration={500} delay={500} isShow={isShow}>
-								<Img2
-									src='/images/company/Role/2.jpg'
-									srcSet='/images/company/Role/2@2x.jpg 2x'
-									alt='Big city'
-									loading='lazy'
-								/>
+								<Img2 src='/images/company/Role/2@2x.jpg' alt='Big city' loading='lazy' />
 							</FadeIn>
 							<FadeIn duration={500} delay={1100} isShow={isShow}>
-								<Img4
-									src='/images/company/Role/4.jpg'
-									srcSet='/images/company/Role/4@2x.jpg 2x'
-									alt='Big city'
-									loading='lazy'
-								/>
+								<Img4 src='/images/company/Role/4@2x.jpg' alt='Big city' loading='lazy' />
 							</FadeIn>
 						</GalleryColumn>
 					</GalleryGrid>
