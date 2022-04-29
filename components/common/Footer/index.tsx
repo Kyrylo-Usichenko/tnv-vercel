@@ -37,7 +37,9 @@ const Footer: FC<Props> = ({ background }) => {
 								<Link href={'/company'}>{t('main:footerCompany')}</Link>
 							</FooterLi>
 							<FooterLi>
-								<Link href={'/'}>{t('main:footerLogin')}</Link>
+								<a href={'http://dashboard.tinvio.com'} target='_blank'>
+									{t('main:footerLogin')}
+								</a>
 							</FooterLi>
 						</FooterUl>
 					</FirstLineHalf>

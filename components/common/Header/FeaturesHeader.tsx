@@ -40,8 +40,10 @@ import useOnClickOutside from '../../../hooks/useOnClickOutside';
 type PropsType = {
 	Tab: string;
 	locale: string;
+	openModal?: () => void;
+	scrollDown?: () => void;
 };
-const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
+const Header: FunctionComponent<PropsType> = ({ Tab, locale, openModal, scrollDown }) => {
 	const [isHeaderScrolled, setHeaderScrolled] = useState(false);
 	const [dropDawn, setDropDawn] = useState(false);
 	const [isMenuOpend, setMenuOpend] = useState(false);
@@ -71,6 +73,11 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 			: Tab === 'Legal'
 			? 'legal'
 			: '/';
+
+	const btnClick = () => {
+		if (openModal) openModal();
+		if (scrollDown) scrollDown();
+	};
 
 	return (
 		<HeaderStyled isHeaderScrolled={isHeaderScrolled} isMenuOpend={isMenuOpend}>
@@ -152,11 +159,14 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 						</Nav>
 
 						<ButtonWrapper>
-							<Link href={'/'}>
-								<HeaderButton isHeaderScrolled={isHeaderScrolled} Tab={Tab}>
-									{t('header:GetStarted')}
-								</HeaderButton>
-							</Link>
+							<HeaderButton
+								isHeaderScrolled={isHeaderScrolled}
+								Tab={Tab}
+								type='button'
+								onClick={btnClick}
+							>
+								{t('header:GetStarted')}
+							</HeaderButton>
 						</ButtonWrapper>
 
 						<Burger onClick={menuToggle}>
