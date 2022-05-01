@@ -738,18 +738,21 @@ const DotsRight = styled.div`
 const CardContent = styled.div`
 	z-index: 2;
 	display: flex;
-	flex-direction: column;
+	height: 100%;
+	justify-content: center;
 	align-items: center;
-	padding: 8px 10px;
+	flex-direction: column;
+	padding: 4px 10px;
+
 	@media (min-width: 768px) {
-		padding: 25px 24px;
+		padding: 10px 24px;
 	}
 	@media (min-width: 1280px) {
 		z-index: 2;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding: 25px 40px;
+		padding: 10px 40px;
 	}
 `;
 const CardTitle = styled.p`
