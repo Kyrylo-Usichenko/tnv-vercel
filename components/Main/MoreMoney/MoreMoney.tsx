@@ -4,7 +4,7 @@ import styled, { keyframes, css } from 'styled-components';
 import Image from 'next/image';
 
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
-import { useTranslation } from 'next-i18next';
+import { i18n, useTranslation } from 'next-i18next';
 
 import { FeaturesCon } from '../../common/Container/Container';
 
@@ -27,9 +27,12 @@ interface IMoreMoneyItem {
 	isActive: boolean;
 	textLines: Array<string>;
 }
+const THAI_LANGUAGE = 'th';
 
 const MoreMoney: FC = () => {
+	const [isIncreased, setIsIncreased] = useState(false);
 	const { t } = useTranslation();
+
 	const tabsImages = [
 		{
 			name: 'Chats',
@@ -65,6 +68,11 @@ const MoreMoney: FC = () => {
 	const typeRef = useRef() as RefObject<HTMLSpanElement>;
 	const entry = useIntersectionObserver(typeRef, {});
 	const isVisible = !!entry?.isIntersecting;
+
+	useEffect(() => {
+		if (i18n?.language === THAI_LANGUAGE) return setIsIncreased(true);
+		setIsIncreased(false);
+	}, []);
 
 	useEffect(() => {
 		if (isVisible && isClicked) {
@@ -117,10 +125,17 @@ const MoreMoney: FC = () => {
 			<FeaturesCon>
 				<Inner>
 					<Title>
-						{t('main:moreMoneyTitle')}
-						{'. '}
+						<span style={{ position: 'relative', zIndex: '1' }}>
+							{t('main:moreMoneyTitle')}
+							{'. '}
+						</span>
 						<TitleWrap>
-							<TitleSpan ref={typeRef} isVisible={isVisible} isBackwards={isBackwards}>
+							<TitleSpan
+								ref={typeRef}
+								isVisible={isVisible}
+								isBackwards={isBackwards}
+								isIncreased={isIncreased}
+							>
 								{text}
 							</TitleSpan>
 						</TitleWrap>
@@ -471,54 +486,58 @@ const TitleWrap = styled.div`
 		text-align: left;
 	}
 `;
-const TitleSpan = styled.span<{ isVisible: boolean; isBackwards: boolean }>`
+const TitleSpan = styled.span<{ isVisible: boolean; isBackwards: boolean; isIncreased: boolean }>`
 	color: #ff474d;
 	margin: 0;
 	padding: 0;
 	position: relative;
 	white-space: nowrap;
-	&:after {
-		background: #212121;
-		height: 27px;
-		width: 2px;
+	width: max-content;
+
+	&::before,
+	&::after {
 		content: '';
 		position: absolute;
+		top: ${({ isIncreased }) => (isIncreased ? '-7px' : '3px')};
 		bottom: 0;
 		right: -5px;
+		left: 0;
+		height: ${({ isIncreased }) => (isIncreased ? '44px' : '32px')};
 
 		@media (min-width: 768px) {
-			height: 30px;
+			height: ${({ isIncreased }) => (isIncreased ? '50px' : '36px')};
+			top: ${({ isIncreased }) => (isIncreased ? '-9px' : '3px')};
 		}
 		@media (min-width: 1024px) {
-			background: #212121;
-			height: 40px;
-			width: 2px;
-			content: '';
-			position: absolute;
-			bottom: 0;
-			right: -5px;
+			height: ${({ isIncreased }) => (isIncreased ? '54px' : '40px')};
+			top: ${({ isIncreased }) => (isIncreased ? '-9px' : '3px')};
+		}
+		@media (min-width: 1920px) {
+			height: ${({ isIncreased }) => (isIncreased ? '65px' : '53px')};
+			top: ${({ isIncreased }) => (isIncreased ? '-11px' : '3px')};
 		}
 	}
 
-	width: max-content;
+	&:after {
+		width: 2px;
+		background: #212121;
+
+		// @media (min-width: 768px) {
+		// 	height: 30px;
+		// }
+		// @media (min-width: 1024px) {
+		// 	background: #212121;
+		// 	height: ${({ isIncreased }) => (isIncreased ? '54px' : '40px')};
+		// 	width: 2px;
+		// 	content: '';
+		// 	position: absolute;
+		// 	top: ${({ isIncreased }) => (isIncreased ? '-8px' : '3px')};
+		// }
+	}
 
 	${({ isVisible, isBackwards }) =>
 		isVisible &&
 		css`
-			&::before,
-			&::after {
-				content: '';
-				position: absolute;
-				top: 6px;
-				right: 0;
-				bottom: 0;
-				left: 0;
-
-				@media (min-width: 1280px) {
-					top: 9px;
-				}
-			}
-
 			&::before {
 				background: #ffffff;
 				animation: ${isBackwards ? typewriterBack : typewriter} ${TYPE_WRITE_SPEED}s
