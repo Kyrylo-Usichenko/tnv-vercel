@@ -7,6 +7,7 @@ import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 import { FeaturesCon } from '../../common/Container/Container';
 import LineL from './LineL';
 import LineR from './LineR';
+import RedButton from '../../common/Buttons/Button';
 
 type PreviewProps = {
 	openModal: () => void;
@@ -239,41 +240,11 @@ const PreviewText = styled.p`
 	}
 `;
 
-const PreviewButton = styled.button`
-	font-family: 'Gilroy', sans-serif;
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 20px;
+const PreviewButton = styled(RedButton)`
 	margin-bottom: 48px;
-	width: 188px;
-	height: 48px;
-	color: var(--text-white);
-	text-align: center;
-	border: none;
-	border-radius: 16px;
-	background-color: var(--text-primary);
-	cursor: pointer;
-	transition: all 0.3s ease;
-
-	&:hover {
-		background-color: var(--text-primary-hover);
-		box-shadow: 8px 8px 20px 0 var(--shadow-color);
-	}
-
-	&:focus {
-		background-color: var(--text-primary);
-		box-shadow: 8px 4px 20px 0 var(--shadow-color);
-	}
 
 	@media (min-width: 768px) {
 		margin-bottom: 66px;
-	}
-
-	@media (min-width: 1920px) {
-		font-size: 20px;
-		line-height: 25px;
-		width: 219px;
-		height: 56px;
 	}
 `;
 

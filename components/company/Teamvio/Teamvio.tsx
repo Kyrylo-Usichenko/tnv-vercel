@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
+import LightLink from '../../common/Links/LightLink';
 
 const Teamvio: FC = () => {
 	const { t } = useTranslation();
@@ -32,9 +33,15 @@ const Teamvio: FC = () => {
 							<JoinSquareRight />
 							<JoinDots />
 							<Text>{t('company:teamvioText')}</Text>
-							<Button href='https://www.linkedin.com/company/tinvio/jobs/' target='_blank'>
+							<LightLink
+								width={210}
+								fSize={18}
+								lHeight={22}
+								href='https://www.linkedin.com/company/tinvio/jobs/'
+								target='_blank'
+							>
 								{t('company:teamvioButton')}
-							</Button>
+							</LightLink>
 						</Join>
 						<MobileImg src='/images/company/Teamvio/3@2x.jpg' alt='people' loading='lazy' />
 						<Img4 src='/images/company/Teamvio/4@2x.jpg' alt='people' loading='lazy' />
@@ -287,40 +294,6 @@ const Text = styled.p`
 		font-size: 24px;
 		line-height: 29px;
 		max-width: 310px;
-	}
-`;
-
-const Button = styled.a`
-	display: inline-block;
-	border-radius: 18px;
-	background-color: #ffffff;
-	border: none;
-	font-family: 'Gilroy';
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 20px;
-	text-decoration: none;
-	padding: 14px 0;
-	width: 188px;
-	color: #212121;
-	cursor: pointer;
-	transition: all 0.3s ease;
-
-	&:hover {
-		background-color: #ffffffcc;
-		box-shadow: 14px 4px 20px 0 var(--shadow-color);
-	}
-
-	&:focus {
-		background-color: var(--text-white);
-		box-shadow: 12px 2px 20px 0 var(--shadow-color);
-	}
-
-	@media (min-width: 1920px) {
-		font-size: 20px;
-		line-height: 25px;
-		padding: 16px 0;
-		width: 210px;
 	}
 `;
 

@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
+import RedButton from '../../common/Buttons/Button';
 
 type ReadyProps = {
 	openModal: () => void;
@@ -18,9 +19,9 @@ const Ready: FC<ReadyProps> = ({ openModal }) => {
 					<ReadyCon>
 						<ReadyText>{t('features:ctaReady')}</ReadyText>
 						<ReadyTitle>{t('features:ctaTitle')}</ReadyTitle>
-						<ReadyButton type='button' onClick={openModal}>
+						<RedButton type='button' onClick={openModal}>
 							{t('features:ctaButton')}
-						</ReadyButton>
+						</RedButton>
 					</ReadyCon>
 				</FeaturesCon>
 			</FlexConInfo>
@@ -244,41 +245,6 @@ const ReadyText = styled.p`
 	@media (min-width: 1920px) {
 		font-size: 24px;
 		line-height: 33px;
-	}
-`;
-
-const ReadyButton = styled.button`
-	width: 188px;
-	height: 48px;
-	padding: 14px;
-	background: #ff474d;
-	border: none;
-	border-radius: 18px;
-	text-align: center;
-	font-family: 'Gilroy';
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 20px;
-	color: #ffffff;
-	cursor: pointer;
-	transition: all 0.3s ease;
-
-	&:hover {
-		background-color: var(--text-primary-hover);
-		box-shadow: 8px 8px 20px 0 var(--shadow-color);
-	}
-
-	&:focus {
-		background-color: var(--text-primary);
-		box-shadow: 8px 4px 20px 0 var(--shadow-color);
-	}
-
-	@media (min-width: 1920px) {
-		font-size: 20px;
-		line-height: 25px;
-		padding: 16px 0;
-		width: 219px;
-		height: 56px;
 	}
 `;
 

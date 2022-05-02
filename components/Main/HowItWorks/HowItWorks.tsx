@@ -8,6 +8,7 @@ import { FeaturesCon } from '../../common/Container/Container';
 import FadeIn from '../../common/FadeIn/FadeIn';
 import Line1 from './Line1';
 import Line2 from './Line2';
+import LightButton from '../../common/Buttons/LightButton';
 
 const HowItWorks: FC = () => {
 	const { t } = useTranslation();
@@ -65,7 +66,7 @@ const HowItWorks: FC = () => {
 					<Info>
 						<InfoTitle>{t('main:howItWorksTitle')}</InfoTitle>
 						<InfoText>{t('main:howItWorksContent')}</InfoText>
-						<Button>
+						<Button width={220} fSize={18} lHeight={22}>
 							<img width='12px' height='14px' src='icons/main/howItWorks/Play.svg' alt='' />
 							<ButtonText>{t('main:howItWorksButton')}</ButtonText>
 						</Button>
@@ -211,34 +212,17 @@ const InfoText = styled.p`
 	}
 `;
 
-const Button = styled.button`
-	width: 220px;
-	height: 56px;
-	background: #ffffff;
-	border-radius: 18px;
-	border: none;
+const Button = styled(LightButton)`
 	margin: 0 auto;
-	padding: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	cursor: pointer;
-	transition: all 0.3s ease;
-
-	&:hover {
-		background-color: #ffffffcc;
-		box-shadow: 14px 4px 20px 0 var(--shadow-color);
-	}
-
-	&:focus {
-		background-color: var(--text-white);
-		box-shadow: 12px 2px 20px 0 var(--shadow-color);
-	}
 
 	@media (min-width: 1024px) {
 		margin: 0;
 	}
 `;
+
 const ButtonText = styled.p`
 	font-family: 'Gilroy';
 	font-style: normal;
@@ -251,7 +235,8 @@ const ButtonText = styled.p`
 	padding: 0;
 	font-size: 14px;
 	line-height: 17px;
-	@media (min-width: 768px) {
+
+	@media (min-width: 1920px) {
 		font-size: 18px;
 		line-height: 22px;
 	}

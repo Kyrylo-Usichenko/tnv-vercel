@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
+import LightButton from '../../common/Buttons/LightButton';
 
 type SoundsProps = {
 	openModal: () => void;
@@ -218,49 +219,13 @@ const SoundsTitle = styled.h3`
 		max-width: 850px;
 	}
 `;
-//
-// const Br = styled.br`
-// 	@media (min-width: 1024px) {
-// 		display: none;
-// 	}
-// `;
 
-const SoundsButton = styled.button`
-	width: 188px;
-	height: 48px;
-	padding: 14px;
-	background: #ffffff;
-	border: none;
-	border-radius: 18px;
-	text-align: center;
-	font-family: 'Gilroy';
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 20px;
-	color: #212121;
-	cursor: pointer;
-	transition: all 0.3s ease;
-
-	&:hover {
-		background-color: #ffffffcc;
-		box-shadow: 14px 4px 20px 0 var(--shadow-color);
-	}
-
-	&:focus {
-		background-color: var(--text-white);
-		box-shadow: 12px 2px 20px 0 var(--shadow-color);
-	}
-
+const SoundsButton = styled(LightButton)`
 	@media (min-width: 1024px) {
 		flex: 0 0 188px;
 	}
 
 	@media (min-width: 1920px) {
-		font-size: 18.6512px;
-		line-height: 23px;
-		padding: 16px 0;
-		width: 219px;
-		height: 56px;
 		flex: 0 0 219px;
 	}
 `;

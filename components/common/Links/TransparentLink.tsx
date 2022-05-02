@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 
-const StyledButton = styled.button<{ width: number; fSize: number; lHeight: number }>`
+const StyledLink = styled.a<{ width: number; fSize: number; lHeight: number }>`
+	display: inline-block;
 	font-size: 16px;
 	line-height: 20px;
 	font-family: 'Gilroy', sans-serif;
@@ -9,21 +10,24 @@ const StyledButton = styled.button<{ width: number; fSize: number; lHeight: numb
 	width: 188px;
 	height: 48px;
 	text-align: center;
+	text-decoration: none;
 	padding: 14px 0;
-	border: none;
+	border: 1px solid #d2d2d2;
+	background-color: transparent;
 	border-radius: 16px;
 	color: var(--text-main);
-	background-color: var(--text-white);
 	cursor: pointer;
 	transition: all 0.3s ease;
 
 	&:hover {
 		background-color: #e0e0e1;
 		box-shadow: 14px 4px 20px 0 var(--shadow-color);
+		border: 1px solid #e0e0e1;
 	}
 
 	&:focus {
 		background-color: #e0e0e1;
+		border: 1px solid #e0e0e1;
 	}
 
 	@media (min-width: 1920px) {
@@ -36,19 +40,19 @@ const StyledButton = styled.button<{ width: number; fSize: number; lHeight: numb
 	}
 `;
 
-type LightButtonProps = {
+type TransparentLinkProps = {
 	width: number;
 	fSize: number;
 	lHeight: number;
 	[x: string]: any;
 };
 
-const LightButton: FC<LightButtonProps> = ({ children, width, fSize, lHeight, ...props }) => {
+const TransparentLink: FC<TransparentLinkProps> = ({ children, width, fSize, lHeight, ...props }) => {
 	return (
-		<StyledButton width={width} fSize={fSize} lHeight={lHeight} {...props}>
+		<StyledLink width={width} fSize={fSize} lHeight={lHeight} {...props}>
 			{children}
-		</StyledButton>
+		</StyledLink>
 	);
 };
 
-export default LightButton;
+export default TransparentLink;
