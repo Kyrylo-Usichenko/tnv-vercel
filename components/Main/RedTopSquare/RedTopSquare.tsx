@@ -50,7 +50,7 @@ const RedTopSquare: FC = () => {
 		<BigRed>
 			<SmallRed>
 				<Null ref={mainDiv}>
-					<AppImage ref={pic1} src='/images/main/preview/app.png' />
+					<AppImage ref={pic1} src='/images/main/preview/app2x.png' />
 					<Phone ref={pic2} src='/images/main/preview/phone.png' />
 					<DotsLeft />
 					<DotsBottom />
