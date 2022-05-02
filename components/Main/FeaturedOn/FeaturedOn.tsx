@@ -289,14 +289,18 @@ export const Stars = styled.div`
 		top: 45px;
 	}
 	@media (max-width: 950px) {
-		//display: none;
 		right: 0;
 		top: 108px;
 	}
+	@media (max-width: 768px) {
+		top: 160px;
+	}
+	@media (max-width: 575px) {
+		top: 305px;
+	}
 	@media (max-width: 425px) {
-		//display: none;
-		right: 0;
-		top: 389px;
+		right: -8px;
+		top: 438px;
 		background: url('/images/main/featuredOn/stars375.svg') no-repeat;
 		background-size: contain;
 		width: 353px;
