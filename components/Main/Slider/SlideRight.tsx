@@ -26,10 +26,10 @@ const ImageBlock = styled.div`
 		max-width: 100%;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 425px) {
 		order: -1;
 		width: 100%;
-		padding: 0 0 297px;
+		padding: 0 0 239px;
 	}
 `;
 

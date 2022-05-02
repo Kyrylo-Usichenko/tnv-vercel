@@ -56,6 +56,9 @@ const SliderText = styled.p`
 		font-size: 16px;
 		line-height: 23px;
 	}
+	@media (max-width: 425px) {
+		margin: 0 0 16px 0;
+	}
 `;
 
 const SliderBottom = styled.div`
@@ -68,6 +71,10 @@ const SliderBottom = styled.div`
 	@media (max-width: 1024px) {
 		width: 100%;
 	}
+
+	@media (max-width: 425px) {
+		padding-top: 20px;
+	}
 `;
 
 const Name = styled.p`
@@ -79,6 +86,11 @@ const Name = styled.p`
 	font-size: 18px;
 	line-height: 22px;
 	color: #212121;
+
+	@media (max-width: 425px) {
+		font-size: 16px;
+		line-height: 20px;
+	}
 `;
 const Text = styled.p`
 	padding: 0;
@@ -92,6 +104,11 @@ const Text = styled.p`
 	align-items: center;
 	text-transform: uppercase;
 	color: #5c5c5c;
+
+	@media (max-width: 425px) {
+		font-size: 10px;
+		line-height: 12px;
+	}
 `;
 
 const Content = styled.div`
