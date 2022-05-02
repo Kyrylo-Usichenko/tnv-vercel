@@ -665,7 +665,7 @@ const BottomButton = styled.div`
 		}
 
 		@media (min-width: 1024px) {
-			margin: 32px 0 0;
+			margin: 57px 0 0;
 		}
 
 		@media (min-width: 1920px) {

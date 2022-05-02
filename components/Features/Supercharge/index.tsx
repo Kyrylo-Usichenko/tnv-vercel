@@ -221,7 +221,7 @@ const FlexConGrid = styled.div`
 	grid-template-rows: 1fr;
 	row-gap: 53px;
 	padding-top: 48px;
-	margin-bottom: 36px;
+	margin-bottom: 0px;
 
 	@media (min-width: 768px) {
 		grid-template-columns: repeat(2, 236px);

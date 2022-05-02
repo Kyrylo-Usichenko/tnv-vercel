@@ -98,9 +98,11 @@ const Tools: FC = () => {
 
 const StyledTools = styled.section`
 	margin-bottom: 120px;
+	margin-top: 36px;
 
 	@media (min-width: 768px) {
 		margin-bottom: 140px;
+		margin-top: 0;
 	}
 
 	@media (min-width: 1024px) {
