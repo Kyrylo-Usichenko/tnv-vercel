@@ -637,7 +637,7 @@ const Button = styled.a<{ width: string; isActive: boolean }>`
 
 const BottomButton = styled.div`
 	& > a {
-		display: inline-block;
+		display: block;
 		font-size: 16px;
 		line-height: 20px;
 		font-family: 'Gilroy', sans-serif;
