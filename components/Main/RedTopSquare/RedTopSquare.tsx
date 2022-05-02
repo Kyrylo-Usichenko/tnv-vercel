@@ -69,7 +69,7 @@ const Null = styled.div`
 const BigRed = styled.div`
 	width: 1031.82px;
 	height: 1049.93px;
-	background: rgba(255, 71, 77, 0.6);
+	background: rgba(251, 36, 43, 0.6);
 	border-radius: 136.463px;
 	transform: rotate(-45deg);
 	position: absolute;
@@ -95,7 +95,7 @@ const BigRed = styled.div`
 	@media (min-width: 1024px) {
 		width: 1031.82px;
 		height: 1049.93px;
-		background: rgba(255, 71, 77, 0.6);
+		background: #ff474d;
 		border-radius: 136.463px;
 		transform: rotate(-45deg);
 		position: absolute;
