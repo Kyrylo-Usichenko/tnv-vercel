@@ -34,21 +34,9 @@ const Greetings: FC<GreetingsProps> = ({ scrollDown }) => {
 					</Info>
 					<PhoneWrapper>
 						<picture>
-							<source
-								srcSet='/images/company/Greetings/ph-1024.png 1x, /images/company/Greetings/ph-1024@2x.png 2x'
-								media='(min-width: 1024px)'
-							/>
-							<source
-								srcSet='/images/company/Greetings/ph-768.png 1x, /images/company/Greetings/ph-768@2x.png 2x'
-								media='(min-width: 768px)'
-							/>
-							<Phone
-								width='398'
-								height='658'
-								src='/images/company/Greetings/ph-375.png'
-								srcSet='/images/company/Greetings/ph-375@2x.png 2x'
-								alt='app'
-							/>
+							<source srcSet='/images/company/Greetings/ph-1024@2x.png' media='(min-width: 1024px)' />
+							<source srcSet='/images/company/Greetings/ph-768@2x.png' media='(min-width: 768px)' />
+							<Phone width='398' height='658' src='/images/company/Greetings/ph-375@2x.png' alt='app' />
 						</picture>
 						<Dec1></Dec1>
 						<RSquare />
