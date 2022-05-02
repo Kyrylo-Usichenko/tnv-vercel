@@ -161,8 +161,11 @@ const Img = styled.img`
 `;
 
 const Img1 = styled(Img)`
+	aspect-ratio: 3 / 3.32;
+
 	@media (min-width: 768px) {
 		height: 425px;
+		aspect-ratio: auto;
 	}
 
 	@media (min-width: 1024px) {
@@ -213,8 +216,11 @@ const Img3 = styled(Img)`
 `;
 
 const Img4 = styled(Img)`
+	aspect-ratio: 3 / 3.32;
+
 	@media (min-width: 768px) {
 		height: 329px;
+		aspect-ratio: auto;
 	}
 
 	@media (min-width: 1024px) {
@@ -236,6 +242,7 @@ const MobileImg = styled.img`
 	height: auto;
 	object-fit: cover;
 	border-radius: 32px;
+	aspect-ratio: 3 / 2.74;
 
 	@media (min-width: 768px) {
 		display: none;

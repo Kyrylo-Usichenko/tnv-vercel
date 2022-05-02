@@ -109,6 +109,11 @@ const GalleryImg = styled.img`
 	border-radius: 32px;
 	width: 100%;
 	object-fit: cover;
+	aspect-ratio: 4 / 3.04;
+
+	@media (min-width: 768px) {
+		aspect-ratio: auto;
+	}
 `;
 
 const Img1 = styled(GalleryImg)`
@@ -207,6 +212,7 @@ const GalleryTitle = styled.h2`
 `;
 
 const Explore = styled(TransparentLink)`
+	display: block;
 	margin: 0 auto 48px auto;
 
 	@media (min-width: 768px) {
