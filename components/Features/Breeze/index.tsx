@@ -31,7 +31,12 @@ const Breeze: FC = () => {
 			<FeaturesCon>
 				<BreezeCon>
 					<BreezeTitle>{t('features:ordersTitle')}</BreezeTitle>
-					<BreezeText>{t('features:ordersText')}</BreezeText>
+					<BreezeText>
+						{t('features:ordersText')}
+						<BreezeTextDots>
+							<Image src={'/images/features/breeze/breeze-dots-l.webp'} width={381} height={295} />
+						</BreezeTextDots>
+					</BreezeText>
 					<BreezeBlock1 ref={mainBlock}>
 						<BreezeBlock2>
 							<Block>
@@ -74,7 +79,14 @@ const Breeze: FC = () => {
 									</DelCon>
 									<DelDate>Tue, 27 Oct</DelDate>
 								</Del>
-								<ManDec src='/images/features/breeze/man-dec.svg' alt='stars' animate={animate} />
+								<ManDec animate={animate}>
+									<Image
+										src='/images/features/breeze/man-dec.svg'
+										alt='stars'
+										width={73}
+										height={67}
+									/>
+								</ManDec>
 								<Man animate={animate}>
 									<ImgWrap>
 										<Image
@@ -85,7 +97,14 @@ const Breeze: FC = () => {
 										/>
 									</ImgWrap>
 								</Man>
-								<WomendDec src='/images/features/breeze/women-dec.svg' alt='stars' animate={animate} />
+								<WomendDec animate={animate}>
+									<Image
+										src='/images/features/breeze/women-dec.svg'
+										alt='stars'
+										width={91}
+										height={76}
+									/>
+								</WomendDec>
 								<Women animate={animate}>
 									<ImgWrap>
 										<Image
@@ -105,7 +124,22 @@ const Breeze: FC = () => {
 									<OrderButton>Confirm Order (9 Items)</OrderButton>
 								</Order>
 							</Block>
-							<BreezeBlock2Dec0></BreezeBlock2Dec0>
+							<BreezeBlock2Dec0>
+								<DotsM>
+									<Image
+										src={'/images/features/breeze/breeze-dots-m.webp'}
+										width={261}
+										height={200}
+									/>
+								</DotsM>
+								<DotsR>
+									<Image
+										src={'/images/features/breeze/breeze-dots-r.webp'}
+										width={426}
+										height={325}
+									/>
+								</DotsR>
+							</BreezeBlock2Dec0>
 						</BreezeBlock2>
 					</BreezeBlock1>
 				</BreezeCon>
@@ -189,34 +223,36 @@ const BreezeText = styled.p`
 
 	@media (min-width: 1024px) {
 		max-width: 340px;
-
-		&::before {
-			content: url('/images/features/breeze/breeze-dots-l.webp');
-			position: absolute;
-			left: -250px;
-			bottom: -215px;
-			z-index: -1;
-		}
 	}
 
 	@media (min-width: 1280px) {
 		max-width: 442px;
 	}
 
-	@media (min-width: 1440px) {
-		&::before {
-			left: -160px;
-		}
-	}
-
 	@media (min-width: 1920px) {
 		font-size: 18px;
 		line-height: 25px;
 		max-width: 515px;
+	}
+`;
 
-		&::before {
-			left: -100px;
-		}
+const BreezeTextDots = styled.span`
+	display: none;
+
+	@media (min-width: 1024px) {
+		display: inline-block;
+		position: absolute;
+		left: -250px;
+		bottom: -215px;
+		z-index: -1;
+	}
+
+	@media (min-width: 1440px) {
+		left: -160px;
+	}
+
+	@media (min-width: 1920px) {
+		left: -100px;
 	}
 `;
 
@@ -274,7 +310,7 @@ const Block = styled.div`
 	transform: rotate(45deg);
 `;
 
-const WomendDec = styled.img<{ animate: boolean }>`
+const WomendDec = styled.div<{ animate: boolean }>`
 	position: absolute;
 	top: 94px;
 	right: -21px;
@@ -304,7 +340,7 @@ const WomendDec = styled.img<{ animate: boolean }>`
 	}
 `;
 
-const ManDec = styled.img<{ animate: boolean }>`
+const ManDec = styled.div<{ animate: boolean }>`
 	display: none;
 
 	@media (min-width: 768px) {
@@ -698,33 +734,32 @@ const BreezeBlock2Dec0 = styled.div`
 	height: 100%;
 	transform: rotate(45deg);
 	z-index: -1;
+`;
 
-	&::after {
-		content: url('/images/features/breeze/breeze-dots-m.webp');
-		position: absolute;
-		left: -9px;
-		bottom: -54px;
-		z-index: -3;
-	}
+const DotsM = styled.div`
+	position: absolute;
+	left: -9px;
+	bottom: -54px;
+	z-index: -3;
 
 	@media (min-width: 768px) {
-		&::before {
-			content: url('/images/features/breeze/breeze-dots-r.webp');
-			position: absolute;
-			right: -290px;
-			top: -130px;
-		}
+		left: -30px;
+		bottom: -58px;
+	}
+`;
 
-		&::after {
-			left: -30px;
-			bottom: -58px;
-		}
+const DotsR = styled.div`
+	display: none;
+
+	@media (min-width: 768px) {
+		display: block;
+		position: absolute;
+		right: -290px;
+		top: -130px;
 	}
 
 	@media (min-width: 1024px) {
-		&::before {
-			right: -260px;
-		}
+		right: -260px;
 	}
 `;
 

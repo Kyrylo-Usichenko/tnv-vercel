@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import Image from 'next/image';
 import styled from 'styled-components';
 
 import { FeaturesCon } from '../../common/Container/Container';
@@ -20,6 +21,14 @@ const Faq: FC = () => {
 				<Panel name={t('features:question4')}>{t('features:answer4')}</Panel>
 				<Panel name={t('features:question5')}>{t('features:answer5')}</Panel>
 			</FeaturesCon>
+			<DotsL>
+				<div>
+					<Image src={'/images/features/faq/faq-dots-l.webp'} alt='Dots' layout='fill' objectFit='cover' />
+				</div>
+			</DotsL>
+			<DotsR>
+				<Image src={'/images/features/faq/faq-dots-r.webp'} alt='Dots' width={248} height={192} />
+			</DotsR>
 		</StyledFaq>
 	);
 };
@@ -27,61 +36,63 @@ const Faq: FC = () => {
 const StyledFaq = styled.section`
 	padding-bottom: 80px;
 	position: relative;
+`;
 
-	&::before {
-		content: url('/images/features/faq/faq-dots-l-min.webp');
-		position: absolute;
-		top: 90px;
-		left: 0;
+const DotsL = styled.div`
+	position: absolute;
+	top: 90px;
+	left: 0;
+	width: 99px;
+	height: 130px;
+
+	& > div {
+		position: relative;
+		height: inherit;
+		width: inherit;
 	}
 
 	@media (min-width: 768px) {
-		&::before {
-			content: url('/images/features/faq/faq-dots-l.webp');
-			top: 220px;
-			left: -150px;
-		}
+		top: 220px;
+		left: -150px;
+		width: 351px;
+		height: 268px;
 	}
 
 	@media (min-width: 1024px) {
-		&::before {
-			top: 200px;
-			left: -320px;
-		}
+		top: 200px;
+		left: -320px;
 	}
 
 	@media (min-width: 1280px) {
-		&::after {
-			content: url('/images/features/faq/faq-dots-r.webp');
-			position: absolute;
-			right: -100px;
-			top: 486px;
-		}
-
-		&::before {
-			top: 200px;
-			left: -250px;
-		}
+		top: 200px;
+		left: -250px;
 	}
 
 	@media (min-width: 1440px) {
-		&::before {
-			left: -180px;
-		}
-
-		&::after {
-			right: 0;
-		}
+		left: -180px;
 	}
 
 	@media (min-width: 1920px) {
-		&::before {
-			left: 60px;
-		}
+		left: 60px;
+	}
+`;
 
-		&::after {
-			right: 150px;
-		}
+const DotsR = styled.div`
+	display: none;
+
+	@media (min-width: 1280px) {
+		display: block;
+		position: absolute;
+		right: -100px;
+		top: 486px;
+	}
+
+	@media (min-width: 1440px) {
+		right: 0;
+	}
+
+	@media (min-width: 1920px) {
+		right: 150px;
 	}
 `;
 

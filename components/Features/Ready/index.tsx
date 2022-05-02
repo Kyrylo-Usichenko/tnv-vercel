@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import Image from 'next/image';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
@@ -14,7 +15,14 @@ const Ready: FC<ReadyProps> = ({ openModal }) => {
 	return (
 		<StyledReady>
 			<FlexConInfo>
-				<FullConDec></FullConDec>
+				<FullConDec>
+					<DotsL>
+						<Image src={'/images/features/ready/ready-dots-l.webp'} alt='Dots' width={374} height={143} />
+					</DotsL>
+					<DotsR>
+						<Image src={'/images/features/ready/ready-dots-r.webp'} alt='Dots' width={298} height={192} />
+					</DotsR>
+				</FullConDec>
 				<FeaturesCon>
 					<ReadyCon>
 						<ReadyText>{t('features:ctaReady')}</ReadyText>
@@ -36,53 +44,45 @@ const StyledReady = styled.section`
 const FullConDec = styled.div`
 	width: 100%;
 	height: 100%;
+`;
 
-	&::before {
-		content: url('/images/features/ready/ready-dots-l.webp');
-		position: absolute;
-		bottom: -80px;
-		left: -160px;
-	}
-
-	&::after {
-		content: url('/images/features/ready/ready-dots-r.webp');
-		position: absolute;
-		top: -10px;
-		right: -210px;
-	}
+const DotsL = styled.div`
+	position: absolute;
+	bottom: -80px;
+	left: -160px;
 
 	@media (min-width: 768px) {
-		&::before {
-			left: 0;
-			bottom: -70px;
-		}
-
-		&::after {
-			top: -40px;
-			right: -90px;
-		}
+		left: 0;
+		bottom: -70px;
 	}
 
 	@media (min-width: 1280px) {
-		&::before {
-			left: 100px;
-			bottom: -50px;
-		}
-
-		&::after {
-			top: 0;
-			right: 0px;
-		}
+		left: 100px;
+		bottom: -50px;
 	}
 
 	@media (min-width: 1440px) {
-		&::before {
-			left: 150px;
-		}
+		left: 150px;
+	}
+`;
 
-		&::after {
-			right: 50px;
-		}
+const DotsR = styled.div`
+	position: absolute;
+	top: -10px;
+	right: -210px;
+
+	@media (min-width: 768px) {
+		top: -40px;
+		right: -90px;
+	}
+
+	@media (min-width: 1280px) {
+		top: 0;
+		right: 0px;
+	}
+
+	@media (min-width: 1440px) {
+		right: 50px;
 	}
 `;
 

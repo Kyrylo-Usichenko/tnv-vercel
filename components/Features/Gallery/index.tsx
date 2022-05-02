@@ -19,51 +19,59 @@ const Gallery: FC = () => {
 				<GalleryCon>
 					<GalleryGrid ref={ref}>
 						<GalleryColumn>
-							<Img1>
-								<FadeIn duration={500} delay={200} isShow={isShow}>
+							<FadeIn duration={500} delay={200} isShow={isShow}>
+								<Img1>
 									<GalleryImg
 										src='/images/features/gallery/1@2x.jpg'
 										layout='fill'
 										objectFit='cover'
 										alt='man with pancil'
 									/>
-								</FadeIn>
-							</Img1>
-							<Img3>
-								<FadeIn duration={500} delay={800} isShow={isShow}>
+								</Img1>
+							</FadeIn>
+							<FadeIn duration={500} delay={800} isShow={isShow}>
+								<Img3>
 									<GalleryImg
 										src='/images/features/gallery/3@2x.jpg'
 										layout='fill'
 										objectFit='cover'
 										alt='happy man on kitchen'
 									/>
-								</FadeIn>
-							</Img3>
+								</Img3>
+							</FadeIn>
 						</GalleryColumn>
 						<GalleryColumn>
-							<Img2>
-								<FadeIn duration={500} delay={500} isShow={isShow}>
+							<FadeIn duration={500} delay={500} isShow={isShow}>
+								<Img2>
 									<GalleryImg
 										src='/images/features/gallery/2@2x.jpg'
 										layout='fill'
 										objectFit='cover'
 										alt='happy old man with phone'
 									/>
-								</FadeIn>
-							</Img2>
-							<Img4>
-								<FadeIn duration={500} delay={1100} isShow={isShow}>
+								</Img2>
+							</FadeIn>
+							<FadeIn duration={500} delay={1100} isShow={isShow}>
+								<Img4>
 									<GalleryImg
 										src='/images/features/gallery/4@2x.jpg'
 										layout='fill'
 										objectFit='cover'
 										alt='happy women with laptop'
 									/>
-								</FadeIn>
-							</Img4>
+								</Img4>
+							</FadeIn>
 						</GalleryColumn>
 					</GalleryGrid>
-					<GalleryTitle>{t('features:rockstar')}</GalleryTitle>
+					<GalleryTitle>
+						<DecT>
+							<Image src={'/images/features/gallery/dec-t.svg'} alt='Stars' width={81} height={89} />
+						</DecT>
+						{t('features:rockstar')}
+						<DecB>
+							<Image src={'/images/features/gallery/dec-b.svg'} alt='Stars' width={85} height={103} />
+						</DecB>
+					</GalleryTitle>
 				</GalleryCon>
 			</FeaturesCon>
 		</StyledGallery>
@@ -245,20 +253,6 @@ const GalleryTitle = styled.h2`
 	order: -1;
 	max-width: 315px;
 
-	&::before {
-		content: url('/images/features/gallery/dec-t.svg');
-		position: absolute;
-		top: -53px;
-		left: -16px;
-	}
-
-	&::after {
-		content: url('/images/features/gallery/dec-b.svg');
-		position: absolute;
-		right: -30px;
-		bottom: -62px;
-	}
-
 	@media (min-width: 768px) {
 		font-size: 44px;
 		line-height: 54px;
@@ -269,11 +263,6 @@ const GalleryTitle = styled.h2`
 		order: 1;
 		text-align: left;
 		max-width: 230px;
-
-		&::before {
-			top: -50px;
-			left: -47px;
-		}
 	}
 
 	@media (min-width: 1280px) {
@@ -292,11 +281,29 @@ const GalleryTitle = styled.h2`
 	@media (min-width: 1920px) {
 		max-width: 450px;
 		margin-right: 0;
+	}
+`;
 
-		&::after {
-			right: 200px;
-			bottom: -65px;
-		}
+const DecT = styled.span`
+	display: inline-block;
+	position: absolute;
+	top: -59px;
+	left: -16px;
+
+	@media (min-width: 1024px) {
+		top: -57px;
+		left: -47px;
+	}
+`;
+
+const DecB = styled.span`
+	display: inline-block;
+	position: absolute;
+	right: -30px;
+	bottom: -70px;
+
+	@media (min-width: 1920px) {
+		right: 200px;
 	}
 `;
 
