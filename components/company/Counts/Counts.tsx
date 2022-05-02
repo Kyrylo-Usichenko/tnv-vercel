@@ -1,4 +1,5 @@
 import React, { FC, RefObject, useRef, useState } from 'react';
+import Image from 'next/image';
 import CountUp from 'react-countup';
 import styled from 'styled-components';
 
@@ -27,7 +28,9 @@ const Counts: FC = () => {
 	return (
 		<Wrapper className='counts'>
 			<Block1 ref={ref01} className='block1'>
-				<Block1Dots />
+				<Block1Dots>
+					<Image src='/images/company/Counts/block1Dots.svg' alt='Dots' width={196} height={245} />
+				</Block1Dots>
 				<Block1SquareRight />
 				<Block1SquareBottom />
 				<Content>
@@ -52,7 +55,9 @@ const Counts: FC = () => {
 				</Content>
 			</Block1>
 			<Block2 ref={ref02} className='block2'>
-				<Block2Dots />
+				<Block2Dots>
+					<Image src='/images/company/Counts/block2Dots.svg' alt='Dots' width={196} height={149} />
+				</Block2Dots>
 				<Block2SquareLeft />
 				<Block2SquareBottom />
 				<Content>
@@ -77,7 +82,9 @@ const Counts: FC = () => {
 				</Content>
 			</Block2>
 			<Block3 ref={ref03} className='block3'>
-				<Block3Dots />
+				<Block3Dots>
+					<Image src='/images/company/Counts/block3Dots.svg' alt='Dots' width={196} height={149} />
+				</Block3Dots>
 				<Block3Square />
 				<Content>
 					<Count>
@@ -102,7 +109,9 @@ const Counts: FC = () => {
 			</Block3>
 			<Block4 ref={ref04} className='block4'>
 				<Block4Square />
-				<Block4Dots />
+				<Block4Dots>
+					<Image src='/images/company/Counts/block4Dots.svg' alt='Dots' width={196} height={149} />
+				</Block4Dots>
 				<Content>
 					<Count>
 						$
@@ -327,9 +336,6 @@ const Block4Dots = styled.div`
 	position: absolute;
 	left: 204px;
 	bottom: -9px;
-	width: 196.9px;
-	height: 149px;
-	background: url('/images/company/Counts/block4Dots.svg') no-repeat;
 	z-index: -1;
 `;
 
@@ -347,10 +353,8 @@ const Block3Dots = styled.div`
 	position: absolute;
 	right: -50px;
 	top: 0px;
-	width: 196.9px;
-	height: 149px;
-	background: url('/images/company/Counts/block3Dots.svg') no-repeat;
 	z-index: -1;
+
 	@media (max-width: 1280px) {
 		right: -115px;
 		top: 0px;
@@ -384,10 +388,7 @@ const Block2SquareLeft = styled.div`
 const Block2Dots = styled.div`
 	position: absolute;
 	left: 204px;
-	bottom: 12px;
-	width: 196.9px;
-	height: 149px;
-	background: url('/images/company/Counts/block2Dots.svg') no-repeat;
+	bottom: 120px;
 	z-index: -1;
 	@media (max-width: 1280px) {
 		left: 176px;
@@ -400,11 +401,8 @@ const Block2Dots = styled.div`
 
 const Block1Dots = styled.div`
 	position: absolute;
-	right: -226px;
+	right: -115px;
 	bottom: -67px;
-	width: 325px;
-	height: 245.94px;
-	background: url('/images/company/Counts/block1Dots.svg') no-repeat;
 	z-index: -1;
 `;
 

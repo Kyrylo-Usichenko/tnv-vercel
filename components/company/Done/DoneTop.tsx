@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import Image from 'next/image';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
@@ -13,7 +14,9 @@ const DoneTop: FC = () => {
 			</FeaturesCon>
 			<Wrapper>
 				<TopWrapper>
-					<DotsT src='/images/company/Done/dots-t.svg' loading='lazy' />
+					<DotsT>
+						<Image src='/images/company/Done/dots-t.svg' alt='Dots' width={360} height={272} />
+					</DotsT>
 					<SquareT />
 					<GreyTopBlock>
 						<SquareG1 />
@@ -28,7 +31,9 @@ const DoneTop: FC = () => {
 					</GreyTopBlock>
 					<RedSide>
 						<SquareRT />
-						<DotsRT src='/images/company/Done/dotsRT.svg' loading='lazy' />
+						<DotsRT>
+							<Image src='/images/company/Done/dotsRT.svg' alt='Dots' width={148} height={119} />
+						</DotsRT>
 						<img
 							src='/images/company/Done/ipad.png'
 							srcSet='/images/company/Done/ipad@2x.png 2x'
@@ -36,7 +41,9 @@ const DoneTop: FC = () => {
 							loading='lazy'
 						/>
 						<SquareRB />
-						<DotsRB src='/images/company/Done/dotsRB.svg' loading='lazy' />
+						<DotsRB>
+							<Image src='/images/company/Done/dotsRB.svg' alt='Dots' width={168} height={83} />
+						</DotsRB>
 					</RedSide>
 				</TopWrapper>
 				<FlexConInfo>
@@ -50,7 +57,9 @@ const DoneTop: FC = () => {
 								<Item>{t('company:doneBlock1Line2')}</Item>
 								<Item>{t('company:doneBlock1Line3')}</Item>
 							</List>
-							<DotsG src='/images/company/Done/dotsG.svg' loading='lazy' />
+							<DotsG>
+								<Image src='/images/company/Done/dotsG.svg' alt='Dots' width={277} height={42} />
+							</DotsG>
 						</Content2>
 					</FeaturesCon>
 				</FlexConInfo>
@@ -297,7 +306,7 @@ const Item = styled.li`
 	}
 `;
 
-const DotsT = styled.img`
+const DotsT = styled.div`
 	position: absolute;
 	top: -134px;
 	left: -225px;
@@ -401,7 +410,7 @@ const SquareG3 = styled.div`
 	}
 `;
 
-const DotsG = styled.img`
+const DotsG = styled.div`
 	@media (min-width: 1280px) {
 		position: absolute;
 		bottom: -4px;
@@ -491,7 +500,7 @@ const SquareRB = styled.div`
 	}
 `;
 
-const DotsRT = styled.img`
+const DotsRT = styled.div`
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -511,7 +520,7 @@ const DotsRT = styled.img`
 	}
 `;
 
-const DotsRB = styled.img`
+const DotsRB = styled.div`
 	position: absolute;
 	left: 0;
 	bottom: 0;

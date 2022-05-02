@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import Image from 'next/image';
 import styled from 'styled-components';
 import { useTranslation } from 'next-i18next';
 
@@ -9,7 +10,7 @@ const DoneBottom: FC = () => {
 		<Wrapper>
 			<WrapperCon>
 				<Black>
-					<BlackST src='/images/company/Done/blackST.png' loading='lazy' />
+					<BlackST />
 					<Content>
 						<Title>{t('company:doneYear2')}</Title>
 						<List>
@@ -18,19 +19,25 @@ const DoneBottom: FC = () => {
 							<Item>{t('company:doneBlock2Line3')}</Item>
 						</List>
 					</Content>
-					<BlackDots src='/images/company/Done/black-dots.png' loading='lazy' />
-					<BlackSB src='/images/company/Done/blackSB.png' loading='lazy' />
+					<BlackDots>
+						<Image src='/images/company/Done/black-dots.png' alt='Dots' width={126} height={150} />
+					</BlackDots>
+					<BlackSB />
 				</Black>
 				<RedSide>
 					<SquareRT />
-					<DotsRT src='/images/company/Done/dotsRT.svg' loading='lazy' />
+					<DotsRT>
+						<Image src='/images/company/Done/dotsRT.svg' alt='Dots' width={148} height={119} />
+					</DotsRT>
 					<img
 						src='/images/company/Done/ipad.png'
 						srcSet='/images/company/Done/ipad@2x.png 2x'
 						alt='ipad'
 						loading='lazy'
 					/>
-					<DotsRB src='/images/company/Done/dotsRB.svg' loading='lazy' />
+					<DotsRB>
+						<Image src='/images/company/Done/dotsRB.svg' alt='Dots' width={167} height={83} />
+					</DotsRB>
 					<SquareRB />
 				</RedSide>
 				<RedWrapper>
@@ -54,7 +61,9 @@ const DoneBottom: FC = () => {
 							/>
 						</picture>
 						<RedSB />
-						<RedDots src='/images/company/Done/dots-red.svg' loading='lazy' />
+						<RedDots>
+							<Image src='/images/company/Done/dots-red.svg' alt='Dots' width={116} height={78} />
+						</RedDots>
 					</Red>
 				</RedWrapper>
 				<Grey>
@@ -68,9 +77,13 @@ const DoneBottom: FC = () => {
 						</List>
 					</Content>
 					<GreySB />
-					<GreyDots src='/images/company/Done/dots-grey.svg' loading='lazy' />
+					<GreyDots>
+						<Image src='/images/company/Done/dots-grey.svg' alt='Dots' width={325} height={242} />
+					</GreyDots>
 				</Grey>
-				<DotsB src='/images/company/Done/dots-b.svg' loading='lazy' />
+				<DotsB>
+					<Image src='/images/company/Done/dots-b.svg' alt='Dots' width={294} height={222} />
+				</DotsB>
 			</WrapperCon>
 		</Wrapper>
 	);
@@ -319,23 +332,33 @@ const Item = styled.li`
 	}
 `;
 
-const BlackST = styled.img`
+const BlackST = styled.div`
 	position: absolute;
-	top: 0;
-	left: 0;
+	width: 229px;
+	height: 229px;
+	border-radius: 26px;
+	transform: rotate(-45deg);
+	background-color: #404040;
+	top: -65px;
+	left: -100px;
 	z-index: -1;
 `;
 
-const BlackSB = styled.img`
+const BlackSB = styled.div`
 	position: absolute;
-	right: 0;
-	bottom: 0;
-	z-index: -1;
+	width: 235px;
+	height: 235px;
+	border-radius: 26px;
+	transform: rotate(-31deg);
+	background-color: #404040;
+	right: -100px;
+	bottom: -152px;
+	z-index: -2;
 `;
 
-const BlackDots = styled.img`
+const BlackDots = styled.div`
 	position: absolute;
-	right: 0;
+	right: -77px;
 	bottom: 0;
 	z-index: -1;
 
@@ -365,7 +388,7 @@ const DarkItem = styled(Item)`
 	}
 `;
 
-const DotsB = styled.img`
+const DotsB = styled.div`
 	position: absolute;
 	bottom: -70px;
 	left: -111px;
@@ -430,7 +453,7 @@ const SquareRB = styled.div`
 	}
 `;
 
-const DotsRT = styled.img`
+const DotsRT = styled.div`
 	display: none;
 
 	@media (min-width: 768px) {
@@ -446,7 +469,7 @@ const DotsRT = styled.img`
 	}
 `;
 
-const DotsRB = styled.img`
+const DotsRB = styled.div`
 	display: none;
 
 	@media (min-width: 768px) {
@@ -494,7 +517,7 @@ const RedSB = styled.div`
 	}
 `;
 
-const RedDots = styled.img`
+const RedDots = styled.div`
 	position: absolute;
 	bottom: 0;
 	right: 0;
@@ -533,7 +556,7 @@ const GreySB = styled.div`
 	z-index: -1;
 `;
 
-const GreyDots = styled.img`
+const GreyDots = styled.div`
 	display: none;
 
 	@media (min-width: 1280px) {
