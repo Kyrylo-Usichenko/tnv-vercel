@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import Image from 'next/image';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
@@ -12,6 +13,9 @@ const Teamvio: FC = () => {
 			<FeaturesCon>
 				<TitleDiv>
 					<Title>
+						<TitleDec>
+							<Image src='/images/company/Teamvio/stars.svg' alt='Stars' width={67} height={75} />
+						</TitleDec>
 						{t('company:teamvioTitle')} <span className='accent'>Teamvio</span>
 					</Title>
 				</TitleDiv>
@@ -20,8 +24,12 @@ const Teamvio: FC = () => {
 						<SquareLeft />
 						<SquareRightTop />
 						<SquareRightBot />
-						<RightDots />
-						<LeftDots />
+						<RightDots>
+							<Image src='/images/company/Teamvio/rightDots.svg' alt='Dots' width={389} height={294} />
+						</RightDots>
+						<LeftDots>
+							<Image src='/images/company/Teamvio/leftDots.svg' alt='Dots' width={389} height={294} />
+						</LeftDots>
 						<Img1 src='/images/company/Teamvio/1@2x.jpg' alt='people' loading='lazy' />
 						<MobileImg src='/images/company/Teamvio/2@2x.jpg' alt='people' loading='lazy' />
 						<Img3 src='/images/company/Teamvio/3@2x.jpg' alt='people' loading='lazy' />
@@ -31,7 +39,14 @@ const Teamvio: FC = () => {
 						<Join>
 							<JoinSquareLeft />
 							<JoinSquareRight />
-							<JoinDots />
+							<JoinDots>
+								<Image
+									src='/images/company/Teamvio/joinDots.png'
+									alt='Dots'
+									layout='fill'
+									objectFit='contain'
+								/>
+							</JoinDots>
 							<Text>{t('company:teamvioText')}</Text>
 							<LightLink
 								width={210}
@@ -128,13 +143,6 @@ const Title = styled.h3`
 	margin: 0 0 40px 0;
 	text-align: center;
 
-	&:before {
-		content: url('/images/company/Teamvio/stars.svg');
-		position: absolute;
-		left: -30px;
-		top: -21px;
-	}
-
 	@media (min-width: 768px) {
 		font-size: 36px;
 		line-height: 44px;
@@ -150,6 +158,12 @@ const Title = styled.h3`
 		font-size: 48px;
 		line-height: 59px;
 	}
+`;
+
+const TitleDec = styled.div`
+	position: absolute;
+	left: -30px;
+	top: -27px;
 `;
 
 const Img = styled.img`
@@ -349,18 +363,12 @@ const RightDots = styled.div`
 	right: -102px;
 	bottom: -81px;
 	z-index: -1;
-	width: 389.43px;
-	height: 294.7px;
-	background: url('/images/company/Teamvio/rightDots.svg');
 `;
 
 const LeftDots = styled.div`
 	position: absolute;
 	left: -221px;
 	top: 294px;
-	width: 389.43px;
-	height: 294.7px;
-	background: url('/images/company/Teamvio/leftDots.svg');
 	z-index: -1;
 `;
 
@@ -429,29 +437,23 @@ const JoinSquareRight = styled.div`
 
 const JoinDots = styled.div`
 	position: absolute;
-	right: 227px;
-	bottom: 0px;
-	width: 208px;
-	height: 35px;
-	background: url('/images/company/Teamvio/joinDots.png') no-repeat;
+	width: 76px;
+	height: 109px;
+	right: 0;
+	bottom: 0;
 	z-index: -1;
-	@media (min-width: 375px) {
-		background: url('/images/company/Teamvio/joinDots375.png') no-repeat;
-		width: 76px;
-		height: 109px;
-		right: 0;
-		bottom: 0;
-	}
+
 	@media (min-width: 1024px) {
-		background: url('/images/company/Teamvio/joinDots.png') no-repeat;
 		width: 208px;
 		height: 35px;
 		right: 88px;
 		bottom: 0;
 	}
+
 	@media (min-width: 1440px) {
 		right: 220px;
 	}
+
 	@media (min-width: 1920px) {
 		right: 220px;
 	}
