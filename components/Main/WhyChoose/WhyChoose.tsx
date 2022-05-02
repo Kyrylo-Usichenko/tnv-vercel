@@ -14,8 +14,6 @@ const WhyChoose: FC = () => {
 
 			<Wrapper>
 				<Null>
-					{/* <GreySquare /> */}
-
 					<FeaturesCon>
 						<DotsLeftBot>
 							<Image src='/images/main/whyChoose/big-rombs.png' layout='fill' objectFit='contain' />
