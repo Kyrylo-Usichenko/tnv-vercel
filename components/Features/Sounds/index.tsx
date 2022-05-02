@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import Image from 'next/image';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
@@ -14,7 +15,11 @@ const Sounds: FC<SoundsProps> = ({ openModal }) => {
 	return (
 		<StyledSounds>
 			<FlexConInfo>
-				<FullConDec></FullConDec>
+				<FullConDec>
+					<FullConDecDots>
+						<Image src={'/images/features/sounds/sounds-dots.png'} width={257} height={105} />
+					</FullConDecDots>
+				</FullConDec>
 				<FeaturesCon>
 					<SoundsCon>
 						<SoundsTitle>{t('features:separatorText')}</SoundsTitle>
@@ -56,29 +61,9 @@ const FullConDec = styled.div`
 		left: -128px;
 	}
 
-	&::after {
-		content: url('/images/features/sounds/sounds-dots-375.png');
-		position: absolute;
-		right: -55px;
-		bottom: -83px;
-	}
-
-	@media (min-width: 768px) {
-		&::after {
-			right: 0;
-			bottom: 0;
-		}
-	}
-
 	@media (min-width: 1024px) {
 		&::before {
 			left: -167px;
-		}
-
-		&::after {
-			content: url('/images/features/sounds/sounds-dots.png');
-			right: 150px;
-			bottom: -15px;
 		}
 	}
 
@@ -86,26 +71,47 @@ const FullConDec = styled.div`
 		&::before {
 			left: -130px;
 		}
-
-		&::after {
-			right: 300px;
-			bottom: -25px;
-		}
 	}
 
 	@media (min-width: 1440px) {
 		&::before {
 			left: -4px;
 		}
-
-		&::after {
-			right: 400px;
-		}
 	}
+
 	@media (min-width: 1920px) {
 		&::before {
 			left: 240px;
 		}
+	}
+`;
+
+const FullConDecDots = styled.div`
+	position: absolute;
+	right: -148px;
+	bottom: -15px;
+
+	@media (min-width: 768px) {
+		right: -90px;
+		bottom: 0;
+	}
+
+	@media (min-width: 1024px) {
+		right: 150px;
+		bottom: -15px;
+	}
+
+	@media (min-width: 1280px) {
+		right: 300px;
+		bottom: -25px;
+	}
+
+	@media (min-width: 1440px) {
+		right: 350px;
+	}
+
+	@media (min-width: 1920px) {
+		right: 430px;
 	}
 `;
 

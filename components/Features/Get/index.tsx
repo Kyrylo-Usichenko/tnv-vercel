@@ -21,6 +21,11 @@ const Get = () => {
 					<GetText>{t('features:getSmarterText')}</GetText>
 					<First ref={ref}>
 						<Second>
+							<Stars>
+								<div>
+									<Image src={'/images/features/get/dec.svg'} alt='Stars' width={73} height={72.6} />
+								</div>
+							</Stars>
 							<LeftImgWrap>
 								<FadeIn duration={500} delay={200} isShow={isShow}>
 									<LeftImg>
@@ -45,6 +50,16 @@ const Get = () => {
 									</RightImg>
 								</FadeIn>
 							</RightImgWrap>
+							<Dots>
+								<div>
+									<Image
+										src={'/images/features/get/dots.svg'}
+										alt='Dots'
+										layout='fill'
+										objectFit='contain'
+									/>
+								</div>
+							</Dots>
 						</Second>
 					</First>
 				</GetCon>
@@ -227,41 +242,54 @@ const Second = styled.div`
 	border-radius: 52.1364px;
 	position: relative;
 
-	&::after {
-		content: url('/images/features/get/dots-375.svg');
-		position: absolute;
-		top: 29px;
-		right: -104px;
-		transform: rotate(45deg);
-	}
-
 	@media (min-width: 768px) {
 		width: 490.37px;
 		height: 490.37px;
+	}
+`;
 
-		&::before {
-			content: url('/images/features/get/dec.svg');
-			position: absolute;
-			top: -67px;
-			left: 28px;
-			transform: rotate(45deg);
-		}
+const Stars = styled.div`
+	display: none;
 
-		&::after {
-			content: url('/images/features/get/dots.svg');
-			top: 66px;
-			right: -200px;
+	@media (min-width: 768px) {
+		display: block;
+		position: absolute;
+		top: -67px;
+		left: 28px;
+		transform: rotate(45deg);
+
+		& > div {
+			position: relative;
+			height: inherit;
+			width: inherit;
 		}
 	}
 
 	@media (min-width: 1024px) {
-		&::before {
-			top: -83px;
-			left: 57px;
-		}
+		top: -83px;
+		left: 57px;
+	}
+`;
 
-		&::after {
-		}
+const Dots = styled.div`
+	position: absolute;
+	top: 29px;
+	right: -104px;
+	transform: rotate(45deg);
+	width: 188px;
+	height: 180px;
+
+	& > div {
+		position: relative;
+		height: inherit;
+		width: inherit;
+	}
+
+	@media (min-width: 768px) {
+		top: 66px;
+		right: -200px;
+		width: 322px;
+		height: 248px;
 	}
 `;
 

@@ -20,6 +20,9 @@ const Supercharge: FC = () => {
 			</FeaturesCon>
 			<FlexCon>
 				<FullCon>
+					<FullConDots>
+						<Image src={'/images/features/supercharge/dots.png'} width={325} height={87.6} />
+					</FullConDots>
 					<FullConDec1>
 						<FullConApp>
 							<Image
@@ -32,6 +35,9 @@ const Supercharge: FC = () => {
 					</FullConDec1>
 				</FullCon>
 				<FlexConInfo>
+					<FlexConInfoDots>
+						<Image src={'/images/features/supercharge/dots.png'} width={325} height={87.6} />
+					</FlexConInfoDots>
 					<FeaturesCon className='h-100'>
 						<FlexConGrid ref={ref}>
 							<FadeIn duration={500} delay={500} isShow={isShow}>
@@ -111,10 +117,6 @@ const FullCon = styled.div`
 		background-color: var(--bg-black);
 		height: 653px;
 
-		&::before {
-			display: none;
-		}
-
 		&::after {
 			content: url('/images/features/supercharge/dec-768.svg');
 			position: absolute;
@@ -125,15 +127,6 @@ const FullCon = styled.div`
 
 	@media (min-width: 1024px) {
 		height: 484px;
-
-		&::before {
-			content: url('/images/features/supercharge/dots.png');
-			position: absolute;
-			display: block;
-			transform: rotate(0);
-			right: 360px;
-			bottom: -6px;
-		}
 
 		&::after {
 			content: url('/images/features/supercharge/dec-1024.svg');
@@ -146,10 +139,6 @@ const FullCon = styled.div`
 	@media (min-width: 1280px) {
 		margin-right: 54px;
 
-		&::before {
-			right: 480px;
-		}
-
 		&::after {
 			content: url('/images/features/supercharge/dec-1280.svg');
 			position: absolute;
@@ -158,18 +147,32 @@ const FullCon = styled.div`
 		}
 	}
 
+	@media (min-width: 1920px) {
+		margin-right: 234px;
+	}
+`;
+
+const FullConDots = styled.div`
+	display: none;
+
+	@media (min-width: 1024px) {
+		position: absolute;
+		display: block;
+		transform: rotate(0);
+		right: 360px;
+		bottom: -6px;
+	}
+
+	@media (min-width: 1280px) {
+		right: 480px;
+	}
+
 	@media (min-width: 1440px) {
-		&::before {
-			right: 550px;
-		}
+		right: 550px;
 	}
 
 	@media (min-width: 1920px) {
-		margin-right: 234px;
-
-		&::before {
-			right: 660px;
-		}
+		right: 660px;
 	}
 `;
 
@@ -177,14 +180,6 @@ const FlexConInfo = styled.div`
 	border-top-right-radius: 48px;
 	border-bottom-right-radius: 48px;
 	background-color: var(--bg-black);
-
-	&::before {
-		content: url('/images/features/supercharge/dots.png');
-		position: absolute;
-		right: -100px;
-		bottom: 280px;
-		transform: rotate(90deg);
-	}
 
 	&::after {
 		content: url('/images/features/supercharge/dec-375.svg');
@@ -203,13 +198,20 @@ const FlexConInfo = styled.div`
 		border-bottom-right-radius: 0;
 		background-color: transparent;
 
-		&::before {
-			display: none;
-		}
-
 		&::after {
 			display: none;
 		}
+	}
+`;
+
+const FlexConInfoDots = styled.div`
+	position: absolute;
+	right: -100px;
+	bottom: 280px;
+	transform: rotate(90deg);
+
+	@media (min-width: 768px) {
+		display: none;
 	}
 `;
 
