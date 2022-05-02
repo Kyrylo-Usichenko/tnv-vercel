@@ -129,7 +129,7 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale }) => {
 										</Link>
 									</FlagWrapper>
 									<FlagWrapper>
-										<Link href={localeTab} locale='vi'>
+										<Link href={localeTab} locale='vn'>
 											<img
 												src='/icons/common/flags/viflug.svg'
 												alt=''

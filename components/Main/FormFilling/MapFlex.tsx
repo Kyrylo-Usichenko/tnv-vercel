@@ -287,7 +287,7 @@ const Text = styled.div<{ locale: string }>`
 	z-index: 10;
 	color: #ff474d;
 
-	right: ${({ locale }) => (locale === 'id' ? '17px' : locale === 'vi' ? '30px' : '0')};
+	right: ${({ locale }) => (locale === 'id' ? '17px' : locale === 'vn' ? '30px' : '0')};
 	@media (min-width: 768px) {
 		font-size: 18px;
 		line-height: 22px;
