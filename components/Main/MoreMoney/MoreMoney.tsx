@@ -156,9 +156,9 @@ const MoreMoney: FC = () => {
 						<Item>{tab.textLines[1]}</Item>
 						<Item>{tab.textLines[2]}</Item>
 					</List>
-					<Link href='/features'>
-						<BottomButton>{t('main:moreMoneyButton')}</BottomButton>
-					</Link>
+					<BottomButton>
+						<Link href='/features'>{t('main:moreMoneyButton')}</Link>
+					</BottomButton>
 				</Inner>
 			</FeaturesCon>
 			<GreySquare />
@@ -635,55 +635,47 @@ const Button = styled.a<{ width: string; isActive: boolean }>`
 	}
 `;
 
-const BottomButton = styled.button`
-	background: #ff474d;
-	border-radius: 18px;
-	cursor: pointer;
-	font-family: 'Gilroy';
-	font-style: normal;
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 20px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: #ffffff;
-	width: 210px;
-	margin: 32px auto 0;
-	padding: 0;
-	outline: none;
-	border: none;
-	height: 48px;
-
-	&:hover {
-		opacity: 0.8;
-	}
-	@media (min-width: 1024px) {
-		height: 48px;
+const BottomButton = styled.div`
+	& > a {
+		display: inline-block;
 		font-size: 16px;
 		line-height: 20px;
-		border-radius: 16px;
-		margin: 32px 0 0;
-	}
-	@media (min-width: 1920px) {
-		background: #ff474d;
-		border-radius: 18px;
-		cursor: pointer;
-		font-family: 'Gilroy';
-		font-style: normal;
+		font-family: 'Gilroy', sans-serif;
 		font-weight: 700;
-		font-size: 20px;
-		line-height: 25px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: #ffffff;
-		width: 210px;
-		height: 56px;
-		margin: 32px 0 0 0;
-		padding: 0;
-		outline: none;
+		width: 180px;
+		height: 48px;
+		color: var(--text-white);
+		text-align: center;
+		text-decoration: none;
+		padding: 14px 0;
+		margin: 32px auto 0;
 		border: none;
+		border-radius: 16px;
+		background-color: var(--text-primary);
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background-color: var(--text-primary-hover);
+			box-shadow: 8px 8px 20px 0 var(--shadow-color);
+		}
+
+		&:focus {
+			background-color: var(--text-primary-hover);
+		}
+
+		@media (min-width: 1024px) {
+			margin: 32px 0 0;
+		}
+
+		@media (min-width: 1920px) {
+			width: 210px;
+			height: 56px;
+			font-size: 20px;
+			line-height: 25px;
+			border-radius: 18px;
+			padding: 16px 0;
+		}
 	}
 `;
 

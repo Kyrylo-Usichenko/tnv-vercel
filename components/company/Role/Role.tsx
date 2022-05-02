@@ -6,6 +6,7 @@ import useAnimate from '../../../hooks/useAnimate';
 
 import { FeaturesCon } from '../../common/Container/Container';
 import FadeIn from '../../common/FadeIn/FadeIn';
+import TransparentLink from '../../common/Links/TransparentLink';
 
 const Role: FC = () => {
 	const { t } = useTranslation();
@@ -39,7 +40,9 @@ const Role: FC = () => {
 					<Content>
 						<GalleryTitle>{t('company:rolesText')}</GalleryTitle>
 						<Explore
-							data-text={t('company:rolesButton')}
+							width={210}
+							fSize={18}
+							lHeight={22}
 							href='https://www.linkedin.com/company/tinvio/jobs/'
 							target='_blank'
 						>
@@ -203,62 +206,8 @@ const GalleryTitle = styled.h2`
 	}
 `;
 
-const Explore = styled.a`
-	display: block;
-	border: 1px solid #d2d2d2;
-	border-radius: 18px;
-	background-color: #ffffff;
-	font-family: 'Gilroy';
-	font-weight: 700;
-	font-size: 16px;
-	text-decoration: none;
-	text-align: center;
-	padding: 0;
-	width: 188px;
-	height: 48px;
-	color: #212121;
-	padding: 14px 0;
+const Explore = styled(TransparentLink)`
 	margin: 0 auto 48px auto;
-	cursor: pointer;
-	position: relative;
-	transition: all 0.2s ease;
-
-	&::before {
-		position: absolute;
-		width: 100%;
-		content: attr(data-text);
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		color: rgba(33, 33, 33, 0.1);
-		z-index: 2;
-		filter: blur(1px);
-		opacity: 0;
-		transition: opacity 0.2s ease;
-	}
-
-	&::after {
-		position: absolute;
-		content: '';
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		border: 2px solid rgba(33, 33, 33, 0.1);
-		filter: blur(2px);
-		border-radius: 16px;
-		opacity: 0;
-		transition: opacity 0.2s ease;
-	}
-
-	&:hover::after,
-	&:hover::before {
-		opacity: 1;
-	}
-
-	&:hover {
-		color: rgba(33, 33, 33, 0.8);
-	}
 
 	@media (min-width: 768px) {
 		margin: 0 auto 64px auto;
@@ -266,14 +215,6 @@ const Explore = styled.a`
 
 	@media (min-width: 1024px) {
 		margin: 0;
-	}
-
-	@media (min-width: 1920px) {
-		font-size: 18px;
-		line-height: 23px;
-		width: 210px;
-		height: 56px;
-		padding: 16px;
 	}
 `;
 
