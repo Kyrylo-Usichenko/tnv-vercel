@@ -200,7 +200,7 @@ const RedSide = styled.div`
 `;
 
 const Content1 = styled.div`
-	padding: 42px 16px 40px 31px;
+	padding: 40px 16px 40px 40px;
 	position: relative;
 	z-index: 9;
 
@@ -232,10 +232,10 @@ const Content2 = styled.div`
 const Year = styled.div`
 	font-family: 'Gilroy';
 	font-weight: 600;
-	font-size: 28px;
+	font-size: 20px;
 	line-height: 34px;
 	color: #212121;
-	margin: 0 0 20px -15px;
+	margin: 0 0 20px 0;
 
 	@media (min-width: 768px) {
 		font-size: 32px;
@@ -253,6 +253,7 @@ const List = styled.ul`
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	padding-left: 15px;
 
 	@media (min-width: 768px) {
 		padding-left: 12px;
@@ -262,12 +263,12 @@ const List = styled.ul`
 const Item = styled.li`
 	font-family: 'Inter';
 	font-weight: 400;
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 23px;
 	color: #5c5c5c;
 	position: relative;
 	z-index: 0;
-	margin-bottom: 20px;
+	margin-bottom: 17px;
 
 	&:last-child {
 		margin-bottom: 0;
@@ -284,6 +285,10 @@ const Item = styled.li`
 		transform: rotate(45deg);
 		background: radial-gradient(95.51% 95.51% at 50% 50%, #ffffff 0%, #ffffff 100%);
 		z-index: -1;
+	}
+
+	@media (min-width: 768px) {
+		font-size: 16px;
 	}
 
 	@media (min-width: 1920px) {
