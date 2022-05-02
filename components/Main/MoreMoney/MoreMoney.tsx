@@ -644,7 +644,7 @@ const BottomButton = styled.button`
 		font-size: 16px;
 		line-height: 20px;
 		border-radius: 16px;
-		margin: 32px 0 0;
+		margin: 57px 0 0;
 	}
 	@media (min-width: 1920px) {
 		background: #ff474d;

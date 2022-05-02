@@ -130,6 +130,7 @@ const Null = styled.div`
 	position: relative;
 	top: 64px;
 	order: 1;
+	z-index: 1;
 
 	@media (min-width: 1024px) {
 		order: 0;
@@ -151,13 +152,23 @@ const Null = styled.div`
 `;
 const Info = styled.div`
 	transform: skewY(8deg);
-	max-width: 574px;
+	max-width: 356px;
 	height: 230px;
 	text-align: center;
 	margin-top: 100px;
+	z-index: -1;
 	@media (min-width: 1024px) {
 		text-align: left;
 		margin-top: 200px;
+	}
+	@media (min-width: 1280px) {
+		max-width: 398px;
+	}
+	@media (min-width: 1440px) {
+		max-width: 478px;
+	}
+	@media (min-width: 1920px) {
+		max-width: 574px;
 	}
 `;
 const InfoTitle = styled.h2`
@@ -167,7 +178,6 @@ const InfoTitle = styled.h2`
 	color: #212121;
 	padding: 0;
 	margin: 0 0 16px 0;
-	white-space: nowrap;
 	font-size: 28px;
 	line-height: 34px;
 	@media (min-width: 768px) {
@@ -190,7 +200,7 @@ const InfoText = styled.p`
 	color: #5c5c5c;
 	padding: 0;
 	max-width: 478px;
-	margin: 0 0 32px 0;
+	margin: 0 auto 32px auto;
 	font-size: 14px;
 	line-height: 23px;
 
@@ -200,6 +210,7 @@ const InfoText = styled.p`
 	}
 	@media (min-width: 1024px) {
 		max-width: 356px;
+		margin: 0 0 32px 0;
 	}
 	@media (min-width: 1280px) {
 		max-width: 398px;
