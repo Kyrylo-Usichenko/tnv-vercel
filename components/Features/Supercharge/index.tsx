@@ -249,9 +249,11 @@ const FlexConGrid = styled.div`
 `;
 
 const Elem = styled.div`
-	text-align: center;
+	padding-left: 26px;
 
 	@media (min-width: 768px) {
+		padding-left: 0;
+
 		&:nth-child(1) {
 			grid-area: 1 / 1 / 2 / 2;
 		}
@@ -283,7 +285,6 @@ const Title = styled.h3`
 	margin: 0 0 8px 0;
 	position: relative;
 	z-index: 1;
-	text-align: center;
 
 	&::before {
 		content: url('/images/features/supercharge/title-rec.png');
