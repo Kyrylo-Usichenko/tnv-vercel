@@ -300,8 +300,8 @@ const Button = styled.a`
 	font-size: 16px;
 	line-height: 20px;
 	text-decoration: none;
-	padding: 14px 0;
-	width: 188px;
+	padding: 14px 50px;
+	//width: 188px;
 	color: #212121;
 	cursor: pointer;
 	transition: all 0.3s ease;
@@ -319,8 +319,7 @@ const Button = styled.a`
 	@media (min-width: 1920px) {
 		font-size: 20px;
 		line-height: 25px;
-		padding: 16px 0;
-		width: 210px;
+		padding: 14px 74px;
 	}
 `;
 
