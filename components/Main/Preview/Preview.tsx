@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'next-i18next';
 import styled from 'styled-components';
+import RedButton from '../../common/Buttons/Button';
 
 type PreviewProps = {
 	scrollDown: () => void;
@@ -16,9 +17,9 @@ const Preview: FC<PreviewProps> = ({ scrollDown }) => {
 			</PreviewTitle>
 			<PreviewText>{t('main:previewText')}</PreviewText>
 			<PreviewAction>
-				<Button type='button' onClick={scrollDown}>
+				<RedButton type='button' onClick={scrollDown}>
 					{t('main:previewButton')}
-				</Button>
+				</RedButton>
 				<PreviewFootnote>
 					{t('main:previewButtonText')}
 					<PreviewSmile />
@@ -164,39 +165,7 @@ const PreviewAction = styled.div`
 	align-items: center;
 	row-gap: 12px;
 `;
-const Button = styled.button`
-	font-family: 'Gilroy', sans-serif;
-	font-weight: 700;
 
-	color: var(--text-white);
-	text-align: center;
-	padding: 14px 0;
-	border: none;
-	border-radius: 16px;
-	background-color: var(--text-primary);
-	cursor: pointer;
-	transition: all 0.3s ease;
-	font-size: 16px;
-	line-height: 20px;
-	width: 188px;
-	height: 48px;
-
-	&:hover {
-		background-color: var(--text-primary-hover);
-		box-shadow: 8px 8px 20px 0 var(--shadow-color);
-	}
-
-	&:focus {
-		background-color: var(--text-primary);
-		box-shadow: 8px 4px 20px 0 var(--shadow-color);
-	}
-	@media (min-width: 1440px) {
-		line-height: 25px;
-		font-size: 20px;
-		width: 220px;
-		height: 56px;
-	}
-`;
 const PreviewFootnote = styled.span`
 	display: flex;
 	align-items: center;

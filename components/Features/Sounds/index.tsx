@@ -1,7 +1,9 @@
 import React, { FC } from 'react';
+import Image from 'next/image';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
+import LightButton from '../../common/Buttons/LightButton';
 
 type SoundsProps = {
 	openModal: () => void;
@@ -13,7 +15,11 @@ const Sounds: FC<SoundsProps> = ({ openModal }) => {
 	return (
 		<StyledSounds>
 			<FlexConInfo>
-				<FullConDec></FullConDec>
+				<FullConDec>
+					<FullConDecDots>
+						<Image src={'/images/features/sounds/sounds-dots.png'} width={257} height={105} />
+					</FullConDecDots>
+				</FullConDec>
 				<FeaturesCon>
 					<SoundsCon>
 						<SoundsTitle>{t('features:separatorText')}</SoundsTitle>
@@ -55,29 +61,9 @@ const FullConDec = styled.div`
 		left: -128px;
 	}
 
-	&::after {
-		content: url('/images/features/sounds/sounds-dots-375.png');
-		position: absolute;
-		right: -55px;
-		bottom: -83px;
-	}
-
-	@media (min-width: 768px) {
-		&::after {
-			right: 0;
-			bottom: 0;
-		}
-	}
-
 	@media (min-width: 1024px) {
 		&::before {
 			left: -167px;
-		}
-
-		&::after {
-			content: url('/images/features/sounds/sounds-dots.png');
-			right: 150px;
-			bottom: -15px;
 		}
 	}
 
@@ -85,26 +71,47 @@ const FullConDec = styled.div`
 		&::before {
 			left: -130px;
 		}
-
-		&::after {
-			right: 300px;
-			bottom: -25px;
-		}
 	}
 
 	@media (min-width: 1440px) {
 		&::before {
 			left: -4px;
 		}
-
-		&::after {
-			right: 400px;
-		}
 	}
+
 	@media (min-width: 1920px) {
 		&::before {
 			left: 240px;
 		}
+	}
+`;
+
+const FullConDecDots = styled.div`
+	position: absolute;
+	right: -148px;
+	bottom: -15px;
+
+	@media (min-width: 768px) {
+		right: -90px;
+		bottom: 0;
+	}
+
+	@media (min-width: 1024px) {
+		right: 150px;
+		bottom: -15px;
+	}
+
+	@media (min-width: 1280px) {
+		right: 300px;
+		bottom: -25px;
+	}
+
+	@media (min-width: 1440px) {
+		right: 350px;
+	}
+
+	@media (min-width: 1920px) {
+		right: 430px;
 	}
 `;
 
@@ -218,49 +225,13 @@ const SoundsTitle = styled.h3`
 		max-width: 850px;
 	}
 `;
-//
-// const Br = styled.br`
-// 	@media (min-width: 1024px) {
-// 		display: none;
-// 	}
-// `;
 
-const SoundsButton = styled.button`
-	width: 188px;
-	height: 48px;
-	padding: 14px;
-	background: #ffffff;
-	border: none;
-	border-radius: 18px;
-	text-align: center;
-	font-family: 'Gilroy';
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 20px;
-	color: #212121;
-	cursor: pointer;
-	transition: all 0.3s ease;
-
-	&:hover {
-		background-color: #ffffffcc;
-		box-shadow: 14px 4px 20px 0 var(--shadow-color);
-	}
-
-	&:focus {
-		background-color: var(--text-white);
-		box-shadow: 12px 2px 20px 0 var(--shadow-color);
-	}
-
+const SoundsButton = styled(LightButton)`
 	@media (min-width: 1024px) {
 		flex: 0 0 188px;
 	}
 
 	@media (min-width: 1920px) {
-		font-size: 18.6512px;
-		line-height: 23px;
-		padding: 16px 0;
-		width: 219px;
-		height: 56px;
 		flex: 0 0 219px;
 	}
 `;

@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
+import LightButton from '../../common/Buttons/LightButton';
 
 type GreetingsProps = {
 	scrollDown: () => void;
@@ -23,7 +24,7 @@ const Greetings: FC<GreetingsProps> = ({ scrollDown }) => {
 					<Info>
 						<Text>{t('company:greetingsText1')}</Text>
 						<Text>{t('company:greetingsText2')}</Text>
-						<Contact onClick={scrollDown}>
+						<Contact width={210} fSize={18} lHeight={22} onClick={scrollDown}>
 							<img src='/images/company/Greetings/chat-icon.svg' alt='chat' />
 							{t('company:greetingsButton')}
 						</Contact>
@@ -233,22 +234,11 @@ const Text = styled.p`
 	}
 `;
 
-const Contact = styled.button`
-	border-radius: 16px;
-	border-style: none;
-	font-family: 'Gilroy';
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 20px;
-	color: #212121;
-	padding: 14px 50px;
+const Contact = styled(LightButton)`
 	margin: 0 auto;
-	display: block;
-	background-color: #ffffff;
-	cursor: pointer;
 	display: flex;
+	justify-content: center;
 	align-items: center;
-	transition: all 0.3s ease;
 
 	& img {
 		display: inline-flex;
@@ -256,24 +246,8 @@ const Contact = styled.button`
 		max-width: 16px;
 	}
 
-	&:hover {
-		background-color: #ffffffcc;
-		box-shadow: 14px 4px 20px 0 var(--shadow-color);
-	}
-
-	&:focus {
-		background-color: var(--text-white);
-		box-shadow: 12px 2px 20px 0 var(--shadow-color);
-	}
-
 	@media (min-width: 1024px) {
 		margin: 0;
-	}
-
-	@media (min-width: 1920px) {
-		font-size: 18.6667px;
-		line-height: 23px;
-		padding: 16px 55px;
 	}
 `;
 

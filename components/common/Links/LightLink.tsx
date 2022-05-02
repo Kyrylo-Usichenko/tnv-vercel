@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 
-const StyledButton = styled.button<{ width: number; fSize: number; lHeight: number }>`
+const StyledLink = styled.a<{ width: number; fSize: number; lHeight: number }>`
+	display: inline-block;
 	font-size: 16px;
 	line-height: 20px;
 	font-family: 'Gilroy', sans-serif;
@@ -9,6 +10,7 @@ const StyledButton = styled.button<{ width: number; fSize: number; lHeight: numb
 	width: 188px;
 	height: 48px;
 	text-align: center;
+	text-decoration: none;
 	padding: 14px 0;
 	border: none;
 	border-radius: 16px;
@@ -36,19 +38,19 @@ const StyledButton = styled.button<{ width: number; fSize: number; lHeight: numb
 	}
 `;
 
-type LightButtonProps = {
+type LightLinkProps = {
 	width: number;
 	fSize: number;
 	lHeight: number;
 	[x: string]: any;
 };
 
-const LightButton: FC<LightButtonProps> = ({ children, width, fSize, lHeight, ...props }) => {
+const LightLink: FC<LightLinkProps> = ({ children, width, fSize, lHeight, ...props }) => {
 	return (
-		<StyledButton width={width} fSize={fSize} lHeight={lHeight} {...props}>
+		<StyledLink width={width} fSize={fSize} lHeight={lHeight} {...props}>
 			{children}
-		</StyledButton>
+		</StyledLink>
 	);
 };
 
-export default LightButton;
+export default LightLink;

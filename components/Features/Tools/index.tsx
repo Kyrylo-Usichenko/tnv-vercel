@@ -13,11 +13,29 @@ const Tools: FC = () => {
 					<ManageTitle>{t('features:introductionManageOrders')}</ManageTitle>
 					<ManageText>{t('features:introductionManageOrdersText')}</ManageText>
 					<Image src='/images/features/tools/manage@2x.png' alt='app' width={252} height={324} />
-					<ManageDec></ManageDec>
+					<ManageDec>
+						<ManageDecDots>
+							<Image
+								src={'/images/features/tools/manage-dots.webp'}
+								alt='Dots'
+								width={254}
+								height={100}
+							/>
+						</ManageDecDots>
+					</ManageDec>
 				</Manage>
 				<Wrapper>
 					<Message>
-						<MessageeDec></MessageeDec>
+						<MessageeDec>
+							<MessageeDecDots>
+								<Image
+									src={'/images/features/tools/message-dots.png'}
+									alt='Dots'
+									width={208}
+									height={88}
+								/>
+							</MessageeDecDots>
+						</MessageeDec>
 						<MessageButtons>
 							<MessageButton disabled>
 								<Image src='/images/features/tools/pin.svg' alt='pin' width={16} height={17} />
@@ -33,7 +51,16 @@ const Tools: FC = () => {
 					</Message>
 					<WrapperLine2>
 						<Share>
-							<ShareDec></ShareDec>
+							<ShareDec>
+								<ShareDecDots>
+									<Image
+										src='/images/features/tools/share-dots.webp'
+										alt='Dots'
+										width={164}
+										height={100}
+									/>
+								</ShareDecDots>
+							</ShareDec>
 							<ShareBlock1>
 								<Image src='/images/features/tools/share.svg' alt='share' width={48} height={48} />
 							</ShareBlock1>
@@ -51,7 +78,16 @@ const Tools: FC = () => {
 								</InvoiceBlock2>
 							</InvoiceBlock1>
 							<InvoiceTitle>{t('features:introductionCreateInvoices')}</InvoiceTitle>
-							<InvoicesDec></InvoicesDec>
+							<InvoicesDec>
+								<InvoicesDecDots>
+									<Image
+										src='/images/features/tools/invoice-dots.png'
+										alt='Dots'
+										width={129}
+										height={153}
+									/>
+								</InvoicesDecDots>
+							</InvoicesDec>
 						</Invoices>
 					</WrapperLine2>
 				</Wrapper>
@@ -196,25 +232,20 @@ const ManageDec = styled.div`
 	bottom: 0;
 	height: 100%;
 	width: 100%;
+`;
 
-	&::before {
-		content: url('/images/features/tools/manage-dots.webp');
-		position: absolute;
-		bottom: 0;
-		right: -190px;
-		z-index: -1;
-	}
+const ManageDecDots = styled.div`
+	position: absolute;
+	bottom: 0;
+	right: -190px;
+	z-index: -1;
 
 	@media (min-width: 768px) {
-		&::before {
-			right: 80px;
-		}
+		right: 80px;
 	}
 
 	@media (min-width: 1024px) {
-		&::before {
-			right: 0px;
-		}
+		right: 0px;
 	}
 `;
 
@@ -340,19 +371,16 @@ const MessageeDec = styled.div`
 	bottom: 0;
 	height: 100%;
 	width: 100%;
+`;
 
-	&::before {
-		content: url('/images/features/tools/message-dots.png');
-		position: absolute;
-		left: 0;
-		bottom: -30px;
-	}
+const MessageeDecDots = styled.div`
+	position: absolute;
+	left: 0;
+	bottom: -30px;
 
 	@media (min-width: 768px) {
-		&::before {
-			bottom: 0;
-			left: 20px;
-		}
+		bottom: 0;
+		left: 20px;
 	}
 `;
 
@@ -522,25 +550,20 @@ const InvoicesDec = styled.div`
 	bottom: 0;
 	height: 100%;
 	width: 100%;
+`;
 
-	&::before {
-		content: url('/images/features/tools/invoice-dots.png');
-		position: absolute;
-		right: 0;
-		top: -7px;
-		z-index: -1;
-	}
+const InvoicesDecDots = styled.div`
+	position: absolute;
+	right: 0;
+	top: -7px;
+	z-index: -1;
 
 	@media (min-width: 1024px) {
-		&::before {
-			right: -140px;
-		}
+		right: -140px;
 	}
 
 	@media (min-width: 1280px) {
-		&::before {
-			right: -90px;
-		}
+		right: -90px;
 	}
 `;
 
@@ -679,36 +702,27 @@ const ShareDec = styled.div`
 	bottom: 0;
 	height: 100%;
 	width: 100%;
+`;
 
-	&::before {
-		content: url('/images/features/tools/share-dots.webp');
-		position: absolute;
-		left: 183px;
-		top: 0;
-	}
+const ShareDecDots = styled.div`
+	position: absolute;
+	left: 183px;
+	top: 0;
 
 	@media (min-width: 768px) {
-		&::before {
-			left: 200px;
-		}
+		left: 200px;
 	}
 
 	@media (min-width: 1024px) {
-		&::before {
-			left: 170px;
-		}
+		left: 170px;
 	}
 
 	@media (min-width: 1440px) {
-		&::before {
-			left: 210px;
-		}
+		left: 210px;
 	}
 
 	@media (min-width: 1920px) {
-		&::before {
-			left: 170px;
-		}
+		left: 170px;
 	}
 `;
 

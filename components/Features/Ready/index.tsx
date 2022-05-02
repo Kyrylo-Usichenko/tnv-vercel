@@ -1,7 +1,9 @@
 import React, { FC } from 'react';
+import Image from 'next/image';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
+import RedButton from '../../common/Buttons/Button';
 
 type ReadyProps = {
 	openModal: () => void;
@@ -13,14 +15,21 @@ const Ready: FC<ReadyProps> = ({ openModal }) => {
 	return (
 		<StyledReady>
 			<FlexConInfo>
-				<FullConDec></FullConDec>
+				<FullConDec>
+					<DotsL>
+						<Image src={'/images/features/ready/ready-dots-l.webp'} alt='Dots' width={374} height={143} />
+					</DotsL>
+					<DotsR>
+						<Image src={'/images/features/ready/ready-dots-r.webp'} alt='Dots' width={298} height={192} />
+					</DotsR>
+				</FullConDec>
 				<FeaturesCon>
 					<ReadyCon>
 						<ReadyText>{t('features:ctaReady')}</ReadyText>
 						<ReadyTitle>{t('features:ctaTitle')}</ReadyTitle>
-						<ReadyButton type='button' onClick={openModal}>
+						<RedButton type='button' onClick={openModal}>
 							{t('features:ctaButton')}
-						</ReadyButton>
+						</RedButton>
 					</ReadyCon>
 				</FeaturesCon>
 			</FlexConInfo>
@@ -35,53 +44,45 @@ const StyledReady = styled.section`
 const FullConDec = styled.div`
 	width: 100%;
 	height: 100%;
+`;
 
-	&::before {
-		content: url('/images/features/ready/ready-dots-l.webp');
-		position: absolute;
-		bottom: -80px;
-		left: -160px;
-	}
-
-	&::after {
-		content: url('/images/features/ready/ready-dots-r.webp');
-		position: absolute;
-		top: -10px;
-		right: -210px;
-	}
+const DotsL = styled.div`
+	position: absolute;
+	bottom: -80px;
+	left: -160px;
 
 	@media (min-width: 768px) {
-		&::before {
-			left: 0;
-			bottom: -70px;
-		}
-
-		&::after {
-			top: -40px;
-			right: -90px;
-		}
+		left: 0;
+		bottom: -70px;
 	}
 
 	@media (min-width: 1280px) {
-		&::before {
-			left: 100px;
-			bottom: -50px;
-		}
-
-		&::after {
-			top: 0;
-			right: 0px;
-		}
+		left: 100px;
+		bottom: -50px;
 	}
 
 	@media (min-width: 1440px) {
-		&::before {
-			left: 150px;
-		}
+		left: 150px;
+	}
+`;
 
-		&::after {
-			right: 50px;
-		}
+const DotsR = styled.div`
+	position: absolute;
+	top: -10px;
+	right: -210px;
+
+	@media (min-width: 768px) {
+		top: -40px;
+		right: -90px;
+	}
+
+	@media (min-width: 1280px) {
+		top: 0;
+		right: 0px;
+	}
+
+	@media (min-width: 1440px) {
+		right: 50px;
 	}
 `;
 
@@ -244,41 +245,6 @@ const ReadyText = styled.p`
 	@media (min-width: 1920px) {
 		font-size: 24px;
 		line-height: 33px;
-	}
-`;
-
-const ReadyButton = styled.button`
-	width: 188px;
-	height: 48px;
-	padding: 14px;
-	background: #ff474d;
-	border: none;
-	border-radius: 18px;
-	text-align: center;
-	font-family: 'Gilroy';
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 20px;
-	color: #ffffff;
-	cursor: pointer;
-	transition: all 0.3s ease;
-
-	&:hover {
-		background-color: var(--text-primary-hover);
-		box-shadow: 8px 8px 20px 0 var(--shadow-color);
-	}
-
-	&:focus {
-		background-color: var(--text-primary);
-		box-shadow: 8px 4px 20px 0 var(--shadow-color);
-	}
-
-	@media (min-width: 1920px) {
-		font-size: 20px;
-		line-height: 25px;
-		padding: 16px 0;
-		width: 219px;
-		height: 56px;
 	}
 `;
 

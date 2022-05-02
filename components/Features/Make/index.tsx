@@ -23,6 +23,16 @@ const Make = () => {
 					</MakeInfo>
 					<First ref={ref}>
 						<Second>
+							<Stars>
+								<div>
+									<Image
+										src={'/images/features/make/dec.svg'}
+										alt='Stars'
+										layout='fill'
+										objectFit='contain'
+									/>
+								</div>
+							</Stars>
 							<LeftImgWrap>
 								<FadeIn duration={500} delay={200} isShow={isShow}>
 									<LeftImg>
@@ -47,6 +57,16 @@ const Make = () => {
 									</RightImg>{' '}
 								</FadeIn>
 							</RightImgWrap>
+							<Dots>
+								<div>
+									<Image
+										src={'/images/features/make/dots.svg'}
+										alt='Dots'
+										layout='fill'
+										objectFit='contain'
+									/>
+								</div>
+							</Dots>
 						</Second>
 					</First>
 				</MakeCon>
@@ -225,49 +245,64 @@ const Second = styled.div`
 	border-radius: 52.1364px;
 	position: relative;
 
-	&::before {
-		content: url('/images/features/make/dec-375.svg');
-		position: absolute;
-		top: -130px;
-		left: 205px;
-		transform: rotate(45deg);
-		z-index: 1;
-	}
-
-	&::after {
-		content: url('/images/features/make/dots-375.svg');
-		position: absolute;
-		bottom: 33px;
-		left: -20px;
-	}
-
 	@media (min-width: 768px) {
 		width: 490.37px;
 		height: 490.37px;
+	}
+`;
 
-		&::before {
-			content: url('/images/features/make/dec.svg');
-			top: -185px;
-			left: 289px;
-		}
+const Stars = styled.div`
+	position: absolute;
+	top: -130px;
+	left: 205px;
+	transform: rotate(45deg);
+	z-index: 1;
+	width: 58px;
+	height: 56.6px;
 
-		&::after {
-			content: url('/images/features/make/dots.svg');
-			bottom: 33px;
-			left: -20px;
-		}
+	& > div {
+		position: relative;
+		height: inherit;
+		width: inherit;
+	}
+
+	@media (min-width: 768px) {
+		width: 80px;
+		height: 76.6px;
+		top: -185px;
+		left: 289px;
 	}
 
 	@media (min-width: 1024px) {
-		&::before {
-			top: -137px;
-			left: 325px;
-		}
+		top: -137px;
+		left: 325px;
+	}
+`;
 
-		&::after {
-			left: 30px;
-			transform: rotate(45deg);
-		}
+const Dots = styled.div`
+	position: absolute;
+	bottom: 33px;
+	left: -20px;
+	width: 238px;
+	height: 238px;
+
+	& > div {
+		position: relative;
+		height: inherit;
+		width: inherit;
+	}
+
+	@media (min-width: 768px) {
+		bottom: 33px;
+		left: -20px;
+		width: 326px;
+		height: 326px;
+	}
+
+	@media (min-width: 1024px) {
+		left: 30px;
+		bottom: -36px;
+		transform: rotate(45deg);
 	}
 `;
 

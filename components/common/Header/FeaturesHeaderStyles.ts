@@ -328,7 +328,7 @@ export const HeaderButton = styled.button<{ isHeaderScrolled: boolean; Tab: stri
 
 	&:hover {
 		background-color: ${({ Tab, isHeaderScrolled }) =>
-			Tab === 'Home' && !isHeaderScrolled ? '#ffffffcc' : 'var(--text-primary-hover)'};
+			Tab === 'Home' && !isHeaderScrolled ? '#e0e0e1' : 'var(--text-primary-hover)'};
 		box-shadow: ${({ Tab, isHeaderScrolled }) =>
 			Tab === 'Home' && !isHeaderScrolled
 				? '14px 4px 20px 0 var(--shadow-color)'
@@ -337,11 +337,7 @@ export const HeaderButton = styled.button<{ isHeaderScrolled: boolean; Tab: stri
 
 	&:focus {
 		background-color: ${({ Tab, isHeaderScrolled }) =>
-			Tab === 'Home' && !isHeaderScrolled ? 'var(--text-white)' : 'var(--text-primary)'};
-		box-shadow: ${({ Tab, isHeaderScrolled }) =>
-			Tab === 'Home' && !isHeaderScrolled
-				? '12px 2px 20px 0 var(--shadow-color)'
-				: '8px 4px 20px 0 var(--shadow-color)'};
+			Tab === 'Home' && !isHeaderScrolled ? '#e0e0e1' : 'var(--text-primary)'};
 	}
 
 	@media (min-width: 1920px) {
@@ -441,7 +437,6 @@ export const MobileButton = styled.button`
 
 	&:focus {
 		background-color: var(--text-primary);
-		box-shadow: 8px 4px 20px 0 var(--shadow-color);
 	}
 `;
 

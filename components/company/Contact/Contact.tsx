@@ -2,6 +2,8 @@ import React, { FC, RefObject } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
+import LightLink from '../../common/Links/LightLink';
+import TransparentLink from '../../common/Links/TransparentLink';
 
 type ContactProps = {
 	contactSectionRef: RefObject<HTMLDivElement>;
@@ -24,13 +26,15 @@ const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
 						<LeftDots />
 						<Heading>{t('company:contactHeading1')}</Heading>
 						<Content>{t('company:contactText1')}</Content>
-						<ContactUs
+						<TransparentLink
 							href='http://dashboard.tinvio.com'
 							target='_blank'
-							data-text={t('company:contactButton1')}
+							width={210}
+							fSize={18}
+							lHeight={22}
 						>
 							{t('company:contactButton1')}
-						</ContactUs>
+						</TransparentLink>
 					</Block>
 					<DarkBlock>
 						<MiddleSquareLeft />
@@ -38,9 +42,15 @@ const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
 						<MiddleDots />
 						<LightHeading>{t('company:contactHeading2')}</LightHeading>
 						<LightContent>{t('company:contactText2')}</LightContent>
-						<LightContactUs href='mailto:partners@tinvio.com' target='_blank'>
+						<LightLink
+							width={210}
+							fSize={18}
+							lHeight={22}
+							href='mailto:partners@tinvio.com'
+							target='_blank'
+						>
 							{t('company:contactButton2')}
-						</LightContactUs>
+						</LightLink>
 					</DarkBlock>
 					<Block>
 						<RightSquareLeft />
@@ -48,13 +58,15 @@ const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
 						<RightDots />
 						<Heading>{t('company:contactHeading3')}</Heading>
 						<Content>{t('company:contactText3')}</Content>
-						<ContactUs
+						<TransparentLink
 							href='mailto:press@tinvio.com'
 							target='_blank'
-							data-text={t('company:contactButton3')}
+							width={210}
+							fSize={18}
+							lHeight={22}
 						>
 							{t('company:contactButton3')}
-						</ContactUs>
+						</TransparentLink>
 					</Block>
 				</Inner>
 			</FeaturesCon>
@@ -194,88 +206,6 @@ const Content = styled.p`
 
 const LightContent = styled(Content)`
 	color: #ffffff;
-`;
-
-const ContactUs = styled.a`
-	text-decoration: none;
-	border: 1px solid #d2d2d2;
-	background-color: transparent;
-	border-radius: 16px;
-	font-family: 'Gilroy';
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 20px;
-	text-align: center;
-	color: #212121;
-	padding: 14px 50px;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	position: relative;
-	outline: none;
-	z-index: 1;
-
-	&::before {
-		position: absolute;
-		width: 100%;
-		content: attr(data-text);
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		color: rgba(33, 33, 33, 0.1);
-		z-index: 2;
-		filter: blur(1px);
-		opacity: 0;
-		transition: opacity 0.2s ease;
-	}
-
-	&::after {
-		position: absolute;
-		content: '';
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		border: 2px solid rgba(33, 33, 33, 0.1);
-		filter: blur(2px);
-		border-radius: 16px;
-		opacity: 0;
-		transition: opacity 0.2s ease;
-	}
-
-	&:hover::after,
-	&:hover::before {
-		opacity: 1;
-	}
-
-	&:hover {
-		color: rgba(33, 33, 33, 0.8);
-	}
-
-	@media (min-width: 1920px) {
-		font-size: 18px;
-		line-height: 23px;
-		padding: 16px 55px;
-	}
-`;
-
-const LightContactUs = styled(ContactUs)`
-	background-color: #ffffff;
-	color: #212121;
-
-	&::after,
-	&::before {
-		display: none;
-	}
-
-	&:hover {
-		background-color: #ffffffcc;
-		box-shadow: 14px 4px 20px 0 var(--shadow-color);
-	}
-
-	&:focus {
-		background-color: var(--text-white);
-		box-shadow: 12px 2px 20px 0 var(--shadow-color);
-	}
 `;
 
 const SquareRight = styled.div`
