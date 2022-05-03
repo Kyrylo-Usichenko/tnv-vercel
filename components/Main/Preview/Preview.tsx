@@ -1,7 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, RefObject, useEffect, useRef } from 'react';
 import { useTranslation } from 'next-i18next';
 import styled from 'styled-components';
 import RedButton from '../../common/Buttons/Button';
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 type PreviewProps = {
 	scrollDown: () => void;
@@ -10,9 +11,52 @@ type PreviewProps = {
 const Preview: FC<PreviewProps> = ({ scrollDown }) => {
 	const { t } = useTranslation();
 
+	const heading = useRef() as RefObject<HTMLHeadingElement>;
+	const entry = useIntersectionObserver(heading, {});
+
+	const pic1 = useRef() as RefObject<HTMLImageElement>;
+
+	useEffect(() => {
+		const isVisible = !!entry?.isIntersecting;
+
+		const dec1 = pic1?.current;
+
+		const scrollHeight = Math.max(
+			document.body.scrollHeight,
+			document.documentElement.scrollHeight,
+			document.body.offsetHeight,
+			document.documentElement.offsetHeight,
+			document.body.clientHeight,
+			document.documentElement.clientHeight,
+		);
+
+		const updateScale = () => {
+			const scrolled = (window.scrollY / (scrollHeight - window.innerHeight)) * 20;
+			const scale = 1 + scrolled;
+			const opacity = 1 - scrolled;
+
+			dec1!.style.transform = `scale(${scale})`;
+
+			dec1!.style.opacity = `${opacity}`;
+		};
+
+		const onScroll = () => {
+			window.requestAnimationFrame(updateScale);
+		};
+
+		if (isVisible) {
+			window.addEventListener('scroll', onScroll);
+		} else {
+			window.removeEventListener('scroll', onScroll);
+		}
+
+		return () => window.removeEventListener('scroll', onScroll);
+	}, [entry]);
+
 	return (
 		<PreviewInfo>
-			<PreviewTitle>
+			<PreviewTitle ref={heading}>
+				<PreviewTitleDec ref={pic1} src='/images/main/preview/decorations.svg' alt='Stars' />
 				Collecting payments <span className='accent'>is easy</span>, right?
 			</PreviewTitle>
 			<PreviewText>{t('main:previewText')}</PreviewText>
@@ -65,39 +109,6 @@ const PreviewTitle = styled.h2`
 	max-width: 333px;
 	text-align: center;
 
-	&:before {
-		content: '';
-		background: url('/images/main/preview/decorations.svg');
-		position: absolute;
-		z-index: 1;
-		background-size: contain;
-		transform: rotate(27deg);
-		height: 80px;
-		width: 75px;
-		left: -15px;
-		top: -45px;
-
-		@media (min-width: 768px) {
-			left: -20px;
-			top: -44px;
-		}
-		@media (min-width: 1024px) {
-			left: -26px;
-			top: -38px;
-		}
-		@media (min-width: 1280px) {
-			left: -35px;
-			top: -27px;
-			transform: rotate(0deg);
-		}
-		@media (min-width: 1920px) {
-			left: -42px;
-			top: -44px;
-			width: 87px;
-			height: 80px;
-		}
-	}
-
 	@media (min-width: 768px) {
 		font-size: 32px;
 		line-height: 39px;
@@ -125,6 +136,36 @@ const PreviewTitle = styled.h2`
 		font-weight: 600;
 		font-size: 48px;
 		line-height: 59px;
+	}
+`;
+
+const PreviewTitleDec = styled.img`
+	position: absolute;
+	z-index: 1;
+	transform: rotate(27deg);
+	height: 80px;
+	width: 75px;
+	left: -20px;
+	top: -45px;
+
+	@media (min-width: 768px) {
+		left: -32px;
+		top: -44px;
+	}
+	@media (min-width: 1024px) {
+		left: -38px;
+		top: -38px;
+	}
+	@media (min-width: 1280px) {
+		left: -42px;
+		top: -27px;
+		transform: rotate(0deg);
+	}
+	@media (min-width: 1920px) {
+		left: -42px;
+		top: -44px;
+		width: 87px;
+		height: 80px;
 	}
 `;
 

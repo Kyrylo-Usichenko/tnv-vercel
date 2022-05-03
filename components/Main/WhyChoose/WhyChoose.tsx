@@ -102,12 +102,18 @@ const LeftTopDots = styled.div`
 `;
 const DotsRight = styled.div`
 	position: absolute;
-	left: 990px;
-	top: 112px;
+	left: 838px;
+	top: 116px;
 	width: 465px;
 	height: 219px;
 	@media (max-width: 1440px) {
-		left: 930px;
+		left: 824px;
+	}
+	@media (max-width: 1280px) {
+		left: 687px;
+	}
+	@media (max-width: 768px) {
+		display: none;
 	}
 `;
 

@@ -519,7 +519,7 @@ const CardBotIcon = styled.div`
 
 const CardTopStars = styled.div`
 	position: absolute;
-	left: 170px;
+	left: 85px;
 	top: -53px;
 	width: 56px;
 	height: 42px;
@@ -646,14 +646,8 @@ const DotsLeft = styled.div`
 	z-index: -2;
 	width: 298px;
 	height: 225px;
-	left: -292px;
-	top: -339px;
-	@media (min-width: 1px) {
-		width: 298px;
-		height: 225px;
-		left: -292px;
-		top: -339px;
-	}
+	left: -226px;
+	top: -317px;
 	@media (min-width: 768px) {
 		width: 298px;
 		height: 225px;
