@@ -1,4 +1,4 @@
-import React, { Dispatch, FC, RefObject, SetStateAction, useRef, useState } from 'react';
+import React, { FC, RefObject, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import { useTranslation } from 'next-i18next';
@@ -10,7 +10,8 @@ import Line1 from './Line1';
 import Line2 from './Line2';
 import LightButton from '../../common/Buttons/LightButton';
 import ReactPlayer from 'react-player';
-import useOnClickOutside from '../../../hooks/useOnClickOutside';
+
+// import useOnClickOutsideVideo from '../../../hooks/useOnClickOutsideVideo';
 
 type Props = {};
 
@@ -19,17 +20,19 @@ const HowItWorks: FC<Props> = () => {
 	const ref = useRef(null) as RefObject<HTMLDivElement>;
 	const isShow = useAnimate(ref);
 	const [player, setPlayer] = useState(false);
-	const modalRef = useOnClickOutside(() => {
-		if (player) {
-			setPlayer(false);
-		}
-	});
+	// const refButton = useRef(null) as RefObject<HTMLButtonElement>;
+	// console.log(refButton);
+
+	// const modalRef = useOnClickOutsideVideo(() => {
+	// 	setPlayer(false);
+	// }, refButton);
+
 	return (
 		<Wrapper>
 			<ContainerHow>
 				<Inner>
 					<Null>
-						<Video ref={modalRef} player={player}>
+						<Video player={player}>
 							<ReactPlayer url='https://tinvio-3.wistia.com/medias/wam61v1zoz' controls playing />
 						</Video>
 						<div ref={ref}>
@@ -78,7 +81,7 @@ const HowItWorks: FC<Props> = () => {
 					<Info>
 						<InfoTitle>{t('main:howItWorksTitle')}</InfoTitle>
 						<InfoText>{t('main:howItWorksContent')}</InfoText>
-						<Button onClick={setPlayer} width={220} fSize={18} lHeight={22}>
+						<Button width={220} fSize={18} lHeight={22}>
 							<img width='12px' height='14px' src='icons/main/howItWorks/Play.svg' alt='Play' />
 							<ButtonText>{t('main:howItWorksButton')}</ButtonText>
 						</Button>
