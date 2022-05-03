@@ -18,7 +18,7 @@ const Role: FC = () => {
 		<Wrapper>
 			<Square />
 			<Dots>
-				<Image src='/images/company/Role/dots.svg' alt='Dots' width={338} height={256} />
+				<Image src='/images/company/Role/dots.png' alt='Dots' width={338} height={256} />
 			</Dots>
 			<FeaturesCon>
 				<GalleryCon>

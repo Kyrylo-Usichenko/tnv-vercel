@@ -17,10 +17,10 @@ const Ready: FC<ReadyProps> = ({ openModal }) => {
 			<FlexConInfo>
 				<FullConDec>
 					<DotsL>
-						<Image src={'/images/features/ready/ready-dots-l.webp'} alt='Dots' width={374} height={143} />
+						<Image src={'/images/features/ready/ready-dots-l.png'} alt='Dots' width={374} height={143} />
 					</DotsL>
 					<DotsR>
-						<Image src={'/images/features/ready/ready-dots-r.webp'} alt='Dots' width={298} height={192} />
+						<Image src={'/images/features/ready/ready-dots-r.png'} alt='Dots' width={298} height={192} />
 					</DotsR>
 				</FullConDec>
 				<FeaturesCon>

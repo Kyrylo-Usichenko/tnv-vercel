@@ -30,6 +30,7 @@ const Supercharge: FC = () => {
 								layout='fill'
 								objectFit='contain'
 								alt='app'
+								priority={true}
 							/>
 						</FullConApp>
 					</FullConDec1>
@@ -40,26 +41,26 @@ const Supercharge: FC = () => {
 					</FlexConInfoDots>
 					<FeaturesCon className='h-100'>
 						<FlexConGrid ref={ref}>
-							<FadeIn duration={500} delay={500} isShow={isShow}>
+							<FadeIn duration={300} delay={300} isShow={isShow}>
 								<Elem>
 									<Title>{t('features:introductionChats')}</Title>
 									<Text>{t('features:introductionChatsText')}</Text>
 								</Elem>
 							</FadeIn>
-							<FadeIn duration={500} delay={750} isShow={isShow}>
+							<FadeIn duration={300} delay={500} isShow={isShow}>
 								<Elem>
 									<Title>{t('features:introductionOrders')}</Title>
 									<Text>{t('features:introductionOrdersText')}</Text>
 								</Elem>
 							</FadeIn>
-							<FadeIn duration={500} delay={1000} isShow={isShow}>
+							<FadeIn duration={300} delay={700} isShow={isShow}>
 								<Elem>
 									<Title>{t('features:introductionPayments')}</Title>
 									<Text>{t('features:introductionPaymentsText')}</Text>
 								</Elem>
 							</FadeIn>
 							<Elem>
-								<FadeIn duration={500} delay={1250} isShow={isShow}>
+								<FadeIn duration={300} delay={900} isShow={isShow}>
 									<Title>{t('features:introductionMore')}...</Title>
 								</FadeIn>
 							</Elem>
@@ -287,10 +288,15 @@ const Title = styled.h3`
 	z-index: 1;
 
 	&::before {
-		content: url('/images/features/supercharge/title-rec.png');
+		content: '';
 		position: absolute;
-		top: -10px;
-		left: -27px;
+		width: 44px;
+		height: 44px;
+		border-radius: 6px;
+		transform: rotate(-45deg);
+		background-color: #4a4a4a;
+		top: -5px;
+		left: -22px;
 		z-index: -1;
 	}
 
@@ -426,7 +432,7 @@ const FullConDec1 = styled.div`
 
 		&::after {
 			left: 13px;
-			bottom: -330px;
+			bottom: -265px;
 		}
 	}
 
@@ -437,6 +443,7 @@ const FullConDec1 = styled.div`
 
 		&::after {
 			left: 97px;
+			bottom: -285px;
 		}
 	}
 

@@ -25,10 +25,10 @@ const Teamvio: FC = () => {
 						<SquareRightTop />
 						<SquareRightBot />
 						<RightDots>
-							<Image src='/images/company/Teamvio/rightDots.svg' alt='Dots' width={389} height={294} />
+							<Image src='/images/company/Teamvio/rightDots.png' alt='Dots' width={389} height={294} />
 						</RightDots>
 						<LeftDots>
-							<Image src='/images/company/Teamvio/leftDots.svg' alt='Dots' width={389} height={294} />
+							<Image src='/images/company/Teamvio/leftDots.png' alt='Dots' width={389} height={294} />
 						</LeftDots>
 						<Img1 src='/images/company/Teamvio/1@2x.jpg' alt='people' loading='lazy' />
 						<MobileImg src='/images/company/Teamvio/2@2x.jpg' alt='people' loading='lazy' />
