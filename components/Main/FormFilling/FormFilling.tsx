@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import MapComponentFlex from './MapFlex';
 import { useTranslation } from 'next-i18next';
+import Image from 'next/image';
 
 type SmileProps = {
 	formRef: RefObject<HTMLDivElement>;
@@ -214,10 +215,17 @@ const Smile: FC<SmileProps> = ({ formRef, locale }) => {
 									</Button>
 									<Spam>
 										{t('main:formUnderButton')}
-										<Img src='/images/main/formFilling/hands.svg' alt='' />
+										<Img src='/images/main/formFilling/hands.svg' alt='Hands' />
 									</Spam>
 								</Form>
-								<Dots src='/images/main/formFilling/dots.svg' alt='' />
+								<Dots>
+									<Image
+										src='/images/main/formFilling/dots.png'
+										alt='Dots'
+										width={263}
+										height={201}
+									/>
+								</Dots>
 							</FormWrapper>
 						</Inner>
 					</FeaturesCon>
@@ -592,7 +600,7 @@ const Img = styled.img`
 	margin-left: 8px;
 `;
 
-const Dots = styled.img`
+const Dots = styled.div`
 	position: absolute;
 	right: -29px;
 	bottom: 29px;

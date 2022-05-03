@@ -167,40 +167,46 @@ const MoreMoney: FC = () => {
 					<Null>
 						<LeftMock isActive={tab.name === 'Chats'}>
 							<ImageInner>
-								<Image src={chatLeft} alt={tab.name} layout='fill' objectFit='contain' priority />
+								<Image src={chatLeft} alt={tab.name} layout='fill' objectFit='contain' />
 							</ImageInner>
 						</LeftMock>
 						<RightMock isActive={tab.name === 'Chats'}>
 							<ImageInner>
-								<Image src={chatRight} alt={tab.name} layout='fill' objectFit='contain' priority />
+								<Image src={chatRight} alt={tab.name} layout='fill' objectFit='contain' />
 							</ImageInner>
 						</RightMock>
 						<LeftMock isActive={tab.name === 'Orders'}>
 							<ImageInner>
-								<Image src={orderLeft} alt={tab.name} layout='fill' objectFit='contain' priority />
+								<Image src={orderLeft} alt={tab.name} layout='fill' objectFit='contain' />
 							</ImageInner>
 						</LeftMock>
 						<RightMock isActive={tab.name === 'Orders'}>
 							<ImageInner>
-								<Image src={orderRight} alt={tab.name} layout='fill' objectFit='contain' priority />
+								<Image src={orderRight} alt={tab.name} layout='fill' objectFit='contain' />
 							</ImageInner>
 						</RightMock>
 						<LeftMock isActive={tab.name === 'Payments'}>
 							<ImageInner>
-								<Image src={payLeft} alt={tab.name} layout='fill' objectFit='contain' priority />
+								<Image src={payLeft} alt={tab.name} layout='fill' objectFit='contain' />
 							</ImageInner>
 						</LeftMock>
 						<RightMock isActive={tab.name === 'Payments'}>
 							<ImageInner>
-								<Image src={payRight} alt={tab.name} layout='fill' objectFit='contain' priority />
+								<Image src={payRight} alt={tab.name} layout='fill' objectFit='contain' />
 							</ImageInner>
 						</RightMock>
-						<Stars src='/images/main/moreMoney/stars.svg' alt='stars' />
-						<Dots src='/images/main/moreMoney/dots.svg' alt='dots' />
+						<Stars>
+							<Image src='/images/main/moreMoney/stars.svg' alt='Stars' width={191} height={198} />
+						</Stars>
+						<Dots>
+							<Image src='/images/main/moreMoney/dots.png' alt='Dots' width={313} height={237} />
+						</Dots>
 					</Null>
 				</RedSquare>
 			</PurpleSquare>
-			<MobRightDots />
+			<MobRightDots>
+				<Image src='/images/main/moreMoney/mob-right-dots.png' alt='Dots' width={158} height={184} />
+			</MobRightDots>
 		</Wrapper>
 	);
 };
@@ -391,7 +397,7 @@ const Null = styled.div`
 	position: relative;
 `;
 
-const Dots = styled.img`
+const Dots = styled.div`
 	position: absolute;
 	left: 133px;
 	top: -78px;
@@ -402,7 +408,7 @@ const Dots = styled.img`
 	}
 `;
 
-const Stars = styled.img`
+const Stars = styled.div`
 	position: absolute;
 	left: -202px;
 	top: -107px;
@@ -765,12 +771,9 @@ const Item = styled.li`
 const MobRightDots = styled.div`
 	display: block;
 	position: absolute;
-	width: 243.1px;
-	height: 183.97px;
 	top: 58%;
 	right: 0;
 	transform: translateX(50%);
-	background: url('/images/main/moreMoney/mob-right-dots.svg') 0 0 / contain no-repeat;
 
 	@media (min-width: 1024px) {
 		display: none;
