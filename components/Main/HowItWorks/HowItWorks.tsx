@@ -1,4 +1,4 @@
-import React, { FC, RefObject, useRef, useState } from 'react';
+import React, { FC, RefObject, useRef } from 'react';
 import styled from 'styled-components';
 
 import { useTranslation } from 'next-i18next';
@@ -13,13 +13,11 @@ import ReactPlayer from 'react-player';
 
 // import useOnClickOutsideVideo from '../../../hooks/useOnClickOutsideVideo';
 
-type Props = {};
-
-const HowItWorks: FC<Props> = () => {
+const HowItWorks: FC = () => {
 	const { t } = useTranslation();
 	const ref = useRef(null) as RefObject<HTMLDivElement>;
 	const isShow = useAnimate(ref);
-	const [player, setPlayer] = useState(false);
+	const player = false;
 	// const refButton = useRef(null) as RefObject<HTMLButtonElement>;
 	// console.log(refButton);
 
