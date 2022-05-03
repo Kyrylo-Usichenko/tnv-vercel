@@ -61,7 +61,7 @@ const Home: NextPage<any> = (props) => {
 
 				<section>
 					<FeaturesCon>
-						<Preview scrollDown={executeScroll} />
+						<Preview locale={locale} scrollDown={executeScroll} />
 					</FeaturesCon>
 					<HowItWorks />
 					<MoreMoney />

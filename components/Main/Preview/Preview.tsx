@@ -6,9 +6,10 @@ import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 type PreviewProps = {
 	scrollDown: () => void;
+	locale: string;
 };
 
-const Preview: FC<PreviewProps> = ({ scrollDown }) => {
+const Preview: FC<PreviewProps> = ({ scrollDown, locale }) => {
 	const { t } = useTranslation();
 
 	const heading = useRef() as RefObject<HTMLHeadingElement>;
@@ -55,9 +56,10 @@ const Preview: FC<PreviewProps> = ({ scrollDown }) => {
 
 	return (
 		<PreviewInfo>
-			<PreviewTitle ref={heading}>
+			<PreviewTitle locale={locale} ref={heading}>
 				<PreviewTitleDec ref={pic1} src='/images/main/preview/decorations.svg' alt='Stars' />
-				Collecting payments <span className='accent'>is easy</span>, right?
+				{t('main:previewTitle1')} <span className='accent'> {t('main:previewTitle2')}</span>{' '}
+				{t('main:previewTitle3')}
 			</PreviewTitle>
 			<PreviewText>{t('main:previewText')}</PreviewText>
 			<PreviewAction>
@@ -97,12 +99,10 @@ const PreviewInfo = styled.div`
 	}
 `;
 
-const PreviewTitle = styled.h2`
+const PreviewTitle = styled.h2<{ locale: string }>`
 	font-family: 'Gilroy';
 	font-weight: 600;
-
 	position: relative;
-
 	font-size: 32px;
 	line-height: 39px;
 	margin: 0 0 16px 0;
@@ -114,6 +114,7 @@ const PreviewTitle = styled.h2`
 		line-height: 39px;
 		margin: 0 0 16px 0;
 		max-width: 333px;
+		max-width: ${({ locale }) => (locale === 'id' ? '333px' : locale === 'vn' ? '375px' : '333px')};
 	}
 	@media (min-width: 1024px) {
 		text-align: left;
@@ -123,12 +124,13 @@ const PreviewTitle = styled.h2`
 		line-height: 54px;
 		margin: 0 0 11px 0;
 		max-width: 427px;
+		max-width: ${({ locale }) => (locale === 'id' ? '455px' : locale === 'vn' ? '427px' : '427px')};
 	}
 	@media (min-width: 1440px) {
 		font-size: 44px;
 		line-height: 54px;
 		margin: 0 0 11px 0;
-		max-width: 427px;
+		max-width: ${({ locale }) => (locale === 'id' ? '455px' : locale === 'vn' ? '427px' : '427px')};
 	}
 	@media (min-width: 1920px) {
 		max-width: 478px;
@@ -136,6 +138,7 @@ const PreviewTitle = styled.h2`
 		font-weight: 600;
 		font-size: 48px;
 		line-height: 59px;
+		max-width: ${({ locale }) => (locale === 'id' ? '495px' : locale === 'vn' ? '478px' : '478px')};
 	}
 `;
 

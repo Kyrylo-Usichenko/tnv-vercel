@@ -224,7 +224,6 @@ const PreviewText = styled.p<{ locale: string }>`
 	@media (min-width: 768px) {
 		font-size: 16px;
 		line-height: 23px;
-		max-width: 350px;
 		max-width: ${({ locale }) => (locale === 'id' ? '475px' : locale === 'vn' ? '475px' : '350px')};
 	}
 	@media (min-width: 1024px) {
