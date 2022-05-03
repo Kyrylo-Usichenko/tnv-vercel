@@ -51,7 +51,7 @@ const RedTopSquare: FC = () => {
 			<SmallRed>
 				<Null ref={mainDiv}>
 					<AppImage ref={pic1} src='/images/main/preview/app@2x.png' />
-					<Phone ref={pic2} src='/images/main/preview/phone@2x.png' />
+					<Phone ref={pic2} src='/images/main/preview/phone.png' />
 					<DotsLeft />
 					<DotsBottom />
 				</Null>
@@ -95,6 +95,7 @@ const BigRed = styled.div`
 	@media (min-width: 1024px) {
 		width: 1031.82px;
 		height: 1049.93px;
+		background: rgba(251, 36, 43, 0.6);
 		border-radius: 136.463px;
 		transform: rotate(-45deg);
 		position: absolute;

@@ -18,7 +18,7 @@ const Slider: FC = () => {
 	const SLIDERS = [
 		{
 			sliderText: t('main:whyChooseSlide1'),
-			logo: '/images/main/whyChoose/itacho-logo.png',
+			logo: '/images/main/whyChoose/itacho-logo.svg',
 			name: 'Hafidz & Indah',
 			text: 'Owners (Sejadah Grocery)',
 			image: '/images/main/whyChoose/itacho.webp',
@@ -27,7 +27,7 @@ const Slider: FC = () => {
 		},
 		{
 			sliderText: t('main:whyChooseSlide2'),
-			logo: '/images/main/whyChoose/moonleaf-logo.svg',
+			logo: '/images/main/whyChoose/moonleaf-logo.png',
 			name: 'Pauline Limgenco',
 			text: 'Director (Moonleaf)',
 			image: '/images/main/whyChoose/moonleaf.webp',
@@ -36,7 +36,7 @@ const Slider: FC = () => {
 		},
 		{
 			sliderText: t('main:whyChooseSlide3'),
-			logo: '/images/main/whyChoose/phaitong-logo.svg',
+			logo: '/images/main/whyChoose/phaitong-logo.png',
 			name: 'Punnasiri Chaipatikul',
 			text: 'Business Development Manager (Phaitong Station)',
 			image: '/images/main/whyChoose/phaitong.webp',
@@ -45,7 +45,7 @@ const Slider: FC = () => {
 		},
 		{
 			sliderText: t('main:whyChooseSlide4'),
-			logo: '/images/main/whyChoose/baker-logo.svg',
+			logo: '/images/main/whyChoose/baker-logo.png',
 			name: 'Fathira Dida',
 			text: 'Owner (Baker Old)',
 			image: '/images/main/whyChoose/baker.webp',
@@ -166,14 +166,24 @@ const LeftSliderWrap = styled.div`
 			bottom: 0%;
 			width: 40px;
 			height: 40px;
-			background: #ff474d;
+			background: #ffffff;
 			border-radius: 8px;
 			margin: 0;
 			display: flex;
 			cursor: pointer;
 			transition: all 0.3s ease;
+			-webkit-tap-highlight-color: transparent;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
 			&:hover {
-				background: rgba(255, 71, 77, 0.8);
+				//background: rgba(243, 244, 245, 0.6);
+			}
+			&:focus {
+				outline: none !important;
 			}
 		}
 	}

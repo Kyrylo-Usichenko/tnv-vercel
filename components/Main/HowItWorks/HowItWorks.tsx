@@ -9,17 +9,30 @@ import FadeIn from '../../common/FadeIn/FadeIn';
 import Line1 from './Line1';
 import Line2 from './Line2';
 import LightButton from '../../common/Buttons/LightButton';
+import ReactPlayer from 'react-player';
+
+// import useOnClickOutsideVideo from '../../../hooks/useOnClickOutsideVideo';
 
 const HowItWorks: FC = () => {
 	const { t } = useTranslation();
 	const ref = useRef(null) as RefObject<HTMLDivElement>;
 	const isShow = useAnimate(ref);
+	const player = false;
+	// const refButton = useRef(null) as RefObject<HTMLButtonElement>;
+	// console.log(refButton);
+
+	// const modalRef = useOnClickOutsideVideo(() => {
+	// 	setPlayer(false);
+	// }, refButton);
 
 	return (
 		<Wrapper>
 			<ContainerHow>
 				<Inner>
 					<Null>
+						<Video player={player}>
+							<ReactPlayer url='https://tinvio-3.wistia.com/medias/wam61v1zoz' controls playing />
+						</Video>
 						<div ref={ref}>
 							<CardTop>
 								<FadeIn duration={300} delay={0} isShow={isShow}>
@@ -157,7 +170,7 @@ const Info = styled.div`
 	height: 230px;
 	text-align: center;
 	margin-top: 100px;
-	z-index: -1;
+	z-index: 1;
 	@media (min-width: 1024px) {
 		text-align: left;
 		margin-top: 200px;
@@ -228,7 +241,8 @@ const Button = styled(LightButton)`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
+	cursor: pointer;
+	z-index: 7;
 	@media (min-width: 1024px) {
 		margin: 0;
 	}
@@ -803,6 +817,19 @@ const CardText = styled.p`
 		padding: 0;
 		color: #5c5c5c;
 	}
+`;
+
+const Video = styled.div<{ player: boolean }>`
+	display: ${({ player }) => (player ? 'block' : 'none')};
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	max-width: 640px;
+	max-height: 360px;
 `;
 
 export default HowItWorks;

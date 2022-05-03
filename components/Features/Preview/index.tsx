@@ -11,9 +11,10 @@ import RedButton from '../../common/Buttons/Button';
 
 type PreviewProps = {
 	openModal: () => void;
+	locale: string;
 };
 
-const Preview: FC<PreviewProps> = ({ openModal }) => {
+const Preview: FC<PreviewProps> = ({ openModal, locale }) => {
 	const { t } = useTranslation();
 
 	const [animate, setAnimate] = useState(false);
@@ -80,7 +81,7 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 		<StyledPreview>
 			<FeaturesCon>
 				<PreviewInfo>
-					<PreviewTitle ref={heading}>
+					<PreviewTitle locale={locale} ref={heading}>
 						<PreviewDec1 ref={pic1}>
 							<source srcSet='/images/features/preview/dec1-1920.svg' media='(min-width: 1024px)' />
 							<img src='/images/features/preview/dec1-768.svg' alt='decoration' />
@@ -91,7 +92,7 @@ const Preview: FC<PreviewProps> = ({ openModal }) => {
 							<img src='/images/features/preview/dec2-768.svg' alt='decoration' />
 						</PreviewDec2>
 					</PreviewTitle>
-					<PreviewText>{t('features:heroText')}</PreviewText>
+					<PreviewText locale={locale}>{t('features:heroText')}</PreviewText>
 					<PreviewButton type='button' onClick={openModal}>
 						{t('features:heroButton')}
 					</PreviewButton>
@@ -143,40 +144,40 @@ const PreviewInfo = styled.div`
 	}
 `;
 
-const PreviewTitle = styled.h2`
+const PreviewTitle = styled.h2<{ locale: string }>`
 	text-align: center;
 	font-family: 'Gilroy';
 	font-weight: 600;
 	font-size: 28px;
 	line-height: 34px;
-	max-width: 345px;
 	color: var(--text-main);
 	margin: 0 0 16px 0;
 	position: relative;
+	max-width: ${({ locale }) => (locale === 'id' ? '343px' : locale === 'vn' ? '343px' : '343px')};
 
 	@media (min-width: 768px) {
 		font-size: 36px;
 		line-height: 44px;
-		max-width: 430px;
+		max-width: ${({ locale }) => (locale === 'id' ? '533px' : locale === 'vn' ? '590px' : '430px')};
 	}
 
 	@media (min-width: 1024px) {
 		font-size: 44px;
 		line-height: 52px;
-		max-width: 535px;
+		max-width: ${({ locale }) => (locale === 'id' ? '650px' : locale === 'vn' ? '730px' : '535px')};
 	}
 
 	@media (min-width: 1280px) {
 		font-size: 48px;
 		line-height: 59px;
 		margin: 0 0 16px 0;
-		max-width: 600px;
+		max-width: ${({ locale }) => (locale === 'id' ? '695px' : locale === 'vn' ? '808px' : '600px')};
 	}
 
 	@media (min-width: 1920px) {
 		font-size: 56px;
 		line-height: 69px;
-		max-width: 685px;
+		max-width: ${({ locale }) => (locale === 'id' ? '823px' : locale === 'vn' ? '933px' : '710px')};
 	}
 `;
 
@@ -210,7 +211,7 @@ const PreviewDec2 = styled.picture`
 	}
 `;
 
-const PreviewText = styled.p`
+const PreviewText = styled.p<{ locale: string }>`
 	font-family: 'Inter';
 	font-weight: 400;
 	font-size: 14px;
@@ -223,20 +224,22 @@ const PreviewText = styled.p`
 	@media (min-width: 768px) {
 		font-size: 16px;
 		line-height: 23px;
-		max-width: 350px;
+		max-width: ${({ locale }) => (locale === 'id' ? '475px' : locale === 'vn' ? '475px' : '350px')};
 	}
-
+	@media (min-width: 1024px) {
+		max-width: ${({ locale }) => (locale === 'id' ? '475px' : locale === 'vn' ? '475px' : '350px')};
+	}
 	@media (min-width: 1280px) {
 		font-size: 18px;
 		line-height: 24px;
-		max-width: 400px;
 		margin: 0 0 32px 0;
+		max-width: ${({ locale }) => (locale === 'id' ? '475px' : locale === 'vn' ? '475px' : '400px')};
 	}
 
 	@media (min-width: 1920px) {
 		font-size: 20px;
 		line-height: 25px;
-		max-width: 420px;
+		max-width: ${({ locale }) => (locale === 'id' ? '500px' : locale === 'vn' ? '500px' : '420px')};
 	}
 `;
 

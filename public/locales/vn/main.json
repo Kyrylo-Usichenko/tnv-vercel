@@ -26,7 +26,7 @@
   "moreMoneyTitle": "Giao dịch chuỗi cung ứng thông minh hơn",
   "formUnderButton": "Chúng tôi không spam, xin hứa!",
   "howItWorksChats": "Trò chuyện",
-  "howItWorksTitle": "Kiểm tra xem chúng tôi hoạt động như thế nào",
+  "howItWorksTitle": "Bắt đầu trong tích tắc",
   "moreMoneyButton": "Thêm nhiều tính năng",
   "moreMoneyTitle1": "Thêm nhiều bạn bè",
   "moreMoneyTitle2": "Nhanh hơn",
@@ -34,7 +34,7 @@
   "formBusinessName": "Tên doanh nghiệp",
   "howItWorksButton": "Chạy video",
   "howItWorksOrders": "Đơn hàng",
-  "howItWorksContent": "Thật dễ dàng! Trao đổi tin nhắn, tạo hoặc xác nhận đơn đặt hàng, gửi hóa đơn và thu tiền thanh toán trên toàn bộ chuỗi cung ứng của bạn - tất cả trong một bảng điều khiển.",
+  "howItWorksContent": "Trao đổi tin nhắn, tạo hoặc xác nhận đơn đặt hàng, gửi hóa đơn và thu tiền thanh toán trên toàn bộ chuỗi cung ứng của bạn - tất cả trong một bảng điều khiển.",
   "moreMoneyTab1Row1": "Gửi hóa đơn và dễ dàng theo dõi đến lúc thanh toán",
   "moreMoneyTab1Row2": "Thanh toán và điều chỉnh các hóa đơn trong thời gian thực ",
   "moreMoneyTab1Row3": "An toàn, bảo mật và tuân thủ ",
@@ -52,5 +52,8 @@
   "whyChooseSlide1": "Tinvio là một đối tác và giải pháp nền tảng của chúng tôi. Giờ đây, chúng tôi có khả năng giao tiếp nhanh hơn và hiệu quả hơn với khách hàng, điều này giúp cho việc xử lý đơn hàng và giao hàng trơn tru hơn bao giờ hết.",
   "whyChooseSlide2": "Với Tinvio, khách hàng của tôi dễ dàng thực hiện thanh toán bằng nhiều phương thức khác nhau. Mọi khoản thanh toán cũng được thu vào một tài khoản doanh nghiệp, nơi có thể rút tiền ngay lập tức bất kỳ lúc nào.",
   "whyChooseSlide3": "Tinvio giúp công việc kinh doanh của chúng tôi hoạt động trơn tru hơn. Chúng tôi có thể quản lý các đơn đặt hàng, khoản phải thu của khách hàng và quan trọng nhất là theo dõi và đối chiếu các khoản thanh toán mà không cần kiểm tra các ứng dụng ngân hàng hoặc bảng sao kê.",
-  "whyChooseSlide4": "Tinvio chắc chắn giúp giảm thiểu thời gian và sai sót trong việc quản lý đơn hàng giữa khách hàng và nhà cung cấp. Ứng dụng này rất dễ sử dụng và khả dụng trên thiết bị di động và web, đồng thời Tinvio cũng rất thân thiện và luôn hữu ích."
+  "whyChooseSlide4": "Tinvio chắc chắn giúp giảm thiểu thời gian và sai sót trong việc quản lý đơn hàng giữa khách hàng và nhà cung cấp. Ứng dụng này rất dễ sử dụng và khả dụng trên thiết bị di động và web, đồng thời Tinvio cũng rất thân thiện và luôn hữu ích.",
+  "previewTitle1": "Thu tiền thanh toán",
+  "previewTitle2": "thật đơn giản,",
+  "previewTitle3": "phải không?"
 }

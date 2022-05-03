@@ -565,7 +565,7 @@ const Svg = styled.svg<{ isVisible: boolean }>`
 	position: absolute;
 	top: 23.8%;
 	right: 25%;
-	width: 23.3%;
+	width: 22.3%;
 	height: auto;
 
 	${({ isVisible }) => (isVisible ? createCss() : null)}
@@ -588,7 +588,8 @@ const Svg = styled.svg<{ isVisible: boolean }>`
 	@media (min-width: 1024px) {
 		top: 135px;
 		right: 160px;
-		width: auto;
+		width: 110px;
+		height: 68px;
 	}
 
 	@media (min-width: 1280px) {

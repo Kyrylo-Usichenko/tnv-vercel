@@ -12,7 +12,15 @@
   "footerTerms": "Terms of Service",
   "formHeadingBefore": "Hi, we're",
   "formHeadingAfter": "And you?",
+
+  "previewTitle1": "Collecting payments",
+  "previewTitle2": "is easy,",
+  "previewTitle3": "right?",
+
+
+
   "previewText": "Manage all your supply chain transactions in one dashboard. Get paid faster, reconcile quicker, grow bigger.",
+
   "footerRights": "© Tinvio™ 2020. All Rights Reserved",
   "smileContent": "happy businesses",
   "footerCompany": "Company",
@@ -25,7 +33,7 @@
   "moreMoneyTitle": "Smarter supply chain transactions",
   "formUnderButton": "No spam, promise",
   "howItWorksChats": "Chats",
-  "howItWorksTitle": "Check out how it works",
+  "howItWorksTitle": "Get started in a heartbeat",
   "moreMoneyButton": "More features",
   "moreMoneyTitle1": "More buddy",
   "moreMoneyTitle2": "More speedy",
@@ -33,7 +41,7 @@
   "formBusinessName": "Business Name",
   "howItWorksButton": "Play video",
   "howItWorksOrders": "Orders",
-  "howItWorksContent": "It's easy! Exchange messages, create or confirm orders, send invoices, and collect payments accross your supply chain -- all within one dashboard.",
+  "howItWorksContent": "Exchange messages, create or confirm orders, send invoices, and collect payments accross your supply chain -- all within one dashboard.",
   "moreMoneyTab1Row1": "Send invoices and easily track them until they're paid",
   "moreMoneyTab1Row2": "Real-time payments settlement and reconciliation",
   "moreMoneyTab1Row3": "Safe, secure, and compliant",
