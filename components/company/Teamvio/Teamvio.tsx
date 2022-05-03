@@ -40,12 +40,14 @@ const Teamvio: FC = () => {
 							<JoinSquareLeft />
 							<JoinSquareRight />
 							<JoinDots>
-								<Image
-									src='/images/company/Teamvio/joinDots.png'
-									alt='Dots'
-									layout='fill'
-									objectFit='contain'
-								/>
+								<div>
+									<Image
+										src='/images/company/Teamvio/joinDots.png'
+										alt='Dots'
+										layout='fill'
+										objectFit='contain'
+									/>
+								</div>
 							</JoinDots>
 							<Text>{t('company:teamvioText')}</Text>
 							<LightLink
@@ -374,30 +376,22 @@ const LeftDots = styled.div`
 
 const JoinSquareLeft = styled.div`
 	position: absolute;
-	left: 0px;
-	bottom: 0px;
-	width: 267px;
-	height: 102px;
-	background: url('/images/company/Teamvio/joinSquareLeft.png') no-repeat;
 	z-index: -1;
+	width: 229px;
+	height: 229px;
+	border-radius: 26px;
+	background-color: #404040;
+	transform: rotate(-45deg);
+	left: -34px;
+	bottom: -91px;
 
-	@media (min-width: 375px) {
-		background: url('/images/company/Teamvio/joinSquare375.png') no-repeat;
-		width: 260px;
-		height: 175px;
-		left: 0px;
-		bottom: 0px;
-	}
 	@media (min-width: 768px) {
 		left: -16px;
-		bottom: -17px;
+		bottom: -107px;
 	}
+
 	@media (min-width: 1024px) {
-		background: url('/images/company/Teamvio/joinSquareLeft.png') no-repeat;
-		width: 267px;
-		height: 102px;
-		left: -47px;
-		bottom: 0;
+		left: -130px;
 	}
 `;
 
@@ -405,33 +399,26 @@ const JoinSquareRight = styled.div`
 	position: absolute;
 	right: 0px;
 	top: 0px;
-	width: 258px;
-	height: 122px;
-	background: url('/images/company/Teamvio/joinSquareRight.png') no-repeat;
+	width: 235px;
+	height: 235px;
 	z-index: -1;
+	display: none;
+	border-radius: 26px;
+	background-color: #404040;
+	transform: rotate(-31deg);
 
-	@media (min-width: 375px) {
-		display: none;
-	}
 	@media (min-width: 1024px) {
 		display: block;
-		width: 258px;
-		height: 122px;
-		right: -141px;
-		top: 0px;
+		right: -164px;
+		top: -61px;
 	}
+
+	@media (min-width: 1280px) {
+		right: -125px;
+	}
+
 	@media (min-width: 1440px) {
-		display: block;
-		width: 258px;
-		height: 122px;
-		right: -14px;
-		top: 0px;
-	}
-	@media (min-width: 1920px) {
-		font-size: 20px;
-		line-height: 25px;
-		padding: 16px 0;
-		width: 210px;
+		right: -20px;
 	}
 `;
 
@@ -442,6 +429,12 @@ const JoinDots = styled.div`
 	right: 0;
 	bottom: 0;
 	z-index: -1;
+
+	& > div {
+		position: relative;
+		height: inherit;
+		width: inherit;
+	}
 
 	@media (min-width: 1024px) {
 		width: 208px;
