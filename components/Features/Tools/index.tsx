@@ -15,12 +15,7 @@ const Tools: FC = () => {
 					<Image src='/images/features/tools/manage@2x.png' alt='app' width={252} height={324} />
 					<ManageDec>
 						<ManageDecDots>
-							<Image
-								src={'/images/features/tools/manage-dots.webp'}
-								alt='Dots'
-								width={254}
-								height={100}
-							/>
+							<Image src={'/images/features/tools/manage-dots.png'} alt='Dots' width={254} height={100} />
 						</ManageDecDots>
 					</ManageDec>
 				</Manage>
@@ -54,7 +49,7 @@ const Tools: FC = () => {
 							<ShareDec>
 								<ShareDecDots>
 									<Image
-										src='/images/features/tools/share-dots.webp'
+										src='/images/features/tools/share-dots.png'
 										alt='Dots'
 										width={164}
 										height={100}
@@ -559,11 +554,11 @@ const InvoicesDecDots = styled.div`
 	z-index: -1;
 
 	@media (min-width: 1024px) {
-		right: -140px;
+		right: -50px;
 	}
 
 	@media (min-width: 1280px) {
-		right: -90px;
+		right: 0;
 	}
 `;
 

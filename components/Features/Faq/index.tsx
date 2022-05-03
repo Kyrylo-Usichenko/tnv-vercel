@@ -23,11 +23,11 @@ const Faq: FC = () => {
 			</FeaturesCon>
 			<DotsL>
 				<div>
-					<Image src={'/images/features/faq/faq-dots-l.webp'} alt='Dots' layout='fill' objectFit='cover' />
+					<Image src={'/images/features/faq/faq-dots-l.png'} alt='Dots' layout='fill' objectFit='cover' />
 				</div>
 			</DotsL>
 			<DotsR>
-				<Image src={'/images/features/faq/faq-dots-r.webp'} alt='Dots' width={248} height={192} />
+				<Image src={'/images/features/faq/faq-dots-r.png'} alt='Dots' width={248} height={192} />
 			</DotsR>
 		</StyledFaq>
 	);

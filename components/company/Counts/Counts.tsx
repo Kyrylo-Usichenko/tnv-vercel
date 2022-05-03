@@ -29,7 +29,7 @@ const Counts: FC = () => {
 		<Wrapper className='counts'>
 			<Block1 ref={ref01} className='block1'>
 				<Block1Dots>
-					<Image src='/images/company/Counts/block1Dots.svg' alt='Dots' width={99} height={180} />
+					<Image src='/images/company/Counts/block1Dots.png' alt='Dots' width={99} height={180} />
 				</Block1Dots>
 				<Block1SquareRight />
 				<Block1SquareBottom />
@@ -56,7 +56,7 @@ const Counts: FC = () => {
 			</Block1>
 			<Block2 ref={ref02} className='block2'>
 				<Block2Dots>
-					<Image src='/images/company/Counts/block2Dots.svg' alt='Dots' width={196} height={149} />
+					<Image src='/images/company/Counts/block2Dots.png' alt='Dots' width={196} height={149} />
 				</Block2Dots>
 				<Block2SquareLeft />
 				<Block2SquareBottom />
@@ -83,7 +83,7 @@ const Counts: FC = () => {
 			</Block2>
 			<Block3 ref={ref03} className='block3'>
 				<Block3Dots>
-					<Image src='/images/company/Counts/block3Dots.svg' alt='Dots' width={196} height={149} />
+					<Image src='/images/company/Counts/block3Dots.png' alt='Dots' width={196} height={149} />
 				</Block3Dots>
 				<Block3Square />
 				<Content>
@@ -110,7 +110,7 @@ const Counts: FC = () => {
 			<Block4 ref={ref04} className='block4'>
 				<Block4Square />
 				<Block4Dots>
-					<Image src='/images/company/Counts/block4Dots.svg' alt='Dots' width={196} height={149} />
+					<Image src='/images/company/Counts/block4Dots.png' alt='Dots' width={196} height={149} />
 				</Block4Dots>
 				<Content>
 					<Count>

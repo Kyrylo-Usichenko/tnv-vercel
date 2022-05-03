@@ -15,7 +15,7 @@ const DoneTop: FC = () => {
 			<Wrapper>
 				<TopWrapper>
 					<DotsT>
-						<Image src='/images/company/Done/dots-t.svg' alt='Dots' width={360} height={272} />
+						<Image src='/images/company/Done/dots-t.png' alt='Dots' width={360} height={272} />
 					</DotsT>
 					<SquareT />
 					<GreyTopBlock>
@@ -58,7 +58,7 @@ const DoneTop: FC = () => {
 								<Item>{t('company:doneBlock1Line3')}</Item>
 							</List>
 							<DotsG>
-								<Image src='/images/company/Done/dotsG.svg' alt='Dots' width={277} height={42} />
+								<Image src='/images/company/Done/dotsG.png' alt='Dots' width={277} height={42} />
 							</DotsG>
 						</Content2>
 					</FeaturesCon>

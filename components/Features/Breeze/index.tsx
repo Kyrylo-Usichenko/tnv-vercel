@@ -34,7 +34,7 @@ const Breeze: FC = () => {
 					<BreezeText>
 						{t('features:ordersText')}
 						<BreezeTextDots>
-							<Image src={'/images/features/breeze/breeze-dots-l.webp'} width={381} height={295} />
+							<Image src={'/images/features/breeze/breeze-dots-l.png'} width={381} height={295} />
 						</BreezeTextDots>
 					</BreezeText>
 					<BreezeBlock1 ref={mainBlock}>
@@ -126,18 +126,10 @@ const Breeze: FC = () => {
 							</Block>
 							<BreezeBlock2Dec0>
 								<DotsM>
-									<Image
-										src={'/images/features/breeze/breeze-dots-m.webp'}
-										width={261}
-										height={200}
-									/>
+									<Image src={'/images/features/breeze/breeze-dots-m.png'} width={261} height={200} />
 								</DotsM>
 								<DotsR>
-									<Image
-										src={'/images/features/breeze/breeze-dots-r.webp'}
-										width={426}
-										height={325}
-									/>
+									<Image src={'/images/features/breeze/breeze-dots-r.png'} width={426} height={325} />
 								</DotsR>
 							</BreezeBlock2Dec0>
 						</BreezeBlock2>
