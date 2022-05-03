@@ -67,7 +67,7 @@ const HowItWorks: FC = () => {
 						<InfoTitle>{t('main:howItWorksTitle')}</InfoTitle>
 						<InfoText>{t('main:howItWorksContent')}</InfoText>
 						<Button width={220} fSize={18} lHeight={22}>
-							<img width='12px' height='14px' src='icons/main/howItWorks/Play.svg' alt='' />
+							<img width='12px' height='14px' src='icons/main/howItWorks/Play.svg' alt='Play' />
 							<ButtonText>{t('main:howItWorksButton')}</ButtonText>
 						</Button>
 						<DotsRight />
