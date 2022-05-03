@@ -628,7 +628,7 @@ const Button = styled.a<{ width: string; isActive: boolean }>`
 		outline: none !important;
 	}
 	&:hover {
-		box-shadow: ${({ isActive }) => (isActive ? 'none' : '4px 4px 20px 0px rgba(33, 33, 33, 0.1)')};
+		background: #f3f4f599;
 	}
 	@media (min-width: 1440px) {
 		margin: 0;

@@ -26,7 +26,7 @@ const MoreMoney: FC = () => {
 				x: xEnd,
 				scrollTrigger: {
 					trigger: '.start',
-					scrub: 0.5,
+					scrub: 2,
 					start: 'top bottom',
 					end: 'bottom center',
 				},
@@ -44,7 +44,7 @@ const MoreMoney: FC = () => {
 				x: xEnd,
 				scrollTrigger: {
 					trigger: '.start',
-					scrub: 0.5,
+					scrub: 2,
 					start: 'top bottom',
 					end: 'bottom center',
 				},
