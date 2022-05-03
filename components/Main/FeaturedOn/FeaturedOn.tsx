@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useTranslation } from 'next-i18next';
 
 import { FeaturesCon } from '../../common/Container/Container';
+import Image from 'next/image';
 
 const MoreMoney: FC = () => {
 	if (typeof window !== 'undefined') {
@@ -59,7 +60,9 @@ const MoreMoney: FC = () => {
 			<Wrapper>
 				<GreySquare />
 				<GreySquareRight top='-279' right='88' />
-				<Dots src='/images/main/featuredOn/dots.svg' alt='' />
+				<Dots>
+					<Image src='/images/main/featuredOn/dots.png' alt='Dots' width={427} height={98} />
+				</Dots>
 				<DivideLine />
 
 				<FeaturesCon>
@@ -68,10 +71,10 @@ const MoreMoney: FC = () => {
 							{t('main:FeaturedOn')}
 						</Title>
 						<Companies ref={companiesRef}>
-							<Company1 src='/images/main/featuredOn/techCrunch.svg' alt='' />
-							<Company2 src='/images/main/featuredOn/techInAsia.svg' alt='' />
-							<Company3 src='/images/main/featuredOn/pymnts.svg' alt='' />
-							<Company4 src='/images/main/featuredOn/ventureBeat.svg' alt='' />
+							<Company1 src='/images/main/featuredOn/techCrunch.svg' alt='techCrunch' loading='lazy' />
+							<Company2 src='/images/main/featuredOn/techInAsia.svg' alt='techInAsia' loading='lazy' />
+							<Company3 src='/images/main/featuredOn/pymnts.svg' alt='pymnts' loading='lazy' />
+							<Company4 src='/images/main/featuredOn/ventureBeat.svg' alt='ventureBeat' loading='lazy' />
 						</Companies>
 					</Inner>
 				</FeaturesCon>
@@ -110,6 +113,8 @@ const Styled = styled.div`
 	position: relative;
 `;
 const Company = styled.img`
+	height: 100%;
+
 	@media (max-width: 950px) {
 		margin-bottom: 60px;
 	}
@@ -264,7 +269,7 @@ export const GreySquareRight = styled.div<{ top: string; right: string }>`
 	z-index: 0;
 	overflow: hidden;
 `;
-export const Dots = styled.img`
+export const Dots = styled.div`
 	position: absolute;
 	top: -3px;
 	right: 382px;
