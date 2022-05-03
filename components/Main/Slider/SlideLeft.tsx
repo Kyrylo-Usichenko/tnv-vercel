@@ -17,11 +17,14 @@ const SlideLeft: FC<ISlide> = ({ sliderText, logo, name, text, width, height }) 
 			<SliderText>{sliderText}</SliderText>
 			<SliderBottom>
 				<Content>
-					<Image src={logo} width={width} height={height} alt='logo' />
-					<ContentText>
-						<Name>{name}</Name>
-						<Text>{text}</Text>
-					</ContentText>
+					<ContentLeft>
+						<Image src={logo} width={width} height={height} alt='logo' />
+						<ContentText>
+							<Name>{name}</Name>
+							<Text>{text}</Text>
+						</ContentText>
+					</ContentLeft>
+					<Img src='/images/main/whyChoose/quotes.svg' alt='' />
 				</Content>
 			</SliderBottom>
 		</Wrapper>
@@ -113,6 +116,10 @@ const Text = styled.p`
 
 const Content = styled.div`
 	display: flex;
+	justify-content: space-between;
+`;
+const ContentLeft = styled.div`
+	display: flex;
 	align-items: center;
 	max-height: 52px;
 	& img {
@@ -122,6 +129,15 @@ const Content = styled.div`
 
 const ContentText = styled.div`
 	margin-left: 16px;
+`;
+
+const Img = styled.img`
+	width: 20px;
+	height: 20px;
+	@media (min-width: 768px) {
+		width: 24px;
+		height: 24px;
+	}
 `;
 
 export default SlideLeft;
