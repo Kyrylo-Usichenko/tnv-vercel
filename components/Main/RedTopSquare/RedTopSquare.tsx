@@ -95,7 +95,7 @@ const BigRed = styled.div`
 	@media (min-width: 1024px) {
 		width: 1031.82px;
 		height: 1049.93px;
-		background: #ff474d;
+		background: rgba(251, 36, 43, 0.6);
 		border-radius: 136.463px;
 		transform: rotate(-45deg);
 		position: absolute;
@@ -110,7 +110,7 @@ const BigRed = styled.div`
 `;
 
 const SmallRed = styled.div`
-	background: #ff474d;
+	background: #fb242b;
 	border-radius: 125.316px;
 	z-index: 1;
 	display: flex;
