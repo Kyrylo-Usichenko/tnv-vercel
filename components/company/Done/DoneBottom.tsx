@@ -20,7 +20,7 @@ const DoneBottom: FC = () => {
 						</List>
 					</Content>
 					<BlackDots>
-						<Image src='/images/company/Done/black-dots.png' alt='Dots' width={126} height={150} />
+						<Image src='/images/company/Done/black-dots.png' alt='Dots' width={87} height={138} />
 					</BlackDots>
 					<BlackSB />
 				</Black>
@@ -313,10 +313,13 @@ const Item = styled.li`
 	}
 
 	&::after {
-		content: url('/images/company/Done/min-rec.png');
+		content: '';
 		position: absolute;
-		left: -3px;
-		top: -5px;
+		background: #4a4a4a;
+		border-radius: 2px;
+		transform: rotate(-45deg);
+		left: 2px;
+		top: 0px;
 		width: 22px;
 		height: 22px;
 		z-index: -1;
@@ -358,7 +361,7 @@ const BlackSB = styled.div`
 
 const BlackDots = styled.div`
 	position: absolute;
-	right: -77px;
+	right: -20px;
 	bottom: 0;
 	z-index: -1;
 

@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
+import Image from 'next/image';
 
 const Commitments: FC = () => {
 	const { t } = useTranslation();
@@ -11,24 +12,38 @@ const Commitments: FC = () => {
 			<FlexConInfo>
 				<SquareRight />
 				<SquareLeft />
-				<DotsRight />
-				<DotsLeft />
+				<DotsRight>
+					<Image src='/images/company/Commitments/dotsRight.png' alt='Dots' width={257} height={111} />
+				</DotsRight>
+				<DotsLeft>
+					<Image src='/images/company/Commitments/dotsLeft.png' alt='Dots' width={205} height={161} />
+				</DotsLeft>
 				<FeaturesCon>
 					<Content>
 						<Heading>{t('company:сommitmentsTitle')}</Heading>
 						<List>
 							<Item>
-								<Img src='/images/company/Commitments/pen.svg' loading='lazy' alt='pen' />
+								<Image src='/images/company/Commitments/pen.svg' width={64} height={64} alt='pen' />
 								<Title>{t('company:сommitmentsHeading1')}</Title>
 								<SubTitle>{t('company:сommitmentsText1')}</SubTitle>
 							</Item>
 							<Item>
-								<Img src='/images/company/Commitments/message.svg' loading='lazy' alt='message' />
+								<Image
+									src='/images/company/Commitments/message.svg'
+									width={58}
+									height={48}
+									alt='message'
+								/>
 								<Title>{t('company:сommitmentsHeading2')}</Title>
 								<SubTitle>{t('company:сommitmentsText2')}</SubTitle>
 							</Item>
 							<Item>
-								<Img src='/images/company/Commitments/rocket.svg' loading='lazy' alt='rocket' />
+								<Image
+									src='/images/company/Commitments/rocket.svg'
+									width={64}
+									height={64}
+									alt='rocket'
+								/>
 								<Title>{t('company:сommitmentsHeading3')}</Title>
 								<SubTitle>{t('company:сommitmentsText3')}</SubTitle>
 							</Item>
@@ -143,10 +158,6 @@ const Item = styled.li`
 	}
 `;
 
-const Img = styled.img`
-	margin-bottom: 24px;
-`;
-
 const Title = styled.p`
 	font-family: 'Gilroy';
 	font-weight: 600;
@@ -155,7 +166,7 @@ const Title = styled.p`
 	text-align: center;
 	color: #ffffff;
 	text-align: center;
-	margin: 0 0 4px 0;
+	margin: 24px 0 4px 0;
 
 	@media (min-width: 1024px) {
 		font-size: 24px;
@@ -191,47 +202,50 @@ const SubTitle = styled.p`
 
 const SquareRight = styled.div`
 	position: absolute;
-	right: 20px;
-	top: 0;
-	width: 770px;
-	height: 356px;
-	background: url('/images/company/Commitments/squareRight.png') no-repeat;
-	z-index: 0;
-	@media (min-width: 375px) {
-		display: none;
-	}
-	@media (min-width: 1024px) {
+	width: 582px;
+	height: 582px;
+	border-radius: 66px;
+	transform: rotate(-45deg);
+	background-color: #404040;
+	z-index: -1;
+	display: none;
+
+	@media (min-width: 768px) {
 		display: block;
-		right: -637px;
+		right: -496px;
+		top: -162px;
 	}
+
 	@media (min-width: 1024px) {
-		right: -403px;
+		right: -540px;
 	}
+
+	@media (min-width: 1280px) {
+		right: -325px;
+	}
+
 	@media (min-width: 1440px) {
-		right: -299px;
+		right: -192px;
 	}
+
 	@media (min-width: 1920px) {
-		right: 20px;
-		top: 0;
+		right: 110px;
 	}
 `;
 
 const SquareLeft = styled.div`
 	position: absolute;
-	left: 0;
-	top: 0;
-	width: 338px;
-	height: 289px;
-	background: url('/images/company/Commitments/squareLeft.png') no-repeat;
+	left: -119px;
+	top: -169px;
+	width: 391px;
+	height: 391px;
+	border-radius: 45px;
+	transform: rotate(-45deg);
+	background-color: #404040;
 	z-index: 0;
+
 	@media (min-width: 768px) {
-		left: 0;
-	}
-	@media (min-width: 1024px) {
-		left: -46px;
-	}
-	@media (min-width: 1440px) {
-		left: 0px;
+		left: -91px;
 	}
 `;
 
@@ -239,47 +253,40 @@ const DotsRight = styled.div`
 	position: absolute;
 	right: 340px;
 	top: 0;
-	width: 338px;
-	height: 289px;
-	background: url('/images/company/Commitments/dotsRight.png') no-repeat;
 	z-index: 0;
-	@media (min-width: 375px) {
-		display: none;
-	}
-	@media (min-width: 1024px) {
+	display: none;
+
+	@media (min-width: 768px) {
 		display: block;
-		right: -140px;
+		right: -27px;
 	}
+
+	@media (min-width: 1280px) {
+		right: 126px;
+	}
+
 	@media (min-width: 1440px) {
-		right: 217px;
+		right: 273px;
 	}
+
 	@media (min-width: 1920px) {
-		right: 38%;
+		right: 600px;
 	}
 `;
 
 const DotsLeft = styled.div`
 	position: absolute;
-	left: 0px;
-	bottom: 0;
-	width: 215px;
-	height: 162.7px;
-	background: url('/images/company/Commitments/dotsLeft.png') no-repeat;
+	left: -70px;
+	bottom: 170px;
 	z-index: 0;
-	@media (min-width: 375px) {
-		bottom: 170px;
-		background: url('/images/company/Commitments/dotsLeft375.png') no-repeat;
-		left: 0;
-	}
+
 	@media (min-width: 768px) {
-		background: url('/images/company/Commitments/dotsLeft.png') no-repeat;
 		bottom: -34px;
-		left: 0;
+		left: 0px;
 	}
+
 	@media (min-width: 1920px) {
-		background: url('/images/company/Commitments/dotsLeft.png') no-repeat;
 		bottom: 0px;
-		left: 0;
 	}
 `;
 export default Commitments;
