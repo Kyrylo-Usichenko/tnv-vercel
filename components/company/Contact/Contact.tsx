@@ -1,5 +1,6 @@
 import React, { FC, RefObject } from 'react';
 import styled from 'styled-components';
+import Image from 'next/image';
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
 import LightLink from '../../common/Links/LightLink';
@@ -17,13 +18,17 @@ const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
 			<FeaturesCon>
 				<SquareRight />
 				<SquareLeft />
-				<DotsLeft />
+				<DotsLeft>
+					<Image src='/images/company/Contact/dotsLeft.svg' alt='Dots' width={338} height={256} />
+				</DotsLeft>
 				<Title>{t('company:contactTitle')}</Title>
 				<Inner>
 					<Block>
 						<LeftSquareLeft />
 						<LeftSquareBottom />
-						<LeftDots />
+						<LeftDots>
+							<Image src='/images/company/Contact/leftDots.svg' alt='Dots' width={218} height={101} />
+						</LeftDots>
 						<Heading>{t('company:contactHeading1')}</Heading>
 						<Content>{t('company:contactText1')}</Content>
 						<TransparentLink
@@ -39,7 +44,9 @@ const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
 					<DarkBlock>
 						<MiddleSquareLeft />
 						<MiddleSquareBottom />
-						<MiddleDots />
+						<MiddleDots>
+							<Image src='/images/company/Contact/midDots.png' alt='Dots' width={158} height={149} />
+						</MiddleDots>
 						<LightHeading>{t('company:contactHeading2')}</LightHeading>
 						<LightContent>{t('company:contactText2')}</LightContent>
 						<LightLink
@@ -55,7 +62,9 @@ const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
 					<Block>
 						<RightSquareLeft />
 						<RightSquareBottom />
-						<RightDots />
+						<RightDots>
+							<Image src='/images/company/Contact/rightDots.svg' alt='Dots' width={124} height={101} />
+						</RightDots>
 						<Heading>{t('company:contactHeading3')}</Heading>
 						<Content>{t('company:contactText3')}</Content>
 						<TransparentLink
@@ -264,25 +273,27 @@ const DotsLeft = styled.div`
 	position: absolute;
 	left: -178px;
 	bottom: -143px;
-	width: 377.43px;
-	height: 255.35px;
-	background: url('/images/company/Contact/dotsLeft.svg');
 	z-index: -1;
+
 	@media (min-width: 375px) {
 		bottom: -169px;
 	}
+
 	@media (min-width: 768px) {
 		bottom: -169px;
 		left: -155px;
 	}
+
 	@media (min-width: 1024px) {
 		bottom: -169px;
 		left: -28px;
 	}
+
 	@media (min-width: 1440px) {
 		bottom: -169px;
 		left: -88px;
 	}
+
 	@media (min-width: 1920px) {
 		bottom: -169px;
 		left: -10%;
@@ -291,60 +302,51 @@ const DotsLeft = styled.div`
 
 const LeftSquareLeft = styled.div`
 	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 195px;
-	height: 280px;
-	background: url('/images/company/Contact/leftSquareLeft.svg') no-repeat;
+	left: -178px;
+	top: -62px;
+	width: 310px;
+	height: 310px;
+	background-color: #f1f1f1;
+	border-radius: 32px;
+	transform: rotate(-45deg);
 	z-index: -1;
-	@media (min-width: 375px) {
-		display: none;
-	}
+	display: none;
+
 	@media (min-width: 768px) {
 		display: block;
-	}
-	@media (min-width: 1024px) {
-		display: block;
-	}
-	@media (min-width: 1440px) {
-		left: 0px;
-		top: 0px;
 	}
 `;
 
 const LeftSquareBottom = styled.div`
 	position: absolute;
-	right: 0px;
-	bottom: 0px;
-	width: 276px;
-	height: 98px;
-	background: url('/images/company/Contact/leftSquareBot.svg') no-repeat;
+	right: -131px;
+	bottom: 20px;
+	background-color: #f1f1f1;
 	z-index: -1;
-	@media (min-width: 375px) {
-		right: -131px;
-		transform: rotate(-90deg);
-		bottom: 20px;
-	}
+	width: 271px;
+	height: 271px;
+	border-radius: 28px;
+	transform: rotate(-45deg);
+	display: none;
+
 	@media (min-width: 768px) {
-		background: url('/images/company/Contact/leftSquareBot768.svg') no-repeat;
-		width: 219px;
-		height: 221px;
-		transform: rotate(0deg);
-		right: 0;
-		bottom: 0;
+		display: block;
+		right: -95px;
+		bottom: -84px;
 	}
+
 	@media (min-width: 1024px) {
 		bottom: -129px;
+		width: 211px;
+		height: 211px;
 	}
-	@media (min-width: 1440px) {
-		background: url('/images/company/Contact/leftSquareBot1440.svg') no-repeat;
 
-		bottom: -145px;
+	@media (min-width: 1440px) {
+		bottom: -165px;
 		right: 44px;
 	}
-	@media (min-width: 1920px) {
-		background: url('/images/company/Contact/leftSquareBot1440.svg') no-repeat;
 
+	@media (min-width: 1920px) {
 		bottom: -149px;
 		right: 74px;
 	}
@@ -354,13 +356,12 @@ const LeftDots = styled.div`
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	width: 218px;
-	height: 164.97px;
-	background: url('/images/company/Contact/leftDots.svg') no-repeat;
 	z-index: -1;
+
 	@media (min-width: 375px) {
 		left: -166px;
 	}
+
 	@media (min-width: 768px) {
 		left: 31px;
 	}
@@ -368,61 +369,55 @@ const LeftDots = styled.div`
 
 const MiddleSquareLeft = styled.div`
 	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 181px;
-	height: 220px;
-	background: url('/images/company/Contact/midSquareLeft.png') no-repeat;
+	left: -244px;
+	top: -40px;
+	width: 250px;
+	height: 250px;
+	border-radius: 32px;
+	transform: rotate(-45deg);
+	background-color: #404040;
 	z-index: -1;
-	@media (min-width: 375px) {
-		left: -138px;
-		top: 19px;
-	}
+
 	@media (min-width: 768px) {
-		left: 0;
-		top: 0;
-		width: 243px;
-		height: 247px;
+		left: -113px;
+		top: -66px;
+		width: 313px;
+		height: 313px;
+	}
+
+	@media (min-width: 1024px) {
+		width: 250px;
+		height: 250px;
 	}
 `;
 
 const MiddleSquareBottom = styled.div`
 	position: absolute;
-	right: -38px;
-	bottom: 0px;
-	width: 276px;
-	height: 98px;
-	background: url('/images/company/Contact/midSquareRight.png') no-repeat;
+	right: -148px;
+	bottom: -153px;
+	width: 278px;
+	height: 278px;
+	border-radius: 32px;
+	transform: rotate(-45deg);
+	background-color: #404040;
 	z-index: -1;
-
-	@media (min-width: 375px) {
-		background: url('/images/company/Contact/midSquareRight375.png') no-repeat;
-		right: 0;
-		bottom: 0;
-		width: 185px;
-		height: 194px;
-	}
 
 	@media (min-width: 768px) {
 		right: -11px;
-		bottom: 0px;
-		width: 384px;
-		height: 118px;
-		background: url('/images/company/Contact/midSquareRight768.png') no-repeat;
+		bottom: -258px;
+		width: 325px;
+		height: 325px;
 	}
 
 	@media (min-width: 1024px) {
-		right: -124px;
-		bottom: 0;
-		width: 238px;
-		height: 213px;
-		background: url('/images/company/Contact/midSquareRight1024.png') no-repeat;
+		right: -189px;
+		bottom: -133px;
+		width: 278px;
+		height: 278px;
 	}
 
 	@media (min-width: 1440px) {
-		right: 0;
-		bottom: 0;
-		background: url('/images/company/Contact/midSquareRight1920.png') no-repeat;
+		right: -122px;
 	}
 `;
 
@@ -430,22 +425,20 @@ const MiddleDots = styled.div`
 	position: absolute;
 	right: 0px;
 	top: 0px;
-	width: 158px;
-	height: 149px;
-	background: url('/images/company/Contact/midDots.png') no-repeat;
 	z-index: -1;
-	@media (min-width: 375px) {
-		display: none;
-	}
+	display: none;
+
 	@media (min-width: 768px) {
 		display: block;
 		right: 5px;
 		top: -54px;
 	}
+
 	@media (min-width: 1024px) {
 		right: -127px;
 		top: 0px;
 	}
+
 	@media (min-width: 1440px) {
 		right: -33px;
 		top: 0px;
@@ -454,59 +447,54 @@ const MiddleDots = styled.div`
 
 const RightSquareLeft = styled.div`
 	position: absolute;
-	left: 0px;
-	bottom: 0px;
-	width: 151px;
-	height: 196px;
-	background: url('/images/company/Contact/rightSquareLeft.svg') no-repeat;
+	left: -178px;
+	bottom: -80px;
+	width: 239px;
+	height: 239px;
+	border-radius: 32px;
+	transform: rotate(-45deg);
+	background-color: #f1f1f1;
 	z-index: -1;
+
 	@media (min-width: 768px) {
-		background: url('/images/company/Contact/rightSquareLeft768.svg') no-repeat;
-		left: 0;
-		bottom: 0;
-		width: 289px;
-		height: 151px;
+		left: 48px;
+		bottom: -116px;
 	}
+
 	@media (min-width: 1024px) {
-		position: absolute;
-		left: 0px;
-		bottom: 0px;
-		width: 151px;
-		height: 196px;
-		background: url('/images/company/Contact/rightSquareLeft.svg') no-repeat;
-		z-index: -1;
+		left: -138px;
 	}
 `;
 
 const RightSquareBottom = styled.div`
 	position: absolute;
-	right: 0;
-	top: 0px;
-	width: 220px;
-	height: 247px;
-	background: url('/images/company/Contact/rightSquareRight.svg') no-repeat;
+	right: -223px;
+	top: -91px;
+	width: 310px;
+	height: 310px;
+	border-radius: 32px;
+	transform: rotate(-45deg);
+	background-color: #f1f1f1;
 	z-index: -1;
-	@media (min-width: 375px) {
-		display: block;
-		right: 0px;
-		bottom: 0;
-	}
-	@media (min-width: 768px) {
-		background: url('/images/company/Contact/rightSquareRight768.svg') no-repeat;
 
-		display: block;
-		right: 0px;
-		bottom: 0;
+	@media (min-width: 768px) {
+		right: -9px;
 	}
+
 	@media (min-width: 1024px) {
-		background: url('/images/company/Contact/rightSquareRight.svg') no-repeat;
-		right: -94px;
-		bottom: 0;
+		right: -287px;
 	}
+
+	@media (min-width: 1280px) {
+		right: -245px;
+	}
+
 	@media (min-width: 1440px) {
-		background: url('/images/company/Contact/rightSquareRight.svg') no-repeat;
-		right: -41px;
-		bottom: 0;
+		right: -219px;
+	}
+
+	@media (min-width: 1920px) {
+		right: -160px;
 	}
 `;
 
@@ -514,13 +502,9 @@ const RightDots = styled.div`
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	width: 218px;
-	height: 164.97px;
-	background: url('/images/company/Contact/rightDots.svg') no-repeat;
 	z-index: -1;
-	@media (min-width: 375px) {
-		display: none;
-	}
+	display: none;
+
 	@media (min-width: 768px) {
 		display: block;
 	}

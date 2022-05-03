@@ -29,7 +29,7 @@ const Counts: FC = () => {
 		<Wrapper className='counts'>
 			<Block1 ref={ref01} className='block1'>
 				<Block1Dots>
-					<Image src='/images/company/Counts/block1Dots.svg' alt='Dots' width={196} height={245} />
+					<Image src='/images/company/Counts/block1Dots.svg' alt='Dots' width={99} height={180} />
 				</Block1Dots>
 				<Block1SquareRight />
 				<Block1SquareBottom />
@@ -324,11 +324,13 @@ const Title = styled.p`
 
 const Block4Square = styled.div`
 	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 166.67px;
-	height: 166.67px;
-	background: url('/images/company/Counts/block4Square.svg') no-repeat;
+	left: -65px;
+	top: -55px;
+	width: 166px;
+	height: 166px;
+	border-radius: 10px;
+	transform: rotate(-45deg);
+	background-color: #f1f1f1;
 	z-index: -1;
 `;
 
@@ -341,12 +343,19 @@ const Block4Dots = styled.div`
 
 const Block3Square = styled.div`
 	position: absolute;
-	left: 0px;
-	bottom: -34px;
-	width: 136.99px;
-	height: 136.99px;
-	background: url('/images/company/Counts/block3Square.svg') no-repeat;
+	left: 100px;
+	bottom: -119px;
+	width: 136px;
+	height: 136px;
+	background-color: #f1f1f1;
+	border-radius: 8px;
+	transform: rotate(-45deg);
 	z-index: -1;
+
+	@media (min-width: 1024px) {
+		left: -51px;
+		bottom: -73px;
+	}
 `;
 
 const Block3Dots = styled.div`
@@ -362,26 +371,29 @@ const Block3Dots = styled.div`
 `;
 const Block2SquareBottom = styled.div`
 	position: absolute;
-	left: 102px;
-	bottom: 0px;
-	width: 266px;
-	height: 108px;
-	background: url('/images/company/Counts/block2SquareBottom.svg') no-repeat;
+	left: 70px;
+	bottom: -158px;
+	width: 194px;
+	height: 194px;
+	border-radius: 12px;
+	transform: rotate(-45deg);
+	background-color: #f1f1f1;
 	z-index: -1;
-	@media (max-width: 425px) {
-		left: 37px;
-		bottom: -35px;
+
+	@media (min-width: 1440px) {
+		bottom: -140px;
 	}
 `;
 
 const Block2SquareLeft = styled.div`
 	position: absolute;
-	left: 0;
-	bottom: 0;
-
-	width: 186.41px;
-	height: 186.41px;
-	background: url('/images/company/Counts/block2SquareLeft.svg') no-repeat;
+	left: -162px;
+	bottom: -37px;
+	width: 186px;
+	height: 186px;
+	background-color: #f1f1f1;
+	border-radius: 15px;
+	transform: rotate(-45deg);
 	z-index: -1;
 `;
 
@@ -401,29 +413,36 @@ const Block2Dots = styled.div`
 
 const Block1Dots = styled.div`
 	position: absolute;
-	right: -115px;
-	bottom: -67px;
-	z-index: -1;
+	right: -20px;
+	bottom: -20px;
 `;
 
 const Block1SquareRight = styled.div`
 	position: absolute;
-	right: -139px;
-	top: 0px;
-	width: 312.56px;
-	height: 312.56px;
-	background: url('/images/company/Counts/block1SquareRight.svg') no-repeat;
+	right: -204px;
+	top: -117px;
+	width: 312px;
+	height: 312px;
+	background-color: #f1f1f1;
+	border-radius: 20px;
+	transform: rotate(-45deg);
 	z-index: -1;
 `;
 
 const Block1SquareBottom = styled.div`
 	position: absolute;
 	right: 155px;
-	bottom: 0px;
-	width: 378px;
-	height: 121px;
-	background: url('/images/company/Counts/block1SquareBottom.svg') no-repeat;
+	bottom: -218px;
+	width: 280px;
+	height: 280px;
+	border-radius: 23px;
+	transform: rotate(-45deg);
+	background-color: #f1f1f1;
 	z-index: -1;
+
+	@media (min-width: 1280px) {
+		right: 186px;
+	}
 `;
 
 export default Counts;

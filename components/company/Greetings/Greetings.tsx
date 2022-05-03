@@ -1,8 +1,9 @@
-import React, { FC } from 'react';
+import React, { FC, RefObject, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { FeaturesCon } from '../../common/Container/Container';
 import { useTranslation } from 'next-i18next';
 import LightButton from '../../common/Buttons/LightButton';
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 type GreetingsProps = {
 	scrollDown: () => void;
@@ -11,11 +12,57 @@ type GreetingsProps = {
 const Greetings: FC<GreetingsProps> = ({ scrollDown }) => {
 	const { t } = useTranslation();
 
+	const heading = useRef() as RefObject<HTMLHeadingElement>;
+	const entry = useIntersectionObserver(heading, {});
+
+	const pic1 = useRef() as RefObject<HTMLPictureElement>;
+
+	useEffect(() => {
+		const isVisible = !!entry?.isIntersecting;
+
+		const dec1 = pic1?.current;
+
+		const scrollHeight = Math.max(
+			document.body.scrollHeight,
+			document.documentElement.scrollHeight,
+			document.body.offsetHeight,
+			document.documentElement.offsetHeight,
+			document.body.clientHeight,
+			document.documentElement.clientHeight,
+		);
+
+		const updateScale = () => {
+			const scrolled = (window.scrollY / (scrollHeight - window.innerHeight)) * 30;
+			const scale = 1 + scrolled;
+			const opacity = 1 - scrolled;
+
+			dec1!.style.transform = `scale(${scale})`;
+
+			dec1!.style.opacity = `${opacity}`;
+		};
+
+		const onScroll = () => {
+			window.requestAnimationFrame(updateScale);
+		};
+
+		if (isVisible) {
+			window.addEventListener('scroll', onScroll);
+		} else {
+			window.removeEventListener('scroll', onScroll);
+		}
+
+		return () => window.removeEventListener('scroll', onScroll);
+	}, [entry]);
+
 	return (
 		<Wrapper>
 			<FeaturesCon>
 				<TitleDiv>
-					<Title>
+					<Title ref={heading}>
+						<TitleDec ref={pic1}>
+							<source srcSet='/images/company/Greetings/dec-768.svg' media='(min-width: 768px)' />
+							<img src='/images/company/Greetings/dec-375.svg' alt='Stars' />
+						</TitleDec>
 						{t('company:greetingsTitle')} <span className='accent'>Tinvio</span>!
 					</Title>
 				</TitleDiv>
@@ -71,21 +118,6 @@ const Title = styled.h1`
 	margin: 0 0 16px 0;
 	position: relative;
 
-	&::before {
-		content: url('/images/company/Greetings/dec-375.svg');
-		position: absolute;
-		top: -16px;
-		left: -26px;
-	}
-
-	@media (min-width: 768px) {
-		&::before {
-			content: url('/images/company/Greetings/dec-768.svg');
-			top: -25px;
-			left: -66px;
-		}
-	}
-
 	@media (min-width: 1024px) {
 		font-size: 48px;
 		line-height: 59px;
@@ -99,6 +131,17 @@ const Title = styled.h1`
 	@media (min-width: 1920px) {
 		font-size: 60px;
 		line-height: 74px;
+	}
+`;
+
+const TitleDec = styled.picture`
+	position: absolute;
+	top: -16px;
+	left: -26px;
+
+	@media (min-width: 768px) {
+		top: -25px;
+		left: -66px;
 	}
 `;
 
