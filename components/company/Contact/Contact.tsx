@@ -19,7 +19,7 @@ const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
 				<SquareRight />
 				<SquareLeft />
 				<DotsLeft>
-					<Image src='/images/company/Contact/dotsLeft.svg' alt='Dots' width={338} height={256} />
+					<Image src='/images/company/Contact/dotsLeft.png' alt='Dots' width={338} height={256} />
 				</DotsLeft>
 				<Title>{t('company:contactTitle')}</Title>
 				<Inner>
@@ -27,7 +27,7 @@ const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
 						<LeftSquareLeft />
 						<LeftSquareBottom />
 						<LeftDots>
-							<Image src='/images/company/Contact/leftDots.svg' alt='Dots' width={218} height={101} />
+							<Image src='/images/company/Contact/leftDots.png' alt='Dots' width={218} height={101} />
 						</LeftDots>
 						<Heading>{t('company:contactHeading1')}</Heading>
 						<Content>{t('company:contactText1')}</Content>
@@ -63,7 +63,7 @@ const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
 						<RightSquareLeft />
 						<RightSquareBottom />
 						<RightDots>
-							<Image src='/images/company/Contact/rightDots.svg' alt='Dots' width={124} height={101} />
+							<Image src='/images/company/Contact/rightDots.png' alt='Dots' width={124} height={101} />
 						</RightDots>
 						<Heading>{t('company:contactHeading3')}</Heading>
 						<Content>{t('company:contactText3')}</Content>

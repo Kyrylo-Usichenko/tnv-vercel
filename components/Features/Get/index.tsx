@@ -1,17 +1,12 @@
-import React, { RefObject, useRef } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
-
 import { useTranslation } from 'next-i18next';
-import useAnimate from '../../../hooks/useAnimate';
 
 import { FeaturesCon } from '../../common/Container/Container';
-import FadeIn from '../../common/FadeIn/FadeIn';
 
 const Get = () => {
 	const { t } = useTranslation();
-	const ref = useRef() as RefObject<HTMLDivElement>;
-	const isShow = useAnimate(ref);
 
 	return (
 		<SyledGet>
@@ -19,7 +14,7 @@ const Get = () => {
 				<GetCon>
 					<GetTitle>{t('features:getSmarterTitle')}</GetTitle>
 					<GetText>{t('features:getSmarterText')}</GetText>
-					<First ref={ref}>
+					<First>
 						<Second>
 							<Stars>
 								<div>
@@ -27,33 +22,29 @@ const Get = () => {
 								</div>
 							</Stars>
 							<LeftImgWrap>
-								<FadeIn duration={500} delay={200} isShow={isShow}>
-									<LeftImg>
-										<Image
-											src='/images/features/get/left@2x.png'
-											layout='fill'
-											objectFit='contain'
-											alt='app'
-										/>
-									</LeftImg>
-								</FadeIn>
+								<LeftImg>
+									<Image
+										src='/images/features/get/left@2x.png'
+										layout='fill'
+										objectFit='contain'
+										alt='app'
+									/>
+								</LeftImg>
 							</LeftImgWrap>
 							<RightImgWrap>
-								<FadeIn duration={500} delay={500} isShow={isShow}>
-									<RightImg>
-										<Image
-											src='/images/features/get/right@2x.png'
-											layout='fill'
-											objectFit='contain'
-											alt='app'
-										/>
-									</RightImg>
-								</FadeIn>
+								<RightImg>
+									<Image
+										src='/images/features/get/right@2x.png'
+										layout='fill'
+										objectFit='contain'
+										alt='app'
+									/>
+								</RightImg>
 							</RightImgWrap>
 							<Dots>
 								<div>
 									<Image
-										src={'/images/features/get/dots.svg'}
+										src={'/images/features/get/dots.png'}
 										alt='Dots'
 										layout='fill'
 										objectFit='contain'

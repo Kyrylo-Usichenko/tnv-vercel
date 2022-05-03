@@ -1,17 +1,12 @@
-import React, { RefObject, useRef } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
-
 import { useTranslation } from 'next-i18next';
-import useAnimate from '../../../hooks/useAnimate';
 
 import { FeaturesCon } from '../../common/Container/Container';
-import FadeIn from '../../common/FadeIn/FadeIn';
 
 const Make = () => {
 	const { t } = useTranslation();
-	const ref = useRef() as RefObject<HTMLDivElement>;
-	const isShow = useAnimate(ref);
 
 	return (
 		<SyledMake>
@@ -21,7 +16,7 @@ const Make = () => {
 						<MakeTitle>{t('features:paymentsTitle')}</MakeTitle>
 						<MakeText>{t('features:paymentsText')}</MakeText>
 					</MakeInfo>
-					<First ref={ref}>
+					<First>
 						<Second>
 							<Stars>
 								<div>
@@ -34,33 +29,29 @@ const Make = () => {
 								</div>
 							</Stars>
 							<LeftImgWrap>
-								<FadeIn duration={500} delay={200} isShow={isShow}>
-									<LeftImg>
-										<Image
-											src='/images/features/make/left@2x.png'
-											layout='fill'
-											objectFit='contain'
-											alt='app'
-										/>
-									</LeftImg>
-								</FadeIn>
+								<LeftImg>
+									<Image
+										src='/images/features/make/left@2x.png'
+										layout='fill'
+										objectFit='contain'
+										alt='app'
+									/>
+								</LeftImg>
 							</LeftImgWrap>
 							<RightImgWrap>
-								<FadeIn duration={500} delay={500} isShow={isShow}>
-									<RightImg>
-										<Image
-											src='/images/features/make/right@2x.png'
-											layout='fill'
-											objectFit='contain'
-											alt='app'
-										/>
-									</RightImg>{' '}
-								</FadeIn>
+								<RightImg>
+									<Image
+										src='/images/features/make/right@2x.png'
+										layout='fill'
+										objectFit='contain'
+										alt='app'
+									/>
+								</RightImg>
 							</RightImgWrap>
 							<Dots>
 								<div>
 									<Image
-										src={'/images/features/make/dots.svg'}
+										src={'/images/features/make/dots.png'}
 										alt='Dots'
 										layout='fill'
 										objectFit='contain'

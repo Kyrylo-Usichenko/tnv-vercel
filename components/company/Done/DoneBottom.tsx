@@ -62,7 +62,7 @@ const DoneBottom: FC = () => {
 						</picture>
 						<RedSB />
 						<RedDots>
-							<Image src='/images/company/Done/dots-red.svg' alt='Dots' width={116} height={78} />
+							<Image src='/images/company/Done/dots-red.png' alt='Dots' width={116} height={78} />
 						</RedDots>
 					</Red>
 				</RedWrapper>
@@ -78,11 +78,11 @@ const DoneBottom: FC = () => {
 					</Content>
 					<GreySB />
 					<GreyDots>
-						<Image src='/images/company/Done/dots-grey.svg' alt='Dots' width={325} height={242} />
+						<Image src='/images/company/Done/dots-grey.png' alt='Dots' width={325} height={242} />
 					</GreyDots>
 				</Grey>
 				<DotsB>
-					<Image src='/images/company/Done/dots-b.svg' alt='Dots' width={294} height={222} />
+					<Image src='/images/company/Done/dots-b.png' alt='Dots' width={294} height={222} />
 				</DotsB>
 			</WrapperCon>
 		</Wrapper>
