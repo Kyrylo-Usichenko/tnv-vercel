@@ -167,32 +167,62 @@ const MoreMoney: FC = () => {
 					<Null>
 						<LeftMock isActive={tab.name === 'Chats'}>
 							<ImageInner>
-								<Image src={chatLeft} alt={tab.name} layout='fill' objectFit='contain' />
+								<Image
+									src={chatLeft}
+									alt={tab.name}
+									layout='fill'
+									objectFit='contain'
+									priority={true}
+								/>
 							</ImageInner>
 						</LeftMock>
 						<RightMock isActive={tab.name === 'Chats'}>
 							<ImageInner>
-								<Image src={chatRight} alt={tab.name} layout='fill' objectFit='contain' />
+								<Image
+									src={chatRight}
+									alt={tab.name}
+									layout='fill'
+									objectFit='contain'
+									priority={true}
+								/>
 							</ImageInner>
 						</RightMock>
 						<LeftMock isActive={tab.name === 'Orders'}>
 							<ImageInner>
-								<Image src={orderLeft} alt={tab.name} layout='fill' objectFit='contain' />
+								<Image
+									src={orderLeft}
+									alt={tab.name}
+									layout='fill'
+									objectFit='contain'
+									priority={true}
+								/>
 							</ImageInner>
 						</LeftMock>
 						<RightMock isActive={tab.name === 'Orders'}>
 							<ImageInner>
-								<Image src={orderRight} alt={tab.name} layout='fill' objectFit='contain' />
+								<Image
+									src={orderRight}
+									alt={tab.name}
+									layout='fill'
+									objectFit='contain'
+									priority={true}
+								/>
 							</ImageInner>
 						</RightMock>
 						<LeftMock isActive={tab.name === 'Payments'}>
 							<ImageInner>
-								<Image src={payLeft} alt={tab.name} layout='fill' objectFit='contain' />
+								<Image src={payLeft} alt={tab.name} layout='fill' objectFit='contain' priority={true} />
 							</ImageInner>
 						</LeftMock>
 						<RightMock isActive={tab.name === 'Payments'}>
 							<ImageInner>
-								<Image src={payRight} alt={tab.name} layout='fill' objectFit='contain' />
+								<Image
+									src={payRight}
+									alt={tab.name}
+									layout='fill'
+									objectFit='contain'
+									priority={true}
+								/>
 							</ImageInner>
 						</RightMock>
 						<Stars>
