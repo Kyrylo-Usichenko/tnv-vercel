@@ -46,7 +46,7 @@ const Features: NextPage<Props> = ({ locale }) => {
 				<link rel='icon' href='/icons/common/favicon.svg' />
 			</Head>
 			<Modal modalActive={modalActive} setModalActive={setModalActive} />
-			<FeaturesHeader locale={locale} Tab='Features' openModal={openModal} />
+			<FeaturesHeader locale={locale} tab='Features' openModal={openModal} />
 			<Preview locale={locale} openModal={openModal} />
 			<Supercharge />
 			<Tools />

@@ -15,7 +15,7 @@ import { useTranslation } from 'next-i18next';
 const Slider: FC = () => {
 	const { t } = useTranslation();
 
-	const SLIDERS = [
+	const sliders = [
 		{
 			sliderText: t('main:whyChooseSlide1'),
 			logo: '/images/main/whyChoose/itacho-logo.svg',
@@ -53,6 +53,7 @@ const Slider: FC = () => {
 			height: '64px',
 		},
 	];
+
 	SwiperCore.use([Autoplay]);
 	const [controlledSwiper, setControlledSwiper] = useState<SwiperCore | null>(null);
 
@@ -70,7 +71,7 @@ const Slider: FC = () => {
 					pagination={{ el: '.dots', clickable: true }}
 					initialSlide={1}
 				>
-					{SLIDERS.map((slide, index) => (
+					{sliders.map((slide, index) => (
 						<SwiperSlide key={`${slide.sliderText}${index}`} className='swiper-slide'>
 							<SlideLeft
 								sliderText={slide.sliderText}
@@ -95,7 +96,7 @@ const Slider: FC = () => {
 					effect='fade'
 					allowTouchMove={false}
 				>
-					{SLIDERS.map((slide, index) => (
+					{sliders.map((slide, index) => (
 						<SwiperSlide key={`${slide.sliderText}${index}`} className='swiper-slide'>
 							<SlideImage image={slide.image} />
 						</SwiperSlide>

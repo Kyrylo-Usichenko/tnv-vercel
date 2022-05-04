@@ -5,10 +5,12 @@ import useAnimate from '../../../hooks/useAnimate';
 
 import FadeIn from '../../common/FadeIn/FadeIn';
 import { useTranslation } from 'next-i18next';
-type SmileProps = {
+
+type MapFlexProps = {
 	locale: string;
 };
-const MapFlex: FC<SmileProps> = ({ locale }) => {
+
+const MapFlex: FC<MapFlexProps> = ({ locale }) => {
 	const ref = useRef() as RefObject<HTMLDivElement>;
 	const isShow = useAnimate(ref);
 	const { t } = useTranslation();

@@ -54,7 +54,7 @@ const Company: NextPage<any> = (props) => {
 					<link rel='icon' href='/icons/common/favicon.svg' />
 				</Head>
 				<Modal modalActive={modalActive} setModalActive={setModalActive} />
-				<FeaturesHeader locale={locale} Tab='Company' openModal={openModal} />
+				<FeaturesHeader locale={locale} tab='Company' openModal={openModal} />
 				<Greetings scrollDown={executeScroll} />
 				<Done />
 				<Counts />
