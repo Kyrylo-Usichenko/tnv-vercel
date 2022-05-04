@@ -19,7 +19,7 @@ export default (callback: Callback) => {
 		document.body.addEventListener('click', listener as any);
 
 		return () => {
-			document.body.addEventListener('click', listener as any);
+			document.body.removeEventListener('click', listener as any);
 		};
 	}, [callback]);
 

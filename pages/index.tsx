@@ -1,5 +1,6 @@
 import { NextPage } from 'next/types';
-import React, { RefObject, useRef } from 'react';
+import React, { RefObject, useRef, useState } from 'react';
+
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -17,6 +18,9 @@ import styled from 'styled-components';
 import SmileRework from '../components/Main/SmileRework/SmileRework';
 import FeaturesHeader from '../components/common/Header/FeaturesHeader';
 
+import ReactPlayer from 'react-player/wistia';
+import useOnClickOutsideVideo from './../hooks/useOnClickOutside';
+
 export async function getStaticProps({ locale }: any) {
 	return {
 		props: {
@@ -28,6 +32,7 @@ export async function getStaticProps({ locale }: any) {
 
 const Home: NextPage<any> = (props) => {
 	const locale = props.locale;
+	const [isPlayer, setIsPlayer] = useState(false);
 
 	const formSection = useRef() as RefObject<HTMLDivElement>;
 
@@ -40,6 +45,12 @@ const Home: NextPage<any> = (props) => {
 			});
 		}
 	};
+
+	const modalRef = useOnClickOutsideVideo(() => {
+		if (isPlayer) {
+			setIsPlayer(false);
+		}
+	});
 
 	return (
 		<Styled>
@@ -60,8 +71,9 @@ const Home: NextPage<any> = (props) => {
 					<FeaturesCon>
 						<Preview locale={locale} scrollDown={executeScroll} />
 					</FeaturesCon>
-					<HowItWorks />
+					<HowItWorks setIsPlayer={() => setIsPlayer(!isPlayer)} />
 					<MoreMoney locale={locale} />
+
 					<FeaturedOn />
 					<WhyChoose />
 					<SmileRework />
@@ -69,6 +81,18 @@ const Home: NextPage<any> = (props) => {
 					<Footer background='#ffffff' />
 				</section>
 			</Main>
+			<Video isPlayer={isPlayer}>
+				<div ref={modalRef} className='player-wrapper'>
+					<ReactPlayer
+						className='react-player'
+						url='https://tinvio-3.wistia.com/medias/wam61v1zoz'
+						controls
+						playing
+						width='100%'
+						height='100%'
+					/>
+				</div>
+			</Video>
 		</Styled>
 	);
 };
@@ -182,6 +206,36 @@ export const GreySquareDots = styled.img`
 export const Styled = styled.div`
 	position: relative;
 	overflow: hidden;
+`;
+
+const Video = styled.div<{ isPlayer: boolean }>`
+	display: ${({ isPlayer }) => (isPlayer ? 'flex' : 'none')};
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	background: rgb(0, 0, 0, 0.5);
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+
+	& .player-wrapper {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		padding-top: 56.25%;
+		// max-width: 640px;
+		// max-height: 360px;
+		width: 100%;
+	}
+	& .react-player {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 `;
 
 export default Home;
