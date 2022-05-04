@@ -29,7 +29,6 @@ export async function getStaticProps({ locale }: any) {
 		},
 	};
 }
-
 const Home: NextPage<any> = (props) => {
 	const locale = props.locale;
 	const [isPlayer, setIsPlayer] = useState(false);
@@ -58,18 +57,16 @@ const Home: NextPage<any> = (props) => {
 			document.removeEventListener('keydown', escFunction, false);
 		};
 	});
+	const playerRef = useRef(null) as RefObject<any>;
+
 	const modalRef = useOnClickOutsideVideo(() => {
 		if (isPlayer) {
 			setIsPlayer(false);
+			const timeToStart = 0;
+			playerRef.current.seekTo(timeToStart, 'seconds');
 		}
 	});
-	const playerRef = useRef(null) as RefObject<any>;
-	console.log(playerRef);
-	const onReady = React.useCallback(() => {
-		if (playerRef?.current) {
-			playerRef?.current?.seekTo(0, 'seconds');
-		}
-	}, [playerRef.current]);
+
 	return (
 		<Styled>
 			<GreySquare2>
@@ -119,7 +116,7 @@ const Home: NextPage<any> = (props) => {
 						playing={isPlayer}
 						width='100%'
 						height='100%'
-						onPlay={onReady}
+						// onReady={onReady}
 					/>
 				</div>
 			</Video>
