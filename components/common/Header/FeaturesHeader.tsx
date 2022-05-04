@@ -37,6 +37,9 @@ import {
 	BurgerSpan2,
 	BurgerSpan3,
 	MainCon,
+	HeaderStyledDots,
+	MObileLinksDotsLeft,
+	MObileLinksDotsRight,
 } from './FeaturesHeaderStyles';
 import ArrowDown from '../Arrow/ArrowDown';
 import { Path, Socials } from '../../../constants';
@@ -104,6 +107,9 @@ const Header: FunctionComponent<PropsType> = ({ tab, locale, openModal, scrollDo
 
 	return (
 		<HeaderStyled isHeaderScrolled={isHeaderScrolled} isMenuOpend={isMenuOpend}>
+			<HeaderStyledDots isMenuOpend={isMenuOpend}>
+				<Image src='/images/header/mobile-dots-right-375.png' alt='Dots' width={98} height={188} />
+			</HeaderStyledDots>
 			<MainCon className='h-100'>
 				<MobileContainer isMenuOpend={isMenuOpend}>
 					<HeaderContainer>
@@ -208,6 +214,9 @@ const Header: FunctionComponent<PropsType> = ({ tab, locale, openModal, scrollDo
 					</MobileNav>
 
 					<MobileLinks isMenuOpend={isMenuOpend}>
+						<MObileLinksDotsLeft>
+							<Image src='/images/header/mobile-dots-left.png' alt='Dots' width={193} height={238} />
+						</MObileLinksDotsLeft>
 						<MobileButton type='button' onClick={mobileBtnClick}>
 							{t('header:GetStarted')}
 						</MobileButton>
@@ -225,6 +234,9 @@ const Header: FunctionComponent<PropsType> = ({ tab, locale, openModal, scrollDo
 								<Image src='/images/footer/as@2x.png' width={113} height={40} alt='google play' />
 							</Store>
 						</SocialsDiv>
+						<MObileLinksDotsRight>
+							<Image src='/images/header/mobile-dots-right.png' alt='Dots' width={167} height={289} />
+						</MObileLinksDotsRight>
 					</MobileLinks>
 				</MobileContainer>
 			</MainCon>

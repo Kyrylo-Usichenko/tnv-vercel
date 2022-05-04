@@ -12,7 +12,13 @@ const Tools: FC = () => {
 				<Manage>
 					<ManageTitle>{t('features:introductionManageOrders')}</ManageTitle>
 					<ManageText>{t('features:introductionManageOrdersText')}</ManageText>
-					<Image src='/images/features/tools/manage@2x.png' alt='app' width={252} height={324} />
+					<Image
+						src='/images/features/tools/manage@2x.png'
+						alt='app'
+						width={252}
+						height={324}
+						priority={true}
+					/>
 					<ManageDec>
 						<ManageDecDots>
 							<Image src={'/images/features/tools/manage-dots.png'} alt='Dots' width={254} height={100} />
@@ -57,7 +63,13 @@ const Tools: FC = () => {
 								</ShareDecDots>
 							</ShareDec>
 							<ShareBlock1>
-								<Image src='/images/features/tools/share.svg' alt='share' width={48} height={48} />
+								<Image
+									src='/images/features/tools/share.svg'
+									alt='share'
+									width={48}
+									height={48}
+									priority={true}
+								/>
 							</ShareBlock1>
 							<ShareTitle>{t('features:introductionShare')}</ShareTitle>
 						</Share>
@@ -69,6 +81,7 @@ const Tools: FC = () => {
 										alt='dollar'
 										width={22}
 										height={44}
+										priority={true}
 									/>
 								</InvoiceBlock2>
 							</InvoiceBlock1>
