@@ -67,7 +67,11 @@ const Footer: FC<Props> = ({ background }) => {
 					</SecondLineHalf>
 				</FirstLine>
 				<SecondLine>
-					<SecondLineText>{t('main:footerRights')}</SecondLineText>
+					<SecondLineText>
+						<Link href={Path.legal} as={Path.privacy}>
+							{t('main:footerRights')}
+						</Link>
+					</SecondLineText>
 					<SecondLineSeparate1 />
 					<SecondLineCon>
 						<SecondLineText>
