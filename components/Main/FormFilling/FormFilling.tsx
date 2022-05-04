@@ -63,27 +63,32 @@ const Smile: FC<SmileProps> = ({ formRef, locale }) => {
 			}
 		}, 2000);
 	};
-
+	// eslint-disable-next-line no-shadow
+	const enum FormVariables {
+		name = 'name',
+		business = 'business',
+		phone = 'phone',
+	}
 	const validateForm = () => {
 		const data = Object.entries(form);
 
 		for (let i = 0; i < data.length; i++) {
 			switch (data[i][0]) {
-				case 'name':
+				case FormVariables.name:
 					if (data[i][1].length < 1) {
 						setNameError(true);
 					} else {
 						setNameError(false);
 					}
 					break;
-				case 'business':
+				case FormVariables.business:
 					if (data[i][1].length < 1) {
 						setBusinessError(true);
 					} else {
 						setBusinessError(false);
 					}
 					break;
-				case 'phone':
+				case FormVariables.phone:
 					const string = data[i][1];
 					const stringTest = /\d{2}\s\d{4}\s\d{4}/.test(string);
 					if (data[i][1].length < 12 || !stringTest) {
