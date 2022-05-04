@@ -61,7 +61,7 @@ const Home: NextPage<any> = (props) => {
 						<Preview locale={locale} scrollDown={executeScroll} />
 					</FeaturesCon>
 					<HowItWorks />
-					<MoreMoney />
+					<MoreMoney locale={locale} />
 					<FeaturedOn />
 					<WhyChoose />
 					<SmileRework />

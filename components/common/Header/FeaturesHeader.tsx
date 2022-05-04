@@ -40,6 +40,7 @@ import {
 } from './FeaturesHeaderStyles';
 import ArrowDown from '../Arrow/ArrowDown';
 import { Path, Socials } from '../../../constants';
+import useScrollPosition from '../../../hooks/useHeaderScroll';
 
 type PropsType = {
 	tab: string;
@@ -63,20 +64,14 @@ const Header: FunctionComponent<PropsType> = ({ tab, locale, openModal, scrollDo
 	};
 
 	const { t } = useTranslation();
-
+	const scrollPosition = useScrollPosition();
 	useEffect(() => {
-		function handleScroll() {
-			setHeaderScrolled(window.pageYOffset > 50);
-		}
+		setHeaderScrolled(scrollPosition > 50);
 
-		window.addEventListener('scroll', handleScroll);
-
-		if (window.pageYOffset > 50) {
+		if (scrollPosition > 50) {
 			setHeaderScrolled(true);
 		}
-
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
+	}, [scrollPosition]);
 
 	const modalRef = useOnClickOutside(() => {
 		setDropDown(false);

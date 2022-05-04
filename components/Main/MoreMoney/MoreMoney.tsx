@@ -4,7 +4,7 @@ import styled, { keyframes, css } from 'styled-components';
 import Image from 'next/image';
 
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
-import { i18n, useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 
 import { FeaturesCon } from '../../common/Container/Container';
 
@@ -27,9 +27,11 @@ interface IMoreMoneyItem {
 	isActive: boolean;
 	textLines: Array<string>;
 }
-const THAI_LANGUAGE = 'th';
+interface Props {
+	locale: string;
+}
 
-const MoreMoney: FC = () => {
+const MoreMoney: FC<Props> = ({ locale }) => {
 	const [isIncreased, setIsIncreased] = useState(false);
 	const { t } = useTranslation();
 
@@ -70,7 +72,7 @@ const MoreMoney: FC = () => {
 	const isVisible = !!entry?.isIntersecting;
 
 	useEffect(() => {
-		if (i18n?.language === THAI_LANGUAGE) return setIsIncreased(true);
+		if (locale === 'th') return setIsIncreased(true);
 		setIsIncreased(false);
 	}, []);
 
