@@ -5,6 +5,8 @@ import { FeaturesCon } from '../../common/Container/Container';
 import MapComponentFlex from './MapFlex';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
+import { FormLoading, FormState } from '../../../types';
+import { addSpaceToPhone } from '../../../utils';
 
 type SmileProps = {
 	formRef: RefObject<HTMLDivElement>;
@@ -12,9 +14,11 @@ type SmileProps = {
 };
 
 const Smile: FC<SmileProps> = ({ formRef, locale }) => {
-	const [loading, setLoading] = useState<'idle' | 'loading' | 'error' | 'success'>('idle');
+	const [loading, setLoading] = useState<FormLoading>('idle');
+
 	const { t } = useTranslation();
-	const initialValues = {
+
+	const initialValues: FormState = {
 		name: '',
 		business: '',
 		phone: '',
@@ -37,15 +41,8 @@ const Smile: FC<SmileProps> = ({ formRef, locale }) => {
 		setLoading('idle');
 	};
 
-	const addSpaceToPhone = (event: any) => {
-		if ((form.phone.length === 12 || event.code === 'Space') && event.code !== 'Backspace') event.preventDefault();
-
-		if ((form.phone.length === 2 || form.phone.length === 7) && event.code !== 'Backspace') {
-			setForm((prevState) => ({
-				...prevState,
-				phone: prevState.phone + ' ',
-			}));
-		}
+	const keyDownPhoneInput = (event: any) => {
+		addSpaceToPhone(event, form.phone, setForm);
 	};
 
 	const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -139,17 +136,7 @@ const Smile: FC<SmileProps> = ({ formRef, locale }) => {
 									<ModlaLabel>
 										{t('main:formBusinessName')}
 										<ModalInput
-											placeholder={
-												locale == 'en'
-													? 'Burgers & Boba (Singapore)'
-													: locale == 'th'
-													? 'Business Name: Burgers & Boba (Thailand)'
-													: locale == 'id'
-													? 'Business Name: Burgers & Boba (Indonesia)'
-													: locale == 'vn'
-													? 'Business Name: Burgers & Boba (Vietnam)'
-													: 'Burgers & Boba (Singapore)'
-											}
+											placeholder={t('main:formBusinessNamePlaceholder')}
 											type='text'
 											value={form.business}
 											name='business'
@@ -163,22 +150,12 @@ const Smile: FC<SmileProps> = ({ formRef, locale }) => {
 									<ModlaLabel>
 										{t('main:formPhone')}
 										<ModalInput
-											placeholder={
-												locale == 'en'
-													? '65 9123 4567'
-													: locale == 'th'
-													? '66 9123 4567'
-													: locale == 'id'
-													? '62 9123 4567'
-													: locale == 'vn'
-													? '81 9123 4567'
-													: '65 9123 4567'
-											}
+											placeholder={t('main:formPhonePlaceholder')}
 											type='tel'
 											value={form.phone}
 											name='phone'
 											onChange={handleInputChange}
-											onKeyDown={addSpaceToPhone}
+											onKeyDown={keyDownPhoneInput}
 											error={loading === 'error' && phoneError}
 										/>
 										{loading === 'error' && phoneError ? (
@@ -210,8 +187,8 @@ const Smile: FC<SmileProps> = ({ formRef, locale }) => {
 												/>
 											</g>
 										</StyledSvg>
-										{loading === 'success' ? <Success></Success> : null}
-										{loading === 'error' ? <Error></Error> : null}
+										{loading === 'success' ? <Success /> : null}
+										{loading === 'error' ? <Error /> : null}
 									</Button>
 									<Spam>
 										{t('main:formUnderButton')}

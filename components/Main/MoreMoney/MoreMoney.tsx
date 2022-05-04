@@ -1,4 +1,4 @@
-import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
+import React, { FC, RefObject, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import styled, { keyframes, css } from 'styled-components';
 import Image from 'next/image';
@@ -74,7 +74,7 @@ const MoreMoney: FC = () => {
 		setIsIncreased(false);
 	}, []);
 
-	useEffect(() => {
+	useMemo(() => {
 		if (isVisible && isClicked) {
 			setIsBackwards(true);
 

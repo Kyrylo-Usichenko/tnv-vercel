@@ -1,6 +1,10 @@
 import React, { ChangeEvent, Dispatch, FC, MouseEvent, useEffect, useState } from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
+import { useTranslation } from 'next-i18next';
+
+import { FormLoading, FormState } from '../../../types';
+import { addSpaceToPhone } from '../../../utils';
 
 type ModalProps = {
 	modalActive: boolean;
@@ -8,10 +12,12 @@ type ModalProps = {
 };
 
 const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
-	const [loading, setLoading] = useState<'idle' | 'loading' | 'error' | 'success'>('idle');
+	const { t } = useTranslation();
+
+	const [loading, setLoading] = useState<FormLoading>('idle');
 	const [result, setResult] = useState(false);
 
-	const initialValues = {
+	const initialValues: FormState = {
 		name: '',
 		business: '',
 		phone: '',
@@ -34,15 +40,8 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 		setLoading('idle');
 	};
 
-	const addSpaceToPhone = (event: any) => {
-		if ((form.phone.length === 12 || event.code === 'Space') && event.code !== 'Backspace') event.preventDefault();
-
-		if ((form.phone.length === 2 || form.phone.length === 7) && event.code !== 'Backspace') {
-			setForm((prevState) => ({
-				...prevState,
-				phone: prevState.phone + ' ',
-			}));
-		}
+	const keyDownPhoneInput = (event: any) => {
+		addSpaceToPhone(event, form.phone, setForm);
 	};
 
 	const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -68,9 +67,11 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 
 	const closeModal = (event: MouseEvent<HTMLElement>) => {
 		const target = event.target as Element;
+
 		if (target.classList.contains('modal-btn')) {
 			setModalActive(false);
 		}
+
 		setLoading('idle');
 		setResult(false);
 		setForm(initialValues);
@@ -129,7 +130,8 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 						<ModalTitle>Thank you!</ModalTitle>
 					) : (
 						<ModalTitle>
-							Hi, we're <span className='accent'>Tinvio!</span> And you?
+							{t('main:formHeadingBefore')} <span className='accent'>Tinvio!</span>{' '}
+							{t('main:formHeadingAfter')}
 						</ModalTitle>
 					)}
 					{result ? (
@@ -143,7 +145,7 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 					) : (
 						<ModalForm onSubmit={handleFormSubmit}>
 							<ModlaLabel>
-								Name
+								{t('main:formName')}
 								<ModalInput
 									placeholder='John Appleseed'
 									type='text'
@@ -157,9 +159,9 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 								) : null}
 							</ModlaLabel>
 							<ModlaLabel>
-								Business Name
+								{t('main:formBusinessName')}
 								<ModalInput
-									placeholder='Burgers &Boba (Singapore)'
+									placeholder={t('main:formBusinessNamePlaceholder')}
 									type='text'
 									value={form.business}
 									name='business'
@@ -171,14 +173,14 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 								) : null}
 							</ModlaLabel>
 							<ModlaLabel>
-								Phone
+								{t('main:formPhone')}
 								<ModalInput
-									placeholder='65 9123 4567'
+									placeholder={t('main:formPhonePlaceholder')}
 									type='tel'
 									value={form.phone}
 									name='phone'
 									onChange={handleInputChange}
-									onKeyDown={addSpaceToPhone}
+									onKeyDown={keyDownPhoneInput}
 									error={loading === 'error' && phoneError}
 								/>
 								{loading === 'error' && phoneError ? (
@@ -186,7 +188,7 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 								) : null}
 							</ModlaLabel>
 							<ModalButton type='submit' loaded={loading !== 'idle'}>
-								Submit
+								{t('main:formButton')}
 								<StyledSvg loaded={loading !== 'idle'}>
 									<g>
 										<ellipse
@@ -232,7 +234,7 @@ const Modal: FC<ModalProps> = ({ modalActive, setModalActive }) => {
 								) : null}
 							</ModalButton>
 							<ModalSpam>
-								No spam, promise{' '}
+								{t('main:formUnderButton')}{' '}
 								<Image src='/images/main/formFilling/hands.svg' alt='hands' width={16} height={18} />
 							</ModalSpam>
 						</ModalForm>

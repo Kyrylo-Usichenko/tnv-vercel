@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
+import React, { FunctionComponent, useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
@@ -24,7 +24,7 @@ import {
 	MobileNavItem,
 	Nav,
 	NavItem,
-	Socials,
+	SocialsDiv,
 	MobileButton,
 	Store,
 	Social,
@@ -36,20 +36,22 @@ import {
 } from './FeaturesHeaderStyles';
 import ArrowDown from '../Arrow/ArrowDown';
 import useOnClickOutside from '../../../hooks/useOnClickOutside';
+import { Path, Socials } from '../../../constants';
 
 type PropsType = {
-	Tab: string;
+	tab: string;
 	locale: string;
 	openModal?: () => void;
 	scrollDown?: () => void;
 };
-const Header: FunctionComponent<PropsType> = ({ Tab, locale, openModal, scrollDown }) => {
+
+const Header: FunctionComponent<PropsType> = ({ tab, locale, openModal, scrollDown }) => {
 	const [isHeaderScrolled, setHeaderScrolled] = useState(false);
-	const [dropDawn, setDropDawn] = useState(false);
-	const [isMenuOpend, setMenuOpend] = useState(false);
+	const [dropDawn, setDropDown] = useState(false);
+	const [isMenuOpend, setMenuOpened] = useState(false);
 
 	const menuToggle = () => {
-		setMenuOpend((prevState) => !prevState);
+		setMenuOpened((prevState) => !prevState);
 	};
 
 	const scrollHide = () => {
@@ -74,19 +76,23 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale, openModal, scrollDo
 	}, []);
 
 	const modalRef = useOnClickOutside(() => {
-		setDropDawn(false);
+		setDropDown(false);
 	});
 
-	const localeTab =
-		Tab === 'Home'
-			? '/'
-			: Tab === 'Features'
-			? '/features'
-			: Tab === 'Company'
-			? '/company'
-			: Tab === 'Legal'
-			? 'legal'
-			: '/';
+	const localeTab = useMemo(() => {
+		switch (tab) {
+			case 'Home':
+				return Path.home;
+			case 'Features':
+				return Path.features;
+			case 'Company':
+				return Path.company;
+			case 'Legal':
+				return Path.legal;
+			default:
+				return Path.home;
+		}
+	}, [tab]);
 
 	const btnClick = () => {
 		if (openModal) openModal();
@@ -104,7 +110,7 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale, openModal, scrollDo
 				<MobileContainer isMenuOpend={isMenuOpend}>
 					<HeaderContainer>
 						<LeftWrapper>
-							<LogoLink href={'/'}>
+							<LogoLink href={Path.home}>
 								<LogoInner>
 									<Logo />
 									<LogoText />
@@ -112,7 +118,7 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale, openModal, scrollDo
 							</LogoLink>
 							<LanguageWrapper
 								ref={modalRef}
-								onClick={() => setDropDawn(!dropDawn)}
+								onClick={() => setDropDown(!dropDawn)}
 								isMenuOpend={isMenuOpend}
 							>
 								<CurrentLanguage>{locale}</CurrentLanguage>
@@ -166,21 +172,21 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale, openModal, scrollDo
 						</LeftWrapper>
 
 						<Nav>
-							<NavItem isActive={Tab === 'Home'}>
-								<Link href='/'>{t('header:Home')}</Link>
+							<NavItem isActive={tab === 'Home'}>
+								<Link href={Path.home}>{t('header:Home')}</Link>
 							</NavItem>
-							<NavItem isActive={Tab === 'Features'}>
-								<Link href='/features'>{t('header:Features')}</Link>
+							<NavItem isActive={tab === 'Features'}>
+								<Link href={Path.features}>{t('header:Features')}</Link>
 							</NavItem>
-							<NavItem isActive={Tab === 'Company'}>
-								<Link href='/company'>{t('header:Company')}</Link>
+							<NavItem isActive={tab === 'Company'}>
+								<Link href={Path.company}>{t('header:Company')}</Link>
 							</NavItem>
 						</Nav>
 
 						<ButtonWrapper>
 							<HeaderButton
 								isHeaderScrolled={isHeaderScrolled}
-								Tab={Tab}
+								tab={tab}
 								type='button'
 								onClick={btnClick}
 							>
@@ -196,14 +202,14 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale, openModal, scrollDo
 					</HeaderContainer>
 
 					<MobileNav isMenuOpend={isMenuOpend}>
-						<MobileNavItem isActive={Tab === 'Home'}>
-							<Link href='/'>{t('header:Home')}</Link>
+						<MobileNavItem isActive={tab === 'Home'}>
+							<Link href={Path.home}>{t('header:Home')}</Link>
 						</MobileNavItem>
-						<MobileNavItem isActive={Tab === 'Features'}>
-							<Link href='/features'>{t('header:Features')}</Link>
+						<MobileNavItem isActive={tab === 'Features'}>
+							<Link href={Path.features}>{t('header:Features')}</Link>
 						</MobileNavItem>
-						<MobileNavItem isActive={Tab === 'Company'}>
-							<Link href='/company'>{t('header:Company')}</Link>
+						<MobileNavItem isActive={tab === 'Company'}>
+							<Link href={Path.company}>{t('header:Company')}</Link>
 						</MobileNavItem>
 					</MobileNav>
 
@@ -211,20 +217,20 @@ const Header: FunctionComponent<PropsType> = ({ Tab, locale, openModal, scrollDo
 						<MobileButton type='button' onClick={mobileBtnClick}>
 							{t('header:GetStarted')}
 						</MobileButton>
-						<Socials>
-							<Social href={'/'}>
+						<SocialsDiv>
+							<Social href={Socials.linkedin} target='_blank' rel='noreferrer noopener'>
 								<Image src='/images/footer/linkedin.svg' alt='linkedin' width={32} height={32} />
 							</Social>
-							<Social href={'/'}>
+							<Social href={Socials.instagram} target='_blank' rel='noreferrer noopener'>
 								<Image src='/images/footer/inst.svg' alt='instagram' width={32} height={32} />
 							</Social>
-							<Store href={'/'}>
+							<Store href={Socials.googlePlay} target='_blank' rel='noreferrer noopener'>
 								<Image src='/images/footer/gp@2x.png' width={113} height={40} alt='google play' />
 							</Store>
-							<Store href={'/'}>
+							<Store href={Socials.appleApps} target='_blank' rel='noreferrer noopener'>
 								<Image src='/images/footer/as@2x.png' width={113} height={40} alt='google play' />
 							</Store>
-						</Socials>
+						</SocialsDiv>
 					</MobileLinks>
 				</MobileContainer>
 			</MainCon>

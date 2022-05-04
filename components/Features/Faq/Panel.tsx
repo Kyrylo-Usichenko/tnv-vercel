@@ -12,7 +12,7 @@ const Panel: FC<PanelProps> = ({ name, children }) => {
 
 	const content = React.useRef<HTMLDivElement>(null);
 
-	const panelBtnHandler = () => {
+	const handlePanelButton = () => {
 		setIsClose((prevState) => !prevState);
 		setHeight(isclose ? `${content.current!.scrollHeight}px` : '0px');
 	};
@@ -21,7 +21,7 @@ const Panel: FC<PanelProps> = ({ name, children }) => {
 		<StyledPanel>
 			<PanelName isclose={isclose}>
 				<PanelTitle>{name}</PanelTitle>
-				<PanelButton type='button' onClick={panelBtnHandler}>
+				<PanelButton type='button' onClick={handlePanelButton}>
 					<Image
 						src={`/images/features/faq/${isclose ? 'open.svg' : 'close.svg'}`}
 						width={20}

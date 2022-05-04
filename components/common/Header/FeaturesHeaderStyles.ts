@@ -308,7 +308,7 @@ export const ButtonWrapper = styled.div`
 	}
 `;
 
-export const HeaderButton = styled.button<{ isHeaderScrolled: boolean; Tab: string }>`
+export const HeaderButton = styled.button<{ isHeaderScrolled: boolean; tab: string }>`
 	padding: 10px 0;
 	width: 130px;
 	height: 40px;
@@ -316,10 +316,10 @@ export const HeaderButton = styled.button<{ isHeaderScrolled: boolean; Tab: stri
 	font-weight: 700;
 	font-size: 14px;
 	line-height: 17px;
-	color: ${({ Tab, isHeaderScrolled }) =>
-		Tab === 'Home' && !isHeaderScrolled ? 'var(--text-main)' : 'var(--text-white)'};
-	background-color: ${({ Tab, isHeaderScrolled }) =>
-		Tab === 'Home' && !isHeaderScrolled ? 'var(--text-white)' : 'var(--text-primary)'};
+	color: ${({ tab, isHeaderScrolled }) =>
+		tab === 'Home' && !isHeaderScrolled ? 'var(--text-main)' : 'var(--text-white)'};
+	background-color: ${({ tab, isHeaderScrolled }) =>
+		tab === 'Home' && !isHeaderScrolled ? 'var(--text-white)' : 'var(--text-primary)'};
 	text-align: center;
 	border: none;
 	border-radius: 16px;
@@ -327,17 +327,17 @@ export const HeaderButton = styled.button<{ isHeaderScrolled: boolean; Tab: stri
 	transition: all 0.3s ease;
 
 	&:hover {
-		background-color: ${({ Tab, isHeaderScrolled }) =>
-			Tab === 'Home' && !isHeaderScrolled ? '#e0e0e1' : 'var(--text-primary-hover)'};
-		box-shadow: ${({ Tab, isHeaderScrolled }) =>
-			Tab === 'Home' && !isHeaderScrolled
+		background-color: ${({ tab, isHeaderScrolled }) =>
+			tab === 'Home' && !isHeaderScrolled ? '#e0e0e1' : 'var(--text-primary-hover)'};
+		box-shadow: ${({ tab, isHeaderScrolled }) =>
+			tab === 'Home' && !isHeaderScrolled
 				? '14px 4px 20px 0 var(--shadow-color)'
 				: '8px 8px 20px 0 var(--shadow-color)'};
 	}
 
 	&:focus {
-		background-color: ${({ Tab, isHeaderScrolled }) =>
-			Tab === 'Home' && !isHeaderScrolled ? '#e0e0e1' : 'var(--text-primary)'};
+		background-color: ${({ tab, isHeaderScrolled }) =>
+			tab === 'Home' && !isHeaderScrolled ? '#e0e0e1' : 'var(--text-primary)'};
 	}
 
 	@media (min-width: 1920px) {
@@ -440,7 +440,7 @@ export const MobileButton = styled.button`
 	}
 `;
 
-export const Socials = styled.div`
+export const SocialsDiv = styled.div`
 	display: flex;
 	align-items: center;
 `;

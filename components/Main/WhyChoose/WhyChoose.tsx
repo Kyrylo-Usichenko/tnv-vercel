@@ -11,7 +11,6 @@ const WhyChoose: FC = () => {
 	return (
 		<Styled>
 			<LeftTopDots />
-
 			<Wrapper>
 				<Null>
 					<FeaturesCon>

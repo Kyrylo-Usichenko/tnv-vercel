@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import React, { FC } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'next-i18next';
 
 import { FeaturesCon } from '../Container/Container';
-import { useTranslation } from 'next-i18next';
-import Image from 'next/image';
+import { Path, Socials } from '../../../constants';
 
 type Props = {
 	background?: string | undefined;
@@ -28,16 +29,16 @@ const Footer: FC<Props> = ({ background }) => {
 						<FirstLineSeparate />
 						<FooterUl>
 							<FooterLi>
-								<Link href={'/'}>{t('main:footerHome')}</Link>
+								<Link href={Path.home}>{t('main:footerHome')}</Link>
 							</FooterLi>
 							<FooterLi>
-								<Link href={'/features'}>{t('main:footerFeatures')}</Link>
+								<Link href={Path.features}>{t('main:footerFeatures')}</Link>
 							</FooterLi>
 							<FooterLi>
-								<Link href={'/company'}>{t('main:footerCompany')}</Link>
+								<Link href={Path.company}>{t('main:footerCompany')}</Link>
 							</FooterLi>
 							<FooterLi>
-								<a href={'http://dashboard.tinvio.com'} target='_blank'>
+								<a href={Path.login} target='_blank'>
 									{t('main:footerLogin')}
 								</a>
 							</FooterLi>
@@ -45,27 +46,21 @@ const Footer: FC<Props> = ({ background }) => {
 					</FirstLineHalf>
 					<SecondLineHalf>
 						<Links>
-							<Socials>
-								<Social
-									href={'https://www.linkedin.com/company/tinvio/?originalSubdomain=sg'}
-									target='_blank'
-								>
+							<SocialsDiv>
+								<Social href={Socials.linkedin} target='_blank' rel='noreferrer noopener'>
 									<Image src='/images/footer/linkedin.svg' alt='linkedin' width={32} height={32} />
 								</Social>
-								<Social href={'https://www.instagram.com/tinvioapp/?hl=en'} target='_blank'>
+								<Social href={Socials.instagram} target='_blank' rel='noreferrer noopener'>
 									<Image src='/images/footer/inst.svg' alt='instagram' width={32} height={32} />
 								</Social>
-							</Socials>
+							</SocialsDiv>
 							<FirstLineSeparate />
 							<Stores>
-								<Store
-									href={'https://play.google.com/store/apps/details?id=com.tinvio.tinvio&hl=en&gl=US'}
-									target='_blank'
-								>
+								<Store href={Socials.googlePlay} target='_blank' rel='noreferrer noopener'>
 									<Image src='/images/footer/gp@2x.png' width={113} height={40} alt='google play' />
 								</Store>
-								<Store href={'https://apps.apple.com/sg/app/tinvio/id1472428382'} target='_blank'>
-									<Image src='/images/footer/as@2x.png' width={113} height={40} alt='google play' />
+								<Store href={Socials.appleApps} target='_blank' rel='noreferrer noopener'>
+									<Image src='/images/footer/as@2x.png' width={113} height={40} alt='app store' />
 								</Store>
 							</Stores>
 						</Links>
@@ -76,13 +71,13 @@ const Footer: FC<Props> = ({ background }) => {
 					<SecondLineSeparate1 />
 					<SecondLineCon>
 						<SecondLineText>
-							<Link href={'/legal'} as='/privacy'>
+							<Link href={Path.legal} as={Path.privacy}>
 								{t('main:footerPrivacy')}
 							</Link>
 						</SecondLineText>
 						<SecondLineSeparate2 />
 						<SecondLineText>
-							<Link href={'/legal'} as='/terms'>
+							<Link href={Path.legal} as={Path.terms}>
 								{t('main:footerTerms')}
 							</Link>
 						</SecondLineText>
@@ -228,7 +223,7 @@ const Links = styled.div`
 	}
 `;
 
-const Socials = styled.div`
+const SocialsDiv = styled.div`
 	display: flex;
 	align-items: center;
 	margin-bottom: 16px;

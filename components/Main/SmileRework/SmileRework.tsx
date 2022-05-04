@@ -7,21 +7,21 @@ import useAnimate from '../../../hooks/useAnimate';
 import { FeaturesCon } from '../../common/Container/Container';
 import FadeIn from '../../common/FadeIn/FadeIn';
 
+const delay1 = 500;
+const delay2 = 800;
+const delay3 = 1100;
+const delay4 = 1400;
+const delay5 = 1700;
+const delay6 = 2000;
+const delay7 = 2300;
+const delay8 = 2600;
+const delay9 = 2900;
+const delay10 = 3200;
+
 const Smile: FC = () => {
 	const { t } = useTranslation();
 	const ref = useRef() as RefObject<HTMLDivElement>;
 	const isShow = useAnimate(ref);
-
-	const delay1 = 500;
-	const delay2 = 800;
-	const delay3 = 1100;
-	const delay4 = 1400;
-	const delay5 = 1700;
-	const delay6 = 2000;
-	const delay7 = 2300;
-	const delay8 = 2600;
-	const delay9 = 2900;
-	const delay10 = 3200;
 
 	return (
 		<Wrapper>
