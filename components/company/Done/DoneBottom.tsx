@@ -57,7 +57,6 @@ const DoneBottom: FC = () => {
 								src='/images/company/Done/phone-375.png'
 								srcSet='/images/company/Done/phone-375@2x.png 2x'
 								alt='app in phone'
-								loading='lazy'
 							/>
 						</picture>
 						<RedSB />
