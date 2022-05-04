@@ -137,6 +137,7 @@ const Img = styled.div`
 	position: relative;
 	width: 20px;
 	height: 20px;
+	margin: 0 2px 0 0;
 	@media (min-width: 768px) {
 		width: 24px;
 		height: 24px;
