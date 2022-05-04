@@ -55,7 +55,7 @@ const Company: NextPage<any> = (props) => {
 				</Head>
 				<Modal modalActive={modalActive} setModalActive={setModalActive} />
 				<FeaturesHeader locale={locale} tab='Company' openModal={openModal} />
-				<Greetings scrollDown={executeScroll} />
+				<Greetings locale={locale} scrollDown={executeScroll} />
 				<Done />
 				<Counts />
 				<Teamvio />
