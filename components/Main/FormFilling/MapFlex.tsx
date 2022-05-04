@@ -5,6 +5,7 @@ import useAnimate from '../../../hooks/useAnimate';
 
 import FadeIn from '../../common/FadeIn/FadeIn';
 import { useTranslation } from 'next-i18next';
+import Image from 'next/image';
 
 type MapFlexProps = {
 	locale: string;
@@ -22,66 +23,72 @@ const MapFlex: FC<MapFlexProps> = ({ locale }) => {
 				<>
 					<FadeIn duration={800} delay={600} isShow={isShow}>
 						<HongKong>
-							<img
+							<Image
 								className='hong-kong'
-								src='./images/main/map/countries/hong-kong.png'
-								srcSet='./images/main/map/countries/hong-kong@2x.png 2x'
+								src='/images/main/map/countries/hong-kong@2x.png'
 								alt='Hong-Kong'
+								layout='fill'
+								objectFit='contain'
 							/>
 							<Point name='Hong-Kong' top={-175} left={0} />
 						</HongKong>
 					</FadeIn>
 					<FadeIn duration={800} delay={300} isShow={isShow}>
 						<Indonesia>
-							<img
+							<Image
 								className='indonesia'
-								src='./images/main/map/countries/indonesia.png'
-								srcSet='./images/main/map/countries/indonesia@2x.png 2x'
+								src='/images/main/map/countries/indonesia@2x.png'
 								alt='Indonesia'
+								layout='fill'
+								objectFit='contain'
 							/>
 							<Point name='Indonesia' top={65} left={23.5} />
 						</Indonesia>
 					</FadeIn>
 					<FadeIn duration={800} delay={900} isShow={isShow}>
 						<Philippines>
-							<img
+							<Image
 								className='philippines'
-								src='./images/main/map/countries/philippines.png'
-								srcSet='./images/main/map/countries/philippines@2x.png 2x'
+								src='/images/main/map/countries/philippines@2x.png'
 								alt='Philippines'
+								layout='fill'
+								objectFit='contain'
 							/>
 							<Point name='Philippines' top={2} left={16} />
 						</Philippines>
 					</FadeIn>
 					<FadeIn duration={800} delay={100} isShow={isShow}>
 						<Singapore>
-							<img
+							<Image
 								className='singapore'
-								src='./images/main/map/countries/singapore.png'
-								srcSet='./images/main/map/countries/singapore@2x.png 2x'
+								src='/images/main/map/countries/singapore@2x.png'
 								alt='Singapore'
+								layout='fill'
+								objectFit='contain'
 							/>
 							<Point name='Singapore' top={-190} left={15} />
 						</Singapore>
 					</FadeIn>
 					<FadeIn duration={800} delay={1200} isShow={isShow}>
 						<Thailand>
-							<img
+							<Image
 								className='thailand'
-								src='./images/main/map/countries/thailand.png'
-								srcSet='./images/main/map/countries/thailand@2x.png 2x'
+								src='/images/main/map/countries/thailand@2x.png'
 								alt='Thailand'
+								layout='fill'
+								objectFit='contain'
 							/>
 							<Point name='Thailand' top={-1} left={15} />
 						</Thailand>
 					</FadeIn>
 					<FadeIn duration={800} delay={1500} isShow={isShow}>
 						<Vietnam>
-							<img
+							<Image
 								className='vietnam'
-								src='./images/main/map/countries/vietnam.png'
-								srcSet='./images/main/map/countries/vietnam@2x.png 2x'
+								src='/images/main/map/countries/vietnam@2x.png'
 								alt='Vietnam'
+								layout='fill'
+								objectFit='contain'
 							/>
 							<Point name='Vietnam' top={-6} left={24} />
 						</Vietnam>
@@ -89,10 +96,20 @@ const MapFlex: FC<MapFlexProps> = ({ locale }) => {
 					<FadeIn duration={800} delay={1500} isShow={isShow}>
 						<TextBox>
 							<Arrow>
-								<img src='./images/main/map/arrow-line-text/arrow-icon.svg' alt='arrow' />
+								<Image
+									src='/images/main/map/arrow-line-text/arrow-icon.svg'
+									alt='arrow'
+									layout='fill'
+									objectFit='contain'
+								/>
 							</Arrow>
 							<Line>
-								<img src='./images/main/map/arrow-line-text/arch-line-icon.svg' alt='line' />
+								<Image
+									src='/images/main/map/arrow-line-text/arch-line-icon.svg'
+									alt='line'
+									layout='fill'
+									objectFit='contain'
+								/>
 							</Line>
 							<Text locale={locale}>{t('main:formMap')}</Text>
 						</TextBox>

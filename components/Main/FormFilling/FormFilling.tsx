@@ -192,7 +192,14 @@ const Smile: FC<SmileProps> = ({ formRef, locale }) => {
 									</Button>
 									<Spam>
 										{t('main:formUnderButton')}
-										<Img src='/images/main/formFilling/hands.svg' alt='Hands' />
+										<Img>
+											<Image
+												src='/images/main/formFilling/hands.svg'
+												alt='Hands'
+												width={16}
+												height={18}
+											/>
+										</Img>
 									</Spam>
 								</Form>
 								<Dots>
@@ -573,7 +580,7 @@ const Spam = styled.div`
 	}
 `;
 
-const Img = styled.img`
+const Img = styled.div`
 	margin-left: 8px;
 `;
 

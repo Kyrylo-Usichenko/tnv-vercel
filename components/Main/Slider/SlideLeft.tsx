@@ -24,7 +24,9 @@ const SlideLeft: FC<ISlide> = ({ sliderText, logo, name, text, width, height }) 
 							<Text>{text}</Text>
 						</ContentText>
 					</ContentLeft>
-					<Img src='/images/main/whyChoose/quotes.svg' alt='' />
+					<Img>
+						<Image src='/images/main/whyChoose/quotes.svg' alt='quotes' layout='fill' objectFit='contain' />
+					</Img>
 				</Content>
 			</SliderBottom>
 		</Wrapper>
@@ -131,7 +133,8 @@ const ContentText = styled.div`
 	margin-left: 16px;
 `;
 
-const Img = styled.img`
+const Img = styled.div`
+	position: relative;
 	width: 20px;
 	height: 20px;
 	@media (min-width: 768px) {

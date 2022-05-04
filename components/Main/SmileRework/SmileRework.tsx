@@ -29,13 +29,13 @@ const Smile: FC = () => {
 				<Title>{t('main:smileTitle')}</Title>
 			</FeaturesCon>
 			<MainBox>
-				<Dots top='-512' left='647' src='/images/main/smile/rightDots.svg' alt='' />
+				<Dots top='-512' left='647' src='/images/main/smile/rightDots.png' alt='Dots' loading='lazy' />
 
 				<RightTopGrey top='-293' left='311' size='457.92' radius='42.6248' />
 				<LeftTopGrey top='-288' left='-536' size='554.34' radius='51.6' />
 				<LeftGrey top='44' left='-514' size='554.34' radius='51.6' />
 
-				<Dots top='27' left='-353' src='/images/main/smile/leftDots.svg' alt='' />
+				<Dots top='27' left='-353' src='/images/main/smile/leftDots.png' alt='Dots' />
 				<Inner ref={ref}>
 					<GreyWrapper1>
 						<FadeIn duration={400} delay={delay1} isShow={isShow}>
@@ -44,7 +44,8 @@ const Smile: FC = () => {
 							<Img
 								src='/images/main/smile/pet-shop.png'
 								srcSet='/images/main/smile/pet-shop2x.png 2x'
-								alt=''
+								alt='pet-shop'
+								loading='lazy'
 							/>
 						</FadeIn>
 					</GreyWrapper1>
@@ -54,14 +55,19 @@ const Smile: FC = () => {
 							<FadeIn duration={400} delay={delay3} isShow={isShow}>
 								<Grey></Grey>
 								<GreyInner></GreyInner>
-								<Img src='/images/main/smile/nex.svg' alt='' />{' '}
+								<Img src='/images/main/smile/nex.svg' alt='nex' loading='lazy' />
 							</FadeIn>
 						</GreyWrapper2>
 						<GreyWrapper>
 							<FadeIn duration={400} delay={delay5} isShow={isShow}>
 								<Grey></Grey>
 								<GreyInner></GreyInner>
-								<Img src='/images/main/smile/bbs.png' srcSet='/images/main/smile/bbs2x.png 2x' alt='' />
+								<Img
+									src='/images/main/smile/bbs.png'
+									srcSet='/images/main/smile/bbs2x.png 2x'
+									alt='bbs'
+									loading='lazy'
+								/>
 							</FadeIn>
 						</GreyWrapper>
 					</TopFirstLine>
@@ -70,14 +76,14 @@ const Smile: FC = () => {
 							<FadeIn duration={500} delay={delay7} isShow={isShow}>
 								<Grey></Grey>
 								<GreyInner></GreyInner>
-								<Img src='/images/main/smile/nayla.svg' alt='' />{' '}
+								<Img src='/images/main/smile/nayla.svg' alt='nayla' loading='lazy' />
 							</FadeIn>
 						</GreyWrapper3>
 						<GreyWrapper>
 							<FadeIn duration={400} delay={delay9} isShow={isShow}>
 								<Grey></Grey>
 								<GreyInner></GreyInner>
-								<Img src='/images/main/smile/toko-kita.svg' alt='' />{' '}
+								<Img src='/images/main/smile/toko-kita.svg' alt='toko-kita' loading='lazy' />
 							</FadeIn>
 						</GreyWrapper>
 					</TopSecondLine>
@@ -112,15 +118,20 @@ const Smile: FC = () => {
 								<Img
 									src='/images/main/smile/burger.png'
 									srcSet='/images/main/smile/burger2x.png 2x'
-									alt=''
-								/>{' '}
+									alt='burger'
+									loading='lazy'
+								/>
 							</FadeIn>
 						</GreyWrapper3>
 						<GreyWrapper>
 							<FadeIn duration={400} delay={delay4} isShow={isShow}>
 								<Grey></Grey>
 								<GreyInner></GreyInner>
-								<Img src='/images/main/smile/group-the-companies.svg' alt='' />
+								<Img
+									src='/images/main/smile/group-the-companies.svg'
+									alt='group-the-companies'
+									loading='lazy'
+								/>
 							</FadeIn>
 						</GreyWrapper>
 					</BotFirstLine>
@@ -129,7 +140,7 @@ const Smile: FC = () => {
 							<FadeIn duration={400} delay={delay6} isShow={isShow}>
 								<Grey></Grey>
 								<GreyInner></GreyInner>
-								<Img src='/images/main/smile/es-teh.svg' alt='' />
+								<Img src='/images/main/smile/es-teh.svg' alt='es-teh' loading='lazy' />
 							</FadeIn>
 						</GreyWrapper2>
 						<GreyWrapper>
@@ -139,7 +150,8 @@ const Smile: FC = () => {
 								<Img
 									src='/images/main/smile/gong-cha.png'
 									srcSet='/images/main/smile/gong-cha2x.png 2x'
-									alt=''
+									alt='gong-cha'
+									loading='lazy'
 								/>
 							</FadeIn>
 						</GreyWrapper>
@@ -148,7 +160,7 @@ const Smile: FC = () => {
 						<FadeIn duration={400} delay={delay10} isShow={isShow}>
 							<Grey></Grey>
 							<GreyInner></GreyInner>
-							<Img src='/images/main/smile/kho-pa-ka.svg' alt='' />
+							<Img src='/images/main/smile/kho-pa-ka.svg' alt='kho-pa-ka' loading='lazy' />
 						</FadeIn>
 					</GreyWrapper4>
 				</Inner>
