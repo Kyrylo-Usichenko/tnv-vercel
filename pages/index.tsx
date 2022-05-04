@@ -81,8 +81,15 @@ const Home: NextPage<any> = (props) => {
 				</section>
 			</Main>
 			<Video isPlayer={isPlayer}>
-				<div ref={modalRef}>
-					<ReactPlayer url='https://tinvio-3.wistia.com/medias/wam61v1zoz' controls playing />
+				<div ref={modalRef} className='player-wrapper'>
+					<ReactPlayer
+						className='react-player'
+						url='https://tinvio-3.wistia.com/medias/wam61v1zoz'
+						controls
+						playing
+						width='100%'
+						height='100%'
+					/>
 				</div>
 			</Video>
 		</Styled>
@@ -205,18 +212,29 @@ const Video = styled.div<{ isPlayer: boolean }>`
 	position: fixed;
 	top: 0;
 	left: 0;
-	// top: 50%;
-	// left: 50%;
-	// transform: translate(-50%, -50%);
 	z-index: 10;
 	width: 100%;
 	height: 100%;
-	// max-width: 640px;
-	// max-height: 360px;
 	background: rgb(0, 0, 0, 0.5);
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
+
+	& .player-wrapper {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		padding-top: 56.25%;
+		// max-width: 640px;
+		// max-height: 360px;
+		width: 100%;
+	}
+	& .react-player {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 `;
 
 export default Home;
