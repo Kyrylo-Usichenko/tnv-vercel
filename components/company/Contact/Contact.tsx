@@ -34,6 +34,7 @@ const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
 						<TransparentLink
 							href='http://dashboard.tinvio.com'
 							target='_blank'
+							rel='noreferrer noopener'
 							width={210}
 							fSize={18}
 							lHeight={22}
@@ -55,6 +56,7 @@ const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
 							lHeight={22}
 							href='mailto:partners@tinvio.com'
 							target='_blank'
+							rel='noreferrer noopener'
 						>
 							{t('company:contactButton2')}
 						</LightLink>
@@ -70,6 +72,7 @@ const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
 						<TransparentLink
 							href='mailto:press@tinvio.com'
 							target='_blank'
+							rel='noreferrer noopener'
 							width={210}
 							fSize={18}
 							lHeight={22}
