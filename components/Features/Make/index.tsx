@@ -35,6 +35,7 @@ const Make = () => {
 										layout='fill'
 										objectFit='contain'
 										alt='app'
+										priority={true}
 									/>
 								</LeftImg>
 							</LeftImgWrap>
@@ -45,6 +46,7 @@ const Make = () => {
 										layout='fill'
 										objectFit='contain'
 										alt='app'
+										priority={true}
 									/>
 								</RightImg>
 							</RightImgWrap>
