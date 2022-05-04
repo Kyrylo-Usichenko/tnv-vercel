@@ -1,6 +1,10 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
+
 import { useTranslation } from 'next-i18next';
+import useToggle from '../../../hooks/useToggle';
+import useOnClickOutside from '../../../hooks/useOnClickOutside';
+
 import Link from 'next/link';
 
 import Logo from '../Logos/Logo';
@@ -35,7 +39,6 @@ import {
 	MainCon,
 } from './FeaturesHeaderStyles';
 import ArrowDown from '../Arrow/ArrowDown';
-import useOnClickOutside from '../../../hooks/useOnClickOutside';
 import { Path, Socials } from '../../../constants';
 
 type PropsType = {
@@ -47,7 +50,7 @@ type PropsType = {
 
 const Header: FunctionComponent<PropsType> = ({ tab, locale, openModal, scrollDown }) => {
 	const [isHeaderScrolled, setHeaderScrolled] = useState(false);
-	const [dropDawn, setDropDown] = useState(false);
+	const [dropDawn, setDropDown] = useToggle(false);
 	const [isMenuOpend, setMenuOpened] = useState(false);
 
 	const menuToggle = () => {
@@ -116,11 +119,7 @@ const Header: FunctionComponent<PropsType> = ({ tab, locale, openModal, scrollDo
 									<LogoText />
 								</LogoInner>
 							</LogoLink>
-							<LanguageWrapper
-								ref={modalRef}
-								onClick={() => setDropDown(!dropDawn)}
-								isMenuOpend={isMenuOpend}
-							>
+							<LanguageWrapper ref={modalRef} onClick={setDropDown} isMenuOpend={isMenuOpend}>
 								<CurrentLanguage>{locale}</CurrentLanguage>
 								<ArrowWrapper isOpen={dropDawn}>
 									<ArrowDown />
