@@ -225,10 +225,14 @@ const Video = styled.div<{ isPlayer: boolean }>`
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		padding-top: 56.25%;
-		// max-width: 640px;
-		// max-height: 360px;
-		width: 100%;
+		width: 844px;
+		height: 474px;
+
+		@media (max-width: 938px) {
+			padding-top: 52.25%;
+			width: 90%;
+			height: auto;
+		}
 	}
 	& .react-player {
 		position: absolute;
