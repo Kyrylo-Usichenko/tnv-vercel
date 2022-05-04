@@ -296,7 +296,6 @@ const SecondLineText = styled.p`
 	line-height: 12px;
 	color: #bdbdbd;
 	margin: 0 8px 0 0;
-	cursor: pointer;
 
 	& > a {
 		color: #bdbdbd;
