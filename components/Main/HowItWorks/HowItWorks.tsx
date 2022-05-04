@@ -9,30 +9,23 @@ import FadeIn from '../../common/FadeIn/FadeIn';
 import Line1 from './Line1';
 import Line2 from './Line2';
 import LightButton from '../../common/Buttons/LightButton';
-import ReactPlayer from 'react-player';
 
-// import useOnClickOutsideVideo from '../../../hooks/useOnClickOutsideVideo';
-
-const HowItWorks: FC = () => {
+const HowItWorks: FC<{
+	setIsPlayer: () => void;
+}> = ({ setIsPlayer }) => {
 	const { t } = useTranslation();
 	const ref = useRef(null) as RefObject<HTMLDivElement>;
 	const isShow = useAnimate(ref);
-	const player = false;
-	// const refButton = useRef(null) as RefObject<HTMLButtonElement>;
-	// console.log(refButton);
 
-	// const modalRef = useOnClickOutsideVideo(() => {
-	// 	setPlayer(false);
-	// }, refButton);
+	const handleButtonClick = () => {
+		setIsPlayer();
+	};
 
 	return (
 		<Wrapper>
 			<ContainerHow>
 				<Inner>
 					<Null>
-						<Video player={player}>
-							<ReactPlayer url='https://tinvio-3.wistia.com/medias/wam61v1zoz' controls playing />
-						</Video>
 						<div ref={ref}>
 							<CardTop>
 								<FadeIn duration={300} delay={0} isShow={isShow}>
@@ -79,7 +72,7 @@ const HowItWorks: FC = () => {
 					<Info>
 						<InfoTitle>{t('main:howItWorksTitle')}</InfoTitle>
 						<InfoText>{t('main:howItWorksContent')}</InfoText>
-						<Button width={220} fSize={18} lHeight={22}>
+						<Button onClick={handleButtonClick} width={220} fSize={18} lHeight={22}>
 							<img width='12px' height='14px' src='icons/main/howItWorks/Play.svg' alt='Play' />
 							<ButtonText>{t('main:howItWorksButton')}</ButtonText>
 						</Button>
@@ -817,19 +810,6 @@ const CardText = styled.p`
 		padding: 0;
 		color: #5c5c5c;
 	}
-`;
-
-const Video = styled.div<{ player: boolean }>`
-	display: ${({ player }) => (player ? 'block' : 'none')};
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 10;
-	width: 100%;
-	height: 100%;
-	max-width: 640px;
-	max-height: 360px;
 `;
 
 export default HowItWorks;
