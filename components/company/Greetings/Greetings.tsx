@@ -7,9 +7,10 @@ import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 type GreetingsProps = {
 	scrollDown: () => void;
+	locale: string;
 };
 
-const Greetings: FC<GreetingsProps> = ({ scrollDown }) => {
+const Greetings: FC<GreetingsProps> = ({ scrollDown, locale }) => {
 	const { t } = useTranslation();
 
 	const heading = useRef() as RefObject<HTMLHeadingElement>;
@@ -63,7 +64,8 @@ const Greetings: FC<GreetingsProps> = ({ scrollDown }) => {
 							<source srcSet='/images/company/Greetings/dec-768.svg' media='(min-width: 768px)' />
 							<img src='/images/company/Greetings/dec-375.svg' alt='Stars' />
 						</TitleDec>
-						{t('company:greetingsTitle')} <span className='accent'>Tinvio</span>!
+						{t('company:greetingsTitle')} <span className='accent'>Tinvio</span>
+						{locale == 'vn' ? ' đây' : ''}!
 					</Title>
 				</TitleDiv>
 				<SubTitle>{t('company:greetingsSubTitle')}</SubTitle>

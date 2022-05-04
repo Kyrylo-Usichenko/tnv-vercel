@@ -233,7 +233,7 @@ const Null = styled.div`
 
 	@media (min-width: 1920px) {
 		transform: skewY(8deg);
-		width: 826px;
+		width: 765px;
 		height: 495px;
 		position: relative;
 		top: 64px;
