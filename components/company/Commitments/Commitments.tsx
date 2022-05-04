@@ -23,7 +23,13 @@ const Commitments: FC = () => {
 						<Heading>{t('company:сommitmentsTitle')}</Heading>
 						<List>
 							<Item>
-								<Image src='/images/company/Commitments/pen.svg' width={64} height={64} alt='pen' />
+								<Image
+									src='/images/company/Commitments/pen.svg'
+									width={64}
+									height={64}
+									alt='pen'
+									priority={true}
+								/>
 								<Title>{t('company:сommitmentsHeading1')}</Title>
 								<SubTitle>{t('company:сommitmentsText1')}</SubTitle>
 							</Item>
@@ -33,6 +39,7 @@ const Commitments: FC = () => {
 									width={58}
 									height={48}
 									alt='message'
+									priority={true}
 								/>
 								<Title>{t('company:сommitmentsHeading2')}</Title>
 								<SubTitle>{t('company:сommitmentsText2')}</SubTitle>
@@ -43,6 +50,7 @@ const Commitments: FC = () => {
 									width={64}
 									height={64}
 									alt='rocket'
+									priority={true}
 								/>
 								<Title>{t('company:сommitmentsHeading3')}</Title>
 								<SubTitle>{t('company:сommitmentsText3')}</SubTitle>

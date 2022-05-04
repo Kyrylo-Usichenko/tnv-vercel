@@ -27,6 +27,7 @@ const Panel: FC<PanelProps> = ({ name, children }) => {
 						width={20}
 						height={20}
 						alt='open/close'
+						priority={true}
 					/>
 				</PanelButton>
 			</PanelName>

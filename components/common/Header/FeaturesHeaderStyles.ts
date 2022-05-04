@@ -28,19 +28,16 @@ export const HeaderStyled = styled.header<{ isHeaderScrolled: boolean; isMenuOpe
 		filter: blur(24px);
 		z-index: -1;
 	}
+`;
 
-	&::after {
-		content: url('/images/header/mobile-dots-right-375.webp');
-		display: ${({ isMenuOpend }) => (isMenuOpend ? 'block' : 'none')};
-		position: absolute;
-		bottom: 20px;
-		right: -5px;
-	}
+export const HeaderStyledDots = styled.div<{ isMenuOpend: boolean }>`
+	display: ${({ isMenuOpend }) => (isMenuOpend ? 'block' : 'none')};
+	position: absolute;
+	bottom: 20px;
+	right: -5px;
 
 	@media (min-width: 768px) {
-		&::after {
-			display: none;
-		}
+		display: none;
 	}
 `;
 
@@ -393,25 +390,23 @@ export const MobileLinks = styled.div<{ isMenuOpend: boolean }>`
 	align-items: center;
 	gap: 32px;
 
-	&::before {
-		content: url('/images/header/mobile-dots-left.webp');
-		position: absolute;
-		left: -16px;
-		bottom: 20px;
-		z-index: -1;
-	}
-
-	&::after {
-		content: url('/images/header/mobile-dots-right.webp');
-		position: absolute;
-		right: -30px;
-		bottom: 75px;
-		z-index: -1;
-	}
-
 	@media (min-width: 768px) {
 		display: ${({ isMenuOpend }) => (isMenuOpend ? 'flex' : 'none')};
 	}
+`;
+
+export const MObileLinksDotsLeft = styled.div`
+	position: absolute;
+	left: -16px;
+	bottom: 20px;
+	z-index: -1;
+`;
+
+export const MObileLinksDotsRight = styled.div`
+	position: absolute;
+	right: -30px;
+	bottom: 75px;
+	z-index: -1;
 `;
 
 export const MobileButton = styled.button`

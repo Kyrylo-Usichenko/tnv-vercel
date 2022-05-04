@@ -31,6 +31,7 @@ const Role: FC = () => {
 										alt='Big city'
 										layout='fill'
 										objectFit='cover'
+										priority={true}
 									/>
 								</Img1>
 							</FadeIn>
@@ -41,6 +42,7 @@ const Role: FC = () => {
 										alt='Big city'
 										layout='fill'
 										objectFit='cover'
+										priority={true}
 									/>
 								</Img3>
 							</FadeIn>
@@ -53,6 +55,7 @@ const Role: FC = () => {
 										alt='Big city'
 										layout='fill'
 										objectFit='cover'
+										priority={true}
 									/>
 								</Img2>
 							</FadeIn>
@@ -63,6 +66,7 @@ const Role: FC = () => {
 										alt='Big city'
 										layout='fill'
 										objectFit='cover'
+										priority={true}
 									/>
 								</Img4>
 							</FadeIn>
