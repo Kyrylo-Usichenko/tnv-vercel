@@ -10,15 +10,27 @@ const WhyChoose: FC = () => {
 
 	return (
 		<Styled>
-			<LeftTopDots />
+			<LeftTopDots>
+				<Image src='/images/main/whyChoose/leftTopDots.png' alt='Dots' layout='fill' objectFit='contain' />
+			</LeftTopDots>
 			<Wrapper>
 				<Null>
 					<FeaturesCon>
 						<DotsLeftBot>
-							<Image src='/images/main/whyChoose/big-rombs.png' layout='fill' objectFit='contain' />
+							<Image
+								src='/images/main/whyChoose/big-rombs.png'
+								alt='Dots'
+								layout='fill'
+								objectFit='contain'
+							/>
 						</DotsLeftBot>
 						<DotsRight>
-							<Image src='/images/main/whyChoose/small-rombs.png' layout='fill' objectFit='contain' />
+							<Image
+								src='/images/main/whyChoose/small-rombs.png'
+								alt='Dots'
+								layout='fill'
+								objectFit='contain'
+							/>
 						</DotsRight>
 						<Inner>
 							<RightSquare />
@@ -90,15 +102,16 @@ const LeftTopDots = styled.div`
 	position: absolute;
 	left: 246px;
 	top: -36px;
-	background: url('/images/main/whyChoose/leftTopDots.svg') no-repeat;
 	width: 427px;
 	height: 323px;
 	z-index: -2;
+
 	@media (max-width: 1280px) {
 		left: -47px;
 		top: -30px;
 	}
 `;
+
 const DotsRight = styled.div`
 	position: absolute;
 	left: 838px;
