@@ -1,5 +1,5 @@
 import { NextPage } from 'next/types';
-import React, { RefObject, useRef, useState } from 'react';
+import React, { RefObject, useCallback, useEffect, useRef, useState } from 'react';
 
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -45,13 +45,31 @@ const Home: NextPage<any> = (props) => {
 			});
 		}
 	};
+	const escFunction = useCallback((event) => {
+		if (event.key === 'Escape') {
+			setIsPlayer(false);
+		}
+	}, []);
 
+	useEffect(() => {
+		document.addEventListener('keydown', escFunction, false);
+
+		return () => {
+			document.removeEventListener('keydown', escFunction, false);
+		};
+	});
 	const modalRef = useOnClickOutsideVideo(() => {
 		if (isPlayer) {
 			setIsPlayer(false);
 		}
 	});
-
+	const playerRef = useRef(null) as RefObject<any>;
+	console.log(playerRef);
+	const onReady = React.useCallback(() => {
+		if (playerRef?.current) {
+			playerRef?.current?.seekTo(0, 'seconds');
+		}
+	}, [playerRef.current]);
 	return (
 		<Styled>
 			<GreySquare2>
@@ -85,11 +103,23 @@ const Home: NextPage<any> = (props) => {
 				<div ref={modalRef} className='player-wrapper'>
 					<ReactPlayer
 						className='react-player'
-						url='https://tinvio-3.wistia.com/medias/wam61v1zoz'
+						url={
+							locale == 'en'
+								? 'https://tinvio-3.wistia.com/medias/wam61v1zoz'
+								: locale == 'th'
+								? 'https://tinvio-1.wistia.com/medias/4elq4lgqpe'
+								: locale == 'id'
+								? 'https://tinvio-2.wistia.com/medias/brtcodihas'
+								: locale == 'vn'
+								? 'https://tinvio-4.wistia.com/medias/ltwnbzjbs1'
+								: 'https://tinvio-3.wistia.com/medias/wam61v1zoz'
+						}
 						controls
-						playing
+						ref={playerRef}
+						playing={isPlayer}
 						width='100%'
 						height='100%'
+						onPlay={onReady}
 					/>
 				</div>
 			</Video>
@@ -220,7 +250,6 @@ const Video = styled.div<{ isPlayer: boolean }>`
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
-
 	& .player-wrapper {
 		position: absolute;
 		top: 50%;
@@ -228,7 +257,6 @@ const Video = styled.div<{ isPlayer: boolean }>`
 		transform: translate(-50%, -50%);
 		width: 844px;
 		height: 474px;
-
 		@media (max-width: 938px) {
 			padding-top: 52.25%;
 			width: 90%;

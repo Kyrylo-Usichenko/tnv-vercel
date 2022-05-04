@@ -282,6 +282,7 @@ const RightMock = styled.div<{ isActive: boolean }>`
 	height: 488px;
 	transition: opacity 0.4s ease-in 0.2s;
 	opacity: ${({ isActive }) => (isActive ? '1' : '0')};
+	animation: lineR375Anim 2s ease 2s;
 
 	@media (max-width: 1023px) {
 		top: 0;
@@ -291,6 +292,14 @@ const RightMock = styled.div<{ isActive: boolean }>`
 	}
 	@media (max-width: 425px) {
 		width: 225px;
+	}
+	@keyframes lineR375Anim {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
 	}
 `;
 
