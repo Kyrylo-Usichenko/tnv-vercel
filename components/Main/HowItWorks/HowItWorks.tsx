@@ -44,20 +44,24 @@ const HowItWorks: FC = () => {
 										</CardContent>
 									</Box>
 									<CardTopIcon>
-										<Image
-											src='/images/main/howItWorks/iconFirstCard.png'
-											alt='chat icon'
-											layout='fill'
-											objectFit='contain'
-										/>
+										<div>
+											<Image
+												src='/images/main/howItWorks/iconFirstCard.png'
+												alt='chat icon'
+												layout='fill'
+												objectFit='contain'
+											/>
+										</div>
 									</CardTopIcon>
 									<CardTopStars>
-										<Image
-											src='/images/main/howItWorks/starsFirstCard.svg'
-											alt='chat icon'
-											layout='fill'
-											objectFit='contain'
-										/>
+										<div>
+											<Image
+												src='/images/main/howItWorks/starsFirstCard.svg'
+												alt='chat icon'
+												layout='fill'
+												objectFit='contain'
+											/>
+										</div>
 									</CardTopStars>
 								</FadeIn>
 								<Line1 animate={isShow} />
@@ -71,20 +75,24 @@ const HowItWorks: FC = () => {
 										</CardContent>
 									</Box2>
 									<CardMiddleIcon>
-										<Image
-											src='/images/main/howItWorks/iconSecondCard.svg'
-											alt='orders icon'
-											layout='fill'
-											objectFit='contain'
-										/>
+										<div>
+											<Image
+												src='/images/main/howItWorks/iconSecondCard.svg'
+												alt='orders icon'
+												layout='fill'
+												objectFit='contain'
+											/>
+										</div>
 									</CardMiddleIcon>
 									<CardMiddleStars>
-										<Image
-											src='/images/main/howItWorks/starsSecondCard.svg'
-											alt='orders icon'
-											layout='fill'
-											objectFit='contain'
-										/>
+										<div>
+											<Image
+												src='/images/main/howItWorks/starsSecondCard.svg'
+												alt='orders icon'
+												layout='fill'
+												objectFit='contain'
+											/>
+										</div>
 									</CardMiddleStars>
 								</FadeIn>
 								<Line2 animate={isShow} />
@@ -98,37 +106,45 @@ const HowItWorks: FC = () => {
 										</CardContent>
 									</Box3>
 									<CardBotIcon>
-										<Image
-											src='/images/main/howItWorks/iconThirdCard.png'
-											alt='orders icon'
-											layout='fill'
-											objectFit='contain'
-										/>
+										<div>
+											<Image
+												src='/images/main/howItWorks/iconThirdCard.png'
+												alt='orders icon'
+												layout='fill'
+												objectFit='contain'
+											/>
+										</div>
 									</CardBotIcon>
 									<CardBotStars>
-										<Image
-											src='/images/main/howItWorks/starsThirdCard.svg'
-											alt='orders icon'
-											layout='fill'
-											objectFit='contain'
-										/>
+										<div>
+											<Image
+												src='/images/main/howItWorks/starsThirdCard.svg'
+												alt='orders icon'
+												layout='fill'
+												objectFit='contain'
+											/>
+										</div>
 									</CardBotStars>
 									<CardBotStars2>
-										<Image
-											src='/images/main/howItWorks/sideStars.svg'
-											alt='orders icon'
-											layout='fill'
-											objectFit='contain'
-										/>
+										<div>
+											<Image
+												src='/images/main/howItWorks/sideStars.svg'
+												alt='orders icon'
+												layout='fill'
+												objectFit='contain'
+											/>
+										</div>
 									</CardBotStars2>
 								</FadeIn>
 								<DotsLeft>
-									<Image
-										src='/images/main/howItWorks/leftBottomDots.png'
-										alt='orders icon'
-										layout='fill'
-										objectFit='contain'
-									/>
+									<div>
+										<Image
+											src='/images/main/howItWorks/leftBottomDots.png'
+											alt='orders icon'
+											layout='fill'
+											objectFit='contain'
+										/>
+									</div>
 								</DotsLeft>
 							</CardBot>
 						</div>
@@ -141,12 +157,14 @@ const HowItWorks: FC = () => {
 							<ButtonText>{t('main:howItWorksButton')}</ButtonText>
 						</Button>
 						<DotsRight>
-							<Image
-								src='/images/main/howItWorks/rightBottomDots.png'
-								alt='orders icon'
-								layout='fill'
-								objectFit='contain'
-							/>
+							<div>
+								<Image
+									src='/images/main/howItWorks/rightBottomDots.png'
+									alt='orders icon'
+									layout='fill'
+									objectFit='contain'
+								/>
+							</div>
 						</DotsRight>
 					</Info>
 				</Inner>
@@ -482,6 +500,12 @@ const CardTopIcon = styled.div`
 	width: 50px;
 	height: 50px;
 
+	& > div {
+		height: inherit;
+		width: inherit;
+		position: relative;
+	}
+
 	@media (min-width: 768px) {
 		left: 224px;
 		top: -2px;
@@ -504,6 +528,12 @@ const CardMiddleIcon = styled.div`
 	bottom: -26px;
 	width: 50px;
 	height: 50px;
+
+	& > div {
+		height: inherit;
+		width: inherit;
+		position: relative;
+	}
 
 	@media (min-width: 768px) {
 		left: -18px;
@@ -528,6 +558,12 @@ const CardBotIcon = styled.div`
 	width: 50px;
 	height: 50px;
 
+	& > div {
+		height: inherit;
+		width: inherit;
+		position: relative;
+	}
+
 	@media (min-width: 768px) {
 		left: -2px;
 		top: -39px;
@@ -550,6 +586,12 @@ const CardTopStars = styled.div`
 	width: 56px;
 	height: 42px;
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
+
+	& > div {
+		height: inherit;
+		width: inherit;
+		position: relative;
+	}
 
 	@media (max-width: 1px) {
 		left: 75px;
@@ -575,6 +617,12 @@ const CardMiddleStars = styled.div`
 	left: 100px;
 	top: -43px;
 
+	& > div {
+		height: inherit;
+		width: inherit;
+		position: relative;
+	}
+
 	@media (min-width: 768px) {
 		width: 85px;
 		height: 45px;
@@ -598,6 +646,12 @@ const CardBotStars = styled.div`
 	left: 167px;
 	top: -9px;
 
+	& > div {
+		height: inherit;
+		width: inherit;
+		position: relative;
+	}
+
 	@media (min-width: 768px) {
 		width: 60px;
 		left: 277px;
@@ -620,6 +674,12 @@ const CardBotStars2 = styled.div`
 	left: 37px;
 	top: -44px;
 
+	& > div {
+		height: inherit;
+		width: inherit;
+		position: relative;
+	}
+
 	@media (min-width: 768px) {
 		width: 70px;
 		left: 76px;
@@ -641,6 +701,12 @@ const DotsLeft = styled.div`
 	height: 225px;
 	left: -226px;
 	top: -317px;
+
+	& > div {
+		height: inherit;
+		width: inherit;
+		position: relative;
+	}
 
 	@media (min-width: 768px) {
 		width: 298px;
@@ -669,6 +735,12 @@ const DotsRight = styled.div`
 	width: 254px;
 	height: 192px;
 	z-index: -1;
+
+	& > div {
+		height: inherit;
+		width: inherit;
+		position: relative;
+	}
 
 	@media (min-width: 320px) {
 		width: 299px;
