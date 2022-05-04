@@ -56,6 +56,7 @@ const Teamvio: FC = () => {
 								lHeight={22}
 								href='https://www.linkedin.com/company/tinvio/jobs/'
 								target='_blank'
+								rel='noreferrer noopener'
 							>
 								{t('company:teamvioButton')}
 							</LightLink>
