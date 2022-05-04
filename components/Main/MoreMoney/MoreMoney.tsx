@@ -334,6 +334,7 @@ const PurpleSquare = styled.div`
 	left: 50%;
 	width: 451px;
 	height: 451px;
+	margin-top: 57px;
 	@media (min-width: 768px) {
 		position: relative;
 		top: -120px;
@@ -341,6 +342,7 @@ const PurpleSquare = styled.div`
 		transform: rotate(-45deg) translateX(-71%);
 		width: 559.25px;
 		height: 559.25px;
+		margin-top: 40px;
 	}
 	@media (min-width: 1024px) {
 		left: 57%;
@@ -355,6 +357,7 @@ const PurpleSquare = styled.div`
 		justify-content: center;
 		left: 62%;
 		top: 55px;
+		margin-top: 0px;
 	}
 	@media (min-width: 1280px) {
 		position: absolute;
@@ -636,6 +639,9 @@ const Button = styled.a<{ width: string; isActive: boolean }>`
 	&:hover {
 		background: #f3f4f599;
 	}
+	&:last-of-type {
+		margin-right: 0;
+	}
 	@media (min-width: 1440px) {
 		margin: 0;
 	}
@@ -671,7 +677,7 @@ const BottomButton = styled.div`
 		}
 
 		@media (min-width: 1024px) {
-			margin: 57px 0 0;
+			margin: 32px 0 0 0;
 		}
 
 		@media (min-width: 1920px) {
@@ -689,26 +695,15 @@ const List = styled.ul`
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	height: 125px;
 	@media (min-width: 768px) {
-		height: 119px;
 		margin: 0 0 0 50px;
 	}
 	@media (min-width: 1024px) {
-		height: 110px;
 		margin: 0;
+		padding-left: 20px;
 	}
 	@media (min-width: 1280px) {
-		height: 110px;
-	}
-	@media (min-width: 1440px) {
-		height: 86px;
-	}
-	@media (min-width: 1920px) {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		height: unset;
+		padding-left: 0px;
 	}
 `;
 
@@ -741,13 +736,13 @@ const Item = styled.li`
 	}
 	@media (min-width: 768px) {
 		margin: 0 0 12px -20px;
+		font-size: 16px;
+		line-height: 23px;
 		&:last-child {
 			margin: 0 0 0 -20px;
 		}
 	}
 	@media (min-width: 1024px) {
-		font-size: 16px;
-		line-height: 23px;
 		&:last-child {
 			margin: 0 0 0 -20px;
 		}
@@ -756,8 +751,6 @@ const Item = styled.li`
 		font-family: 'Inter';
 		font-style: normal;
 		font-weight: 400;
-		font-size: 18px;
-		line-height: 23px;
 		color: #212121;
 		margin: 0 0 8px 0;
 		padding: 0 0 0 27px;
@@ -765,6 +758,11 @@ const Item = styled.li`
 		&:last-child {
 			margin: 0;
 		}
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 18px;
+		line-height: 23px;
 	}
 `;
 
