@@ -72,7 +72,8 @@ const Home: NextPage<any> = (props) => {
 						<Preview locale={locale} scrollDown={executeScroll} />
 					</FeaturesCon>
 					<HowItWorks setIsPlayer={() => setIsPlayer(!isPlayer)} />
-					<MoreMoney />
+					<MoreMoney locale={locale} />
+
 					<FeaturedOn />
 					<WhyChoose />
 					<SmileRework />

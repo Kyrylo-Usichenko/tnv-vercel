@@ -183,7 +183,7 @@ const Phone = styled.img`
 const DotsLeft = styled.div`
 	position: absolute;
 	z-index: 1;
-	background: url('/images/main/preview/dots-top768.svg') no-repeat;
+	background: url('/images/main/preview/dots-top768.png') no-repeat;
 	background-size: contain;
 	width: 162.85px;
 	height: 123.25px;
@@ -213,20 +213,20 @@ const DotsBottom = styled.div`
 	background-size: contain;
 	width: 277.53px;
 	height: 210.02px;
-	background: url('/images/main/preview/dots-big375.svg') no-repeat;
+	background: url('/images/main/preview/dots-big375.png') no-repeat;
 	top: 84px;
 	left: 408px;
 	@media (min-width: 1px) {
 		width: 277.53px;
 		height: 210.02px;
-		background: url('/images/main/preview/dots-big375.svg') no-repeat;
+		background: url('/images/main/preview/dots-big375.png') no-repeat;
 		top: 84px;
 		left: 408px;
 	}
 	@media (min-width: 768px) {
 		width: 408.7px;
 		height: 309.28px;
-		background: url('/images/main/preview/dots-big768.svg') no-repeat;
+		background: url('/images/main/preview/dots-big768.png') no-repeat;
 		top: 56px;
 		left: 630px;
 	}

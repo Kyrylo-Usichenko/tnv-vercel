@@ -10,15 +10,33 @@ const WhyChoose: FC = () => {
 
 	return (
 		<Styled>
-			<LeftTopDots />
+			<LeftTopDots>
+				<div>
+					<Image src='/images/main/whyChoose/leftTopDots.png' alt='Dots' layout='fill' objectFit='contain' />
+				</div>
+			</LeftTopDots>
 			<Wrapper>
 				<Null>
 					<FeaturesCon>
 						<DotsLeftBot>
-							<Image src='/images/main/whyChoose/big-rombs.png' layout='fill' objectFit='contain' />
+							<div>
+								<Image
+									src='/images/main/whyChoose/big-rombs.png'
+									alt='Dots'
+									layout='fill'
+									objectFit='contain'
+								/>
+							</div>
 						</DotsLeftBot>
 						<DotsRight>
-							<Image src='/images/main/whyChoose/small-rombs.png' layout='fill' objectFit='contain' />
+							<div>
+								<Image
+									src='/images/main/whyChoose/small-rombs.png'
+									alt='Dots'
+									layout='fill'
+									objectFit='contain'
+								/>
+							</div>
 						</DotsRight>
 						<Inner>
 							<RightSquare />
@@ -72,6 +90,13 @@ const DotsLeftBot = styled.div`
 	bottom: -255px;
 	width: 465px;
 	height: 219px;
+
+	& > div {
+		height: inherit;
+		width: inherit;
+		position: relative;
+	}
+
 	@media (max-width: 1279px) {
 		transform: translateX(0);
 		left: -175px;
@@ -90,21 +115,35 @@ const LeftTopDots = styled.div`
 	position: absolute;
 	left: 246px;
 	top: -36px;
-	background: url('/images/main/whyChoose/leftTopDots.svg') no-repeat;
 	width: 427px;
 	height: 323px;
 	z-index: -2;
+
+	& > div {
+		height: inherit;
+		width: inherit;
+		position: relative;
+	}
+
 	@media (max-width: 1280px) {
 		left: -47px;
 		top: -30px;
 	}
 `;
+
 const DotsRight = styled.div`
 	position: absolute;
 	left: 838px;
 	top: 116px;
 	width: 465px;
 	height: 219px;
+
+	& > div {
+		height: inherit;
+		width: inherit;
+		position: relative;
+	}
+
 	@media (max-width: 1440px) {
 		left: 824px;
 	}

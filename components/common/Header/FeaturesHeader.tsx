@@ -1,6 +1,10 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
+
 import { useTranslation } from 'next-i18next';
+import useToggle from '../../../hooks/useToggle';
+import useOnClickOutside from '../../../hooks/useOnClickOutside';
+
 import Link from 'next/link';
 
 import Logo from '../Logos/Logo';
@@ -35,8 +39,8 @@ import {
 	MainCon,
 } from './FeaturesHeaderStyles';
 import ArrowDown from '../Arrow/ArrowDown';
-import useOnClickOutside from '../../../hooks/useOnClickOutside';
 import { Path, Socials } from '../../../constants';
+import useScrollPosition from '../../../hooks/useHeaderScroll';
 
 type PropsType = {
 	tab: string;
@@ -47,7 +51,7 @@ type PropsType = {
 
 const Header: FunctionComponent<PropsType> = ({ tab, locale, openModal, scrollDown }) => {
 	const [isHeaderScrolled, setHeaderScrolled] = useState(false);
-	const [dropDawn, setDropDown] = useState(false);
+	const [dropDawn, setDropDown] = useToggle(false);
 	const [isMenuOpend, setMenuOpened] = useState(false);
 
 	const menuToggle = () => {
@@ -60,20 +64,14 @@ const Header: FunctionComponent<PropsType> = ({ tab, locale, openModal, scrollDo
 	};
 
 	const { t } = useTranslation();
-
+	const scrollPosition = useScrollPosition();
 	useEffect(() => {
-		function handleScroll() {
-			setHeaderScrolled(window.pageYOffset > 50);
-		}
+		setHeaderScrolled(scrollPosition > 50);
 
-		window.addEventListener('scroll', handleScroll);
-
-		if (window.pageYOffset > 50) {
+		if (scrollPosition > 50) {
 			setHeaderScrolled(true);
 		}
-
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
+	}, [scrollPosition]);
 
 	const modalRef = useOnClickOutside(() => {
 		setDropDown(false);
@@ -116,11 +114,7 @@ const Header: FunctionComponent<PropsType> = ({ tab, locale, openModal, scrollDo
 									<LogoText />
 								</LogoInner>
 							</LogoLink>
-							<LanguageWrapper
-								ref={modalRef}
-								onClick={() => setDropDown(!dropDawn)}
-								isMenuOpend={isMenuOpend}
-							>
+							<LanguageWrapper ref={modalRef} onClick={setDropDown} isMenuOpend={isMenuOpend}>
 								<CurrentLanguage>{locale}</CurrentLanguage>
 								<ArrowWrapper isOpen={dropDawn}>
 									<ArrowDown />
