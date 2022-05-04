@@ -28,6 +28,7 @@ const Get = () => {
 										layout='fill'
 										objectFit='contain'
 										alt='app'
+										priority={true}
 									/>
 								</LeftImg>
 							</LeftImgWrap>
@@ -38,6 +39,7 @@ const Get = () => {
 										layout='fill'
 										objectFit='contain'
 										alt='app'
+										priority={true}
 									/>
 								</RightImg>
 							</RightImgWrap>

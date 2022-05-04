@@ -5,6 +5,7 @@ import useAnimate from '../../../hooks/useAnimate';
 
 import FadeIn from '../../common/FadeIn/FadeIn';
 import { useTranslation } from 'next-i18next';
+import Image from 'next/image';
 
 type MapFlexProps = {
 	locale: string;
@@ -22,77 +23,109 @@ const MapFlex: FC<MapFlexProps> = ({ locale }) => {
 				<>
 					<FadeIn duration={800} delay={600} isShow={isShow}>
 						<HongKong>
-							<img
-								className='hong-kong'
-								src='./images/main/map/countries/hong-kong.png'
-								srcSet='./images/main/map/countries/hong-kong@2x.png 2x'
-								alt='Hong-Kong'
-							/>
+							<div className='wrap'>
+								<Image
+									className='hong-kong'
+									src='/images/main/map/countries/hong-kong@2x.png'
+									alt='Hong-Kong'
+									layout='fill'
+									objectFit='contain'
+								/>
+							</div>
 							<Point name='Hong-Kong' top={-175} left={0} />
 						</HongKong>
 					</FadeIn>
 					<FadeIn duration={800} delay={300} isShow={isShow}>
 						<Indonesia>
-							<img
-								className='indonesia'
-								src='./images/main/map/countries/indonesia.png'
-								srcSet='./images/main/map/countries/indonesia@2x.png 2x'
-								alt='Indonesia'
-							/>
+							<div className='wrap'>
+								<Image
+									className='indonesia'
+									src='/images/main/map/countries/indonesia@2x.png'
+									alt='Indonesia'
+									layout='fill'
+									objectFit='contain'
+								/>
+							</div>
 							<Point name='Indonesia' top={65} left={23.5} />
 						</Indonesia>
 					</FadeIn>
 					<FadeIn duration={800} delay={900} isShow={isShow}>
 						<Philippines>
-							<img
-								className='philippines'
-								src='./images/main/map/countries/philippines.png'
-								srcSet='./images/main/map/countries/philippines@2x.png 2x'
-								alt='Philippines'
-							/>
+							<div className='wrap'>
+								<Image
+									className='philippines'
+									src='/images/main/map/countries/philippines@2x.png'
+									alt='Philippines'
+									layout='fill'
+									objectFit='contain'
+								/>
+							</div>
 							<Point name='Philippines' top={2} left={16} />
 						</Philippines>
 					</FadeIn>
 					<FadeIn duration={800} delay={100} isShow={isShow}>
 						<Singapore>
-							<img
-								className='singapore'
-								src='./images/main/map/countries/singapore.png'
-								srcSet='./images/main/map/countries/singapore@2x.png 2x'
-								alt='Singapore'
-							/>
+							<div className='wrap'>
+								<Image
+									className='singapore'
+									src='/images/main/map/countries/singapore@2x.png'
+									alt='Singapore'
+									layout='fill'
+									objectFit='contain'
+								/>
+							</div>
 							<Point name='Singapore' top={-190} left={15} />
 						</Singapore>
 					</FadeIn>
 					<FadeIn duration={800} delay={1200} isShow={isShow}>
 						<Thailand>
-							<img
-								className='thailand'
-								src='./images/main/map/countries/thailand.png'
-								srcSet='./images/main/map/countries/thailand@2x.png 2x'
-								alt='Thailand'
-							/>
+							<div className='wrap'>
+								<Image
+									className='thailand'
+									src='/images/main/map/countries/thailand@2x.png'
+									alt='Thailand'
+									layout='fill'
+									objectFit='contain'
+								/>
+							</div>
 							<Point name='Thailand' top={-1} left={15} />
 						</Thailand>
 					</FadeIn>
 					<FadeIn duration={800} delay={1500} isShow={isShow}>
 						<Vietnam>
-							<img
-								className='vietnam'
-								src='./images/main/map/countries/vietnam.png'
-								srcSet='./images/main/map/countries/vietnam@2x.png 2x'
-								alt='Vietnam'
-							/>
+							<div className='wrap'>
+								<Image
+									className='vietnam'
+									src='/images/main/map/countries/vietnam@2x.png'
+									alt='Vietnam'
+									layout='fill'
+									objectFit='contain'
+								/>
+							</div>
 							<Point name='Vietnam' top={-6} left={24} />
 						</Vietnam>
 					</FadeIn>
 					<FadeIn duration={800} delay={1500} isShow={isShow}>
 						<TextBox>
 							<Arrow>
-								<img src='./images/main/map/arrow-line-text/arrow-icon.svg' alt='arrow' />
+								<div className='wrap'>
+									<Image
+										src='/images/main/map/arrow-line-text/arrow-icon.svg'
+										alt='arrow'
+										layout='fill'
+										objectFit='contain'
+									/>
+								</div>
 							</Arrow>
 							<Line>
-								<img src='./images/main/map/arrow-line-text/arch-line-icon.svg' alt='line' />
+								<div className='wrap'>
+									<Image
+										src='/images/main/map/arrow-line-text/arch-line-icon.svg'
+										alt='line'
+										layout='fill'
+										objectFit='contain'
+									/>
+								</div>
 							</Line>
 							<Text locale={locale}>{t('main:formMap')}</Text>
 						</TextBox>
@@ -199,6 +232,12 @@ const HongKong = styled.div`
 			left: -30%;
 		}
 	}
+
+	& > .wrap {
+		height: 100%;
+		width: 100%;
+		position: relative;
+	}
 `;
 const Indonesia = styled.div`
 	position: absolute;
@@ -206,6 +245,12 @@ const Indonesia = styled.div`
 	left: 39.7%;
 	width: 48%;
 	height: 25%;
+
+	& > .wrap {
+		height: 100%;
+		width: 100%;
+		position: relative;
+	}
 `;
 const Philippines = styled.div`
 	position: absolute;
@@ -213,6 +258,12 @@ const Philippines = styled.div`
 	left: 63.2%;
 	width: 9.3%;
 	height: 25%;
+
+	& > .wrap {
+		height: 100%;
+		width: 100%;
+		position: relative;
+	}
 `;
 const Singapore = styled.div`
 	position: absolute;
@@ -227,6 +278,12 @@ const Singapore = styled.div`
 			left: -3%;
 		}
 	}
+
+	& > .wrap {
+		height: 100%;
+		width: 100%;
+		position: relative;
+	}
 `;
 const SingaporeStartAnimation = styled(Singapore)`
 	z-index: -1;
@@ -237,6 +294,12 @@ const Thailand = styled.div`
 	left: 40.85%;
 	width: 8%;
 	height: 26%;
+
+	& > .wrap {
+		height: 100%;
+		width: 100%;
+		position: relative;
+	}
 `;
 const Vietnam = styled.div`
 	position: absolute;
@@ -244,6 +307,12 @@ const Vietnam = styled.div`
 	left: 44.8%;
 	width: 9.5%;
 	height: 24%;
+
+	& > .wrap {
+		height: 100%;
+		width: 100%;
+		position: relative;
+	}
 `;
 
 const TextBox = styled.div`
@@ -265,6 +334,12 @@ const Arrow = styled.div`
 	left: 26%;
 	width: 5%;
 	height: 12.4%;
+
+	& > .wrap {
+		height: 100%;
+		width: 100%;
+		position: relative;
+	}
 `;
 const Line = styled.div`
 	position: absolute;
@@ -272,6 +347,12 @@ const Line = styled.div`
 	left: 31%;
 	width: 57%;
 	height: 84%;
+
+	& > .wrap {
+		height: 100%;
+		width: 100%;
+		position: relative;
+	}
 `;
 const Text = styled.div<{ locale: string }>`
 	position: absolute;
