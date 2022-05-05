@@ -102,6 +102,7 @@ const DotsLeftBot = styled.div`
     bottom: -290px;
   }
 `;
+
 const LeftTopDots = styled.div`
   position: absolute;
   left: 246px;
@@ -151,6 +152,11 @@ const Inner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: -27px;
+
+  @media (max-width: 1280px) {
+    margin-left: 0;
+  }
 `;
 
 const Title = styled.h4`
@@ -167,9 +173,11 @@ const Title = styled.h4`
     font-size: 32px;
     line-height: 38px;
   }
+
   @media (max-width: 768px) {
     line-height: 39px;
   }
+
   @media (max-width: 325px) {
     font-size: 28px;
     line-height: 33px;

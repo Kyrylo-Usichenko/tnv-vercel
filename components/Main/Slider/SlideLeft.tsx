@@ -14,7 +14,14 @@ interface ISlide {
 const SlideLeft: FC<ISlide> = ({ sliderText, logo, name, text, width, height }) => {
   return (
     <Wrapper>
-      <SliderText>{sliderText}</SliderText>
+      <SliderTextWrap>
+        <SliderText>
+          {sliderText}
+          <QuotesImg1>
+            <Image src='/images/main/whyChoose/quotes.svg' alt='quotes' width={24} height={24} />
+          </QuotesImg1>
+        </SliderText>
+      </SliderTextWrap>
       <SliderBottom>
         <Content>
           <ContentLeft>
@@ -24,10 +31,10 @@ const SlideLeft: FC<ISlide> = ({ sliderText, logo, name, text, width, height }) 
               <Text>{text}</Text>
             </ContentText>
           </ContentLeft>
-          <Img>
-            <Image src='/images/main/whyChoose/quotes.svg' alt='quotes' layout='fill' objectFit='contain' />
-          </Img>
         </Content>
+        <QuotesImg2>
+          <Image src='/images/main/whyChoose/quotes.svg' alt='quotes' width={24} height={24} />
+        </QuotesImg2>
       </SliderBottom>
     </Wrapper>
   );
@@ -35,47 +42,125 @@ const SlideLeft: FC<ISlide> = ({ sliderText, logo, name, text, width, height }) 
 
 const Wrapper = styled.div`
   position: relative;
-  padding-bottom: 50px;
-  @media (max-width: 1024px) {
-    padding-bottom: 87px;
+  padding-bottom: 75px;
+
+  @media (max-width: 950px) {
+    order: 2;
   }
+
   @media (max-width: 768px) {
     padding-bottom: 0px;
   }
 `;
 
+const SliderTextWrap = styled.div`
+  background-color: #f1f1f1;
+  margin: 0 0 20px 0;
+  padding: 24px;
+  border-radius: 16px;
+  width: 933px;
+
+  @media (max-width: 1440px) {
+    width: 823px;
+  }
+
+  @media (max-width: 1280px) {
+    width: 724px;
+  }
+
+  @media (max-width: 950px) {
+    width: 98%;
+    border-radius: 0 16px 16px 0;
+    padding: 24px 24px 24px 32px;
+  }
+
+  @media (max-width: 768px) {
+    width: 96%;
+  }
+
+  @media (max-width: 425px) {
+    padding: 24px;
+  }
+`;
+
 const SliderText = styled.p`
   font-family: 'Inter';
-  font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 25px;
   color: #212121;
-  padding: 0 0 0 0;
-  margin: 0 0 24px 0;
+  max-width: 725px;
+  margin: 0;
+  position: relative;
+
   @media (max-width: 1440px) {
     font-size: 18px;
     line-height: 24px;
+    max-width: 655px;
   }
+
+  @media (max-width: 1280px) {
+    max-width: 487px;
+  }
+
   @media (max-width: 768px) {
     font-size: 16px;
     line-height: 23px;
   }
+
   @media (max-width: 425px) {
     margin: 0 0 16px 0;
   }
 `;
 
+const QuotesImg1 = styled.span`
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 24px;
+  width: 24px;
+
+  @media (max-width: 1024px) {
+    right: -5px;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const QuotesImg2 = styled.span`
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 24px;
+  width: 24px;
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    right: 25px;
+    bottom: 20px;
+  }
+`;
+
 const SliderBottom = styled.div`
-  border-top: 1px solid #d2d2d2;
-  padding-top: 24px;
+  padding-left: 24px;
+  position: relative;
 
   @media (max-width: 1024px) {
     width: 100%;
   }
 
+  @media (max-width: 950px) {
+    padding-left: 32px;
+  }
+
   @media (max-width: 425px) {
     padding-top: 20px;
+    padding-left: 24px;
   }
 `;
 
@@ -94,6 +179,7 @@ const Name = styled.p`
     line-height: 20px;
   }
 `;
+
 const Text = styled.p`
   padding: 0;
   margin: 0;
@@ -117,10 +203,11 @@ const Content = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
 const ContentLeft = styled.div`
   display: flex;
   align-items: center;
-  max-height: 52px;
+
   & img {
     max-height: 100%;
   }
@@ -128,17 +215,6 @@ const ContentLeft = styled.div`
 
 const ContentText = styled.div`
   margin-left: 16px;
-`;
-
-const Img = styled.div`
-  position: relative;
-  width: 20px;
-  height: 20px;
-  margin: 0 2px 0 0;
-  @media (min-width: 768px) {
-    width: 24px;
-    height: 24px;
-  }
 `;
 
 export default SlideLeft;
