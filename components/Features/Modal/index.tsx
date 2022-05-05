@@ -392,7 +392,6 @@ const ModalButton = styled.button<{ loaded?: boolean }>`
 
   &:hover {
     background-color: var(--text-primary-hover);
-    box-shadow: 8px 8px 20px 0 var(--shadow-color);
   }
 
   @keyframes btnLoader {

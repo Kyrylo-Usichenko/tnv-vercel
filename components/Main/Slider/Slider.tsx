@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'next-i18next';
-import SwiperCore, { Controller, Navigation, Pagination, Autoplay, EffectFade } from 'swiper';
+import SwiperCore, { Controller, Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
 import SlideLeft from '@/components/Main/Slider/SlideLeft';
-import SlideImage from '@/components/Main/Slider/SlideRight';
+// import SlideImage from '@/components/Main/Slider/SlideRight';
 
 const Slider: FC = () => {
   const { t } = useTranslation();
@@ -21,7 +21,8 @@ const Slider: FC = () => {
       logo: '/images/main/whyChoose/itacho-logo.svg',
       name: 'Hafidz & Indah',
       text: 'Owners (Sejadah Grocery)',
-      image: '/images/main/whyChoose/itacho@2x.jpg',
+      image: '/images/main/whyChoose/itacho@2x.png',
+      imageHeight: '353px',
       width: '96px',
       height: '49px',
     },
@@ -30,7 +31,8 @@ const Slider: FC = () => {
       logo: '/images/main/whyChoose/moonleaf-logo.png',
       name: 'Pauline Limgenco',
       text: 'Director (Moonleaf)',
-      image: '/images/main/whyChoose/moonleaf@2x.jpg',
+      image: '/images/main/whyChoose/moonleaf@2x.png',
+      imageHeight: '361px',
       width: '102px',
       height: '48px',
     },
@@ -39,7 +41,8 @@ const Slider: FC = () => {
       logo: '/images/main/whyChoose/phaitong-logo.png',
       name: 'Punnasiri Chaipatikul',
       text: 'Business Development Manager (Phaitong Station)',
-      image: '/images/main/whyChoose/phaitong@2x.jpg',
+      image: '/images/main/whyChoose/phaitong@2x.png',
+      imageHeight: '350px',
       width: '70px',
       height: '52px',
     },
@@ -48,14 +51,15 @@ const Slider: FC = () => {
       logo: '/images/main/whyChoose/baker-logo.png',
       name: 'Fathira Dida',
       text: 'Owner (Baker Old)',
-      image: '/images/main/whyChoose/baker@2x.jpg',
+      image: '/images/main/whyChoose/baker@2x.png',
+      imageHeight: '317px',
       width: '54px',
       height: '64px',
     },
   ];
 
   SwiperCore.use([Autoplay]);
-  const [controlledSwiper, setControlledSwiper] = useState<SwiperCore | null>(null);
+  const [controlledSwiper] = useState<SwiperCore | null>(null);
 
   return (
     <Wrapper>
@@ -81,11 +85,12 @@ const Slider: FC = () => {
                 width={slide.width}
                 height={slide.height}
               />
+              <MainImg src={slide.image} alt={slide.name} imgHeight={slide.imageHeight} />
             </SwiperSlide>
           ))}
         </Swiper>
       </LeftSliderWrap>
-      <RightSliderWrap>
+      {/* <RightSliderWrap>
         <Swiper
           className='swiper'
           modules={[EffectFade]}
@@ -93,7 +98,6 @@ const Slider: FC = () => {
           slidesPerView={1}
           loop={true}
           onSwiper={(swiper) => setControlledSwiper(swiper)}
-          effect='fade'
           allowTouchMove={false}
         >
           {sliders.map((slide, index) => (
@@ -102,7 +106,7 @@ const Slider: FC = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </RightSliderWrap>
+      </RightSliderWrap> */}
       <Dots className='dots' />
     </Wrapper>
   );
@@ -113,61 +117,55 @@ const Wrapper = styled.div`
   max-width: 1132px;
   width: 100%;
   margin: 40px 40px 0;
-  background: radial-gradient(136.24% 142.18% at 50% 50%, #ffffff 0%, rgba(250, 250, 250, 0.8) 100%);
+  padding: 32px 18px 56px 32px;
+  background-color: #ffffff;
   border-radius: 32px;
   display: flex;
   justify-content: space-between;
-  @media (max-width: 1140px) {
-    max-width: calc(100vw - 80px);
+
+  @media (max-width: 1440px) {
+    max-width: 1082px;
+  }
+
+  @media (max-width: 1024px) {
+    max-width: 947px;
+    padding: 32px 18px 48px 32px;
   }
 
   @media (max-width: 950px) {
     flex-direction: column;
     max-width: 490px;
     align-items: center;
-    padding: 32px;
+    padding: 32px 0;
   }
+
   @media (max-width: 768px) {
-    padding: 32px 32px 64px;
+    padding: 32px 0 64px 0;
   }
+
   @media (max-width: 425px) {
-    padding: 24px 24px 48px 24px;
+    padding: 24px 0 48px 0;
   }
 `;
 
 const LeftSliderWrap = styled.div`
-  flex: 0 1 46%;
-  width: 46%;
-  margin: 48px;
-  border-radius: 32px;
+  width: 100%;
   position: relative;
 
-  @media (max-width: 1220px) {
-    flex: 0 1 47%;
-    width: 47%;
-  }
-  @media (max-width: 1023px) {
-    flex: 0 1 calc(46% - 76px);
-    width: calc(46% - 76px);
-  }
-  @media (max-width: 950px) {
-    flex: 0 0 100%;
-    width: 100%;
-    order: 2;
-    margin: 0;
-  }
   .swiper {
     height: 100%;
   }
+
   .swiper-button-prev,
   .swiper-button-next {
     display: none;
+
     @media (min-width: 769px) {
       top: auto;
       bottom: 0%;
       width: 40px;
       height: 40px;
-      background: #ffffff;
+      background-color: #d2d2d2;
       border-radius: 8px;
       margin: 0;
       display: flex;
@@ -185,49 +183,98 @@ const LeftSliderWrap = styled.div`
       }
     }
   }
+
   .swiper-button-prev {
     left: 0px;
-    padding: 10px 15px 10px 13.33px;
+    margin-left: 24px;
+
     &:after {
       content: '';
-      width: 11.67px;
+      width: 12px;
       height: 20px;
+      padding-right: 15px;
       background: url('/images/main/whyChoose/arrow.svg');
+      background-repeat: no-repeat;
+    }
+
+    @media (max-width: 950px) {
+      margin-left: 32px;
     }
   }
+
   .swiper-button-next {
-    left: 65px;
-    padding: 10px 13.33px 10px 15px;
+    left: 87.5px;
+
     &:after {
       content: '';
       transform: rotate(180deg);
-      width: 11.67px;
+      width: 12px;
       height: 20px;
+      padding-left: 15px;
       background: url('/images/main/whyChoose/arrow.svg');
+      background-repeat: no-repeat;
+    }
+
+    @media (max-width: 950px) {
+      left: 95.5px;
     }
   }
-`;
-const RightSliderWrap = styled.div`
-  flex: 0 0 40.3%;
-  width: 40.3%;
-  margin: 32px 32px 32px 0;
 
-  & div {
-    height: 100%;
+  & .swiper-slide {
+    @media (max-width: 950px) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
-  @media (max-width: 1220px) {
-    flex: 0 1 39%;
-    width: 39%;
-  }
-
-  @media (max-width: 950px) {
+  /* @media (max-width: 950px) {
     flex: 0 0 100%;
     width: 100%;
+    order: 2;
+    margin: 0;
+  } */
+`;
+
+const MainImg = styled.img<{ imgHeight: string }>`
+  position: absolute;
+  top: 0;
+  right: 15px;
+  height: 100%;
+  width: auto;
+
+  @media (max-width: 950px) {
+    position: static;
+    height: 290px;
+    align-self: center;
     order: 1;
-    margin: 0 0 30px;
   }
 `;
+
+// const RightSliderWrap = styled.div`
+//   position: absolute;
+//   top: 50%;
+//   right: 0;
+//   height: 85%;
+//   width: 330px;
+//   transform: translateY(-50%);
+//   z-index: 99999;
+
+//   & div {
+//     height: 100%;
+//   }
+
+//   @media (max-width: 1220px) {
+//     flex: 0 1 39%;
+//     width: 39%;
+//   }
+
+//   @media (max-width: 950px) {
+//     flex: 0 0 100%;
+//     width: 100%;
+//     order: 1;
+//     margin: 0 0 30px;
+//   }
+// `;
 
 const Dots = styled.div`
   &.swiper-pagination-bullets.swiper-pagination-horizontal {
@@ -236,9 +283,11 @@ const Dots = styled.div`
     display: flex;
     justify-content: center;
     bottom: -50px;
+
     @media (max-width: 1440px) {
       bottom: -47px;
     }
+
     @media (max-width: 767px) {
       bottom: -40px;
     }
@@ -252,6 +301,7 @@ const Dots = styled.div`
       transform: rotate(45deg);
       background: #e1e1e1;
       cursor: pointer;
+
       @media (max-width: 767px) {
         height: 10px;
         flex: 0 0 10px;

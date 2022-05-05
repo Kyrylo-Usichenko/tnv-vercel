@@ -23,7 +23,6 @@ const StyledButton = styled.button`
 
   &:hover {
     background-color: var(--text-primary-hover);
-    box-shadow: 8px 8px 20px 0 var(--shadow-color);
   }
 
   &:focus {

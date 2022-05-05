@@ -318,10 +318,6 @@ export const HeaderButton = styled.button<{ isHeaderScrolled: boolean; tab: stri
   &:hover {
     background-color: ${({ tab, isHeaderScrolled }) =>
       tab === 'Home' && !isHeaderScrolled ? '#e0e0e1' : 'var(--text-primary-hover)'};
-    box-shadow: ${({ tab, isHeaderScrolled }) =>
-      tab === 'Home' && !isHeaderScrolled
-        ? '14px 4px 20px 0 var(--shadow-color)'
-        : '8px 8px 20px 0 var(--shadow-color)'};
   }
 
   &:focus {
@@ -419,7 +415,6 @@ export const MobileButton = styled.button`
 
   &:hover {
     background-color: var(--text-primary-hover);
-    box-shadow: 8px 8px 20px 0 var(--shadow-color);
   }
 
   &:focus {

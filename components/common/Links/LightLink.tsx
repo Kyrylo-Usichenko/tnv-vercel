@@ -21,7 +21,6 @@ const StyledLink = styled.a<{ width: number; fSize: number; lHeight: number }>`
 
   &:hover {
     background-color: #e0e0e1;
-    box-shadow: 14px 4px 20px 0 var(--shadow-color);
   }
 
   &:focus {
