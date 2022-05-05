@@ -36,9 +36,9 @@ const Counts: FC = () => {
         <Content>
           <Count>
             {isShown01 ? (
-              250
+              200
             ) : isVisible01 ? (
-              <CountUp start={0} end={250} delay={0.2} duration={1.1} preserveValue onEnd={() => setIsShown01(true)} />
+              <CountUp start={0} end={200} delay={0.2} duration={1.1} preserveValue onEnd={() => setIsShown01(true)} />
             ) : (
               0
             )}
