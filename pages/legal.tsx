@@ -60,9 +60,11 @@ const Legal: NextPage<Props> = ({ locale }) => {
         <TabContainer>
           <TabTitle>Tinvio Legal Info</TabTitle>
           <CurrentTabCon>
+            {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
             <CurrentTabName isActive={currentTab === Tabs.privacy} onClick={onPrivacyClick}>
               Privacy Policy
             </CurrentTabName>
+            {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
             <CurrentTabName isActive={currentTab === Tabs.terms} onClick={onTermsClick}>
               Terms of Service
             </CurrentTabName>
