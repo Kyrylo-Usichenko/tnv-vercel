@@ -574,9 +574,9 @@ const CardBotIcon = styled.div`
 
 const CardTopStars = styled.div`
 	position: absolute;
-	left: 85px;
-	top: -53px;
-	width: 56px;
+	left: 95px;
+	top: -45px;
+	width: 40px;
 	height: 42px;
 	transform: matrix(0.98, -0.18, 0.18, 0.98, 0, 0);
 
@@ -586,12 +586,9 @@ const CardTopStars = styled.div`
 		position: relative;
 	}
 
-	@media (max-width: 1px) {
-		left: 75px;
-	}
-
 	@media (min-width: 768px) {
-		left: 170px;
+		left: 150px;
+		width: 56px;
 	}
 
 	@media (min-width: 1024px) {
