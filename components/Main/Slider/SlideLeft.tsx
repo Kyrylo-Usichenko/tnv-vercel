@@ -1,147 +1,144 @@
 import React, { FC } from 'react';
-import Image from 'next/image';
 import styled from 'styled-components';
+import Image from 'next/image';
 
 interface ISlide {
-	sliderText: string;
-	logo: string;
-	name: string;
-	text: string;
-	width: string;
-	height: string;
+  sliderText: string;
+  logo: string;
+  name: string;
+  text: string;
+  width: string;
+  height: string;
 }
 
 const SlideLeft: FC<ISlide> = ({ sliderText, logo, name, text, width, height }) => {
-	return (
-		<Wrapper>
-			<SliderText>{sliderText}</SliderText>
-			<SliderBottom>
-				<Content>
-					<ContentLeft>
-						<Image src={logo} width={width} height={height} alt='logo' />
-						<ContentText>
-							<Name>{name}</Name>
-							<Text>{text}</Text>
-						</ContentText>
-					</ContentLeft>
-					<Img>
-						<Image src='/images/main/whyChoose/quotes.svg' alt='quotes' layout='fill' objectFit='contain' />
-					</Img>
-				</Content>
-			</SliderBottom>
-		</Wrapper>
-	);
+  return (
+    <Wrapper>
+      <SliderText>{sliderText}</SliderText>
+      <SliderBottom>
+        <Content>
+          <ContentLeft>
+            <Image src={logo} width={width} height={height} alt='logo' />
+            <ContentText>
+              <Name>{name}</Name>
+              <Text>{text}</Text>
+            </ContentText>
+          </ContentLeft>
+          <Img>
+            <Image src='/images/main/whyChoose/quotes.svg' alt='quotes' layout='fill' objectFit='contain' />
+          </Img>
+        </Content>
+      </SliderBottom>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.div`
-	position: relative;
-	padding-bottom: 50px;
-	@media (max-width: 1024px) {
-		padding-bottom: 87px;
-	}
-	@media (max-width: 768px) {
-		padding-bottom: 0px;
-	}
+  position: relative;
+  padding-bottom: 50px;
+  @media (max-width: 1024px) {
+    padding-bottom: 87px;
+  }
+  @media (max-width: 768px) {
+    padding-bottom: 0px;
+  }
 `;
 
 const SliderText = styled.p`
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 20px;
-	line-height: 25px;
-	color: #212121;
-	padding: 0 0 0 0;
-	margin: 0 0 24px 0;
-	@media (max-width: 1440px) {
-		font-size: 18px;
-		line-height: 24px;
-	}
-	@media (max-width: 768px) {
-		font-size: 16px;
-		line-height: 23px;
-	}
-	@media (max-width: 425px) {
-		margin: 0 0 16px 0;
-	}
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: #212121;
+  padding: 0 0 0 0;
+  margin: 0 0 24px 0;
+  @media (max-width: 1440px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  @media (max-width: 768px) {
+    font-size: 16px;
+    line-height: 23px;
+  }
+  @media (max-width: 425px) {
+    margin: 0 0 16px 0;
+  }
 `;
 
 const SliderBottom = styled.div`
-	// width: 488px;
-	border-top: 1px solid #d2d2d2;
-	padding-top: 24px;
-	@media (max-width: 1280px) {
-		// width: 454px;
-	}
-	@media (max-width: 1024px) {
-		width: 100%;
-	}
+  border-top: 1px solid #d2d2d2;
+  padding-top: 24px;
 
-	@media (max-width: 425px) {
-		padding-top: 20px;
-	}
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+
+  @media (max-width: 425px) {
+    padding-top: 20px;
+  }
 `;
 
 const Name = styled.p`
-	padding: 0 0 4px 0;
-	margin: 0;
-	font-family: 'Gilroy';
-	font-style: normal;
-	font-weight: 700;
-	font-size: 18px;
-	line-height: 22px;
-	color: #212121;
+  padding: 0 0 4px 0;
+  margin: 0;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #212121;
 
-	@media (max-width: 425px) {
-		font-size: 16px;
-		line-height: 20px;
-	}
+  @media (max-width: 425px) {
+    font-size: 16px;
+    line-height: 20px;
+  }
 `;
 const Text = styled.p`
-	padding: 0;
-	margin: 0;
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 12px;
-	line-height: 15px;
-	display: flex;
-	align-items: center;
-	text-transform: uppercase;
-	color: #5c5c5c;
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  color: #5c5c5c;
 
-	@media (max-width: 425px) {
-		font-size: 10px;
-		line-height: 12px;
-	}
+  @media (max-width: 425px) {
+    font-size: 10px;
+    line-height: 12px;
+  }
 `;
 
 const Content = styled.div`
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 `;
 const ContentLeft = styled.div`
-	display: flex;
-	align-items: center;
-	max-height: 52px;
-	& img {
-		max-height: 100%;
-	}
+  display: flex;
+  align-items: center;
+  max-height: 52px;
+  & img {
+    max-height: 100%;
+  }
 `;
 
 const ContentText = styled.div`
-	margin-left: 16px;
+  margin-left: 16px;
 `;
 
 const Img = styled.div`
-	position: relative;
-	width: 20px;
-	height: 20px;
-	margin: 0 2px 0 0;
-	@media (min-width: 768px) {
-		width: 24px;
-		height: 24px;
-	}
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 0 2px 0 0;
+  @media (min-width: 768px) {
+    width: 24px;
+    height: 24px;
+  }
 `;
 
 export default SlideLeft;

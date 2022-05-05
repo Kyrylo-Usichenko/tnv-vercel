@@ -5,7 +5,7 @@ import '../styles/globals.css';
 import { appWithTranslation } from 'next-i18next';
 
 function MyApp({ Component, pageProps }: AppProps) {
-	return <Component {...pageProps} />;
+  return <Component {...pageProps} />;
 }
 
 export default appWithTranslation(MyApp);
