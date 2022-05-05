@@ -125,7 +125,7 @@ const QuotesImg1 = styled.span`
     right: -5px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 950px) {
     display: none;
   }
 `;
@@ -139,7 +139,7 @@ const QuotesImg2 = styled.span`
   width: 24px;
   display: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 950px) {
     display: block;
     right: 25px;
     bottom: 20px;
