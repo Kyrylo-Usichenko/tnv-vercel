@@ -115,6 +115,9 @@ const Home: NextPage<any> = (props) => {
             playing={isPlayer}
             width='100%'
             height='100%'
+            config={{
+              options: { playerColor: '#42474d' },
+            }}
           />
         </div>
       </Video>
