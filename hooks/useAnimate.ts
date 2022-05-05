@@ -1,18 +1,18 @@
 import { RefObject, useEffect, useState } from 'react';
-import useIntersectionObserver from './useIntersectionObserver';
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
 const useAnimate = (ref: RefObject<Element>) => {
-	const [isShow, setIsShow] = useState(false);
-	const entry = useIntersectionObserver(ref, {});
-	const isVisible = !!entry?.isIntersecting;
+  const [isShow, setIsShow] = useState(false);
+  const entry = useIntersectionObserver(ref, {});
+  const isVisible = !!entry?.isIntersecting;
 
-	useEffect(() => {
-		if (isVisible && !isShow) {
-			setIsShow(true);
-		}
-	}, [isVisible]);
+  useEffect(() => {
+    if (isVisible && !isShow) {
+      setIsShow(true);
+    }
+  }, [isVisible]);
 
-	return isShow;
+  return isShow;
 };
 
 export default useAnimate;

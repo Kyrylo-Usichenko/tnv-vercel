@@ -32,14 +32,14 @@ overrides:
       consistent-return: off
 rules:
   '@typescript-eslint/no-non-null-assertion': 'off'
-  '@typescript-eslint/no-unsafe-assignment' : 'off'
-  '@typescript-eslint/no-unsafe-call' : 'off'
-  '@typescript-eslint/no-unsafe-argument' : 'off'
+  '@typescript-eslint/no-unsafe-assignment': 'off'
+  '@typescript-eslint/no-unsafe-call': 'off'
+  '@typescript-eslint/no-unsafe-argument': 'off'
 
   import/no-extraneous-dependencies:
     - error
     - devDependencies: true
-  prettier/prettier: error
+  prettier/prettier: ['error', { 'useTabs': false, 'tabWidth': 2 }]
   '@typescript-eslint/no-unused-vars':
     - error
     - vars: local

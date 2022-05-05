@@ -5,23 +5,23 @@ export type Callback = () => void;
 export type Ref = HTMLDivElement;
 
 export default (callback: Callback) => {
-	const containerRef = React.useRef<Ref>(null);
+  const containerRef = React.useRef<Ref>(null);
 
-	useEffect(() => {
-		const listener = (e: Event) => {
-			if (containerRef.current && !containerRef.current.contains(e.target as HTMLDivElement)) {
-				callback();
-			}
+  useEffect(() => {
+    const listener = (e: Event) => {
+      if (containerRef.current && !containerRef.current.contains(e.target as HTMLDivElement)) {
+        callback();
+      }
 
-			return null;
-		};
+      return null;
+    };
 
-		document.body.addEventListener('click', listener as any);
+    document.body.addEventListener('click', listener as any);
 
-		return () => {
-			document.body.removeEventListener('click', listener as any);
-		};
-	}, [callback]);
+    return () => {
+      document.body.removeEventListener('click', listener as any);
+    };
+  }, [callback]);
 
-	return containerRef;
+  return containerRef;
 };
