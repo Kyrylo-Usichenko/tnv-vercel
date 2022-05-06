@@ -29,11 +29,11 @@ export const Meta = {
   ogTitle: 'Tinvio | The Smarter Way to Manage Orders',
   ogDescription:
     'Tinvio is a free chat-to-order mobile app that helps merchants and suppliers communicate better, manage orders flawlessly, and receive critical business insights. Get started today!',
-  ogImage: 'https://tnv-vercel.vercel.app/icons/common/app-logo.png',
+  ogImage: 'https://tnv-vercel.vercel.app/icons/common/app-logo.jpg',
   twitterCard: 'summary_large_image',
   twitterUrl: 'https://tnv-vercel.vercel.app/',
   twitterTitle: 'Tinvio | The Smarter Way to Manage Orders',
   twitterDescription:
     'Tinvio is a free chat-to-order mobile app that helps merchants and suppliers communicate better, manage orders flawlessly, and receive critical business insights. Get started today!',
-  twitterImage: 'https://tnv-vercel.vercel.app/icons/common/app-logo.png',
+  twitterImage: 'https://tnv-vercel.vercel.app/icons/common/app-logo.jpg',
 };

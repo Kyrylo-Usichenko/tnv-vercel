@@ -84,11 +84,7 @@ const Greetings: FC<GreetingsProps> = ({ scrollDown, locale }) => {
             <LeftBotSquare2 />
           </Info>
           <PhoneWrapper>
-            <picture>
-              <source srcSet='/images/company/Greetings/ph-1024@2x.png' media='(min-width: 1024px)' />
-              <source srcSet='/images/company/Greetings/ph-768@2x.png' media='(min-width: 768px)' />
-              <Phone width='398' height='658' src='/images/company/Greetings/ph-375@2x.png' alt='app' />
-            </picture>
+            <Phone width='398' height='658' src='/images/company/Greetings/phone@2x.png' alt='app' />
             <Dec1></Dec1>
             <RSquare />
           </PhoneWrapper>
@@ -314,7 +310,9 @@ const PhoneWrapper = styled.div`
     }
 
     &::after {
-      display: none;
+      content: url('/images/company/Greetings/ph-dec-768.svg');
+      top: 75px;
+      right: -93px;
     }
   }
 
@@ -340,14 +338,13 @@ const Phone = styled.img`
   width: auto;
 
   @media (min-width: 768px) {
-    margin-left: 130px;
     height: 700px;
   }
 
   @media (min-width: 1024px) {
     display: block;
     width: 100%;
-    height: auto;
+    height: 600px;
     margin-left: 0;
   }
 
