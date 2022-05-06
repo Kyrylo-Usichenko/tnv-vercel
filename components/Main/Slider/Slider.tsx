@@ -10,7 +10,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
 import SlideLeft from '@/components/Main/Slider/SlideLeft';
-// import SlideImage from '@/components/Main/Slider/SlideRight';
 
 const Slider: FC = () => {
   const { t } = useTranslation();
@@ -22,7 +21,28 @@ const Slider: FC = () => {
       name: 'Hafidz & Indah',
       text: 'Owners (Sejadah Grocery)',
       image: '/images/main/whyChoose/itacho@2x.png',
-      imageHeight: '353px',
+      imgData: {
+        imageHeight: {
+          '1280w': '353px',
+          '1024w': '360px',
+          '768w': '298px',
+          '375w': '235px',
+        },
+        top: 'auto',
+        right: '20px',
+        left: 'auto',
+        bottom: '0',
+      },
+      panelWidth: {
+        '1920w': '935px',
+        '1280w': '840px',
+        '1024w': '756px',
+      },
+      textPanelWidth: {
+        '1920w': '690px',
+        '1280w': '645px',
+        '1024w': '552px',
+      },
       width: '96px',
       height: '49px',
     },
@@ -33,6 +53,28 @@ const Slider: FC = () => {
       text: 'Director (Moonleaf)',
       image: '/images/main/whyChoose/moonleaf@2x.png',
       imageHeight: '361px',
+      imgData: {
+        imageHeight: {
+          '1280w': '360px',
+          '1024w': '368px',
+          '768w': '316px',
+          '375w': '240px',
+        },
+        top: '3%',
+        right: '20px',
+        left: 'auto',
+        bottom: 'auto',
+      },
+      panelWidth: {
+        '1920w': '866px',
+        '1280w': '762px',
+        '1024w': '677px',
+      },
+      textPanelWidth: {
+        '1920w': '660px',
+        '1280w': '600px',
+        '1024w': '530px',
+      },
       width: '102px',
       height: '48px',
     },
@@ -42,7 +84,28 @@ const Slider: FC = () => {
       name: 'Punnasiri Chaipatikul',
       text: 'Business Development Manager (Phaitong Station)',
       image: '/images/main/whyChoose/phaitong@2x.png',
-      imageHeight: '350px',
+      imgData: {
+        imageHeight: {
+          '1280w': '350px',
+          '1024w': '350px',
+          '768w': '307px',
+          '375w': '235px',
+        },
+        top: '4%',
+        right: '35px',
+        left: 'auto',
+        bottom: 'auto',
+      },
+      panelWidth: {
+        '1920w': '976px',
+        '1280w': '874px',
+        '1024w': '792px',
+      },
+      textPanelWidth: {
+        '1920w': '725px',
+        '1280w': '707px',
+        '1024w': '570px',
+      },
       width: '70px',
       height: '52px',
     },
@@ -52,7 +115,28 @@ const Slider: FC = () => {
       name: 'Fathira Dida',
       text: 'Owner (Baker Old)',
       image: '/images/main/whyChoose/baker@2x.png',
-      imageHeight: '317px',
+      imgData: {
+        imageHeight: {
+          '1280w': '328px',
+          '1024w': '317px',
+          '768w': '287px',
+          '375w': '223px',
+        },
+        top: '8%',
+        right: '0',
+        left: 'auto',
+        bottom: 'auto',
+      },
+      panelWidth: {
+        '1920w': '933px',
+        '1280w': '823px',
+        '1024w': '724px',
+      },
+      textPanelWidth: {
+        '1920w': '650px',
+        '1280w': '651px',
+        '1024w': '485px',
+      },
       width: '54px',
       height: '64px',
     },
@@ -84,29 +168,14 @@ const Slider: FC = () => {
                 text={slide.text}
                 width={slide.width}
                 height={slide.height}
+                panelWidth={slide.panelWidth}
+                textPanelWidth={slide.textPanelWidth}
               />
-              <MainImg src={slide.image} alt={slide.name} imgHeight={slide.imageHeight} />
+              <MainImg src={slide.image} alt={slide.name} imgData={slide.imgData} />
             </SwiperSlide>
           ))}
         </Swiper>
       </LeftSliderWrap>
-      {/* <RightSliderWrap>
-        <Swiper
-          className='swiper'
-          modules={[EffectFade]}
-          spaceBetween={0}
-          slidesPerView={1}
-          loop={true}
-          onSwiper={(swiper) => setControlledSwiper(swiper)}
-          allowTouchMove={false}
-        >
-          {sliders.map((slide, index) => (
-            <SwiperSlide key={`${slide.sliderText}${index}`} className='swiper-slide'>
-              <SlideImage image={slide.image} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </RightSliderWrap> */}
       <Dots className='dots' />
     </Wrapper>
   );
@@ -117,40 +186,38 @@ const Wrapper = styled.div`
   max-width: 1132px;
   width: 100%;
   margin: 40px 40px 0;
-  padding: 32px 18px 56px 32px;
   background-color: #ffffff;
   border-radius: 32px;
   display: flex;
   justify-content: space-between;
+  max-width: 343px;
 
-  @media (max-width: 1440px) {
-    max-width: 1082px;
-  }
-
-  @media (max-width: 1024px) {
-    max-width: 947px;
-    padding: 32px 18px 48px 32px;
-  }
-
-  @media (max-width: 950px) {
-    flex-direction: column;
+  @media (min-width: 768px) {
     max-width: 490px;
-    align-items: center;
-    padding: 32px 0;
   }
 
-  @media (max-width: 768px) {
-    padding: 32px 0 64px 0;
+  @media (min-width: 1024px) {
+    max-width: 947px;
   }
 
-  @media (max-width: 425px) {
-    padding: 24px 0 48px 0;
+  @media (min-width: 1280px) {
+    max-width: 1032px;
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 1132px;
   }
 `;
 
 const LeftSliderWrap = styled.div`
   width: 100%;
   position: relative;
+  margin: 25px 0 42px 0;
+
+  & .swiper-slide {
+    display: flex;
+    flex-direction: column;
+  }
 
   .swiper {
     height: 100%;
@@ -159,16 +226,24 @@ const LeftSliderWrap = styled.div`
   .swiper-button-prev,
   .swiper-button-next {
     display: none;
+    transition: background-color 0.3s ease-in;
 
-    @media (min-width: 769px) {
+    &:hover {
+      background-color: rgba(209, 209, 209, 0.7);
+    }
+
+    &:focus {
+      background-color: rgba(209, 209, 209, 0.7);
+    }
+
+    @media (min-width: 768px) {
       top: auto;
-      bottom: 0%;
+      bottom: 56px;
       width: 40px;
       height: 40px;
       background-color: #d2d2d2;
       border-radius: 8px;
-      margin: 0;
-      display: flex;
+      margin: 25px 0 0 0;
       cursor: pointer;
       transition: all 0.3s ease;
       -webkit-tap-highlight-color: transparent;
@@ -186,7 +261,7 @@ const LeftSliderWrap = styled.div`
 
   .swiper-button-prev {
     left: 0px;
-    margin-left: 24px;
+    margin-left: 56px;
 
     &:after {
       content: '';
@@ -203,7 +278,7 @@ const LeftSliderWrap = styled.div`
   }
 
   .swiper-button-next {
-    left: 87.5px;
+    left: 120px;
 
     &:after {
       content: '';
@@ -220,61 +295,57 @@ const LeftSliderWrap = styled.div`
     }
   }
 
-  & .swiper-slide {
-    @media (max-width: 950px) {
+  @media (min-width: 1024px) {
+    margin: 0;
+
+    & .swiper-slide {
+      display: block;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
       display: flex;
-      flex-direction: column;
     }
   }
-
-  /* @media (max-width: 950px) {
-    flex: 0 0 100%;
-    width: 100%;
-    order: 2;
-    margin: 0;
-  } */
 `;
 
-const MainImg = styled.img<{ imgHeight: string }>`
-  position: absolute;
-  top: 0;
-  right: 15px;
-  height: 100%;
+const MainImg = styled.img<{
+  imgData: {
+    imageHeight: {
+      '1280w': string;
+      '1024w': string;
+      '768w': string;
+      '375w': string;
+    };
+    top: string;
+    right: string;
+    left: string;
+    bottom: string;
+  };
+}>`
+  position: static;
+  align-self: center;
+  order: 1;
+  height: ${({ imgData }) => imgData.imageHeight['375w']};
   width: auto;
 
-  @media (max-width: 950px) {
-    position: static;
-    height: 290px;
-    align-self: center;
-    order: 1;
+  @media (min-width: 768px) {
+    height: ${({ imgData }) => imgData.imageHeight['768w']};
+  }
+
+  @media (min-width: 1024px) {
+    height: ${({ imgData }) => imgData.imageHeight['1024w']};
+    position: absolute;
+    top: ${({ imgData }) => imgData.top};
+    right: ${({ imgData }) => imgData.right};
+    left: ${({ imgData }) => imgData.left};
+    bottom: ${({ imgData }) => imgData.bottom};
+  }
+
+  @media (min-width: 1280px) {
+    height: ${({ imgData }) => imgData.imageHeight['1280w']};
   }
 `;
-
-// const RightSliderWrap = styled.div`
-//   position: absolute;
-//   top: 50%;
-//   right: 0;
-//   height: 85%;
-//   width: 330px;
-//   transform: translateY(-50%);
-//   z-index: 99999;
-
-//   & div {
-//     height: 100%;
-//   }
-
-//   @media (max-width: 1220px) {
-//     flex: 0 1 39%;
-//     width: 39%;
-//   }
-
-//   @media (max-width: 950px) {
-//     flex: 0 0 100%;
-//     width: 100%;
-//     order: 1;
-//     margin: 0 0 30px;
-//   }
-// `;
 
 const Dots = styled.div`
   &.swiper-pagination-bullets.swiper-pagination-horizontal {

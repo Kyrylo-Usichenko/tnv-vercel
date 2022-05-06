@@ -9,13 +9,23 @@ interface ISlide {
   text: string;
   width: string;
   height: string;
+  panelWidth: {
+    '1920w': string;
+    '1280w': string;
+    '1024w': string;
+  };
+  textPanelWidth: {
+    '1920w': string;
+    '1280w': string;
+    '1024w': string;
+  };
 }
 
-const SlideLeft: FC<ISlide> = ({ sliderText, logo, name, text, width, height }) => {
+const SlideLeft: FC<ISlide> = ({ sliderText, logo, name, text, width, height, panelWidth, textPanelWidth }) => {
   return (
     <Wrapper>
-      <SliderTextWrap>
-        <SliderText>
+      <SliderTextWrap width={panelWidth}>
+        <SliderText width={textPanelWidth}>
           {sliderText}
           <QuotesImg1>
             <Image src='/images/main/whyChoose/quotes.svg' alt='quotes' width={24} height={24} />
@@ -42,107 +52,106 @@ const SlideLeft: FC<ISlide> = ({ sliderText, logo, name, text, width, height }) 
 
 const Wrapper = styled.div`
   position: relative;
-  padding-bottom: 75px;
+  margin-right: 16px;
+  order: 2;
 
-  @media (max-width: 950px) {
-    order: 2;
+  @media (min-width: 1024px) {
+    margin: 32px 18px 125px 32px;
   }
 
-  @media (max-width: 768px) {
-    padding-bottom: 0px;
+  @media (min-width: 1280px) {
+    margin: 32px 18px 141px 32px;
   }
 `;
 
-const SliderTextWrap = styled.div`
+const SliderTextWrap = styled.div<{
+  width: {
+    '1920w': string;
+    '1280w': string;
+    '1024w': string;
+  };
+}>`
   background-color: #f1f1f1;
-  margin: 0 0 20px 0;
-  padding: 24px;
-  border-radius: 16px;
-  width: 933px;
+  margin: 0 0 24px 0;
+  padding: 20px 16px 20px 24px;
+  border-radius: 0 16px 16px 0;
+  width: 100%;
 
-  @media (max-width: 1440px) {
-    width: 823px;
-  }
-
-  @media (max-width: 1280px) {
-    width: 724px;
-  }
-
-  @media (max-width: 950px) {
-    width: 98%;
-    border-radius: 0 16px 16px 0;
+  @media (min-width: 768px) {
     padding: 24px 24px 24px 32px;
+    margin: 0 0 24px 0;
   }
 
-  @media (max-width: 768px) {
-    width: 96%;
-  }
-
-  @media (max-width: 425px) {
+  @media (min-width: 1024px) {
+    width: ${({ width }) => width['1024w']};
+    border-radius: 16px;
     padding: 24px;
   }
+
+  @media (min-width: 1280px) {
+    width: ${({ width }) => width['1280w']};
+  }
+
+  @media (min-width: 1920px) {
+    width: ${({ width }) => width['1920w']};
+  }
 `;
 
-const SliderText = styled.p`
+const SliderText = styled.p<{
+  width: {
+    '1920w': string;
+    '1280w': string;
+    '1024w': string;
+  };
+}>`
   font-family: 'Inter';
   font-weight: 400;
-  font-size: 20px;
-  line-height: 25px;
+  font-size: 16px;
+  line-height: 23px;
   color: #212121;
-  max-width: 725px;
   margin: 0;
   position: relative;
 
-  @media (max-width: 1440px) {
+  @media (min-width: 1024px) {
+    width: ${({ width }) => width['1024w']};
     font-size: 18px;
     line-height: 24px;
-    max-width: 655px;
   }
 
-  @media (max-width: 1280px) {
-    max-width: 487px;
+  @media (min-width: 1280px) {
+    width: ${({ width }) => width['1280w']};
   }
 
-  @media (max-width: 768px) {
-    font-size: 16px;
-    line-height: 23px;
-  }
-
-  @media (max-width: 425px) {
-    margin: 0 0 16px 0;
+  @media (min-width: 1920px) {
+    width: ${({ width }) => width['1920w']};
   }
 `;
 
 const QuotesImg1 = styled.span`
-  display: inline-block;
+  display: none;
   position: absolute;
-  right: 0;
+  right: -5px;
   bottom: 0;
   height: 24px;
   width: 24px;
 
-  @media (max-width: 1024px) {
-    right: -5px;
-  }
-
-  @media (max-width: 950px) {
-    display: none;
+  @media (min-width: 1024px) {
+    display: block;
   }
 `;
 
 const QuotesImg2 = styled.span`
-  display: inline-block;
   position: absolute;
   right: 0;
   bottom: 0;
   height: 24px;
   width: 24px;
-  display: none;
+  display: block;
+  right: 0;
+  bottom: 20px;
 
-  @media (max-width: 950px) {
-    display: block;
-    right: 25px;
-    bottom: 20px;
+  @media (min-width: 1024px) {
+    display: none;
   }
 `;
 
@@ -153,49 +162,35 @@ const SliderBottom = styled.div`
   @media (max-width: 1024px) {
     width: 100%;
   }
-
-  @media (max-width: 950px) {
-    padding-left: 32px;
-  }
-
-  @media (max-width: 425px) {
-    padding-top: 20px;
-    padding-left: 24px;
-  }
 `;
 
 const Name = styled.p`
-  padding: 0 0 4px 0;
   margin: 0;
   font-family: 'Gilroy';
-  font-style: normal;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0 0 4px 0;
   color: #212121;
 
-  @media (max-width: 425px) {
-    font-size: 16px;
-    line-height: 20px;
+  @media (min-width: 768px) {
+    font-size: 18px;
+    line-height: 22px;
   }
 `;
 
 const Text = styled.p`
-  padding: 0;
-  margin: 0;
   font-family: 'Inter';
-  font-style: normal;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 15px;
-  display: flex;
-  align-items: center;
+  font-size: 10px;
+  line-height: 12px;
   text-transform: uppercase;
   color: #5c5c5c;
+  margin: 0;
 
-  @media (max-width: 425px) {
-    font-size: 10px;
-    line-height: 12px;
+  @media (min-width: 768px) {
+    font-size: 12px;
+    line-height: 15px;
   }
 `;
 
