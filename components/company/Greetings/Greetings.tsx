@@ -343,13 +343,11 @@ const Phone = styled.img`
 
   @media (min-width: 1024px) {
     display: block;
-    width: 100%;
     height: 600px;
     margin-left: 0;
   }
 
   @media (min-width: 1440px) {
-    width: auto;
     height: 500px;
   }
 `;
