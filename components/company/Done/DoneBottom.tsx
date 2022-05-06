@@ -44,21 +44,11 @@ const DoneBottom: FC = () => {
           <Red>
             <RedST />
             <RedTitle>{t('company:doneDark')}</RedTitle>
-            <picture>
-              <source
-                srcSet='/images/company/Done/phone-375.png 1x, /images/company/Done/phone-375@2x.png 2x'
-                media='(min-width: 1440px)'
-              />
-              <source
-                srcSet='/images/company/Done/phone-1024.png 1x, /images/company/Done/phone-1024@2x.png 2x'
-                media='(min-width: 1024px)'
-              />
-              <Phone
-                src='/images/company/Done/phone-375.png'
-                srcSet='/images/company/Done/phone-375@2x.png 2x'
-                alt='app in phone'
-              />
-            </picture>
+            <Phone
+              src='/images/company/Done/phone-375.png'
+              srcSet='/images/company/Done/phone-1024.png 1x, /images/company/Done/phone-1024@2x.png 2x'
+              alt='app in phone'
+            />
             <RedSB />
             <RedDots>
               <Image src='/images/company/Done/dots-red.png' alt='Dots' width={116} height={78} />
@@ -97,9 +87,9 @@ const Wrapper = styled.section`
 
   @media (min-width: 1024px) {
     margin-bottom: 180px;
-  }
+    // }
 
-  @media (min-width: 1920px) {
+    // @media (min-width: 1920px) {
     display: flex;
     justify-content: flex-end;
   }
@@ -125,11 +115,12 @@ const WrapperCon = styled.div`
 
   @media (min-width: 1280px) {
     margin-left: 54px;
+    width: calc(50% + 678px);
   }
 
   @media (min-width: 1920px) {
-    max-width: 1688px;
-    width: 100%;
+    // max-width: 1688px;
+    width: calc(50% + 738px);
   }
 `;
 
