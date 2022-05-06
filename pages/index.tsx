@@ -1,4 +1,4 @@
-import React, { RefObject, useCallback, useEffect, useRef, useState } from 'react';
+import React, { RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { NextPage } from 'next/types';
 import Head from 'next/head';
@@ -43,6 +43,7 @@ const Home: NextPage<any> = (props) => {
       });
     }
   };
+
   const escFunction = useCallback((event) => {
     if (event.key === 'Escape') {
       setIsPlayer(false);
@@ -56,6 +57,7 @@ const Home: NextPage<any> = (props) => {
       document.removeEventListener('keydown', escFunction, false);
     };
   });
+
   const playerRef = useRef(null) as RefObject<any>;
 
   const modalRef = useOnClickOutsideVideo(() => {
@@ -65,6 +67,21 @@ const Home: NextPage<any> = (props) => {
       playerRef.current.seekTo(timeToStart, 'seconds');
     }
   });
+
+  const videoLink = useMemo(() => {
+    switch (locale) {
+      case 'en':
+        return 'https://tinvio-3.wistia.com/medias/wam61v1zoz';
+      case 'th':
+        return 'https://tinvio-1.wistia.com/medias/4elq4lgqpe';
+      case 'id':
+        return 'https://tinvio-2.wistia.com/medias/brtcodihas';
+      case 'vn':
+        return 'https://tinvio-4.wistia.com/medias/ltwnbzjbs1';
+      default:
+        return 'https://tinvio-3.wistia.com/medias/wam61v1zoz';
+    }
+  }, [locale]);
 
   return (
     <Styled>
@@ -99,17 +116,7 @@ const Home: NextPage<any> = (props) => {
         <div ref={modalRef} className='player-wrapper'>
           <ReactPlayer
             className='react-player'
-            url={
-              locale == 'en'
-                ? 'https://tinvio-3.wistia.com/medias/wam61v1zoz'
-                : locale == 'th'
-                ? 'https://tinvio-1.wistia.com/medias/4elq4lgqpe'
-                : locale == 'id'
-                ? 'https://tinvio-2.wistia.com/medias/brtcodihas'
-                : locale == 'vn'
-                ? 'https://tinvio-4.wistia.com/medias/ltwnbzjbs1'
-                : 'https://tinvio-3.wistia.com/medias/wam61v1zoz'
-            }
+            url={videoLink}
             controls
             ref={playerRef}
             playing={isPlayer}
