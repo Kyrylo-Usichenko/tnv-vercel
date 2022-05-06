@@ -4,14 +4,15 @@ import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 
 import { FeaturesCon } from '@/components/common/Container/Container';
-import LightLink from '@/components/common/Links/LightLink';
+import LightButton from '@/components/common/Buttons/LightButton';
 import TransparentLink from '@/components/common/Links/TransparentLink';
 
 type ContactProps = {
   contactSectionRef: RefObject<HTMLDivElement>;
+  openModal?: () => void;
 };
 
-const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
+const Contact: FC<ContactProps> = ({ contactSectionRef, openModal }) => {
   const { t } = useTranslation();
 
   return (
@@ -51,16 +52,9 @@ const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
             </MiddleDots>
             <LightHeading>{t('company:contactHeading2')}</LightHeading>
             <LightContent>{t('company:contactText2')}</LightContent>
-            <LightLink
-              width={210}
-              fSize={18}
-              lHeight={22}
-              href='mailto:partners@tinvio.com'
-              target='_blank'
-              rel='noreferrer noopener'
-            >
+            <LightButton width={210} fSize={18} lHeight={22} onClick={openModal}>
               {t('company:contactButton2')}
-            </LightLink>
+            </LightButton>
           </DarkBlock>
           <Block>
             <RightSquareLeft />
@@ -71,7 +65,7 @@ const Contact: FC<ContactProps> = ({ contactSectionRef }) => {
             <Heading>{t('company:contactHeading3')}</Heading>
             <Content>{t('company:contactText3')}</Content>
             <TransparentLink
-              href='mailto:press@tinvio.com'
+              href='https://calendly.com/tinvio/media-get-coffee'
               target='_blank'
               rel='noreferrer noopener'
               width={210}
