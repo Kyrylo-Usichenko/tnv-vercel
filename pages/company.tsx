@@ -57,7 +57,7 @@ const Company: NextPage<any> = (props) => {
         <Teamvio />
         <Commitments />
         <Role />
-        <Contact contactSectionRef={contactSection} />
+        <Contact contactSectionRef={contactSection} openModal={openModal} />
         <Footer background='#ffffff' />
       </Main>
     </>
